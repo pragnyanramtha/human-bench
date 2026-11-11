@@ -160,6 +160,7 @@ main{flex:1;padding-top:132px}
 .hero h1{margin-top:28px;font-size:clamp(40px,6.4vw,78px);line-height:1.0;font-weight:500;letter-spacing:-.045em;max-width:13.5em;text-wrap:balance}
 .hero h1 em{font-family:var(--serif);font-weight:400;font-size:1.13em;letter-spacing:-.02em;line-height:.9}
 .lede{margin-top:26px;font-size:clamp(17px,1.5vw,19.5px);line-height:1.5;color:var(--muted);max-width:39em;text-wrap:pretty}
+.hero-acts{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 
 /* ---------- home: leaderboard ---------- */
 .lb{padding-top:56px}
@@ -951,7 +952,10 @@ async function viewHome(c) {
     h("section", { class: "hero" },
       h("p", { class: "pill rv", text: [c.version, c.stage].filter(Boolean).join(" · ") || "HumanBench" }),
       h("h1", { class: "rv", style: "--i:1" }, "Can AI write like a ", h("em", { text: "human" }), "?"),
-      h("p", { class: "lede rv", style: "--i:2", text: "We gave " + num(c.models.length) + " models everyday writing jobs and ran the answers past an AI detector." })),
+      h("p", { class: "lede rv", style: "--i:2", text: "We gave " + num(c.models.length) + " models everyday writing jobs and ran the answers past an AI detector." }),
+      c.site.paper_url || c.site.repo_url ? h("div", { class: "hero-acts rv", style: "--i:3" },
+        c.site.paper_url ? cta("Read the paper", c.site.paper_url, false, true) : null,
+        c.site.repo_url ? cta("GitHub", c.site.repo_url, true, true) : null) : null),
     leaderboard(c, pool.share("detector")), gatesSection(c), insideSection(c, tasksOf(ref, dev)), caveats(c));
   return { node, nav: "home" };
 }

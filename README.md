@@ -1,15 +1,19 @@
-<p align="center"><img src="assets/icon.svg" width="72" height="72" alt=""></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
+    <img src="assets/wordmark-light.svg" width="380" alt="HumanBench">
+  </picture>
+</p>
 
-<h1 align="center">HumanBench</h1>
+<h3 align="center">Can AI write like a human?</h3>
 
-<p align="center"><b>Can AI write like a human?</b><br>
-A benchmark of everyday writing. An output has to do the task and not be flagged as AI-written.</p>
+<p align="center">We gave 11 models everyday writing jobs and ran the answers past an AI detector.</p>
 
 <p align="center">
-<a href="https://human-bench-iota.vercel.app">Leaderboard</a> ·
-<a href="https://human-bench-iota.vercel.app/humanbench.pdf">Paper</a> ·
-<a href="https://human-bench-iota.vercel.app/#/tasks">Tasks</a> ·
-<a href="#quickstart">Quickstart</a>
+  <a href="https://human-bench-iota.vercel.app"><img src="https://img.shields.io/badge/Leaderboard-2B4EE6?style=for-the-badge" alt="Leaderboard"></a>
+  <a href="https://human-bench-iota.vercel.app/humanbench.pdf"><img src="https://img.shields.io/badge/Paper-D27A22?style=for-the-badge" alt="Paper"></a>
+  <a href="https://human-bench-iota.vercel.app/#/tasks"><img src="https://img.shields.io/badge/Tasks-5E6673?style=for-the-badge" alt="Tasks"></a>
+  <a href="#quickstart"><img src="https://img.shields.io/badge/Quickstart-5E6673?style=for-the-badge" alt="Quickstart"></a>
 </p>
 
 HumanBench gives a model an everyday writing task (an email, a forum reply, a review, a post, a work document; 250 to 4,000 words; any tone) and puts each output through three gates. v0.1 is a research preview: 11 models, 212 tasks, 3 samples per task.
