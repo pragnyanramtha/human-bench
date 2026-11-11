@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Fix-It Saturday Comes to St. Ansgar**\n*Bring the broken thing. Stay for coffee.*\n\nOur first Fix-It Saturday is Saturday, December 5, 2026, from 9 a.m. to 1 p.m. in the Fellowship Hall at St. Ansgar Lutheran Church. Come in through the alley door, where there's a ramp.\n\nBring something that's broken: a lamp with a bad cord, a toaster that stopped toasting, a bike with a wobbly seat, a pair of pants that needs a hem, a dull kitchen knife, a laptop that won't wake up. Our volunteers will look at it with you. To keep the line moving, we're asking for one item per person to start. Whether it's fixed or we honestly tell you it isn't worth fixing, you're welcome to sit down with a cup of coffee and a piece of kringle.\n\nIt's free. You don't need to be a member or sign up ahead of time. A donation to the food shelf is welcome if you want to give one, but nobody is expecting it.\n\nOur volunteers so far can work on small appliances, lamps, and bikes, mend clothing, sharpen knives, and help with laptops and phones. Doris Lindqvist, who has been darning socks for this parish since the Carter years, asked to run the mending table herself. We're glad to let her.\n\nThis idea started with a mixer. Not long ago I brought in my 1970s Hamilton Beach, which I'd about given up on, and Marv Okafor fixed it in our church kitchen in about twenty minutes. Too much of what we throw away only needs a screw or a new cord. We thought the neighborhood might like a place to find that out.\n\nThis is good neighboring, plain and simple. There are no strings attached, and nobody is going to preach at you. If you're curious about the church, you're welcome to ask. If you just want your toaster fixed, that's fine too.\n\nIf it goes well, we plan to hold Fix-It Saturday on the first Saturday of every month through the spring. We'd love more volunteers, especially anyone who can repair vacuums or zippers. If you can help, or if you have questions, call the church office at 612-555-0148 or email office@stansgarlutheran.example.\n\nSee you on December 5. Bring the toaster.\n\n[Your name]\nPastor, St. Ansgar Lutheran Church",
+  "words": 384,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36663269996643066,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.43911316990852356,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.604755401611328,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.9,
+    "effort": "medium",
+    "output_tokens": 2490,
+    "input_tokens": 1491
+  }
+}

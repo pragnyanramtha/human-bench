@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**★★★★☆ Kestrel Bastion 1500: It kept my trading setup online when it mattered**\n\nI’m a crypto day-trader in Miami, and I bought the Kestrel Bastion 1500 from Voltwise for $229 in August 2026. During the October 14 storm, the power dropped around 2:20 p.m. I was 10x long on a SOL perpetual and had an open position to manage. The Bastion kept my PC, monitors, modem, and router running long enough for me to close it cleanly in about four minutes. That’s the kind of situation where a UPS earns its place under your desk.\n\nFor context, my setup is a PC, three monitors, a modem, and a router. The Bastion’s display showed a load of around 410W while I was trading. I tested the runtime intentionally: from a full charge, I got 11 minutes and 40 seconds before I shut everything down. The box claims about 14 minutes at 500W, so my result seems plausible. Don’t treat that as guaranteed runtime for your setup, though—your actual load and battery condition will make a difference. It gave me enough time to manage the immediate problem, not enough time to keep trading through a long outage.\n\nThe specs are solid for this price: 1500VA / 1000W, pure sine wave, and ten outlets. Five are battery-backed and five are surge-only, so check which ones you’re plugging into. There’s also a 60W USB-C port. One important tip: put your modem and router on the battery-backed outlets too. If your computer stays on but your network gear loses power, you may still lose your connection.\n\nThere are annoyances. The fan came on randomly at 3 a.m. during my first week, and it’s loud—think hair dryer on low. The outage beeper is also very loud. You can mute it in the app, but the setting reset after a firmware update, which is frustrating. The desktop app looks like it came from the Windows XP era. Still, its automatic shutdown feature works, and that matters more to me than the design.\n\nAt around 30 pounds, it’s not light, but it’s manageable. The battery is swappable, which is a plus; the replacement pack costs $95. I can’t speak to long-term battery life yet, but being able to replace it is better than having to replace the whole unit.\n\nOverall, the Bastion 1500 did what I needed during a stressful outage: kept my trading setup and internet running long enough to close a live position safely. The runtime was useful, but limited, and the noisy fan and reset-prone beeper keep it from getting five stars. For traders who want a realistic window to manage an outage—not a promise that they can trade all afternoon—it’s a solid option.",
+  "words": 449,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "must_include",
+        "kind": "required or barred words",
+        "detail": "missing: ['4 stars | 4 star | 4/5 | 4 out of 5 | 4 of 5 | 4 / 5']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49519726634025574,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9642890095710754,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.67208480834961,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "medium",
+    "output_tokens": 657,
+    "input_tokens": 13948
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties. I know some of y'all have been asking my mom whether I'm coming to Thanksgiving, so let me save her the trouble: yes, I'll be there. Thursday, Nov 26 at Aunt Denise's in Macon, eating around 3. I'm bringing mac and cheese and two sweet potato pies.\n\nFor the cousins who weren't there last year, the short version is that I got into it with somebody at the table about my job and it got ugly. He poked at my work, and instead of letting it go I came back with a smart remark about where he gets his news. That part was me. Grandma Pearl ended up sitting out on the porch for about an hour, and I still feel bad about it.\n\nSo I want to say this plainly. I'm not sorry for what I do for a living, and that's not going to change. I am sorry for how I talked on Grandma's holiday. Grandma, I'm sorry. You deserved better from me that day.\n\nAnd for the record, the person I got into it with is not a bad guy. He likes to poke, that's all, and I knew that going in. He sent me a thumbs up on my birthday in August, which coming from him is basically a hug. We're fine.\n\nHere's my ask. Can we call a truce on work and politics for one day? Mine, yours, everybody's. And so nobody wastes their breath, I can't talk about open cases anyway. It's confidential, so questions about \"the lawsuit\" are a dead end no matter how nice you ask.\n\nLet's keep the table to food, football, babies, and Tasha's new boyfriend. Sorry, Tasha, you knew this was coming.\n\nI want it to be a good day. See y'all on the 26th.\n\n---\n\nI left the gas station TV line itself out so the insult doesn't get repeated in front of 40 people. If you'd rather quote it and own it word for word, swap it in for \"a smart remark about where he gets his news.\"",
+  "words": 345,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The piece ends with a note about the writing task rather than the family post."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2200775295495987,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06054064631462097,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.400390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.334156036376953,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.0,
+    "effort": "high",
+    "output_tokens": 1928,
+    "input_tokens": 1425
+  }
+}

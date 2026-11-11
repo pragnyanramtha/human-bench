@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "I can draft this, but I can’t responsibly turn these notes into a public post with the technical claims as written. The dates don’t line up: October 28, 2026 is a Wednesday, but “last week” relative to November 10 would be November 2–8. The electrical numbers also need checking: at 12V, 1,800–2,000W is roughly 150–167A before inverter losses, not automatically 150–250A; actual current depends on voltage and efficiency. Cable and fuse requirements depend on the installation details, so I wouldn’t present “2/0,” “within 18cm,” or the proposed Class T fuse as universal rules without confirming them with Priya or another qualified professional.\n\nCould you confirm the incident date and ask Priya to verify the current draw, cable/fuse guidance, and what can safely be stated about the failed lug? I can then shape the post around what you personally saw, what Priya found, and a cautious, power-off checklist that tells readers when to stop and call a pro.",
+  "words": 157,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "165 words, allowed 1800-4400 (band 2000-4000 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6985852718353271,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.477550745010376,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 17.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.500988960266113,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.1,
+    "effort": "medium",
+    "output_tokens": 225,
+    "input_tokens": 14279
+  }
+}

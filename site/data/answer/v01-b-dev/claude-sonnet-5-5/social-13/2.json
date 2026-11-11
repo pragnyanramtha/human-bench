@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.30, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Some good news, some honesty, and one change to how we work.\n\nGood news first: Priya Bhatia joins us on Monday 16 November. Priya is a chartered engineer (IStructE) and spent nine years at a consultancy in Coventry. If you see her on site, please say hello.\n\nNow the honest part. In September and October, beam calculations and drawings were taking 5 to 6 weeks. That is far too long, and several of you waited longer than you should have. A few of you were properly unhappy, one of you said so in a review, and you were right to. One couple had their builder standing around with the steel already ordered, and we only got their drawings to them in 3 days after they'd chased us twice. They shouldn't have had to chase.\n\nThat was my fault. I kept saying yes to more work than one person could do. In October I was out on site visits all day and doing calculations until midnight, and my wife started calling the office \"the other house\". It wasn't sustainable, and it wasn't fair on you.\n\nHaving Priya here is what lets me fix it. Our target for beam calcs and drawings is now 10 working days, and I'd rather you hold us to it than take my word for it.\n\nIf you're waiting on something now, your job is moving. Message me directly and I'll tell you exactly where it is.\n\nOne more change. From 1 January 2027, first site visits will cost £95. If you go ahead with us, that £95 comes off your fee. We've found that about a third of free visits never turned into a job, and that time has to come from somewhere. Last autumn showed me where it was coming from. Any visit already booked by the time you read this stays free, whatever date it's on.\n\nThank you to everyone who's stuck with us. Things are getting better, and I'm glad to be able to say so.\n\n---\n\nI left the Harborne couple unnamed and didn't mention the location, but check they'd be happy with that story being shared at all. If you'd rather keep the post a little less personal, the \"other house\" line is the easiest one to cut.",
+  "words": 377,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3034523129463196,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.025285819545388222,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.6875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.34578102827072144,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.4,
+    "effort": "high",
+    "output_tokens": 1749,
+    "input_tokens": 1433
+  }
+}

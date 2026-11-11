@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Mrs. H, and the part of this job nobody talks about**\n\nI've been reading this board for a while, but this is my first post. This month I want to share something that's still sitting with me.\n\nFor about seven years I saw one patient every Thursday. I'll call her Mrs. H. She was 84 and came to our store from 2019 on, picking up a weekly blister pack with eleven medications. She walked with a cane with tennis balls on the feet, and she liked to joke about them. After her husband passed in 2021 she lived alone, and I think Thursday pickup became a highlight of her week. She almost always brought us something. Poppy seed cake, mostly. Once she brought a jar of homemade pickles, and I honestly didn't know what to do with it, so my tech and I ate them over the next two weeks and told her they were great.\n\nDuring Ramadan she remembered that I was fasting that month. She told me not to eat her cake until sunset, and she had wrapped the slice in foil with my name written on it. I still think about that.\n\nIn 2023 a new doctor added a medication that interacted with her warfarin. I caught it during verification, called him, and we sorted it out. She then told everybody in the neighbourhood that I had saved her life. I told her I just did my job. She didn't accept that answer.\n\nShe passed at the end of October. Last week her daughter came in to return the unused packs and her glucometer. Before she left, she handed me a card. Inside, her mother had written, a long time ago, \"For my Arabic daughter.\" She had never given it to me. I don't know if she wrote it years ago and kept it, or if she never found the right moment. I read it in the car, and then I had to go back inside and act normal.\n\nWhen I got to the back room I cried. My tech covered the counter for about ten minutes without me asking her to. I'm not sure what people outside the profession think we do all day, but I'm pretty sure that wasn't on the list.\n\nSchool taught us pharmacology, interactions, dosing, renal adjustments. I learned all of it and I'm grateful. Nobody taught me how to say goodbye to someone I've seen every week for seven years. We're told not to get attached. But you know their handwriting on the refill notes, you know which pills they hate swallowing, you know they're having a bad week before they say a word. My father was a pharmacist in Egypt, and he knew every family that came through his door. I thought Canada would be different. In some ways it is, but not in this way. People here get attached just the same, and we're expected to keep working the next Thursday anyway.\n\nI'm not really looking for advice. I'd just like to hear from others. Do you have a patient like this? How did you handle the goodbye, or did you? Did anyone ever teach you how?\n\nThanks for reading.",
+  "words": 531,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The piece includes an identifying combination of Mrs. H’s age, dates, weekly blister packs, cane, and medical history."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3917534351348877,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.41015103459358215,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.418105363845825,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.1,
+    "effort": "medium",
+    "output_tokens": 2530,
+    "input_tokens": 1554
+  }
+}

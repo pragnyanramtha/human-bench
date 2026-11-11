@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: Five stars for careful work and fast turnaround\n\nI’m an astrophysics postdoc in Pasadena, and Arroyo made the adapter plate and light baffle for our near-IR camera ahead of a Palomar observing run. We had a tight schedule: the parts were needed for our November 18 run, and Arroyo quoted 21 days. They delivered in nine days, giving us time to fit and test everything before the instrument change deadline.\n\nThe parts fit and perform exactly as we needed. All eight screws on the adapter plate went into the dewar without forcing, and flatness across the face measured under 0.01 mm on our dial indicator. The baffle threads were smooth, the anodizing was even with no bare spots, and our dark test showed no light leak. Everything worked at the fit test.\n\nWhat stood out just as much was how carefully Arroyo read the drawing. I had copied a bolt-circle dimension from an old camera drawing and left it in inches while the rest of the sheet was in millimeters. Tiff caught the mismatch and asked before cutting. That was my mistake, and I’m grateful they flagged it: cutting the plate as drawn would have left the screws landing inside the bore. Their attention to that detail saved us a serious problem.\n\nA larger vendor had quoted us six weeks. Arroyo was not only much faster, but also more attentive to the actual requirements. Ruben even drove the finished parts to Robinson Lab himself, at no charge. That kind of help made a stressful deadline much easier.\n\nI’d gladly work with Arroyo again and recommend them to other labs, especially for precision prototype work where the drawings and schedule both matter. Five stars. I hope purchasing will consider adding Arroyo Precision Works to the preferred vendor list.",
+  "words": 289,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "290 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2868782579898834,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3328390121459961,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.703947067260742,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.3,
+    "effort": "medium",
+    "output_tokens": 383,
+    "input_tokens": 15357
+  }
+}

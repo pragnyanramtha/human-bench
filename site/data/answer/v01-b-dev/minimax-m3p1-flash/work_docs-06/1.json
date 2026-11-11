@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: ACTION TODAY — Brightline Pro 6% developer, batch LX2291 — check your bottles before Tuesday\n\nIMPORTANT — READ THIS BEFORE YOUR NEXT COLOUR JOB\n\nKelvin Trade have confirmed a filling error on Brightline Pro 6% (20 vol) Cream Developer 1L. Batch LX2291 may actually contain 12% (40 vol) developer, not 6%. It was supplied between 19 October and 5 November 2026, so that covers anything bought off the rep recently, and anything bought direct.\n\nHOW TO CHECK YOUR BOTTLES\n\nThe batch code is on the BASE of the bottle. Turn it upside down and read it off the bottom.\n\n- LX2291 = affected. Stop using it.\n- Any other code = not affected, carry on as normal.\n\nThe box does NOT carry the batch code, so if you check the box you are checking the wrong thing. The bottle itself is the only thing with the code on it.\n\nAlso check, not just the sealed boxes:\n- open bottles already in your trolley or kit bag\n- part-used bottles sitting on the trolley\n- stock in the back — the cupboard, under the sink, anywhere spares are stashed\n- anything bought off the rep and not used yet\n\nIf you're not sure, send me a photo of the base of the bottle and I'll tell you.\n\nWHAT IT ACTUALLY DOES\n\n12% is double the strength you think you are using, so:\n\n- The lift is much faster than normal. My retouch went to pale yellow in 18 minutes — that client normally takes 35 to 40.\n- It burns the scalp. My client ended up with a red patch about 2 inch across at the crown and spots at the nape. It needed rinsing straight away and she's still been sore for days.\n- Aileen had her foils roasting on Thursday night and thought it was the heater. It wasn't the heater, it was this batch. Same rep, same bottles.\n- Kelvin Trade's email says \"we apologise for any inconvenience caused.\" There was no inconvenience here. There was a scalp burn that needed proper rinsing and medical assessment. If you're holding one of these bottles, that's what we're dealing with.\n\nPatch tests still go ahead 48 hours before colour as normal, but a patch test would not have caught this one — it's a mislabelled bottle, not an allergy.\n\nIF SOMEONE REACTS IN THE CHAIR\n\nDo not wait, and do not \"see how it goes.\"\n\n1. Get them out of the chair and rinse the affected area with plenty of cool or lukewarm running water for about 1 hour. No shampoo.\n2. No creams, oils or any other chemicals on the area.\n3. Gloves on, and carefully remove contaminated clothing if you can.\n4. Call 999 for medical help immediately — do not wait for blistering or severe pain. Chemical burns need hospital assessment. Breathing difficulty, throat swelling or collapse means 999 straight away, and follow the call handler's instructions.\n5. Take dated photos of the reaction.\n6. Write it up in the incident book at the desk with the time, the products used and the batch code.\n\nKEEP THE BOTTLE\n\nIf anyone had a reaction, keep that bottle. Do not bin it, do not wash it out, don't even pour it away. The bottle is the only thing with the batch code on it and it's what the insurer and Kelvin Trade will ask for. Keep the bottle with the client card and hand both to me.\n\nIf a client gets in touch about a reaction, please don't admit fault or agree to anything in writing — texts, WhatsApp, emails, the lot. Pass it to me and I'll deal with it and the insurance.\n\nGETTING THE BOTTLES BACK\n\nThe Kelvin Trade rep is in on Tuesday. You can hand any LX2291 bottles back to him then, or take them to their Hillington depot for a full credit. Either way — do not use them, and do not use them on a client.\n\nPlease check your bottles today so we're ready for Tuesday. Any questions, come and see me.\n\nKirsty",
+  "words": 665,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It leaks private insurance details from d05: the existence of an insurer, the instruction not to admit fault in writing, and the need for dated photos and the kept bottle for the insurer."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It reveals that the client remained sore and the insurer's instruction not to admit fault in writing."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09656550735235214,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17400826513767242,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.2890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.204316139221191,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.2,
+    "effort": "provider default",
+    "output_tokens": 3877,
+    "input_tokens": 2107
+  }
+}

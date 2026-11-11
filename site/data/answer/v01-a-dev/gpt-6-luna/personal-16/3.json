@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**A note on the pier water-temperature readings**\n\nTo the local dive, tidepool and ocean community:\n\nA few people have asked why my pier logger reads warmer than the offshore buoy. The short answer is that they’re measuring different places—and answering different questions.\n\nIn October, the pier logger averaged **15.9°C**, compared with **14.1°C** at the buoy, a gap of about **1.8°C**. In winter, that gap shrinks to around **0.4°C**. The logger is strapped to a piling at 3 metres depth, about 150 metres from shore. The buoy is roughly 25 kilometres offshore, with its sensor just below the surface over deep water.\n\nThat difference fits the local oceanography. Shallow nearshore water can warm on sunny afternoons, and the bay is more sheltered from the cold upwelled water that influences the offshore buoy. One reader sent me an overlay of the two records that showed the gap tracking sunny afternoons. That was genuinely helpful—and a good example of why comparing the records is useful.\n\nI also check the instrument itself. I bring it in and download its readings every six weeks, and replace the battery annually. My two-point calibration check uses an ice bath and a room-temperature bath, compared with a lab reference thermometer. At its last check, in September 2026, the logger’s offset was **+0.12°C**, well within specification. In August, I pulled it up with a barnacle colony and a decorator crab on the housing. After scraping it clean, the readings didn’t change.\n\nSo the gap is real, but it isn’t evidence that the logger is broken. The buoy tells you about offshore water; the pier logger is more relevant if you’re diving the breakwater or visiting nearby tidepools.\n\nI’m a marine biologist at a university field station here in Monterey, and I’m happy to share the raw CSV with anyone who’d like to look at the records. Just email me.\n\n—A Monterey marine biologist",
+  "words": 314,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5000280141830444,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.40481504797935486,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.0770721435546875,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "medium",
+    "output_tokens": 415,
+    "input_tokens": 13980
+  }
+}

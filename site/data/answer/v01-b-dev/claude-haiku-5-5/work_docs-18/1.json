@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Fix-It Saturday Comes to St. Ansgar**\n\nOur church council finally said yes last week, and I'm thrilled to announce the first Fix-It Saturday. It's Saturday, December 5, 2026, from 9 a.m. to 1 p.m. in Fellowship Hall at St. Ansgar Lutheran Church, Minneapolis. Come in through the alley door. There's a ramp.\n\nHere's the idea. Too many good things get thrown away because they need a tightened screw or a new cord. Lamps, small appliances, bikes, a zipper that's given out, a pair of socks with a hole in the heel, a dull kitchen knife. Bring one of those, and our volunteers will look at it with you and see whether it can be fixed. We have people who know their way around a soldering iron and a sewing machine, and one retired tech guy who can take a look at laptops and phones.\n\nDoris Lindqvist, who is 84 and has been darning socks for this parish since the Carter years, asked to run the mending table herself. I didn't argue.\n\nThis whole thing started with Marv Okafor. I brought him my 1970s Hamilton Beach mixer, and he fixed it in the church kitchen in about twenty minutes. Watching him work made me realize how many things in our closets and garages are one small repair away from working again.\n\nA few practical notes. It's free. You don't need to be a member or sign up ahead of time. Donations to the food shelf are welcome but not expected. To keep the line moving, please bring one item per person to start. Coffee and kringle are on us, so plan to stay a while. Honestly, the coffee part matters as much as the repairs.\n\nThis is simply good neighboring. There are no strings, and nobody is going to preach at you. Bring the broken toaster, meet your neighbors, and have a cup of coffee.\n\nIf the first one goes well, we plan to hold Fix-It Saturday on the first Saturday of every month through spring.\n\nWe also need more volunteer fixers, especially anyone who can repair vacuums or zippers. If you have a skill and a Saturday morning to spare, please get in touch. Call the church office at 612-555-0148 or write to office@stansgarlutheran.example.\n\nWe'd love to see you on December 5.\n\nPastor [Your name]\nSt. Ansgar Lutheran Church",
+  "words": 389,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40338993072509766,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9466609358787537,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.803864002227783,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.8,
+    "effort": "medium",
+    "output_tokens": 2388,
+    "input_tokens": 1487
+  }
+}

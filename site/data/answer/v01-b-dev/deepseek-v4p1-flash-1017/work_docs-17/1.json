@@ -1,0 +1,93 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "## Proposed Change: Earlier H-1B Registration Intake Deadline (January 15)\n\n**Purpose:** Move our internal deadline for H-1B cap registration intake from \"whenever it arrives\" to January 15, so we're not compressing the work into the final week of February.\n\n**Why this makes us better, not just faster.** Last season (March 2026) we filed 14 registrations for 6 employer clients. Nine of the 14 came in during the last week of February. Rosa logged roughly 11 hours of overtime that week alone. That's not a client problem — it's our process. We email the questionnaire whenever an employer asks, which means nobody ever has a date to work toward. One HR contact told me plainly that she would have happily sent everything in January if we'd asked. She was waiting on us, not the other way around.\n\nThe risk side matters too. Brightwater Analytics sent a beneficiary's passport scan two days before the window opened, and it had expired in October. We only caught it because Rosa checked the dates. Registration itself is simple, but the errors are expensive — a wrong or expired passport can mean an invalid selection. An earlier intake date gives us room to catch those before they cost anyone a shot.\n\nJanuary 15 is realistic. HR teams are back from the holidays and Q1 budgets are set, and employers already budget for the $215 per-beneficiary registration fee.\n\n**What would actually change:**\n- Engagement letters and the one-page questionnaire go out the week of December 7.\n- Intake closes January 15. Anything after that is handled case by case, as it is now.\n- Rosa owns the tracker and gets a clean six weeks to chase gaps, expired documents, and missing beneficiary details — instead of doing it under deadline pressure.\n\n**Timing:** Marcus and I are aligned on this, so if there's no objection we can get the December letters out on schedule.",
+  "words": 316,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "It never asks for Marcus's agreement on Thursday; it says he is already aligned, which contradicts the request, where the Thursday meeting is still ahead and his agreement is what unlocks the December letters."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "It does not seek Marcus’s agreement on Thursday, instead asserting alignment, and places Rosa’s overtime in the final week of February rather than the week the window opened."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44331493973731995,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9989595413208008,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 13.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.189029693603516,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.7,
+    "effort": "provider default",
+    "output_tokens": 439,
+    "input_tokens": 538
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays redoing the electric in a buddy’s shed. Figured it was gonna be a little cleanup job.\n\nThat was before I found the shed’s power supply, which was THREE orange extension cords plugged into each other, coming out a basement window, across the yard and under the deck. Apparently the electrical plan was “whatever reaches.”\n\nInside the panel door somebody had written in Sharpie:\n\nSHED - DONT TOUCH - RON\n\nBuddy’s wife is standing next to me when I open it. She looks at that and goes, “Who’s Ron?”\n\nLike I’d know. Lady, I just got here. Right now I’m more concerned that Ron left a warning label instead of a phone number.\n\nHere’s what else we had:\n\nOne splice wrapped in duct tape. Not electrical tape. Duct tape. Good stuff for a busted lawn chair. Not what I want standing between your wiring and a fire.\n\nA 30 amp breaker feeding 14 gauge wire. Bigger breaker doesn’t make the wire bigger, folks. It just lets you get further into trouble before anything shuts off.\n\nAn outlet wired with speaker wire. I guess if the breaker tripped we were supposed to hear it in stereo.\n\nA regular outlet with a GFCI sticker on it. That was the whole upgrade. A sticker. I’m putting a Corvette sticker on my truck tomorrow, see if that helps on the Parkway.\n\nCeiling fan box held up with ONE drywall screw. One. Somebody looked at that spinning thing hanging over their head and said yep, that oughta do it.\n\nAnd a mouse nest in the junction box. Mice were fine. Completely unbothered. Only ones on the property who thought the electrical work was acceptable.\n\nNow I don’t think whoever did all this was evil. Cheap and a little proud, probably. Got the lights to come on, stood back with his hands on his hips and called it good. That’s most of these jobs. Somebody means well, knows just enough to get power somewhere, and figures if it works it must be safe.\n\nIt isn’t.\n\nThat’s the part I want people to hear underneath the jokes. Wrong-size breakers, bad connections, wire that has no business feeding an outlet. This stuff can burn a shed down and take the house with it. The light coming on is not an inspection.\n\nWe got a proper buried feed in, the right breaker and GFCI protection, proper boxes and outlets, and the fan supported like somebody might actually sit underneath it. Little more involved than changing the sticker.\n\nPayment was two pizzas and a case of Yuengling. Buddy rate. Please do not start calling me with pizza estimates.\n\nCall a licensed electrician. Not your buddy whose qualifications are a YouTube video and “I did mine like this.”\n\nI’ve been doing this 26 years. I still test everything. Especially anything that says DONT TOUCH - RON.",
+  "words": 479,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16682298481464386,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1340295970439911,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.4765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.088569402694702,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 49.4,
+    "effort": "medium",
+    "output_tokens": 675,
+    "input_tokens": 14942
+  }
+}

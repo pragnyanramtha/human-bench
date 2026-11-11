@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5/5 — Fast, careful machining for our near-IR camera\n\nI’m a postdoc in the Ostrowski group, and we ordered a camera-to-dewar adapter plate and a light baffle tube from Arroyo for our near-IR camera. Both parts were 6061-T6, black anodized, and they had to be right because we were installing the instrument for a Palomar run on Nov 18. I’m writing this after our fit test because the useful question for other labs isn’t just “did the box arrive,” it’s “did the part actually work in the instrument.”\n\nShort version: 5/5. The parts fit, the finish is clean, and Arroyo was much faster than quoted.\n\nThe longer version, because I think the details matter:\n\nWe also sent the drawing to a larger vendor. They quoted six weeks. Arroyo quoted 21 days and then took 9 days from PO to delivery. Ruben drove the parts over to Robinson Lab himself on his way to another supplier, at no charge. I nearly hugged him at the loading dock.\n\nWhat impressed me most is that they actually read the drawing. Tiff caught a bolt-circle dimension on sheet 2 that was listed as 4.125 while every other dimension on the drawing was in mm. It should have been 4.125 inches (104.8 mm), not 4.125 mm. That was my mistake — I had copied it from an old drawing of the previous camera — and if they had just cut to the number without checking, the screws would have landed inside the bore. Ruben emailed to confirm before they touched the plate. That is exactly the kind of checking I want from a prototype shop, and it saved us a very bad surprise.\n\nFit test on Nov 9: all eight screws went in with no forcing. Flatness across the face was under 0.01 mm on the dial indicator. The baffle threads were smooth, and in a 300 s dark frame with the lab lights on we saw no light leak — same as a closed dewar. The anodizing was even with no bare spots, and the parts came with an inspection sheet. We’re good for the Palomar run on the 18th.\n\nI know reviews often turn into “great shop, five stars,” but I wanted to be specific: they were fast, they delivered when it mattered, and they caught a problem that could have cost us the run. I’d happily use them again, and I’d support adding Arroyo to the preferred vendor list.\n\nRating: 5/5",
+  "words": 400,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24982158839702606,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21545112133026123,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.64453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.5518941879272461,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.3,
+    "effort": "provider default",
+    "output_tokens": 3795,
+    "input_tokens": 1907
+  }
+}

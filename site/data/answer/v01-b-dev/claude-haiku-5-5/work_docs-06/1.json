@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.30, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: URGENT: Brightline Pro 6% batch LX2291, do not use\n\nHi all,\n\nPlease read this before you use any more Brightline Pro 6% (20 vol) cream developer.\n\nKelvin Trade have confirmed a filling error in one batch, LX2291. Bottles from that batch may contain 12% (40 vol) developer instead of 6%. The box and label both say 6%, so you can't tell from those. This batch was supplied between 19 October and 5 November.\n\nHow to check: the batch code is printed on the base of the bottle, not on the box. Check the base of every Brightline Pro 6% bottle, including the open ones in your trolley and the stock in the back. If it says LX2291, don't use it. If you're not sure, don't use it and ask me. Kelvin Trade say other batches and other strengths aren't affected.\n\nWhat it does: it lifts much faster than normal. On Saturday a client had tingling at 10 minutes, then burning at the scalp at 18 minutes, and her colour was pale yellow when it normally takes 35 to 40 minutes. She had a red patch on her scalp afterwards. One of us had foils roasting and a patchy, brassy result, and didn't realise it was the developer. If you get tingling, burning, or colour lifting much faster than it should, stop the service, rinse, and check the batch.\n\nIf someone reacts in the chair:\n- Stop the service straight away and put on gloves.\n- Rinse the area with plenty of cool or lukewarm running water for about an hour. Don't use shampoo, and don't put any cream or other product on it.\n- Call 999 straight away for any suspected chemical burn. Don't wait for blistering or bad pain. Call 999 immediately too if they have trouble breathing, throat swelling, or they collapse. Follow the call handler's instructions.\n- Chemical burns need hospital assessment, even if they look mild.\n- Write the incident in the incident book at the desk.\n- Keep the bottle. Don't bin it.\n\nReturning bottles: stop using any LX2291 bottles. Don't throw them out. Kelvin Trade's rep is usually in on Tuesdays, so you can hand them back to him, or take them to their Hillington depot for a full credit. If you've had any problem with this batch, keep the bottle back even if you've already returned others, as it may be needed if there's a claim.\n\nIf a client mentions burning or tingling from a colour you did recently, please tell me as well so we can keep a record.\n\nThanks,\nKirsty",
+  "words": 420,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29564037919044495,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08685465902090073,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.65625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.855855703353882,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.0,
+    "effort": "medium",
+    "output_tokens": 3904,
+    "input_tokens": 3609
+  }
+}

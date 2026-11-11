@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Wellsford Road: what we got wrong, and what we are changing\n\nOn 2 November the Western Ledger published an analysis of Department for Transport collision records for 2021 to 2025. It named Wellsford Road in Fishponds as the Bristol road with the most injury collisions, with 41 over five years. That figure was wrong. The correct number is 23, which places Wellsford Road sixth, not first.\n\nWe corrected the article and its table on 6 November. A line at the foot of a page is not enough when the original claim was read more than 48,000 times and shared widely. People who live on Wellsford Road are owed a full account of how this happened, so this is it.\n\nWhat went wrong\n\nTo count collisions road by road, we matched each collision record to the road or roads it took place on. Where a collision happened at or near a junction, that matching step sometimes produced the same collision twice for the same road. Each collision in the DfT data has its own reference number, so the same reference should never appear twice within one road's tally. In our analysis it did.\n\nOn Wellsford Road this added 18 duplicate entries, most of them at the junctions with Pell Street and Kingsmere Road. We now count each collision reference once per road, however many times the matching step returns it.\n\nThe corrected figures\n\nThese are the top five roads and Wellsford Road, after the fix:\n\nKingsmere Road: 32 (previously 34)\nAlder Hill: 31 (unchanged)\nTanner's Way: 28 (previously 29)\nCrossfield Road: 26 (previously 27)\nHambrook Lane: 24 (previously outside the top five)\nWellsford Road: 23 (previously 41)\n\nWe reran the whole citywide table, not just the top of it. No other road moved more than two places.\n\nMembers of the Fishponds Streets Forum told us early on that the Wellsford Road figure did not match their experience of the road. One member went through the published DfT data herself and could not get anywhere near 41. She was right, and we should have caught it before she had to.\n\nThis was a failure of the desk's process, not of any one person. A ranked table went out without anyone independently reproducing it. That is our responsibility collectively, and as the journalist whose name was on the piece, it is mine.\n\nWhat the corrected figure does and does not mean\n\nIt would be wrong to swing from one overstatement to another. Wellsford Road is not the most dangerous road in Bristol. It also has 23 recorded injury collisions over five years, three of them serious and none fatal, and that remains a real figure involving real people. Several parents have asked whether it is safe to walk their children to Wellsford Primary. Collision counts alone cannot answer that question, and we should not have published a figure that made it sound as though they could.\n\nWhat we are changing\n\nFrom now on, two things will happen whenever the Data Desk publishes a ranked table.\n\nFirst, a second analyst will reproduce the table independently from the raw data before it runs. If the two results do not match, the piece does not run until we know why.\n\nSecond, we will publish the cleaned dataset and the code we used alongside the article, so that anyone can check our working. The forum member who rechecked our figure had to start from scratch. She should not have had to.\n\nAn apology\n\nI am sorry, on behalf of the Data Desk, to the people who live and work on Wellsford Road and to the wider Fishponds community. Our article attached a label to your street that it did not deserve, and that label travelled far faster than our correction. We understand the worry and frustration it caused, and we regret it.\n\nCome and ask us\n\nThe Fishponds Streets Forum has invited the Ledger to its open residents' meeting at Fishponds Library on Tuesday 17 November at 7pm. I will be there to explain what happened and to answer questions in person, including the difficult ones. If you cannot make it and would like to raise something, you can write to the Data Desk and I will reply.\n\nNell Garside, Data Desk",
+  "words": 694,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It reveals that the original analysis was not independently checked, a fact stated only in the private message."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.020409394055604935,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026733949780464172,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.0250244140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.8910112380981445,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.7,
+    "effort": "medium",
+    "output_tokens": 1846,
+    "input_tokens": 4750
+  }
+}

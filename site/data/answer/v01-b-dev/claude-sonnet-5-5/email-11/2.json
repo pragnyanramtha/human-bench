@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast Dec 19\n\nHi Rhonda its Gary from the bus garage. Hope your doing good and the diner is busy. Its that time again, we want to do the christmas breakfast at your place like always. Can we have the back room Saturday Dec 19 at 7am same as usual? If the 19th is no good for you then the 12th would work too.\n\nThis year is kind of a big one. Earl is retiring after 31 years of driving. His last day is Friday the 18th so the breakfast is the day after. He doesn't know a thing about it and he can't find out, so if you or any of the girls see him in there before then please don't say nothing. His wife Carol is in on it and she'll be coming with him. We want to do something nice for him without making a big speech out of it, he would hate that.\n\nOn the numbers, Dwayne sent me the sign up sheet and its 24 counting Earl and Carol. Thats a few more than last year when I said 20 or 22. Will the back room hold 24 ok? If you need to set it up different just tell me.\n\nFor the food I'm hoping its the same as last year, the family style eggs and home fries and biscuits and gravy, and everybody orders there own meat off the menu. It was $11 a head last time and that was fair, so its fine if its gone up a little. Just let me know what it is this year. Separate checks again please if you can, that worked good.\n\nA couple other things. Patsy can't do eggs anymore. Could you do her oatmeal or pancakes or whatever you've got that works? She's not picky, she just can't have the eggs. And Lonnie is on a walker since his hip surgery so he needs to come in a door with no steps. Is the side door ok for that and can it be unlocked by 7? I'd rather not have him struggling at the front.\n\nNow the coffee. I know you felt bad about it last year when it ran out around 8:15 and I told everybody it was no big deal, but with 24 of us I figured I'd ask nice. Is there any way you could have a backup pot or another urn ready to go? Not trying to give you a hard time at all, we just drink a lot of coffee lol.\n\nLast thing, for Earl. He loves your cinnamon rolls, honestly he likes them better than any cake. So I was wondering if we could bring a cake from Sugarcreek, or if you would rather just do a big tray of your cinnamon rolls with a candle stuck in it. I kind of like the rolls idea but its your kitchen so tell me what you think. If a cake is ok I would bring it in myself.\n\nI'll get you the final count by the Wednesday before like you want, so that would be Dec 16. Let me know about the date and the other stuff when you get a chance. Thanks Rhonda, you always take good care of us.\n\nGary",
+  "words": 539,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The coffee request mentions that coffee ran out but omits that the urn failed."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11208036541938782,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.010818171314895153,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.8984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.73966646194458,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.1,
+    "effort": "high",
+    "output_tokens": 2692,
+    "input_tokens": 4015
+  }
+}

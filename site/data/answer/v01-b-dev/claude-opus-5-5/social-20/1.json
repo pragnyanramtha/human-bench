@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent and I also need yall's help so please read this whole thing\n\nremember the switchblade moth from my september flash sheet? the one I said was my favorite thing I drew all year? I posted that sheet aug 30, drew the whole thing at my kitchen table over like 3 weekends, and the moth got tattooed on flash day sept 13 in the first hour. one person, one time. that's it, that's how flash works.\n\ntonight a friend sends me a link to a sticker shop called StickerBurrow Co selling it as a \"Knife Moth Vinyl Decal.\" $6.50 or 3 for $15. I'm not exaggerating when I say it's MY moth. same wing pattern. same little crack in the blade that I put in on purpose. they didn't even flip it. this isn't \"inspired by,\" this is a straight scan of my linework with a price tag slapped on it.\n\nso I messaged them. nicely! I told them it's my design, I have the original drawing and the post from august, please take it down. and here is what I got back, basically word for word: \"Hey! Love your work.\" and then \"moths are a very common tattoo motif\" and they can't remove listings \"based on similarity alone\" and if I have a registered copyright I can send it through their support form. have a great day!\n\nlove my work. LOVE MY WORK. yeah clearly you love it so much you're printing it on vinyl lol\n\nand listen, I know exactly what that reply is. these places know small artists don't have lawyer money. they know most of us aren't out here registering every single drawing we make, so they say \"send a registered copyright\" because they're betting I'll give up. moths are a common motif, sure. so go draw your own moth?? nobody's stopping you. that's literally the thing I posted about last month, you can do the same vibe, you can do the same style, you don't trace someone else's work and sell it.\n\nhere's the part that actually makes me sick though. the person who wore that moth home on flash day paid for a one of one. that's the deal with flash. you pick it, it's yours, I don't tattoo it again. that's part of what you're paying for. and now there are stickers of their tattoo on random water bottles for $6.50.\n\nso if you're reading this and you're the one with the moth: it wasn't me. I didn't sell it, I didn't license it, I didn't give anybody permission, and I found out tonight same as you. I'm so sorry. your tattoo is still yours, and I'm going to keep fighting this. I'll message you separately too.\n\nok here's where I need help:\n\n1. if you're on there, please go report the Knife Moth Vinyl Decal listing on StickerBurrow Co for stolen artwork. the more reports the harder it is for them to ignore. you can link this post or my aug 30 flash post as proof if you want, the timestamp is right there\n2. please don't buy from them. not the moth, not anything. if they're doing it to me they're doing it to other artists too\n3. if you see any other designs of mine (or anybody's) on there, tell the artist. most of us have no idea until someone sends us a link\n\nand if you want a sticker of a cool moth, go find an artist who actually sells their own stickers. there are SO many of us in Denver who'd love the support and the money goes to the person who drew it.\n\nthank you to the friend who sent me the link even though you were scared to be the messenger, I'm not mad at you, I'm mad at THEM. gonna go take a walk before I say something I regret. rant over (for now)",
+  "words": 653,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The post does not say the client contacted Jo that night thinking Jo was selling stickers of her tattoo."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.197215735912323,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.075347900390625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.898200273513794,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.4,
+    "effort": "medium",
+    "output_tokens": 1469,
+    "input_tokens": 3738
+  }
+}

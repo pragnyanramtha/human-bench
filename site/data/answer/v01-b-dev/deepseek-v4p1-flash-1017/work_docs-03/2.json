@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: docs/climate-programme/border-revenues-launch/handover\nReplying to: none\nCc: none\nSubject: Handover — Thursday launch (please read this first)\n\nInês,\n\nI'm sorry to do this in a note rather than in person. My father is ill and I am with my family — I'm on the train tonight and I don't know yet how long I'll be away. That means Thursday is yours, and I know I'm leaving you a mess on top of everything else. I'm sorry.\n\nEverything is below, in the order I would do it.\n\n1. THE FIGURE 3 ERROR — DO THIS FIRST\n\nI found it this afternoon. Figure 3 and the summary use the 2030 revenue estimate from the old run, before the free allocation phase-out was applied. The correct figure for 2030 LDC-relevant revenue is EUR 1.4 billion, not EUR 2.1 billion.\n\n- The PDF on the drive, v7, is already corrected (pages 3, 14 and 15). That version is fine.\n- The slides are not. Deck v4, slides 6 and 9 still say 2.1. Slide 9 is the revenue chart, slide 6 is the summary. Please fix both.\n- Check the speaker notes and anywhere else in the deck the number appears — I only had time to go through the pages above.\n- The conclusion of the paper does not change. The headline number does. That is the whole of it.\n\nThe 2.1 is my mistake, not yours. If anyone asks — in the room, on a call, afterwards — say so plainly. Don't carry it for me.\n\n2. THE PRESS RELEASE — BEFORE THURSDAY 10:00\n\nHanna sent the release to 34 Brussels contacts on Friday, embargoed until Thursday 26 November at 10:00 CET. It says 2.1. That has to be corrected and reissued before the embargo lifts, ideally tomorrow.\n\n- Ask Hanna to send a corrected version to the same list, still under embargo, with a short line saying the 2030 figure has been corrected to EUR 1.4 billion.\n- If she needs a senior name to sign it off, Geert can do it. He knows I'm away.\n- Hanna also told two journalists I would be available for background calls on Wednesday at 14:00 and 15:00, 20 minutes each. She was going to confirm. Either take them or ask Hanna to move them — don't leave them unanswered before Thursday.\n\n3. BADGES — BY WEDNESDAY 12:00\n\nTomás needs the final names of everyone coming from our side by Wednesday noon. If security doesn't have them, people don't get in.\n\n4. THE RUN OF SHOW HAS CHANGED\n\nTomás wrote today: the MEP has a vote moved into Thursday lunchtime and has to leave at 13:30. So:\n\n- Presentation is 15 minutes, not 20.\n- Panel starts at 12:50, not 12:55.\n- Lindqvist wants to take at least two questions herself before she goes at 13:30.\n\nAdjust the Q&A accordingly. Everything else stands: guests at the security entrance by 12:00, welcome at 12:30, close at 14:00, lunch outside the room from 12:00.\n\n5. KESSLER\n\nHe will come for the 80% pass-through assumption — it's in his comments and he told us he'd raise it at the panel. Don't let him set the tone of the discussion.\n\nThe line is: 80% is the central case; annex B runs the sensitivity at 40% and 60%; the result holds at 60% and weakens at 40%. Say it openly, without getting defensive. It's in the paper. It's not a weakness to be managed.\n\nOn resource shuffling: we agree it's a risk, it's in section 5.2, and we recommend the Commission's monitoring report. Abena will very likely back us on the LDC side; she was strong on the call.\n\n6. ABENA\n\nThe remote link is in the calendar invite. She tested it last week and it works. Given the timing change, a quick check with her on Wednesday or Thursday morning is worth doing.\n\n7. LUCY TRAN\n\nShe's coming with a colleague and needs two photos from the event and the attendance numbers for the Halvorsen grant report, by 4 December. Nothing for you to do on the day except make sure someone takes the photos and counts the room.\n\nWHO IS WHERE\n\nGeert knows I'm away and can sign off a corrected press release if Hanna needs a senior name. Hanna has the press list and the embargo. Tomás has badges and timings — he's the one to ask about the room.\n\nA FEW THINGS YOU ALREADY KNOW\n\nYou know this paper as well as I do — you ran the annex B sensitivity runs yourself, and half the arguments in it are sharper because of you. You are not standing in for me on Thursday. You're the person who should be presenting it.\n\nAnd I have seen you do this. In Lisbon, when the projector died at the COP side event, you had the room in your hand inside thirty seconds and nobody minded the slides after that. You are better live than you think you are.\n\nCall me if you need to. I'll pick up when I can, but after 9 tomorrow morning I may not — text me either way and I'll come back to you as soon as I'm free.\n\nThank you for this. I trust you completely.\n\nMarieke",
+  "words": 858,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23361611366271973,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04978048801422119,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.5625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.433382987976074,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.1,
+    "effort": "provider default",
+    "output_tokens": 4331,
+    "input_tokens": 2438
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Kestrel Bastion 1500 (Voltwise), ★★★★☆**\n\nBought this in August for $229 and it paid for itself the first time the power went out. On Oct 14 a storm knocked the power out around 2:20pm while I was 10x long on a SOL perp. The rig and wifi stayed up, and I had time to close the position cleanly in about 4 minutes. That's the whole reason I bought one, and it did the job.\n\n**My setup and real numbers**\n\n- PC, 3 monitors, modem, and router, pulling about 410W while I'm actively trading (going by the unit's own display)\n- Box says roughly 14 minutes at 500W. At my ~410W load I got **11 min 40 sec** before I shut down. I tested it on purpose, so that's not a guess.\n- 10 outlets total: 5 battery-backed, 5 surge-only\n- 1500VA / 1000W, pure sine wave\n- USB-C 60W port\n- Weighs about 30 lbs\n\nFor a trader, the number that matters is runtime at your actual draw, not the spec sheet number. If your rig pulls 500W or more, expect less than the box says. If you only need enough time to flatten a position and shut down cleanly, 10 to 12 minutes at a 400W-ish load is plenty. If you want to ride out a long outage, this isn't that unit, and you'd want to look at something bigger.\n\n**Plug your modem and router into the battery side.** This one trips people up. Put the PC and monitors on battery, but if you plug the modem and router into the surge-only side, your internet dies the moment the power goes, and you'll be stuck even though the PC is still running. I've seen people lose their connection and think the whole unit failed. Double-check which outlets are battery-backed before you set it up.\n\n**The annoying stuff**\n\n- **Fan noise.** The first week, the fan kicked on at 3am for no obvious reason and woke me up. It's loud, closer to a hair dryer on low than a quiet PC fan. If you sleep near it, put it somewhere else in the room or accept that it'll wake you up sometimes.\n- **The beeping.** On outage it beeps loud enough to be startling. You can mute it in the desktop app, but the mute resets after a firmware update, so check the setting after you update.\n- **The desktop app.** It looks like something from Windows XP. It's ugly and doesn't feel modern. That said, the auto shutdown works reliably, and that's the part I actually care about. I'd rather have a plain app that does its job than a pretty one that doesn't.\n- **Weight.** At about 30 lbs it's not something you move around. Once it's placed, you'll leave it there.\n- **Battery replacement.** The battery is swappable, which is good, but a replacement pack is $95. Factor that in when you're thinking about the long-term cost, especially since it'll eventually need replacing.\n\n**Would I buy it again?**\n\nYes. For a trading setup that needs to survive a short outage and shut down cleanly, it works. The auto shutdown is solid, the runtime is what I measured (not inflated), and it saved an open position when it counted. I'm knocking one star for the fan noise, the beeping, and the dated software. None of that stops it from doing its main job, but they're real and you'll notice them.\n\nIf you're deciding, figure out your actual wattage first, check that your modem and router go on battery, and decide whether 10 to 12 minutes is enough for your situation. For me, it was.",
+  "words": 606,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "must_include",
+        "kind": "required or barred words",
+        "detail": "missing: ['4 stars | 4 star | 4/5 | 4 out of 5 | 4 of 5 | 4 / 5']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4753754138946533,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4787144362926483,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 15.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.445714473724365,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.0,
+    "effort": "medium",
+    "output_tokens": 1473,
+    "input_tokens": 1432
+  }
+}

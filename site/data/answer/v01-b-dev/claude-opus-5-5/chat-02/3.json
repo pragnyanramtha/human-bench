@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, you can absolutely do this yourself. Figure 2-3 hours with a helper, not 20 minutes. The $465 isn't a ripoff, but you'll learn a lot about Sea Wren doing it once.\n\nFirst, a correction, and no knock on Hector, who's helped half this dock. Don't use the green automotive stuff on the raw water side. Green is ethylene glycol. It's toxic and it isn't rated for raw water systems. What you want is pink propylene glycol RV/marine antifreeze. And even the pink stuff shouldn't go in the river, so you'll catch everything that comes out. More on that below.\n\n**How your engine is set up**\nYour 3GM30F is freshwater cooled with a heat exchanger, so there are two separate sides:\n- **Coolant side** (closed loop, already has antifreeze in it). Just check the strength with a hydrometer. A 50/50 mix is good to about -20F. If it reads weak, fix that.\n- **Raw water side** (seawater pulled in through the seacock). This is the side that freezes and cracks things. A few years back, the Christmas freeze cracked exhaust elbows or strainers on three boats on C dock. Every one of them had skipped or rushed the raw water side. That's where to spend your time.\n\n**Shopping list**\n- Pink propylene glycol antifreeze. Roughly 2 gal for the engine and 2-3 for the water system, but those are estimates. Buy enough to finish the job and confirm the protection. About $6/gal at West Marine or Walmart.\n- Oil and an oil filter\n- Fuel stabilizer\n- Antifreeze hydrometer for the coolant\n- A spare impeller if you don't already have one aboard. Keep one on the boat regardless.\n- Buckets or jugs with lids for everything that comes out, so it can go to proper disposal\n\n**Order of work**\n1. **Warm the engine and change the oil and filter while it's warm.** It drains better warm, and you don't want old acidic oil sitting in there all winter.\n2. **Top off the fuel tank and add stabilizer**, then run the engine about 10 minutes so the treated fuel gets all the way through the system.\n3. **Set up exhaust collection before you start the raw water flush.** The raw water discharge comes out with the exhaust, so you need a way to catch it. Your helper's job is to watch the flow and keep the collection working.\n4. **Raw water flush:**\n   - Close the raw water seacock.\n   - Feed antifreeze into the strainer with the engine at idle.\n   - Keep the pump wet the whole time. The impeller is rubber and gets damaged quickly if it runs dry, so keep the antifreeze coming.\n   - Your helper checks what's coming out the exhaust. Pink color does NOT mean you're done. The discharge has to actually test to the winter protection you need, so test it.\n   - Once it does, shut the engine off and leave the seacock closed.\n\n   Follow the Yanmar manual and the directions on the antifreeze jug for the details. They're the authority, not me.\n5. **Impeller (optional).** If you want, pull the old one afterward and look it over for cracked or missing vanes. If it looks tired, put in the spare in spring. Never run the engine without water to the pump.\n6. **Domestic water system:**\n   - Switch off the water heater breaker before you drain anything. Leave it off until you've refilled the system in spring.\n   - Drain the water tank first.\n   - Set the water heater bypass valve. On that Catalina it's behind the companionway steps. If you skip the bypass, you'll pour about 6 gallons of pink into the heater for nothing.\n   - Run antifreeze through the lines and catch that discharge too.\n7. **Coolant side.** Hydrometer check, done.\n\n**What can go wrong**\n- You rush the raw water side and leave water in the strainer, pump, or exhaust elbow. Then it freezes and something cracks.\n- You run the pump dry and chew up the impeller.\n- You flush the green stuff or the discharge into the river.\n\nTake it slow and you'll be fine.\n\nIf you'd like a second set of hands, I can come down to Sea Wren Saturday morning. I'll help you and your helper set up the collection and walk through it with you. Just let me know a time.\n\nWalt",
+  "words": 723,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The water-system instructions omit draining the water heater."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.319444864988327,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2981014549732208,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -6.750959396362305,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.4,
+    "effort": "medium",
+    "output_tokens": 1980,
+    "input_tokens": 3124
+  }
+}

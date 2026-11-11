@@ -1,0 +1,5775 @@
+{
+  "headline_detector": "editlens-llama-3.2-3b",
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "cutoff": 0.16412107646465302,
+      "humans": 801,
+      "human_median": 0.011538099497556686,
+      "human_p90": 0.048921167850494385
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "cutoff": 0.16035056114196777,
+      "humans": 801,
+      "human_median": 0.0177072212100029,
+      "human_p90": 0.062166810035705566
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "cutoff": 0.55078125,
+      "humans": 801,
+      "human_median": -4.25,
+      "human_p90": -1.3359375
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "cutoff": 3.06278395652771,
+      "humans": 801,
+      "human_median": -6.185253143310547,
+      "human_p90": -2.590009927749634
+    }
+  ],
+  "judges": [
+    {
+      "judge": "claude-sonnet-5-5",
+      "references_passed": 217,
+      "references": 217,
+      "junk_rejected": 260,
+      "junk": 260
+    },
+    {
+      "judge": "gpt-6.1-terra",
+      "references_passed": 208,
+      "references": 217,
+      "junk_rejected": 260,
+      "junk": 260
+    }
+  ],
+  "model_score_median": 0.3492448031902313,
+  "outputs": 6996,
+  "models": 11,
+  "check_kinds": [
+    {
+      "kind": "formatting",
+      "what": "Markdown that the venue would show as typed: a bold title on a review, a heading in an email."
+    },
+    {
+      "kind": "assistant talk or a placeholder",
+      "what": "Text around the piece that a person would not send: \"Here is your email\", \"Want me to adjust it?\", or a blank such as [Your name]."
+    },
+    {
+      "kind": "length",
+      "what": "The piece is shorter or longer than the range the request gave."
+    },
+    {
+      "kind": "copied text",
+      "what": "The piece repeats a long run of words from the reference or from the task material."
+    },
+    {
+      "kind": "workspace routing",
+      "what": "More messages were written than the request asked for."
+    },
+    {
+      "kind": "required or barred words",
+      "what": "A name or phrase the request said to leave out is present."
+    },
+    {
+      "kind": "privacy",
+      "what": "The piece repeats something from a private item in the workspace."
+    },
+    {
+      "kind": "invented amount",
+      "what": "The piece states a sum of money that is nowhere in the task material."
+    },
+    {
+      "kind": "empty answer",
+      "what": "The model returned nothing."
+    }
+  ],
+  "floor_questions": {
+    "coherent": "Does it read as a finished, sensible piece of writing?",
+    "does_task": "Does it do what the request asked, including every point the request needed covered?",
+    "facts": "Do its facts match the request and notes, with nothing contradicted?",
+    "tone": "Is the tone the one the request asked for?",
+    "persona": "Could this person plausibly have written it?",
+    "private": "Does it keep out everything the request said to keep out?"
+  },
+  "system_line": "You are a helpful assistant. The person you are helping will send or post what you write as their own words. Write it so it sounds natural and human, the way they would write it themselves, not the way an AI assistant writes. Still do everything they asked, in the form they asked for.",
+  "sets": [
+    {
+      "id": "ref",
+      "group": "public",
+      "name": "Public, built from real writing",
+      "what": "Cards built backwards from a real piece of writing by a real person. The model gets the request and notes; the real piece is the reference and is itself not flagged by the detector.",
+      "cards": 52,
+      "cards_in_set": 57,
+      "outputs": 1716,
+      "models": [
+        {
+          "id": "claude-fable-5-2",
+          "label": "Claude Fable 5.2",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.5641025641025641,
+            "lo": 0.4487179487179487,
+            "hi": 0.6730769230769231
+          },
+          "checks": {
+            "rate": 0.5961538461538461,
+            "lo": 0.4743589743589744,
+            "hi": 0.7115384615384616
+          },
+          "floor": {
+            "rate": 0.946236559139785,
+            "lo": 0.89,
+            "hi": 0.9895833333333334,
+            "judged": 93
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.15384615384615385,
+              "lo": 0.08333333333333333,
+              "hi": 0.23717948717948717
+            },
+            "editlens-roberta-large": {
+              "rate": 0.46794871794871795,
+              "lo": 0.358974358974359,
+              "hi": 0.5833333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.15384615384615385,
+              "lo": 0.08333333333333333,
+              "hi": 0.23717948717948717
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.32051282051282054,
+              "lo": 0.22435897435897434,
+              "hi": 0.42948717948717946
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.10897435897435896,
+              "lo": 0.05128205128205128,
+              "hi": 0.17307692307692307
+            },
+            "editlens-roberta-large": {
+              "rate": 0.32051282051282054,
+              "lo": 0.21794871794871792,
+              "hi": 0.4358974358974359
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.10897435897435896,
+              "lo": 0.057692307692307696,
+              "hi": 0.16666666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.10897435897435896,
+              "lo": 0.05128205128205128,
+              "hi": 0.17948717948717946
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.03205128205128205,
+              "lo": 0.0,
+              "hi": 0.08333333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.05128205128205128
+            }
+          },
+          "verdicts": {
+            "pass": 17,
+            "checks": 63,
+            "floor": 5,
+            "detector": 71
+          },
+          "failed_checks": {
+            "formatting": 0.3076923076923077,
+            "assistant talk or a placeholder": 0.07051282051282051,
+            "copied text": 0.02564102564102564,
+            "length": 0.00641025641025641
+          }
+        },
+        {
+          "id": "gpt-6-astra",
+          "label": "GPT-6 Astra",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.8141025641025641,
+            "lo": 0.7243589743589743,
+            "hi": 0.9038461538461539
+          },
+          "checks": {
+            "rate": 0.8205128205128205,
+            "lo": 0.7307692307692307,
+            "hi": 0.9102564102564104
+          },
+          "floor": {
+            "rate": 0.9921875,
+            "lo": 0.9754098360655737,
+            "hi": 1.0,
+            "judged": 128
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.10897435897435896,
+              "lo": 0.044871794871794865,
+              "hi": 0.18589743589743588
+            },
+            "editlens-roberta-large": {
+              "rate": 0.14102564102564102,
+              "lo": 0.07051282051282051,
+              "hi": 0.22435897435897434
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.10897435897435898,
+              "lo": 0.038461538461538464,
+              "hi": 0.19871794871794873
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.10256410256410256,
+              "lo": 0.05128205128205128,
+              "hi": 0.16666666666666666
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.08974358974358974,
+              "lo": 0.02564102564102564,
+              "hi": 0.16666666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.14102564102564102,
+              "lo": 0.07051282051282051,
+              "hi": 0.22435897435897434
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.10897435897435898,
+              "lo": 0.038461538461538464,
+              "hi": 0.19871794871794873
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.07051282051282051,
+              "lo": 0.02564102564102564,
+              "hi": 0.1282051282051282
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.016025641025641024,
+              "lo": 0.0,
+              "hi": 0.041666666666666664
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            }
+          },
+          "verdicts": {
+            "pass": 14,
+            "checks": 28,
+            "floor": 1,
+            "detector": 113
+          },
+          "failed_checks": {
+            "formatting": 0.10897435897435898,
+            "assistant talk or a placeholder": 0.05128205128205128,
+            "copied text": 0.019230769230769232
+          }
+        },
+        {
+          "id": "gpt-6.1-sol",
+          "label": "GPT-6.1 Sol",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.8397435897435896,
+            "lo": 0.7435897435897435,
+            "hi": 0.9294871794871795
+          },
+          "checks": {
+            "rate": 0.8461538461538461,
+            "lo": 0.7564102564102565,
+            "hi": 0.9294871794871795
+          },
+          "floor": {
+            "rate": 0.9924242424242424,
+            "lo": 0.9758064516129032,
+            "hi": 1.0,
+            "judged": 132
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.08974358974358973,
+              "lo": 0.03205128205128205,
+              "hi": 0.15384615384615385
+            },
+            "editlens-roberta-large": {
+              "rate": 0.12179487179487179,
+              "lo": 0.0641025641025641,
+              "hi": 0.19230769230769232
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.08974358974358973,
+              "lo": 0.03205128205128205,
+              "hi": 0.16666666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.07692307692307693,
+              "lo": 0.019230769230769232,
+              "hi": 0.15384615384615385
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.08333333333333333,
+              "lo": 0.02564102564102564,
+              "hi": 0.15384615384615385
+            },
+            "editlens-roberta-large": {
+              "rate": 0.11538461538461539,
+              "lo": 0.057692307692307696,
+              "hi": 0.19230769230769232
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.07692307692307693,
+              "lo": 0.03205128205128205,
+              "hi": 0.14102564102564102
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.057692307692307696,
+              "lo": 0.00641025641025641,
+              "hi": 0.12179487179487179
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            }
+          },
+          "verdicts": {
+            "pass": 13,
+            "checks": 24,
+            "floor": 1,
+            "detector": 118
+          },
+          "failed_checks": {
+            "formatting": 0.07692307692307693,
+            "assistant talk or a placeholder": 0.05128205128205128,
+            "copied text": 0.019230769230769232,
+            "length": 0.00641025641025641
+          }
+        },
+        {
+          "id": "gpt-6.1-terra",
+          "label": "GPT-6.1 Terra",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.6923076923076923,
+            "lo": 0.5833333333333333,
+            "hi": 0.8076923076923077
+          },
+          "checks": {
+            "rate": 0.7051282051282051,
+            "lo": 0.5961538461538461,
+            "hi": 0.8141025641025641
+          },
+          "floor": {
+            "rate": 0.9818181818181818,
+            "lo": 0.9545454545454546,
+            "hi": 1.0,
+            "judged": 110
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.038461538461538464,
+              "lo": 0.00641025641025641,
+              "hi": 0.07692307692307693
+            },
+            "editlens-roberta-large": {
+              "rate": 0.19230769230769232,
+              "lo": 0.11538461538461539,
+              "hi": 0.2756410256410256
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.08333333333333333,
+              "lo": 0.03205128205128205,
+              "hi": 0.1474358974358974
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.17307692307692307,
+              "lo": 0.08974358974358973,
+              "hi": 0.2692307692307692
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.038461538461538464,
+              "lo": 0.00641025641025641,
+              "hi": 0.07692307692307693
+            },
+            "editlens-roberta-large": {
+              "rate": 0.17948717948717946,
+              "lo": 0.09615384615384616,
+              "hi": 0.2692307692307692
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0641025641025641,
+              "lo": 0.019230769230769232,
+              "hi": 0.11538461538461539
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.1346153846153846,
+              "lo": 0.0641025641025641,
+              "hi": 0.21794871794871792
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.05128205128205128
+            }
+          },
+          "verdicts": {
+            "pass": 6,
+            "checks": 46,
+            "floor": 2,
+            "detector": 102
+          },
+          "failed_checks": {
+            "formatting": 0.1282051282051282,
+            "assistant talk or a placeholder": 0.11538461538461539,
+            "length": 0.03205128205128205,
+            "copied text": 0.019230769230769232
+          }
+        },
+        {
+          "id": "claude-opus-5-5",
+          "label": "Claude Opus 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.5192307692307693,
+            "lo": 0.391025641025641,
+            "hi": 0.6538461538461539
+          },
+          "checks": {
+            "rate": 0.532051282051282,
+            "lo": 0.40384615384615385,
+            "hi": 0.6666666666666666
+          },
+          "floor": {
+            "rate": 0.9759036144578314,
+            "lo": 0.9404761904761905,
+            "hi": 1.0,
+            "judged": 83
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.038461538461538464,
+              "lo": 0.00641025641025641,
+              "hi": 0.07051282051282051
+            },
+            "editlens-roberta-large": {
+              "rate": 0.21794871794871792,
+              "lo": 0.1346153846153846,
+              "hi": 0.3141025641025641
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.02564102564102564,
+              "lo": 0.0,
+              "hi": 0.057692307692307696
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.26282051282051283,
+              "lo": 0.17948717948717946,
+              "hi": 0.358974358974359
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            },
+            "editlens-roberta-large": {
+              "rate": 0.16666666666666666,
+              "lo": 0.08974358974358973,
+              "hi": 0.25641025641025644
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.02564102564102564,
+              "lo": 0.0,
+              "hi": 0.057692307692307696
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.1346153846153846,
+              "lo": 0.07051282051282051,
+              "hi": 0.21794871794871792
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            }
+          },
+          "verdicts": {
+            "pass": 3,
+            "checks": 73,
+            "floor": 2,
+            "detector": 78
+          },
+          "failed_checks": {
+            "formatting": 0.36538461538461536,
+            "assistant talk or a placeholder": 0.0641025641025641,
+            "copied text": 0.03205128205128205,
+            "length": 0.019230769230769232
+          }
+        },
+        {
+          "id": "minimax-m3p1-flash",
+          "label": "MiniMax M3.1 Flash",
+          "lab": "MiniMax",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.22435897435897434,
+            "lo": 0.14102564102564102,
+            "hi": 0.32051282051282054
+          },
+          "checks": {
+            "rate": 0.32051282051282054,
+            "lo": 0.21153846153846154,
+            "hi": 0.42948717948717946
+          },
+          "floor": {
+            "rate": 0.7,
+            "lo": 0.5471698113207547,
+            "hi": 0.8490566037735849,
+            "judged": 50
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.03205128205128205,
+              "lo": 0.00641025641025641,
+              "hi": 0.0641025641025641
+            },
+            "editlens-roberta-large": {
+              "rate": 0.05128205128205128,
+              "lo": 0.019230769230769232,
+              "hi": 0.09615384615384616
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.03205128205128205
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.28205128205128205,
+              "lo": 0.19230769230769232,
+              "hi": 0.38461538461538464
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.044871794871794865
+            },
+            "editlens-roberta-large": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.044871794871794865
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.07051282051282051,
+              "lo": 0.03205128205128205,
+              "hi": 0.12179487179487179
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            }
+          },
+          "verdicts": {
+            "pass": 3,
+            "checks": 106,
+            "floor": 15,
+            "detector": 32
+          },
+          "failed_checks": {
+            "formatting": 0.38461538461538464,
+            "assistant talk or a placeholder": 0.30128205128205127,
+            "length": 0.1346153846153846,
+            "copied text": 0.038461538461538464,
+            "empty answer": 0.019230769230769232
+          }
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "label": "Claude Sonnet 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.5256410256410257,
+            "lo": 0.40384615384615385,
+            "hi": 0.6538461538461539
+          },
+          "checks": {
+            "rate": 0.5641025641025641,
+            "lo": 0.4358974358974359,
+            "hi": 0.6923076923076923
+          },
+          "floor": {
+            "rate": 0.9318181818181818,
+            "lo": 0.8636363636363636,
+            "hi": 0.9782608695652174,
+            "judged": 88
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.02564102564102564,
+              "lo": 0.00641025641025641,
+              "hi": 0.05128205128205128
+            },
+            "editlens-roberta-large": {
+              "rate": 0.24358974358974358,
+              "lo": 0.1474358974358974,
+              "hi": 0.34615384615384615
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.057692307692307696,
+              "lo": 0.01282051282051282,
+              "hi": 0.11538461538461539
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.16666666666666666,
+              "lo": 0.08974358974358973,
+              "hi": 0.25
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.03205128205128205
+            },
+            "editlens-roberta-large": {
+              "rate": 0.16025641025641027,
+              "lo": 0.08333333333333333,
+              "hi": 0.25
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.044871794871794865,
+              "lo": 0.00641025641025641,
+              "hi": 0.09615384615384616
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.05128205128205128,
+              "lo": 0.019230769230769232,
+              "hi": 0.08974358974358973
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            }
+          },
+          "verdicts": {
+            "pass": 2,
+            "checks": 68,
+            "floor": 6,
+            "detector": 80
+          },
+          "failed_checks": {
+            "formatting": 0.3333333333333333,
+            "assistant talk or a placeholder": 0.08333333333333333,
+            "copied text": 0.03205128205128205
+          }
+        },
+        {
+          "id": "deepseek-v4p1-flash-1017",
+          "label": "DeepSeek V4.1 Flash 1017",
+          "lab": "DeepSeek",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.46794871794871795,
+            "lo": 0.35256410256410253,
+            "hi": 0.5897435897435898
+          },
+          "checks": {
+            "rate": 0.5192307692307693,
+            "lo": 0.39743589743589747,
+            "hi": 0.6346153846153846
+          },
+          "floor": {
+            "rate": 0.9012345679012346,
+            "lo": 0.8,
+            "hi": 0.9761904761904762,
+            "judged": 81
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.038461538461538464,
+              "lo": 0.00641025641025641,
+              "hi": 0.08333333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.07051282051282051,
+              "lo": 0.02564102564102564,
+              "hi": 0.12820512820512822
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.12179487179487179,
+              "lo": 0.057692307692307696,
+              "hi": 0.1987179487179487
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0641025641025641,
+              "lo": 0.019230769230769232,
+              "hi": 0.11538461538461539
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.038461538461538464
+            },
+            "editlens-roberta-large": {
+              "rate": 0.05128205128205128,
+              "lo": 0.01282051282051282,
+              "hi": 0.10256410256410256
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.057692307692307696,
+              "lo": 0.01282051282051282,
+              "hi": 0.11538461538461539
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.03205128205128205
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.003205128205128205,
+              "lo": 0.0,
+              "hi": 0.009615384615384616
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            }
+          },
+          "verdicts": {
+            "pass": 2,
+            "checks": 75,
+            "floor": 8,
+            "detector": 71
+          },
+          "failed_checks": {
+            "formatting": 0.2692307692307692,
+            "assistant talk or a placeholder": 0.14102564102564102,
+            "length": 0.05128205128205128,
+            "copied text": 0.019230769230769232
+          }
+        },
+        {
+          "id": "kimi-k3p1-pro",
+          "label": "Kimi K3.1 Pro",
+          "lab": "Moonshot AI",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.5512820512820513,
+            "lo": 0.42948717948717946,
+            "hi": 0.6730769230769231
+          },
+          "checks": {
+            "rate": 0.5576923076923077,
+            "lo": 0.4358974358974359,
+            "hi": 0.6794871794871795
+          },
+          "floor": {
+            "rate": 0.9885057471264368,
+            "lo": 0.9625,
+            "hi": 1.0,
+            "judged": 87
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0641025641025641,
+              "lo": 0.02564102564102564,
+              "hi": 0.11538461538461539
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.02564102564102564,
+              "lo": 0.00641025641025641,
+              "hi": 0.05128205128205128
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.05128205128205128,
+              "lo": 0.019230769230769232,
+              "hi": 0.08974358974358973
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            },
+            "editlens-roberta-large": {
+              "rate": 0.05128205128205128,
+              "lo": 0.019230769230769232,
+              "hi": 0.08974358974358973
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.02564102564102564,
+              "lo": 0.00641025641025641,
+              "hi": 0.05128205128205128
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.038461538461538464,
+              "lo": 0.00641025641025641,
+              "hi": 0.07692307692307693
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            }
+          },
+          "verdicts": {
+            "pass": 1,
+            "checks": 69,
+            "floor": 1,
+            "detector": 85
+          },
+          "failed_checks": {
+            "formatting": 0.3269230769230769,
+            "assistant talk or a placeholder": 0.08974358974358974,
+            "copied text": 0.038461538461538464
+          }
+        },
+        {
+          "id": "gpt-6-luna",
+          "label": "GPT-6 Luna",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.6538461538461539,
+            "lo": 0.532051282051282,
+            "hi": 0.7628205128205128
+          },
+          "checks": {
+            "rate": 0.7115384615384616,
+            "lo": 0.5897435897435898,
+            "hi": 0.8205128205128205
+          },
+          "floor": {
+            "rate": 0.918918918918919,
+            "lo": 0.8347826086956521,
+            "hi": 0.9826086956521739,
+            "judged": 111
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            },
+            "editlens-roberta-large": {
+              "rate": 0.038461538461538464,
+              "lo": 0.01282051282051282,
+              "hi": 0.07051282051282051
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.038461538461538464,
+              "lo": 0.0,
+              "hi": 0.09615384615384616
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.038461538461538464,
+              "lo": 0.00641025641025641,
+              "hi": 0.07692307692307693
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.038461538461538464,
+              "lo": 0.01282051282051282,
+              "hi": 0.07051282051282051
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.038461538461538464,
+              "lo": 0.0,
+              "hi": 0.09615384615384616
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.044871794871794865
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            }
+          },
+          "verdicts": {
+            "checks": 45,
+            "floor": 9,
+            "detector": 102
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.1346153846153846,
+            "formatting": 0.10256410256410256,
+            "length": 0.03205128205128205,
+            "copied text": 0.019230769230769232
+          }
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "label": "Claude Haiku 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 156,
+          "cards": 52,
+          "quality": {
+            "rate": 0.37179487179487175,
+            "lo": 0.26282051282051283,
+            "hi": 0.48717948717948717
+          },
+          "checks": {
+            "rate": 0.48717948717948717,
+            "lo": 0.36538461538461536,
+            "hi": 0.6153846153846154
+          },
+          "floor": {
+            "rate": 0.7631578947368421,
+            "lo": 0.64,
+            "hi": 0.8732394366197183,
+            "judged": 76
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.019230769230769232,
+              "lo": 0.0,
+              "hi": 0.044871794871794865
+            },
+            "editlens-roberta-large": {
+              "rate": 0.12179487179487179,
+              "lo": 0.057692307692307696,
+              "hi": 0.19230769230769232
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.01282051282051282,
+              "lo": 0.0,
+              "hi": 0.03205128205128205
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.02564102564102564,
+              "lo": 0.0,
+              "hi": 0.0641025641025641
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.07051282051282051,
+              "lo": 0.02564102564102564,
+              "hi": 0.1282051282051282
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.00641025641025641,
+              "lo": 0.0,
+              "hi": 0.019230769230769232
+            }
+          },
+          "beats_reference": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.0,
+              "lo": 0.0,
+              "hi": 0.0
+            }
+          },
+          "verdicts": {
+            "checks": 80,
+            "floor": 18,
+            "detector": 58
+          },
+          "failed_checks": {
+            "formatting": 0.33974358974358976,
+            "assistant talk or a placeholder": 0.12179487179487179,
+            "copied text": 0.03205128205128205,
+            "length": 0.02564102564102564
+          }
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "group": "public",
+      "name": "Public, invented scenarios",
+      "what": "Invented situations and personas, drafted by a model and audited. Includes replies in a thread and workspace tasks (a fake inbox, forum or chat).",
+      "cards": 80,
+      "cards_in_set": 80,
+      "outputs": 2640,
+      "models": [
+        {
+          "id": "claude-fable-5-2",
+          "label": "Claude Fable 5.2",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.6041666666666667,
+            "lo": 0.5125,
+            "hi": 0.6916666666666667
+          },
+          "checks": {
+            "rate": 0.7291666666666667,
+            "lo": 0.6333333333333333,
+            "hi": 0.8166666666666667
+          },
+          "floor": {
+            "rate": 0.8285714285714286,
+            "lo": 0.7613636363636364,
+            "hi": 0.8918918918918919,
+            "judged": 175
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.4,
+              "lo": 0.3125,
+              "hi": 0.4875
+            },
+            "editlens-roberta-large": {
+              "rate": 0.7958333333333333,
+              "lo": 0.7166666666666667,
+              "hi": 0.8666666666666666
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.6125,
+              "lo": 0.5166666666666667,
+              "hi": 0.7
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.575,
+              "lo": 0.4833333333333333,
+              "hi": 0.6625
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.29166666666666663,
+              "lo": 0.21666666666666665,
+              "hi": 0.3708333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.5208333333333333,
+              "lo": 0.4291666666666667,
+              "hi": 0.6125
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.4541666666666667,
+              "lo": 0.3625,
+              "hi": 0.5416666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3583333333333333,
+              "lo": 0.275,
+              "hi": 0.4375
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 70,
+            "checks": 65,
+            "floor": 30,
+            "detector": 75
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.15416666666666667,
+            "formatting": 0.125,
+            "length": 0.029166666666666667,
+            "workspace routing": 0.0125,
+            "required or barred words": 0.008333333333333333,
+            "invented amount": 0.004166666666666667
+          }
+        },
+        {
+          "id": "gpt-6-astra",
+          "label": "GPT-6 Astra",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.8333333333333334,
+            "lo": 0.75,
+            "hi": 0.9041666666666666
+          },
+          "checks": {
+            "rate": 0.8583333333333334,
+            "lo": 0.7791666666666667,
+            "hi": 0.9291666666666666
+          },
+          "floor": {
+            "rate": 0.970873786407767,
+            "lo": 0.9310344827586207,
+            "hi": 1.0,
+            "judged": 206
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.17916666666666664,
+              "lo": 0.1125,
+              "hi": 0.25
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4375,
+              "lo": 0.3416666666666667,
+              "hi": 0.5291666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3,
+              "lo": 0.2125,
+              "hi": 0.39166666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.2791666666666667,
+              "lo": 0.2,
+              "hi": 0.3625
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.16666666666666666,
+              "lo": 0.10416666666666666,
+              "hi": 0.2375
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3625,
+              "lo": 0.2708333333333333,
+              "hi": 0.45
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2791666666666667,
+              "lo": 0.19166666666666665,
+              "hi": 0.375
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.22916666666666666,
+              "lo": 0.15416666666666665,
+              "hi": 0.3125
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 40,
+            "checks": 34,
+            "floor": 6,
+            "detector": 160
+          },
+          "failed_checks": {
+            "formatting": 0.08333333333333333,
+            "assistant talk or a placeholder": 0.04583333333333333,
+            "workspace routing": 0.0125,
+            "privacy": 0.008333333333333333
+          }
+        },
+        {
+          "id": "gpt-6.1-terra",
+          "label": "GPT-6.1 Terra",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.7333333333333333,
+            "lo": 0.6375,
+            "hi": 0.825
+          },
+          "checks": {
+            "rate": 0.75,
+            "lo": 0.6583333333333333,
+            "hi": 0.8416666666666666
+          },
+          "floor": {
+            "rate": 0.9777777777777777,
+            "lo": 0.9351351351351351,
+            "hi": 1.0,
+            "judged": 180
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.17916666666666667,
+              "lo": 0.10833333333333332,
+              "hi": 0.25833333333333336
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3375,
+              "lo": 0.24583333333333335,
+              "hi": 0.425
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2833333333333333,
+              "lo": 0.19583333333333333,
+              "hi": 0.37083333333333335
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3458333333333333,
+              "lo": 0.26666666666666666,
+              "hi": 0.4333333333333333
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.16666666666666666,
+              "lo": 0.1,
+              "hi": 0.2375
+            },
+            "editlens-roberta-large": {
+              "rate": 0.27083333333333337,
+              "lo": 0.1875,
+              "hi": 0.35416666666666663
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.25,
+              "lo": 0.17083333333333334,
+              "hi": 0.32916666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.2375,
+              "lo": 0.1625,
+              "hi": 0.3125
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 40,
+            "checks": 60,
+            "floor": 4,
+            "detector": 136
+          },
+          "failed_checks": {
+            "formatting": 0.14583333333333334,
+            "length": 0.06666666666666667,
+            "assistant talk or a placeholder": 0.0375,
+            "invented amount": 0.008333333333333333,
+            "workspace routing": 0.004166666666666667
+          }
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "label": "Claude Sonnet 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.4833333333333333,
+            "lo": 0.3875,
+            "hi": 0.5708333333333333
+          },
+          "checks": {
+            "rate": 0.6208333333333333,
+            "lo": 0.5208333333333333,
+            "hi": 0.7083333333333333
+          },
+          "floor": {
+            "rate": 0.7785234899328859,
+            "lo": 0.6933333333333334,
+            "hi": 0.8571428571428571,
+            "judged": 149
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.23333333333333334,
+              "lo": 0.15833333333333333,
+              "hi": 0.3125
+            },
+            "editlens-roberta-large": {
+              "rate": 0.6208333333333333,
+              "lo": 0.5291666666666667,
+              "hi": 0.7041666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.39166666666666666,
+              "lo": 0.30416666666666664,
+              "hi": 0.4791666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.4875,
+              "lo": 0.4041666666666667,
+              "hi": 0.5666666666666667
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.1625,
+              "lo": 0.1,
+              "hi": 0.22916666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.36666666666666664,
+              "lo": 0.275,
+              "hi": 0.45
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2791666666666667,
+              "lo": 0.2,
+              "hi": 0.3625
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.21666666666666665,
+              "lo": 0.15833333333333333,
+              "hi": 0.275
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 39,
+            "checks": 91,
+            "floor": 33,
+            "detector": 77
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.1875,
+            "formatting": 0.15833333333333333,
+            "length": 0.03333333333333333,
+            "required or barred words": 0.016666666666666666,
+            "workspace routing": 0.016666666666666666,
+            "invented amount": 0.0125,
+            "other check": 0.004166666666666667
+          }
+        },
+        {
+          "id": "claude-opus-5-5",
+          "label": "Claude Opus 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.6041666666666667,
+            "lo": 0.5041666666666667,
+            "hi": 0.6916666666666667
+          },
+          "checks": {
+            "rate": 0.7541666666666667,
+            "lo": 0.6583333333333333,
+            "hi": 0.8375
+          },
+          "floor": {
+            "rate": 0.8011049723756906,
+            "lo": 0.7150837988826816,
+            "hi": 0.8810810810810811,
+            "judged": 181
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.21666666666666665,
+              "lo": 0.14166666666666666,
+              "hi": 0.2958333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.55,
+              "lo": 0.4583333333333333,
+              "hi": 0.6416666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3625,
+              "lo": 0.26666666666666666,
+              "hi": 0.45
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.525,
+              "lo": 0.4375,
+              "hi": 0.6125
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.15833333333333333,
+              "lo": 0.09583333333333333,
+              "hi": 0.225
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3708333333333333,
+              "lo": 0.2833333333333333,
+              "hi": 0.4583333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2791666666666667,
+              "lo": 0.19583333333333333,
+              "hi": 0.3625
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3208333333333333,
+              "lo": 0.2458333333333333,
+              "hi": 0.3958333333333333
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 38,
+            "checks": 59,
+            "floor": 36,
+            "detector": 107
+          },
+          "failed_checks": {
+            "formatting": 0.14583333333333334,
+            "assistant talk or a placeholder": 0.09166666666666666,
+            "length": 0.029166666666666667,
+            "required or barred words": 0.016666666666666666,
+            "privacy": 0.004166666666666667
+          }
+        },
+        {
+          "id": "gpt-6.1-sol",
+          "label": "GPT-6.1 Sol",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.7833333333333333,
+            "lo": 0.6875,
+            "hi": 0.8666666666666666
+          },
+          "checks": {
+            "rate": 0.8166666666666667,
+            "lo": 0.725,
+            "hi": 0.8916666666666666
+          },
+          "floor": {
+            "rate": 0.9591836734693877,
+            "lo": 0.9119170984455959,
+            "hi": 0.9949494949494949,
+            "judged": 196
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.175,
+              "lo": 0.10416666666666667,
+              "hi": 0.25416666666666665
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4458333333333333,
+              "lo": 0.35,
+              "hi": 0.5375
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.25833333333333336,
+              "lo": 0.17916666666666664,
+              "hi": 0.3416666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.22916666666666666,
+              "lo": 0.15833333333333333,
+              "hi": 0.30416666666666664
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.14166666666666666,
+              "lo": 0.07916666666666666,
+              "hi": 0.2125
+            },
+            "editlens-roberta-large": {
+              "rate": 0.35416666666666663,
+              "lo": 0.2625,
+              "hi": 0.4458333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2375,
+              "lo": 0.15833333333333333,
+              "hi": 0.32083333333333336
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.17916666666666664,
+              "lo": 0.1125,
+              "hi": 0.2458333333333333
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 34,
+            "checks": 44,
+            "floor": 8,
+            "detector": 154
+          },
+          "failed_checks": {
+            "formatting": 0.10416666666666667,
+            "assistant talk or a placeholder": 0.05,
+            "workspace routing": 0.025,
+            "invented amount": 0.004166666666666667
+          }
+        },
+        {
+          "id": "deepseek-v4p1-flash-1017",
+          "label": "DeepSeek V4.1 Flash 1017",
+          "lab": "DeepSeek",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.6541666666666667,
+            "lo": 0.5625,
+            "hi": 0.7375
+          },
+          "checks": {
+            "rate": 0.7291666666666667,
+            "lo": 0.6416666666666667,
+            "hi": 0.8125
+          },
+          "floor": {
+            "rate": 0.8971428571428571,
+            "lo": 0.838150289017341,
+            "hi": 0.950920245398773,
+            "judged": 175
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.1875,
+              "lo": 0.125,
+              "hi": 0.25833333333333336
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4041666666666667,
+              "lo": 0.31666666666666665,
+              "hi": 0.4875
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.5416666666666667,
+              "lo": 0.4541666666666667,
+              "hi": 0.6291666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3875,
+              "lo": 0.3083333333333333,
+              "hi": 0.4666666666666667
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.11666666666666665,
+              "lo": 0.07083333333333333,
+              "hi": 0.16666666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.2708333333333333,
+              "lo": 0.19583333333333333,
+              "hi": 0.3458333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3875,
+              "lo": 0.3,
+              "hi": 0.4708333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.25416666666666665,
+              "lo": 0.1875,
+              "hi": 0.3208333333333333
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 28,
+            "checks": 65,
+            "floor": 18,
+            "detector": 129
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.11666666666666667,
+            "formatting": 0.07083333333333333,
+            "workspace routing": 0.05416666666666667,
+            "length": 0.0125,
+            "required or barred words": 0.0125,
+            "invented amount": 0.008333333333333333,
+            "other check": 0.004166666666666667,
+            "copied text": 0.004166666666666667
+          }
+        },
+        {
+          "id": "kimi-k3p1-pro",
+          "label": "Kimi K3.1 Pro",
+          "lab": "Moonshot AI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.7416666666666667,
+            "lo": 0.6458333333333333,
+            "hi": 0.8333333333333334
+          },
+          "checks": {
+            "rate": 0.7583333333333333,
+            "lo": 0.6666666666666667,
+            "hi": 0.8458333333333334
+          },
+          "floor": {
+            "rate": 0.978021978021978,
+            "lo": 0.9491525423728814,
+            "hi": 1.0,
+            "judged": 182
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.15833333333333333,
+              "lo": 0.09166666666666666,
+              "hi": 0.225
+            },
+            "editlens-roberta-large": {
+              "rate": 0.36666666666666664,
+              "lo": 0.2791666666666667,
+              "hi": 0.45
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.24166666666666664,
+              "lo": 0.16666666666666666,
+              "hi": 0.325
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.17083333333333334,
+              "lo": 0.10833333333333332,
+              "hi": 0.2375
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.11666666666666665,
+              "lo": 0.06666666666666667,
+              "hi": 0.17083333333333334
+            },
+            "editlens-roberta-large": {
+              "rate": 0.2958333333333333,
+              "lo": 0.21666666666666665,
+              "hi": 0.375
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.19166666666666665,
+              "lo": 0.125,
+              "hi": 0.26666666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.12916666666666665,
+              "lo": 0.07916666666666666,
+              "hi": 0.1875
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 28,
+            "checks": 58,
+            "floor": 4,
+            "detector": 150
+          },
+          "failed_checks": {
+            "formatting": 0.125,
+            "assistant talk or a placeholder": 0.10416666666666667,
+            "workspace routing": 0.0375,
+            "invented amount": 0.0125,
+            "length": 0.004166666666666667,
+            "required or barred words": 0.004166666666666667
+          }
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "label": "Claude Haiku 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.3833333333333333,
+            "lo": 0.3083333333333333,
+            "hi": 0.4583333333333333
+          },
+          "checks": {
+            "rate": 0.6833333333333333,
+            "lo": 0.5916666666666667,
+            "hi": 0.7666666666666667
+          },
+          "floor": {
+            "rate": 0.5609756097560976,
+            "lo": 0.47093023255813954,
+            "hi": 0.6518987341772152,
+            "judged": 164
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.2,
+              "lo": 0.12916666666666665,
+              "hi": 0.2791666666666667
+            },
+            "editlens-roberta-large": {
+              "rate": 0.5666666666666667,
+              "lo": 0.4791666666666667,
+              "hi": 0.6541666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3708333333333333,
+              "lo": 0.2833333333333333,
+              "hi": 0.4541666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.25416666666666665,
+              "lo": 0.17916666666666664,
+              "hi": 0.3333333333333333
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.09583333333333333,
+              "lo": 0.05,
+              "hi": 0.15
+            },
+            "editlens-roberta-large": {
+              "rate": 0.2333333333333333,
+              "lo": 0.17083333333333334,
+              "hi": 0.2958333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.15416666666666665,
+              "lo": 0.09583333333333333,
+              "hi": 0.21666666666666665
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.09166666666666666,
+              "lo": 0.05,
+              "hi": 0.14166666666666666
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 23,
+            "checks": 76,
+            "floor": 72,
+            "detector": 69
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.14583333333333334,
+            "length": 0.09583333333333334,
+            "formatting": 0.09583333333333334,
+            "required or barred words": 0.0125,
+            "workspace routing": 0.008333333333333333,
+            "invented amount": 0.004166666666666667,
+            "privacy": 0.004166666666666667
+          }
+        },
+        {
+          "id": "minimax-m3p1-flash",
+          "label": "MiniMax M3.1 Flash",
+          "lab": "MiniMax",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.2833333333333333,
+            "lo": 0.2125,
+            "hi": 0.35416666666666663
+          },
+          "checks": {
+            "rate": 0.4791666666666667,
+            "lo": 0.39166666666666666,
+            "hi": 0.5708333333333333
+          },
+          "floor": {
+            "rate": 0.591304347826087,
+            "lo": 0.4827586206896552,
+            "hi": 0.6967213114754098,
+            "judged": 115
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.19583333333333333,
+              "lo": 0.125,
+              "hi": 0.27083333333333337
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4291666666666667,
+              "lo": 0.3333333333333333,
+              "hi": 0.525
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3833333333333333,
+              "lo": 0.2958333333333333,
+              "hi": 0.4708333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.5083333333333333,
+              "lo": 0.4208333333333333,
+              "hi": 0.5916666666666667
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.07916666666666666,
+              "lo": 0.041666666666666664,
+              "hi": 0.125
+            },
+            "editlens-roberta-large": {
+              "rate": 0.12916666666666665,
+              "lo": 0.07916666666666666,
+              "hi": 0.18333333333333332
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.14166666666666666,
+              "lo": 0.0875,
+              "hi": 0.19583333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.1625,
+              "lo": 0.10416666666666666,
+              "hi": 0.2208333333333333
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 19,
+            "checks": 125,
+            "floor": 47,
+            "detector": 49
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.20416666666666666,
+            "formatting": 0.1875,
+            "workspace routing": 0.1625,
+            "length": 0.125,
+            "required or barred words": 0.04583333333333333,
+            "privacy": 0.03333333333333333,
+            "other check": 0.0125,
+            "invented amount": 0.004166666666666667
+          }
+        },
+        {
+          "id": "gpt-6-luna",
+          "label": "GPT-6 Luna",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.5083333333333333,
+            "lo": 0.4125,
+            "hi": 0.6041666666666667
+          },
+          "checks": {
+            "rate": 0.5791666666666667,
+            "lo": 0.4875,
+            "hi": 0.675
+          },
+          "floor": {
+            "rate": 0.8776978417266187,
+            "lo": 0.8055555555555556,
+            "hi": 0.937984496124031,
+            "judged": 139
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.05,
+              "lo": 0.016666666666666666,
+              "hi": 0.09166666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.2125,
+              "lo": 0.14166666666666666,
+              "hi": 0.2833333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2,
+              "lo": 0.1375,
+              "hi": 0.275
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.20416666666666666,
+              "lo": 0.1375,
+              "hi": 0.2791666666666667
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0375,
+              "lo": 0.0125,
+              "hi": 0.07083333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.15833333333333333,
+              "lo": 0.09583333333333333,
+              "hi": 0.22083333333333335
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.1375,
+              "lo": 0.08333333333333333,
+              "hi": 0.2
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.11666666666666665,
+              "lo": 0.06666666666666667,
+              "hi": 0.175
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 9,
+            "checks": 101,
+            "floor": 17,
+            "detector": 113
+          },
+          "failed_checks": {
+            "length": 0.20416666666666666,
+            "formatting": 0.125,
+            "assistant talk or a placeholder": 0.1,
+            "workspace routing": 0.03333333333333333,
+            "required or barred words": 0.020833333333333332,
+            "other check": 0.0125
+          }
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "group": "private",
+      "name": "Private",
+      "what": "Invented scenarios of the same kinds as the public ones, held back so that no model can be trained or tuned on them. Only their scores are shown.",
+      "cards": 80,
+      "cards_in_set": 80,
+      "outputs": 2640,
+      "models": [
+        {
+          "id": "claude-fable-5-2",
+          "label": "Claude Fable 5.2",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.5791666666666667,
+            "lo": 0.4875,
+            "hi": 0.6625
+          },
+          "checks": {
+            "rate": 0.725,
+            "lo": 0.6333333333333333,
+            "hi": 0.8083333333333333
+          },
+          "floor": {
+            "rate": 0.7988505747126436,
+            "lo": 0.7212121212121212,
+            "hi": 0.8734939759036144,
+            "judged": 174
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.3416666666666667,
+              "lo": 0.2583333333333333,
+              "hi": 0.425
+            },
+            "editlens-roberta-large": {
+              "rate": 0.75,
+              "lo": 0.6666666666666667,
+              "hi": 0.8291666666666666
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.5916666666666667,
+              "lo": 0.4958333333333333,
+              "hi": 0.6791666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.625,
+              "lo": 0.5333333333333333,
+              "hi": 0.7083333333333333
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.25,
+              "lo": 0.17916666666666664,
+              "hi": 0.32916666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4791666666666667,
+              "lo": 0.3875,
+              "hi": 0.5666666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.4333333333333333,
+              "lo": 0.3416666666666667,
+              "hi": 0.5208333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.32916666666666666,
+              "lo": 0.24166666666666664,
+              "hi": 0.4166666666666667
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 60,
+            "checks": 66,
+            "floor": 35,
+            "detector": 79
+          },
+          "failed_checks": {
+            "formatting": 0.15,
+            "assistant talk or a placeholder": 0.1375,
+            "invented amount": 0.0125,
+            "required or barred words": 0.0125,
+            "length": 0.008333333333333333
+          }
+        },
+        {
+          "id": "deepseek-v4p1-flash-1017",
+          "label": "DeepSeek V4.1 Flash 1017",
+          "lab": "DeepSeek",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.6541666666666667,
+            "lo": 0.5666666666666667,
+            "hi": 0.7333333333333333
+          },
+          "checks": {
+            "rate": 0.7125,
+            "lo": 0.6208333333333333,
+            "hi": 0.7916666666666667
+          },
+          "floor": {
+            "rate": 0.9181286549707602,
+            "lo": 0.8685714285714285,
+            "hi": 0.9611111111111111,
+            "judged": 171
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.15416666666666665,
+              "lo": 0.09583333333333333,
+              "hi": 0.21666666666666665
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3583333333333333,
+              "lo": 0.275,
+              "hi": 0.4416666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.4458333333333333,
+              "lo": 0.35416666666666663,
+              "hi": 0.5375
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3875,
+              "lo": 0.3,
+              "hi": 0.475
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.13333333333333333,
+              "lo": 0.07916666666666666,
+              "hi": 0.19166666666666665
+            },
+            "editlens-roberta-large": {
+              "rate": 0.26666666666666666,
+              "lo": 0.19166666666666665,
+              "hi": 0.3416666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3583333333333333,
+              "lo": 0.275,
+              "hi": 0.4416666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.2708333333333333,
+              "lo": 0.19583333333333333,
+              "hi": 0.35416666666666663
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 32,
+            "checks": 69,
+            "floor": 14,
+            "detector": 125
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.12916666666666668,
+            "formatting": 0.0875,
+            "length": 0.07083333333333333,
+            "workspace routing": 0.016666666666666666,
+            "other check": 0.004166666666666667
+          }
+        },
+        {
+          "id": "claude-opus-5-5",
+          "label": "Claude Opus 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.5708333333333333,
+            "lo": 0.4791666666666667,
+            "hi": 0.6583333333333333
+          },
+          "checks": {
+            "rate": 0.6958333333333333,
+            "lo": 0.6,
+            "hi": 0.7833333333333333
+          },
+          "floor": {
+            "rate": 0.8203592814371258,
+            "lo": 0.754601226993865,
+            "hi": 0.8823529411764706,
+            "judged": 167
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.1625,
+              "lo": 0.10416666666666666,
+              "hi": 0.22916666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4666666666666667,
+              "lo": 0.375,
+              "hi": 0.5583333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3708333333333333,
+              "lo": 0.2791666666666667,
+              "hi": 0.4625
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.6041666666666667,
+              "lo": 0.525,
+              "hi": 0.6833333333333333
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.12916666666666665,
+              "lo": 0.075,
+              "hi": 0.1875
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3083333333333333,
+              "lo": 0.225,
+              "hi": 0.39166666666666666
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2708333333333333,
+              "lo": 0.19583333333333333,
+              "hi": 0.3458333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3208333333333333,
+              "lo": 0.25,
+              "hi": 0.3958333333333333
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 31,
+            "checks": 73,
+            "floor": 30,
+            "detector": 106
+          },
+          "failed_checks": {
+            "formatting": 0.17916666666666667,
+            "assistant talk or a placeholder": 0.14583333333333334,
+            "length": 0.025,
+            "invented amount": 0.0125
+          }
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "label": "Claude Sonnet 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.55,
+            "lo": 0.4583333333333333,
+            "hi": 0.6375
+          },
+          "checks": {
+            "rate": 0.6583333333333333,
+            "lo": 0.5625,
+            "hi": 0.75
+          },
+          "floor": {
+            "rate": 0.8354430379746836,
+            "lo": 0.7666666666666667,
+            "hi": 0.9032258064516129,
+            "judged": 158
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.15416666666666665,
+              "lo": 0.1,
+              "hi": 0.21666666666666665
+            },
+            "editlens-roberta-large": {
+              "rate": 0.6125,
+              "lo": 0.525,
+              "hi": 0.6958333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.3583333333333333,
+              "lo": 0.2708333333333333,
+              "hi": 0.4458333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.475,
+              "lo": 0.3833333333333333,
+              "hi": 0.5541666666666667
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.12083333333333332,
+              "lo": 0.07083333333333333,
+              "hi": 0.17916666666666664
+            },
+            "editlens-roberta-large": {
+              "rate": 0.36666666666666664,
+              "lo": 0.2791666666666667,
+              "hi": 0.45
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2833333333333333,
+              "lo": 0.20416666666666666,
+              "hi": 0.36666666666666664
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.2708333333333333,
+              "lo": 0.19583333333333333,
+              "hi": 0.3458333333333333
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 29,
+            "checks": 82,
+            "floor": 26,
+            "detector": 103
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.20833333333333334,
+            "formatting": 0.17083333333333334,
+            "length": 0.029166666666666667,
+            "invented amount": 0.0125,
+            "required or barred words": 0.004166666666666667
+          }
+        },
+        {
+          "id": "gpt-6.1-terra",
+          "label": "GPT-6.1 Terra",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.6958333333333333,
+            "lo": 0.6041666666666667,
+            "hi": 0.7791666666666667
+          },
+          "checks": {
+            "rate": 0.7041666666666667,
+            "lo": 0.6125,
+            "hi": 0.7916666666666667
+          },
+          "floor": {
+            "rate": 0.9881656804733728,
+            "lo": 0.9702380952380952,
+            "hi": 1.0,
+            "judged": 169
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.12916666666666668,
+              "lo": 0.06666666666666667,
+              "hi": 0.20416666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.39166666666666666,
+              "lo": 0.30416666666666664,
+              "hi": 0.4833333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.26666666666666666,
+              "lo": 0.1875,
+              "hi": 0.3458333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.4083333333333333,
+              "lo": 0.3125,
+              "hi": 0.5
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.1125,
+              "lo": 0.05833333333333333,
+              "hi": 0.17916666666666664
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3,
+              "lo": 0.2208333333333333,
+              "hi": 0.3833333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2375,
+              "lo": 0.16666666666666666,
+              "hi": 0.3125
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.30416666666666664,
+              "lo": 0.21666666666666665,
+              "hi": 0.4
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 27,
+            "checks": 71,
+            "floor": 2,
+            "detector": 140
+          },
+          "failed_checks": {
+            "formatting": 0.15,
+            "length": 0.125,
+            "assistant talk or a placeholder": 0.07083333333333333
+          }
+        },
+        {
+          "id": "gpt-6-astra",
+          "label": "GPT-6 Astra",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.8458333333333334,
+            "lo": 0.7666666666666667,
+            "hi": 0.9166666666666666
+          },
+          "checks": {
+            "rate": 0.8625,
+            "lo": 0.7875,
+            "hi": 0.9291666666666666
+          },
+          "floor": {
+            "rate": 0.9806763285024155,
+            "lo": 0.9609756097560975,
+            "hi": 0.9952153110047847,
+            "judged": 207
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.1125,
+              "lo": 0.05833333333333333,
+              "hi": 0.175
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4291666666666667,
+              "lo": 0.32916666666666666,
+              "hi": 0.5333333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.29583333333333334,
+              "lo": 0.2125,
+              "hi": 0.39166666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.23333333333333334,
+              "lo": 0.15416666666666665,
+              "hi": 0.31666666666666665
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.10833333333333332,
+              "lo": 0.05416666666666666,
+              "hi": 0.17083333333333334
+            },
+            "editlens-roberta-large": {
+              "rate": 0.37916666666666665,
+              "lo": 0.2833333333333333,
+              "hi": 0.4791666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.2791666666666667,
+              "lo": 0.19166666666666665,
+              "hi": 0.375
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.1875,
+              "lo": 0.11666666666666665,
+              "hi": 0.26666666666666666
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 26,
+            "checks": 33,
+            "floor": 4,
+            "detector": 177
+          },
+          "failed_checks": {
+            "formatting": 0.0875,
+            "assistant talk or a placeholder": 0.05
+          }
+        },
+        {
+          "id": "gpt-6.1-sol",
+          "label": "GPT-6.1 Sol",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.8333333333333334,
+            "lo": 0.75,
+            "hi": 0.9041666666666666
+          },
+          "checks": {
+            "rate": 0.8375,
+            "lo": 0.7583333333333333,
+            "hi": 0.9083333333333334
+          },
+          "floor": {
+            "rate": 0.9950248756218906,
+            "lo": 0.9848484848484849,
+            "hi": 1.0,
+            "judged": 201
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.1,
+              "lo": 0.04583333333333333,
+              "hi": 0.1625
+            },
+            "editlens-roberta-large": {
+              "rate": 0.4083333333333333,
+              "lo": 0.31666666666666665,
+              "hi": 0.5041666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.33333333333333337,
+              "lo": 0.24583333333333335,
+              "hi": 0.4333333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.2625,
+              "lo": 0.18333333333333332,
+              "hi": 0.35
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.09583333333333333,
+              "lo": 0.04583333333333333,
+              "hi": 0.15833333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.3375,
+              "lo": 0.24583333333333335,
+              "hi": 0.4375
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.31666666666666665,
+              "lo": 0.225,
+              "hi": 0.4166666666666667
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.21666666666666665,
+              "lo": 0.15,
+              "hi": 0.29583333333333334
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 23,
+            "checks": 39,
+            "floor": 1,
+            "detector": 177
+          },
+          "failed_checks": {
+            "formatting": 0.0875,
+            "assistant talk or a placeholder": 0.07083333333333333,
+            "length": 0.004166666666666667
+          }
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "label": "Claude Haiku 5.5",
+          "lab": "Anthropic",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.4625,
+            "lo": 0.3708333333333333,
+            "hi": 0.55
+          },
+          "checks": {
+            "rate": 0.6541666666666667,
+            "lo": 0.5625,
+            "hi": 0.7375
+          },
+          "floor": {
+            "rate": 0.7070063694267515,
+            "lo": 0.6163522012578616,
+            "hi": 0.793939393939394,
+            "judged": 157
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.15416666666666665,
+              "lo": 0.09166666666666666,
+              "hi": 0.2208333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.55,
+              "lo": 0.45,
+              "hi": 0.65
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.31666666666666665,
+              "lo": 0.23333333333333334,
+              "hi": 0.4
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.3083333333333333,
+              "lo": 0.225,
+              "hi": 0.39166666666666666
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.09166666666666666,
+              "lo": 0.041666666666666664,
+              "hi": 0.15
+            },
+            "editlens-roberta-large": {
+              "rate": 0.275,
+              "lo": 0.19166666666666665,
+              "hi": 0.3583333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.17916666666666664,
+              "lo": 0.1125,
+              "hi": 0.25
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.12083333333333332,
+              "lo": 0.06666666666666667,
+              "hi": 0.18333333333333332
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 22,
+            "checks": 83,
+            "floor": 46,
+            "detector": 89
+          },
+          "failed_checks": {
+            "length": 0.15416666666666667,
+            "assistant talk or a placeholder": 0.15,
+            "formatting": 0.11666666666666667,
+            "workspace routing": 0.025,
+            "invented amount": 0.004166666666666667,
+            "copied text": 0.004166666666666667
+          }
+        },
+        {
+          "id": "kimi-k3p1-pro",
+          "label": "Kimi K3.1 Pro",
+          "lab": "Moonshot AI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.7625,
+            "lo": 0.6833333333333333,
+            "hi": 0.8333333333333334
+          },
+          "checks": {
+            "rate": 0.7916666666666667,
+            "lo": 0.7166666666666667,
+            "hi": 0.8583333333333334
+          },
+          "floor": {
+            "rate": 0.9631578947368421,
+            "lo": 0.9210526315789473,
+            "hi": 0.9946808510638298,
+            "judged": 190
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.09166666666666666,
+              "lo": 0.041666666666666664,
+              "hi": 0.15416666666666665
+            },
+            "editlens-roberta-large": {
+              "rate": 0.31666666666666665,
+              "lo": 0.2333333333333333,
+              "hi": 0.4041666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.25416666666666665,
+              "lo": 0.175,
+              "hi": 0.3333333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.24583333333333335,
+              "lo": 0.17083333333333334,
+              "hi": 0.32916666666666666
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0875,
+              "lo": 0.041666666666666664,
+              "hi": 0.14583333333333331
+            },
+            "editlens-roberta-large": {
+              "rate": 0.2583333333333333,
+              "lo": 0.18333333333333332,
+              "hi": 0.3375
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.24166666666666664,
+              "lo": 0.16666666666666666,
+              "hi": 0.31666666666666665
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.18333333333333332,
+              "lo": 0.11666666666666667,
+              "hi": 0.25833333333333336
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 21,
+            "checks": 50,
+            "floor": 7,
+            "detector": 162
+          },
+          "failed_checks": {
+            "formatting": 0.11666666666666667,
+            "assistant talk or a placeholder": 0.08333333333333333,
+            "other check": 0.008333333333333333,
+            "workspace routing": 0.004166666666666667
+          }
+        },
+        {
+          "id": "minimax-m3p1-flash",
+          "label": "MiniMax M3.1 Flash",
+          "lab": "MiniMax",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.2875,
+            "lo": 0.2125,
+            "hi": 0.36666666666666664
+          },
+          "checks": {
+            "rate": 0.4916666666666667,
+            "lo": 0.39583333333333337,
+            "hi": 0.5875
+          },
+          "floor": {
+            "rate": 0.5847457627118644,
+            "lo": 0.4774774774774775,
+            "hi": 0.6842105263157895,
+            "judged": 118
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.10416666666666666,
+              "lo": 0.05833333333333333,
+              "hi": 0.15416666666666665
+            },
+            "editlens-roberta-large": {
+              "rate": 0.36666666666666664,
+              "lo": 0.2833333333333333,
+              "hi": 0.4541666666666667
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.31666666666666665,
+              "lo": 0.2375,
+              "hi": 0.3958333333333333
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.5708333333333333,
+              "lo": 0.4875,
+              "hi": 0.65
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.05416666666666666,
+              "lo": 0.025,
+              "hi": 0.09166666666666666
+            },
+            "editlens-roberta-large": {
+              "rate": 0.15,
+              "lo": 0.09583333333333333,
+              "hi": 0.20833333333333331
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.16666666666666666,
+              "lo": 0.10833333333333332,
+              "hi": 0.22916666666666666
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.17083333333333334,
+              "lo": 0.10833333333333332,
+              "hi": 0.24166666666666664
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 13,
+            "checks": 122,
+            "floor": 49,
+            "detector": 56
+          },
+          "failed_checks": {
+            "assistant talk or a placeholder": 0.25416666666666665,
+            "formatting": 0.24583333333333332,
+            "length": 0.15,
+            "workspace routing": 0.07083333333333333,
+            "required or barred words": 0.008333333333333333
+          }
+        },
+        {
+          "id": "gpt-6-luna",
+          "label": "GPT-6 Luna",
+          "lab": "OpenAI",
+          "samples_per_card": 3,
+          "outputs": 240,
+          "cards": 80,
+          "quality": {
+            "rate": 0.5208333333333333,
+            "lo": 0.4375,
+            "hi": 0.6041666666666667
+          },
+          "checks": {
+            "rate": 0.575,
+            "lo": 0.4875,
+            "hi": 0.6625
+          },
+          "floor": {
+            "rate": 0.9057971014492754,
+            "lo": 0.8467153284671532,
+            "hi": 0.9609375,
+            "judged": 138
+          },
+          "reads_human": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.016666666666666666,
+              "lo": 0.004166666666666667,
+              "hi": 0.03333333333333333
+            },
+            "editlens-roberta-large": {
+              "rate": 0.15,
+              "lo": 0.0875,
+              "hi": 0.2208333333333333
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.175,
+              "lo": 0.11666666666666665,
+              "hi": 0.24166666666666664
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.30416666666666664,
+              "lo": 0.21666666666666665,
+              "hi": 0.39166666666666666
+            }
+          },
+          "all_gates": {
+            "editlens-llama-3.2-3b": {
+              "rate": 0.0125,
+              "lo": 0.0,
+              "hi": 0.029166666666666664
+            },
+            "editlens-roberta-large": {
+              "rate": 0.0875,
+              "lo": 0.041666666666666664,
+              "hi": 0.14166666666666666
+            },
+            "vanguard-modernbert-large": {
+              "rate": 0.10833333333333332,
+              "lo": 0.05416666666666666,
+              "hi": 0.17083333333333334
+            },
+            "tropa-mini-deberta-large": {
+              "rate": 0.14583333333333331,
+              "lo": 0.09166666666666666,
+              "hi": 0.20416666666666666
+            }
+          },
+          "beats_reference": null,
+          "verdicts": {
+            "pass": 3,
+            "checks": 102,
+            "floor": 13,
+            "detector": 122
+          },
+          "failed_checks": {
+            "length": 0.275,
+            "assistant talk or a placeholder": 0.10833333333333334,
+            "formatting": 0.1,
+            "workspace routing": 0.029166666666666667,
+            "required or barred words": 0.016666666666666666,
+            "copied text": 0.004166666666666667
+          }
+        }
+      ]
+    }
+  ],
+  "leaderboard": [
+    {
+      "id": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "lab": "Anthropic",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.5849056603773585,
+          "lo": 0.5298742138364779,
+          "hi": 0.6430817610062893
+        },
+        "checks": {
+          "rate": 0.6949685534591196,
+          "lo": 0.6367924528301887,
+          "hi": 0.7515723270440252
+        },
+        "floor": {
+          "rate": 0.8416289592760181,
+          "lo": 0.7995337995337995,
+          "hi": 0.8839285714285714,
+          "judged": 442
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.31761006289308175,
+            "lo": 0.2672955974842767,
+            "hi": 0.36792452830188677
+          },
+          "editlens-roberta-large": {
+            "rate": 0.6981132075471698,
+            "lo": 0.6446540880503144,
+            "hi": 0.7531446540880503
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.4921383647798742,
+            "lo": 0.43081761006289304,
+            "hi": 0.5518867924528302
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.5314465408805031,
+            "lo": 0.47641509433962265,
+            "hi": 0.5880503144654088
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.23113207547169812,
+            "lo": 0.18867924528301888,
+            "hi": 0.2783018867924528
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4559748427672956,
+            "lo": 0.39937106918238996,
+            "hi": 0.5157232704402516
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.3616352201257862,
+            "lo": 0.3081761006289308,
+            "hi": 0.419811320754717
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2861635220125786,
+            "lo": 0.2358490566037736,
+            "hi": 0.33962264150943394
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 147,
+          "checks": 194,
+          "floor": 70,
+          "detector": 225
+        },
+        "failed_checks": {
+          "formatting": 0.1792452830188679,
+          "assistant talk or a placeholder": 0.12735849056603774,
+          "length": 0.015723270440251572,
+          "required or barred words": 0.007861635220125786,
+          "copied text": 0.006289308176100629,
+          "invented amount": 0.006289308176100629,
+          "workspace routing": 0.0047169811320754715
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.5883838383838385,
+          "lo": 0.5151515151515151,
+          "hi": 0.6616161616161615
+        },
+        "checks": {
+          "rate": 0.6767676767676767,
+          "lo": 0.601010101010101,
+          "hi": 0.7474747474747475
+        },
+        "floor": {
+          "rate": 0.8694029850746269,
+          "lo": 0.8202247191011236,
+          "hi": 0.9147286821705426,
+          "judged": 268
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.30303030303030304,
+            "lo": 0.24242424242424243,
+            "hi": 0.3686868686868687
+          },
+          "editlens-roberta-large": {
+            "rate": 0.6666666666666666,
+            "lo": 0.5984848484848485,
+            "hi": 0.7373737373737373
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.4318181818181818,
+            "lo": 0.3560606060606061,
+            "hi": 0.5075757575757576
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.47474747474747475,
+            "lo": 0.4065656565656566,
+            "hi": 0.5505050505050505
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.2196969696969697,
+            "lo": 0.16919191919191917,
+            "hi": 0.2752525252525252
+          },
+          "editlens-roberta-large": {
+            "rate": 0.44191919191919193,
+            "lo": 0.3686868686868687,
+            "hi": 0.5151515151515151
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.3181818181818182,
+            "lo": 0.255050505050505,
+            "hi": 0.38888888888888884
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.26010101010101006,
+            "lo": 0.20454545454545456,
+            "hi": 0.32575757575757575
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 87,
+          "checks": 128,
+          "floor": 35,
+          "detector": 146
+        },
+        "failed_checks": {
+          "formatting": 0.19696969696969696,
+          "assistant talk or a placeholder": 0.12121212121212122,
+          "length": 0.020202020202020204,
+          "copied text": 0.010101010101010102,
+          "workspace routing": 0.007575757575757576,
+          "required or barred words": 0.005050505050505051,
+          "invented amount": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.5791666666666667,
+          "lo": 0.4875,
+          "hi": 0.6625
+        },
+        "checks": {
+          "rate": 0.725,
+          "lo": 0.6333333333333333,
+          "hi": 0.8083333333333333
+        },
+        "floor": {
+          "rate": 0.7988505747126436,
+          "lo": 0.7212121212121212,
+          "hi": 0.8734939759036144,
+          "judged": 174
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.3416666666666667,
+            "lo": 0.2583333333333333,
+            "hi": 0.425
+          },
+          "editlens-roberta-large": {
+            "rate": 0.75,
+            "lo": 0.6666666666666667,
+            "hi": 0.8291666666666666
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.5916666666666667,
+            "lo": 0.4958333333333333,
+            "hi": 0.6791666666666667
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.625,
+            "lo": 0.5333333333333333,
+            "hi": 0.7083333333333333
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.25,
+            "lo": 0.17916666666666664,
+            "hi": 0.32916666666666666
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4791666666666667,
+            "lo": 0.3875,
+            "hi": 0.5666666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.4333333333333333,
+            "lo": 0.3416666666666667,
+            "hi": 0.5208333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.32916666666666666,
+            "lo": 0.24166666666666664,
+            "hi": 0.4166666666666667
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 60,
+          "checks": 66,
+          "floor": 35,
+          "detector": 79
+        },
+        "failed_checks": {
+          "formatting": 0.15,
+          "assistant talk or a placeholder": 0.1375,
+          "invented amount": 0.0125,
+          "required or barred words": 0.0125,
+          "length": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "id": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "lab": "OpenAI",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.8333333333333333,
+          "lo": 0.7845911949685535,
+          "hi": 0.8773584905660378
+        },
+        "checks": {
+          "rate": 0.8506289308176102,
+          "lo": 0.8018867924528302,
+          "hi": 0.8946540880503144
+        },
+        "floor": {
+          "rate": 0.9796672828096118,
+          "lo": 0.963302752293578,
+          "hi": 0.9926470588235294,
+          "judged": 541
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.13679245283018868,
+            "lo": 0.09748427672955974,
+            "hi": 0.17767295597484276
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3616352201257862,
+            "lo": 0.30345911949685533,
+            "hi": 0.419811320754717
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.25157232704402516,
+            "lo": 0.19654088050314464,
+            "hi": 0.30503144654088055
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.21855345911949683,
+            "lo": 0.17452830188679244,
+            "hi": 0.2641509433962264
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12578616352201258,
+            "lo": 0.0880503144654088,
+            "hi": 0.1650943396226415
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3144654088050315,
+            "lo": 0.25943396226415094,
+            "hi": 0.37106918238993714
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.23742138364779874,
+            "lo": 0.18396226415094338,
+            "hi": 0.2908805031446541
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.17452830188679244,
+            "lo": 0.1320754716981132,
+            "hi": 0.2169811320754717
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 80,
+          "checks": 95,
+          "floor": 11,
+          "detector": 450
+        },
+        "failed_checks": {
+          "formatting": 0.09119496855345911,
+          "assistant talk or a placeholder": 0.04874213836477988,
+          "copied text": 0.0047169811320754715,
+          "workspace routing": 0.0047169811320754715,
+          "privacy": 0.0031446540880503146
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.8257575757575758,
+          "lo": 0.7626262626262627,
+          "hi": 0.8838383838383839
+        },
+        "checks": {
+          "rate": 0.8434343434343434,
+          "lo": 0.7828282828282828,
+          "hi": 0.898989898989899
+        },
+        "floor": {
+          "rate": 0.9790419161676647,
+          "lo": 0.9539877300613497,
+          "hi": 0.9970326409495549,
+          "judged": 334
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15151515151515152,
+            "lo": 0.101010101010101,
+            "hi": 0.20202020202020202
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3207070707070707,
+            "lo": 0.25252525252525254,
+            "hi": 0.3914141414141414
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.22474747474747475,
+            "lo": 0.1616161616161616,
+            "hi": 0.29292929292929293
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.20959595959595959,
+            "lo": 0.15404040404040403,
+            "hi": 0.2676767676767677
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.13636363636363635,
+            "lo": 0.08838383838383838,
+            "hi": 0.18686868686868688
+          },
+          "editlens-roberta-large": {
+            "rate": 0.27525252525252525,
+            "lo": 0.21212121212121213,
+            "hi": 0.3409090909090909
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.21212121212121213,
+            "lo": 0.15151515151515152,
+            "hi": 0.27777777777777773
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.16666666666666666,
+            "lo": 0.11616161616161615,
+            "hi": 0.2222222222222222
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 54,
+          "checks": 62,
+          "floor": 7,
+          "detector": 273
+        },
+        "failed_checks": {
+          "formatting": 0.09343434343434344,
+          "assistant talk or a placeholder": 0.047979797979797977,
+          "copied text": 0.007575757575757576,
+          "workspace routing": 0.007575757575757576,
+          "privacy": 0.005050505050505051
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.8458333333333334,
+          "lo": 0.7666666666666667,
+          "hi": 0.9166666666666666
+        },
+        "checks": {
+          "rate": 0.8625,
+          "lo": 0.7875,
+          "hi": 0.9291666666666666
+        },
+        "floor": {
+          "rate": 0.9806763285024155,
+          "lo": 0.9609756097560975,
+          "hi": 0.9952153110047847,
+          "judged": 207
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.1125,
+            "lo": 0.05833333333333333,
+            "hi": 0.175
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4291666666666667,
+            "lo": 0.32916666666666666,
+            "hi": 0.5333333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.29583333333333334,
+            "lo": 0.2125,
+            "hi": 0.39166666666666666
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.23333333333333334,
+            "lo": 0.15416666666666665,
+            "hi": 0.31666666666666665
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.10833333333333332,
+            "lo": 0.05416666666666666,
+            "hi": 0.17083333333333334
+          },
+          "editlens-roberta-large": {
+            "rate": 0.37916666666666665,
+            "lo": 0.2833333333333333,
+            "hi": 0.4791666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2791666666666667,
+            "lo": 0.19166666666666665,
+            "hi": 0.375
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.1875,
+            "lo": 0.11666666666666665,
+            "hi": 0.26666666666666666
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 26,
+          "checks": 33,
+          "floor": 4,
+          "detector": 177
+        },
+        "failed_checks": {
+          "formatting": 0.0875,
+          "assistant talk or a placeholder": 0.05
+        }
+      }
+    },
+    {
+      "id": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "lab": "OpenAI",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.7091194968553459,
+          "lo": 0.6525157232704403,
+          "hi": 0.7657232704402516
+        },
+        "checks": {
+          "rate": 0.7216981132075472,
+          "lo": 0.6650943396226415,
+          "hi": 0.7767295597484276
+        },
+        "floor": {
+          "rate": 0.9825708061002179,
+          "lo": 0.9655172413793104,
+          "hi": 0.9956989247311828,
+          "judged": 459
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12578616352201258,
+            "lo": 0.08647798742138364,
+            "hi": 0.16666666666666669
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3223270440251572,
+            "lo": 0.27044025157232704,
+            "hi": 0.37735849056603776
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2279874213836478,
+            "lo": 0.1792452830188679,
+            "hi": 0.2751572327044025
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.3270440251572327,
+            "lo": 0.27358490566037735,
+            "hi": 0.3805031446540881
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.11477987421383647,
+            "lo": 0.0770440251572327,
+            "hi": 0.1540880503144654
+          },
+          "editlens-roberta-large": {
+            "rate": 0.25943396226415094,
+            "lo": 0.21069182389937105,
+            "hi": 0.3113207547169811
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.19968553459119498,
+            "lo": 0.1540880503144654,
+            "hi": 0.24528301886792453
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.23742138364779872,
+            "lo": 0.18867924528301888,
+            "hi": 0.28773584905660377
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 73,
+          "checks": 177,
+          "floor": 8,
+          "detector": 378
+        },
+        "failed_checks": {
+          "formatting": 0.1430817610062893,
+          "length": 0.08018867924528301,
+          "assistant talk or a placeholder": 0.06918238993710692,
+          "copied text": 0.0047169811320754715,
+          "invented amount": 0.0031446540880503146,
+          "workspace routing": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.7171717171717172,
+          "lo": 0.6464646464646464,
+          "hi": 0.7828282828282828
+        },
+        "checks": {
+          "rate": 0.7323232323232324,
+          "lo": 0.6616161616161615,
+          "hi": 0.8005050505050505
+        },
+        "floor": {
+          "rate": 0.9793103448275862,
+          "lo": 0.9540636042402827,
+          "hi": 0.9966101694915255,
+          "judged": 290
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12373737373737373,
+            "lo": 0.07575757575757576,
+            "hi": 0.17424242424242425
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2803030303030303,
+            "lo": 0.2196969696969697,
+            "hi": 0.3484848484848485
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.20454545454545456,
+            "lo": 0.14646464646464646,
+            "hi": 0.27020202020202017
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.27777777777777773,
+            "lo": 0.2196969696969697,
+            "hi": 0.33838383838383834
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.11616161616161615,
+            "lo": 0.0707070707070707,
+            "hi": 0.16414141414141414
+          },
+          "editlens-roberta-large": {
+            "rate": 0.23484848484848486,
+            "lo": 0.17676767676767677,
+            "hi": 0.3005050505050505
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.17676767676767677,
+            "lo": 0.12373737373737373,
+            "hi": 0.23484848484848486
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.19696969696969696,
+            "lo": 0.14646464646464646,
+            "hi": 0.25
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 46,
+          "checks": 106,
+          "floor": 6,
+          "detector": 238
+        },
+        "failed_checks": {
+          "formatting": 0.1388888888888889,
+          "assistant talk or a placeholder": 0.06818181818181818,
+          "length": 0.05303030303030303,
+          "copied text": 0.007575757575757576,
+          "invented amount": 0.005050505050505051,
+          "workspace routing": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.6958333333333333,
+          "lo": 0.6041666666666667,
+          "hi": 0.7791666666666667
+        },
+        "checks": {
+          "rate": 0.7041666666666667,
+          "lo": 0.6125,
+          "hi": 0.7916666666666667
+        },
+        "floor": {
+          "rate": 0.9881656804733728,
+          "lo": 0.9702380952380952,
+          "hi": 1.0,
+          "judged": 169
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12916666666666668,
+            "lo": 0.06666666666666667,
+            "hi": 0.20416666666666666
+          },
+          "editlens-roberta-large": {
+            "rate": 0.39166666666666666,
+            "lo": 0.30416666666666664,
+            "hi": 0.4833333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.26666666666666666,
+            "lo": 0.1875,
+            "hi": 0.3458333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.4083333333333333,
+            "lo": 0.3125,
+            "hi": 0.5
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.1125,
+            "lo": 0.05833333333333333,
+            "hi": 0.17916666666666664
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3,
+            "lo": 0.2208333333333333,
+            "hi": 0.3833333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2375,
+            "lo": 0.16666666666666666,
+            "hi": 0.3125
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.30416666666666664,
+            "lo": 0.21666666666666665,
+            "hi": 0.4
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 27,
+          "checks": 71,
+          "floor": 2,
+          "detector": 140
+        },
+        "failed_checks": {
+          "formatting": 0.15,
+          "length": 0.125,
+          "assistant talk or a placeholder": 0.07083333333333333
+        }
+      }
+    },
+    {
+      "id": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "lab": "Anthropic",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.5707547169811321,
+          "lo": 0.5141509433962265,
+          "hi": 0.628930817610063
+        },
+        "checks": {
+          "rate": 0.6776729559748427,
+          "lo": 0.6179245283018868,
+          "hi": 0.7389937106918238
+        },
+        "floor": {
+          "rate": 0.8422273781902552,
+          "lo": 0.8004587155963303,
+          "hi": 0.8826291079812206,
+          "judged": 431
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15251572327044027,
+            "lo": 0.11320754716981132,
+            "hi": 0.19339622641509435
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4371069182389937,
+            "lo": 0.38207547169811323,
+            "hi": 0.49528301886792453
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2830188679245283,
+            "lo": 0.23270440251572325,
+            "hi": 0.33647798742138363
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.49056603773584906,
+            "lo": 0.4371069182389937,
+            "hi": 0.5455974842767295
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.11320754716981132,
+            "lo": 0.08018867924528301,
+            "hi": 0.14937106918238993
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2971698113207547,
+            "lo": 0.25,
+            "hi": 0.3474842767295598
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.21383647798742136,
+            "lo": 0.16981132075471697,
+            "hi": 0.25943396226415094
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2751572327044025,
+            "lo": 0.22955974842767293,
+            "hi": 0.32547169811320753
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 72,
+          "checks": 205,
+          "floor": 68,
+          "detector": 291
+        },
+        "failed_checks": {
+          "formatting": 0.21226415094339623,
+          "assistant talk or a placeholder": 0.10534591194968554,
+          "length": 0.025157232704402517,
+          "copied text": 0.007861635220125786,
+          "required or barred words": 0.006289308176100629,
+          "invented amount": 0.0047169811320754715,
+          "privacy": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.5707070707070707,
+          "lo": 0.4974747474747475,
+          "hi": 0.6464646464646464
+        },
+        "checks": {
+          "rate": 0.6666666666666666,
+          "lo": 0.5934343434343434,
+          "hi": 0.73989898989899
+        },
+        "floor": {
+          "rate": 0.8560606060606061,
+          "lo": 0.7969348659003831,
+          "hi": 0.9083969465648855,
+          "judged": 264
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.14646464646464646,
+            "lo": 0.101010101010101,
+            "hi": 0.202020202020202
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4191919191919192,
+            "lo": 0.35101010101010105,
+            "hi": 0.48484848484848486
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.22979797979797978,
+            "lo": 0.16919191919191917,
+            "hi": 0.29545454545454547
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.4217171717171717,
+            "lo": 0.35353535353535354,
+            "hi": 0.48989898989898994
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.10353535353535354,
+            "lo": 0.06565656565656565,
+            "hi": 0.14898989898989898
+          },
+          "editlens-roberta-large": {
+            "rate": 0.29040404040404044,
+            "lo": 0.22979797979797978,
+            "hi": 0.3560606060606061
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.17929292929292928,
+            "lo": 0.12626262626262627,
+            "hi": 0.23484848484848486
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.24747474747474746,
+            "lo": 0.1893939393939394,
+            "hi": 0.30808080808080807
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 41,
+          "checks": 132,
+          "floor": 38,
+          "detector": 185
+        },
+        "failed_checks": {
+          "formatting": 0.23232323232323232,
+          "assistant talk or a placeholder": 0.08080808080808081,
+          "length": 0.025252525252525252,
+          "copied text": 0.012626262626262626,
+          "required or barred words": 0.010101010101010102,
+          "privacy": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.5708333333333333,
+          "lo": 0.4791666666666667,
+          "hi": 0.6583333333333333
+        },
+        "checks": {
+          "rate": 0.6958333333333333,
+          "lo": 0.6,
+          "hi": 0.7833333333333333
+        },
+        "floor": {
+          "rate": 0.8203592814371258,
+          "lo": 0.754601226993865,
+          "hi": 0.8823529411764706,
+          "judged": 167
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.1625,
+            "lo": 0.10416666666666666,
+            "hi": 0.22916666666666666
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4666666666666667,
+            "lo": 0.375,
+            "hi": 0.5583333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.3708333333333333,
+            "lo": 0.2791666666666667,
+            "hi": 0.4625
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.6041666666666667,
+            "lo": 0.525,
+            "hi": 0.6833333333333333
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12916666666666665,
+            "lo": 0.075,
+            "hi": 0.1875
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3083333333333333,
+            "lo": 0.225,
+            "hi": 0.39166666666666666
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2708333333333333,
+            "lo": 0.19583333333333333,
+            "hi": 0.3458333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.3208333333333333,
+            "lo": 0.25,
+            "hi": 0.3958333333333333
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 31,
+          "checks": 73,
+          "floor": 30,
+          "detector": 106
+        },
+        "failed_checks": {
+          "formatting": 0.17916666666666667,
+          "assistant talk or a placeholder": 0.14583333333333334,
+          "length": 0.025,
+          "invented amount": 0.0125
+        }
+      }
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "lab": "Anthropic",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.5188679245283019,
+          "lo": 0.4606918238993711,
+          "hi": 0.5770440251572326
+        },
+        "checks": {
+          "rate": 0.621069182389937,
+          "lo": 0.559748427672956,
+          "hi": 0.6808176100628931
+        },
+        "floor": {
+          "rate": 0.8354430379746836,
+          "lo": 0.7893401015228426,
+          "hi": 0.8775510204081632,
+          "judged": 395
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15251572327044027,
+            "lo": 0.11477987421383647,
+            "hi": 0.19182389937106917
+          },
+          "editlens-roberta-large": {
+            "rate": 0.5251572327044025,
+            "lo": 0.4685534591194968,
+            "hi": 0.5833333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2971698113207547,
+            "lo": 0.24528301886792453,
+            "hi": 0.35062893081761004
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.40408805031446543,
+            "lo": 0.35062893081761004,
+            "hi": 0.45597484276729555
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.110062893081761,
+            "lo": 0.07861635220125784,
+            "hi": 0.14465408805031446
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3160377358490566,
+            "lo": 0.2641509433962264,
+            "hi": 0.3694968553459119
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2232704402515723,
+            "lo": 0.17767295597484276,
+            "hi": 0.27044025157232704
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.19654088050314464,
+            "lo": 0.1572327044025157,
+            "hi": 0.23742138364779872
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 70,
+          "checks": 241,
+          "floor": 65,
+          "detector": 260
+        },
+        "failed_checks": {
+          "formatting": 0.2059748427672956,
+          "assistant talk or a placeholder": 0.16981132075471697,
+          "length": 0.02358490566037736,
+          "invented amount": 0.009433962264150943,
+          "copied text": 0.007861635220125786,
+          "required or barred words": 0.007861635220125786,
+          "workspace routing": 0.006289308176100629,
+          "other check": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.5,
+          "lo": 0.4267676767676768,
+          "hi": 0.5757575757575758
+        },
+        "checks": {
+          "rate": 0.5984848484848485,
+          "lo": 0.5202020202020202,
+          "hi": 0.6742424242424242
+        },
+        "floor": {
+          "rate": 0.8354430379746836,
+          "lo": 0.7740585774058577,
+          "hi": 0.8911290322580645,
+          "judged": 237
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15151515151515152,
+            "lo": 0.101010101010101,
+            "hi": 0.20454545454545456
+          },
+          "editlens-roberta-large": {
+            "rate": 0.47222222222222227,
+            "lo": 0.39898989898989895,
+            "hi": 0.5479797979797979
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2601010101010101,
+            "lo": 0.19949494949494948,
+            "hi": 0.32575757575757575
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.3611111111111111,
+            "lo": 0.29545454545454547,
+            "hi": 0.4318181818181818
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.10353535353535354,
+            "lo": 0.06313131313131312,
+            "hi": 0.14646464646464646
+          },
+          "editlens-roberta-large": {
+            "rate": 0.28535353535353536,
+            "lo": 0.2222222222222222,
+            "hi": 0.351010101010101
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.18686868686868685,
+            "lo": 0.13383838383838384,
+            "hi": 0.24242424242424243
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.15151515151515152,
+            "lo": 0.1111111111111111,
+            "hi": 0.19444444444444442
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 41,
+          "checks": 159,
+          "floor": 39,
+          "detector": 157
+        },
+        "failed_checks": {
+          "formatting": 0.22727272727272727,
+          "assistant talk or a placeholder": 0.14646464646464646,
+          "length": 0.020202020202020204,
+          "copied text": 0.012626262626262626,
+          "required or barred words": 0.010101010101010102,
+          "workspace routing": 0.010101010101010102,
+          "invented amount": 0.007575757575757576,
+          "other check": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.55,
+          "lo": 0.4583333333333333,
+          "hi": 0.6375
+        },
+        "checks": {
+          "rate": 0.6583333333333333,
+          "lo": 0.5625,
+          "hi": 0.75
+        },
+        "floor": {
+          "rate": 0.8354430379746836,
+          "lo": 0.7666666666666667,
+          "hi": 0.9032258064516129,
+          "judged": 158
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15416666666666665,
+            "lo": 0.1,
+            "hi": 0.21666666666666665
+          },
+          "editlens-roberta-large": {
+            "rate": 0.6125,
+            "lo": 0.525,
+            "hi": 0.6958333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.3583333333333333,
+            "lo": 0.2708333333333333,
+            "hi": 0.4458333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.475,
+            "lo": 0.3833333333333333,
+            "hi": 0.5541666666666667
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12083333333333332,
+            "lo": 0.07083333333333333,
+            "hi": 0.17916666666666664
+          },
+          "editlens-roberta-large": {
+            "rate": 0.36666666666666664,
+            "lo": 0.2791666666666667,
+            "hi": 0.45
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2833333333333333,
+            "lo": 0.20416666666666666,
+            "hi": 0.36666666666666664
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2708333333333333,
+            "lo": 0.19583333333333333,
+            "hi": 0.3458333333333333
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 29,
+          "checks": 82,
+          "floor": 26,
+          "detector": 103
+        },
+        "failed_checks": {
+          "assistant talk or a placeholder": 0.20833333333333334,
+          "formatting": 0.17083333333333334,
+          "length": 0.029166666666666667,
+          "invented amount": 0.0125,
+          "required or barred words": 0.004166666666666667
+        }
+      }
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "lab": "OpenAI",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.8160377358490566,
+          "lo": 0.7641509433962265,
+          "hi": 0.8647798742138365
+        },
+        "checks": {
+          "rate": 0.8317610062893083,
+          "lo": 0.7814465408805031,
+          "hi": 0.878930817610063
+        },
+        "floor": {
+          "rate": 0.9810964083175804,
+          "lo": 0.9616858237547893,
+          "hi": 0.9962121212121212,
+          "judged": 529
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12578616352201258,
+            "lo": 0.08805031446540881,
+            "hi": 0.1650943396226415
+          },
+          "editlens-roberta-large": {
+            "rate": 0.35220125786163525,
+            "lo": 0.29559748427672955,
+            "hi": 0.4088050314465409
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.24528301886792453,
+            "lo": 0.19654088050314464,
+            "hi": 0.29874213836477986
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.20440251572327042,
+            "lo": 0.16037735849056603,
+            "hi": 0.25157232704402516
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.110062893081761,
+            "lo": 0.07389937106918239,
+            "hi": 0.14779874213836477
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2893081761006289,
+            "lo": 0.2358490566037736,
+            "hi": 0.3443396226415094
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2279874213836478,
+            "lo": 0.17767295597484276,
+            "hi": 0.279874213836478
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.16352201257861634,
+            "lo": 0.12264150943396226,
+            "hi": 0.20440251572327045
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 70,
+          "checks": 107,
+          "floor": 10,
+          "detector": 449
+        },
+        "failed_checks": {
+          "formatting": 0.09119496855345911,
+          "assistant talk or a placeholder": 0.05817610062893082,
+          "workspace routing": 0.009433962264150943,
+          "copied text": 0.0047169811320754715,
+          "length": 0.0031446540880503146,
+          "invented amount": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.8055555555555555,
+          "lo": 0.73989898989899,
+          "hi": 0.8661616161616161
+        },
+        "checks": {
+          "rate": 0.8282828282828283,
+          "lo": 0.7626262626262627,
+          "hi": 0.8863636363636364
+        },
+        "floor": {
+          "rate": 0.9725609756097561,
+          "lo": 0.9422492401215805,
+          "hi": 0.9940119760479041,
+          "judged": 328
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.14141414141414144,
+            "lo": 0.09343434343434343,
+            "hi": 0.19444444444444445
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3181818181818182,
+            "lo": 0.255050505050505,
+            "hi": 0.38636363636363635
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.1919191919191919,
+            "lo": 0.13383838383838384,
+            "hi": 0.25252525252525254
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.16919191919191917,
+            "lo": 0.11616161616161615,
+            "hi": 0.22474747474747472
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.11868686868686869,
+            "lo": 0.07323232323232323,
+            "hi": 0.16919191919191917
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2601010101010101,
+            "lo": 0.19949494949494948,
+            "hi": 0.3282828282828283
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.17424242424242425,
+            "lo": 0.11868686868686869,
+            "hi": 0.2323232323232323
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.1313131313131313,
+            "lo": 0.08585858585858586,
+            "hi": 0.18181818181818182
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 47,
+          "checks": 68,
+          "floor": 9,
+          "detector": 272
+        },
+        "failed_checks": {
+          "formatting": 0.09343434343434344,
+          "assistant talk or a placeholder": 0.050505050505050504,
+          "workspace routing": 0.015151515151515152,
+          "copied text": 0.007575757575757576,
+          "length": 0.0025252525252525255,
+          "invented amount": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.8333333333333334,
+          "lo": 0.75,
+          "hi": 0.9041666666666666
+        },
+        "checks": {
+          "rate": 0.8375,
+          "lo": 0.7583333333333333,
+          "hi": 0.9083333333333334
+        },
+        "floor": {
+          "rate": 0.9950248756218906,
+          "lo": 0.9848484848484849,
+          "hi": 1.0,
+          "judged": 201
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.1,
+            "lo": 0.04583333333333333,
+            "hi": 0.1625
+          },
+          "editlens-roberta-large": {
+            "rate": 0.4083333333333333,
+            "lo": 0.31666666666666665,
+            "hi": 0.5041666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.33333333333333337,
+            "lo": 0.24583333333333335,
+            "hi": 0.4333333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2625,
+            "lo": 0.18333333333333332,
+            "hi": 0.35
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.09583333333333333,
+            "lo": 0.04583333333333333,
+            "hi": 0.15833333333333333
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3375,
+            "lo": 0.24583333333333335,
+            "hi": 0.4375
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.31666666666666665,
+            "lo": 0.225,
+            "hi": 0.4166666666666667
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.21666666666666665,
+            "lo": 0.15,
+            "hi": 0.29583333333333334
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 23,
+          "checks": 39,
+          "floor": 1,
+          "detector": 177
+        },
+        "failed_checks": {
+          "formatting": 0.0875,
+          "assistant talk or a placeholder": 0.07083333333333333,
+          "length": 0.004166666666666667
+        }
+      }
+    },
+    {
+      "id": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "lab": "DeepSeek",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.6084905660377359,
+          "lo": 0.5550314465408804,
+          "hi": 0.660377358490566
+        },
+        "checks": {
+          "rate": 0.6713836477987422,
+          "lo": 0.6163522012578616,
+          "hi": 0.7248427672955975
+        },
+        "floor": {
+          "rate": 0.9063231850117096,
+          "lo": 0.8688524590163934,
+          "hi": 0.9389671361502347,
+          "judged": 427
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.13836477987421383,
+            "lo": 0.10062893081761005,
+            "hi": 0.1761006289308176
+          },
+          "editlens-roberta-large": {
+            "rate": 0.30503144654088055,
+            "lo": 0.2562893081761006,
+            "hi": 0.3584905660377358
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.4025157232704402,
+            "lo": 0.34591194968553457,
+            "hi": 0.45911949685534587
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.3081761006289308,
+            "lo": 0.25943396226415094,
+            "hi": 0.3569182389937107
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.09748427672955974,
+            "lo": 0.06918238993710692,
+            "hi": 0.1289308176100629
+          },
+          "editlens-roberta-large": {
+            "rate": 0.21540880503144652,
+            "lo": 0.17295597484276728,
+            "hi": 0.26257861635220126
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.29559748427672955,
+            "lo": 0.24528301886792453,
+            "hi": 0.3474842767295597
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2012578616352201,
+            "lo": 0.16037735849056603,
+            "hi": 0.24371069182389937
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 62,
+          "checks": 209,
+          "floor": 40,
+          "detector": 325
+        },
+        "failed_checks": {
+          "assistant talk or a placeholder": 0.12735849056603774,
+          "formatting": 0.12578616352201258,
+          "length": 0.0440251572327044,
+          "workspace routing": 0.026729559748427674,
+          "copied text": 0.006289308176100629,
+          "required or barred words": 0.0047169811320754715,
+          "other check": 0.0031446540880503146,
+          "invented amount": 0.0031446540880503146
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.5808080808080809,
+          "lo": 0.5126262626262627,
+          "hi": 0.648989898989899
+        },
+        "checks": {
+          "rate": 0.6464646464646464,
+          "lo": 0.5782828282828283,
+          "hi": 0.7146464646464646
+        },
+        "floor": {
+          "rate": 0.8984375,
+          "lo": 0.8483606557377049,
+          "hi": 0.9448818897637795,
+          "judged": 256
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12878787878787878,
+            "lo": 0.08333333333333333,
+            "hi": 0.17676767676767677
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2727272727272727,
+            "lo": 0.21212121212121213,
+            "hi": 0.3358585858585858
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.37626262626262624,
+            "lo": 0.3055555555555556,
+            "hi": 0.44696969696969696
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2601010101010101,
+            "lo": 0.202020202020202,
+            "hi": 0.32070707070707066
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.07575757575757576,
+            "lo": 0.045454545454545456,
+            "hi": 0.10858585858585858
+          },
+          "editlens-roberta-large": {
+            "rate": 0.18434343434343434,
+            "lo": 0.1338383838383838,
+            "hi": 0.2398989898989899
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.25757575757575757,
+            "lo": 0.19949494949494948,
+            "hi": 0.32070707070707066
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.1590909090909091,
+            "lo": 0.11616161616161615,
+            "hi": 0.20454545454545456
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 30,
+          "checks": 140,
+          "floor": 26,
+          "detector": 200
+        },
+        "failed_checks": {
+          "formatting": 0.14898989898989898,
+          "assistant talk or a placeholder": 0.12626262626262627,
+          "workspace routing": 0.03282828282828283,
+          "length": 0.027777777777777776,
+          "copied text": 0.010101010101010102,
+          "required or barred words": 0.007575757575757576,
+          "invented amount": 0.005050505050505051,
+          "other check": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.6541666666666667,
+          "lo": 0.5666666666666667,
+          "hi": 0.7333333333333333
+        },
+        "checks": {
+          "rate": 0.7125,
+          "lo": 0.6208333333333333,
+          "hi": 0.7916666666666667
+        },
+        "floor": {
+          "rate": 0.9181286549707602,
+          "lo": 0.8685714285714285,
+          "hi": 0.9611111111111111,
+          "judged": 171
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15416666666666665,
+            "lo": 0.09583333333333333,
+            "hi": 0.21666666666666665
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3583333333333333,
+            "lo": 0.275,
+            "hi": 0.4416666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.4458333333333333,
+            "lo": 0.35416666666666663,
+            "hi": 0.5375
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.3875,
+            "lo": 0.3,
+            "hi": 0.475
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.13333333333333333,
+            "lo": 0.07916666666666666,
+            "hi": 0.19166666666666665
+          },
+          "editlens-roberta-large": {
+            "rate": 0.26666666666666666,
+            "lo": 0.19166666666666665,
+            "hi": 0.3416666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.3583333333333333,
+            "lo": 0.275,
+            "hi": 0.4416666666666667
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2708333333333333,
+            "lo": 0.19583333333333333,
+            "hi": 0.35416666666666663
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 32,
+          "checks": 69,
+          "floor": 14,
+          "detector": 125
+        },
+        "failed_checks": {
+          "assistant talk or a placeholder": 0.12916666666666668,
+          "formatting": 0.0875,
+          "length": 0.07083333333333333,
+          "workspace routing": 0.016666666666666666,
+          "other check": 0.004166666666666667
+        }
+      }
+    },
+    {
+      "id": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "lab": "Moonshot AI",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.7028301886792453,
+          "lo": 0.6462264150943396,
+          "hi": 0.7594339622641509
+        },
+        "checks": {
+          "rate": 0.7216981132075472,
+          "lo": 0.6666666666666667,
+          "hi": 0.7767295597484276
+        },
+        "floor": {
+          "rate": 0.9738562091503268,
+          "lo": 0.954248366013072,
+          "hi": 0.9910913140311804,
+          "judged": 459
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.09591194968553458,
+            "lo": 0.06289308176100629,
+            "hi": 0.1320754716981132
+          },
+          "editlens-roberta-large": {
+            "rate": 0.27358490566037735,
+            "lo": 0.22798742138364778,
+            "hi": 0.32389937106918243
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.19339622641509435,
+            "lo": 0.14779874213836477,
+            "hi": 0.2389937106918239
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.16981132075471697,
+            "lo": 0.12735849056603774,
+            "hi": 0.20911949685534592
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.07861635220125784,
+            "lo": 0.05031446540880503,
+            "hi": 0.110062893081761
+          },
+          "editlens-roberta-large": {
+            "rate": 0.22169811320754718,
+            "lo": 0.1792452830188679,
+            "hi": 0.27044025157232704
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.16981132075471697,
+            "lo": 0.1289308176100629,
+            "hi": 0.21226415094339623
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.12735849056603774,
+            "lo": 0.09119496855345911,
+            "hi": 0.16194968553459121
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 50,
+          "checks": 177,
+          "floor": 12,
+          "detector": 397
+        },
+        "failed_checks": {
+          "formatting": 0.17138364779874213,
+          "assistant talk or a placeholder": 0.09276729559748427,
+          "workspace routing": 0.015723270440251572,
+          "copied text": 0.009433962264150943,
+          "invented amount": 0.0047169811320754715,
+          "other check": 0.0031446540880503146,
+          "length": 0.0015723270440251573,
+          "required or barred words": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.6666666666666666,
+          "lo": 0.5934343434343434,
+          "hi": 0.7373737373737373
+        },
+        "checks": {
+          "rate": 0.6792929292929293,
+          "lo": 0.6060606060606061,
+          "hi": 0.75
+        },
+        "floor": {
+          "rate": 0.9814126394052045,
+          "lo": 0.9595588235294118,
+          "hi": 0.9963636363636363,
+          "judged": 269
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.09848484848484848,
+            "lo": 0.05555555555555555,
+            "hi": 0.14141414141414144
+          },
+          "editlens-roberta-large": {
+            "rate": 0.24747474747474746,
+            "lo": 0.1919191919191919,
+            "hi": 0.3106060606060606
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.15656565656565655,
+            "lo": 0.10606060606060606,
+            "hi": 0.21212121212121213
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.12373737373737373,
+            "lo": 0.08333333333333333,
+            "hi": 0.16919191919191917
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.07323232323232323,
+            "lo": 0.0404040404040404,
+            "hi": 0.10858585858585858
+          },
+          "editlens-roberta-large": {
+            "rate": 0.19949494949494948,
+            "lo": 0.14898989898989898,
+            "hi": 0.25757575757575757
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.12626262626262627,
+            "lo": 0.08333333333333333,
+            "hi": 0.17424242424242425
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.09343434343434343,
+            "lo": 0.05808080808080807,
+            "hi": 0.1313131313131313
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 29,
+          "checks": 127,
+          "floor": 5,
+          "detector": 235
+        },
+        "failed_checks": {
+          "formatting": 0.20454545454545456,
+          "assistant talk or a placeholder": 0.09848484848484848,
+          "workspace routing": 0.022727272727272728,
+          "copied text": 0.015151515151515152,
+          "invented amount": 0.007575757575757576,
+          "length": 0.0025252525252525255,
+          "required or barred words": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.7625,
+          "lo": 0.6833333333333333,
+          "hi": 0.8333333333333334
+        },
+        "checks": {
+          "rate": 0.7916666666666667,
+          "lo": 0.7166666666666667,
+          "hi": 0.8583333333333334
+        },
+        "floor": {
+          "rate": 0.9631578947368421,
+          "lo": 0.9210526315789473,
+          "hi": 0.9946808510638298,
+          "judged": 190
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.09166666666666666,
+            "lo": 0.041666666666666664,
+            "hi": 0.15416666666666665
+          },
+          "editlens-roberta-large": {
+            "rate": 0.31666666666666665,
+            "lo": 0.2333333333333333,
+            "hi": 0.4041666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.25416666666666665,
+            "lo": 0.175,
+            "hi": 0.3333333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.24583333333333335,
+            "lo": 0.17083333333333334,
+            "hi": 0.32916666666666666
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.0875,
+            "lo": 0.041666666666666664,
+            "hi": 0.14583333333333331
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2583333333333333,
+            "lo": 0.18333333333333332,
+            "hi": 0.3375
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.24166666666666664,
+            "lo": 0.16666666666666666,
+            "hi": 0.31666666666666665
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.18333333333333332,
+            "lo": 0.11666666666666667,
+            "hi": 0.25833333333333336
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 21,
+          "checks": 50,
+          "floor": 7,
+          "detector": 162
+        },
+        "failed_checks": {
+          "formatting": 0.11666666666666667,
+          "assistant talk or a placeholder": 0.08333333333333333,
+          "other check": 0.008333333333333333,
+          "workspace routing": 0.004166666666666667
+        }
+      }
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "lab": "Anthropic",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.41037735849056606,
+          "lo": 0.360062893081761,
+          "hi": 0.46226415094339623
+        },
+        "checks": {
+          "rate": 0.6242138364779874,
+          "lo": 0.5676100628930817,
+          "hi": 0.6792452830188679
+        },
+        "floor": {
+          "rate": 0.6574307304785895,
+          "lo": 0.5970149253731343,
+          "hi": 0.7146401985111662,
+          "judged": 397
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.13836477987421383,
+            "lo": 0.10220125786163521,
+            "hi": 0.17767295597484276
+          },
+          "editlens-roberta-large": {
+            "rate": 0.45125786163522014,
+            "lo": 0.3946540880503145,
+            "hi": 0.5094339622641509
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.26257861635220126,
+            "lo": 0.21383647798742136,
+            "hi": 0.3128930817610063
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.21855345911949683,
+            "lo": 0.17138364779874213,
+            "hi": 0.2641509433962264
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.07075471698113207,
+            "lo": 0.0440251572327044,
+            "hi": 0.10062893081761005
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2091194968553459,
+            "lo": 0.16823899371069181,
+            "hi": 0.25157232704402516
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.12735849056603774,
+            "lo": 0.09433962264150944,
+            "hi": 0.16352201257861634
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.08176100628930817,
+            "lo": 0.0550314465408805,
+            "hi": 0.11320754716981132
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 45,
+          "checks": 239,
+          "floor": 136,
+          "detector": 216
+        },
+        "failed_checks": {
+          "formatting": 0.16352201257861634,
+          "assistant talk or a placeholder": 0.14150943396226415,
+          "length": 0.10062893081761007,
+          "workspace routing": 0.012578616352201259,
+          "copied text": 0.009433962264150943,
+          "required or barred words": 0.0047169811320754715,
+          "invented amount": 0.0031446540880503146,
+          "privacy": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.3787878787878788,
+          "lo": 0.31565656565656564,
+          "hi": 0.44696969696969696
+        },
+        "checks": {
+          "rate": 0.6060606060606061,
+          "lo": 0.5353535353535354,
+          "hi": 0.6767676767676767
+        },
+        "floor": {
+          "rate": 0.625,
+          "lo": 0.5512820512820513,
+          "hi": 0.70042194092827,
+          "judged": 240
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.12878787878787878,
+            "lo": 0.08585858585858586,
+            "hi": 0.17676767676767677
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3914141414141414,
+            "lo": 0.3232323232323232,
+            "hi": 0.4621212121212121
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.22979797979797978,
+            "lo": 0.17424242424242425,
+            "hi": 0.29292929292929293
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.16414141414141412,
+            "lo": 0.11363636363636363,
+            "hi": 0.2196969696969697
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.05808080808080807,
+            "lo": 0.027777777777777776,
+            "hi": 0.09090909090909091
+          },
+          "editlens-roberta-large": {
+            "rate": 0.16919191919191917,
+            "lo": 0.12626262626262624,
+            "hi": 0.21717171717171715
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.09595959595959595,
+            "lo": 0.06060606060606061,
+            "hi": 0.13636363636363635
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.05808080808080807,
+            "lo": 0.030303030303030304,
+            "hi": 0.09090909090909091
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 23,
+          "checks": 156,
+          "floor": 90,
+          "detector": 127
+        },
+        "failed_checks": {
+          "formatting": 0.1919191919191919,
+          "assistant talk or a placeholder": 0.13636363636363635,
+          "length": 0.06818181818181818,
+          "copied text": 0.012626262626262626,
+          "required or barred words": 0.007575757575757576,
+          "workspace routing": 0.005050505050505051,
+          "invented amount": 0.0025252525252525255,
+          "privacy": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.4625,
+          "lo": 0.3708333333333333,
+          "hi": 0.55
+        },
+        "checks": {
+          "rate": 0.6541666666666667,
+          "lo": 0.5625,
+          "hi": 0.7375
+        },
+        "floor": {
+          "rate": 0.7070063694267515,
+          "lo": 0.6163522012578616,
+          "hi": 0.793939393939394,
+          "judged": 157
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.15416666666666665,
+            "lo": 0.09166666666666666,
+            "hi": 0.2208333333333333
+          },
+          "editlens-roberta-large": {
+            "rate": 0.55,
+            "lo": 0.45,
+            "hi": 0.65
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.31666666666666665,
+            "lo": 0.23333333333333334,
+            "hi": 0.4
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.3083333333333333,
+            "lo": 0.225,
+            "hi": 0.39166666666666666
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.09166666666666666,
+            "lo": 0.041666666666666664,
+            "hi": 0.15
+          },
+          "editlens-roberta-large": {
+            "rate": 0.275,
+            "lo": 0.19166666666666665,
+            "hi": 0.3583333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.17916666666666664,
+            "lo": 0.1125,
+            "hi": 0.25
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.12083333333333332,
+            "lo": 0.06666666666666667,
+            "hi": 0.18333333333333332
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 22,
+          "checks": 83,
+          "floor": 46,
+          "detector": 89
+        },
+        "failed_checks": {
+          "length": 0.15416666666666667,
+          "assistant talk or a placeholder": 0.15,
+          "formatting": 0.11666666666666667,
+          "workspace routing": 0.025,
+          "invented amount": 0.004166666666666667,
+          "copied text": 0.004166666666666667
+        }
+      }
+    },
+    {
+      "id": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "lab": "MiniMax",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.27044025157232704,
+          "lo": 0.22798742138364778,
+          "hi": 0.3144654088050314
+        },
+        "checks": {
+          "rate": 0.44496855345911945,
+          "lo": 0.389937106918239,
+          "hi": 0.5015723270440251
+        },
+        "floor": {
+          "rate": 0.607773851590106,
+          "lo": 0.5400696864111498,
+          "hi": 0.6735395189003437,
+          "judged": 283
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.1210691823899371,
+            "lo": 0.08647798742138364,
+            "hi": 0.1572327044025157
+          },
+          "editlens-roberta-large": {
+            "rate": 0.3128930817610063,
+            "lo": 0.2610062893081761,
+            "hi": 0.36477987421383645
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.2672955974842767,
+            "lo": 0.21855345911949683,
+            "hi": 0.31918238993710696
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.47641509433962265,
+            "lo": 0.42295597484276726,
+            "hi": 0.5298742138364779
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.0550314465408805,
+            "lo": 0.03459119496855346,
+            "hi": 0.0770440251572327
+          },
+          "editlens-roberta-large": {
+            "rate": 0.110062893081761,
+            "lo": 0.07861635220125784,
+            "hi": 0.1430817610062893
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.1179245283018868,
+            "lo": 0.08647798742138364,
+            "hi": 0.14937106918238993
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.1430817610062893,
+            "lo": 0.10849056603773585,
+            "hi": 0.18081761006289307
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 35,
+          "checks": 353,
+          "floor": 111,
+          "detector": 137
+        },
+        "failed_checks": {
+          "formatting": 0.2578616352201258,
+          "assistant talk or a placeholder": 0.2468553459119497,
+          "length": 0.13679245283018868,
+          "workspace routing": 0.0880503144654088,
+          "required or barred words": 0.020440251572327043,
+          "privacy": 0.012578616352201259,
+          "copied text": 0.009433962264150943,
+          "empty answer": 0.0047169811320754715,
+          "other check": 0.0047169811320754715,
+          "invented amount": 0.0015723270440251573
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.26010101010101006,
+          "lo": 0.20959595959595959,
+          "hi": 0.31565656565656564
+        },
+        "checks": {
+          "rate": 0.4166666666666667,
+          "lo": 0.351010101010101,
+          "hi": 0.48737373737373735
+        },
+        "floor": {
+          "rate": 0.6242424242424243,
+          "lo": 0.5355191256830601,
+          "hi": 0.7088607594936709,
+          "judged": 165
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.1313131313131313,
+            "lo": 0.08333333333333333,
+            "hi": 0.17929292929292928
+          },
+          "editlens-roberta-large": {
+            "rate": 0.2803030303030303,
+            "lo": 0.21464646464646464,
+            "hi": 0.34595959595959597
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.23737373737373738,
+            "lo": 0.17676767676767677,
+            "hi": 0.3005050505050505
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.41919191919191917,
+            "lo": 0.351010101010101,
+            "hi": 0.49242424242424243
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.05555555555555555,
+            "lo": 0.030303030303030304,
+            "hi": 0.08585858585858586
+          },
+          "editlens-roberta-large": {
+            "rate": 0.08585858585858586,
+            "lo": 0.05555555555555555,
+            "hi": 0.12373737373737373
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.08838383838383838,
+            "lo": 0.05555555555555555,
+            "hi": 0.12626262626262624
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.12626262626262624,
+            "lo": 0.08838383838383838,
+            "hi": 0.1717171717171717
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 22,
+          "checks": 231,
+          "floor": 62,
+          "detector": 81
+        },
+        "failed_checks": {
+          "formatting": 0.26515151515151514,
+          "assistant talk or a placeholder": 0.24242424242424243,
+          "length": 0.12878787878787878,
+          "workspace routing": 0.09848484848484848,
+          "required or barred words": 0.027777777777777776,
+          "privacy": 0.020202020202020204,
+          "copied text": 0.015151515151515152,
+          "empty answer": 0.007575757575757576,
+          "other check": 0.007575757575757576,
+          "invented amount": 0.0025252525252525255
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.2875,
+          "lo": 0.2125,
+          "hi": 0.36666666666666664
+        },
+        "checks": {
+          "rate": 0.4916666666666667,
+          "lo": 0.39583333333333337,
+          "hi": 0.5875
+        },
+        "floor": {
+          "rate": 0.5847457627118644,
+          "lo": 0.4774774774774775,
+          "hi": 0.6842105263157895,
+          "judged": 118
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.10416666666666666,
+            "lo": 0.05833333333333333,
+            "hi": 0.15416666666666665
+          },
+          "editlens-roberta-large": {
+            "rate": 0.36666666666666664,
+            "lo": 0.2833333333333333,
+            "hi": 0.4541666666666667
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.31666666666666665,
+            "lo": 0.2375,
+            "hi": 0.3958333333333333
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.5708333333333333,
+            "lo": 0.4875,
+            "hi": 0.65
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.05416666666666666,
+            "lo": 0.025,
+            "hi": 0.09166666666666666
+          },
+          "editlens-roberta-large": {
+            "rate": 0.15,
+            "lo": 0.09583333333333333,
+            "hi": 0.20833333333333331
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.16666666666666666,
+            "lo": 0.10833333333333332,
+            "hi": 0.22916666666666666
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.17083333333333334,
+            "lo": 0.10833333333333332,
+            "hi": 0.24166666666666664
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 13,
+          "checks": 122,
+          "floor": 49,
+          "detector": 56
+        },
+        "failed_checks": {
+          "assistant talk or a placeholder": 0.25416666666666665,
+          "formatting": 0.24583333333333332,
+          "length": 0.15,
+          "workspace routing": 0.07083333333333333,
+          "required or barred words": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "id": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "lab": "OpenAI",
+      "all": {
+        "outputs": 636,
+        "cards": 212,
+        "quality": {
+          "rate": 0.5487421383647798,
+          "lo": 0.4921383647798742,
+          "hi": 0.6053459119496856
+        },
+        "checks": {
+          "rate": 0.6100628930817611,
+          "lo": 0.5518867924528302,
+          "hi": 0.6666666666666667
+        },
+        "floor": {
+          "rate": 0.8994845360824743,
+          "lo": 0.859375,
+          "hi": 0.9347258485639687,
+          "judged": 388
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.02672955974842767,
+            "lo": 0.012578616352201257,
+            "hi": 0.0440251572327044
+          },
+          "editlens-roberta-large": {
+            "rate": 0.14622641509433962,
+            "lo": 0.10849056603773585,
+            "hi": 0.1871069182389937
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.1509433962264151,
+            "lo": 0.11320754716981132,
+            "hi": 0.18867924528301888
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.2012578616352201,
+            "lo": 0.15723270440251574,
+            "hi": 0.24528301886792453
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.018867924528301886,
+            "lo": 0.006289308176100628,
+            "hi": 0.0330188679245283
+          },
+          "editlens-roberta-large": {
+            "rate": 0.10220125786163521,
+            "lo": 0.07075471698113207,
+            "hi": 0.13836477987421383
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.10220125786163521,
+            "lo": 0.07075471698113207,
+            "hi": 0.13679245283018868
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.10377358490566038,
+            "lo": 0.07547169811320754,
+            "hi": 0.13522012578616352
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 12,
+          "checks": 248,
+          "floor": 39,
+          "detector": 337
+        },
+        "failed_checks": {
+          "length": 0.18867924528301888,
+          "assistant talk or a placeholder": 0.11163522012578617,
+          "formatting": 0.11006289308176101,
+          "workspace routing": 0.02358490566037736,
+          "required or barred words": 0.014150943396226415,
+          "copied text": 0.006289308176100629,
+          "other check": 0.0047169811320754715
+        }
+      },
+      "public": {
+        "outputs": 396,
+        "cards": 132,
+        "quality": {
+          "rate": 0.5656565656565657,
+          "lo": 0.49242424242424243,
+          "hi": 0.6414141414141414
+        },
+        "checks": {
+          "rate": 0.6313131313131313,
+          "lo": 0.5555555555555555,
+          "hi": 0.7045454545454546
+        },
+        "floor": {
+          "rate": 0.896,
+          "lo": 0.8436213991769548,
+          "hi": 0.946058091286307,
+          "judged": 250
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.032828282828282825,
+            "lo": 0.0101010101010101,
+            "hi": 0.05808080808080807
+          },
+          "editlens-roberta-large": {
+            "rate": 0.14393939393939395,
+            "lo": 0.09848484848484848,
+            "hi": 0.19444444444444442
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.13636363636363635,
+            "lo": 0.09090909090909091,
+            "hi": 0.1893939393939394
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.13888888888888887,
+            "lo": 0.09090909090909091,
+            "hi": 0.18686868686868685
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.022727272727272728,
+            "lo": 0.00505050505050505,
+            "hi": 0.04292929292929293
+          },
+          "editlens-roberta-large": {
+            "rate": 0.1111111111111111,
+            "lo": 0.0707070707070707,
+            "hi": 0.15656565656565657
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.09848484848484848,
+            "lo": 0.06060606060606061,
+            "hi": 0.14393939393939395
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.07828282828282827,
+            "lo": 0.045454545454545456,
+            "hi": 0.1111111111111111
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 9,
+          "checks": 146,
+          "floor": 26,
+          "detector": 215
+        },
+        "failed_checks": {
+          "length": 0.13636363636363635,
+          "formatting": 0.11616161616161616,
+          "assistant talk or a placeholder": 0.11363636363636363,
+          "workspace routing": 0.020202020202020204,
+          "required or barred words": 0.012626262626262626,
+          "copied text": 0.007575757575757576,
+          "other check": 0.007575757575757576
+        }
+      },
+      "private": {
+        "outputs": 240,
+        "cards": 80,
+        "quality": {
+          "rate": 0.5208333333333333,
+          "lo": 0.4375,
+          "hi": 0.6041666666666667
+        },
+        "checks": {
+          "rate": 0.575,
+          "lo": 0.4875,
+          "hi": 0.6625
+        },
+        "floor": {
+          "rate": 0.9057971014492754,
+          "lo": 0.8467153284671532,
+          "hi": 0.9609375,
+          "judged": 138
+        },
+        "reads_human": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.016666666666666666,
+            "lo": 0.004166666666666667,
+            "hi": 0.03333333333333333
+          },
+          "editlens-roberta-large": {
+            "rate": 0.15,
+            "lo": 0.0875,
+            "hi": 0.2208333333333333
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.175,
+            "lo": 0.11666666666666665,
+            "hi": 0.24166666666666664
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.30416666666666664,
+            "lo": 0.21666666666666665,
+            "hi": 0.39166666666666666
+          }
+        },
+        "all_gates": {
+          "editlens-llama-3.2-3b": {
+            "rate": 0.0125,
+            "lo": 0.0,
+            "hi": 0.029166666666666664
+          },
+          "editlens-roberta-large": {
+            "rate": 0.0875,
+            "lo": 0.041666666666666664,
+            "hi": 0.14166666666666666
+          },
+          "vanguard-modernbert-large": {
+            "rate": 0.10833333333333332,
+            "lo": 0.05416666666666666,
+            "hi": 0.17083333333333334
+          },
+          "tropa-mini-deberta-large": {
+            "rate": 0.14583333333333331,
+            "lo": 0.09166666666666666,
+            "hi": 0.20416666666666666
+          }
+        },
+        "beats_reference": null,
+        "verdicts": {
+          "pass": 3,
+          "checks": 102,
+          "floor": 13,
+          "detector": 122
+        },
+        "failed_checks": {
+          "length": 0.275,
+          "assistant talk or a placeholder": 0.10833333333333334,
+          "formatting": 0.1,
+          "workspace routing": 0.029166666666666667,
+          "required or barred words": 0.016666666666666666,
+          "copied text": 0.004166666666666667
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "id": "all",
+      "name": "HumanBench score",
+      "what": "Over every card, public and private together.",
+      "sets": [
+        "ref",
+        "dev",
+        "test"
+      ],
+      "cards": 212,
+      "outputs": 6996
+    },
+    {
+      "id": "public",
+      "name": "Public cards",
+      "what": "The cards anyone can read and run.",
+      "sets": [
+        "ref",
+        "dev"
+      ],
+      "cards": 132,
+      "outputs": 4356
+    },
+    {
+      "id": "private",
+      "name": "Private cards",
+      "what": "The held-back cards. They show whether the score holds on cards nobody has seen.",
+      "sets": [
+        "test"
+      ],
+      "cards": 80,
+      "outputs": 2640
+    }
+  ]
+}

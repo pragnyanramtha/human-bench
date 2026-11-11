@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: the GST formula in my takings template (v1.0 to v1.2)\n\nOn 5 November, Ravi Subramaniam left a comment saying the GST figure in column F didn't look right. Shu Fen from Numbers For Hawkers confirmed it. Thank you both. You caught this before it caused more trouble, and I should have caught it myself.\n\nWhat was wrong\n\nColumn F worked out GST by taking 9% of your takings. That only works if your takings exclude GST. If your takings already include GST, the GST portion is 9/109 of the amount, not 9%.\n\nRavi's example shows the gap. Takings of $1,090 (GST inclusive) gave $98.10 in the old sheet. The correct figure is $90. The old sheet overstated GST by $8.10 on that day.\n\nThis was my mistake. I wrote the formula, and when I tested it I used my own sample figures, which were already before GST. The check passed, so I moved on. The same formula then carried into the next two versions, and I didn't go back to it. That's on me.\n\nWho is affected\n\nVersions 1.0, 1.1 and 1.2 have the error. Version 1.3, uploaded on 8 November, has the corrected formula. The template has been downloaded 412 times since 12 August, so this is not a small group.\n\nIt only matters if you key in GST-inclusive takings. Most hawkers do, because their receipts show GST collected. If you key in amounts that exclude GST, the old formula gave the right answer.\n\nBox 1 (total sales) was calculated separately and was correct in every version. Only Box 6 (output tax) was affected.\n\nNobody has underpaid IRAS because of this. The error overstates GST, so the risk is that you paid more than you needed to. Melvin, I know this is not what you wanted to hear. People trusted this sheet because I'm an accountant, and that trust is exactly why I should have caught it.\n\nWhat to do now\n\nIf you haven't filed Q3 yet:\n\n1. Download v1.3 from the link in the original post. Please don't keep using v1.0 to v1.2.\n2. Set cell H2 to match what you are entering. Choose \"prices exclude GST\" only if the amounts you key in exclude GST. If the amounts are receipts that include GST collected, use the inclusive setting, even if your menu prices are shown without GST.\n3. Check one day before you go further. $1,090 inclusive should give $90 in column F.\n\nIf you have already filed Q3 using the old sheet:\n\n1. Keep the old file, and note which version you used. Don't delete anything.\n2. Recalculate the quarter. For each day, the correct GST is 9/109 of the inclusive takings. Add up the corrected figures and compare the total with the Box 6 you declared. The difference is the overstatement.\n3. Check how IRAS wants an error like this corrected. IRAS has its own rules on whether a mistake goes into a later F5 or needs a GST F7, and I'm not going to guess at them here. Read the IRAS errors page and talk to your filer before you change anything.\n4. If you use a filer, send them the corrected figures and the version you used. If you file yourself, check the IRAS guidance before you submit anything.\n\nIf you're stuck on any of this, leave a comment below and I'll help where I can. For anything specific to your own return, please speak to your filer rather than relying on a comment here.",
+  "words": 572,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.15554773807525635,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02653667889535427,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.352065086364746,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.6,
+    "effort": "medium",
+    "output_tokens": 4075,
+    "input_tokens": 4484
+  }
+}

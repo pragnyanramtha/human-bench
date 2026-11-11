@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: none\n\nImportant: syringe recall on Corvane children's ibuprofen (lots CV6114A and CV6114B)\n\nA lot of parents are worried right now, so here is exactly what happened and what to do.\n\nWHAT HAPPENED\nCorvane Pharma has recalled the dosing syringe packed in the box with its Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry), 120 mL bottle, lots CV6114A and CV6114B. The numbers printed on the syringe are wrong. Every mark measures double what it says. The mark labelled 2.5 mL actually measures 5 mL, and the mark labelled 5 mL measures 10 mL. A parent following the syringe would give about twice the intended dose.\n\nThe medicine itself is fine. It is not contaminated, it is not expired (exp. 08/2027), and it meets specifications. The problem is only the syringe.\n\nCHECK YOUR BOX\nThe lot number is printed on the bottom of the box. If it says CV6114A or CV6114B, stop using the syringe that came in it. Other lots are not part of this recall.\n\nIF YOU ALREADY GAVE A DOSE WITH THAT SYRINGE\n- Do not give another dose until the poison centre or your doctor says it is okay.\n- Call the Ontario Poison Centre at 1-800-268-9017. I can't tell from a Facebook post whether a particular child is okay. It depends on their weight, how many doses they got, over what time, and things like kidney health. If you have any doubt about how much was given, call. They will assess your child, and it's worth calling even if your child seems fine.\n- Go to the ER or call 911 right away if your child is very sleepy or hard to wake, is vomiting blood, isn't peeing, or has a seizure.\n\nGETTING A CORRECT SYRINGE\nNew, correctly marked syringes are arriving from our supplier today, expected before noon. They are free for anyone, and you don't need a receipt. Until you have one, please don't dose with the syringe from the box. If your child needs medicine in the meantime, talk to a pharmacist or your doctor.\n\nIf you would rather return the product, you can bring it back for a full refund under the recall.\n\nWe are also opening this Saturday, Nov 14, from 10 to 4 for exchanges, in addition to our regular hours.\n\nHOW WE HANDLED THE NOTICE\nWe received the recall notice on Nov 6. On the morning of Nov 7 we put a sign on the front door and by the kids' aisle and pulled the remaining bottles off the shelf. Because this is an over-the-counter product, we don't have phone numbers for most people who bought it, so we couldn't call you directly. That is why I'm posting here. Please share this with any parent you know who might have bought it.\n\nQuestions are welcome. Come by the pharmacy and we will go through it with you in person.\n\nRania Haddad, Pharmacist\nCedarbrook Pharmacy, Erin Mills\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nHi everyone, I'm the pharmacist at Cedarbrook. I know this thread has a lot of parents scared, and our thoughts are with the family who posted. I've put the full details on our pharmacy page, but here is the short version.\n\nThe medicine itself is fine. It is not contaminated or expired. The problem is the syringe in the box, which is printed wrong, so every mark measures double. This only affects Corvane children's ibuprofen, lots CV6114A and CV6114B. The lot number is on the bottom of the box.\n\nIf you have one of those lots, don't use that syringe. If a dose was already given with it, don't give another until you've spoken to the Ontario Poison Centre (1-800-268-9017) or your doctor. Call them if you have any doubt about the dose. Go to the ER or call 911 if your child is very sleepy or hard to wake, vomiting blood, not peeing, or has a seizure.\n\nNew syringes are free, no receipt needed, and we're open this Saturday 10-4 for exchanges. Please share with anyone who might have bought it.",
+  "words": 668,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The pharmacy-page post does not tell parents to discard the affected syringes."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09639766812324524,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02946038357913494,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.12890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.8954217433929443,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 34.9,
+    "effort": "high",
+    "output_tokens": 4586,
+    "input_tokens": 3764
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Please talk to your kids about fake pills this week\n\nPlease take a moment to read and share this. Police have warned that blue tablets being sold as diazepam or Xanax in south Manchester may contain nitazenes — synthetic opioids that can be far stronger than heroin.\n\nIf someone has taken something and becomes unwell, call 999 straight away. Don’t put them to bed to “sleep it off”, and don’t wait because you’re worried about getting in trouble. When someone is extremely drowsy, has pinpoint pupils, slow or noisy breathing, or blue lips, they need urgent help. If they’re left without enough oxygen, their brain can be harmed. Please don’t wait hours to see if they’ll come round.\n\nThe police have said their priority is preserving life. If you’re with someone who’s unwell, call 999 and tell the responders what you know. Getting help quickly matters more than worrying about blame.\n\nNaloxone nasal spray can reverse the effects of opioids. Brightpath drug and alcohol service on Stockport Road, next to the launderette, offers free nasal naloxone kits to anyone. You don’t need to give your name, and the training takes about 10 minutes. They’re open Monday to Friday, 10–4, and until 7 on Thursdays.\n\nParents and carers: please talk to your kids about this **this week** — not after half term, not whenever you get round to it. I had the chat with my 14-year-old over tea last night. There were some eye rolls, but he listened and asked what pinpoint pupils meant. It doesn’t have to be a perfect conversation. Make sure they know what the warning signs are, that they should call 999 if a mate is unwell, and that they won’t be in trouble for getting help.\n\nAnd please, let’s not slag kids off or guess about what happened to anyone. Shaming them helps no one. Scared kids may not ring for help, and that’s exactly what we need to prevent. Keep this general, don’t speculate about people or events, and help get the safety advice out instead.\n\nPlease share this post, not just like it. A quick conversation and knowing when to call could make a real difference.",
+  "words": 352,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "351 words, allowed 360-880 (band 400-800 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3542548716068268,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3783828318119049,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.5440480709075928,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.3,
+    "effort": "medium",
+    "output_tokens": 491,
+    "input_tokens": 15098
+  }
+}

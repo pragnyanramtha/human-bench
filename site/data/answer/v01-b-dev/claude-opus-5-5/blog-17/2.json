@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: the GST formula in my takings template was wrong (fixed in v1.3)\n\nIf you downloaded my daily takings and GST template at any point since 12 August, please read this before you file your next return.\n\n**What was wrong**\n\nColumn F worked out GST by taking your GST-inclusive takings and multiplying by 9%. That is wrong. When an amount already includes GST, the GST portion is 9/109 of it, not 9%.\n\nRavi's figures show the difference. His takings on 3 November were $1,090, GST inclusive. The GST in that amount is $90, since $1,000 plus 9% is $1,090. The template showed $98.10, which is $8.10 too much for that one day. Over a quarter of trading days, that adds up.\n\nThis was my mistake. When I built the first version, I tested it against my own sample figures, and those were already exclusive of GST. On those numbers, multiplying by 9% gives the right answer, so the check passed. I never tested it with inclusive takings, which is exactly what most hawkers key in. A check that cannot fail is not a check, and I should have known better.\n\nMelvin said in the comments that people trusted this sheet because I am an accountant. He is right, and that is why I am taking it seriously. Thank you to Ravi Subramaniam for spotting the odd number and asking, and to Shu Fen of Numbers For Hawkers for confirming the cause so quickly.\n\n**Who is affected**\n\n- Versions 1.0, 1.1 and 1.2 all have the error. The PayNow and date format updates did not touch column F. There have been 412 downloads since 12 August.\n- You are only affected if you keyed in GST-inclusive takings. That covers most hawkers, and anyone whose cash, NETS and PayNow receipts include the GST collected.\n- The quarterly Box 1 sales total is calculated separately and was correct throughout. Only Box 6 (output tax) is affected.\n\nThe error always overstates GST. Nobody will have underpaid IRAS because of this sheet. Some of you will have paid more than you needed to.\n\n**The fix**\n\nVersion 1.3 was uploaded on 8 November and the download link on the original post now points to it. There is a new setting in cell H2, and it must match the amounts you are entering:\n\n- Choose \"prices exclude GST\" only if the amounts you key in exclude GST.\n- Use the inclusive setting if you are keying in receipts that include the GST collected. This applies even if your menu prices are shown before GST. What matters is what you actually key in, not how the menu is printed.\n\n**If you already filed Jul to Sep using the sheet**\n\n1. Download v1.3. Copy your Jul to Sep daily entries into it, and set H2 as described above.\n2. Look at the Box 6 figure on the quarterly tab and compare it with the Box 6 figure you filed. Box 1 should match what you filed. If it does not, stop and check your entries before going further.\n3. The difference is the output tax you overstated. Write it down, and keep both versions of the sheet.\n4. Do not make a guess at the correction on your own. IRAS has its own rules on whether an error like this can be adjusted in a later GST F5 or needs a GST F7. Read the IRAS page on correcting errors in GST returns, or ask whoever files for you, and follow the route that applies to you.\n5. If you are still recording takings for Oct to Dec in an older version, switch to v1.3 now so your next return starts off correct.\n\nEarlier I asked you to hold off making changes to your records. You can go ahead now.\n\nIf you are unsure which H2 setting applies to you, or the numbers do not add up after you redo them, leave a comment below with what you key in (no need to share your actual figures) and I will reply. I would much rather answer the same question ten times than have anyone file on a wrong number again.\n\nJoanne",
+  "words": 679,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The worked example introduces the additional amount $1,000."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.15504752099514008,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12445783615112305,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.3799872398376465,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.5,
+    "effort": "medium",
+    "output_tokens": 1950,
+    "input_tokens": 4453
+  }
+}

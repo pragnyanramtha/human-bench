@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #general\nReplying to: none\nCc: none\nSubject: none\n\nMarco,\n\nYvette called the office this morning. Tenant in 9B lost her key and wants three copies today, and I've got nothing to cut from. You did 14 units out at Desert Palms Saturday and there is not one Desert Palms code in the sheet. Not one. And your black pinning tray is sitting on the counter in the leasing office with pins in it.\n\nI'm pissed about this. This is Kessler in September all over again. I talked to you then. I put it out to everybody in August: every rekey, every master job, address, unit, bitting code, in the code sheet the same day before you leave the van. No exceptions. Not optional. It doesn't matter if it's 9 at night. The codes are the job. Without them the next guy can't cut a key, and Yvette is standing there with a tenant waiting.\n\nI'm not firing you. You're good with your hands and I want you working. But this can't keep happening. It puts me and Lupe in a bad spot and it makes the shop look like we don't know what we're doing. If something is making you skip this, you tell me before you leave a job, not after I find out from the leasing office.\n\nYou go back out to Desert Palms today. Decode 9B at the minimum. If you can get all 14, get all 14. Put every code in the sheet before you leave that property. And bring my tray back to the shop.\n\nRay",
+  "words": 253,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09562164545059204,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03883659839630127,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.265625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.5508962869644165,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.4,
+    "effort": "provider default",
+    "output_tokens": 4511,
+    "input_tokens": 1330
+  }
+}

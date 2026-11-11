@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, I am very sorry your toe has been hurting and that you had to go to urgent care. I know that must have been painful and upsetting. You have been our customer for two years, and it hurts me to know you left feeling that I did not care. I do care, and I’m sorry if I did not show that when you came back.\n\nI also want to share what I remember and explain how we work at the salon, because some of the comments here worry me.\n\nYou came in on Saturday, October 24 for a $45 deluxe pedicure with my niece, Vy. During the pedicure, you asked her to cut the cuticle more because you wanted it very clean. Vy said she did not want to cut too much, and you told her it was fine and that you always did it that way. I’m not saying this to blame you or to argue about what happened. I’m sharing it because I want to be honest about what we remember.\n\nWhen you came back on November 2 and showed me your red toe, I offered to refund the full $45 and also pay your urgent care copay if you brought me the receipt. You asked for $300 cash and free pedicures for a year. I said no to that, but my offer of the full refund and the copay is still open.\n\nI also want to speak up for Vy. She has been licensed for three years. She is shy, but she speaks English, and she was born and raised here in Houston. She cares about her work and her customers. She was very upset after reading the post and cried in the back room. She even talked about quitting nails. I know you are upset too, Renee, and I do not want this to turn into people attacking each other.\n\nFor anyone concerned about cleanliness: our metal tools are sterilized in an autoclave and kept in sealed pouches that we open in front of each customer. We use a new file and buffer for each person, and they can take them home. We also use a new plastic liner in the tub every time. We passed our state inspection in August 2026 with no violations, and the inspection paper is on the wall at the salon.\n\nI have worked hard to take care of my customers. I worked for my aunt before opening Lotus Garden in 2007, and I have been serving people here in Houston for 19 years. Before this, we had never received an infection complaint. That does not mean I am dismissing what you went through, Renee. I just hope people will not assume all nail salons are dirty or that we do not care about safety.\n\nPlease call me at the salon or come in so we can talk. I would rather listen to you and try to make this right than argue here. And thank you, Marisol, for your kind words and for encouraging us to talk again.",
+  "words": 508,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3682868480682373,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2755289375782013,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.610326766967773,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "low",
+    "output_tokens": 593,
+    "input_tokens": 18697
+  }
+}

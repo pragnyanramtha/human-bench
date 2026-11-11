@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: lindqvist-family-blog\nReplying to: none\nCc: none\nSubject: Fernhollow Photo is a real business now!!\n\nOkay. Deep breath. I'm going to type this fast before I talk myself out of it.\n\nFernhollow Photo is officially a business. I'm going out on my own as a wedding photographer. The LLC is filed, the website is live, and I already have fourteen weddings booked for 2027. Fourteen!! Some of you have heard pieces of this and some of you are finding out right now, so let me tell the whole thing.\n\nFirst, Rosebud Lane. Marisol is closing the studio at the end of October. She told me on October 6th, and I'm not going to get into the why, because that's hers to tell. What I can say is that I shot for her for four years. She taught me almost everything I know about running a wedding day, reading a room, and keeping a bride calm when the cake is melting in the sun. Marisol, you deserve a huge shoutout. Thank you for taking a chance on someone with a bag full of film cameras and a lot of nerve.\n\nWhen she told me, my first feeling was pure fear. But then she did something really generous. She started referring her couples to me. Six of my fourteen 2027 weddings came from Marisol. The other eight found me on their own, which still blows my mind a little.\n\nI'm not doing this recklessly, and I want you to know that. I've been planning this in my head for two years. I've sketched it in notebooks, priced out gear, and said \"someday\" a lot. Then someday got a date on it. Yes, it's scary. It's also the most organized scary thing I've ever done.\n\nHere's the plan. Jae is going to second shoot the big weddings with me. Jae has been my go-to for years, and I'm paying per wedding, which feels like the right way to do it with someone this good.\n\nDad, I can see you typing the health insurance speech from here. Yes, I have health insurance. I picked a marketplace plan and it starts January 1. You can put the speech away for Thanksgiving. Love you.\n\nNow for the part that made me actually cry. Filing the LLC. I did it on my lunch break, sitting in my car in a Fred Meyer parking lot, refreshing the confirmation page until it loaded. It was not the glamorous moment I pictured. I cried a little. Okay, a lot. Then I ate a granola bar and went back to work.\n\nMy first booking that was 100% mine is Dahlia and Ken. They found me through the Multnomah Falls couple pictures I took last year. They're getting married at Timberline on June 12. When Dahlia emailed \"We're in!!\" I read it in the car and yelled loud enough that the guy in the next lane looked over. Their deposit came in, and I'm still a little giddy about it.\n\nSam made a cake for the launch. It said FERNHOLOW. Sam, you spelled it wrong, and we ate it anyway, every single bite. Sam has been the one saying \"you can do this\" when I was too tired to believe it, and I love you for it.\n\nAnd now the name. Fernhollow comes from the fern hollow trail behind Grandma's old place in Gresham. That's where I took my very first real pictures, with Grandma's Pentax, when I was a kid who thought the light through the ferns was the most magical thing on earth. I still think about that trail every time I pick up a camera.\n\nGrandma, this one's for you. I hope you know that. Every time someone asks where the name came from, I get to tell them about you.\n\nThanksgiving at Ruthie's is coming up, and I'm bringing the camera. If you want free family pictures, let me know. Gather your people by the table, and I'll handle the light. No big session, just a few good ones of the people I love before the pie situation gets out of hand.\n\nPickle has been informed of the news and remains unimpressed, as long as nobody is holding a lamp.\n\nThank you for every text, every \"how's the business going,\" and every person who has told me I've got this. If you know anyone getting married in Portland or out in the Gorge, send them my way. They can find me on the website. I'll keep you posted on all of it.\n\nLove you all. Let's go, Fernhollow.",
+  "words": 745,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The post says Rosebud Lane is closing at the end of October, though it had already closed."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2338436096906662,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16200944781303406,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.2421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.710273742675781,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.6,
+    "effort": "medium",
+    "output_tokens": 4205,
+    "input_tokens": 4546
+  }
+}

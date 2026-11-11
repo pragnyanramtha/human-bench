@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need to say this now so it's not hanging over Thanksgiving.\n\nYou told Gary I'd list his house for 1%. I never said that to you or anyone. My listing side is 2.5%. That's what I charge, and that's how I make my living. You threw out a number that was less than half of it, to someone I'd never met, without asking me first.\n\nI still showed up. Saturday I drove down to Chandler from north Phoenix, did the walkthrough, pulled comps, and put together a full listing packet. That was about 6 hours plus the drive. Sunday night Gary went with ListLite for $3,995. I'm honestly not mad at Gary. He shopped around, people do that. I'm mad at you, because you set it up so I was working for free before I even walked in the door.\n\nWhen I called you, you said \"that's business sis, can't win em all.\" It isn't business when it's my business and my Saturday and you're the one making the promises.\n\nThen this morning you tell me Denise from work wants to pick my brain about her rental and you already gave her my cell. Rick, this is the same thing that happened with your softball buddy two years ago. I let that one go. I'm not letting it go this time.\n\nSo here's how it's going to work from now on:\n\n- Don't give out my number unless you ask me first. Every time.\n- Don't quote my commission to anyone. Not 1%, not any number. That's my call.\n- I'm not calling Denise. You told her I would, so you can tell her I won't.\n\nI know you think you're doing me a favor, and I know it feels good to have a sister in real estate when your friends ask. But you get to be the guy with the connection, and I end up doing the work and eating the cost. That's not fair to me.\n\nTo be clear, family is different. Mom, your kids, you, any of you can ask me anything anytime and I'll help for free. I mean that. But your buddies and coworkers aren't family, and I'm done being the family rate.\n\nI'm not trying to start a war. I'll still be at your place for Thanksgiving and I'll still bring the pie. I just need you to actually hear me on this one.",
+  "words": 402,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3552807569503784,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15963174402713776,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.058837890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2727017402648926,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 723,
+    "input_tokens": 1494
+  }
+}

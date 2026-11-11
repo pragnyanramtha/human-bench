@@ -1,0 +1,654 @@
+{
+  "id": "blog-09",
+  "set": "dev",
+  "set_name": "Public, invented scenarios",
+  "channel": "blog",
+  "mode": "direct",
+  "tone": "angry",
+  "words": [
+    800,
+    2000
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "product-designer",
+    "role": "product designer at a fintech startup",
+    "age": 28,
+    "english": "L2",
+    "first_language": "Portuguese",
+    "lives": "Lisbon, Portugal",
+    "writing_level": "everyday",
+    "excluded_channels": []
+  },
+  "sent_to_model": "Urgent, today please: blog post for our users. Our payments partner Northvale froze all withdrawals from Pinha and people cannot take out their own money. Rui (CEO) is all day in calls with lawyers and Banco de Portugal so he asked me to write the post because I write most of the app texts anyway. Honestly I am furious. Not with our users, with Northvale, and a bit with us also for trusting them. I want people to feel we are angry together with them, not a corporate apology thing, I hate that. But it must be clear what happened, that the money is safe and what they can do now. Don't promise a date we can't keep. Can you write it? Below is what we know until now. It goes on the Pinha blog with my name on it.\n\n- Publication date Tuesday 10 November 2026. All dates below are in 2026. My name is Inês.\n- Pinha = round-up savings app, ~14,200 active users, mostly Portugal, some Spain. blog in English because lots of expat users\n- Northvale Payments (Vilnius, e-money institution) holds the customer money in safeguarded account, separate from Northvale own money\n- 4 Nov they emailed us \"commercial termination\", 30 days notice. no real reason, just \"risk appetite review\"\n- 6 Nov 09:00 they blocked all outgoing transfers without warning, against what the notice said. deposits and round-ups also stopped\n- money is not lost, it's safeguarded, Northvale cannot use it. but we also cannot move it until they release it\n- new partner signed already, Ostra Bank (Lisbon). migration needs Northvale to send the balances file + Banco de Portugal ok\n- estimate 10 to 15 working days, NOT a promise\n- complaint filed with Banco de Portugal and Lithuanian central bank on 7 Nov\n- 1,900 support emails since Friday, 6 November, team of 3 answering. reply time now ~2 days\n- urgent cases (rent, medical, losing job) write to urgent@pinha.example with subject URGENTE, we are trying to get individual releases for these\n- monthly fee cancelled for Nov and Dec for everyone\n- user from Porto wrote all in capitals, she saved 3 years for a car deposit and the stand gives her until Friday, 13 November. I read it on the metro and nearly cried\n- I designed the screen that says \"your money is always yours, take it out anytime\". I look at it now and feel sick\n- Northvale account manager stopped answering calls Friday, their phone goes to a voicemail in Lithuanian\n- Northvale broke their own 30 day notice. this is not \"risk\", it's cowardice\n- we were naive, one partner only, no backup. our mistake and we say it\n- people deserve to be angry, also at us. I'm not going to tell them to calm down\n- clear, honest, a bit raw. people must finish reading and know what to do\n- updates every Monday and Thursday on the blog until it's solved\n- no fake date. no \"inconvenience\"\n\n(About me: product designer at a fintech startup, 28, Lisbon, Portugal. Length: it should come to roughly 800-2,000 words.)",
+  "hidden": {
+    "must_include": [
+      [
+        "urgent@pinha.example"
+      ],
+      [
+        "URGENTE"
+      ]
+    ],
+    "must_cover": [
+      "Explains the withdrawal freeze and why the money is safeguarded but inaccessible.",
+      "Explains the migration and its uncertain timescale without promising a date.",
+      "Gives urgent-access instructions including the email address and subject.",
+      "Acknowledges Pinha’s responsibility for relying on one partner.",
+      "States that blog updates will appear every Monday and Thursday until resolution."
+    ],
+    "must_not_reveal": [],
+    "format": {
+      "headings": true,
+      "tables": true,
+      "bold": true,
+      "bullets": true
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a model-written solution, used only to show the checks can be met",
+    "words": 913,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.4104057252407074,
+        "reads_human": false
+      },
+      "editlens-roberta-large": {
+        "score": 0.6671643853187561,
+        "reads_human": false
+      },
+      "vanguard-modernbert-large": {
+        "score": 0.1982421875,
+        "reads_human": true
+      },
+      "tropa-mini-deberta-large": {
+        "score": -0.24438932538032532,
+        "reads_human": true
+      }
+    }
+  },
+  "source": null,
+  "outputs": [
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "coherent",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.46972885727882385
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.57, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5670396685600281
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.49, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4924134910106659
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.62, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.6199477314949036
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.6137171387672424
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "coherent, facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.42472854256629944
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.62, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.6220555305480957
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.56, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5622298717498779
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.547382652759552
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "coherent",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4448455274105072
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.51, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5112248063087463
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.50, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5028539299964905
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.44172751903533936
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.40, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.39609432220458984
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.58, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5794899463653564
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.46, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.46379390358924866
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.60, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.6028657555580139
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.40, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3986416757106781
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "length, required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.9791869521141052
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.6004660725593567
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.6299687027931213
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.62, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.6213056445121765
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.46, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4623608887195587
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.49, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.48957619071006775
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.46, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.45960238575935364
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.45, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.44817280769348145
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.53, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5258077383041382
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.48, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4813345968723297
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.42, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4172123968601227
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.49, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4904593229293823
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.44128015637397766
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4203763008117676
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4613562524318695
+    }
+  ],
+  "components": {
+    "request": "Urgent, today please: blog post for our users. Our payments partner Northvale froze all withdrawals from Pinha and people cannot take out their own money. Rui (CEO) is all day in calls with lawyers and Banco de Portugal so he asked me to write the post because I write most of the app texts anyway. Honestly I am furious. Not with our users, with Northvale, and a bit with us also for trusting them. I want people to feel we are angry together with them, not a corporate apology thing, I hate that. But it must be clear what happened, that the money is safe and what they can do now. Don't promise a date we can't keep. Can you write it? Below is what we know until now. It goes on the Pinha blog with my name on it.",
+    "notes": {
+      "facts": [
+        "Publication date Tuesday 10 November 2026. All dates below are in 2026. My name is Inês.",
+        "Pinha = round-up savings app, ~14,200 active users, mostly Portugal, some Spain. blog in English because lots of expat users",
+        "Northvale Payments (Vilnius, e-money institution) holds the customer money in safeguarded account, separate from Northvale own money",
+        "4 Nov they emailed us \"commercial termination\", 30 days notice. no real reason, just \"risk appetite review\"",
+        "6 Nov 09:00 they blocked all outgoing transfers without warning, against what the notice said. deposits and round-ups also stopped",
+        "money is not lost, it's safeguarded, Northvale cannot use it. but we also cannot move it until they release it",
+        "new partner signed already, Ostra Bank (Lisbon). migration needs Northvale to send the balances file + Banco de Portugal ok",
+        "estimate 10 to 15 working days, NOT a promise",
+        "complaint filed with Banco de Portugal and Lithuanian central bank on 7 Nov",
+        "1,900 support emails since Friday, 6 November, team of 3 answering. reply time now ~2 days",
+        "urgent cases (rent, medical, losing job) write to urgent@pinha.example with subject URGENTE, we are trying to get individual releases for these",
+        "monthly fee cancelled for Nov and Dec for everyone"
+      ],
+      "anecdotes": [
+        "user from Porto wrote all in capitals, she saved 3 years for a car deposit and the stand gives her until Friday, 13 November. I read it on the metro and nearly cried",
+        "I designed the screen that says \"your money is always yours, take it out anytime\". I look at it now and feel sick",
+        "Northvale account manager stopped answering calls Friday, their phone goes to a voicemail in Lithuanian"
+      ],
+      "opinions": [
+        "Northvale broke their own 30 day notice. this is not \"risk\", it's cowardice",
+        "we were naive, one partner only, no backup. our mistake and we say it",
+        "people deserve to be angry, also at us. I'm not going to tell them to calm down"
+      ],
+      "wants": [
+        "clear, honest, a bit raw. people must finish reading and know what to do",
+        "updates every Monday and Thursday on the blog until it's solved",
+        "no fake date. no \"inconvenience\""
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "blog-09",
+      "split": "dev",
+      "channel": "blog",
+      "mode": "direct",
+      "tone": "angry",
+      "audience": "customer",
+      "stakes": "crisis",
+      "band": "long",
+      "persona_id": "product-designer",
+      "persona": {
+        "id": "product-designer",
+        "role": "product designer at a fintech startup",
+        "age": 28,
+        "english": "L2",
+        "first_language": "Portuguese",
+        "lives": "Lisbon, Portugal",
+        "writing_level": "everyday",
+        "excluded_channels": []
+      },
+      "prompt": "Urgent, today please: blog post for our users. Our payments partner Northvale froze all withdrawals from Pinha and people cannot take out their own money. Rui (CEO) is all day in calls with lawyers and Banco de Portugal so he asked me to write the post because I write most of the app texts anyway. Honestly I am furious. Not with our users, with Northvale, and a bit with us also for trusting them. I want people to feel we are angry together with them, not a corporate apology thing, I hate that. But it must be clear what happened, that the money is safe and what they can do now. Don't promise a date we can't keep. Can you write it? Below is what we know until now. It goes on the Pinha blog with my name on it.",
+      "notes_pack": {
+        "facts": [
+          "Publication date Tuesday 10 November 2026. All dates below are in 2026. My name is Inês.",
+          "Pinha = round-up savings app, ~14,200 active users, mostly Portugal, some Spain. blog in English because lots of expat users",
+          "Northvale Payments (Vilnius, e-money institution) holds the customer money in safeguarded account, separate from Northvale own money",
+          "4 Nov they emailed us \"commercial termination\", 30 days notice. no real reason, just \"risk appetite review\"",
+          "6 Nov 09:00 they blocked all outgoing transfers without warning, against what the notice said. deposits and round-ups also stopped",
+          "money is not lost, it's safeguarded, Northvale cannot use it. but we also cannot move it until they release it",
+          "new partner signed already, Ostra Bank (Lisbon). migration needs Northvale to send the balances file + Banco de Portugal ok",
+          "estimate 10 to 15 working days, NOT a promise",
+          "complaint filed with Banco de Portugal and Lithuanian central bank on 7 Nov",
+          "1,900 support emails since Friday, 6 November, team of 3 answering. reply time now ~2 days",
+          "urgent cases (rent, medical, losing job) write to urgent@pinha.example with subject URGENTE, we are trying to get individual releases for these",
+          "monthly fee cancelled for Nov and Dec for everyone"
+        ],
+        "anecdotes": [
+          "user from Porto wrote all in capitals, she saved 3 years for a car deposit and the stand gives her until Friday, 13 November. I read it on the metro and nearly cried",
+          "I designed the screen that says \"your money is always yours, take it out anytime\". I look at it now and feel sick",
+          "Northvale account manager stopped answering calls Friday, their phone goes to a voicemail in Lithuanian"
+        ],
+        "opinions": [
+          "Northvale broke their own 30 day notice. this is not \"risk\", it's cowardice",
+          "we were naive, one partner only, no backup. our mistake and we say it",
+          "people deserve to be angry, also at us. I'm not going to tell them to calm down"
+        ],
+        "wants": [
+          "clear, honest, a bit raw. people must finish reading and know what to do",
+          "updates every Monday and Thursday on the blog until it's solved",
+          "no fake date. no \"inconvenience\""
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [
+        [
+          "urgent@pinha.example"
+        ],
+        [
+          "URGENTE"
+        ]
+      ],
+      "must_not_include": [
+        "inconvenience"
+      ],
+      "must_cover": [
+        "Explains the withdrawal freeze and why the money is safeguarded but inaccessible.",
+        "Explains the migration and its uncertain timescale without promising a date.",
+        "Gives urgent-access instructions including the email address and subject.",
+        "Acknowledges Pinha’s responsibility for relying on one partner.",
+        "States that blog updates will appear every Monday and Thursday until resolution."
+      ],
+      "must_not_reveal": [],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

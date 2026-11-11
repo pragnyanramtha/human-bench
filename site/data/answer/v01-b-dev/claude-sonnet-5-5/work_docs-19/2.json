@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft of your reply:\n\n---\n\n@Deirdre Fortuin thank you for asking me and not just telling me, it means a lot.\n\nI'll be honest, this one is hard. Noma has been with me in the Seahorses for three years, since my very first year of teaching, and she basically taught me how to do this job. The sign-in sheets, the parent WhatsApp group, all of it. The kids ask for \"Noma's song\" every single day at morning ring, and her isiXhosa songs are a big part of how our room feels. When one of our little ones was really struggling in Term 2, she was the only person who could calm him, and she sat with him under the jungle gym for as long as it took.\n\nI'm not going to fight it. I understand the numbers, and Bronwyn needs the help more with 24 little ones. It also helps that Noma is just across the courtyard.\n\nWhat I'm worried about is the first few weeks. New Grade Rs crying at the gate is hard enough without a brand new assistant on top of it, so there are two things I'd really like you to put to SMT.\n\nFirst, could Charlene come in for a day or two in the last week of term (1-4 Dec) to meet Noma and see our routine? Two of next year's kids, Luthando and Mia, already know Noma from aftercare, so it would help for them to see the two of them working together too.\n\nSecond, could Noma pop into morning ring in the first week back, from 14 Jan, even just for 15 minutes? A familiar face and familiar songs for the new kids would make a big difference, and it would give Charlene a softer start.\n\nI know Bronwyn needs Noma too, so I'm happy to work around whatever suits her class.\n\nThanks again, Deirdre.\n\n---\n\nI left out Zayd's name since it's a shared staff doc and it's about his meltdowns. Put it back in if you'd rather. I also added the line about working around Bronwyn, so cut it if you don't want to offer that.",
+  "words": 358,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28647321462631226,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13179875910282135,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.46875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.8077616691589355,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.3,
+    "effort": "high",
+    "output_tokens": 2139,
+    "input_tokens": 2022
+  }
+}

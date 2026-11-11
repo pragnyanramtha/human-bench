@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: How we got the Wellsford Road collision figures wrong\n\nBy Nell Garside\n\nOn 2 November, the Western Ledger published a ranked list of Bristol roads based on Department for Transport records of collisions in which someone was injured between 2021 and 2025. We reported that Wellsford Road had the most, with 41. That was wrong. The correct figure is 23, which places it sixth in the city.\n\nWe corrected the article and its table on 6 November. But a correction at the bottom of the page does not give residents the account they are owed, particularly when the original article has had more than 48,000 views and its wrong number has travelled. I am sorry for the concern and confusion our mistake caused.\n\nThe Fishponds Streets Forum told us that one of its members had gone through the published DfT data and could not get close to 41. She was right. We should have caught the discrepancy before publication, and we are grateful that residents challenged it.\n\nThe error arose when we joined the collision records to the roads in our analysis. That process duplicated some collision–road pairs: in other words, the same collision was counted twice in a road’s total. On Wellsford Road, removing 18 duplicate entries brought the count from 41 to 23. We now count each collision, identified by its accident index, only once per road.\n\nWe reran the whole citywide table. Wellsford Road was not the only total affected: Kingsmere Road’s figure changed from 34 to 32, Tanner’s Way from 29 to 28 and Crossfield Road from 27 to 26. Alder Hill remained at 31. Hambrook Lane, with 24, is now fifth; Wellsford Road is sixth. No other road moved more than two places.\n\nThis was a mistake by the Data Desk, not the responsibility of one person. The checks we had in place did not catch it. From now on, before we publish a ranked table, a second analyst will reproduce the analysis independently. We will also publish the cleaned data and code alongside the table, so readers can see how we arrived at the figures and check our work.\n\nThe correction does not mean there is nothing to be concerned about. Twenty-three injury collisions are still 23, and three were serious. I understand why parents have been asking whether it is safe to walk their children to Wellsford Primary. These figures alone cannot answer that question for an individual journey, and we should not have presented the wrong total as though it could settle the wider question of road safety.\n\nI would like to come to the Fishponds Streets Forum’s open meeting at Fishponds Library on 17 November at 7pm and answer questions in person. Residents were right to expect a clear explanation; I hope this is a start.",
+  "words": 456,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.03465668112039566,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.020400961861014366,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.328125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.973935127258301,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "low",
+    "output_tokens": 596,
+    "input_tokens": 21365
+  }
+}

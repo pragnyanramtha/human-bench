@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Last Saturday, we wrapped up the Winter School on Elliptic Curves and Modular Forms (5–7 November) at Sahyadri Institute of Science, Pune. I’m grateful to have helped organise it with Ketaki Joglekar and Faizan Mirza, with the guidance of our faculty mentor, Prof. Anuradha Venkatesan.\n\nWe received 112 applications and selected 41 MSc and early-PhD participants from nine states, based on their statements and one reference. With a ₹2.4 lakh Institute Student Initiative Grant, we were able to cover hostel accommodation and travel for 18 outstation students.\n\nA huge thank you to our speakers: Dr. Nilesh Dharmadhikari (Hyderabad) for introducing us to the Mordell–Weil theorem, Dr. Sunanda Iyer (Chennai) for her sessions on modular forms, and Dr. Tomasz Wierzbicki, who joined online from Kraków to explore computations in Sage. One moment I’ll remember: an MSc participant from Silchar spotted an error in a worked example in Dr. Iyer’s notes. She corrected it live and thanked him—a lovely reminder that a school works best when everyone feels able to ask, answer and challenge.\n\nThe day-two power cut nearly took our laptops with it, but we moved the problem session to the canteen and borrowed two rolling whiteboards. It turned out to be the best session of the three days. Our PhD-led problem sessions worked especially well, and we hope to keep that format. For MSc students, a small school like this can matter more than a big conference: there’s room to ask the questions you might not get to ask otherwise.\n\nThank you to the six PhD students who helped with TA work, all our volunteers and participants, and the department office staff. Special thanks to Mr. Prakash Salunke, who sorted out hostel rooms at 11 pm when a booking mix-up threatened to derail the evening.\n\nWe’ll share the slides and problem sheets on the department website within two weeks. We hope to hold a second edition in late 2027, if funding comes through.\n\nThank you to everyone who made this possible. I’m already looking forward to the next one.",
+  "words": 339,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "343 words, allowed 360-400 (band 360-400 ±0%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3167897164821625,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.28759637475013733,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.330078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.8090317249298096,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.3,
+    "effort": "medium",
+    "output_tokens": 460,
+    "input_tokens": 14111
+  }
+}

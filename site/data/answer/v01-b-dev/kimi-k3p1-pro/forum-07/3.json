@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve read these monthly threads for a long time, but I’ve never posted. I got home today and I’m still thinking about one of my patients, so I guess this is my first one.\n\nMrs. H. was one of my blister pack patients. She was in her eighties and had been coming to my pharmacy for nearly seven years. Every Thursday, she came in for her pack. After her husband died, she lived alone, and she walked with a cane that had tennis balls on the bottom. I work in a small independent pharmacy, so you really do get to know people when they come in that often.\n\nShe passed away at the end of October. Today, her daughter came in to return her unused packs and her glucometer.\n\nAlmost every Thursday, Mrs. H. brought me something. Usually it was poppy seed cake. Once it was a jar of pickles, which I accepted very politely even though I had no idea what I was supposed to do with them. During Ramadan, she always remembered. She would wrap my piece of cake in foil, write my name on it, and tell me very firmly that I was not allowed to eat it until sunset.\n\nA couple of years ago, a new doctor added a medication that interacted with her warfarin. I caught it, called the doctor, and we got it sorted out. Afterwards, she told everybody that I had saved her life. I kept telling her that I had only done my job. She never accepted that answer. To her, I had saved her life, and that was the end of the discussion.\n\nToday, her daughter handed me a card. Mrs. H. had written it a long time ago but had never given it to me. Inside, in her handwriting, it said: “for my Arabic daughter.”\n\nI cried in the back room. My technician covered the counter for ten minutes so I could pull myself together.\n\nIn school, they teach you pharmacology. They teach you interactions, dosing, counselling, how to speak to prescribers, how to catch mistakes before they reach the patient. All of that matters. But nobody teaches you what to do when someone’s daughter comes in carrying the blister packs you prepared, and suddenly that patient’s whole Thursday routine is just a paper bag of medications to be returned.\n\nNobody teaches you how to say goodbye to a patient.\n\nWe’re told not to get too attached, and I understand why. But what does that mean when you see someone every week for nearly seven years? When they know what you eat, remember your religious holidays, worry about whether you’ve had lunch, and bring you pickles you don’t know what to do with?\n\nMy father practised as a pharmacist in Egypt, and he knew all the families around his pharmacy. When I came to Canada, I thought community pharmacy here would be different. In some ways it is. In the ways that matter today, it isn’t.\n\nDo any of you have a patient like this—someone who became part of your week without you really noticing? And how did you handle it when their family came back with the medications? I’d really like to hear.",
+  "words": 534,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22990526258945465,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.281712144613266,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.75390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.8526179790496826,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 63.3,
+    "effort": "provider default",
+    "output_tokens": 3486,
+    "input_tokens": 571
+  }
+}

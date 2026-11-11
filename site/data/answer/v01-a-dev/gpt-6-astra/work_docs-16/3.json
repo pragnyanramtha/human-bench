@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## RA Progress Statement\n**Seoul–Daegu Honorific Shift Corpus (NSF-funded)**  \n**Reporting date: November 9, 2026**  \n**For the Winter 2027 funding review**\n\nAs the sole RA responsible for Korean annotation on this project, I have completed annotation of 4,200 utterances toward the fall-term target of 6,000. This statement documents the timing constraint affecting that target, the additional work completed during the delay, and my expected completion date.\n\nThe IRB amendment needed to add 14 new Daegu recordings was sent to Prof. Hollander for signature on September 3, 2026. I sent follow-up reminders on September 12, September 24, and October 6. The amendment remained awaiting her signature until October 15, six weeks after submission. During that interval, I was not permitted to begin annotation of the new recordings. The submission, reminders, and signature dates are documented in the email correspondence.\n\nWhile awaiting the signature, I recoded the existing 2,300 utterances using the revised speech-level scheme Prof. Hollander requested in August. This additional work was not included in the original annotation timeline. It brought the existing annotations into alignment with the revised scheme and should be recognized as completed project work, separate from the count of newly annotated utterances.\n\nSince October 15, I have annotated approximately 1,900 additional utterances, bringing the total to 4,200. My annotation rate during this period has exceeded 500 utterances per week, above the planned rate of 350 per week. At my current pace, I expect to reach the 6,000-utterance target by the end of January 2027.\n\nAt the November 6 lab meeting, Prof. Hollander described my annotation as “six weeks behind” and said she would note this for the funding review. Without the timeline above, that characterization could incorrectly attribute the delay to my work rate rather than the period when access to the new recordings was restricted.\n\nI request that the funding review record explicitly identify the six-week wait for the amendment signature as the cause of the delay and recognize both the recoding work and my subsequent annotation rate. If that context is not included, I request that the “six weeks behind” characterization be omitted from the review record.",
+  "words": 352,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3623240292072296,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9987096190452576,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.82827091217041,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.6,
+    "effort": "medium",
+    "output_tokens": 474,
+    "input_tokens": 14080
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction to the daily takings and GST template\n\nI need to correct a mistake in the daily takings and GST template I shared in August. If you have used it to prepare a GST return, please read this before filing another one.\n\nThe mistake is mine. I tested the first version against my own sample figures, which were already excluding GST, so my check passed. I missed what would happen when someone entered takings that already included GST.\n\nThank you to Ravi and Shu Fen for catching it and explaining it in the comments. Melvin, you are right to be upset. People trusted the template in part because I am an accountant, and I should have checked it properly.\n\nWhat went wrong\n\nVersions 1.0, 1.1 and 1.2 worked out the GST by multiplying the takings entered by 9%. That is wrong when the takings already include GST. To find the GST portion of an inclusive amount, the calculation should be 9/109 of that amount.\n\nRavi entered $1,090 of GST-inclusive takings. The template showed $98.10 GST; the correct amount is $90. That is an overstatement of $8.10.\n\nThe error affects people who entered GST-inclusive takings, which I expect is most hawkers using the sheet. It does not affect the GST calculation for amounts entered excluding GST. The quarterly Box 1 sales total was calculated separately and was not affected; the error was in the Box 6 GST figure.\n\nThe formula overstates GST, so this error did not cause anyone to underpay IRAS. Some people may have overpaid, though, and should check their own returns.\n\nWhat to do now\n\nI uploaded the corrected version, v1.3, on 8 November. Please download it from the original template post and stop using versions 1.0 to 1.2. There have been 412 downloads since 12 August, so please also let anyone you shared the earlier file with know.\n\nIn v1.3, check the setting in H2. It must match the amounts you actually enter, not just how you display your menu prices. Select “prices exclude GST” only if your entries exclude GST. If your receipts include GST collected, use the inclusive setting, even if your menu prices exclude GST.\n\nIf you already filed your July–September return using the sheet:\n\n1. Keep a copy of the sheet and the return you filed. Do not overwrite your original records.\n2. Check which version you used and whether the takings you entered included GST.\n3. If they did, use v1.3 with the inclusive setting to recalculate the GST, and compare it with the Box 6 figure you filed.\n4. Check the correction route with your filer or IRAS. IRAS has its own rules on whether an error can go into a later GST F5 or needs a GST F7. Please refer to the IRAS page on correcting GST errors rather than assuming which route applies to you.\n\nI am sorry for the extra work and worry this has caused. Please check your figures before your next filing, and speak to your filer if you are unsure.",
+  "words": 497,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11008559912443161,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0244250800460577,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.8676066398620605,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.3,
+    "effort": "low",
+    "output_tokens": 665,
+    "input_tokens": 21175
+  }
+}

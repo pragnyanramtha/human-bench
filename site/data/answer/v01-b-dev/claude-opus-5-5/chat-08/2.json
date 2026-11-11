@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone CHARITY STREAM: SAT NOV 21, 10am to 10pm\n\nposting this early bc last year half of u found out the day of and we ended at $212. not this time lol\n\nthis year it's for the Linden Community Pantry. they're feeding around 340 families a week rn, and Denise (who runs it) said the shelves are the lowest she's seen before thanksgiving. through their wholesale partner every $1 gets about 4 lbs of food, so even $3 is like 12 lbs. it goes straight to them, nothing taken off.\n\ndonate here: lindenpantry.example/mrkz\n\ngoal is $600\nrook is matching the first $100, so the first 100 bucks literally counts double 🙏\n\nincentives (shoutout the mods for these):\n$100: i play a full round with the controller upside down\n$250: chat picks my hair dye color and i do it ON STREAM\n$400: 1 hour of only chat-picked songs, no skipping\n$600: i vlog a grocery pickup the pantry sets up (ur donations go to them and they buy the food)\n\nwhat we're playing: first half is community lobbies, anyone can join, i'll drop the code. second half chat votes on a new game every 2 hrs. no repeat maps larry i promise\n\nno card? u can still help:\n- drop canned or boxed food in the blue bin by the pantry's side door (saturdays 9 to 1)\n- send the link to ur family or post it somewhere\n- just show up and hang out or hop in a lobby. more ppl in chat = more ppl see the link\n\nand to the \"charity streams are cringe\" ppl lol i get it. nobody's getting guilt tripped and nobody's getting called out for not donating. it's a 12 hr stream where u might get to pick my hair color and a food pantry gets stocked before thanksgiving. that's the whole thing. come hang either way\n\nsee u on the 21st 🫡",
+  "words": 320,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14874619245529175,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0405476875603199,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.8828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.9076695442199707,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.5,
+    "effort": "medium",
+    "output_tokens": 1539,
+    "input_tokens": 2810
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4 out of 5 stars — Kept my trading setup running when I needed it**\n\nI bought the Kestrel Bastion 1500 on Voltwise for $229 in August 2026. I’m a crypto day-trader in Miami, and after the storm on October 14, I’m very glad I had it.\n\nPower dropped at around 2:20 p.m. while I was 10x long on a SOL perp. My PC, monitors, modem and router stayed on, so I had time to close the position cleanly in about four minutes. Having the internet stay up was just as important as keeping the PC on.\n\nFor anyone trying to figure out whether it’ll handle their setup, mine is a PC, three monitors, a modem and a router. The UPS display shows around **410W while I’m trading**. I also tested it on purpose and got **11 minutes and 40 seconds** at that load before I shut everything down. The box says about 14 minutes at 500W, so my result was shorter even at a lower displayed load. I’d use my number as a rough reference, not assume you’ll get the same runtime—test your own setup before you need it.\n\nThe Bastion is rated at 1500VA / 1000W and puts out a pure sine wave. It has 10 outlets, but only five are battery backed; the other five are surge-only. There’s also a 60W USB-C port. One tip for traders: **put your modem and router on the battery-backed side too**. Easy thing to overlook, and keeping your screens on won’t help much if your internet goes down.\n\nThere are some annoying things, though. During the first week, the fan randomly kicked on at 3 a.m. and woke me up. It’s loud, like a hair dryer on low. The outage beeping is also loud as hell. You can mute it in the desktop app, but that setting resets after a firmware update, which is irritating.\n\nThe app itself looks like something from the Windows XP days. That said, the automatic shutdown works, which matters more to me than how pretty the software is.\n\nIt’s also heavy at around 30 pounds. The battery is swappable, which is good, but a replacement pack costs $95, so that’s worth factoring in.\n\nOverall, I’m giving it four stars. It did exactly what I bought it for during an actual outage and gave me time to close my trade. The fan, beeping and dated app keep it from getting five, but I’d still recommend it to anyone who wants a few minutes to manage positions and shut down safely—just don’t skip testing it with your own load.",
+  "words": 431,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4773024618625641,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5105278491973877,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.1046228408813477,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "low",
+    "output_tokens": 563,
+    "input_tokens": 19016
+  }
+}

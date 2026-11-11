@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.50, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, I’m truly sorry your toe became red and painful, and that this has been such a stressful experience. I understand why you’re upset, and I don’t want to argue with you or dismiss what happened.\n\nI do want to clarify a few details. You came in on October 24 for a $45 deluxe pedicure with my niece, Vy. She’s been licensed for three years and was born here in Houston. I’m sorry if her shyness made it difficult to communicate. During the service, you asked her to clean the cuticle more, and she said she didn’t want to cut too much. I understand that doesn’t change the fact that your toe later hurt, and I’m sorry.\n\nWe take sanitation seriously. Our metal tools are sterilized in an autoclave, and we open each sealed pouch in front of the customer. Files and buffers are new for each person, and customers can take them home. We also use a fresh liner in the tub for every pedicure. Our most recent state inspection, in August 2026, had no violations; the report is posted at the salon. I’m sharing this to explain our practices, not to tell you what caused your toe problem.\n\nWhen you came back on November 2, I offered to refund the full $45 and to pay your urgent-care copay if you bring in the receipt. I’m sorry that the offer didn’t feel like enough at the time. It remains open, and I’d still like to talk with you about what happened and see if we can have a respectful conversation. Please call me at the salon or come by when it’s convenient.\n\nI’ve owned Lotus Garden since 2007, after starting out helping my aunt, and I’ve been part of this Houston community for 19 years. We’ve never had an infection complaint before, but I know that doesn’t make your experience any less real. It also hurts to see comments suggesting all nail salons are dirty. I can only speak for our salon, and I’m happy to answer questions about our sanitation practices.\n\nMarisol, thank you for speaking up and for asking whether we’d offered to help. I appreciate your kindness and your years of support.\n\nI care about my customers, and I’m sorry you’re hurting, Renee. I hope you feel better soon.",
+  "words": 383,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49979034066200256,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15830759704113007,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.515625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.719078063964844,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.5,
+    "effort": "medium",
+    "output_tokens": 476,
+    "input_tokens": 14418
+  }
+}

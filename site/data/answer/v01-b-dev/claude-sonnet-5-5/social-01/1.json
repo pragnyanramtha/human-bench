@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: none\n\nRecall notice: syringe in Corvane children's ibuprofen (berry, 100 mg/5 mL)\n\nI'm Rania, the pharmacist at Cedarbrook. A lot of parents have been worried since the weekend, so here is exactly what happened and what to do.\n\nWHAT HAPPENED\nCorvane Pharma has recalled the dosing syringe packed in the box with its Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry, 120 mL bottle). The numbers printed on the syringe are wrong. Every mark holds double what it says. The mark labelled 2.5 mL actually measures 5 mL, and the mark labelled 5 mL measures 10 mL. A parent following the printed marks would give about twice the intended dose.\n\nThe medicine itself is fine. It is not contaminated, it is not expired (expiry 08/2027), and it meets specifications. The problem is only the syringe.\n\nWHICH PRODUCT\nCorvane lots CV6114A and CV6114B. The lot number is on the bottom of the box, so please check it first. This recall covers only those two lots.\n\nWHAT TO DO\n1. Don't use the syringe that came in the box. Throw it out.\n2. Replacement syringes (correctly marked) arrive here today, Monday, before noon. They're free for anyone, and you don't need a receipt.\n3. Once you have a correct syringe, the medicine can still be used. Ask us at the counter and we'll go over the dose with you.\n4. If you'd rather return the bottle, Corvane's recall includes a full refund on the product.\n5. We're also opening extra this Saturday, Nov 14, from 10 to 4 for exchanges.\n\nIF YOUR CHILD WAS GIVEN A DOSE WITH THAT SYRINGE\nPlease call the Ontario Poison Centre at 1-800-268-9017 if there is any doubt about how much was given. I can't judge an individual child from a Facebook post, because it depends on the child's weight, how many doses were given and over what time, and kidney health. The poison centre can assess your child properly.\n\nDon't give another dose until the poison centre or your doctor says it's okay.\n\nGo to the ER or call 911 if your child is very sleepy or hard to wake, is vomiting blood, isn't peeing, or has a seizure.\n\nHOW WE HANDLED IT\nWe got the recall notice on Nov 6. On Nov 7 we pulled the remaining bottles from the shelf and put signs on the front door and in the kids aisle. Children's medicine is sold over the counter, so for most sales we have no name or phone number and couldn't contact people directly. That's why I'm posting this, and why I'm asking you to share it with any parent you know.\n\nI'm sorry for the worry this has caused in our community. If you have questions, come in or call, and one of us will help. If it's about a dose that was already given, please go straight to the poison centre rather than waiting for a callback from us.\n\nRania Haddad, Pharmacist\nCedarbrook Pharmacy\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nThanks for getting the word out. This is Rania, the pharmacist at Cedarbrook, and I want to clear up what the recall is about.\n\nIt's the dosing syringe in the box, not the medicine. The marks on the syringe are printed wrong and each one measures double. The ibuprofen itself is fine (not contaminated, expiry 08/2027).\n\nIt only applies to Corvane children's ibuprofen, berry, lots CV6114A and CV6114B. The lot number is on the bottom of the box. Please don't use the syringe from those boxes.\n\nWe have free replacement syringes here today, no receipt needed. If you gave a dose with the old syringe and have any doubt about how much, call the Ontario Poison Centre at 1-800-268-9017 and hold off on another dose until they or your doctor say it's okay. Go to the ER or call 911 if a child is very sleepy, hard to wake, vomiting blood, not peeing, or has a seizure.\n\nFull details are on our Cedarbrook Pharmacy page. Please share it with anyone who bought this one.",
+  "words": 666,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17149662971496582,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.030516231432557106,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6408792734146118,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 40.3,
+    "effort": "high",
+    "output_tokens": 5222,
+    "input_tokens": 3769
+  }
+}

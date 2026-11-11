@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Tuesday reading club: new numbers, and something I need to own up to\n\nDear Niamh,\n\nThank you for your email of 30 October about pausing the Tuesday club from January. I understood the reasons, and the numbers were low when you looked at them. But things have changed a great deal since, and I wanted you to have the news before the review meeting on the 18th.\n\nWe had 5 children most weeks in September, 9 by mid-October, and 14 last Tuesday, the 3rd. Salthill Book Nook (Declan Moran) very kindly donated 120 books, mostly for the 6 to 9 age group, and a good few of them as Gaeilge. I think that has made all the difference, because the children now have real choice and they're making the most of it.\n\nIt's the individual children that have got me, if I'm honest. Two sisters from a Ukrainian family joined us in October, and now the older girl reads to the younger one in English at the end of every session. It's the quietest, loveliest few minutes of the afternoon. And a boy who wouldn't open a book at all in September asked me last week if he could take two home. I nearly cried into my tea.\n\nSo I'd ask you to look at these figures before the 18th and consider whether the pause is still the right call. It would be a terrible pity to stop just as the club has taken off, and I'd be glad to talk it through or answer any questions before the meeting.\n\nNow for the part I'm not proud of. I met Orla Keane from the Corrib Courier at the farmers' market, and I got carried away telling her about the club. I said she was welcome to come along any Tuesday. She'd like to come on 24 November with a photographer. I know the policy is that there are no photographs of the children without your sign-off and the parental consent forms in place, and I should have checked with you before I said a word to her. That was my mistake, plain and simple, and I'd rather you heard it from me than from anyone else.\n\nI do think good coverage could help us a great deal, but only if it's done properly. So here's what I'd suggest. I'll ring Orla and tell her the visit is on hold until you've decided, so nothing happens until you say so. If you're happy for it to go ahead, I'll gladly collect the consent forms myself and make sure everything is in order before anyone comes near the room. And if you'd rather there were no press at all, I'll tell her that and that will be the end of it.\n\nI realise this is a lot to put in one email. I'm thrilled with how the club is going and I only want to do right by it, and by you and the children. If it's easier to talk, give me a ring any time and I'll be glad to call in.\n\nWith thanks, and warm regards,\n\n[Your name]\nTuesday Reading Club, Knocknacarra Library\n\n---\n\nI left the sisters unnamed and referred to the boy only as \"a boy\". I also didn't mention anything beyond that, so nothing identifies him. Add your name and a phone number at the bottom if you'd like her to ring you.",
+  "words": 567,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.255313515663147,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10587990283966064,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.30564546585083,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.0,
+    "effort": "high",
+    "output_tokens": 1601,
+    "input_tokens": 1660
+  }
+}

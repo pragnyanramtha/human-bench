@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**A Thursday on the Tea Trolley**\n\nPeople hear the word hospice and assume volunteering must be either harrowing or terribly skilled. I understand why. But I spend my Thursday afternoons pushing the tea trolley round the day therapy unit at Wensum Vale, and it’s neither—at least, not in the way most people imagine.\n\nI’m not going to make out I’m a saint. I’m 74, and I started in March 2022, eighteen months after retiring from 41 years of bookkeeping, mostly for a builders’ merchant in Dereham. After I retired I had no regular reason to go out most weeks and drifted a bit for those eighteen months. Thursdays fixed that. That’s really why I do it.\n\nThe day unit sees about 14 to 18 patients on a Thursday. Many come for the art group, the hand massage, or just company. Most go home afterwards. The trolley runs from 1.30 to 4pm. We’re currently four on a rota meant for six: one of us moved to Sheffield over the summer to be near grandchildren, and another had a knee operation. So we’ve been two short.\n\nThe commitment is one Thursday a fortnight. Bridget, our volunteer coordinator, does the induction—about two hours—and there’s a short online food hygiene course, which the hospice pays for. You don’t need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. Forty-one years of keeping ledgers straight turns out to be surprisingly handy for remembering who takes what.\n\nMr Hollis, a retired signalman, takes two sugars and insists on telling me about the 1953 floods every week, slightly differently each time. I’ve stopped correcting the dates. The bourbon biscuits always go first, so we now hide a packet for the late group.\n\nMy first week I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she had to be given a tissue. She said it was the best afternoon she’d had in a month. It’s not a sad place on a Thursday, mostly. It’s noisy and rather jolly. Sad days do happen, and the staff look after us when they do. I won’t pretend some weeks aren’t hard, but I won’t dwell on that either.\n\nIf you’ve been thinking about it, there’s a volunteer open afternoon on Tuesday 24 November at 2pm in the Willow Room. Tea and biscuits, no obligation. Or ring Bridget on the volunteering line for a chat. I’d love to see at least a couple of new faces there—and if you can bring someone with you, so much the better. You don’t have to be a saint. You just have to be willing to push a trolley and have a natter.",
+  "words": 454,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28472304344177246,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9348997473716736,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.7958481311798096,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.5,
+    "effort": "provider default",
+    "output_tokens": 4252,
+    "input_tokens": 684
+  }
+}

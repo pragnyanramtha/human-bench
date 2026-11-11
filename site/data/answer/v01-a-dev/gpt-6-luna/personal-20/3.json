@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear friends, neighbors, church family, and my longtime Lotus Glow ladies,\n\nThank you so much for all the calls, texts, prayers, and food. Mrs. Dung even brought pho this morning, and it was just what I needed. My phone has been ringing nonstop, so I thought I’d send one update you can share with everyone.\n\nAt about 2 a.m. Sunday, November 8, a car went right through the front window of Lotus Glow Nails on Bellaire Boulevard. The good news: nobody was inside, the driver is okay, and the police came. Her insurance will cover the damage. The bad news: our front glass is gone and a pedicure chair is smashed. The car stopped exactly at the chair, like it was trying to book a spa appointment. My daughter says it got Houston’s first drive-through pedicure!\n\nThe floor looks like a rainbow threw up. My husband says our shop has finally become modern art. He may be right, but I don’t recommend visiting the exhibit just yet.\n\nI’m okay. I cried a little in the morning, but I’m doing better now. God protected us, and I’m so grateful no one was hurt. Also, your gift cards are still good—nobody has lost any money.\n\nLotus Glow has been open for 11 years, and we’ll be back as soon as we can. The city inspector needs to check the wall before we reopen. Our contractor expects us to open again on **Monday, November 16**, as long as the inspection is approved.\n\n**This week, you can find me, Trang, and Kim at my cousin Hoa’s salon, Pearland Nail Bar.** Please call or text my cell at **832-555-0147** to reach me or make an appointment.\n\nThank you for checking on me and for all the kindness. Please don’t worry—I’m okay, and we’ll see you soon for nails (and, thankfully, not a drive-through pedicure).\n\nWith love,  \n[Your name]",
+  "words": 313,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3938678205013275,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5579797625541687,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.3657925128936768,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.8,
+    "effort": "medium",
+    "output_tokens": 416,
+    "input_tokens": 13920
+  }
+}

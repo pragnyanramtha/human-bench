@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "# Thursdays with the Tea Trolley\n\nSome people hear the word \"hospice\" and assume volunteering there must be either terribly harrowing or something you need a nursing badge for. I thought the same before I started. I am neither a nurse nor a particularly brave person, and I can tell you that Thursdays in the day unit are mostly noisy and rather jolly.\n\nI retired in 2021 after 41 years of bookkeeping, mostly for a builders' merchant in Dereham. For about eighteen months afterwards I had no regular reason to leave the house, and I drifted. Then I started on the tea trolley at Wensum Vale, and Thursdays fixed that. I still have no idea how I managed my diary before.\n\nThe afternoon runs from 1.30 to 4pm. We take the trolley round the day therapy unit, and on a typical Thursday we see fourteen to eighteen patients. Some have come for the art group, some for the hand massage, and some just for company. Most of them go home afterwards. The bourbon biscuits always go first, so we now hide a packet for the late group, which is one of the few secrets I have ever kept on purpose.\n\nMr H, a retired signalman, takes two sugars and tells me about the 1953 floods every single week. The dates have shifted a little each time, and I stopped correcting them some while ago. Nobody has complained, least of all the floods.\n\nMy first week, I tipped an entire jug of milk over the trolley. I was mortified. One of the patients laughed so hard she needed a tissue, and afterwards she told me it was the best afternoon she'd had in a month. I still think about that more than I should.\n\nI won't pretend every week is easy. Sad days do happen, and I would be lying if I said otherwise. When they do, the staff look after us properly, and we look out for each other. Mostly, though, the afternoon is ordinary and full of talk, and that is what I've come to value most.\n\nYou do not need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. Those 41 years of keeping ledgers straight have turned out to be handy for remembering who takes milk, who wants it black, and who has had a biscuit already and should be quietly discouraged from another.\n\n**If you are thinking about it**\n\nWe are currently four volunteers on a rota that should have six, so every Thursday is a bit more of a scramble than it needs to be. Two of our regulars left over the summer: one has moved to Sheffield to be nearer her grandchildren, and another is recovering from a knee operation. We would very much like to fill the gap.\n\nThe commitment is one Thursday a fortnight, from 1.30 to 4pm. Bridget, our volunteer coordinator, runs the induction, which takes about two hours. You will also complete a short online food hygiene course, which the hospice pays for.\n\nIf you would like to find out more before committing to anything, come to our volunteer open afternoon on **Tuesday 24 November at 2pm in the Willow Room**. There will be tea and biscuits, and there is no obligation. You are welcome to come along, have a look around, and ask whatever you like. If you can't make it, you can ring Bridget on the volunteering line.\n\nI'd be grateful if you could bring a friend, or at least talk to someone who might enjoy it. We need at least two more people, and I think you'd be surprised how much you get out of a Thursday afternoon.\n\n---\n\n*Note: I've left out patients' names and used initials for Mr Hollis, in case you'd rather keep the blog to nothing identifiable. I've also left out the volunteering phone number since I don't have it. Add it where Bridget's contact line should go.*",
+  "words": 664,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The stated 2021 retirement conflicts with starting in March 2022 eighteen months after retirement."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16743667423725128,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14312833547592163,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.7421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.7936257123947144,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "medium",
+    "output_tokens": 1881,
+    "input_tokens": 1779
+  }
+}

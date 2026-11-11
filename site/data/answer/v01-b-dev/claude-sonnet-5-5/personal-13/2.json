@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here is the message:\n\n---\n\nGood day Mr Kehinde Ogunleye,\n\nI hope you are well. This is the owner of the black Jansport bag you picked up in the danfo from Oshodi on Friday evening, 6 November.\n\nFirst, thank you. I am grateful that you did not just throw the bag away and that you took the trouble to call me. Many people would not have done that, and I do not take it lightly.\n\nI am a first-year Biology student and my BIO 101 practical is on Wednesday 11 November at 10am. My dissecting kit and student ID are inside that bag, and without them the lab attendant will not let me in. That is why I am writing to you properly.\n\nAbout the 40,000 naira you mentioned on our last call, I have to be honest with you: I cannot afford it. I am a student living on a small allowance, and even the bag with everything inside it is not worth that amount. What I can do is give you 10,000 naira, for your transport and as my thank you. It is all I have, and I am offering it sincerely.\n\nIf you agree, I would like us to meet in the daytime, on any day before Wednesday that is convenient for you. I suggest Ikotun Roundabout or the Ikotun Police Division gate, simply because they are busy places and easy for both of us to find. My roommate will come with me. I will bring the 10,000 naira in cash, collect the bag, and we both go our way happy.\n\nPlease let me know the day and time that suits you. I will make myself available.\n\nThank you again, sir. God bless you.\n\n[Your name]\n\n---\n\nPut your name at the bottom before you send. Also, my system shows today as 11 November. If that is really the case and the practical is today, you will need to change \"any day before Wednesday\" to \"today\" or \"as early as you can this morning.\"",
+  "words": 337,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30554285645484924,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02689587138593197,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.910468578338623,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.0,
+    "effort": "high",
+    "output_tokens": 1666,
+    "input_tokens": 1448
+  }
+}

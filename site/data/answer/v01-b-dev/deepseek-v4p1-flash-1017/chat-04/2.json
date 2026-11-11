@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: [s01]\nCc: none\nSubject: Admin meeting rundown\n\nRenee,\n\nHere's your rundown for the admin meeting. We beat Brookhollow 31-14 Friday. Deshawn Pettaway had 3 sacks and 7 tackles, and the kids voted him defensive player of the week in the locker room before the coaches even met. Defense held them to 46 yards rushing in the second half. Tavion Hurst ran for 188 yards and 2 TDs; his long TD in the third came behind the best blocking I've seen from our line all year—we pushed them 5 yards back on that whole drive. That win locked up 2nd in the region.\n\nPlayoffs: AHSAA has us hosting Clanton Valley first round Friday, Nov. 13, 7 p.m. at Ridge Field. That's a HOME playoff game, and I want Dr. Pruitt to know it and folks to come out. Ticket office presale starts Tuesday; gate crew and chain crew need confirming by Wednesday.\n\nAcademics: 9-week grade check is clean—all 52 kids on the roster eligible, nobody on the list. That's Tonya Greer's study hall Tuesdays and Thursdays, and she deserves the credit, not me.\n\nBoosters: Boston butt sale finished at 208 butts sold, $6,240 raised against a $4,500 goal. Money goes to the new sideline headsets. Hargrove's Meat Market smoked them at cost. Carla said concessions need 6 more volunteers for the playoff game; signup goes out tomorrow.\n\nReminder for you: if we win and go on the road, I'll get the bus stuff to you. I know transportation wants requests 5 days out for playoff away games.\n\nThanks,\nCoach",
+  "words": 251,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "Facts: it says Carla said concessions need 6 more volunteers, but Gene Sizemore said that, not Carla."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3201581537723541,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.31257444620132446,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.603806972503662,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.8,
+    "effort": "provider default",
+    "output_tokens": 4818,
+    "input_tokens": 1538
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Some good news I’ve been looking forward to sharing: Priya Bhatia joins us on Monday 16 November.\n\nPriya is a chartered structural engineer (IStructE) with nine years’ experience at a consultancy in Coventry. I’m genuinely delighted she’s joining us. Having another experienced engineer on board means we can share the workload properly and tackle the delays we’ve had. If you meet her on a site visit, please say hello and help us make her feel welcome.\n\nI also owe some of you an apology. During September and October, beam calculations and drawings were taking five to six weeks. Several clients waited far too long, and some were understandably unhappy.\n\nThose slow weeks were my fault. I said yes to too much work on my own. In October I was out on site during the day and doing calculations until midnight. My wife started calling the office “the other house”. That wasn’t sustainable, and it wasn’t giving clients the service they should expect.\n\nWith Priya joining, our target for beam calculations and drawings is now **10 working days**. That’s a target we need to deliver on, not just announce. If you’re waiting for work from us now, your job is moving forward. Please message me directly if you’d like an update.\n\nThere’s also a change to first site visits. **Visits taking place from 1 January 2027 will cost £95**, deducted from your fee if you go ahead with us. Around a third of free visits haven’t led to a job, and charging for that time will help us keep the service sustainable.\n\n**Any visit already booked when this post is published will remain free, whatever its date.**\n\nThank you to everyone who’s trusted us with a wall removal, loft conversion or other project—and especially those who’ve been patient recently. I’m excited about this next step, and looking forward to giving you a better service.",
+  "words": 313,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45427098870277405,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.38585853576660156,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.7947685718536377,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "low",
+    "output_tokens": 390,
+    "input_tokens": 18282
+  }
+}

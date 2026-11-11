@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Residents of Larkspur Lofts,\n\nI am writing about my drone flight from the roof deck on Saturday, October 31, at approximately 4 p.m., and the concerns it raised. I live in Unit 5A and have been a resident here for three years.\n\nI am a wedding photographer, and I was testing a new Halvard Mini 4 drone before photographing a vineyard wedding in Dundee. The flight lasted approximately 11 minutes. Throughout that time, the camera was pointed west toward the river and the Fremont Bridge, not toward residents’ windows. I was not filming or observing anyone inside their home.\n\nThat said, I understand that seeing and hearing an unfamiliar drone hovering over the courtyard could be unsettling, especially without knowing why it was there. I am sorry that my flight caused worry. I should have considered how it would look to neighbors and communicated beforehand.\n\nAnyone who would like to see what I recorded is welcome to view the full, unedited footage. Please knock on my door at 5A or email me at jess.okafor@mailbox.example to arrange a time.\n\nI also want to address the lobby note identifying my unit and calling me a “creep.” Concerns about privacy deserve to be taken seriously. However, publicly identifying a neighbor’s unit alongside a personal insult is not an appropriate way to raise those concerns. It left me feeling singled out and exposed in my own building.\n\nOur HOA rules do not currently address drones. Rather than treat that silence as permission to continue, I will not fly from the roof again unless and until the board establishes a rule allowing it. I will ask that this topic be added to the November 19 board meeting agenda, at 7 p.m. in the community room.\n\nIf something I do causes concern in the future, please speak with me directly rather than posting a note. I am willing to listen, answer questions, and work toward clear expectations that respect everyone’s privacy and comfort.\n\nSincerely,  \nJess Okafor  \nUnit 5A",
+  "words": 333,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3548905551433563,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4643440246582031,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.250158309936523,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "low",
+    "output_tokens": 412,
+    "input_tokens": 18271
+  }
+}

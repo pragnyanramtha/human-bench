@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Proposal: Move H-1B Registration Intake Deadline to January 15**\n\nI'd like us to consider setting January 15 as our internal deadline for cap-season registration materials, rather than allowing questionnaires to come in on a rolling basis through February. This isn't about clients being late—it's about giving us a defined intake period so we can work deliberately instead of reactively.\n\nLast season tells the story clearly. In March 2026 we filed 14 registrations for six employer clients, and nine of those came in during the final week of February. Rosa logged roughly 11 hours of overtime that week just keeping up. Part of the problem is that we currently don't set a date at all: we email the questionnaire when an employer asks, so there's no shared expectation. One HR contact told me she would have happily sent everything in January if we'd asked. Most of the crunch is our process, not client delay—nobody gave them a deadline.\n\nThe risk side matters too. The registration itself is simple, but errors are expensive: a wrong or expired passport can invalidate a selection. Last season a client sent a passport scan two days before the window that had expired in October; we caught it only because Rosa checked the dates. An earlier intake gives us time to catch those issues.\n\nWhat would change:\n- Engagement letters and a one-page questionnaire go out the week of December 7.\n- Intake closes January 15; anything later is handled case by case.\n- Rosa owns the tracker and gets a clean six weeks to chase gaps and verify documents.\n- Registration fees ($215 per beneficiary) stay as-is—employers already budget for them in Q1.\n\nJanuary 15 is realistic: HR teams are back from the holidays and budgets are set. Framed as better service and cleaner risk management, I think this is an easy yes—and if we agree Thursday, we can send the December letters on schedule.",
+  "words": 319,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece puts Rosa's ~11 hours of overtime in the final week of February ('that week'), but the request says it was the week the registration window opened, which was in March."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6672173142433167,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.993267834186554,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 14.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.891358375549316,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 3.9,
+    "effort": "provider default",
+    "output_tokens": 693,
+    "input_tokens": 538
+  }
+}

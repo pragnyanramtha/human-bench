@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone charity stream is saturday nov 21, 10am to 10pm, for the Linden Community Pantry. i'm posting this early on purpose. last year i put it up the thursday before, half of you didn't even know it was happening, and we only got $212 😭\n\ngoal this year is $600.\n\ndonate here: lindenpantry.example/mrkz\nit goes straight to the pantry and nothing gets taken off. every $1 gets them about 4 pounds of food through their wholesale partner. they're serving around 340 families a week and their shelves are the lowest they've seen going into thanksgiving, so this one actually matters.\n\nRook is matching the first $100 that comes in, so the first $100 counts double.\n\nincentives (the mods made these, blame them):\n$100 = i play a full round with the controller upside down\n$250 = chat picks my hair dye color and i do it ON STREAM\n$400 = one hour of only chat-picked songs, no skipping\n$600 = i vlog a grocery pickup arranged by the pantry\n\nthe hair dye is the real reason to donate, i'm not gonna pretend otherwise.\n\nthe stream itself: first half is community lobbies where anyone can join and i'll drop the code. second half chat votes on the game every 2 hours. no repeat maps, larry, i promise.\n\nif you can't give, genuinely no stress. even $3 helps, but nobody's keeping score. no card? you can still help. canned and boxed food goes in the blue bin by the pantry's side door, saturdays 9 to 1, so you can drop stuff off before the stream starts. showing up, hanging out in chat, and sending this to a friend all count too.\n\nand if charity streams just aren't your thing, that's fair, you don't have to give to hang out. but there's food for a lot of families and my hair on the line, so come through.",
+  "words": 314,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2565304934978485,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.054489221423864365,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1298828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.224241256713867,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.9,
+    "effort": "high",
+    "output_tokens": 2081,
+    "input_tokens": 2807
+  }
+}

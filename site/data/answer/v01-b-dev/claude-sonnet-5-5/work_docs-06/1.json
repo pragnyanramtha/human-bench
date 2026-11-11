@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: URGENT: Brightline Pro 6% developer, batch LX2291, check your bottles today\n\nEveryone who buys from the Kelvin Trade rep, please read this today.\n\nKelvin Trade have told us that one batch of Brightline Pro 6% (20 vol) Cream Developer 1L was filled wrongly. Bottles from batch LX2291 may actually contain 12% (40 vol) developer. It was supplied between 19 October and 5 November. If you've bought developer from the rep in that time, check it.\n\nAileen and I have both had it. On Saturday a client of mine had a burn to her scalp during a bleach retouch, and on Thursday Aileen's highlights lifted far too fast and the foils were roasting. We both thought it was something else at first. Lorna, I think you got a box off him too, so please check yours.\n\n**How to check your bottles**\n- The batch code is printed on the BASE of the bottle. It is NOT on the box, so don't go by the box.\n- You're looking for LX2291.\n- Check the stock in the back, and also the bottles you've already opened in your trolley and at your station. Open bottles count.\n- Kelvin Trade say other batches and other strengths aren't affected. If a bottle isn't LX2291 you should be fine, but if anything has behaved strangely, stop and tell someone.\n\n**Stop using it**\nIf it's LX2291, stop using it and put it somewhere separate, clearly marked, so nobody picks it up by mistake. Don't mix it with anything.\n\n**What it does**\nAt double strength, the developer lifts much faster than you expect and is much harsher on the skin. Things to look out for:\n- Lift happening far quicker than normal. My client was near pale yellow in about half the usual time.\n- Clients saying it tingles, stings or burns earlier than usual, or more than usual.\n- Heat coming off foils or the head.\n- Red or sore patches on the scalp.\n- Over-lifted, patchy or brassy hair, and breakage afterwards.\n\nIf you've done colour with a bottle from that batch in the last couple of weeks, it's worth a call to those clients to ask how their scalp and hair are doing.\n\n**If someone reacts in the chair**\n- Stop straight away and rinse with cool water. No shampoo.\n- Don't wait for blistering or for it to get worse. Chemical burns need medical assessment, so get medical help, and call 999 if you're worried or they have trouble breathing or any swelling of the throat or face.\n- Wear gloves and carefully take off any contaminated clothing or towels.\n- Keep rinsing with plenty of cool or lukewarm running water, about an hour if you can, or until you're told otherwise. Don't put creams or anything else on it.\n- Write it in the incident book at the desk.\n- Take dated photos and write down what happened, the times, and the batch code.\n\n**If you've had a problem, keep a bottle back**\nPlease don't bin it and don't hand it back. Keep at least one bottle from the batch, along with the box and any receipt or email, in case you need it later. Photograph the base showing the batch code.\n\n**Getting your money back**\nKelvin Trade will give a full credit on returned bottles. You can hand them to the rep, who is in on Tuesday, or take them to their Hillington depot. Just remember the above if you've had a client react. Keep one bottle back first.\n\nTheir email says sorry for \"any inconvenience\". It's a bit more than that, so please don't just assume your bottles are fine. Go and look at the bottom of them.\n\nIf you find LX2291 in your stock or have had anything odd with a client, tell me or Aileen and let Gail know too.\n\nKirsty",
+  "words": 631,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The first-aid advice contradicts the supplied guidance by making a 999 call conditional rather than immediate for suspected chemical burns."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2971947193145752,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13674615323543549,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.140625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -7.228016376495361,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.2,
+    "effort": "high",
+    "output_tokens": 3416,
+    "input_tokens": 3588
+  }
+}

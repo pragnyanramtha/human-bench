@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.49, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Bring the broken toaster. Stay for coffee.\n## Our first Fix-It Saturday at St. Ansgar\n\n**Saturday, December 5, 2026 • 9 a.m.–1 p.m.**  \n**Fellowship Hall, St. Ansgar Lutheran Church • Minneapolis, MN**  \n**Enter by the alley door, where there’s a ramp.**\n\nA while back, Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes in the church kitchen. That’s where this idea started. Too much gets thrown away when all it needs is a screw, a new cord, or someone who knows where to look.\n\nOur church council approved Fix-It Saturday last week, and I confess I’m thrilled.\n\nOn December 5, volunteer fixers will be on hand to help with **small appliances, lamps, bikes, clothing mending, and knife sharpening**. We’ll also have a retired tech guy helping with **laptops and phones**. We can’t promise every item will leave working, but we can take a look together.\n\nDoris Lindqvist, 84, has darned socks for this parish since the Carter years. She asked to run the mending table herself. I know better than to get in her way.\n\n**This is free and open to the whole neighborhood.** You don’t need to belong to St. Ansgar—or any church—and there’s no sign-up. Donations to the food shelf are welcome, but not expected. Please bring **one item per person to start**, so we can keep the line moving.\n\nThere will be **coffee and kringle**, and I hope you’ll stay for some conversation, whether your repair takes five minutes or the better part of the morning. This is good neighboring, plain and simple. No strings, and nobody will preach at you.\n\nAfter December, we’ll gather on the **first Saturday of every month through spring**.\n\n**Could you lend a hand?** We’d welcome more volunteer fixers, especially anyone who knows their way around **vacuums or zippers**. Contact the church office at **office@stansgarlutheran.example** or **612-555-0148** to volunteer or ask a question.\n\nBring that thing you’ve been meaning to fix. We’ll put the coffee on.",
+  "words": 327,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48983559012413025,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9959795475006104,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.7584755420684814,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.1,
+    "effort": "medium",
+    "output_tokens": 480,
+    "input_tokens": 13957
+  }
+}

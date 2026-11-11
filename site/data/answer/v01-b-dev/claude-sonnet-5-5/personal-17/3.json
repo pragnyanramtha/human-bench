@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To whoever is putting their rubbish in my bin**\n\nI live at No. 14, the grey bin with a big white 14 painted on the lid. For about a month now, someone has been loading it with their own bags every week. I'm not talking about a few bits here and there. I mean full black bags, nappies included.\n\nLast Tuesday I got in from work at 3am and the lid wouldn't even close. Three bags in there that were never mine. One had something in it with this terrace on it, so I know it's someone from around here. Someone also saw a car pull up on Tuesday evening.\n\nHere's why I'm fuming. Greenmount charges by weight, 41c a kilo. My bill is usually around €25 for two months. My last one was €63.20. I'm renting, I work nights, and I'm not paying for your rubbish. That's not on.\n\nI'm not looking for a row. I still live here, same as the rest of you, and I'd rather keep things civil. But I'm not a pushover either, and I won't be quietly eating the cost of this.\n\nSo here's the deal. It stops now. Not next month, now.\n\nIf you're stuck on how to get rid of your waste, ask me. Honestly. I'll tell you who to ring, it's not hard. A phone call and a bit of effort is a lot cheaper than what you're doing to me.\n\nIf it keeps happening, I'll start padlocking the bin. That means no one gets in it, and that's a pain for everyone, including whoever's been doing this. I'd rather not have to.\n\nWhoever you are, you know who you are. Do the right thing and we'll never need to speak about it again.\n\nThanks,\nNo. 14\n\n---\n\nI kept it unsigned beyond the house number since you don't know who's behind it. If you'd like it a bit harder or softer, I can change the tone. I'd also keep the line about the item with the terrace on it, as it lets them know you've got something to go on without pointing at anyone.",
+  "words": 354,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38828518986701965,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2181488424539566,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.71875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.110302209854126,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.0,
+    "effort": "high",
+    "output_tokens": 1037,
+    "input_tokens": 1317
+  }
+}

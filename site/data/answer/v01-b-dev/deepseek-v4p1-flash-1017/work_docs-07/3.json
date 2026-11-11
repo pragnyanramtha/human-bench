@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Mrs. Okafor  \nFrom: [Driver Name], School Bus Driver, Bus 41, Route 9  \nDate: November 12  \nRe: Written statement — Tuesday, October 27, afternoon run, Amara Okafor, Fairmont Elementary\n\nDear Mrs. Okafor,\n\nMy name is [Driver Name]. I drive Bus 41 on Route 9 for Fairmont Elementary, and I have driven a school bus in Dayton for 28 years. My supervisor, Darlene, asked me to write this statement for my file in response to the complaint you filed, dated October 29. I received it from her on November 3. I understand a copy will be sent to you, and I am writing it with that in mind.\n\nI want to give you my account of what happened on Tuesday, October 27, on the afternoon run. I am not writing to blame you or to argue with you. I am writing because I did what the district policy requires for a kindergarten student at a stop with no adult visible, and I want that on the record.\n\n**What happened**\n\nAt approximately 3:52 p.m. I arrived at the Kessler Avenue and Brandt Street stop. The schedule time is 3:50 p.m.\n\nAmara was on the bus. She is a kindergarten student at Fairmont and has the green tag on her bag. Under the district rule for kindergarten riders with that tag, if no adult is at the stop, the student stays on the bus and is returned to school. The school office calls the parent.\n\nI waited at the stop until about 3:55 p.m. I did not see an adult at the corner. I looked toward the stop and did not see you. I am not saying you were not there. I am saying I did not see you from the driver’s seat.\n\nAt 3:56 p.m. I radioed dispatch. Gloria at dispatch called the school. I still had three more stops and 14 students on the bus.\n\nI completed those stops and brought Amara back to Fairmont. We arrived at 4:31 p.m. I walked her into the office myself and left her with Mrs. Petrakis.\n\nAmara was fine. She was coloring on her folder and asked if she could ride more. I told her we were going on a little extra trip.\n\n**About your concerns**\n\nYou said I “took” your daughter. I understand why it felt that way. I did not take Amara anywhere except back to her school, which is where the policy says to bring her. When no adult was visible, I kept her on the bus and returned her to school, and the school was notified by radio. That is what the policy says to do. I cannot leave a bus with 14 students on it to walk across the street and look for a parent. That is not a safe option for those children or for Amara.\n\nYou said you were parked across Brandt by the laundromat and waved. I did not see you. There was a box truck parked on that side. I did not see you wave, so I did not answer. I was not ignoring you. I am not saying you did not wave. I am saying I did not see it from where I was.\n\nYou also said I “drove off laughing.” I was not laughing. I was telling the fourth grader in seat 2 to sit back down while we pulled out. I can see how it might have looked from across the street, but that is what I was doing.\n\nI understand you were scared. I have grandchildren. I would be too. I am sorry you had a bad afternoon. I am not going to apologize for following the rule, because that rule is there to keep Amara safe. But I am sorry for how frightening it was for you.\n\nThis happened once before on my route years ago with a different family. The child stayed on the bus and went back to school, the office called, and the family thanked me afterward for keeping the child safe. I am not bringing that up to score a point. I am bringing it up because it is the same rule, and I have followed it before.\n\n**What I am asking**\n\nI ask that the district pull and preserve the camera footage from Bus 41 for the afternoon run on Tuesday, October 27. The stop is Kessler Avenue and Brandt Street, around 3:52 to 3:55 p.m. The camera should show the stop area and whether an adult was visible at the corner. I also ask that the interior camera be reviewed for the time Amara was on the bus and when I brought her into Fairmont at 4:31 p.m. I am asking for this because the footage is the best record of what I could see from the driver’s seat.\n\nI ask that you stand on the bus side of the street, or step out of your car where I can see you, when you are waiting for Amara. If you are parked across Brandt, I may not be able to see you behind traffic. I am not asking you to do anything unreasonable. I am asking for a way to see you right away so this does not happen again.\n\nI would like this fixed between us. I am glad to keep driving Amara. I want her to have a safe and calm ride every day, and I want you to feel confident about it.\n\nI have 28 years driving with no write-ups. I take that seriously. I did what I was trained and required to do on October 27. I am asking that my record reflect that, and I am asking that the camera be pulled so there is a clear record for everyone.\n\nThank you for reading this.\n\nRespectfully,  \n[Driver Name]  \nSchool Bus Driver, Bus 41, Route 9  \nDayton, Ohio",
+  "words": 952,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4007743299007416,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21148742735385895,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.71463680267334,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.1,
+    "effort": "provider default",
+    "output_tokens": 8814,
+    "input_tokens": 766
+  }
+}

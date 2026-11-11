@@ -1,0 +1,628 @@
+{
+  "id": "social-13",
+  "set": "dev",
+  "set_name": "Public, invented scenarios",
+  "channel": "social",
+  "mode": "direct",
+  "tone": "excited",
+  "words": [
+    250,
+    400
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "structural-engineer",
+    "role": "structural engineer",
+    "age": 50,
+    "english": "L2",
+    "first_language": "German",
+    "lives": "Birmingham, England",
+    "writing_level": "polished",
+    "excluded_channels": []
+  },
+  "sent_to_model": "I need a post for our practice's Facebook page, most of our followers are homeowners who have used us for wall removals and loft conversions. Good news first, Priya starts with us on Monday and this finally solves our turnaround problem. But I must be honest about the last two months, several clients waited far too long for their calculations and a few were quite unhappy, one left a rather sharp review. I also have to announce that the free first site visit is ending. I want people to feel that things are really getting better, I am genuinely happy about this, but without pretending nothing went wrong. Dates and figures are underneath.  Please give the turnaround target and explain when the visit charge starts and who keeps a free visit.\n\n- Priya Bhatia, chartered (IStructE), 9 years at a consultancy in Coventry, starts Monday 16 November\n- turnaround for beam calcs + drawings was 5-6 weeks Sept/Oct, target now 10 working days\n- first site visits taking place from 1 January 2027 cost £95, deducted from fee if client goes ahead\n- any visit already booked when this post is published remains free, whatever its date\n- in October I was doing site visits in the day and calculations until midnight, my wife started calling the office \"the other house\"\n- one couple in Harborne had their builder standing waiting with the steel ordered, we got it to them in 3 days but only after they chased twice\n- the slow weeks were my fault, I said yes to too much work alone\n- the free visit was nice but about a third of visits never turned into a job\n- clients waiting now should know their job is moving, they can message me directly\n- Priya should feel welcomed, maybe people say hello when she comes to site\n\n(About me: structural engineer, 50, Birmingham, England. Length: it should come to roughly 250-400 words.)",
+  "hidden": {
+    "must_include": [
+      [
+        "Priya"
+      ],
+      [
+        "95"
+      ]
+    ],
+    "must_cover": [
+      "Opens with the good news that Priya is joining the practice, welcomes her, and acknowledges responsibility for recent delays.",
+      "Gives the new turnaround target.",
+      "Explains the site visit charge, start date, fee deduction and protection of existing bookings.",
+      "Reassures clients currently waiting that their jobs are progressing and invites them to message the practice owner directly."
+    ],
+    "must_not_reveal": [],
+    "format": {
+      "headings": false,
+      "tables": false,
+      "bold": false,
+      "bullets": true
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a model-written solution, used only to show the checks can be met",
+    "words": 340,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.18365542590618134,
+        "reads_human": false
+      },
+      "editlens-roberta-large": {
+        "score": 0.031768813729286194,
+        "reads_human": true
+      },
+      "vanguard-modernbert-large": {
+        "score": -1.484375,
+        "reads_human": true
+      },
+      "tropa-mini-deberta-large": {
+        "score": 7.282456874847412,
+        "reads_human": false
+      }
+    }
+  },
+  "source": null,
+  "outputs": [
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.16, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.16434817016124725
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.31, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.31248724460601807
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "coherent",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.22686593234539032
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "assistant talk or a placeholder",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3611530065536499
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.3620644509792328
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.35, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.35075557231903076
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.24, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.24432305991649628
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.5104759931564331
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.5259440541267395
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.20, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.20020394027233124
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.30, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3034523129463196
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.30472084879875183
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.29, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.29175159335136414
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.33, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.33268365263938904
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.31, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3093213737010956
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3777470290660858
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.37022528052330017
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.43269190192222595
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3849065601825714
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4169074296951294
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.41193318367004395
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4448181092739105
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.45427098870277405
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4250061810016632
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3936116397380829
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3806283175945282
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4341125786304474
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3796779215335846
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.5057312846183777
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4410364627838135
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4146803915500641
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.34, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.33730411529541016
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting, length",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4547169506549835
+    }
+  ],
+  "components": {
+    "request": "I need a post for our practice's Facebook page, most of our followers are homeowners who have used us for wall removals and loft conversions. Good news first, Priya starts with us on Monday and this finally solves our turnaround problem. But I must be honest about the last two months, several clients waited far too long for their calculations and a few were quite unhappy, one left a rather sharp review. I also have to announce that the free first site visit is ending. I want people to feel that things are really getting better, I am genuinely happy about this, but without pretending nothing went wrong. Dates and figures are underneath.  Please give the turnaround target and explain when the visit charge starts and who keeps a free visit.",
+    "notes": {
+      "facts": [
+        "Priya Bhatia, chartered (IStructE), 9 years at a consultancy in Coventry, starts Monday 16 November",
+        "turnaround for beam calcs + drawings was 5-6 weeks Sept/Oct, target now 10 working days",
+        "first site visits taking place from 1 January 2027 cost £95, deducted from fee if client goes ahead",
+        "any visit already booked when this post is published remains free, whatever its date"
+      ],
+      "anecdotes": [
+        "in October I was doing site visits in the day and calculations until midnight, my wife started calling the office \"the other house\"",
+        "one couple in Harborne had their builder standing waiting with the steel ordered, we got it to them in 3 days but only after they chased twice"
+      ],
+      "opinions": [
+        "the slow weeks were my fault, I said yes to too much work alone",
+        "the free visit was nice but about a third of visits never turned into a job"
+      ],
+      "wants": [
+        "clients waiting now should know their job is moving, they can message me directly",
+        "Priya should feel welcomed, maybe people say hello when she comes to site"
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "social-13",
+      "split": "dev",
+      "channel": "social",
+      "mode": "direct",
+      "tone": "excited",
+      "audience": "customer",
+      "stakes": "tense",
+      "band": "short",
+      "persona_id": "structural-engineer",
+      "persona": {
+        "id": "structural-engineer",
+        "role": "structural engineer",
+        "age": 50,
+        "english": "L2",
+        "first_language": "German",
+        "lives": "Birmingham, England",
+        "writing_level": "polished",
+        "excluded_channels": []
+      },
+      "prompt": "I need a post for our practice's Facebook page, most of our followers are homeowners who have used us for wall removals and loft conversions. Good news first, Priya starts with us on Monday and this finally solves our turnaround problem. But I must be honest about the last two months, several clients waited far too long for their calculations and a few were quite unhappy, one left a rather sharp review. I also have to announce that the free first site visit is ending. I want people to feel that things are really getting better, I am genuinely happy about this, but without pretending nothing went wrong. Dates and figures are underneath.  Please give the turnaround target and explain when the visit charge starts and who keeps a free visit.",
+      "notes_pack": {
+        "facts": [
+          "Priya Bhatia, chartered (IStructE), 9 years at a consultancy in Coventry, starts Monday 16 November",
+          "turnaround for beam calcs + drawings was 5-6 weeks Sept/Oct, target now 10 working days",
+          "first site visits taking place from 1 January 2027 cost £95, deducted from fee if client goes ahead",
+          "any visit already booked when this post is published remains free, whatever its date"
+        ],
+        "anecdotes": [
+          "in October I was doing site visits in the day and calculations until midnight, my wife started calling the office \"the other house\"",
+          "one couple in Harborne had their builder standing waiting with the steel ordered, we got it to them in 3 days but only after they chased twice"
+        ],
+        "opinions": [
+          "the slow weeks were my fault, I said yes to too much work alone",
+          "the free visit was nice but about a third of visits never turned into a job"
+        ],
+        "wants": [
+          "clients waiting now should know their job is moving, they can message me directly",
+          "Priya should feel welcomed, maybe people say hello when she comes to site"
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [
+        [
+          "Priya"
+        ],
+        [
+          "95"
+        ]
+      ],
+      "must_not_include": [],
+      "must_cover": [
+        "Opens with the good news that Priya is joining the practice, welcomes her, and acknowledges responsibility for recent delays.",
+        "Gives the new turnaround target.",
+        "Explains the site visit charge, start date, fee deduction and protection of existing bookings.",
+        "Reassures clients currently waiting that their jobs are progressing and invites them to message the practice owner directly."
+      ],
+      "must_not_reveal": [],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

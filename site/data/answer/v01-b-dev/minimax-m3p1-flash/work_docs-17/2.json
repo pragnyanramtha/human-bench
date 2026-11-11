@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "## Proposal: Move H-1B Registration Intake Deadline to January 15\n\n*For Thursday's discussion — Marcus (and Rosa for the tracker piece)*\n\nI'd like to move our internal intake deadline for H-1B registrations from an open-ended February trickle to a firm date of January 15. My instinct is that we frame this as better service rather than a tighter deadline on clients — most of the crunch last season was our process, not client delay, because we never gave anyone a date to work against.\n\nLast season we filed 14 registrations for 6 employer clients, and 9 of the 14 came in during the final week of February. Rosa logged roughly 11 hours of overtime in the week the window opened. Right now intake works like this: we email the questionnaire whenever an employer asks, so the work arrives unpredictably and piles up at the end. A set date gives us something to plan against.\n\nThat unpredictability is also where our risk lives. Brightwater Analytics sent a beneficiary's passport scan two days before the window opened; the passport had expired in October, and we only caught it because Rosa checked the dates. The registration itself is simple, but errors are expensive — a wrong passport means an invalid selection. An earlier intake date buys us time to catch problems before they cost a client a seat.\n\nOn timing: January 15 is realistic. HR teams are back from holidays with Q1 budgets set, and the $215 per-beneficiary fee is already built into employers' Q1 numbers. One HR contact told me she would have happily sent everything in January if we'd asked.\n\n**What would actually change**\n\n- Engagement letters and a one-page questionnaire go out the week of December 7.\n- Intake closes January 15; anything later is handled case by case.\n- Rosa owns the tracker and gets a clean six weeks to chase gaps.\n- Fee handling stays as it is today.\n\nIf we're aligned on Thursday, we can get the December letters out that week and spend the holidays with intake closed.",
+  "words": 342,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The closing line says they'd 'spend the holidays with intake closed', but intake stays open until January 15, after the December holidays."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4042346477508545,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9871665835380554,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.617589950561523,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.3,
+    "effort": "provider default",
+    "output_tokens": 1514,
+    "input_tokens": 696
+  }
+}

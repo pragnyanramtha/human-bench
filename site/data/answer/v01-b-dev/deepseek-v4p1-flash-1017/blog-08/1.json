@@ -1,0 +1,88 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.53, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Toast at Four**\n\nMy last night shift finished at 07:30 on Sunday morning. I'd come on at nine the night before, into majors, and it was a busy one in the way that most of them are busy — nothing dramatic, just the work arriving steadily and not stopping. Fourteen years of nights, and it ended the way nearly all of them have: with me driving home in the daylight feeling like a piece of furniture that had been moved.\n\nThe first one was in 2012, when I was an SHO. I remember almost nothing about the shift itself. What I remember is the car park at the Infirmary, and the frost on the windscreen, and sitting there crying because I could not remember whether I had given the second dose.\n\nI had, by the way. I checked. But I sat in that car with the engine off and the glass going opaque in front of me because I couldn't make myself go back inside and I couldn't make myself drive out either, and both of those felt like the same failure.\n\nThat's the thing nobody tells you about nights when you start them. Everyone assumes it's about adrenaline. It isn't, mostly. Adrenaline is the easy part — adrenaline arrives with the trolley and picks you up and carries you through the door. Nights are about what's left when that's gone. They're about the hour when you are completely empty and somebody still needs you to be a person. Staying kind at five in the morning when there's nothing left in you to be kind with is the whole skill. Everything else is scheduling.\n\nWhat nights gave me, and I'll say this plainly because I don't think day staff always see it: the department is most itself at night. The managers have gone home. The meetings are tomorrow. There's no one to impress and nothing to present, and what's left is the work and the people doing it. There's more honesty in it. There's more kindness in it. I've had conversations at three in the morning with colleagues I'd worked beside for years that I doubt we'd have had at eleven in the morning with a corridor full of people.\n\nAnd there's the toast. At four o'clock, someone makes toast in the staff room. I have never once seen who starts it. In fourteen years I have eaten a great deal of toast at four in the morning and I have never seen the first slice go in, and I've stopped expecting to. Nobody admits to it. It's possible it's Folasade. It's possible it's the building.\n\nFolasade is our charge nurse on nights and has been doing them for twenty-two years. She goes up those stairs at three in the morning faster than I go up them at three in the afternoon. Twenty-two years, and she has never once suggested that there's anything remarkable about that, which is how you know there is.\n\nNights took things too. I want to be honest about that, because it would be easy to write this as though I'm only losing something I loved and not something I'm glad to be shot of.\n\nBoth of my nieces were named while I was on shift. I watched both ceremonies on a video feed, on a phone, in a corridor. My sister lives in Bangalore and she never said one word about it — not at the time, not since. I've thought about that silence more than she knows. I think it was a kindness and I think I've been quietly ashamed of needing it.\n\nMy knees have opinions now. My GP used a phrase about my blood pressure that I've decided not to repeat in public, but it wasn't a gentle phrase. The move to days-only isn't a reward and it isn't a defeat; it's just that bodies send invoices eventually, and mine has started sending them with the red stripe on.\n\nSo from Monday I'm on days. And I am relieved, and I feel like a traitor for being relieved, and both of those are true at the same time and I've given up trying to make them agree with each other. There's a version of this where I pretend the relief is really about my health, and another version where I pretend I'm heartbroken. Neither is quite it. Fourteen years is a long time to do one thing in one way, and I'll miss it in the way you miss a house you've moved out of — not every day, and not always for the reasons you'd expect.\n\nI'm not going to turn this into a piece about staffing. I've written enough of those and they're all still true and none of them have changed, and you've read them already.\n\nWhat I'll remember, when the details go, is one night last winter. Around three in the morning an old gentleman who had been very unwell took hold of my hand and told me I had his daughter's hands. That's all he said. He went home a few days later. I don't know what it meant to him, and I'm not going to guess. I know what it meant to me at three in the morning, and that's enough to keep.\n\nAnd I'll remember Sunday, driving home down the London Road with the sun coming up in front of me and the shipping forecast playing on catch-up, which is a ridiculous thing to listen to in the middle of the country, and understanding — not sadly, just clearly — that I would not be seeing that particular light from that particular side again.\n\nOn Monday I'll walk in through the front door in the morning like a normal person, and Folasade will be coming off a night, and she'll overtake me on the stairs. Somebody will have made toast at four. Nobody will know who.\n\nI've decided not to ask. Some things work precisely because nobody explains them, and I'd rather leave it that way. Whoever's starting it now, I hope they keep it up. Four o'clock is a long way from anywhere, and people need toast.\n\n---\n\n*About 1,150 words. If you want it a bit longer, the easiest place to expand is the paragraph about the department being most itself at night — that's where a short, anonymised example would sit naturally without tipping into complaint.*",
+  "words": 1064,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts",
+      "private"
+    ],
+    "reasons": [
+      "The piece says the doctor watched both naming ceremonies, contradicting the request that they were missed, and adds that the gentleman had been very unwell."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5280315279960632,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3127653896808624,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.33871734142303467,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.5,
+    "effort": "provider default",
+    "output_tokens": 2743,
+    "input_tokens": 616
+  }
+}

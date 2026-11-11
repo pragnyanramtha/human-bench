@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: How we got the Wellsford Road collision figure wrong\n\nOn 2 November the Ledger published an analysis of Department for Transport collision records which said that Wellsford Road in Fishponds had seen 41 injury collisions between 2021 and 2025, more than any other road in Bristol. That was wrong. The correct figure is 23, which places Wellsford Road sixth.\n\nThe article was corrected on 6 November. A line at the foot of a page is not an adequate account of an error of this size, and this post is intended to give one.\n\nTo count collisions by road, we match each DfT collision record to the road on which it happened. In our analysis that matching step duplicated some pairings of collision and road, so the same collision, identified by the same accident index, appeared twice in a road's tally. Wellsford Road was much the worst affected of the roads at the top of our table. Eighteen of the 41 entries we attributed to it were duplicates, most of them at the junctions with Pell Street and Kingsmere Road.\n\nWe have rerun the whole citywide table, counting each accident index once per road. The corrected figures for injury collisions, 2021 to 2025, are:\n\n1. Kingsmere Road: 32 (originally reported as 34)\n2. Alder Hill: 31 (unchanged)\n3. Tanner's Way: 28 (originally 29)\n4. Crossfield Road: 26 (originally 27)\n5. Hambrook Lane: 24 (previously outside the top five)\n6. Wellsford Road: 23 (originally 41)\n\nNo other road in the citywide table moves more than two places.\n\nThe Fishponds Streets Forum wrote to us on 4 November to say that residents did not recognise the figure, and that one of its members had gone through the published DfT data herself and could not get anywhere near 41. She was right, and we were not.\n\nThe original article was viewed more than 48,000 times, so the wrong number travelled widely before it was corrected. For several days Wellsford Road was described as the most dangerous road in Bristol on the strength of our figure. People who live there, including parents who walk their children to Wellsford Primary, were given cause for alarm that the data did not support. I am sorry for that. The mistake was the Data Desk's, as a desk, and the article ran under my name.\n\nI do not want to replace one overstatement with another. Twenty-three collisions in which someone was injured is still 23, and three of them were serious. None was fatal. The corrected figure does not show that Wellsford Road is free of risk, and it cannot tell any parent whether a particular walk to school is safe. What it does show is that the road is not the outlier we said it was.\n\nIf you quoted the 41 figure, in a newsletter, a post or a conversation, you did so in good faith because we published it. The number to use is 23.\n\nTwo things change from now on. First, any ranked table will be reproduced independently by a second analyst before it is published. That check was not in place for this piece, and it should have been. Second, we will publish the cleaned dataset and the code alongside every ranked table, so that readers who want to test our working can do so without starting from the raw files. A reader did that here without any help from us, and the error came to light sooner because of it.\n\nThe forum has invited the Ledger to its open meeting at Fishponds Library on Tuesday 17 November at 7pm. I intend to be there and to answer questions in person.",
+  "words": 597,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It reveals that the original analysis was not second-checked, a fact stated only in the private message."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.021727899089455605,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.029749831184744835,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.171875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.6830856800079346,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 56.3,
+    "effort": "high",
+    "output_tokens": 5113,
+    "input_tokens": 4745
+  }
+}

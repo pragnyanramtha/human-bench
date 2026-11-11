@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-10",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**A note to everyone**\n\nHi everyone,\n\nI wanted to write one proper message that friends, neighbours, school families and anyone else can pass on. My phone has been going mad since Saturday, and I’m so tired that I just can’t answer everyone one by one. Please don’t be offended if I’m slow to reply to comments or don’t answer your DM. I’ve seen so many of your messages, and I’ve honestly been crying at every one.\n\nFirst things first: **I’m safe, and so is Marmalade.** We’re staying with my sister in Rondebosch. Everyone in the building got out too.\n\nFor those who haven’t heard, there was a fire at Lindale Court on Station Road in Obs, where I live. It started at around 11:40 on Saturday night, 7 November, in a ground-floor flat. My flat, number 12, is on the second floor. There are 14 flats in the building, and two people were treated for smoke inhalation at Groote Schuur and sent home.\n\nThe fire department has said it was probably an electrical fault, but they’re still investigating, so I don’t want to guess or say anything more about the cause.\n\nI woke up because Uncle Faizel, my neighbour, was banging on every door on our floor in his vest and slippers. I grabbed my phone and Marmalade and got out with nothing else. Marmalade then hid under a car for two hours, which was a very long two hours. But she’s safe. Furniture can be replaced; Marmalade can’t.\n\nMy flat is basically gone. There’s smoke and water everywhere, and the lounge ceiling came down. The landlord has said nobody can go back in for at least six weeks. I’m still trying to get my head around what comes next, so I hope you’ll understand why I don’t really want to go over the whole night again and again.\n\nWhat I do want to say is thank you. People have been incredible. One of my school kids’ moms dropped a bag of clothes off at my sister’s at 7am on Sunday without even knocking. She just left it on the gate. I don’t know how to explain what it felt like to find that there. Thank you to her, and to everyone who has sent a message, checked in or offered something.\n\nI’ve also had lots of people asking what I need, so I’m going to try to be specific. I hate asking for help, and I feel quite weird even writing this, but here goes:\n\n- **Help with a deposit for a new place.** This is the biggest thing I’m trying to figure out.\n- **School shoes in size 6 and work clothes in size 34.**\n- **A working laptop**, if anyone has an old one they no longer need. All my lesson planning was on mine.\n\nI **don’t need any more clothes in general**. I’ve already received so many, and I’ll pass the extras on to people in the other flats. We also **don’t need food**. My sister’s freezer is full!\n\nMy friend Zinhle has set up a BackaBuddy fundraiser to help me get back on my feet. I felt very awkward about it, but Zinhle basically told me to shut up and accept it. The target is R25,000, and it was already at R11,400 this morning. I really don’t know what to say, except thank you.\n\nThe page Zinhle set up is:\n\n**backabuddy.example/thandi-lindale-court**\n\nPlease also be careful: there’s another page going around called **“Thandi Fire Relief”**, as well as a WhatsApp message asking people to EFT money into a Capitec account. **Neither of those is mine or Zinhle’s fundraiser.** I’ve reported them. If you’d like to donate, please use the BackaBuddy page above, and if you’re forwarding this letter, please keep this warning in.\n\nTo my Little Acorns Pre-Primary families in Mowbray: the concert on **27 November is still happening**, so please don’t worry. The things I’d taken home to laminate for it were lost, including 22 crowns and the children’s handprint banner. But the Ladybirds *will* have crowns, I promise.\n\nI’ll be back at school on Wednesday. I’m looking forward to seeing my Ladybirds, but please don’t make a big thing of the fire in front of the children. I’d really appreciate a bit of normality with them.\n\nThank you again for looking after me, checking on me and thinking of Marmalade too. I’m overwhelmed in every possible way, but I’m very lucky to have you all.\n\nLove,  \nThandi",
+  "words": 743,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3460240364074707,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8064308762550354,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.3760950565338135,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.6,
+    "effort": "low",
+    "output_tokens": 983,
+    "input_tokens": 18612
+  }
+}

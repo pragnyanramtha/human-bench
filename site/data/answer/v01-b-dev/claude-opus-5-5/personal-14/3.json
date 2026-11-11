@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Dear Larkspur Lofts neighbors,\n\nI'm Jess Okafor in 5A, and I've lived here for about three years. I'm writing about the drone some of you saw over the building, and about the note posted in the lobby.\n\nOn Saturday, October 31, around 4 p.m., I flew a small drone from the roof deck for about 11 minutes. I'm a wedding photographer, and I had just bought a new drone for an upcoming wedding at a vineyard in Dundee. I wanted to test it somewhere familiar before relying on it for a client. The camera was pointed west at the river and the Fremont Bridge for the entire flight. It was never aimed at anyone's windows, balconies, or the courtyard.\n\nI understand why it caused concern. A buzzing object hovering over the building is unsettling when you don't know who's flying it or why. I've also heard that some kids in the building were frightened when they saw it. I'm sorry it worried people. I should have let everyone know beforehand, and I will next time.\n\nI want to be fully transparent. I'm happy to show the complete, unedited footage to anyone who wants to see it. Just knock on 5A or email me at jess.okafor@mailbox.example and we can find a time.\n\nOur HOA rules don't currently address drones, so I've asked the board to add the topic to the agenda for the November 19 meeting at 7 p.m. in the community room. Until the board decides on a rule, I won't fly from the roof. I'd welcome hearing everyone's thoughts at that meeting.\n\nI also want to address the lobby note. It called me a creep and listed my unit number. That was hurtful, and it felt like being singled out in front of the whole building. I'm not looking to make this bigger than it is. I'd simply ask that if anyone has a concern about me in the future, please come talk to me directly. I'd much rather have a conversation than find out from a note on the wall.\n\nThank you for reading this. I value living here and want everyone to feel comfortable in our building.\n\nSincerely,\n\nJess Okafor\nUnit 5A",
+  "words": 365,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The letter says Jess has already asked the board, while the request says Jess will ask."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3036879301071167,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12022799998521805,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.796875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.812725067138672,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.0,
+    "effort": "medium",
+    "output_tokens": 988,
+    "input_tokens": 1476
+  }
+}

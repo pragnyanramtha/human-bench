@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nHi Mel, that jump in k’s could certainly have overloaded it. The morning stiffness and soreness a few centimetres above the heel can fit mid-portion Achilles tendinopathy, but I can’t diagnose it from a thread or rule out other problems without examining you.\n\nLimping afterwards means that 6k was too much, even if it warmed up nicely during the run. For now, pause running until you’re walking comfortably, then try shorter, easy, flat runs rather than pushing through. Drop the hills, speedwork and long runs. Cycling or swimming is fine if comfortable; complete rest usually isn’t the long-term answer.\n\nThe mainstay is gradually building the tendon’s capacity with calf loading:\n- Heel drops can work, but they’re not compulsory. Heavy, slow calf raises are another well-supported option, rather than one method being clearly best for everyone.\n- Start with controlled raises on both legs on level ground, progressing towards single-leg and added weight as tolerated. Straight-knee and bent-knee versions both have a place. Around 3 sets of 8–12 every other day is a possible starting point, adjusted to symptoms.\n- On sore days, try comfortable calf-raise holds instead, without forcing through pain.\n\nKeep pain mild: up to about 3/10 during loading is a useful guide, provided it settles back to your usual baseline by next morning. More morning stiffness, limping or worsening pain means reduce the load.\n\nI wouldn’t stretch it hard or chase a burning sensation. Cortisone injections around the Achilles aren’t a routine fix and carry tendon-weakening/rupture concerns.\n\nIf you get a sudden pop, a feeling like someone kicked the back of your leg, or can’t push off, stop running AND calf exercises and get assessed urgently that day by a GP or ED: that could be a rupture.\n\nSome antibiotics, particularly fluoroquinolones, can increase tendon problems; if you’re taking one, contact your prescriber promptly about Achilles pain.\n\nAny sports physio locally is fine if it isn’t settling over 3–4 weeks, sooner if the limp persists or things worsen. No need to wait that long if you’re struggling to walk.",
+  "words": 342,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4181203842163086,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.025508364662528038,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2062184810638428,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.8,
+    "effort": "low",
+    "output_tokens": 473,
+    "input_tokens": 19557
+  }
+}

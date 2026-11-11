@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: [m01]\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for picking this up. The details you requested are below.\n\n1. Terminals and firmware: We have four BX-300 terminals at Embakasi depot. They auto-updated from firmware 4.1.8 to 4.2.1 on the night of 27 October and are currently on 4.2.1. Our two Mombasa Road terminals remain on 4.1.8 because they were offline that week; the day-shift export there is working correctly.\n\n2. Shift template: The affected Embakasi night staff use NIGHT-8, scheduled from 22:00 to 06:00.\n\n3. Example: Employee ID T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export showed 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG plus 0.2 hours OT15. Payroll rounds durations to the nearest tenth of an hour: the total was 8 hours 13 minutes, with the 13 minutes outside the scheduled shift correctly attracting OT15.\n\n4. Export profile: Payroll CSV v2.\n\n5. When noticed: Kevin first noticed the problem on 5 November while reviewing the draft October overtime. On checking, he found that since about 28 October, shifts crossing midnight have been split into two lines, with the after-midnight portion coded OT15 instead of REG.\n\nThis affects 38 night-shift staff and made the draft October overtime approximately KES 212,000 too high. Kevin has held the overtime lines and corrected them manually from the raw punches, but that is not sustainable.\n\nYour 4.2.1 release notes promised improved midnight rollover handling for shifts spanning two calendar days, whereas we have experienced the opposite since the update.\n\nCan Brian Ochieng, who manages our terminals, safely roll the four Embakasi terminals back to 4.1.8 without losing any punch data, including buffered punches? Please confirm either way and provide any necessary precautions.\n\nWe need a fix or a clear workaround before payroll inputs close on Friday 20 November. Kevin Mutua, our payroll officer, is copied and will test any proposed fix.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 331,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2574359178543091,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20862402021884918,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.3203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.266908645629883,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.6,
+    "effort": "provider default",
+    "output_tokens": 1594,
+    "input_tokens": 1972
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties! Just putting it out there since folks have been asking Mom: **yes, I’m coming to Thanksgiving!** I’ll see y’all Thursday, November 26, at Aunt Denise’s in Macon. We’re eating around 3, and I’m bringing the mac and cheese and two sweet potato pies.\n\nI also want to say something about last year. Things got heated at the table, and I made a crack about somebody getting their news from a gas station TV. That was me, and I shouldn’t have said it. Grandma ended up sitting out on the porch for about an hour, and I still feel bad that things got to that point at her holiday.\n\nI’m not sorry for the work I do, but I am sorry for how I talked to family that day. And for anybody who wasn’t there, I’m not trying to rehash the whole thing in here. People poke at each other in this family, and sometimes we both take the bait. That doesn’t make anybody a bad person.\n\nAlso, I got a birthday text in August that was just a thumbs-up emoji, which, coming from that particular person, is basically a hug. So I’m taking that as a good sign. 😂\n\nCan we all call a truce on work and politics for one day? And just so y’all know, questions about “the lawsuit” are a dead end anyway—I can’t talk about open cases because of confidentiality.\n\nI really do want to be there, and I want it to be a good day for everybody, especially Grandma. Let’s keep the table talk to food, football, babies, and Tasha’s new boyfriend. Tasha, you knew this was coming.\n\nLove y’all. See you Thursday! 🧡",
+  "words": 283,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.47554492950439453,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35617196559906006,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.326808214187622,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "low",
+    "output_tokens": 365,
+    "input_tokens": 18221
+  }
+}

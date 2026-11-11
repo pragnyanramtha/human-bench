@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, Bev tagged me, so here's the long version. Yes, you can do this yourself. $465 isn't a ripoff, but with a helper it's about 2-3 hours of work, and you'll know your engine a lot better afterward.\n\nOne correction before the weekend. Hector means well, and I know it's worked out for him, but please don't run green automotive antifreeze through Sea Wren. Ethylene glycol is toxic and isn't rated for the raw water system. What you want is pink propylene glycol RV/marine antifreeze, for both the engine's raw water side and the domestic water. It's about $6/gal at West Marine or Walmart. And neither the green nor the pink goes in the river.\n\nWhy this matters: the 3GM30F is freshwater cooled through a heat exchanger, so there are two sides. The coolant side only needs a strength check with a hydrometer (50/50 is good to about -20F). The raw water side is the one that freezes and cracks. A few Christmases ago, three boats on C dock cracked exhaust elbows or strainers, and every one of them had skipped or rushed the raw water side.\n\nRough shopping list: pink antifreeze (figure about 2 gal for the engine and 2-3 for the water system, but those are estimates, so buy enough to finish the manufacturers' procedures and verify the protection), a hydrometer, oil and filter, fuel stabilizer, a few buckets or containers, and a spare impeller if you don't have one aboard. Keep a spare aboard regardless. You can pull the old one and inspect it while you're in there, just don't run the engine dry.\n\nThe order I'd do it in:\n\n1. Warm the engine up, then change the oil and filter while it's warm.\n2. Top off the fuel tank, add stabilizer, and run the engine about 10 minutes so the treated fuel gets all the way through.\n3. Before you start the raw water flush, set up exhaust collection. The raw water discharge exits through the exhaust, and everything coming out needs to be captured for proper disposal. Your helper watches the flow and the collection while you run the engine.\n4. Raw water side: seacock closed, antifreeze fed through the strainer with the engine at idle, and keep the pump wet the whole time. Shut the engine off when you're done and leave the seacock closed. Follow Yanmar's procedure and the antifreeze maker's instructions. Then check the discharged mixture for the winter protection you need. Pink color alone doesn't tell you that.\n5. Water system: switch the water heater breaker off before you drain anything, and leave it off until you've refilled in spring. The bypass valve is behind the companionway steps on that Catalina. Drain the tank first, or you'll waste about 6 gallons of pink filling it. Then run the pink through the system, and collect that discharge too.\n\nTake your time on step 4. It's the one that counts, and the person who gets in trouble is the one rushing to be done by lunch.\n\nIf you'd like a second set of hands, I'm happy to come down to the boat Saturday morning. Just say the word and tell me what time works.\n\nWalt",
+  "words": 532,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11519062519073486,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05537379905581474,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.039886474609375,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.2,
+    "effort": "high",
+    "output_tokens": 2893,
+    "input_tokens": 3135
+  }
+}

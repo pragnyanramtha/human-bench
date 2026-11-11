@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "⭐⭐⭐⭐ 4/5\n\nUsed Kilbarrack Van Co to move from Phibsborough to Drumcondra in October and would use them again. Best value I found by a good bit, but a couple of things are worth mentioning if you’re booking.\n\nIt was a two-bed flat, mostly my own stuff, and the new place is a fourth-floor walk-up with no lift. The quote was €340 for two lads and the van for up to four hours, and the whole thing took about three and a half. The other quotes I got were €450 or more, so I was happy with the price. Booking through the website was straightforward too.\n\nThey were meant to arrive at 9 but got there at half ten. Dessie did text at 8.40 to say the previous job had overrun, so I wasn’t left wondering what was going on, but I was still sitting on boxes with a cold coffee for a while! It wasn’t the end of the world for me, though if you’ve a tight handover with a landlord it’s something to keep in mind. Dessie knocked €40 off afterwards without me asking, which I thought was very fair.\n\nOnce they got going, the lads were great. The couch wouldn’t make it around the turn on the third floor and I thought we were going to be stuck. One of them had an Allen key in his pocket, took the legs off and it went straight in. They also put my bed back together without being asked and took away a flat-pack shelf I didn’t want, which saved me another job.\n\nThe one other downside was that the base of my brass floor lamp got chipped. They wrapped everything else in blankets but not the lamp, and it was my nanny’s so I was a bit gutted about that. Wrap the lamps, lads!\n\nOverall, really good value and sound lads who worked hard on a tricky move. The delay and the lamp are why it’s four stars rather than five, but I’d still book them again. If you’re moving, I’d just allow a bit of breathing room on the timing and make sure anything sentimental is well wrapped.",
+  "words": 361,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.27328190207481384,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026402777060866356,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.3940807580947876,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "low",
+    "output_tokens": 442,
+    "input_tokens": 19062
+  }
+}

@@ -1,0 +1,35 @@
+[project]
+name = "judge-cpu"
+version = "0.1.0"
+description = "HumanBench experiment: can CPU-only ready-made AI-text detectors serve as the judge?"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.5",
+    "transformers>=4.48",
+    "huggingface_hub>=0.27",
+    "safetensors",
+    "sentencepiece",
+    "protobuf",
+    "tiktoken",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "scikit-learn>=1.4",
+    "psutil",
+    # Pangram EditLens (judge_run.py, editlens.py): text cleaning, and the Llama-3.2-3B adapter in 4-bit
+    "emoji==2.16.0",
+    "peft==0.21.2",
+    "bitsandbytes==0.50.2",
+    "accelerate==1.15.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

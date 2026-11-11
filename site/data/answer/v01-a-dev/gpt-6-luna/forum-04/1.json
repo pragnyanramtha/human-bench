@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: [p05]\nCc: none\nSubject: Safety at 43 and the pavement\n\nMick, please don’t go into 43 or try to prop the ceiling at 9. Please don’t bring your lad in either. I’m a chartered structural engineer, but this isn’t a commission and I can’t provide insured engineering advice here. I’m speaking only as a neighbour who looked from the pavement at about 7 this morning.\n\nFrom outside, about 1.2 metres of the stack at 41 is still standing and leaning towards 43. The mortar at its base looks washed out. The roof of 43 is holed, with debris likely in the front bedroom; there’s a stepped crack about 5–10 mm wide above the bay, and the bay head appears to have dropped. I can’t tell from outside what is supporting what. With a hole in the roof and a loose stack above, propping under the ceiling is not a safe DIY job: that may be the worst place to stand. Floors may be carrying debris, and the load path is uncertain. Don’t inspect the loft from inside.\n\nTerraces are often robust, as your cousin says, but that general point doesn’t make this damaged house safe to enter. Please leave it to the council’s dangerous structures team and qualified professionals.\n\nPriya, I can’t determine whether Mrs Doherty is safe from a pavement view, and it isn’t my decision. No. 45 looked undamaged from the front, but I couldn’t see the party wall between 43 and 45. I would not sleep in the front room tonight; if she’ll agree, the safer course is to stay with family until 45 has been checked.\n\nThe council’s out-of-hours dangerous structures service is reached through the main council number. They know about this, but the footway is still open. There are loose slates over the pavement along 43 and 45. Please use the other side of the road until the council has attended, especially during the school run.",
+  "words": 312,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2800368368625641,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21901053190231323,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.1904802322387695,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.3,
+    "effort": "medium",
+    "output_tokens": 459,
+    "input_tokens": 30815
+  }
+}

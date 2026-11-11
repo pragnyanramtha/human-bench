@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve read these monthly threads for a long time, but this is my first time posting. Today I brought work home with me, and I think I need to put it somewhere. I’m leaving out some details for privacy, but I’ll call her Mrs. H.\n\nShe was one of my weekly blister pack patients for years. When you see someone that regularly, you get to know more than their medications. You notice when they’re quieter than usual. You know when they want to ask you something but don’t want to hold up the line. You learn that “I’m fine” sometimes needs a second question.\n\nMrs. H. was always bringing me food. Cake, usually. Once, a jar of pickles that I honestly wasn’t sure what to do with. During Ramadan, she remembered I was fasting and told me not to eat her cake until sunset. She had wrapped it in foil with my name on it.\n\nThat little package has been on my mind tonight.\n\nThere was a time I caught an interaction with a newly prescribed medication and called the doctor to get it sorted out. After that, she told people I had saved her life. I always felt embarrassed when she said it. To me, I had checked her medications and made a phone call. It was my job. But to her, it meant something much bigger.\n\nShe passed away recently. Today her daughter came in with the unused packs and some supplies. It was strange seeing those packs come back across the counter, knowing there wouldn’t be another week to prepare.\n\nHer daughter also gave me a card her mother had written some time ago but never given me. In it, she called me her Arabic daughter.\n\nI made it to the back room before I cried. My technician covered the counter for ten minutes. I’m very grateful for those ten minutes.\n\nMy father was a pharmacist in Egypt. He knew the families, not just the prescriptions. Growing up, I thought that was something particular to his pharmacy, or to life there. I thought working in Canada would be different. In some ways it is, of course. But this part feels very familiar.\n\nI don’t know where I got the idea that being professional meant not getting attached. You see someone every week for years. You worry about them. They remember you’re fasting and put your name on a piece of foil. Of course you get attached.\n\nSchool taught me pharmacology and interactions. I’m glad it did. But nobody taught me what to say when a daughter brings back her mother’s medications, or how to go back out to the counter afterward.\n\nI don’t really have a point beyond wanting to remember her here, among people who might understand.\n\nHave you had a patient like this? Someone you still think about long after you stopped filling their prescriptions?",
+  "words": 480,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18005388975143433,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1291980743408203,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.251953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.541689872741699,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.5,
+    "effort": "low",
+    "output_tokens": 643,
+    "input_tokens": 19099
+  }
+}

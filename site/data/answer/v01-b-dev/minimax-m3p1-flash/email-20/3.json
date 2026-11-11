@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject: RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell**\n\nPriya — first off, don't beat yourself up on this. I know what my first line to you sounded like, and I'm sorry it read like I was pointing a finger.\n\nThe questionnaire library is a mess nobody owns. That old draft language was sitting there waiting for someone to paste from it. That's a systems problem before it's a you problem.\n\nOn being straight with Greg — I'm not going to throw you under the bus. What happened is you pulled from a shared library, missed a stale draft, and then told me about it before I even asked. You owned it in the thread at 10:05. That counts for a lot.\n\nThree things, and then I think we're good:\n\n**1. Q14 tonight.** Rewrite it with the actual status: Type I issued in April, Type II audit window closes January 31, report expected by March. Send it to me first — not Dana. I'll read it through and forward it myself so there's no second round of surprises.\n\n**2. Thursday at 2.** Marcus on our security team can join a call with Dana and their legal to speak to status and timeline. Keep it factual and short. Dana seems strict but fair, and honestly she's right to ask — she just wants the real answer, not a better-sounding one.\n\n**3. Bridge letter.** Marcus says we can get one from the auditor for the interim. He's handling that; if Dana asks for it, point her to Marcus and I'll make the intro.\n\nThis is fixable. We just have to be honest about where we actually are and move fast. 186k ARR, three-year term, and I've been working this since February. I've also already told my wife we're finally doing the Big Bend trip off this commission, so I'd like very much not to go back on that. But even if it went sideways, it wouldn't be because of one paste.\n\nOne more thing — September, when the route import broke and you stayed until 9pm rebuilding their demo env. Nobody on this account talks about that. I do. You don't owe anyone an apology beyond the one you already gave.\n\nSend me Q14 tonight and I'll take it from there.\n\nJordan",
+  "words": 382,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The piece never asks Priya to join the Thursday call (it only says Marcus can join Dana and legal), and it does not say Jordan will handle Greg."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46701398491859436,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3004666864871979,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.73459243774414,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.0,
+    "effort": "provider default",
+    "output_tokens": 1327,
+    "input_tokens": 1139
+  }
+}

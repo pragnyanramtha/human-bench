@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: help/t-2291\nReplying to: [p02]\nCc: none\nSubject: none\n\n@kpd_wrangler Yes, I read the changelog, before upgrading and again after your reply. This is not solved and it is not my calibration. I found the cause today.\n\nPR #812 (\"refactor spectral frame handling\", merged Oct 22) changes the default in LineList.__init__ from wave_frame='air' to wave_frame='vacuum'. So in 2.5.0 the rest wavelengths are vacuum unless you say otherwise. My spectra are calibrated in air from arc lamps. The vacuum/air ratio at 6563 A is about 1.00028, which is exactly the offset I reported (about 83 km/s), in the same direction for every object.\n\nThe only trace of this in CHANGES.md is \"Refactor LineList and spectral frame handling (#812)\". Nobody can guess from the word \"refactor\" that a default changed and that redshifts will move. There is no deprecation warning either.\n\n\"Works for me\" is not a test. If your data is already in vacuum wavelengths, or it is radio, then of course you see no difference. That says nothing about air-calibrated optical data. m_okonkwo posted further down about what looks like the same offset on long-slit data, so it is not only me.\n\nAfter being told it was my own calibration, I spent two days assuming my wavelength solution was broken and re-reduced the arc lamps for 40 spectra. For nothing, the calibration was fine. A thread should not be marked solved when nobody has reproduced or explained the problem.\n\nWorkaround, for anyone who lands here with air wavelengths: set the frame explicitly.\n\nLineList(..., wave_frame='air')\n\nThat fixes it for me on 2.5.0.\n\nTo the maintainers, three requests:\n\n1. Please reopen this thread, or at least remove the solved mark, so people searching for a redshift offset after 2.5.0 can find it.\n2. Add a line to the 2.5.0 section of CHANGES.md saying that the default wave_frame changed from 'air' to 'vacuum' and that this shifts fitted redshifts for air-calibrated data.\n3. Emit a warning when wave_frame is not set, at least for a release or two. A silent change of about 83 km/s is easy to miss and can end up in a paper.\n\nI can open an issue or a PR for the changelog line if that helps.",
+  "words": 359,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14209303259849548,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.020031625404953957,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.648125648498535,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.2,
+    "effort": "high",
+    "output_tokens": 2372,
+    "input_tokens": 3039
+  }
+}

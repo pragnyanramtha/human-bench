@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "I've been reading this thread for months and never posted. This one I need to get out.\n\nMrs. H was 84, Polish, and she'd been coming to our store since 2019. Every Thursday, same time, for her blister pack. Eleven medications. She lived alone after her husband died in 2021 and she walked with a cane that had tennis balls on the bottom — she'd cut them herself and she was very proud of them.\n\nEvery Thursday she brought me something. Poppy seed cake, mostly. Once a jar of pickles that I genuinely did not know what to do with, so I said thank you and put it in my bag. During Ramadan she remembered. She'd wrap the cake in foil with my name written on it and tell me not to eat it until sunset, and then she'd watch me put it in the drawer to make sure I'd understood.\n\nIn 2023 a new doctor added something to her warfarin and I caught it on the screen. Called the office, got it sorted out before it did any harm. She told everyone in the store that I saved her life. I told her I just did my job. She kept telling people.\n\nShe passed at the end of October. Her daughter came in last week to return the unused packs and the glucometer. She didn't have to do that. She handed me a card and said her mother wrote it a long time ago and never gave it to me. Inside it said, \"for my Arabic daughter.\"\n\nI went in the back and cried. Priya covered the counter for ten minutes and didn't say anything when I came out, which is exactly the right thing to do.\n\nSchool teaches you pharmacology. Interactions, dosing, counselling points, all of it. Nobody teaches you how to say goodbye to a patient. Nobody teaches you what to do with your hands when someone puts a card in them.\n\nIn Egypt my father was a pharmacist. He knew every family in the neighbourhood — their kids, their weddings, who was sick. I thought Canada would be different. More clinical, more distance. It isn't. It's the same. You see someone every week for seven years and they become part of your week, whether you planned on it or not.\n\nWe're not supposed to get attached. Everyone says it. I don't actually know anyone who manages it.\n\nDo you have a patient like this? Someone whose name you're used to seeing on the schedule, and you notice when it stops showing up?",
+  "words": 426,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says the daughter came in 'last week', but the request says she came in on Nov 9, which is only days before today (Nov 11), and the user wrote 'came today'."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2726406157016754,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.22129666805267334,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.4921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.1954269409179688,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.7,
+    "effort": "provider default",
+    "output_tokens": 1754,
+    "input_tokens": 571
+  }
+}

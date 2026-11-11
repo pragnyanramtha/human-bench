@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: Fast, precise, and they caught my mistake\n\nWe needed a camera-to-dewar adapter plate and a light baffle tube for a near-IR camera going to the 200-inch at Palomar, with a fixed observing date. A large vendor quoted us 6 weeks for similar parts. Arroyo quoted 21 days including a $300 rush setup fee, and the parts were on our loading dock in 9 days.\n\nThe fit and finish were excellent. The adapter plate went onto the dewar with all 8 screws, no forcing needed. Flatness across the face measured under 0.01 mm on our dial indicator. The baffle threads were smooth, and in a dark test with lab lights on, the 300 s frame matched our closed dewar, so there was no light leak. The black anodize was even with no bare spots.\n\nThe drawing check is what I want to highlight. The mistake was mine: I copied a bolt circle from an old drawing and left it in the wrong units. Ruben's team caught it during setup, before cutting, and asked me to confirm. If they had cut to the drawing as written, the screws would have landed inside the bore, and we would have lost weeks. A shop that reads dimensions carefully and asks before cutting is the kind of shop I want for precision work, and it's why I'd send them the next job without hesitation.\n\nCommunication was direct throughout. When the parts were ready, Ruben drove them to Robinson Lab himself, with no delivery charge, on his way to another job. That kind of follow-through is rare, and I was very grateful.\n\nFor short-run precision parts, I'd recommend Arroyo to any lab that needs accurate parts on a real schedule. I'd also support adding them to the preferred vendor list.\n\n5/5",
+  "words": 288,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "290 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18026001751422882,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23553144931793213,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.431640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.053061485290527,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.3,
+    "effort": "medium",
+    "output_tokens": 2807,
+    "input_tokens": 3517
+  }
+}

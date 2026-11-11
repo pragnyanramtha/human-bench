@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, first things first: congrats, and take a breath. You're not the first and you won't be the last. In 1995, as an apprentice, I put diesel in my boss's Golf. He still tells it at every braai.\n\nTonight, do this:\n\n**Do NOT touch that key.** Take it out of the ignition and put it in your pocket. Every time it cranks, the pump is running on petrol with no lube, and that's what kills it. Don't crank it again, not even once to \"just check\".\n\n**Don't top up with diesel.** Kobus means well, but that's old Land Rover advice. The petrol is still in there and mixing does nothing. A modern common rail can't take it.\n\n**Don't drive it, tow it.** Most insurance has roadside assistance, so check your policy before you pay a tow guy cash.\n\nBeing honest with you: you drove 3km and cranked it 5 or 6 times, so damage is possible. That's why it must be inspected before anything gets started. Pump and injectors get checked first. If they're fine, we drain the tank, flush the lines, fit a new fuel filter and bleed it. That's usually R2 500 to R4 500. The R40 000 story is what happens when the pump goes and takes the injectors with it, and that's exactly why you stop cranking now. I can't promise you a full result tonight, but you're giving it the best shot.\n\nMy shop is in Umbilo and we're open Saturday 7 till 12. Thabo can drain it first thing. Get it towed there and we'll sort it out.\n\n**Borrow a bakkie for tomorrow anyway.** Cake and sound system need a ride to Hillcrest at 2pm, and you shouldn't plan the wedding around a drained tank. If we get it done in time, bonus.\n\nI had one customer who did this twice in the same year, at the same garage. We made him a sticker for his fuel flap. If you want one, I'll print it.\n\nGo home, get some sleep, and enjoy the wedding. Key in the pocket!",
+  "words": 344,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4325019419193268,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20906208455562592,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.0703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.5834048986434937,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.3,
+    "effort": "high",
+    "output_tokens": 1046,
+    "input_tokens": 2168
+  }
+}

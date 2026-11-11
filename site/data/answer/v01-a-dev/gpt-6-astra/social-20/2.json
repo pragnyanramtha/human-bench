@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent for a sec because Im so pissed about this and apparently asking nicely got me absolutely nowhere.\n\nStickerBurrow Co is selling my switchblade moth as a “Knife Moth Vinyl Decal.” $6.50 each or 3 for $15. thats my drawing. the one from my sept 13 flash sheet, which I posted here august 30. the sheet I spent like 3 weekends drawing at my kitchen table. apparently I was also doing free product development for a sticker company, which is news to me.\n\nsame wing pattern. same little crack in the blade. they didnt even FLIP IT. this isnt “inspired by” my work, its a straight scan of my linework. you can put the two next to each other and look. Im not claiming I invented moths or knives or putting the two together. come on.\n\nI messaged them, told them it was mine, told them I have the original drawing and the dated post, and asked them to take it down because I never gave anyone permission to print it.\n\ngot “Love your work” followed by “Moths are a very common tattoo motif” and instructions to send a registered copyright through their support form. then “Have a great day!”\n\ndude.\n\nyou dont get to love my work, sell my work, and then explain moths to me when I ask you to stop. I know what a moth is. I also know what I DREW.\n\nand before anybody thinks these stickers are something I put out: NO. I did not make these. I did not approve these. I didnt license the drawing, I didnt sell it to a sticker company, and Im not getting paid for any of this.\n\nwhen I sell one of these flash designs, it goes ONE time to ONE person. thats the whole deal. that person paid for that, and I take it seriously. I am not quietly turning around afterward and selling copies for water bottles. if you wear my work, I need you to know that promise hasnt changed. I wouldnt do that to you.\n\nthats the part that makes me angriest. now I have to explain that I didnt break my word because somebody else decided my flash sheet was their inventory.\n\nsmall shops and working artists dont have endless lawyer money or spare afternoons to chase this stuff. these sticker places know it. “fill out our form” is real easy to say when you're the one still taking orders.\n\nif you want to help, please report the “Knife Moth Vinyl Decal” listing from StickerBurrow Co through the platform's reporting process. dont buy it. dont buy from them. please dont go sending threats or digging up anybody's personal info either. report the actual listing. thats what Im asking.\n\nand please dont tag the shop page into this. Im posting on my personal page on purpose. this is me talking about my drawing, not a statement from the studio.\n\nanyway. dont steal peoples drawings and then tell them to have a great day. jesus christ.",
+  "words": 505,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "does_task fails: the post never says the client messaged Jo that night thinking Jo was selling stickers of her tattoo, and never says the moth was tattooed in the first hour of flash day. Both points are only hinted at through a general 'if you wear my work' line."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08735412359237671,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.031965214759111404,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.7578125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.997611165046692,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 43.8,
+    "effort": "medium",
+    "output_tokens": 683,
+    "input_tokens": 15596
+  }
+}

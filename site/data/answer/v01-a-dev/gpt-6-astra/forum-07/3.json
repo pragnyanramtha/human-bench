@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve been reading these monthly threads for a while, but this is my first time posting. I lost a patient recently, and today her daughter came in to return her unused medication. I’ve been thinking about it since I got home.\n\nI’ll call her Mrs. H., and I’m leaving out or keeping some details general for her privacy.\n\nWe prepared her blister packs, so I saw her almost every week for years. She often brought me something homemade. Once it was a jar of pickles, which I accepted very gratefully despite not really knowing what I was going to do with them.\n\nDuring Ramadan, she remembered I was fasting. She brought me cake wrapped in foil with my name on it and made sure to tell me not to eat it until sunset. I loved that she worried about this, as if I might forget.\n\nA few years ago, I caught an interaction after a new medication was prescribed and called to get it sorted out. After that, she would tell people I had saved her life. I always felt a little embarrassed and told her I was just doing my job. To me, it was the sort of thing we check for every day. To her, it meant something much bigger.\n\nWhen her daughter came in, she also brought me a card. Her mother had written it some time ago but never given it to me. Inside, she had called me her daughter.\n\nI managed to speak with her daughter, though I honestly don’t remember everything I said. Afterwards, I went into the back room and cried. My colleague covered the counter for a few minutes. I was grateful not to have to explain much.\n\nWe learned pharmacology. We learned interactions and how to check a prescription and what questions to ask. I don’t remember anyone teaching us how to say goodbye to someone whose medication we have been packing for years. Or what to say when their daughter is standing in front of us holding the packs they won’t need anymore.\n\nMy father was a pharmacist in my home country. He knew whole families, and growing up I thought that was just how things worked there. I expected practising here would feel different. In some ways it does, but today it felt very much like the kind of pharmacy I grew up around.\n\nI sometimes feel we’re supposed to keep enough distance that these things don’t affect us so much. But when you see someone every week for years, you get used to them being part of your week. You know which questions they’ll ask. You expect to see them again.\n\nI don’t have a lesson to finish this with. I’m just sad, and I wanted to talk about Mrs. H. somewhere people would understand why.\n\nHave you had a patient like this? Someone you still think about long after their last visit?",
+  "words": 485,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20608966052532196,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26772406697273254,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.2075062394142151,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.9,
+    "effort": "medium",
+    "output_tokens": 616,
+    "input_tokens": 14029
+  }
+}

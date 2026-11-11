@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## A Thursday with the tea trolley\n\nI started volunteering at Wensum Vale Hospice in March 2022, about eighteen months after retiring from 41 years of bookkeeping, mostly for a builders’ merchant in Dereham. Once I’d stopped working, I found I had no regular reason to go out most weeks. I drifted a bit. Thursdays put a stop to that.\n\nI help with the tea trolley in the day therapy unit, from 1.30 to 4pm. On a Thursday, there are usually about 14 to 18 patients. Some come for the art group or a hand massage; some come for company. Most go home afterwards.\n\nIt’s a noisy, rather jolly place, more often than not. Mr Hollis, a retired signalman, takes two sugars and tells me about the 1953 floods every week—slightly differently each time. I’ve stopped correcting the dates. The bourbon biscuits always go first, so we now hide a packet for the late group. These are not complicated tasks, but they matter to the people who come in.\n\nI should say that I was not instantly good at it. In my first week I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she had to be given a tissue. She said it was the best afternoon she’d had in a month. I was relieved she found it funny; I was also glad the floor was cleanable.\n\nYou don’t need nursing skills to help with the trolley. You need to be able to push it, remember who takes what, and listen. It turns out that 41 years of keeping ledgers straight is useful for remembering tea orders, though nobody has asked me to balance the biscuit accounts yet.\n\nSome weeks are hard. People are unwell, and sad things happen. The staff look after volunteers when they do. But a Thursday in the day unit is not, as some people imagine, a solemn afternoon from start to finish. There’s conversation, laughter, art, tea, and the occasional flood story.\n\nAt the moment, there are four of us on a rota designed for six. Two volunteers left over the summer: one moved to Sheffield to be near her grandchildren, and the other had a knee operation. We’re looking for a couple more people to join us.\n\nThe commitment is one Thursday a fortnight, from 1.30 to 4pm. Bridget, our volunteer coordinator, gives new volunteers an induction of about two hours. There’s also a short food hygiene course online, which the hospice pays for.\n\nIf you’d like to find out more, Bridget is holding a volunteer open afternoon on Tuesday 24 November at 2pm in the Willow Room. There’ll be tea and biscuits, and there’s no obligation to sign up. Or you can ring Bridget on the volunteering line.\n\nI hope a couple of people will come along. You don’t have to be especially brave or skilled. You just have to turn up, push the trolley, and be ready to listen.",
+  "words": 495,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.239593043923378,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7130260467529297,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.5703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.4567155838012695,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 619,
+    "input_tokens": 14129
+  }
+}

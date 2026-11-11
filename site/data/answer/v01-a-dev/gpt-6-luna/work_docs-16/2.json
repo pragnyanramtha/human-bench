@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**RA Progress Statement — Winter 2027 Funding Review**  \n**Reporting date: November 9, 2026**\n\nI am the sole RA responsible for Korean annotation on the NSF-funded Seoul–Daegu honorific shift corpus. The fall-term target is 6,000 utterances; 4,200 are currently annotated.\n\nThe timeline is relevant to the pace of the new Daegu recordings. I sent the IRB amendment adding 14 recordings to Prof. Hollander for signature on September 3. I followed up on September 12, September 24, and October 6, and have retained those emails. The amendment was signed on October 15. I could not begin work on the new recordings before approval. The six-week interval between submission and signature therefore delayed the start of that annotation.\n\nDuring that waiting period, I recoded the existing 2,300 utterances using the revised speech-level scheme requested in August. That work was not included in the original timeline. Since October 15, I have annotated approximately 1,900 utterances—more than 500 per week, above the planned pace of 350 per week.\n\nAt the November 6 lab meeting, Prof. Hollander described the annotation as “six weeks behind” and said she would note it for the review. Without the approval timeline and the recoding work, that description could suggest that the shortfall reflects slow or careless work. It does not capture the period when I was unable to access the new recordings, or the additional annotation work I completed during that time.\n\nAt my current pace, I expect to reach the 6,000-utterance target by the end of January 2027. I ask that the funding review record the six-week interval between submission and signature of the IRB amendment, along with the recoding completed during that period and my post-approval pace. If the review cannot include that context, I ask that the “six weeks behind” characterization not be included on its own.",
+  "words": 300,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44519662857055664,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9907316565513611,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.062650680541992,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.8,
+    "effort": "medium",
+    "output_tokens": 407,
+    "input_tokens": 14085
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: [m01]\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr. Kerrigan,\n\nThank you for your email, and please pass on our best wishes to your mother for a smooth recovery. We would be glad to look after Margaret's blister packs and her new medications, and I will be your single point of contact from here on.\n\nHere are answers to your four questions.\n\n1. Weekly blister packs and cost. Yes, we prepare weekly blister packs, organized as seven days with four doses per day, each compartment labelled with the time of day and the instructions. There is no charge for the packaging itself. Margaret pays only the usual dispensing fee, and at 81 years old most of her medications are covered by the Ontario Drug Benefit program. If anything on her list is not covered, we will let you know before we dispense it.\n\n2. Delivery or pickup. We deliver free within 8 km, and her building on Mississauga Valley Blvd is well within that range. Our regular delivery days are Tuesdays and Fridays, between 2 and 6 pm. Since we expect her first packs to be ready on Saturday, we can either hold them for you to collect at the store, or I can arrange a one-off drop at her building on Saturday morning, before 1 pm. Please let me know which you would prefer. If you would rather the package be left with Margaret, that is fine, or we can hand it to you in person.\n\n3. Moving her prescriptions to us. We will call her current pharmacy on Dundas and transfer her profile across to us. She does not need to sign anything for the transfer. We will need two things from you: the name and address of her current pharmacy, and her OHIP health card number.\n\n4. The pharmacist calling you. Yes, I would be glad to go through Margaret's new medication list with you. I can do this after 6 pm on a weekday so it fits around your working day. I am in the store Monday to Friday, 9 am to 6 pm, and my direct line is 905-555-0148 ext 2.\n\nOne important step before we discuss Margaret's medications with you. Because she is our patient, we need her written permission before we speak with anyone else about her prescriptions. We record this on a signed Family Communication Consent form. It is there entirely to protect her: it documents exactly what may be shared, and with whom, so that her privacy and her own wishes are respected and there is never any doubt about who we are permitted to speak with. Margaret can sign it when she comes into the store, or I can send it with the driver when we deliver. Once it is on file, we can talk through everything with you freely.\n\nI would also like to offer a MedsCheck, our medication review service, which I can do in the comfort of her home with the two of you. It takes about 20 minutes, and with several new medications after a hospital stay it is a good moment to go through everything together, confirm what is for what, and check for anything that might not suit her. I can come Monday or Tuesday evening next week, after 6 pm.\n\nTwo requests that would help us have everything ready for Saturday:\n\n- Could you ask the discharge team at Credit Valley Hospital to fax Margaret's prescriptions to us as early as possible on Thursday morning? Call the store beforehand and I will give you our fax number and confirm it with you. Once we have every prescription, our pharmacist needs roughly 48 hours to prepare and double-check the packs.\n- The first packs will not be ready on the day she comes home. Could you please confirm with the discharge team that Margaret has an interim supply, enough medication for every dose, and that they will support her with each dose until we hand over the packs on Saturday, whether that is a pickup or a delivery? Nothing is more important than that she does not miss a dose in between.\n\nThank you again for thinking of us for Margaret's care. We are looking forward to supporting her and to working with you.\n\nKind regards,\n\nRania Haddad\nCommunity Pharmacist, Erindale Park Pharmacy\nDirect: 905-555-0148 ext 2\n\nNotes\n\nOffers:\n- Free weekly blister packaging, 7 days x 4 doses per day; Margaret pays only normal dispensing, mostly covered by ODB.\n- Free delivery within 8 km (regular days Tuesdays and Fridays, 2 to 6 pm), plus a one-off Saturday drop-off before 1 pm, or hold for store pickup.\n- Free MedsCheck at Margaret's home, 20 minutes, Monday or Tuesday evening after 6 pm.\n- Medication review call with Douglas in the evenings; direct line 905-555-0148 ext 2, in store Mon to Fri 9 to 6.\n- Family Communication Consent form provided (Margaret signs at pickup, or it goes out with the driver).\n\nRequests:\n- Margaret's signed Family Communication Consent form before we discuss her medications with Douglas.\n- Discharge team to fax all prescriptions early Thursday morning (fax number to be confirmed by phone).\n- Douglas to confirm interim supply and dose-by-dose support with the discharge team until Saturday pickup or delivery.\n- Old pharmacy name and address on Dundas, plus Margaret's OHIP number, so Joel can complete the transfer.",
+  "words": 889,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20824424922466278,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08823160082101822,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.64453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.8208494186401367,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.9,
+    "effort": "provider default",
+    "output_tokens": 3635,
+    "input_tokens": 2098
+  }
+}

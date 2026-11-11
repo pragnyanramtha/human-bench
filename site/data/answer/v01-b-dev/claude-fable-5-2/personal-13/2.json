@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Good day Mr Kehinde Ogunleye,\n\nI hope you and your family are doing well, sir.\n\nI am writing about my black Jansport bag, which I forgot inside the Oshodi to Igando bus on Friday evening, 6th November, when I came down at Ikotun. First of all, I want to thank you sincerely for picking it up and calling the number on my lab manual. Many people would have thrown it away or not bothered at all. You told me on the first call that God sent you, and I truly believe that.\n\nSir, about the ₦40,000 you mentioned on the second call, I have to be honest with you. I am a first-year student and I do not have that kind of money. The bag and everything inside it put together are not worth up to that amount. What is inside is my lab manual, dissecting kit, student ID card, two textbooks, a calculator and my glasses. These things are only useful to me, but I really need them. I have my BIO 101 practical on Wednesday 11th November by 10am, and without the dissecting kit I will not be allowed into the lab.\n\nWhat I can give you is ₦10,000, to cover your transport and to say thank you for your trouble. That is my whole allowance, sir, and I am giving it with a good heart. I will hand it to you in cash when we meet and I collect the bag. I will not be able to send any money ahead.\n\nPlease, can we meet during the day at a place that is easy for both of us to find? I suggest Ikotun roundabout or the gate of the Ikotun police division, since everybody knows those two places. My roommate will come with me. Kindly choose any day and time before Wednesday that is convenient for you and I will be there.\n\nI am not trying to cheat you or disrespect you in any way, sir. I just want my school things back, and I want to appreciate you properly with what I have.\n\nPlease reply so that we can agree on the day and time. Thank you very much and God bless you.\n\nYours sincerely,\n[Your name]\n\nTwo things before you send it:\n\n- **Your name:** put it at the bottom where I left the bracket.\n- **The date:** my date is showing today as Wednesday 11th November. If the practical is already this morning, change \"any day and time before Wednesday\" to \"today or tomorrow, as early as possible\", and tell the lab attendant what happened before 10am.",
+  "words": 433,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4702011048793793,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07897257804870605,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.808777809143066,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.1,
+    "effort": "high",
+    "output_tokens": 2898,
+    "input_tokens": 1445
+  }
+}

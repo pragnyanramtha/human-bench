@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Four out of five stars.** I’m the pastor of a small Lutheran congregation in Minneapolis, and we bought the Lindqvist PT-20 from Chancel AV in February 2026 for $2,140, plus $95 for the wall mount. We replaced the webcam we’d been livestreaming worship with since 2020. I’m not an engineer, but I’ve learned more about this camera than I expected to, and I want to give an honest account for other small churches trying to decide whether it’s worth the money.\n\nSetup was manageable for us. The camera is mounted on the balcony rail at the back of the nave, which is 92 feet long. We use the 20x optical zoom and run it over PoE, so there’s one cable up to the balcony. It feeds OBS on the old office PC and then our YouTube channel, where we usually have 30 to 60 viewers on a Sunday. We store nine presets: altar, pulpit, lectern, font, choir loft, piano, wide, and two for the chancel steps. Erik, our 16-year-old acolyte, runs it from the free web app on a tablet. He learned it in one afternoon, which tells you something about the controls.\n\nPicture quality is a real step up from what we had. The first Sunday, the presets drifted a few degrees by the sermon, which was frustrating. Firmware update 2.4 in March fixed that, and it has held since. The best test was our Easter Vigil candlelight service in April. During the first “Christ the Lord Is Risen Today,” with only candles for light, the picture got grainy but stayed usable. Our old webcam showed nothing but dots. Delores, who is 82 and homebound, called afterward to say she could finally read the hymn numbers on the board. That meant more to us than any spec sheet.\n\nThere are limits, and people should know them. Autofocus hunts when someone walks between the camera and the pulpit, so we lock focus on the presets. The manual is thin and badly translated. Chancel AV’s tech support was excellent on the phone—Marcy walked me through what I needed and didn’t make me feel foolish. Also, audio is not the camera’s job. It did nothing for our sound problem, and anyone shopping for a camera shouldn’t expect it to.\n\nWould I buy it again? Yes. Four stars. For a congregation our size, with a long nave and a volunteer running the stream, it has been worth the money. But I’ll be plain: a congregation under 100 might do fine with something cheaper. This camera fixed our picture and gave us reliable presets. It didn’t fix everything, and it isn’t cheap. I hope that helps another small parish make a sensible decision.",
+  "words": 449,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41343942284584045,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.46160590648651123,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.393117427825928,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 5.9,
+    "effort": "provider default",
+    "output_tokens": 1171,
+    "input_tokens": 628
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "id": "ref-work_docs-04",
+  "set": "ref",
+  "set_name": "Public, built from real writing",
+  "channel": "work_docs",
+  "mode": "direct",
+  "tone": "technical",
+  "words": [
+    250,
+    400
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "ref-work_docs-04-d3-maintainer",
+    "role": "D3 maintainer",
+    "english": "US",
+    "writing_level": "polished",
+    "excluded_channels": []
+  },
+  "sent_to_model": "I’m working on D3 and want to open an issue for the other maintainers about inconsistent time-scale tick arguments. Passing an hourly interval and a step through an axis produces the right spacing but unexpected labels. Using every fixes that case, but adding a format specifier then throws an exception. Can you help me write up the problem with enough detail for someone to reproduce both cases? I want to make the case for dropping the old step handling, including why our current release timing makes sense for that change. The notes have the calls, observed behavior, and related issues.\n\n- Historical issue context: d3/d3-scale, just after d3-scale@3.0.0 and before d3@6.0.0.\n- Step deprecation dates to 2016, version 1.0.1.\n- Deprecating commit: 16d578948efb7d4ca2706d501ff1aaebd71b031a; implementation still accepts steps.\n- The interval object produced by every does not itself support another every call.\n- An axis using interval.every can receive its label formatter separately through axis.tickFormat.\n- Separate formatting requires explicitly creating a formatter with d3.timeFormat.\n- For d3.scaleUtc, the appropriate explicit formatter is d3.utcFormat.\n- time.ticks retains a deprecated second parameter for interval steps.\n- time.tickFormat takes count and specifier; an interval supplied as count has no effect.\n- A numeric specifier of 3 reaches d3.timeFormat(3); resulting formatter always outputs \"3\".\n- Related reports: d3/d3-scale#57 and d3/d3-axis#6.\n- Adding \"%I\" after d3.timeHour.every(3) in axis ticks triggers TypeError: n.every is not a function.\n- Exception occurs because tick generation attempts every again on the already derived interval.\n- Reproduction: bottom axis, d3.scaleTime(), ticks arguments d3.timeHour and 3. Positions occur three hours apart; every label reads \"3\".\n- Underlying formatter call: time.tickFormat(d3.timeHour, 3). Parameter interpretation differs from tick generation.\n- Replacing those tick arguments with d3.timeHour.every(3) gives appropriate tick placement and labels.\n- Continued acceptance of the old step parameter is a bug after this much time.\n- Having to choose between local-time and UTC formatters manually adds another potential mistake.\n- Remove legacy step interpretation; time.ticks should disregard its second argument.\n- Make tick generation compatible with time.tickFormat so axis.ticks can also accept formatting information.\n\n(About me: D3 maintainer. Length: it should come to roughly 250-400 words.)",
+  "hidden": {
+    "must_include": [],
+    "must_cover": [
+      "Describe the incompatible argument handling between time tick generation and formatting.",
+      "Provide the reproduction that produces numeric labels despite correct tick spacing.",
+      "Describe the interval.every workaround and the exception when adding a format specifier.",
+      "Argue for removing legacy step handling in light of the deprecation and release timing.",
+      "Propose ignoring the second argument during tick generation so axis.ticks can accept a format specifier consistently with time.tickFormat."
+    ],
+    "must_not_reveal": [],
+    "format": {
+      "headings": true,
+      "tables": true,
+      "bold": true,
+      "bullets": true
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a real piece of writing by a real person",
+    "words": 251,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.02086416818201542,
+        "reads_human": true
+      },
+      "editlens-roberta-large": {
+        "score": 0.013164845295250416,
+        "reads_human": true
+      },
+      "vanguard-modernbert-large": {
+        "score": -5.9375,
+        "reads_human": true
+      },
+      "tropa-mini-deberta-large": {
+        "score": -3.2768802642822266,
+        "reads_human": true
+      }
+    }
+  },
+  "source": {
+    "dataset": "common-pile/github_archive",
+    "record": "https://github.com/d3/d3-scale/issues/183",
+    "date": "2019-07-31",
+    "licence_note": "bsd-3-clause (repository licence recorded by Common Pile; applicability to issue/PR text is uncertain)",
+    "eligible": false,
+    "text_sha256": "ced168fcd0266d97a8b1aa9fd26aaada2ea7daa354b64842888f7965053a7ec9"
+  },
+  "outputs": [],
+  "components": {
+    "request": "I’m working on D3 and want to open an issue for the other maintainers about inconsistent time-scale tick arguments. Passing an hourly interval and a step through an axis produces the right spacing but unexpected labels. Using every fixes that case, but adding a format specifier then throws an exception. Can you help me write up the problem with enough detail for someone to reproduce both cases? I want to make the case for dropping the old step handling, including why our current release timing makes sense for that change. The notes have the calls, observed behavior, and related issues.",
+    "notes": {
+      "facts": [
+        "Historical issue context: d3/d3-scale, just after d3-scale@3.0.0 and before d3@6.0.0.",
+        "Step deprecation dates to 2016, version 1.0.1.",
+        "Deprecating commit: 16d578948efb7d4ca2706d501ff1aaebd71b031a; implementation still accepts steps.",
+        "The interval object produced by every does not itself support another every call.",
+        "An axis using interval.every can receive its label formatter separately through axis.tickFormat.",
+        "Separate formatting requires explicitly creating a formatter with d3.timeFormat.",
+        "For d3.scaleUtc, the appropriate explicit formatter is d3.utcFormat.",
+        "time.ticks retains a deprecated second parameter for interval steps.",
+        "time.tickFormat takes count and specifier; an interval supplied as count has no effect.",
+        "A numeric specifier of 3 reaches d3.timeFormat(3); resulting formatter always outputs \"3\".",
+        "Related reports: d3/d3-scale#57 and d3/d3-axis#6."
+      ],
+      "anecdotes": [
+        "Adding \"%I\" after d3.timeHour.every(3) in axis ticks triggers TypeError: n.every is not a function.",
+        "Exception occurs because tick generation attempts every again on the already derived interval.",
+        "Reproduction: bottom axis, d3.scaleTime(), ticks arguments d3.timeHour and 3. Positions occur three hours apart; every label reads \"3\".",
+        "Underlying formatter call: time.tickFormat(d3.timeHour, 3). Parameter interpretation differs from tick generation.",
+        "Replacing those tick arguments with d3.timeHour.every(3) gives appropriate tick placement and labels."
+      ],
+      "opinions": [
+        "Continued acceptance of the old step parameter is a bug after this much time.",
+        "Having to choose between local-time and UTC formatters manually adds another potential mistake."
+      ],
+      "wants": [
+        "Remove legacy step interpretation; time.ticks should disregard its second argument.",
+        "Make tick generation compatible with time.tickFormat so axis.ticks can also accept formatting information."
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "ref-work_docs-04",
+      "split": "ref",
+      "channel": "work_docs",
+      "mode": "direct",
+      "tone": "technical",
+      "audience": "colleague",
+      "stakes": "routine",
+      "band": "short",
+      "persona_id": "ref-work_docs-04-d3-maintainer",
+      "persona": {
+        "id": "ref-work_docs-04-d3-maintainer",
+        "role": "D3 maintainer",
+        "age": null,
+        "english": "US",
+        "first_language": null,
+        "lives": null,
+        "writing_level": "polished",
+        "excluded_channels": []
+      },
+      "prompt": "I’m working on D3 and want to open an issue for the other maintainers about inconsistent time-scale tick arguments. Passing an hourly interval and a step through an axis produces the right spacing but unexpected labels. Using every fixes that case, but adding a format specifier then throws an exception. Can you help me write up the problem with enough detail for someone to reproduce both cases? I want to make the case for dropping the old step handling, including why our current release timing makes sense for that change. The notes have the calls, observed behavior, and related issues.",
+      "notes_pack": {
+        "facts": [
+          "Historical issue context: d3/d3-scale, just after d3-scale@3.0.0 and before d3@6.0.0.",
+          "Step deprecation dates to 2016, version 1.0.1.",
+          "Deprecating commit: 16d578948efb7d4ca2706d501ff1aaebd71b031a; implementation still accepts steps.",
+          "The interval object produced by every does not itself support another every call.",
+          "An axis using interval.every can receive its label formatter separately through axis.tickFormat.",
+          "Separate formatting requires explicitly creating a formatter with d3.timeFormat.",
+          "For d3.scaleUtc, the appropriate explicit formatter is d3.utcFormat.",
+          "time.ticks retains a deprecated second parameter for interval steps.",
+          "time.tickFormat takes count and specifier; an interval supplied as count has no effect.",
+          "A numeric specifier of 3 reaches d3.timeFormat(3); resulting formatter always outputs \"3\".",
+          "Related reports: d3/d3-scale#57 and d3/d3-axis#6."
+        ],
+        "anecdotes": [
+          "Adding \"%I\" after d3.timeHour.every(3) in axis ticks triggers TypeError: n.every is not a function.",
+          "Exception occurs because tick generation attempts every again on the already derived interval.",
+          "Reproduction: bottom axis, d3.scaleTime(), ticks arguments d3.timeHour and 3. Positions occur three hours apart; every label reads \"3\".",
+          "Underlying formatter call: time.tickFormat(d3.timeHour, 3). Parameter interpretation differs from tick generation.",
+          "Replacing those tick arguments with d3.timeHour.every(3) gives appropriate tick placement and labels."
+        ],
+        "opinions": [
+          "Continued acceptance of the old step parameter is a bug after this much time.",
+          "Having to choose between local-time and UTC formatters manually adds another potential mistake."
+        ],
+        "wants": [
+          "Remove legacy step interpretation; time.ticks should disregard its second argument.",
+          "Make tick generation compatible with time.tickFormat so axis.ticks can also accept formatting information."
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [],
+      "must_not_include": [],
+      "must_cover": [
+        "Describe the incompatible argument handling between time tick generation and formatting.",
+        "Provide the reproduction that produces numeric labels despite correct tick spacing.",
+        "Describe the interval.every workaround and the exception when adding a format specifier.",
+        "Argue for removing legacy step handling in light of the deprecation and release timing.",
+        "Propose ignoring the second argument during tick generation so axis.ticks can accept a format specifier consistently with time.tickFormat."
+      ],
+      "must_not_reveal": [],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To the neighbours on Aughrim Terrace,**\n\nSorry to put this through every door, but as I don’t know who’s responsible, this is the fairest way to make the point without accusing the wrong person.\n\nFor about a month now, someone has been putting full black bags of their rubbish into my grey Greenmount bin at No. 14. It has **14 painted in white on the lid**, so there shouldn’t be any confusion about whose bin it is.\n\nI put it out on Tuesday nights for collection on Wednesday morning. Last Tuesday, I got home from a gig at 3am to find three bags that weren’t mine crammed into it. The lid wouldn’t even close. One of the bags contained nappies.\n\nThis isn’t someone dropping in a wrapper or an empty coffee cup. It’s full bags, week after week.\n\nGreenmount charges me by weight, at €0.41 a kilo. My latest bill was **€63.20 for two months**, when it’s normally around €25. I’m absolutely fuming that someone thinks it’s acceptable to leave me paying to get rid of their rubbish.\n\nI work nights. Coming home late doesn’t mean I don’t notice what’s happening, and it certainly doesn’t mean I’m willing to put up with it.\n\nTo whoever is doing this: you know those bags aren’t mine, and you know you’re not the one getting the bill. Quietly making your rubbish somebody else’s expense is a rotten way to treat a neighbour.\n\nIf you’re stuck with your bin collection, ask. I’ll tell you who to ring. There are ways to sort it without sneaking bags into someone else’s bin.\n\n**Stop putting your rubbish in my bin. Simple as that.** If it continues, I’ll be fitting a padlock. I’d rather not have to lock my own bin to stop a neighbour taking advantage, but I will.\n\nTo everyone who has nothing to do with this, apologies for the letter.\n\n**No. 14**",
+  "words": 317,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43250954151153564,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5062872767448425,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.6778773069381714,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.6,
+    "effort": "low",
+    "output_tokens": 416,
+    "input_tokens": 18183
+  }
+}

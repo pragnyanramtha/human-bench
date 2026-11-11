@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - excellent tool, but pin 3.1.4 before you buy\n\nFull disclosure first: I'm the developer of Lanternfolk (Steam, 3 December), and I've used Murmur since 2022. So this is a review from someone who's been in it for four years, not a casual install-and-forget user.\n\nI bought Murmur v1.3 for $19 in August 2022, right before I quit my job at the mobile studio to make my own game. The first prototype of Lanternfolk was a ferryman scene, and I built it over one weekend with Murmur. The game is now 412 dialogue nodes and 9 languages later, all still running on the CSV export. The tool is the reason the game exists, so I'm not going to write you a two-line \"great plugin\" review and call it a day. You should know what's broken before you pay.\n\n**What is broken in 3.2.0:** if you install 3.2.0 and load a save made in 3.1.x, every Murmur variable comes back at its default value. In our case the ferryman forgets you'd already paid him. It's the save key changing from node path to uid, and it hits existing saves, not new projects. Your side fix: **roll back to 3.1.4.** Replace the Murmur folder in your project's `addons/` folder with the 3.1.4 release, keep your own copy of 3.1.4, and don't update to 3.2. Old saves load normally again after that. I posted this on the forum on 19 October, and it's what fixed it for us and for the people who replied in that thread.\n\n**Read the one-star reviews before you buy, then read this.** If all you see is \"wipes dialogue state, dev quit, don't buy\" and you walk away, that's a fair outcome for someone whose update just ate their project. The bug is real and I'm not going to pretend otherwise. But \"took our money and ran\" is not what happened to the people who actually used this tool for years: nineteen dollars, four years of updates, and a feature set I still haven't seen beaten in Godot 4 — node-based branching, conditions, variables, barks, voice line hooks, and a CSV localisation export that carried our nine languages without a fight. One bad week at the end doesn't undo that.\n\n**Support.** Ines has stepped back, so there is nobody answering your bug reports right now, and I'd rather say that plainly than dress it up. My workaround is the 3.1.4 rollback above. If 3.2 is broken for you too, use the forum thread to compare notes with other users; I read and answer there. That's also why this is 4 stars and not 5 — the tool earned its stars over four years, and a broken release with no support behind it takes the rest off.\n\n**What happens next.** The source is public under MIT now, so anyone can fork it and keep it alive. That's the right call, and I'll say it plainly here too: if Lanternfolk ships and there's bandwidth afterwards, I'll look at maintaining a fork — after launch, not before.\n\nAnd to Ines: thank you. Four years, nineteen dollars, and a tool that literally changed my career. I don't know your reasons and I'm not going to guess at them in public, but I'm grateful, and I hope whatever you build next goes well.\n\n---\n\nTo: ines@inesvarga.example\nReplying to: [i07]\nCc: none\nSubject: The Murmur review (draft)\n\nHi Ines,\n\nI wrote the review for the Kitbash listing. It's a draft, not published yet — I want to read it through once more before it goes out, and I wanted you to see it first so nothing in it surprises you.\n\nThe honest part: 3.2 breaks loading older saves, so the review tells people to pin 3.1.4 and how to roll back, and it says plainly that there's no support right now. It also says what four years of updates for nineteen dollars was actually worth, and that the one-star reviews are rough but not representative of people who used it for years. Nothing private is in it, and nothing else will be.\n\nLanternfolk launches on Steam on 3 December. I'd genuinely love for you to play it — say the word and I'll send you a key.\n\nThanks for writing to me, and for the kind words about Lanternfolk. The 3.1.4 rollback has ended up helping a lot of people.\n\nTake care of yourself,\nJonna",
+  "words": 709,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['ines@inesvarga.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3489958941936493,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.223446324467659,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.985294342041016,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.3,
+    "effort": "provider default",
+    "output_tokens": 6213,
+    "input_tokens": 2057
+  }
+}

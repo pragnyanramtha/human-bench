@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Papa's building: I need you to stop and call me\n\nDenis,\n\nI have tried to write this email four times. Every time it came out half French and half insults, so I waited until I could write it properly. I am still very angry, and you should know that. But I am writing to you because you are my brother and I don't want to lose you over this.\n\nLast Thursday at 6 in the morning, a stranger with a camera walked into my bakery while I was shaping baguettes. He was a photographer from the real estate agency. He told me you said I was fine with it. Karine had to calm me down, because I didn't know what he was talking about. That is how I found out that Papa's building is for sale. Not from you. From a stranger, in my own shop, with my hands in the dough. Afterwards I found the listing on Centris, at $1,150,000.\n\nYou didn't call me. You sent an agent to tell me, and I can't find a kinder word for that than cowardly.\n\nAfter Maman's funeral you called me and said, \"No rush, we decide together.\" I have thought about those words every day since last Thursday. Together. In September I told you on the phone that I wanted to buy your half, and that the caisse had pre-approved me for $410,000. You didn't say no. You didn't say you were thinking about selling to someone else. You said nothing, and then you quietly signed with an agent.\n\nI want you to understand what this building is, because I think you see it as a piece of real estate, and it is not only that.\n\nPapa bought it in 1979. I have had the bakery downstairs for 31 years. In all that time I have paid rent every month, and since Maman died I have paid $2,400 a month to the estate, never late once. In 2019 I paid $38,000 for the new roof out of my own pocket, because the building needed it and I never thought of it as a favour. I treated it like it was mine, because I believed that one day it would be mine, or at least ours.\n\nI know you think I am being sentimental. Maybe a little, yes. You remember the room in the back where Papa kept the flour sacks, and where you used to sleep when we were kids. You loved that room. It is still there, Denis. It is below your feet when you walk in the shop.\n\nBut this is not only sentiment. It is also business, and I want you to hear it as business. I have six employees. Six people who count on that bakery to pay their rent and feed their kids. I have 31 years of customers who walk in every morning and know my name, and their kids' names. You cannot move that to another street. A bakery is not a business you can pick up and carry somewhere else. If a developer buys the building, one of two things happens. Either they tear it down or turn it into condos, and I am out. Or they keep it and double my rent, and I can't survive that either. My lease ends on April 30, 2027, which is not far away. A buyer will not be sentimental about my lease, and I will have no protection after that date.\n\nSo here is what I am asking you.\n\nFirst, take the building off the market this week. Tell the agent to pause the listing. You can do that with one phone call, and I know it is not simple to undo a signed agreement, but it is not impossible either.\n\nSecond, if you really cannot or will not do that, then at the very least give me the first right to buy before anyone else. A real chance, in writing, with enough time for me to organize the financing properly. I am not asking you to give me anything. I am asking to be able to buy my father's building before a stranger does. I will pay a fair price, based on a real valuation by someone we both trust, and I will go to the bank and find the money.\n\nI know my pre-approval alone does not cover everything. I am not pretending it does. But I have started talking to the caisse about what else is possible, and I am willing to look at other options too, a payment plan over a few years, a partner, whatever is reasonable. I just need you to sit at the table with me instead of going around me. If we do this together, I believe we can find something that works for both of us. You get your money. I keep what I have built. Nobody has to lose.\n\nAnd I want to be clear about the last part. I don't want an answer by text, and I don't want one that comes from your wife. I like her, and I am glad she can read this in English with you. But this is between you and me. It is our family, our parents, and our building. I want to hear your voice. Please call me by Friday, any time, even if it is late. If you are not ready to agree to anything yet, call me anyway and just talk to me. I would rather have a hard conversation than more silence.\n\nI don't hate you, Denis. If I did, I would not have spent two hours trying to write this properly. But I am hurt, and I am furious, and I don't want you to think this is something I will get over quickly if nothing changes. The way this happened matters to me almost as much as the sale itself. We lost Maman this year. I don't want to lose my brother too, over a building that Papa bought so that his two sons would always have something together.\n\nCall me.\n\n[Your name]\n\n---\n\nA few things to know before you send it:\n\n- Half of $1,150,000 is $575,000, and your pre-approval is $410,000. Denis will probably point out that gap, so I put a short line in the email admitting it and offering to look at other options. Have an idea ready for the phone call, like a payment plan, a partner, or a bigger loan.\n- I said \"by Friday\" for the call and \"this week\" for the listing, since today is Wednesday. Change the dates if you want to give him more or less time.\n- Since you co-own the building and the listing was done without your agreement, it may be worth a quick call with a notaire or lawyer before the phone call, so you know where you stand. That is separate from the email, and it does not change the tone of what you wrote.\n\nIf you want it shorter or harder, tell me and I will adjust it.",
+  "words": 1174,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5151945948600769,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17069916427135468,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.273727893829346,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.3,
+    "effort": "high",
+    "output_tokens": 2572,
+    "input_tokens": 1534
+  }
+}

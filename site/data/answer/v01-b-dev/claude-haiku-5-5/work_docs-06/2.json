@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task, facts, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: Product notice: Brightline Pro 6% developer, batch LX2291\n\nMorning all,\n\nSome of you have heard bits of this already, so here's the full version so nobody's caught out.\n\nKelvin Trade have confirmed that one batch of Brightline Pro 6% (20 vol) Cream Developer 1L, batch LX2291, may actually contain 12% (40 vol) developer. That's double the strength on the label. The batch was supplied between 19 October and 5 November 2026. They've asked us to stop using it.\n\nWhat happened: on Saturday a client of mine had a full head bleach retouch. The lift was much faster than normal. She was tingling at 10 minutes, burning at the crown by 18 minutes, and when I rinsed it there was a red patch about 2 inches across at the crown with a couple of spots at the nape. She's still sore. Aileen had a highlights client on Thursday whose foils were roasting. She thought it was the heater, but it was the same batch. One of the other chairs may have a box from the same rep too, so please check.\n\nHow to check: the batch code is printed on the base of the bottle, not on the box. The box doesn't show it, so checking the box won't tell you anything. Turn the bottle over and look at the base.\n\nCheck everything:\n- open bottles in your trolley\n- sealed stock in the back\n- anything you've bought from the Kelvin Trade rep since 19 October\n\nIf it's LX2291, don't use it. Don't bin it either. Kelvin Trade's rep is in on Tuesday and you can hand the bottles back to him for a credit, or take them to their Hillington depot. If you've had a problem with a bottle, keep it back. We may need it to show the company or the insurer exactly what happened.\n\nSigns of a bad batch: the lift is much faster than normal, tingling or stinging that doesn't settle, burning, redness or blistering on the scalp, or patchy, brassy results after a lift that's gone wrong.\n\nKelvin Trade's email says sorry for any inconvenience. It's not an inconvenience, it's a burnt head, so please take this seriously.\n\nIf someone reacts in the chair: stop straight away and rinse with cool running water, no shampoo. Keep rinsing for at least 20 minutes, and longer if it still hurts. Don't put creams or anything else on it. Write it in the incident book at the desk.\n\nCall 999 straight away if there's blistering, severe pain, difficulty breathing, throat swelling, or if they collapse. Don't wait to see if it gets worse. For anything less serious, get them checked by a GP or NHS 111 the same day.\n\nThanks,\nKirsty",
+  "words": 445,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts",
+      "private"
+    ],
+    "reasons": [
+      "The first-aid advice contradicts the supplied guidance on immediate 999 calls and rinsing for about an hour, and it reveals the client's continuing soreness from a private message."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20059876143932343,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03946333006024361,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.98828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.1664459705352783,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.1,
+    "effort": "medium",
+    "output_tokens": 3914,
+    "input_tokens": 3608
+  }
+}

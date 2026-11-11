@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "I’ve been reading this thread for a while but never posted before. One of my blister pack patients passed away, and her daughter came in today to return her unused medications and glucometer. I’ve been home for hours and I’m still thinking about her.\n\nI’ll call her Mrs. H. She came in every Thursday for her blister pack, and somehow she nearly always had something for me too. Sometimes it was poppy seed cake. Once it was a jar of pickles, and I had no idea what to do with them. She thought that was very funny.\n\nDuring Ramadan, she brought me cake wrapped in foil with my name on it and told me not to eat it until sunset. It was such a small thing, but she remembered.\n\nA few years ago, I caught an interaction between a new medication and her warfarin and called her doctor. After that she told everyone I had saved her life. I used to tell her I was just doing my job, but she didn’t want to hear it.\n\nToday her daughter gave me a card. Inside, Mrs. H had written, a long time ago, “for my Arabic daughter.” She had never given it to me. I went to the back room and cried, and my tech covered the counter for me.\n\nIn school they teach us pharmacology and interactions, but nobody teaches you how to say goodbye to a patient. We’re maybe not supposed to get too attached, but how do you see someone every week for years and not care about them?\n\nMy father was a pharmacist in Egypt, and he knew all the families who came to him. When I came to Canada, I thought it would be different. In some ways it is, but in this way it’s not.\n\nHas anyone else had a patient like this, someone who stayed with you long after they were gone?",
+  "words": 318,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "318 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35808852314949036,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3102070391178131,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1865234375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.870499849319458,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.9,
+    "effort": "low",
+    "output_tokens": 379,
+    "input_tokens": 19099
+  }
+}

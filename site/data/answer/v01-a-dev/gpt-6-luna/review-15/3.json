@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "I used Kilbarrack Van Co to move from Phibsborough to Drumcondra on Saturday 17 October. It was a two-bedroom flat, though most of the things being moved were mine, and the new place was a fourth-floor walk-up with no lift. I booked through the website and paid a €50 deposit by Revolut. The quote was €340 for up to four hours, with two movers and a van. They finished in about three and a half hours, and it was the best value I found by a good margin — other quotes were over €450.\n\nThey were meant to arrive at 9am but got there around 10:30. I did get a text at 8:40 to say the previous job had overrun, which I appreciated, and Dessie took €40 off the price afterwards without me asking. The delay wasn’t a disaster for me, but it’s worth bearing in mind if you have a tight handover or need to be out by a particular time.\n\nThe lads were helpful once they arrived. Our couch wouldn’t make the turn on the third floor, but one of them took the legs off with an Allen key he had in his pocket and got it through no bother. They also put the bed back together without being asked and took away a flat-pack shelf I didn’t want, which was a nice help at the end of a long day.\n\nThe one disappointment was that the brass base of my floor lamp got chipped. Everything else was wrapped in blankets, but the lamp wasn’t, and it was my nanny’s, so I was a bit gutted. A small thing to mention to anyone moving: make sure lamps and other awkward bits are wrapped too.\n\nOverall, I’d use them again. The price was very fair, the move was done within the quoted time, and there were a few thoughtful touches that made the day easier. Four stars from me: good value and helpful service, with room to improve on arrival times and care around lamps.",
+  "words": 336,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "337 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35701999068260193,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15246106684207916,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.320434093475342,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "medium",
+    "output_tokens": 411,
+    "input_tokens": 14005
+  }
+}

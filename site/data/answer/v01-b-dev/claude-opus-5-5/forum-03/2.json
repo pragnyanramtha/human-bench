@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: [p04]\nCc: none\nSubject: none\n\nHey Mel, thanks for the tag Lou. Usual disclaimer: I haven't seen your leg, so take this as general info, not a diagnosis.\n\nWhat you're describing (morning stiffness, sore spot a few cm up from the heel, a bit of a lump, warms up then aches later, all after a big jump in k's) sounds a lot like a typical mid-portion Achilles tendinopathy, which is basically a load problem. Good news is these usually respond well to the right loading. You don't need to stop completely, but 30 to 48 in three weeks is a lot, so drop back to around what you were doing before the jump and leave hills and speedwork out for now.\n\n**How much pain is ok:** up to about 3/10 while running or doing your exercises is fine, as long as it's settled back to normal by the next morning. If it's worse the next day (stiffer, more sore to squeeze) you did too much, so pull back a bit. Limping round the office after the 6k says that one was probably over the line.\n\n**Exercises:** heel drops are fine, but heavy slow calf raises have better evidence these days. Do them single leg off a step, 3 sec up and 3 sec down, 3 sets of 10-15, every second day. Add weight (backpack, dumbbell) once it's easy. Include some bent-knee ones too. On the really sore days, swap them for holds instead: stand on the bad leg up on your toes and hold 30-45 sec, 4-5 times.\n\n**What to avoid:** don't stretch it hard, and especially not till it burns. An irritated tendon doesn't like being compressed and stretched, and it'll often flare it. Same goes for cortisone into or around the tendon. It can feel great short term but it's linked to weakening the tendon, so you're right to steer clear of the needle. A heel lift is fine as a short-term thing to take the edge off.\n\nAlso, if you've been on a fluoroquinolone antibiotic recently (cipro is the common one), mention it to whoever you see. Those can be linked to tendon problems.\n\nIf it's not settling in 3-4 weeks, see any sports physio near you. There's plenty around Bayswater.\n\n**The important one:** if you feel a sudden pop, it feels like someone kicked you in the back of the leg, or you can't push off or go up on your toes, stop running and stop the calf work and get it checked that same day at a GP or ED. That can be a rupture and it needs seeing quickly.\n\nGood luck with Rotto!\n\nKaz",
+  "words": 435,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31104525923728943,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.24821685254573822,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -6.440433502197266,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.1,
+    "effort": "medium",
+    "output_tokens": 1150,
+    "input_tokens": 3169
+  }
+}

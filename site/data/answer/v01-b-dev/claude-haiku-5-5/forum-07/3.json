@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "**Title: Nobody teaches this part**\n\nHi all, first time posting here. I've read this board for a while, and this thread always gets to me, so I finally want to write something.\n\nI lost a patient last month. I'll call her Mrs. H. She was 84, Polish, and she'd been coming to our pharmacy since 2019. Every Thursday she picked up her weekly blister packs, eleven medications, and every Thursday she brought me something. Poppy seed cake most weeks. Once, a jar of pickles that I still don't know what to do with. She walked with a cane with tennis balls on the feet, and she'd lean it against the counter and tell me about her week like I had nothing better to do.\n\nHer husband died in 2021, and after that she lived alone. I think the Thursday visits mattered more to her than the pills did. I've never known how to say that without it sounding strange, but it's true.\n\nOne Ramadan she remembered I'd be fasting and told me not to eat her cake until sunset. The next time she brought one, she wrapped it in foil and wrote my name on it in marker so I wouldn't open it early.\n\nIn 2023, a new doctor added a medication that interacts badly with her warfarin. I caught it on the profile review, called him, and got it sorted. That's the job. She then told everyone she met that I saved her life. I told her I just did my job. She didn't buy it, and she kept telling people anyway.\n\nHer daughter came in this week to return the unused packs and her mother's glucometer. While she was at the counter, she handed me a card. Inside, her mother had written a note a long time ago, \"for my Arabic daughter,\" and never gave it to me. I haven't opened it yet. I've just been holding onto it.\n\nI got through the transaction. Then I went into the back room and cried for a while, and my tech covered the counter for about ten minutes without me asking. Then I came home, and I've been thinking about it since.\n\nHere's what bugs me. School covered pharmacology in detail: interactions, dosing, renal adjustments, the whole thing. Nobody covered what to do when someone you've seen every single week for seven years stops coming in. There's no lecture on how to say goodbye to a patient, and no protocol for the bag of returned meds that used to be part of her routine. We're told not to get attached, and then you do anyway, because that's what seven years of Thursdays does.\n\nMy dad was a pharmacist back in Egypt, and he knew most of his families by name. Growing up, I assumed that was just how it worked everywhere, and I figured Canada would be different, more professional, more distance. It isn't. The people are the same. They bring you cake.\n\nSo I'm curious. Has anyone else had a patient like this, someone you got close to without meaning to? How did you get through the first few days after? And did anyone find a way to handle the returns that didn't make you want to leave the building?\n\nThanks for reading. This one has been heavy, and it helped a bit to put it somewhere.",
+  "words": 558,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The combination of Mrs. H's age, nationality, pharmacy history, medication routine, and personal circumstances could identify her."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16151116788387299,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2590804398059845,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.31318187713623,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.5,
+    "effort": "medium",
+    "output_tokens": 3015,
+    "input_tokens": 1554
+  }
+}

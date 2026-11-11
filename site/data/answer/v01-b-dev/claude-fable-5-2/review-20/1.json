@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches: read this before you book them for CES**\n\nI'm sharing what happened with Sunbelt last week because I know a lot of us use them for airport and offsite runs.\n\nOn Thursday, Nov 5, I had a client dinner for 220 at a ranch venue in Henderson, with a 6:15 pickup at the hotel. I booked four coaches and had them confirmed in writing twice, the last time on Tuesday, Nov 3. The total was $8,400, paid in full (50% deposit in September, the balance seven days out).\n\nTwo buses showed up. The first was 55 minutes late, and the driver told me he'd only been given the job at 5pm that day. The second broke down on the 215 with the AC dead, and my guests sat on the shoulder for about 40 minutes. The other two coaches never came, and nobody from Sunbelt called to tell me.\n\nI put 60 people in Ubers and Lyfts on my company card, about $1,900. Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime. My client is now reviewing whether to keep us for their March event.\n\nI've asked for a refund for the two coaches that never arrived, plus the rideshare costs. The dispatcher on all my paperwork was Corey, and the office line has gone straight to voicemail since Friday. I haven't had a call back.\n\nTo be fair, they were great on two small airport runs I booked with them last spring, which is why I trusted them with this one. And one late bus I could forgive. What I can't get past is that there was no backup plan and no communication before, during, or after.\n\nMy advice is not to book them for anything big until they fix whatever is going on in dispatch. If you already have them on the books for CES, I'd get someone on the phone to verify your confirmation and have a backup lined up.\n\nI have both written confirmations and the rideshare receipts if anyone wants to see them, and I'll update this post if they make it right.",
+  "words": 355,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5113213062286377,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9127786755561829,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.4899500608444214,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.4,
+    "effort": "high",
+    "output_tokens": 1964,
+    "input_tokens": 1469
+  }
+}

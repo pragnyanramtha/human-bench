@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Kestrel Bastion 1500 — saved a 10x long mid-storm, but it's not perfect**\n\n**Rating: 4/5**\n\nBought the Kestrel Bastion 1500 (1500VA / 1000W, pure sine wave) on Voltwise in August 2026 for $229. I'm a crypto day trader in Miami, so my whole thing is \"if the power or internet blips, I get wrecked.\" Wanted something that would actually hold my setup through a Florida storm, not just keep the lights on for 30 seconds while I panic.\n\n**What it actually is**\n\n10 outlets total — 5 battery-backed, 5 surge-only. USB-C 60W port on the front. Pure sine wave, which mattered to me because I'm not risking my PSU on a modified sine unit. It's about 30 lbs, so it's not something you're moving around a lot. Battery is swappable, which is good, but the replacement pack runs $95, which is not good. Factor that in.\n\n**Real numbers, since that's what I actually wanted before buying**\n\nMy load is PC + 3 monitors + modem + router, sitting around **410W** according to the unit's own display while I'm trading (charts up, order book, all of it).\n\nBox claims ~14 minutes at 500W. I tested mine on purpose a few weeks in: **11 minutes 40 seconds at my 410W load** before I shut it down myself. So slightly under the sticker numbers if you're doing the math at 500W, but honestly that's close enough that I don't feel lied to. It's enough time to close a position, kill a bot, or unwind something ugly. It is not enough time to sit there and \"wait and see.\"\n\n**The thing that made it worth the money**\n\nOct 14 storm, power dropped around 2:20pm. I was **10x long on a SOL perp**. Rig stayed up, wifi stayed up, I closed it out clean in about 4 minutes. That's the entire pitch for this thing and it delivered. If you plug your modem and router into the *battery* side — not the surge side — you keep internet too. I see people skip that and then wonder why they lost connectivity anyway. That's the single most important thing in this review.\n\n**The annoying stuff (because you should know)**\n\n- **The fan.** First week it kicked on at 3am for no reason and woke me up. It's loud — think hair dryer on low. It's better now that it's not cycling weird, but if this is in your bedroom, be warned.\n- **The desktop app** looks like Windows XP. Genuinely ugly. That said, auto-shutdown works, and that's the only reason I need it, so I let it slide.\n- **Beeping on outage is loud AF.** You can mute it in the app, but mine reset after a firmware update, so I had to go back in and do it again.\n\n**Verdict**\n\n4 stars. It does the job it's supposed to do on the one day it matters, and the load numbers are close enough to the box claim that I trust it. Docking a star for the fan noise, the $95 replacement battery, and that app. If you're running a trading rig and a power cut could cost you real money, this is a no-brainer at $229. Just plug the router into the right outlet and mute the beeper before the storm hits, not during.",
+  "words": 549,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5719258189201355,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.752486526966095,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.3759429454803467,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 5.1,
+    "effort": "provider default",
+    "output_tokens": 929,
+    "input_tokens": 494
+  }
+}

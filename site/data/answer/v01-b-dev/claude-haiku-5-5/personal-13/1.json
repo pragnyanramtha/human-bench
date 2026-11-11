@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Mr Ogunleye,\n\nGood day sir. I hope you are well. My name is [Your name], and I am the owner of the black Jansport bag you picked up on Friday evening, 6 November, on the Oshodi to Igando bus. I got down at Ikotun. Thank you for calling the number in my lab manual, and for not throwing the bag away. Many people would have done so, and I am truly grateful.\n\nI want to be honest with you about my situation. The bag contains my dissecting kit and my student ID. I need both for my BIO 101 practical on Wednesday 11 November at 10am. Without the kit I cannot enter the lab, and the lab attendant is very strict about this. The bag also has two of my textbooks, my calculator, and my glasses, which I need for my classes.\n\nI understand you asked for 40,000 naira. Sir, I am a first-year student, and I do not have that amount. The most I can manage is 10,000 naira, which is my whole allowance for this month. I would like to give you this money for your transport and as a sign of my thanks. I know it is not what you asked for, and I ask you to please consider it with an open heart.\n\nI would like us to meet soon, before Wednesday if possible. Please choose a day and time that suits you. I suggest we meet at Ikotun roundabout or at the gate of Ikotun Police Division, in the daytime. My roommate, Adaeze, will come with me so that we both feel comfortable. I hope you understand that this is simply for both our safety.\n\nI am serious about getting my things back, and I am also willing to be reasonable. Please reply to this message or call me on this number to confirm the day and time.\n\nThank you once more, sir. God bless you.\n\nYours sincerely,\n[Your name]\n[Your phone number]\n\n---\n\nNote: today is 11 November, which is the practical date you mentioned. If you have not already done so, contact your lab attendant or course lecturer today. Explain that your kit was stolen and ask whether you can sit the practical later or be allowed in with a police report or a letter from your department. Doing this now protects you even if the bag is not returned in time.",
+  "words": 400,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3206486403942108,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07486949115991592,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.09619140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.873243808746338,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.2,
+    "effort": "medium",
+    "output_tokens": 2127,
+    "input_tokens": 1466
+  }
+}

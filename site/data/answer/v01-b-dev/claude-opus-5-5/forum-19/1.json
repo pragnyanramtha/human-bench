@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, first, breathe. Congrats on the wedding, and welcome to the club. My first year as an apprentice, 1995, I put diesel in my boss's Golf. He still tells that story at every braai, 30 years later. You'll be fine. Your bakkie might be fine too.\n\n**Tonight, the most important thing: DON'T touch that key again.** Take it out and put it in your pocket. Every time that engine turns, the high-pressure pump is spinning on petrol, and petrol has no lubrication. Diesel is what keeps that pump alive.\n\n**Don't put diesel on top.** Sorry Kobus, I know you mean well, but that's old Land Rover advice. The petrol is still in there and mixing it does nothing. Your 2019 D-Max is common rail and it can't take it. Driving it will kill it properly.\n\n**Get it towed, don't drive it.** Check your insurance first. Most policies have roadside assistance that includes a tow, so don't go paying some tow guy cash in the dark if you're already covered.\n\nWhat damage you might have done: you drove 3km and cranked it 5 or 6 times, so I can't promise the pump and injectors are okay. They need to be inspected before anyone says a number. If they're fine, you're looking at a tank drain, flush the lines, new fuel filter and bleed the system. That's usually R2,500 to R4,500. Tash's R40,000 is what happens when the injection system is gone, and we don't know that yet. Don't let anyone quote you a full figure tonight, me included. Nobody can know until it's looked at.\n\nMy shop is in Umbilo, open Saturday 7 till 12. Thabo can drain it first thing if you get it to us. DM me and I'll send you the details.\n\n**But borrow a bakkie for tomorrow anyway.** Phone a cousin, a groomsman, anyone. Don't plan your wedding around a drained tank. The cake and the sound system must get to Hillcrest no matter what happens with the D-Max.\n\nAnd don't feel too bad. I had one customer do this twice in the same year at the same garage. We made him a sticker for his fuel flap. I'll make you one for free.\n\nGo home, get some sleep, marry your lady. The bakkie can wait for Thabo.",
+  "words": 381,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4080633223056793,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19937269389629364,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.380859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.974527359008789,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.3,
+    "effort": "medium",
+    "output_tokens": 912,
+    "input_tokens": 2161
+  }
+}

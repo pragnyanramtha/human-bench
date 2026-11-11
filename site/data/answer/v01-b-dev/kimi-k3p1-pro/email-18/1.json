@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kristen,\n\nHere’s the straight story for the file. Saturday, Nov. 7, about 10:40 a.m., I put a bag of butter popcorn in the break room microwave, hit the popcorn button, and went back out front. A customer needed a shear pin for his snowblower, and helping him took longer than I expected—probably six or seven minutes. I left the popcorn unattended, and that’s what caused the smoke and the alarm.\n\nThe store was cleared for roughly 25 minutes. The engine from Hertel came, and there was no damage, just smoke and the smell. It was my popcorn and my mistake, not a problem with the microwave. For the record, the September alarm was not me; that was the sensor in the paint aisle.\n\nI’m sorry about the customers standing outside in the cold, and especially about the Hendersons leaving a full cart. I know they’ll be back sooner or later, they always are, but I still feel lousy about it. Denise also got stuck outside without a coat after grabbing the drawer, so I owe her a coffee and I’ll bring her one.\n\nI’ll cover the $175 Northpoint Alarm bill. You can take it out of my check or I’ll bring in cash, whichever is easier for you.\n\nI’d also ask you and Gary not to take away my Saturday shifts. I like the weekend crowd, and I need the hours for heating oil. You have my word I won’t leave anything cooking unattended again.\n\nAfter 31 years on the job, I got my first alarm as a civilian over a bag of popcorn. One of the firefighters was Mikey Szymanski, who I broke in as a probie back in ’03, so I expect to hear about this for the rest of my life. My wife said the van smelled like a burnt movie theater, too.\n\nWalt",
+  "words": 307,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2726462483406067,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3139587938785553,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.444895267486572,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.9,
+    "effort": "provider default",
+    "output_tokens": 1676,
+    "input_tokens": 867
+  }
+}

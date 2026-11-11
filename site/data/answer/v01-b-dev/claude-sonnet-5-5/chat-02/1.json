@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\n@dana.okoye Bev tagged me, so here's my take. Short version: yes, you can do this yourself. @hector.ruiz one correction before she buys anything, though.\n\nHector, the green automotive stuff is ethylene glycol. It's toxic, and it isn't rated for the raw water side of a marine engine. Dana, you want the pink propylene glycol RV/marine antifreeze, which is about $6/gal at West Marine or Walmart. Neither kind goes in the river, by the way. On your engine the raw water discharge comes out the exhaust, so that's where we catch it.\n\nYour 3GM30F has two sides. The coolant side is a closed loop through the heat exchanger and only needs a strength check with a hydrometer. 50/50 is good to about -20F. The raw water side is what freezes and cracks. A few winters back we had a hard freeze around Christmas and three boats on C dock cracked exhaust elbows or strainers. All three had skipped or rushed the raw water side.\n\nOrder I'd go in:\n\n1. Warm the engine up, then change the oil and filter while it's warm.\n2. Top off the fuel tank, add stabilizer, and run the engine about 10 minutes so the treated fuel gets all the way through.\n3. Set up exhaust collection before you start the flush, and have your helper watch the flow and the container. Capture everything that comes out for proper disposal.\n4. Raw water flush: close the seacock, feed the pink into the strainer with the engine at idle, and keep the pump wet the whole time. Shut the engine off when you're done. The seacock stays closed.\n5. Follow the Yanmar procedure and the antifreeze maker's directions, and don't judge by the colour. Test what comes out of the exhaust to confirm it has the winter protection you need. Pink water can still be mostly water.\n6. Water system: switch off the water-heater breaker first and leave it off until you've refilled in spring. Drain the tank first, or you'll waste about 6 gallons of pink filling it. Then use the bypass valve for the water heater (on your Catalina it's behind the companionway steps), pump pink through the lines until each tap runs pink, and collect that discharge too.\n\nFor quantities, figure about 2 gallons for the engine and 2-3 for the water system. Those are estimates, so buy enough to finish the manufacturer procedures and verify protection. Extra jugs are cheaper than a cracked elbow.\n\nWhile you're in there, keep a spare impeller aboard. If you want to pull the old one and look it over, go ahead, but don't run the engine dry.\n\nOn the $465: not a ripoff, since the yard is charging for labor and materials. But with a helper this is a 2-3 hour job, and you'll know the boat much better afterward.\n\nI'm happy to come down Saturday morning and be a second set of hands if you want one. Just say the word.",
+  "words": 494,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09051457047462463,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.024929536506533623,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.9375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.981757640838623,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.5,
+    "effort": "high",
+    "output_tokens": 2063,
+    "input_tokens": 3131
+  }
+}

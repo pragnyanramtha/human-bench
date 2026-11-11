@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.32, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #jobs\nReplying to: none\nCc: none\nSubject: none\n\n@marco, I’m pissed. You finished the Desert Palms rekey Saturday, all 14 units, and not one code made it into the sheet. Yvette called this morning because the tenant in 9B lost her key and needs three copies today. Now we’ve got nothing to cut from, and we have to make another trip for something that should’ve been taken care of Saturday.\n\nI told you about this same thing on the Kessler job in September. And in August I told everybody: address, unit and bitting code in the sheet the same day, before you leave the van. No exceptions. That wasn’t a suggestion, and it’s not optional because it’s late or you’re ready to go home.\n\nGo back to Desert Palms today and decode 9B so we can get those three keys cut for Yvette. Decode all 14 units while you’re there if you can, and put the address, unit numbers and codes in the sheet today. Let me know when 9B is done so we can take care of her, and tell me where things stand on the rest before you leave.\n\nYvette also says there’s a black pinning tray with pins sitting on the leasing office counter. Pick up my tray and bring it back to the shop.\n\nYou’re good with your hands, Marco, and I’m not talking about firing you. But the job isn’t finished just because the locks work and the keys got dropped off. We need the records too. I don’t want to have this conversation again.",
+  "words": 252,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3240053951740265,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02020474337041378,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.4765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.393432140350342,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.8,
+    "effort": "low",
+    "output_tokens": 338,
+    "input_tokens": 19111
+  }
+}

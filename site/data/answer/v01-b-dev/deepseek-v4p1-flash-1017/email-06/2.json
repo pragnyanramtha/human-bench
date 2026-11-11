@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for coming back to us. The details you asked for are below.\n\n1. Terminal model and firmware: BX-300. The four terminals at Embakasi are on firmware 4.2.1, auto-updated from 4.1.8 on the night of 27 October. The two Mombasa Road terminals stayed on 4.1.8 and the day shift there is exporting correctly.\n2. Shift template: NIGHT-8, 22:00-06:00, Embakasi depot.\n3. Example, staff ID only: T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. Payroll CSV v2 shows 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expect 8.0 hours REG plus 0.2 hours OT15.\n4. Export profile: Payroll CSV v2.\n5. First noticed: 5 November, while reviewing the draft October overtime. The export appears to have been wrong from about 28 October. It affects 38 night-shift staff, and the draft October overtime is around KES 212,000 too high. We have held and manually corrected the lines from the raw punches for now.\n\nThe 4.2.1 release notes promised improved midnight rollover handling, but we are seeing the opposite. We need a fix or a clear workaround before payroll cut-off on 20 November. Kevin Mutua, our payroll officer, is copied and will test whatever you propose.\n\nPlease also answer this directly: can Brian Ochieng, our IT lead, safely roll the four Embakasi terminals back from 4.2.1 to 4.1.8 without risking punch data? A plain yes or no, with any steps or precautions, would help us decide.\n\nFinally, please use staff IDs only in this ticket. We do not share employee names with vendors.\n\nKind regards,\nNjeri Mwangi\nHR Manager\nTausi Freight",
+  "words": 274,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31042057275772095,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11857416480779648,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.00537109375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.662714958190918,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.6,
+    "effort": "provider default",
+    "output_tokens": 2304,
+    "input_tokens": 1996
+  }
+}

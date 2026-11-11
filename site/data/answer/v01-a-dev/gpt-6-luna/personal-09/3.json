@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: We need to talk about Papa’s building**\n\nDenis,\n\nI’m writing because I’m too angry to say this calmly on the phone right now, and I don’t want my anger to turn into words I can’t take back. But I need you to understand how furious and hurt I am.\n\nI found out that the building on rue Saint-Hubert is for sale because a photographer showed up at the bakery at 6 o’clock Thursday morning. I was shaping baguettes when he walked in. He told me you’d said I was okay with it. I was not. I had never even heard from you.\n\nDo you understand how humiliating that was? A stranger with a camera in my shop, telling me you’d given him permission to be there—as if you and I had already discussed this. Karine had to calm me down so I could get back to work. I should have heard this from you, not from an agent and not from a photographer standing in the middle of my bakery.\n\nYou didn’t even call me. You put the building on the market for $1,150,000 and let me discover it on Centris afterward. That felt cowardly, Denis. I don’t say that lightly. I say it because it is what I felt in that moment: that my own brother had gone behind my back about the place where I’ve worked for 31 years.\n\nAfter Maman’s funeral, you told me, “No rush, we decide together.” Together. I believed you. Since Maman died in February, the building has been half yours and half mine. The estate was settled in August. I’ve paid $2,400 a month in rent to the estate, never late once. I paid $38,000 for the new roof in 2019 myself. And in September, I told you by phone that the caisse had pre-approved me for $410,000 so I could buy your half. I wasn’t hiding what I wanted or waiting for you to guess. I put a real possibility on the table.\n\nMy lease ends on April 30, 2027. I don’t know what you imagine will happen to the bakery if a developer buys the building. They could tear it down or turn it into condos. The rent could double. I can’t survive that. This isn’t only about my feelings or my memories. It is about a business I’ve built over 31 years, six employees who depend on it, and generations of customers who come through that door. I’m 57. I can’t just pick up a bakery and move it somewhere else as if it were a box of flour.\n\nAnd yes, I am sentimental about the building. So are you, whether you want to admit it or not. Papa bought it in 1979. When we were kids, he let you sleep in the room at the back with the flour sacks. You loved it there. I remember that. This building is part of our family’s life. But please don’t use my attachment to it to dismiss what I’m saying as sentimentality. This is business, too—and you know I’ve treated it seriously.\n\nI am asking you to take the listing off the market this week. If you’re not ready to do that, then at the very least, give me the first right to buy your half and let’s discuss the terms directly. I have already spoken to the caisse. I want us to sit down—or talk properly by phone—and see whether we can make an agreement. I’m not asking you to give me your share. I’m asking you not to sell it out from under me without giving me a fair chance to buy it.\n\nI know you live in Calgary, and I know selling may seem like the simplest way to settle things from a distance. But it isn’t simple for me. And whatever this building is worth on the market, it isn’t just an address or a number to me. It’s my livelihood. It’s where I’ve spent most of my working life. It’s where Papa raised us, and where I thought you and I would make this decision together.\n\nI’m angry enough that part of me wants to tell you exactly what I think of you right now. I won’t, because I don’t want to lose my brother. But I need you to feel how serious this is. You hurt me, and you’ve put my future and the bakery’s future at risk without even speaking to me first. That is not something I can shrug off.\n\nPlease call me yourself. I don’t want to get an answer by text from your wife. I want to hear from you, even if this is difficult. I still want us to find a way through it as brothers. But first, the listing needs to come down, and we need to talk.\n\nYour brother,  \n[Your name]",
+  "words": 804,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46544012427330017,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.960519552230835,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.21875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.341081142425537,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.7,
+    "effort": "medium",
+    "output_tokens": 992,
+    "input_tokens": 14051
+  }
+}

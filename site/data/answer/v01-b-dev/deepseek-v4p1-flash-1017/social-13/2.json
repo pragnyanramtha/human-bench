@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "A long-overdue update.\n\nGood news first: Priya Bhatia joins us on Monday 16 November. She’s a chartered structural engineer (IStructE), with nine years at a consultancy in Coventry, and I’m genuinely pleased she’s coming. She finally sorts our turnaround problem. Our target for beam calculations and drawings is now 10 working days. In September and October it was 5–6 weeks, and that wasn’t good enough.\n\nI need to be straight about those two months. Several clients waited far too long for their calculations, a few were quite unhappy, and one left a rather sharp review. That was my fault. I said yes to too much work on my own. In October I was doing site visits in the day and calculations until midnight; my wife started calling the office “the other house”. One couple in Harborne had their builder standing waiting with the steel already ordered. We got it to them in three days, but only after they’d chased twice. That’s not how I want this practice to run.\n\nIf you’re waiting now, your job is moving. Message me directly if you want an update.\n\nI’m also ending the free first site visit. Visits taking place from 1 January 2027 will cost £95, deducted from the fee if you go ahead. Any visit already booked when this post goes out remains free, whatever its date. The free visit was a nice idea, but about a third never turned into a job, and I’d rather price the work honestly.\n\nPriya, welcome. And if you see her on site, please say hello.",
+  "words": 260,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33268365263938904,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2299635261297226,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.2490234375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.7978129386901855,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 6.3,
+    "effort": "provider default",
+    "output_tokens": 1415,
+    "input_tokens": 489
+  }
+}

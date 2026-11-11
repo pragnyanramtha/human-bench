@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hello everyone — Hélène here, from Pétrin Doré (5 rue Fairmount, corner). Small thing first: my name is Hélène, not Gagnon, so I think that got mixed up somewhere along the way.\n\nI don't post much on this board, but D. Bergeron asked me a straight question, so here's a straight answer. No more \"grande nouvelle bientôt\" — the news is out now.\n\n**The short version: we are not closing. We bought the building.**\n\nYes, the building was sold. In the fall. To me. Marc-Antoine's cousin is half right, and the half that's right is the easiest to repeat.\n\nHere's the whole story. M. Ferland has owned the building for years. He's 81, and he's retiring to Sherbrooke with his daughter. Before he showed it to anybody else, he offered it to me. We signed at the notary on December 15. I'm the owner now — the ground floor commercial, which is the bakery, and the three apartments upstairs.\n\nAbout that sign: yes, the \"grande nouvelle\" is real news, and yes, I should have said something sooner. My nephew Thomas wrote the sign at 6 in the morning, and \"grande nouvelle\" was his idea, not mine. I saw it and I said \"ok\" without really thinking. I wanted to tell everybody in person, with the new oven going and a proper cup of coffee in hand. I see now that a sign on the door plus empty shelves is exactly how a rumour gets started, and that's my fault, not yours. I'm sorry for the panic.\n\nNow the details, because they're the ones people actually care about.\n\n**When we open.** We're closed January 4 to January 18 for the works. We reopen Tuesday January 19 at 7h, same hours as always, same bread, same coffee, same counter. And I want to invite you all: **Saturday January 23**, come by the shop — we'll have coffee and a piece of the new bread on the house for everybody who shows up. No purchase, no conditions. I might get a little emotional, fair warning.\n\n**The carnets.** This is the part that honestly made me the angriest. We sold 214 carnets in October, $60 for 12 loaves. Every one of them is good. None of them expire — there's no expiry date on them, and they carry over, no problem. That was always the plan and it still is. And in January, every carnet holder gets a free croissant from me. Just come in and show your booklet.\n\nAnd to be completely clear, because I'd rather lose money than lose your trust: if you really want your money back, come to the bakery and I will hand it back to you on the spot. No question, no argument, no small print. Some of you have been buying my bread since 2009. You don't owe me $60 for loaves you haven't collected yet, and January is when we shut down and nobody can even use them.\n\n**The half-empty shelves on the 28th.** We sold everything. 400 bûches for Christmas Eve. The 28th is the 28th — we were cleaning shelves all day and we were out of nearly everything. That's all it is. I don't do closing sales.\n\n**The oven.** Our old deck oven is from 1998 and it broke three times this year. Three times. We're getting a new one — four decks, from a supplier in Laval. It has to be delivered, installed, and tested properly, and that's most of why we need the two weeks.\n\n**The space in the back.** We're taking the old storage room from the dépanneur next door. I'm putting six small tables back there. For the first time in years, people can actually sit down with their coffee instead of standing against the wall. I admit I was nervous about it — my mother always said a bakery should be a bakery, not a restaurant — but you can sit, and I think a few of you have been asking for that for a long time.\n\n**The three apartments upstairs.** They stay rented. Same tenants, same rent, and I've promised them in writing. Nobody upstairs is being evicted or replaced. The neighbours you know are still your neighbours, and they'll still be my first customers every morning. The \"condos and a vape shop downstairs\" story was wrong, and I wanted to put that in writing too, because I know that's what people were actually afraid of.\n\nOne more thing about M. Ferland. He came every morning for 17 years for his baguette — *pas trop cuite*, he was very particular about it. He was at the notary on December 15 and he cried a little. He is the reason this bakery survived this long, and part of the reason I bought the building is that I couldn't stand the thought of somebody else taking it. If you see him around, say bonjour. He's in Sherbrooke now.\n\nTo Priya, and to anyone else who said something kind on this board: thank you. You have no idea what it means to read that. The free chocolatine for your kid every Saturday was never a marketing plan, it's just how I was brought up.\n\nAnd to D. Bergeron, and to noodle_and_crumb, and to anybody still reading who's feeling let down — I understand. Mile End has lost a lot of small shops over the years, and every time one of them puts up a sign, everybody assumes the worst. You were right to ask, and you asked out loud instead of quietly panicking at the counter, and that matters. I'm not angry at you. I'm a bit tired and a bit emotional, but I'm not angry.\n\n*A scam.* Seventeen years on that street, that's the word. It hurts. But my baker is still here, my door is still here, and my oven is coming from Laval.\n\nSo: **Tuesday January 19, 7h — we're open.** And **Saturday January 23 — come celebrate with us**, coffee and a piece of the new bread, free, for everybody. Bring your carnet if you have one, bring your neighbour, bring your kid — Priya, I'll have a chocolatine ready for her.\n\nÀ bientôt, and merci.\n\nHélène\nBoulangerie Le Pétrin Doré\n5 rue Fairmount (corner)",
+  "words": 1039,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says her name is 'Hélène, not Gagnon', but Bergeron addressed her as Mme Gagnon, which is likely her surname, so the correction contradicts the thread."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45751285552978516,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3780613839626312,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.214336395263672,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.1,
+    "effort": "provider default",
+    "output_tokens": 4460,
+    "input_tokens": 1318
+  }
+}

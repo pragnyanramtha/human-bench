@@ -1,0 +1,92 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: timeline:rosario.bautista\nReplying to: none\nCc: none\nSubject: none\n\n🎉🎉🎉 OH MY GOD. MY BEST FRIEND IS COMING TO LIVERPOOL!!! 🎉🎉🎉\n\nI am writing this from clinic and my hands are shaking so badly, please forgive the typos. I do not care. Lorna Villaruz — my Lorna, my best friend since 1996 — got her NMC PIN today!!! 🙏🙏🙏\n\n@Lorna Villaruz you did it, bes!! After two years of papers, the IELTS, the CBT, the OSCE in Nottingham (yes, I sent you that photo of the rain so you knew what you were getting into 😂), all the waiting and praying and crying on the phone at 2am — you did it. I am so proud I could burst!!!\n\nLet me tell you about this woman. We met in Iloilo, nursing school, and we have been together since day one. We trained together, we capped together in 1996 — same hairstyle, same white shoes polished every single night in our dorm room. Yes, Lorna, you always borrowed my nail polish and never bought your own 😂😂😂 Then you went to Riyadh, then Dubai — almost 18 years of your life out there, and look what you built. Ang galing mo, girl. But 20 years and counting, I have been telling you to come here!! Hahaha!\n\nAnd now, 22 years after I left for the UK in 2004 — you remember the airport? You cried, and you said \"susunod ako, I will follow you.\" 😭😭 I TOLD YOU! 22 years later and here you are, you stubborn, wonderful, beautiful woman!!!\n\n📅 The dates, everyone:\n✈️ 14 January — Dubai to Manchester, landing around 1pm\n🏥 25 January — you start on Ward 7, medical, Mersey Bank Hospital. Induction first, then your preceptorship. Ward 7 has no idea how lucky they are, and I have already told them 😂\n🏠 You are staying with us the first month. Spare room is ready — thick duvet, heater, Andrea's boxes cleared out 😄 Ben says yes, of course, as if I would let you sleep in a hotel. You are coming home, not visiting.\n\nLorna, you are the best nurse I know. You are calm when everything around you is chaos, kind when you have no time at all, and the patients love you. They always love you. I have watched you with families for years, I know. Liverpool is going to love you right back.\n\nTwo things before you land:\n1. Bring a PROPER coat. Not the Divisoria one, ha! TK Maxx, Primark, I don't care — a proper one, because Liverpool wind is no joke 🥶\n2. The dried mangoes and the Bicol pili for Tito Ben are already expected. 😄\n\nAnd before I forget — welcome to our Filipino family here! 🎄 There are the Christmas parties, St Teresa's every Sunday, and next year's Christmas party at the parish hall is already yours. And next year's Simbang Gabi, all nine nights, with us — you, me, Ben, the parol, the food, the singing. You will cry on the first night, I promise 😭\n\nI cannot wait to hug you. 30 years of friendship and you are still my number one fan, and I am still yours. Salamat, Lord. ❤️\n\n---\n\n(Written with one hand, from the clinic, in full-on happy tears. Home in a few hours, and then I am celebrating properly. 🎉)",
+  "words": 553,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "Facts fail: the post says Lorna borrowed Rosario's 'nail polish', but the request says it was shoe polish for their white shoes."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "It says Lorna borrowed nail polish rather than the shoe polish used in the dormitory."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2217281311750412,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23304243385791779,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.150390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.29296350479126,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.0,
+    "effort": "provider default",
+    "output_tokens": 3010,
+    "input_tokens": 2260
+  }
+}

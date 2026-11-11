@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "work_docs-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Thanks for asking, Deirdre, and for giving me a chance to comment rather than just announcing it. I do understand the numbers and that Bronwyn needs the help with 24 little ones, so I’m not going to fight the move. But I’d be lying if I said I wasn’t sad about it.\n\nNoma has been with me in the Seahorses for three years, since my first year of teaching. She honestly taught me so much that year, from the sign-in sheets to keeping the parent WhatsApp group under control! We’ve built a lovely rhythm together, and she means a lot to the children too. They ask for “Noma’s song” every day, and I’ll never forget how she sat with Zayd under the jungle gym when he was struggling in Term 2 and helped him calm down.\n\nMy main concern is the handover. The first weeks of Grade R are always the hardest, with new children settling in and often crying at the gate. Having a new assistant learning the routine at the same time will be a lot, so I’d really appreciate some support to make the transition smoother for everyone.\n\nCould Charlene come in for a day or two during the last week of term, 1–4 December, to meet Noma and see how our room runs? I know she only officially starts on 11 January, but perhaps this is something SMT could consider.\n\nAnd since Noma will be just across the courtyard, could she pop in for morning ring during the first week back from 14 January, even if it’s only for 15 minutes? Her isiXhosa songs would be such a lovely familiar start, especially for Luthando and Mia, who already know her from aftercare.\n\nI know she’ll still be nearby and I’m glad Bronwyn will have her. I just wanted to say how much this change means to me and ask that we give the handover proper time. Thanks again for asking, Deirdre.",
+  "words": 325,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4283019006252289,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35390177369117737,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.734878540039062,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.8,
+    "effort": "low",
+    "output_tokens": 406,
+    "input_tokens": 18686
+  }
+}

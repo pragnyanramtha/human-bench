@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To whoever is putting rubbish in my bin,**\n\nI’m writing this because someone on the terrace has been using my grey bin at No. 14 as their own. The number 14 is painted on the lid in white, so there’s no excuse for not knowing whose bin it is.\n\nThis isn’t someone throwing in a wrapper. It’s been full bags of rubbish, every week for about a month. Last Tuesday, I got home at 3am after a gig and the lid wouldn’t even close. There were three black bags in it that weren’t mine, including one with nappies.\n\nI found a gas bill envelope in one of the bags with the name torn off. The terrace was still on it. Someone across the road also saw a car pull up on Tuesday evening, though they didn’t see who it was. I don’t know who’s doing this, which is why this letter is going to everyone.\n\nMy bin is with Greenmount Bins, and I’m charged 41 cent a kilo. My last bill was €63.20 for two months, when it’s usually around €25. I’m renting, I work nights, and I’m not paying to get rid of someone else’s rubbish. Just because I’m often out when the bin goes out on Tuesday night doesn’t mean I’m a pushover.\n\nIf you’re stuck for a bin, ask me and I’ll tell you who to ring. It’s not hard. But putting your bags into mine without asking and leaving me to pay for them is taking the piss.\n\nThe bin goes out Tuesday night for collection on Wednesday morning. From now on, leave it alone. If this keeps happening, I’ll start putting a padlock on it.\n\nWhoever you are, stop. Simple as.\n\n**No. 14, Aughrim Terrace**",
+  "words": 290,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37104833126068115,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9739243388175964,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.5991650819778442,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.1,
+    "effort": "low",
+    "output_tokens": 377,
+    "input_tokens": 18185
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Mikaela, happy to give you the real version. You were a huge help when Dave did his shoulder, so it's the least I can do.\n\nQuick background: we've got 290 cows, mostly 3-way crossbreds, and we started on 21 Sept after mating had begun. Mornings are 5.15 every day. We skip the arvo milking Tues, Thurs and Sat, plus Sunday arvo, so it's four once-a-days a week.\n\nProduction is down about 6% in milksolids on the same weeks last year, going off the Fonterra app. Our rep told us to expect 8-10%, so it's come in a bit better than that, but it's a real drop and you want to be fine with it going in.\n\nCells did go up. We went from about 110k to roughly 180k over the first 3 weeks, which gave me a fright. They're back to around 135k now, so settled, but not all the way back to where they were.\n\nThe cows came round quicker than I thought. About 4 days of bellowing at the gate and then they were fine. Lameness has been way down too. We've got 4 on the lame list now vs 11 this time last year, and our walk to the back paddocks is 1.8km, so fewer trips up and down the track clearly helps.\n\nNow the bad bit. We had a heifer with mastitis go bad on a skipped arvo. We didn't spot it till the next morning and she lost a quarter. That's the big thing I'd tell you. You have to be on your game with teat spraying and checking cows on the skip days or it bites you. You can't get slack just because it's a lighter day.\n\nThe good side is that the first Sunday arvo we skipped, Dave and I went to Hamilton to see the grandkids. First Sunday off in spring in 20-odd years. And Kieran, our 2IC, said it's the first spring he hasn't wanted to quit by October. With your young fella already talking about leaving over the hours, I'd take that seriously. And if Tom's knees are bad, the arvos off will help more than anything.\n\nSo honestly, we wouldn't go back. The hours alone are worth the 6% to us. But that's one season on our farm with our people, and I don't want to talk you into it and have you blaming me in March! Your vet and the rep are both giving you a fair steer, it just depends what matters more to you guys.\n\nIf you want to see how we've got it set up, come have a look at our shed rosters and numbers at the field day at Kerrisons on the 19th. Or ring me any time if you'd rather talk it through, it's easier than texting and my thumbs are useless anyway.",
+  "words": 471,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18720972537994385,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03359673172235489,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.7265625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.32093620300293,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.1,
+    "effort": "high",
+    "output_tokens": 2324,
+    "input_tokens": 1962
+  }
+}

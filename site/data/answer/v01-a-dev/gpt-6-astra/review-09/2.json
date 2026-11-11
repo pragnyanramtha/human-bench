@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Four stars out of five. We would buy it again, but I would not tell every small congregation to spend this much.\n\nWe paid Chancel AV $2,140 for the Lindqvist Optics PT-20 in February 2026, plus another $95 for the wall mount. It replaced the webcam we had used to livestream worship since 2020. We usually have 30–60 people watching on YouTube on a Sunday, and we wanted to give them a clearer view of what was happening without making the system too difficult for our volunteers to operate.\n\nOur nave is 92 feet long, with the camera mounted on the balcony rail at the back. The 20x optical zoom makes a real difference at that distance. We have nine presets saved: altar, pulpit, lectern, font, choir loft, piano, a wide view, and two views of the chancel steps. That gives us the views we need during worship without someone having to aim the camera from scratch each time.\n\nFor those comparing specifications, it provides 1080p60 video, NDI HX and a plain HDMI output. Power over Ethernet means one cable up to the balcony, which was helpful for our installation. We still run everything through OBS on the old office PC and stream to our YouTube channel. Buying this camera did not require us to replace that whole setup.\n\nIt was not trouble-free out of the box. On the first Sunday, the presets had drifted a few degrees by the sermon. When you have saved a view of the pulpit, you do rather expect it to remain a view of the pulpit. The firmware 2.4 update in March fixed that problem for us. The manual is thin and badly translated, and I would not have wanted to rely on it alone. Marcy at Chancel AV was excellent on the phone. That support mattered, especially at this price.\n\nThe picture is a substantial improvement over our old webcam. Delores, who is 82 and homebound, called to say she could finally read the hymn numbers on the board. That was a more useful test for us than any specification on the box.\n\nLow light has limits. At our Easter Vigil in April, during the first “Christ the Lord Is Risen Today” with only candles, the picture became grainy. It remained usable, though. Our old webcam would have shown little more than dots of light. I would not describe the PT-20’s candlelight picture as beautiful, but people at home could see the service.\n\nAutofocus is another limitation. If someone walks between the camera and the pulpit, it can hunt for focus. We now lock focus on the presets. That is something worth learning before a service rather than during the sermon.\n\nOrdinary operation has been much easier than sorting out those initial details. Erik, our 16-year-old acolyte, runs the camera from the free web app on a tablet. He learned it in one afternoon. I am not an engineer, and I have learned more about this camera than I expected to, but it is manageable for volunteers once it is set up.\n\nOne important caution: this did nothing for our sound problem. Audio is not the camera’s job. If people cannot hear your readers or understand the sermon, a better picture will not fix that, and you should leave room in the budget to address it separately.\n\nFor our long nave and the people joining worship from home, this has been a worthwhile purchase. Still, a congregation under 100 might do perfectly well with something cheaper. My advice is to consider the distance you need to cover, your lighting, and your sound before spending the money. Four stars: a much better view of worship, with some setup work and a few limitations you should know about beforehand.",
+  "words": 624,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28586530685424805,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.019770940765738487,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.079095840454102,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.5,
+    "effort": "medium",
+    "output_tokens": 771,
+    "input_tokens": 14084
+  }
+}

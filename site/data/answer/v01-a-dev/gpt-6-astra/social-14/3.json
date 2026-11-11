@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties ❤️ Let me answer the question that apparently keeps getting routed through my mama: yes, I’m coming to Thanksgiving! I’ll be at Aunt Denise’s in Macon on Thursday, November 26, ready to eat around 3. I’m bringing mac and cheese and two sweet potato pies, so save some oven space for me.\n\nBefore we get together, I want to say something about last year. For those who weren’t there, you don’t need a play-by-play. A conversation about my job got heated, and I let it turn into a personal argument. I made a smart remark about where somebody gets their news, and that was unnecessary. I could have stopped talking. Instead, I helped make the table uncomfortable, and Grandma Pearl ended up spending part of her holiday out on the porch. I still feel bad about that.\n\nI’m not sorry for the work I do. I am sorry for how I talked to family at Grandma’s holiday. I should have handled myself better, and this year I intend to.\n\nSo I’m asking for a one-day truce on work and politics. Also, I can’t discuss open cases because of confidentiality, so questions about “the lawsuit” really are a dead end. That’s not me being difficult; it’s a boundary I have to keep.\n\nI know we like to poke at each other, and I don’t want one ugly afternoon to become the thing we carry into every gathering. There’s been some kindness since then, even if we haven’t figured out how to talk about what happened. That matters to me.\n\nCan we keep the table conversation to food, football, babies, and Tasha’s new boyfriend? Tasha, you can set your own confidentiality rules 😂\n\nI’m coming because I want to see everybody. I want us to eat well, laugh, and have a good day together. Love y’all.",
+  "words": 308,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The piece never says the relative isn't a bad guy and only likes to poke, and it never mentions the August birthday thumbs-up; \"we like to poke at each other\" and \"some kindness since then\" are too vague to count."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4944373667240143,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.29370981454849243,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.46875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.891452312469482,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 390,
+    "input_tokens": 13944
+  }
+}

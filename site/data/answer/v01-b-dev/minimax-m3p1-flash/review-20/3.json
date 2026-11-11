@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the post, ready to paste — factual, specific, and without the heat:\n\n---\n\n**Sunbelt Charter Coaches — dispatch failure on a 220-person event. Hold off booking them for anything large.**\n\nOur client dinner on Thursday, Nov 5 was set for 220 people, with a 6:15 p.m. pickup from our hotel to a ranch venue out in Henderson. We booked four coaches and had it confirmed in writing twice, including a final confirmation on Tuesday, Nov 3. We paid $8,400 total — a 50% deposit in September and the balance seven days out.\n\nOnly two buses showed up.\n\nThe first was 55 minutes late; the driver told us he'd picked up the job at 5 p.m. that evening. The second broke down on the 215 with the AC dead, leaving people on the shoulder for roughly 40 minutes. We put 60 of them into Ubers and Lyfts on our company card for about $1,900. Dinner started at 8:40 p.m. instead of 7:00, and the caterer charged us overtime because of it.\n\nHere's what I can accept and what I can't. One late bus is bad luck. Having no backup plan and no communication for a 220-person event is a dispatch failure, not a scheduling error. Since Friday the office line has gone straight to voicemail, and Corey — the dispatcher named on all of our paperwork — hasn't responded. I've requested a refund on the two coaches that never came plus our rideshare costs. No response yet.\n\nTo be fair: Sunbelt did two small airport runs well for us last spring, and that's exactly why we trusted them with this. We didn't pick them casually.\n\nRight now my client is deciding whether to keep us for their March event, and that decision is in Sunbelt's hands. I'd advise other planners here to hold off booking them for anything large until dispatch is fixed and someone is actually reachable. If the number of buses and the number of vehicles and the people running them don't match, check that before you sign.\n\n---\n\nTwo things you may want to tweak: whether to include your contact info for other planners to reach you directly, and whether the board lets you attach a star rating — I left both out since you didn't specify. Word count is about 350.",
+  "words": 385,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37580549716949463,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8434872627258301,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6707580089569092,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "provider default",
+    "output_tokens": 1732,
+    "input_tokens": 666
+  }
+}

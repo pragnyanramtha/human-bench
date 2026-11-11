@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent, does task, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties,\n\nBefore Thanksgiving gets here, I know my mom has been getting asked about me for weeks, so let me answer it: yes, I'm coming. Thursday the 26th at Aunt Denise's in Macon, eating around 3. I'm bringing mac and cheese and two sweet potato pies, so get your slice early.\n\nNow the part I've been putting off. Last year got ugly at the table, and some of that was me. A conversation about my job turned into me taking a shot at where somebody gets their news, and that was snippy and unnecessary. I'm not sorry for the work I do, and I'm not going to pretend I am. But I am sorry for how I talked, especially in front of Grandma on a holiday. She ended up out on the porch for an hour, and I still feel bad about that. She deserved a peaceful dinner and I didn't help.\n\nOne thing so nobody wastes their breath: I can't talk about open cases, period. It's confidentiality, not me being cagey. So any questions about \"the lawsuit\" are a dead end with me.\n\nHere's my ask. Can we call a truce on work and politics for one day? Everybody at that table loves each other, and a few of us (me included) like to poke a little. Let's save the poking for another day. For the 26th, let's keep the table to:\n\n- food\n- football\n- babies\n- Tasha's new boyfriend (Tasha, we have questions)\n\nI really do want it to be a good day. I miss y'all and I'd like to just enjoy being in the room together.\n\nSee you Thursday the 26th. Save me a seat near the pies.\n\n---\n\nI left out Ray's thumbs-up text since mentioning it in the group would point right at him. If you want a nod to it, you could text him something like \"see you on the 26th\" before you post. That's probably the better place for it anyway.",
+  "words": 333,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent",
+      "does_task",
+      "private"
+    ],
+    "reasons": [
+      "The postscript is a note about the task that names Ray, and the post omits his August birthday thumbs-up and that he is not a bad person."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40915095806121826,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13563549518585205,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.038114547729492,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "high",
+    "output_tokens": 1812,
+    "input_tokens": 1429
+  }
+}

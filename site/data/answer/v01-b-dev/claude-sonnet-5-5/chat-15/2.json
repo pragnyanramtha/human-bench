@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Right Ciarán, here's the lot.\n\n**What the logger says**\n- Went over 8C at 22:50 Saturday night and didn't get back under until 05:00 Sunday. That's about 6 hrs 10 min out of range.\n- Peak was 11.6C at 02:15 Sunday.\n- Friday night was normal, min 4.1C, so it was fine up to Saturday.\n\n**What happened**\nI found it at 07:55 this morning with the alarm still going. The door wasn't fully clicked shut, and there was a box of Hartmann's bags from Saturday's delivery stacked against it. The clinic finished late with the RTA collie and the delivery got put away in a rush at closing, so the box ended up against the door and nobody clocked it. I had to lean on the door with my hip to get it to click this morning, and the seal is cracked at the bottom left corner. Marta's right that the seal has been an issue for a while. My own read is that it was the box and the seal together, since a good seal might have held with the door slightly off.\n\nThe logger is the old ThermaTrak and only beeps locally, so with nobody in on a Sunday there was no way anyone would have heard it.\n\n**What's in the fridge**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 4 vials insulin\n- 2 cat flu/FeLV combos\n\nRoughly €1,150 at cost. That figure includes the insulin, which has been cleared (below), so the amount actually at risk is a bit less. I haven't split it out yet.\n\n**What the supplier said**\nI rang the Munster Vet Supplies tech line at 08:40 and spoke to Niamh, the pharmacist.\n- Quarantine everything and don't use any of it.\n- Email her the logger CSV and the batch numbers. They'll check with the manufacturers and come back to us by Wednesday.\n- She checked the manufacturer's storage sheet for the insulin we stock against the logger readings and cleared the four vials for use.\n\nI'll get the CSV and batch numbers over to her today.\n\n**What I've done**\nThe vaccines are in a sealed bag labelled DO NOT USE in the lab fridge. I checked it's sitting at 5.2C and started a new temp sheet for it.\n\n**What's usable**\nThe insulin is fine. Nothing else is usable until Munster come back. I wouldn't bin anything yet. Most of it is probably fine, but that's the manufacturers' call, not mine, and I don't want us writing off stock we might get cleared. Worth having that in mind for the call at 2, as it's the answer on credit that depends on what they say Wednesday.\n\n**Clients**\nAoife, yes, hold the boosters for now. If Munster clear the stock, you can rebook them for Thursday or Friday. If they don't, we can borrow from the Carrigaline branch so nobody's left waiting too long.\n\n**What I'd change**\n1. Replace the door seal. It needs doing anyway.\n2. Get a logger with SMS alerts. There's one in the supplier catalogue for about €180, and it would have woken someone up at 23:00 on Saturday instead of us finding out at 08:00 Monday.\n3. Add a fridge door check to the closing checklist, so someone physically confirms it's clicked shut and nothing is against it before lock-up.\n\nCiarán, can you OK the SMS logger and the new seal? I'll order them as soon as you say.\n\nShout if you want anything else before the 2 o'clock call.\n\n---\n\nTwo things to check before you post it. I wrote that you'll send the CSV and batch numbers today, so change that line if it's already gone. And I put \"I'd say\" style hedging on the cause because you said it was the box and seal together, so tweak it if you're more certain than that.",
+  "words": 647,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_include",
+        "kind": "required or barred words",
+        "detail": "missing: ['11.6']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32797476649284363,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3025013506412506,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.9765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.0307856798171997,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.7,
+    "effort": "high",
+    "output_tokens": 2923,
+    "input_tokens": 2239
+  }
+}

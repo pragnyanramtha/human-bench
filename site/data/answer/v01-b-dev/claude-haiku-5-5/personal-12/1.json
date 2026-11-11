@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Right, listen up, this is the plan.\n\nMorag who owns the salon has said I can have the place to myself the Saturday afternoon before Gran's 80th, so I'm doing everyone's hair for free before we go for her dinner. Yes, FREE. Stop it.\n\n**The details:**\nSaturday 12 December, from 1pm at Hair by Morag on Dumbarton Rd. Morag closes at 12 that day so it'll just be us. Gran's actual birthday is the Sunday, but the Saturday's the pamper session. Dinner's booked for 8.30 at the Italian on Byres Rd, table for nine including Uncle Davie and Kirsty's man.\n\n**Who's getting done:**\nMe, Mum, Kirsty, Linda, Gran, plus Ava and Ruby. That's seven heads, so I'll be busy.\n\n**What's included:**\nCut and blow-dry for everyone, no question. Colour's the bit I need answers on. If you want a colour, tell me what you want by **Friday 27 November** so I can order from the wholesaler in time. Not the Wednesday before. I'm not ordering in for someone who decides at the last minute. Linda, I'm looking at you. Last time I did your colour in your kitchen we ended up with dye on the cooker and on the dog, so this time you're getting the proper chair.\n\nAva and Ruby are getting wee braids and glitter spray, they'll love it. Don't tell them yet or they'll never sit still.\n\n**Gran:**\nShe said at Easter she'd love to go silver properly, but she'd never pay salon prices, so this is her birthday sorted. She doesn't know yet, so keep it zipped. Mum, you're on Gran duty. You need to get her to the salon for 1pm without telling her why. Think of something. \"Just a wee run out\" usually works.\n\n**Fizz:**\nBring a bottle. Morag says that's fine as long as we tidy up after ourselves, so we're tidying up after ourselves.\n\nSo, to sum up: reply to me by Friday 27 November with whether you want colour, what colour, and anything else you're after. Cut and blow-dry is already a yes for everyone.\n\nLove you all, see you there.",
+  "words": 350,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5620050430297852,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.30281326174736023,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.476914405822754,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.9,
+    "effort": "medium",
+    "output_tokens": 1939,
+    "input_tokens": 1479
+  }
+}

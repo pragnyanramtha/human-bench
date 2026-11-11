@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Wellsford Road: what went wrong with our collisions figures, and what we are changing\n\nOn 2 November we published an analysis of Department for Transport collision records for Bristol roads from 2021 to 2025. It said Wellsford Road in Fishponds had 41 injury collisions over those five years, more than any other road in the city. That figure was wrong. The correct number is 23, which puts Wellsford Road sixth. We corrected the article on 6 November and updated the table, but a line at the foot of the page was not a full enough explanation, and this post is meant to give one.\n\nWhat went wrong\n\nOur analysis joins two sets of records: the collisions themselves, and the roads each one is recorded against. In that join, some collision and road pairs were duplicated, so the same accident could be counted twice in a single road's total. We did not catch this before publication. On Wellsford Road, 18 duplicate entries were removed, mostly at junctions near Pell Street and Kingsmere Road. Once they were removed, the total fell from 41 to 23.\n\nWe have now rerun the full citywide table, counting each accident once per road. No other road moves more than two places, but several totals do change. The corrected top six is below.\n\n1. Kingsmere Road: 32 (previously 34)\n2. Alder Hill: 31 (previously 31)\n3. Tanner's Way: 28 (previously 29)\n4. Crossfield Road: 26 (previously 27)\n5. Hambrook Lane: 24 (not previously in the top five)\n6. Wellsford Road: 23 (previously 41, first)\n\nOf Wellsford Road's 23 collisions, three were serious and none were fatal.\n\nWhat this means for the road\n\nThe corrected figure is lower, and we are not going to pretend otherwise. But 23 injury collisions in five years, three of them serious, on a road many children walk along to get to school, is still a serious number. We are not saying the road is fine.\n\nNor can a collision count alone tell you how safe any particular crossing or stretch is. Parents asking whether it is safe to walk to Wellsford Primary are asking something the data can inform but cannot fully answer. It is a fair question to put directly to the council's road safety team, and we would encourage residents to do so.\n\nAn apology\n\nWe got this wrong. The mistake was ours as a desk, not the fault of any one person, and we are sorry. The original article was viewed around 48,000 times before the correction, so an incorrect figure reached a large audience. Residents of Wellsford Road have since been described locally as living on the deadliest road in Bristol. On the basis of our own figures, that was never a fair description, and we are sorry for the worry this has caused the people who live and walk there.\n\nWhat we are changing\n\nFrom now on, when we publish a ranked table, we will:\n\n- publish the cleaned dataset and the code used to produce it, alongside the story, so anyone can check our working;\n- have a second analyst independently reproduce every ranked table before it is published.\n\nWe should have done both for this story. We will do both for the next one, and for every one after it.\n\nMeeting the forum\n\nWe will attend the Fishponds Streets Forum open meeting at Fishponds Library on Tuesday 17 November at 7pm, and I will answer questions there in person. If you cannot make it, leave your questions in the comments below and we will answer them publicly.\n\nNell Garside\nData Desk, Western Ledger",
+  "words": 584,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.020065000280737877,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02281469851732254,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.1875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.0103795528411865,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.8,
+    "effort": "medium",
+    "output_tokens": 4518,
+    "input_tokens": 4776
+  }
+}

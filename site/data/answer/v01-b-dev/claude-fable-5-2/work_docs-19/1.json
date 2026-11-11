@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "@Deirdre Fortuin Thank you for asking me and not just announcing it, that honestly means a lot.\n\nI won't pretend I'm fine about it, I'm gutted. Noma has been with me in the Seahorses for three years, since my very first year of teaching, and she basically trained me. But I understand it's a numbers thing and not personal, and with 24 little ones Bronwyn needs the help more than I do. So I'm not asking you to change it. (Bronwyn, I'm holding you to that promise!)\n\nWhat I'd like is a proper handover, because the first weeks of Grade R are the hardest of the year. There are new kids crying at the gate every morning, and a new assistant and a new group at the same time is a lot at once. Two things I'd like you to put to SMT please:\n\n1. Could Charlene come in for a day or two in the last week of term (1-4 Dec)? I know she only officially starts on 11 Jan, but that would let her meet Noma and see the routine while it's actually running. Otherwise I'm trying to explain it all in the three days before schools open.\n\n2. Could Noma pop across for morning ring in the first week back, from 14 Jan? Even just 15 minutes. She does the isiXhosa songs and the kids ask for \"Noma's song\" every single day. Luthando and Mia in next year's group already know her from aftercare too, so a familiar face at ring would really help settle things. Grade 00 is just across the courtyard, so it shouldn't take her away from Bronwyn for long.\n\nI'll make it work either way, but those two things would make a big difference to me and to the kids. Thanks again, Deirdre.\n\n---\n\nI left out Zayd's meltdowns because the whole staff can see the comment and it names a child. If you want it in, add this after \"she basically trained me\": \"She was also the only one who could calm Zayd in Term 2.\"",
+  "words": 344,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The closing note about why Zayd was omitted is about the task rather than part of the requested comment."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2774334251880646,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12238609045743942,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.314453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.18182170391082764,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.3,
+    "effort": "high",
+    "output_tokens": 2008,
+    "input_tokens": 2028
+  }
+}

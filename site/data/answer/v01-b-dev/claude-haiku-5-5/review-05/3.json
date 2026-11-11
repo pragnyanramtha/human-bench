@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: 3 stars. Great tub, a leak, and a fitting I didn't expect\n\nHarbourline built me a really good mobile grooming van. The stainless tub and the ramp are the best part of it. Dogs walk right in, I can lift them without my back hating me, and I'd pick that setup again.\n\nNow the rest. My van was in Glenn's shop from October 27 to November 6, so ten days off the road. Before the work even started, I was in Bedford with my 110 lb Bernese, Moose, in the tub when the hot water line let go and water got everywhere, including down into the cabinet. I had to towel him off and send him home half done, and I cancelled the rest of that day plus six bookings. Moose sat through the whole flood like a king. He did not care at all. I was the one screaming.\n\nWhen I emailed Glenn, his first reply said these lines don't usually just let go. He said it was probably the heater running dry or something hanging off the pipe, which would be user error and not covered by the 12-month warranty. I don't run it dry, and the line is behind a cabinet door, so I pushed back. What bothered me most was that he assumed the cause before anyone looked at it. That's what made me mad, not the leak itself. Stuff breaks.\n\nHe did own it in the end. When the van came back, Glenn said the compression fitting on the outlet was a cheaper part his supplier had swapped in, that it was on them, and that he'd replaced all the hot-side fittings. He also knocked the $180 diagnostic fee off as goodwill. I'll give him credit for that. Owning it is what counts, and he did.\n\nSo why three stars and not four or five? Because the first answer I got was that I'd broken it, and I had to fight to get to the real cause. The work itself is solid, and the tub is great.\n\nFor anyone else thinking about Harbourline or any trades job with a warranty: get the warranty terms in writing before you pay. Specifically, ask what counts as user error and who decides. Mine turned out to be a supplier part, but I only found that out because I kept pushing.",
+  "words": 380,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the van was in Glenn's shop from October 27, although the appointment was not until November 3."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28975698351860046,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13919073343276978,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.07326078414917,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "medium",
+    "output_tokens": 1895,
+    "input_tokens": 3693
+  }
+}

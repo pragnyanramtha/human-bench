@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "coherent, does task, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties,\n\nBefore Thanksgiving, I know a few of you have been asking my mom whether I'm coming. I am! I'll be at Aunt Denise's in Macon on Thursday the 26th, and we're eating around 3. I'm bringing mac and cheese and two sweet potato pies, so there's plenty to go around.\n\nFor the cousins who weren't at the table last year, it got heated and then it got ugly, and Grandma Pearl ended up sitting out on the porch for about an hour. I still feel bad about that. I'm not sorry for what I do for work, and I won't pretend to be. But I am sorry for how I talked that day. I got snippy and made a crack about where somebody gets their news, and that was on me. Nobody should have to leave their own holiday to get a little peace.\n\nOne quick thing on work: I can't talk about open cases, that's just confidentiality. So if you're curious about \"the lawsuit,\" I've got nothing for you. I'm not being cagey, it's the rule of the job.\n\nSo here's my ask. Can we call a truce on work and politics for one day? Nobody has to agree on anything or change their mind. We just park it until Friday. At the table, let's stick to food, football, babies, and Tasha's new boyfriend, who I think we all have questions about.\n\nAnd to whoever sent me a thumbs up on my birthday in August: got it, and I appreciated it.\n\nI love this family and I want it to be a good day. See y'all Thursday.\n\n---\n\nIf the birthday line feels like it points at Ray too much for a group post, cut it and send him a text instead.",
+  "words": 297,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent",
+      "does_task",
+      "private"
+    ],
+    "reasons": [
+      "The closing note addresses the writer rather than the group, names Ray as the person connected to the dispute, and the post does not say that he likes to provoke but is not a bad person."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48913809657096863,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.055229172110557556,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.11474609375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.262292861938477,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.3,
+    "effort": "high",
+    "output_tokens": 1925,
+    "input_tokens": 1436
+  }
+}

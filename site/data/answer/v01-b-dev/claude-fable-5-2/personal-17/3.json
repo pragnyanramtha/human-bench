@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To everyone on Aughrim Terrace,**\n\nApologies to most of you, who this has nothing to do with. I don't know who it's meant for, so every house is getting one.\n\nSomeone on this road has been putting their rubbish in my bin. It's the grey Greenmount bin outside No. 14, with 14 painted on the lid in white, so there's no mistaking it for your own. It goes out Tuesday night and gets collected Wednesday morning, and for about a month now somebody has been filling it in between.\n\nI'm not talking about a crisp packet on the way past. It's full black bags, every week. Last Tuesday I got home at 3am and the lid wouldn't close. There were three bags in it that weren't mine, and one of them was full of nappies.\n\nGreenmount charge by weight, 41c a kilo. My bill is normally around €25 for two months. The last one was €63.20. So I've paid nearly forty quid to get rid of somebody else's rubbish, in a rented house, on a bartender's wages. You can imagine how I feel about that.\n\nA few things worth knowing. One of the bags had a gas bill envelope in it. The name was torn off, but the address was this terrace, so I know it's one of us and not someone passing through. A car was seen pulling up at the bin on Tuesday evening. And I work nights, so I'm coming and going at hours when most of the road is asleep.\n\nI'm not going knocking on doors and I'm not looking for a row. I have to live here the same as you. But I'm not a pushover, and I'm not paying for your rubbish any more.\n\nIf you're stuck for a bin, knock in to me at No. 14 and ask. I'll tell you who to ring and how to get sorted. It's not hard, and I'd much rather that than this.\n\nOtherwise, it stops now. If it happens again, the bin gets a padlock and you can make your own arrangements.\n\nThanks to everyone else for reading.\n\nNo. 14\n\nI left out that it was the fella across the road who saw the car, so nobody gives him grief over it. Add your name above \"No. 14\" if you want it signed.",
+  "words": 387,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.25182196497917175,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11759572476148605,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.283203125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.8290627002716064,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.3,
+    "effort": "high",
+    "output_tokens": 2186,
+    "input_tokens": 1316
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.30, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Okay Rohan, fair question, so you get a straight answer and not my LinkedIn voice. Sneha, thanks, I'm breathing. Badly, but breathing.\n\nLast Friday we let go 6 of our 14 people. It was the worst day I've had at work, worse than failing maths in 2nd sem, and you all remember that one, so you know I'm not exaggerating. Everyone got 2 months' pay, and I've been helping 4 of them with interviews. Already 2 have calls lined up. I'd do it again, but I still feel terrible about it.\n\nWhy we had to: we were raising a bridge round from the Hyderabad fund to get us to the next stage. The term sheet was basically ready, and on 28 Oct it fell through. The VC went quiet after that. I'm not going to pretend that's normal, and it's the reason we cut costs now and didn't wait.\n\nWhere things stand:\n- Runway is about 5 months after the cuts.\n- The app has around 41k monthly users. The plumbers and electricians side is growing well.\n- AC servicing is bleeding money, so we're shutting it down and going all in on housing society tie-ups. 3 societies in HSR have already signed pilots. It's not a sure thing, but it's the first thing in a while that feels like it could actually work.\n\nOn the 3 lakh: you and Divya put it into the friends round in 2025 on the same terms as everyone else, so there's no special treatment, and that's on me to be clear about. Is it at risk? Yes. Is it gone? No. I'm not going to promise it's safe, because I genuinely don't know yet. What I can promise is that I won't hide numbers from you.\n\nYou have every right to ask. You trusted me with real money. So can I call you and Divya properly this week? I'll walk you both through the actual numbers, the runway sheet, the pilot terms, and what happens in each scenario, good and bad. Divya asked the right question at dinner, so she should be on the call too.\n\nDon't start the sad face yet. I'm eating Maggi at the office at 11pm so often that the security uncle now asks if I want masala or plain. Amma asked last week if TCS is still hiring, and I told her I'm still hiring myself, which she did not find funny. So yes, I'm stressed, but I'm fine.\n\nComing Saturday, obviously. Pranav, you're buying, I'm told, so this is a good time to be on my good side. 🍻",
+  "words": 432,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2987126410007477,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.25953495502471924,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.336222648620605,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.3,
+    "effort": "medium",
+    "output_tokens": 2470,
+    "input_tokens": 1939
+  }
+}

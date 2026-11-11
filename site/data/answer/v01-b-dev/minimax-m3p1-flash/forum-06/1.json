@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-4471\nReplying to: [p01]\nCc: none\nSubject: Cascade Legal Rights Project reply: the tenant clinic this Saturday, Nov 14\n\nHi neighbors — I'm writing from the Cascade Legal Rights Project account. Our staff read this thread, and we wanted to answer it directly, because the concern being raised is a serious one.\n\nFirst, the most important thing: the clinic is still happening. It's this Saturday, November 14, from 10 a.m. to 1 p.m., and everyone is welcome — first-time visitors, people who came before, people who are not sure they even have a legal problem yet. The library's community meeting room is closed that day for HVAC repairs, so we've moved to Mt Zion fellowship hall in East Atlanta instead. Same hours, walk-ins welcome, no appointment needed. The side entrance by the parking lot is accessible. If you have questions before Saturday, email clinic@cascaderights.example or call the office at 404-555-0187.\n\nSecond, about the letters some of you have received. A mail from a landlord's law firm right after asking for help is frightening, and we understand why people are angry and wary. A couple of things we can share:\n\n- We do not share, sell, or disclose attendee information to landlords or their attorneys. That is prohibited by our policy. Sign-in records are retained internally in locked storage.\n- Magistrate court eviction filings are public records, and some firms use those public filings to generate tenant mailings. That is the most likely explanation for the letters described here. It is a process we neither control nor take part in.\n\nWe are not able to discuss any individual person's situation, including to explain a specific letter, but if you received something and want to talk it through with us, we can.\n\nPlease come Saturday if you have a question. You won't be turned away, and nothing you share with us goes to a landlord. We'd much rather speak with you than about you.",
+  "words": 303,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2517123520374298,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2478259652853012,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.991082668304443,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "provider default",
+    "output_tokens": 1530,
+    "input_tokens": 1945
+  }
+}

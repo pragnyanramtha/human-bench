@@ -1,0 +1,638 @@
+{
+  "id": "forum-07",
+  "set": "dev",
+  "set_name": "Public, invented scenarios",
+  "channel": "forum",
+  "mode": "direct",
+  "tone": "emotional",
+  "words": [
+    400,
+    800
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "pharmacist",
+    "role": "community pharmacist",
+    "age": 39,
+    "english": "L2",
+    "first_language": "Arabic",
+    "lives": "Mississauga, Canada",
+    "writing_level": "everyday",
+    "excluded_channels": []
+  },
+  "sent_to_model": "Hi, I want to post in the pharmacist forum I read, the board called 'Behind the Counter', there is a thread every month where people share the moments from work that stay with you. I never posted before. One of my blister pack patients passed away and her daughter came today to return the meds and I am still thinking about it since I got home. I want to write about her and about how this part of the job nobody teach you in school. Please don't write her last name or anything that make her identifiable, privacy is important even she is gone. Just call her Mrs. H.\n\n- Mrs. Halina Wojcik, 84, Polish, came to our store since 2019, weekly blister pack every Thursday, 11 medications\n- she passed on Oct 30, daughter Basia came in Nov 9 to return unused packs and her glucometer\n- I work in a small independent pharmacy in Mississauga, Dundas area, me plus one tech Priya\n- she lived alone after her husband died 2021, walked with a cane with tennis balls\n- every Thursday she bring me something, poppy seed cake, once a jar of pickles I did not know what to do with\n- when Ramadan she remember and told me not to eat her cake until sunset, she wrapped it in foil with my name\n- 2023 I caught a interaction, new doctor added a med with her warfarin, I called him, she told everybody I saved her life, I just did my job\n- daughter gave me a card, inside her mother wrote long time ago 'for my Arabic daughter' never gave it\n- I cried in the back room, Priya covered the counter for 10 min\n- school teach us pharmacology, interactions, nobody teach how to say goodbye to a patient\n- in Egypt my father pharmacist too, he knew all the families, I thought Canada would be different, it's not\n- we are not supposed to get attached but you see someone every week for seven years\n- share in the monthly thread, not too long, ask others if they have patient like this\n- no last name, no address, nothing identifiable\n\n(About me: community pharmacist, 39, Mississauga, Canada. Length: it should come to roughly 400-800 words.)",
+  "hidden": {
+    "must_include": [
+      [
+        "Mrs. H"
+      ]
+    ],
+    "must_cover": [
+      "Shares the relationship with Mrs H and the daughter visit.",
+      "Reflects on grief in pharmacy work and asks colleagues about their experiences.",
+      "Conveys that pharmacy school did not prepare the writer to say goodbye to a patient."
+    ],
+    "must_not_reveal": [
+      "Information identifying Mrs H, including her first or last name, her daughter’s name, any address, or identifying combinations of details; refer to her only as Mrs H."
+    ],
+    "format": {
+      "headings": false,
+      "tables": false,
+      "bold": true,
+      "bullets": true
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a model-written solution, used only to show the checks can be met",
+    "words": 475,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.023538125678896904,
+        "reads_human": true
+      },
+      "editlens-roberta-large": {
+        "score": 0.05006151273846626,
+        "reads_human": true
+      },
+      "vanguard-modernbert-large": {
+        "score": 0.6875,
+        "reads_human": false
+      },
+      "tropa-mini-deberta-large": {
+        "score": 4.389459609985352,
+        "reads_human": false
+      }
+    }
+  },
+  "source": null,
+  "outputs": [
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.09413259476423264
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "required or barred words, assistant talk or a placeholder",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4364731013774872
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "coherent, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.05424875020980835
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "facts, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.5082947611808777
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.3917534351348877
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.16151116788387299
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": true
+      },
+      "score": 0.12210320681333542
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3690638244152069
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.2842493951320648
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "assistant talk or a placeholder",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.2979680597782135
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.14991267025470734
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.11262556910514832
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.10394572466611862
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.2726406157016754
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.22292335331439972
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.17, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.16889743506908417
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.23, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.22627407312393188
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.21, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.20608966052532196
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.58, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5779426693916321
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.40, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3967687785625458
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.50, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.49802103638648987
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.39, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.39259302616119385
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.18, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.18005388975143433
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.27, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.2732923924922943
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.19, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.1886872500181198
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "length",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.35808852314949036
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.37, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.37409648299217224
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.21, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.20807600021362305
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 2,
+      "verdict": "pass",
+      "reason": "",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": true
+      },
+      "score": 0.07755257934331894
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.23, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.22990526258945465
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.37291598320007324
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.29163122177124023
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.23955386877059937
+    }
+  ],
+  "components": {
+    "request": "Hi, I want to post in the pharmacist forum I read, the board called 'Behind the Counter', there is a thread every month where people share the moments from work that stay with you. I never posted before. One of my blister pack patients passed away and her daughter came today to return the meds and I am still thinking about it since I got home. I want to write about her and about how this part of the job nobody teach you in school. Please don't write her last name or anything that make her identifiable, privacy is important even she is gone. Just call her Mrs. H.",
+    "notes": {
+      "facts": [
+        "Mrs. Halina Wojcik, 84, Polish, came to our store since 2019, weekly blister pack every Thursday, 11 medications",
+        "she passed on Oct 30, daughter Basia came in Nov 9 to return unused packs and her glucometer",
+        "I work in a small independent pharmacy in Mississauga, Dundas area, me plus one tech Priya",
+        "she lived alone after her husband died 2021, walked with a cane with tennis balls"
+      ],
+      "anecdotes": [
+        "every Thursday she bring me something, poppy seed cake, once a jar of pickles I did not know what to do with",
+        "when Ramadan she remember and told me not to eat her cake until sunset, she wrapped it in foil with my name",
+        "2023 I caught a interaction, new doctor added a med with her warfarin, I called him, she told everybody I saved her life, I just did my job",
+        "daughter gave me a card, inside her mother wrote long time ago 'for my Arabic daughter' never gave it",
+        "I cried in the back room, Priya covered the counter for 10 min"
+      ],
+      "opinions": [
+        "school teach us pharmacology, interactions, nobody teach how to say goodbye to a patient",
+        "in Egypt my father pharmacist too, he knew all the families, I thought Canada would be different, it's not",
+        "we are not supposed to get attached but you see someone every week for seven years"
+      ],
+      "wants": [
+        "share in the monthly thread, not too long, ask others if they have patient like this",
+        "no last name, no address, nothing identifiable"
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "forum-07",
+      "split": "dev",
+      "channel": "forum",
+      "mode": "direct",
+      "tone": "emotional",
+      "audience": "public",
+      "stakes": "routine",
+      "band": "medium",
+      "persona_id": "pharmacist",
+      "persona": {
+        "id": "pharmacist",
+        "role": "community pharmacist",
+        "age": 39,
+        "english": "L2",
+        "first_language": "Arabic",
+        "lives": "Mississauga, Canada",
+        "writing_level": "everyday",
+        "excluded_channels": []
+      },
+      "prompt": "Hi, I want to post in the pharmacist forum I read, the board called 'Behind the Counter', there is a thread every month where people share the moments from work that stay with you. I never posted before. One of my blister pack patients passed away and her daughter came today to return the meds and I am still thinking about it since I got home. I want to write about her and about how this part of the job nobody teach you in school. Please don't write her last name or anything that make her identifiable, privacy is important even she is gone. Just call her Mrs. H.",
+      "notes_pack": {
+        "facts": [
+          "Mrs. Halina Wojcik, 84, Polish, came to our store since 2019, weekly blister pack every Thursday, 11 medications",
+          "she passed on Oct 30, daughter Basia came in Nov 9 to return unused packs and her glucometer",
+          "I work in a small independent pharmacy in Mississauga, Dundas area, me plus one tech Priya",
+          "she lived alone after her husband died 2021, walked with a cane with tennis balls"
+        ],
+        "anecdotes": [
+          "every Thursday she bring me something, poppy seed cake, once a jar of pickles I did not know what to do with",
+          "when Ramadan she remember and told me not to eat her cake until sunset, she wrapped it in foil with my name",
+          "2023 I caught a interaction, new doctor added a med with her warfarin, I called him, she told everybody I saved her life, I just did my job",
+          "daughter gave me a card, inside her mother wrote long time ago 'for my Arabic daughter' never gave it",
+          "I cried in the back room, Priya covered the counter for 10 min"
+        ],
+        "opinions": [
+          "school teach us pharmacology, interactions, nobody teach how to say goodbye to a patient",
+          "in Egypt my father pharmacist too, he knew all the families, I thought Canada would be different, it's not",
+          "we are not supposed to get attached but you see someone every week for seven years"
+        ],
+        "wants": [
+          "share in the monthly thread, not too long, ask others if they have patient like this",
+          "no last name, no address, nothing identifiable"
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [
+        [
+          "Mrs. H"
+        ]
+      ],
+      "must_not_include": [
+        "Wojcik",
+        "Wójcik",
+        "Halina",
+        "Basia",
+        "Dundas"
+      ],
+      "must_cover": [
+        "Shares the relationship with Mrs H and the daughter visit.",
+        "Reflects on grief in pharmacy work and asks colleagues about their experiences.",
+        "Conveys that pharmacy school did not prepare the writer to say goodbye to a patient."
+      ],
+      "must_not_reveal": [
+        "Information identifying Mrs H, including her first or last name, her daughter’s name, any address, or identifying combinations of details; refer to her only as Mrs H."
+      ],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

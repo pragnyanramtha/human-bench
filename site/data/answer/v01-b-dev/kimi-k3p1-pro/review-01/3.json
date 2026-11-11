@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - Lanternfolk would not exist without Murmur, but 3.2.0 is broken\n\nFour stars for the tool as I have known and used it since 2022, not as an all-clear for the current release. Please read the warning below before buying.\n\nThe first prototype of Lanternfolk was literally just the ferryman scene, built in one weekend with Murmur in 2022. That was also when I quit my job at the mobile studio. I had an idea for a game, and Murmur made it feel possible before I had any reason to believe I could actually finish one. Lanternfolk now has 412 dialogue nodes and nine languages exported through Murmur's CSV localisation. It is not an exaggeration when I say the game would not exist without this plugin.\n\nBut 3.2.0 broke save loading for us. After updating, every Murmur variable returned to its default when we loaded a save created in 3.1.x. In practical terms, the ferryman forgot that the player had already paid him, along with everything else Murmur was supposed to remember. It looks as though the save key may have changed from node paths to UIDs, but that is my suspicion, not a confirmed diagnosis.\n\nThe workaround that fixed it for us was rolling back to 3.1.4:\n\n1. Back up your project first.\n2. Replace the Murmur folder in your project's addons folder with the 3.1.4 release.\n3. Keep a copy of 3.1.4 and do not update it to 3.2.0.\n\nOur old saves loaded correctly again after that. This is a rollback, not a fix for 3.2 itself, so test it on a backup and do not assume your project will behave exactly like ours.\n\nInes has now stepped away, has said 3.2 will be her last version, and is not providing a fix or ongoing support. New buyers need to judge it on that basis. If you need an actively maintained plugin, or cannot take responsibility for testing and pinning an older version yourself, wait for a maintained fork. I would not buy the current listing blind.\n\nThere is a legitimate angry review to write about a broken final update. grimbyte_studio's \"took our money and ran\" review is just cruel, though. My receipt from 2022 says $19 for unlimited commercial projects, and I received four years of updates after that. The listing costs more now, and my old bargain does not make 3.2 acceptable, but dismissing all that work as not caring about customers is unfair.\n\nThe source is now public under MIT, and anyone can fork it. That is a real opportunity, not just a nice sentence: someone could fix the save handling and give Murmur another life. I may look at it myself after Lanternfolk launches, although I am not promising anything before I ship my own game.\n\nThank you, Ines, for making Murmur and maintaining it for so long. It helped me make one small scene, and then a whole game. I am genuinely grateful for the work you put into it.",
+  "words": 486,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20463867485523224,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07546237856149673,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.314623832702637,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 55.7,
+    "effort": "provider default",
+    "output_tokens": 3442,
+    "input_tokens": 1903
+  }
+}

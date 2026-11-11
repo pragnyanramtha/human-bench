@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, this is Thu, the owner of Lotus Garden Nails. I am sorry your toe hurt. I really mean that. I am not writing to fight with you. You have been my customer for two years, and I don’t want to talk to you like an enemy. Please excuse my English — I am upset typing this, and when I am upset my English gets worse.\n\nI want to tell the facts calmly.\n\nOn Saturday, Oct. 24, you had the deluxe pedicure, $45. My niece Vy did it. Vy is licensed three years, she was born in Houston, and she speaks English okay — she is just shy. I am sorry if she did not explain things well to you. But saying she barely speaks English is not fair to her.\n\nDuring the pedicure, you told Vy to cut your cuticle more, more — you wanted it clean. Vy told you not too much. You said it was fine, you always do. I am not saying this to blame you. I am saying it because it is part of what happened.\n\nI am not a doctor, so I am not going to argue about what caused your toe. But I want people to know how we clean. Every metal tool goes in the autoclave and comes in a sealed pouch, and we open the pouch in front of the customer. The file and buffer are new for each person, and the customer takes them home. The tub gets a plastic liner every single time. We passed our state inspection in August 2026 with no violations. The paper is on the wall. I have been in Houston 19 years and opened this salon in 2007 after working for my aunt. In all that time, never an infection complaint.\n\nWhen you came back on Nov. 2, I offered you the full $45 back and to pay your urgent care copay if you bring the receipt. You asked for $300 cash and a free pedicure for one year. I said no to that. I am sorry if you felt I shrugged at you — that was not what I meant. The $45 refund and the copay offer are still open. Bring the receipt and I will pay the copay.\n\nVy has been very upset since she read the forum. She cried and talked about quitting nails. That hurts me, because she is young and this has been hard on her.\n\nThe comment that all these places are dirty also hurts. We are not all the same. I understand people are worried, but one salon is not every salon.\n\nRenee, please call the salon or come in and talk to me. Ask for Thu. I will sit with you. Thank you, Marisol, for saying what you have seen at my salon.",
+  "words": 467,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3591083288192749,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21099023520946503,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.874561786651611,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 44.1,
+    "effort": "provider default",
+    "output_tokens": 2485,
+    "input_tokens": 980
+  }
+}

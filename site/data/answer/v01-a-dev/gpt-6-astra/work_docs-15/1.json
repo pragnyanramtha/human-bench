@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.48, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Going halves on a dumper\n\nLee,\n\nI reckon it’s worth us buying a tracked dumper between us rather than paying to hire one every time we’ve got a bigger job. We’ve been working together long enough to know what we’ll use, and I’ve put the sums down so you can have a proper look.\n\n**What we’re spending now**\n\nWe hired the tracked dumper from Sittingbourne for 14 days this year at £85 a day. That’s £1,190 before the £30 delivery charge each time, and roughly £1,600 all in over the year. That’s money gone, with nothing to show for it at the end.\n\n**What buying would cost**\n\nThere’s a bloke in Faversham selling a 2019 500kg tracked dumper for **£1,650 ono — £825 each** at the asking price. He says it had new tracks last spring, which we’d want to check, along with how it runs and tips.\n\nAt this year’s hire spend, the purchase price is covered in about a year. Even at half that use, it’s about two years. That’s before servicing and repairs, so it’s not the whole cost, but it gives us something sensible to compare against hiring.\n\nWe’ve already got three patio digs and the Boughton drive booked for spring, so there’s work lined up for it.\n\n**How we’d run it**\n\nIt can live under cover in my lean-to at the yard. Servicing and ordinary wear-and-tear repairs would be 50/50, fuel charged to whichever job it’s on, and whoever breaks it through misuse pays for that repair. We’d agree bookings between us so we both know when it’s available.\n\nIt’s not just the hire bill either. When they didn’t have one in September, we barrowed six tonnes of muck at Hernhill, lost two extra days and your back was gone for a week. Then there was the delivery that turned up at 11 and cost us half the morning.\n\nIf owning it doesn’t work out, we can sell it and split the proceeds. They tend to hold their value, though we shouldn’t bank on getting every penny back.\n\n**Come and look at it with me this Saturday**, before someone else has it. No need to commit until we’ve checked it over, but I reckon it’s worth a look.",
+  "words": 374,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4760948717594147,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8058660626411438,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.598324775695801,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.1,
+    "effort": "medium",
+    "output_tokens": 491,
+    "input_tokens": 13932
+  }
+}

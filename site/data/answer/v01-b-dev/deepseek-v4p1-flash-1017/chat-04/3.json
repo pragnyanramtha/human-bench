@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: s01\nCc: none\nSubject: none\n\nRenee — here’s the rundown for Monday’s admin meeting.\n\nFriday night we beat Brookhollow 31–14. That locks us in second in the region. Deshawn Pettaway had 3 sacks and 7 tackles, and the kids voted him defensive player of the week in the locker room before the coaches even met. Tavion Hurst ran for 188 yards and 2 touchdowns. His long TD in the third was behind the best blocking I’ve seen from our line all year — they pushed Brookhollow five yards back on that whole drive.\n\nPlayoff situation: AHSAA posted the brackets, and we host Clanton Valley in the first round Friday, Nov. 13, at 7 p.m. at Ridge Field. That’s a HOME playoff game, and I’d like Dr. Pruitt to know that so we can get folks out. Presale starts Tuesday, and Lyle needs the gate crew and chain crew confirmed by Wednesday.\n\nAcademics: the nine-week grade check is clean. All 52 kids on the roster are eligible — nobody on the list. Tonya Greer’s study hall on Tuesdays and Thursdays is the reason for that, and she deserves the credit, not me. She’s keeping it going through the playoffs.\n\nBoosters: the Boston butt sale finished with 208 sold and $6,240 raised. Goal was $4,500. That money goes toward the new sideline headsets, and Hargrove’s Meat Market did the smoking at cost. Gene’s getting a signup out for six more concessions workers for the playoff game.\n\nAnd a reminder on my end: if we win and go on the road, I’ll get the bus stuff to you. I know transportation needs requests five days out.",
+  "words": 268,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26971307396888733,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35408058762550354,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.967800140380859,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 4.9,
+    "effort": "provider default",
+    "output_tokens": 965,
+    "input_tokens": 1538
+  }
+}

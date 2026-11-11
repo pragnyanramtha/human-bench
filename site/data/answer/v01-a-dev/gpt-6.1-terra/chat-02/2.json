@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, yes, you can do this yourself. The $465 quote isn’t a ripoff, but with a helper I’d allow 2–3 hours and take your time. You’ll need oil and a filter, fuel stabilizer, pink propylene glycol antifreeze labeled for RV/marine use, a way to feed it to the engine, and containers to catch the discharge. Keep a spare raw-water pump impeller aboard, too.\n\nHector, I know the green stuff has worked for you, but I wouldn’t use automotive antifreeze here. Ethylene glycol is toxic and isn’t rated for this raw-water system. Use the pink RV/marine product, following both its instructions and Yanmar’s winterizing procedure. Neither kind belongs in the river. The engine’s raw water comes out through the exhaust, so set up collection there before starting and have your helper watch both flow and the collection containers. Collect the water-system discharge as well and dispose of it appropriately.\n\nSea Wren’s 3GM30F has two cooling circuits. The freshwater coolant circulates through the engine and a heat exchanger; check its strength with a suitable hydrometer. A proper 50/50 mix is generally good to about -20°F. The other side draws in raw water to cool it. That’s the side that needs winterizing—water left in it can freeze and crack things.\n\nHere’s the order I’d use:\n\n1. Warm the engine, then change the oil and filter while the oil is warm. Top off the fuel tank, add stabilizer as directed, and run the engine about 10 minutes to get treated fuel through the system.\n\n2. Set up your exhaust collection, then follow Yanmar’s procedure for flushing and protecting the raw-water circuit. Close the raw-water seacock and feed antifreeze through the strainer at idle, keeping the pump wet. Have your helper watch the supply, exhaust flow, and collection. Don’t run the pump dry. When the manufacturer’s procedure is complete, shut the engine off and leave the seacock closed. Check the discharged mixture for the required winter protection; pink color alone doesn’t prove it’s strong enough.\n\n3. For the domestic water system, switch off the water-heater breaker and drain the heater before bypassing it, or you’ll waste six gallons of pink filling the tank. The bypass valve on that Catalina is behind the companionway steps. Then winterize the rest of the water system according to its equipment and antifreeze instructions, catching the discharge and verifying protection. Leave the heater breaker off until the tank is refilled in the spring.\n\nFigure roughly two gallons for the engine and another two or three for the water system, but those are estimates. Buy enough to finish the manufacturers’ procedures and verify protection. Last I looked, it was about $6 a gallon at West Marine or Walmart. You can pull and inspect the old impeller if you like; in any case, keep a spare aboard.\n\nA few Christmases back, three boats on C dock cracked exhaust elbows or strainers after the owners skipped or rushed the raw-water side. That’s the part worth getting right.\n\nI can come down Saturday morning if you’d like a second set of hands.",
+  "words": 508,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21121390163898468,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.29322129487991333,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.227714538574219,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "low",
+    "output_tokens": 677,
+    "input_tokens": 19447
+  }
+}

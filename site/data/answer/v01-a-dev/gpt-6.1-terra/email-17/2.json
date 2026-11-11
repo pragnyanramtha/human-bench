@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject: Re: Our plan for next year**\n\nDear all,\n\nKiran, you’re right. I should have told you earlier and brought you into the conversation before the paperwork was under way. I started it because the agent needed my sponsor letter and bank statements, but that was exactly the point at which I should have looped you in. That’s on me, and I’m sorry.\n\nI’m also genuinely thrilled that Amma and Appa are coming. The idea actually started with Appa, when we were on the phone in August and Rohan showed him the vegetable patch on video. Appa said, “I could grow drumsticks there,” and we went from there! Anika has already made a laminated welcome timetable, including “Paati teaches us rasam, Tuesdays.” Amma, I hope you’re prepared.\n\nKiran, your questions are fair, especially about Appa’s heart. I don’t want to pretend that six months away after an angioplasty is something we can take lightly. I’ve got a travel insurance quote with pre-existing cardiac cover: it’s about £640 each for the six months, and the agent says it covers the stent. I’ll share the quote and policy details so we can all look at exactly what is covered before anything is booked.\n\nDr. Prakash has agreed to review Appa in March before they fly and to do a video consultation in July. He’s also happy to share his notes with me. Leicester Royal is about 15 minutes from our house and I know half the cardiology team, but I know that isn’t a substitute for having a proper plan or understanding what treatment and costs the insurance would cover. Let’s go through that together.\n\nOn the practical side, the annexe at the back is finished. It’s on the ground floor, with no steps, and has its own shower with a grab rail. They’ll have their own space, not just a room in the middle of our chaos.\n\nAnd yes, six months is a long time, particularly when Amma hasn’t been away from home for more than six weeks since Paati died. The plan is the first week of April to the end of September 2027, within the six-month limit per visit on the UK long-term visitor visa. But it doesn’t have to be all or nothing: the return ticket will be flexible, and Amma, if you want to go home earlier, you absolutely can. We can see how you’re both feeling as we go.\n\nI’m sorry too that the Pune plans for Ganesh Chaturthi got overlooked. One possibility is for Amma and Appa to fly from Leicester to Pune in September and finish their trip there. Or the Pune lot could come here in August—I’d love that, and I’ll cover your flights. Neither needs to be decided now; I’d like to hear what everyone would actually prefer.\n\nCould we all have a family video call this Sunday at 4pm UK time, 9.30pm India time? It would be good to talk everything through together, including what Amma and Appa want, and make sure we haven’t missed anything else.\n\nLove,  \nMeera",
+  "words": 508,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40602508187294006,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9736689925193787,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.818483352661133,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.7,
+    "effort": "low",
+    "output_tokens": 644,
+    "input_tokens": 19667
+  }
+}

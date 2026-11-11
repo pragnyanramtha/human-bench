@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #team-selection\nReplying to: s01\nCc: none\nSubject: Ustroń lineup\n\nGood evening Marek,\n\nI’d like to ask you to reconsider Liliana’s placement before the lineup is submitted on Friday. I was not consulted before the lineup was posted, although in your October note you said the players’ coaches would be consulted before the final decision. I’d appreciate the opportunity to discuss the selection with you and the other coaches.\n\nThe November rating list is one part of the criteria, but it doesn’t tell the whole story. Liliana scored 5.5/7 in the October rapid qualifier, finishing second, ahead of Maja and Antoni and drawing with Kacper. You also said form in club events would count, and that result seems relevant to the decision.\n\nLiliana missed about two weeks of training in October, but she is back to her normal level now. Her last three lessons have been very good. The -81 rating change reflects the Katowice open alone; she was already unwell there and still played all her games, so I don’t think that rating is a fair measure of her current strength. For privacy, please refer to this only as health reasons.\n\nI have nothing against Igor—he is a good player, and this is about applying the selection criteria consistently. My preference is for Liliana to play on board 2. If you’re not comfortable making that change on the available evidence, I’d be open to a short match between Liliana and Igor before Friday so the decision can be made on current form.\n\nCould we please resolve this before the submission deadline? I’m happy to discuss it constructively with you and the coaches.\n\nBest,\nOksana",
+  "words": 265,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2516731321811676,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3584965169429779,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.2353515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.125383377075195,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.7,
+    "effort": "medium",
+    "output_tokens": 354,
+    "input_tokens": 14981
+  }
+}

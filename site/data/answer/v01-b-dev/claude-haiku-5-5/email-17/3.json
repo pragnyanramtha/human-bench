@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Kiran, you're right, and I'm sorry. When the agent needed my sponsor letter and bank statements, I should have brought you in then, not after the paperwork was already moving. That's on me.\n\nI should also say that the idea came from Appa, not from me. It was back in August, when Rohan showed him the vegetable patch on video and he said, \"I could grow drumsticks there.\" I was as surprised as anyone, and I couldn't stop thinking about it after that. But I should still have checked with you first.\n\nOn your three points:\n\nAppa's heart. You're right that visitors don't get free NHS treatment, so I've been treating this as the main thing to get right. The travel insurance is a specialist policy with pre-existing cardiac cover, about £640 each for the six months. The agent says it covers his stent, and I'm going to read the full policy wording before anything is bought so I can see the actual limits myself. Dr. Prakash has agreed to review Appa in March before they fly, and to do a video consult in July while they're here. He's happy to share his notes with me. The annexe is on the ground floor with no steps and its own shower with a grab rail. And if something did happen, they'd be at Leicester Royal, about fifteen minutes from our house, and I know half the cardiology team there. I'm not saying that to brush off your worry. I'd be just as worried in your position.\n\nAmma being away for six months. That's a fair point, and I hadn't properly thought about how big a change it is for her, especially after Paati. Her return ticket is flexible, so if she wants to come home at six weeks or at any point, she can. Nobody is going to keep her there. I'd rather plan for her to be able to leave than have her feel stuck.\n\nGanesh Chaturthi. I know you were looking forward to that, and I'm sorry it's now in question. There are a couple of ways to keep it. Amma and Appa could fly from Leicester to Pune in September for the festival and finish their trip there. Or, if the Pune lot can manage it, you could all come here in August, and I'd be glad to cover your family's flights for that visit.\n\nAnika has also made a laminated welcome timetable, and it already has \"Paati teaches us rasam, Tuesdays\" on it. The kids are excited, and I'd love you to see it.\n\nCould we all get on a video call this Sunday? 4pm UK, 9.30pm India. I'd like us to talk it through properly with Amma and Appa on the line so everyone's questions get asked and nobody has to guess what the others think. Divya, yes, the murukku achu is on the list.\n\nLove,\nMeera",
+  "words": 481,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It apologises but does not clearly express Meera's own excitement about the visit."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3642774522304535,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17768366634845734,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.3359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.110026359558105,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.6,
+    "effort": "medium",
+    "output_tokens": 3843,
+    "input_tokens": 2409
+  }
+}

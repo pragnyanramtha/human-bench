@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for your response. Please find the details you requested below.\n\n1. Terminal and firmware: The four affected Embakasi depot terminals are BX-300s. They updated automatically from firmware 4.1.8 to 4.2.1 on the night of 27 October.\n\n2. Shift template: NIGHT-8, scheduled from 22:00 to 06:00.\n\n3. Example: Staff ID T-0417 clocked in at 21:54 on 30 October and clocked out at 06:07 on 31 October. The export showed 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15. Payroll rounds durations to the nearest tenth of an hour; the total was 8 hours 13 minutes, or 8.2 hours, with the 13 minutes outside the scheduled shift coded OT15.\n\n4. Export profile: Payroll CSV v2.\n\n5. First noticed: Kevin first noticed the problem on 5 November while reviewing the draft October overtime. The export appears to have been splitting shifts that cross midnight since about 28 October, with the after-midnight portion coded OT15 instead of REG.\n\nThe issue affects 38 night-shift staff at Embakasi and made the draft October overtime approximately KES 212,000 too high. Kevin has held the overtime lines and corrected them manually from the raw punches, but this is not a sustainable monthly solution. The Mombasa Road day shift is unaffected; its two terminals remain on firmware 4.1.8.\n\nThe 4.2.1 release notes promised improved midnight rollover handling, but we appear to be seeing the exact opposite. Please advise on a fix or a clear workaround before our payroll cut-off on 20 November.\n\nAlso, can Brian Ochieng in IT safely roll the Embakasi terminals back to 4.1.8 without losing punch data? Please let us know what precautions he should take.\n\nI have copied Kevin Mutua, our payroll officer, who will test your suggested fix.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 309,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: [\"support@clockpoint.example (reply to m01) (cc ['kevin.mutua@tausifreight.example']) (>= 150 words) (with [['BX-300', 'BX300'], ['Payroll CSV v2', 'CSV v2', 'CSV version 2']])\"]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2590319812297821,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1947503238916397,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.9363579750061035,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "low",
+    "output_tokens": 506,
+    "input_tokens": 19717
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sjoe bru, breathe. It's a fixable mess, not a funeral. Congrats on the wedding, and we'll get you there.\n\nDo these things tonight:\n\n1. **Take the key out and leave it out.** Don't crank it again. Every time it turns, the pump pushes petrol through a system that needs diesel to lubricate it, and that's what chews things up.\n2. **Don't drive it, and don't top up with diesel.** The petrol is still in there, and mixing just gives you a worse mix.\n3. **Get it towed.** Check your insurance first. Most policies have roadside assistance that covers a tow, so don't pay a tow guy cash until you've checked.\n\nKobus means well, but that's old Land Rover advice. Modern common rail diesels have injectors running at very high pressure, and petrol doesn't lubricate them. Driving it to burn it off is how a small job becomes a big one.\n\nThe damage could be the fuel pump and the injectors, so those get inspected first. If they're fine, the job is: drain the tank, flush the lines, fit a new fuel filter, and bleed the system. Usually that's R2 500 to R4 500. If the pump or injectors are gone, it's a lot more, and that's where the R40 000 talk comes from. I can't promise a total until someone has actually looked at it.\n\nGet it towed to my shop in Umbilo. We open Saturday at 7, and Thabo, my guy, will drain it first thing.\n\nAlso, borrow a bakkie for tomorrow anyway. Ask a brother, a cousin, or the uncle with the Hilux. Don't plan the wedding around a drained tank, and definitely don't let the cake depend on it.\n\nFor what it's worth, in 1995 I put diesel in my boss's Golf when I was an apprentice, and he still tells that story at every braai. You're in good company. We made one customer a sticker for the fuel flap after he did it twice in one year, so let's make sure you're not that guy.\n\nGet some sleep if you can. And don't touch that key.",
+  "words": 350,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43272361159324646,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3128407895565033,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.829195976257324,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "medium",
+    "output_tokens": 2291,
+    "input_tokens": 2189
+  }
+}

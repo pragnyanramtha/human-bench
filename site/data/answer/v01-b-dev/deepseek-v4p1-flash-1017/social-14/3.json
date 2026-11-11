@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.44, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey y’all. I know a few of you have been asking Mom whether I’m coming to Thanksgiving, so let me just say it here: yes, I’m coming. Thursday, November 26, at Aunt Denise’s in Macon, eating around 3. I’m bringing mac and cheese and two sweet potato pies.\n\nI also want to clear the air a little before we get there. Some of you weren’t at last year’s dinner, so here’s the short version. I got into it at Grandma Pearl’s table about my job. I said something smart about where somebody gets his news—the gas station TV line—and that was me. I’m not sorry for the work I do. I am sorry for how I talked at Grandma’s holiday table. I still feel bad that Grandma Pearl went out and sat on the porch for about an hour. Nobody should have to do that at Thanksgiving.\n\nI’m not naming anybody, and I’m not trying to put anyone on blast. The person I went back and forth with isn’t a bad guy. He likes to poke, and I took the bait. He even sent me a happy birthday text in August that was just a thumbs-up emoji, which for him is basically a hug. So I’m not carrying any grudge into Aunt Denise’s.\n\nAlso, for anyone wondering: I can’t talk about open cases anyway because of confidentiality, so questions about “the lawsuit” are a dead end. Not trying to be mysterious—it’s just the rules.\n\nSo here’s my ask. Can we call a one-day truce on work and politics? Let’s keep the table to food, football, babies, and Tasha’s new boyfriend. I’m coming because I want to see everybody and have a good day, and I’d like to actually enjoy it with y’all.",
+  "words": 292,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43945443630218506,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4768013656139374,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.942355155944824,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.2,
+    "effort": "provider default",
+    "output_tokens": 2959,
+    "input_tokens": 480
+  }
+}

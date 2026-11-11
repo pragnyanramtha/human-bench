@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: Draft review — 3 stars\n\n3 stars\n\nI had Harbourline fit out my 2021 Ford Transit as a mobile grooming van. The stainless tub and ramp are honestly the best part of the build: they’re great to use, and dogs can walk right in. That’s a big deal when your clients include a 110-pound Bernese.\n\nOn October 27, a fitting on the hot-water line failed in the middle of a groom. Water went across the floor and into a cabinet, and I had to send the dog home half-finished and cancel the rest of the day. Moose, for the record, sat in the tub through the whole flood like he owned the place. He was apparently having a pool party. I was the one screaming.\n\nThe van was off the road until November 6. I lost six bookings, as well as the rest of that first day. When I first reported the leak, I was told it was probably user error and wouldn’t be covered by the workmanship warranty. I was frustrated by that response—not because things never break, but because the cause was being pinned on me before anyone had looked at it. I hadn’t run the heater dry or hung anything on the pipe.\n\nOnce the van was checked, Glenn found that the supplier had substituted a cheaper compression fitting. He replaced the fittings on the hot side and took the $180 diagnostic fee off the bill as goodwill. I appreciate that he owned the issue in the end and made it right on the cost.\n\nThe van has some genuinely useful features, and the tub and ramp have been excellent. But the leak, time off the road, and the initial assumption that I’d caused it made for a pretty stressful experience. If you’re another groomer or tradesperson considering a fitout, I’d suggest getting the warranty terms and how diagnostic fees are handled clearly in writing before work starts.\n\nThis is my experience with this repair, not a judgment of Glenn personally. I’m glad the fitting was replaced and the fee refunded, but the whole episode was ridiculous enough that I can’t give it more than three stars.",
+  "words": 355,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "356 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29929158091545105,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.362512469291687,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.305488586425781,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 625,
+    "input_tokens": 15457
+  }
+}

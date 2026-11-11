@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Please read and share: fake pills and what to do in an emergency\n\nA police warning for parents and teenagers in south Manchester: blue tablets being sold as diazepam or Xanax may contain nitazenes, synthetic opioids that can be far stronger than heroin. The tablets can be dangerous, and you can’t tell what’s in one by looking at it.\n\nIf someone has taken something and becomes unwell, call 999 straight away. Don’t put them to bed to “sleep it off”, and don’t wait because you’re worried about getting in trouble. When someone is extremely drowsy, has pinpoint pupils, is breathing slowly or noisily, or has blue lips, treat it as an emergency. Waiting hours can mean their brain has gone without oxygen for too long. Get help now.\n\nThe police have said their priority is preserving life. Please don’t let fear of trouble stop you calling for help.\n\nNaloxone nasal spray can reverse the effects of opioids. Brightpath drug and alcohol service on Stockport Road, next to the launderette, offers free nasal naloxone kits to anyone. No names needed; training takes about 10 minutes. They’re open Monday to Friday, 10am–4pm, and until 7pm on Thursdays.\n\nPlease talk with your teenagers this week—not after half term or whenever you get around to it. Ask what they’ve heard, listen without jumping straight to blame, and make sure they know what to do if a mate becomes unwell. I had that chat with my 14-year-old over tea last night. There were eye rolls, but he listened, and he asked what pinpoint pupils meant. It’s an awkward conversation, but it matters.\n\nAnd please, let’s stop slagging kids off. Blame and shame help no one. Scared kids are less likely to ring for help, and that is exactly what we need them to do if someone is in danger. Keep it kind, stick to useful information, and don’t speculate about anyone or any incident.\n\nPlease share this so it reaches people who might need it, rather than just liking it.",
+  "words": 322,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "324 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33853229880332947,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.37893494963645935,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.455986499786377,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.3,
+    "effort": "medium",
+    "output_tokens": 461,
+    "input_tokens": 15094
+  }
+}

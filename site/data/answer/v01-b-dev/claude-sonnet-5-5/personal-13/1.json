@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Good afternoon Mr Kehinde Ogunleye,\n\nI hope you are well. This is [Your name], the owner of the black Jansport bag you picked up in the bus from Oshodi to Igando on Friday evening.\n\nFirst, thank you. Many people would have thrown the bag away, but you took the trouble to find my number and call me. I really appreciate it.\n\nI want to be open with you about my situation. I am a first-year Biology student and I live on a small allowance. In that bag are my lab manual, my dissecting kit, my student ID, two textbooks, my calculator and my glasses. I have my BIO 101 practical on Wednesday 11th November at 10am, and without the dissecting kit and ID card I will not be allowed into the lab. That is why I am so anxious to get the bag back before then.\n\nSir, I cannot afford 40,000 naira. Even the bag and everything inside it put together does not come to that amount. What I can do is 10,000 naira, to cover your transport and as a proper thank you for your kindness. It is all I have, and I am offering it sincerely.\n\nIf you agree, please let me know which day before Wednesday is convenient for you, and I will come down to Ikotun at the time you choose in the daytime. We can meet at Ikotun roundabout or at the Ikotun Police Division gate, since both are busy and easy for everybody to find. My roommate will come with me. I will give you the 10,000 naira in cash, you hand over the bag, and we both go our way in peace.\n\nI hope you will see this as fair. Please reply when you see this message so we can settle a day and time. God bless you, sir.\n\nRegards,\n[Your name]\n\n---\n\nTwo quick things. Replace [Your name] before you send. Also, my date shows today as Wednesday 11 Nov, the day of your practical. If that's right, change \"which day before Wednesday\" to \"today, before 10am\" or \"as early as possible today\", and mention that the practical is this morning.",
+  "words": 359,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2579132318496704,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01942475698888302,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.306640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.205662727355957,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.8,
+    "effort": "high",
+    "output_tokens": 1856,
+    "input_tokens": 1446
+  }
+}

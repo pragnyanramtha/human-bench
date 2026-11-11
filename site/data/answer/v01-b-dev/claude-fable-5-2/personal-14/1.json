@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**November 11, 2026**\n\nDear Larkspur Lofts neighbors,\n\nMy name is Jess Okafor, and I have lived in 5A for three years. Some of you may have seen the note in the lobby about a drone being flown from the roof deck. That was me, and I would like to explain what happened.\n\nI am a wedding photographer. On Saturday, October 31, at around 4 p.m., I took a new drone (a Halvard Mini 4) up to the roof deck to test it before a vineyard wedding in Dundee. The flight lasted about 11 minutes. The camera was pointed west toward the river and the Fremont Bridge the entire time, and it was never aimed at anyone's windows.\n\nThat said, I understand why it looked bad. A buzzing thing hovering over the courtyard is unsettling if you don't know who is flying it or why, and I have since heard that it frightened some children in the building. I am sorry it worried people. That was the last thing I intended.\n\nIf you would like to see for yourself, I am happy to show the full, unedited clip to anyone who asks. Knock on 5A or email me at jess.okafor@mailbox.example.\n\nOur HOA rules do not currently say anything about drones. I will ask the board to add the topic to the agenda for the November 19 meeting (7 p.m., community room), and I will not fly from the roof again until the board has decided on a rule. If you have a view either way, please come.\n\nI do need to say one thing about the note itself. Being called a creep in the lobby, with my unit number attached, was hurtful, and it is not a fair way to raise a concern with a neighbor. I am not asking who wrote it. I only ask that next time, anyone who is bothered by something I am doing come and talk to me directly. I would much rather have an awkward conversation at my door than read about myself in the lobby.\n\nThank you for reading, and I apologize again for the worry this caused.\n\nSincerely,\n\nJess Okafor\nUnit 5A\n\n---\n\nI left Doreen and her unit out and referred only to \"some children in the building,\" so she isn't singled out to the other 23 units. If she's fine with being mentioned, you can swap that in.",
+  "words": 397,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29686152935028076,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08610942959785461,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.8655508756637573,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.5,
+    "effort": "high",
+    "output_tokens": 2324,
+    "input_tokens": 1473
+  }
+}

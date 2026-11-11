@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: [p02]\nCc: none\nSubject: Re: Redshifts shifted after upgrade to lumenfit 2.5.0? (reopen request)\n\nI did read the changelog. That is precisely the problem.\n\nPR #812 (\"Refactor LineList and spectral frame handling\", merged Oct 22) changed the default of wave_frame in LineList.__init__ from 'air' to 'vacuum'. Rest wavelengths are now interpreted as vacuum by default. My spectra are air-calibrated from arc lamps, so every rest wavelength is off by the vacuum/air ratio ~1.00028 at 6563 A, i.e. about 83 km/s, which is exactly the shift I reported (z lower by ~0.00028). Downgrading to 2.4.3 restores the old values, and upgrading again reproduces the shift, both with unchanged input spectra and unchanged config.\n\nOn your reply:\n\n- \"Works fine for me\" is not a test. If your data is already vacuum-referenced, or radio, of course there is no difference. The change is silent and only bites users whose data is in air, which is still most optical slit work.\n- The changelog entry for #812 reads \"Refactor LineList and spectral frame handling\". Nothing in the 2.5.0 release notes, the announcement, or the reorganized docs mentions a changed default, and there was no deprecation warning. Nobody can guess a breaking change from the word \"refactor\".\n- m_okonkwo in this thread reports the same offset on their long-slit data after updating, so this is not my calibration or my config.\n- The offset is constant in velocity across H-alpha and [NII], and identical for every object, which is not what a bad calibration or a bad config looks like.\n\nWorkaround for anyone else affected: set the frame explicitly, e.g. LineList(..., wave_frame='air'). On 2.5.0 this reproduces the 2.4.3 values exactly.\n\nTwo requests:\n\n1. Please reopen this thread. The original post was a genuine breaking change, not a local setup problem.\n2. Please add an explicit line to CHANGES.md for 2.5.0, and/or emit a warning when wave_frame is not set, so this does not silently break other people's pipelines. Flipping a default in a patch release should also be reconsidered.\n\nFor the record: I spent two days re-reducing 40 arc-lamp spectra chasing my own wavelength calibration before finding PR #812. It would help to not send the next person down that path.",
+  "words": 353,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the default was flipped 'in a patch release', but 2.4.3 to 2.5.0 is a minor release; it also claims the workaround reproduces 2.4.3 values 'exactly', which the notes don't state."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The draft calls 2.5.0 a patch release and says 40 arc-lamp spectra were re-reduced, rather than arc lamps for 40 spectra."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21397612988948822,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04474441334605217,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.3379363417625427,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.3,
+    "effort": "provider default",
+    "output_tokens": 1918,
+    "input_tokens": 1798
+  }
+}

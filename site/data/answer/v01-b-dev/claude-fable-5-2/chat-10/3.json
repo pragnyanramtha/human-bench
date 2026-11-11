@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need you to actually read this one, not skim it.\n\nI'm not calling Denise. You gave her my cell without asking, so you get to tell her I'm not available. That one's yours to fix.\n\nAnd I'm still mad about Gary. You told him I'd list his house for 1%. One percent. My listing side is 2.5 and I have never said 1% to anybody, ever. You made that number up and handed it out like it was yours to give.\n\nThen I spent my whole Saturday on it. I drove down to Chandler from north Phoenix, pulled comps, did the walkthrough, and printed him a full listing packet. That was six hours, not counting the drive. Sunday night he texts me that he's going with ListLite for $3,995, \"no hard feelings.\" Fine. I'm honestly not even mad at Gary. I'm mad at you.\n\nBecause when I called you about it, all I got was \"that's business sis, can't win em all.\" It's not your business, Rick, it's mine. You didn't lose a Saturday. You get to look like the big shot with a sister in real estate, and I do the work for free. Same thing happened with your softball guy two years ago and I let it go. I'm not letting it go this time.\n\nSo from now on you don't give out my number and you don't quote my commission. Not 1%, not any number. If somebody you know wants to sell, you ask me first, every single time. I decide if I'm taking it and what I'm charging.\n\nFamily is different and you know that. Mom, your kids, anybody in the family can call me any time and the advice is free, always has been. Your coworkers and your softball buddies aren't family. They're clients, and clients pay.\n\nI love you and I'll still be at your place for Thanksgiving. But I mean every word of this, so please don't text me back a joke.",
+  "words": 331,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33824506402015686,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1499226838350296,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.175814628601074,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.4,
+    "effort": "high",
+    "output_tokens": 1670,
+    "input_tokens": 1494
+  }
+}

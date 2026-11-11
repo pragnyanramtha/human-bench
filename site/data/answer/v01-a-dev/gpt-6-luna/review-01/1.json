@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: Four years with Murmur: brilliant tool, but be careful with 3.2\n\nI’ve used Murmur since 2022, and it’s been part of Lanternfolk from the very beginning. The first prototype was the ferryman scene, which I built in a weekend with Murmur. That was the point when I decided to quit my job at a mobile studio and go all in on making this game. Murmur helped me get from that little prototype to a project with 412 dialogue nodes and nine languages. I’m very grateful for what it made possible.\n\nI’m giving it four stars, not five, because the current 3.2 release has a serious save bug, and there’s no support now to fix it. In our project, variables saved in 3.1.x reset to their defaults when loading in 3.2.0. That can mean characters forget choices the player has already made. I wouldn’t recommend updating an existing project to 3.2 without testing your saves carefully.\n\nFor us, rolling back to 3.1.4 fixed the problem and our old saves loaded correctly again. To do that, replace the Murmur folder in your project’s addons folder with the 3.1.4 release. Keep a copy of that version and avoid updating to 3.2 if you depend on saved dialogue state. Back up your project and test on a copy before changing versions.\n\nI understand why people are upset about a broken update and the lack of ongoing support. I don’t think calling the developer uncaring is fair, though. Ines gave this tool four years of updates, and the original price was $19. That’s a lot of value for an independent developer’s tool. I’m not saying that excuses the 3.2 bug; people considering buying it deserve to know about the risk.\n\nThe source is now available under the MIT license, so there’s a real possibility someone will fork it and continue development. I may look into that myself after Lanternfolk launches, but I can’t promise anything or take that as a reason to buy it today.\n\nThank you, Ines, for making Murmur and for all the work you put into it. It helped me start Lanternfolk, and I’ll always appreciate that. I just wish the current version were safer to recommend without the rollback caveat.",
+  "words": 358,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38313770294189453,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.44896388053894043,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.142976760864258,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.6,
+    "effort": "medium",
+    "output_tokens": 630,
+    "input_tokens": 15362
+  }
+}

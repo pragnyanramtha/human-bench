@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hi Renee, I’m truly sorry your toe became painful and that you needed urgent care. I understand how upsetting and disruptive that must have been, and I’m not here to argue with your experience.\n\nI do want to clarify a few things about your visit. You came in on Saturday, October 24, for a $45 deluxe pedicure with my niece, Vy. She has been licensed for three years and was born and raised here in Houston. I’m sorry you felt you couldn’t communicate with her; she can be shy, but I take that concern seriously. During the service, you asked her to clean the cuticle more, and she cautioned against going too far. I understand that doesn’t change the fact that your toe was hurt, and I’m sorry it happened.\n\nWe take sanitation seriously. Our tools are sterilized in an autoclave, and we open each sealed pouch in front of the customer. Files and buffers are new for every client, and clients can take them home. We also use a fresh plastic liner in the tub each time. Our most recent state inspection was in August 2026, and we passed without violations; the inspection report is posted at the salon. I know those practices don’t prove what caused your toe problem, but I want people reading this to know how we handle sanitation.\n\nWhen you came back on November 2, I offered to refund the full $45 and to pay your urgent-care copay if you bring in the receipt. That offer is still open. I’m sorry if my response that day came across as dismissive; that wasn’t what I wanted. I couldn’t agree to the additional request, but I do want to talk with you and see if we can resolve this respectfully.\n\nI’ve owned this salon in Houston since 2007, after opening it to help my aunt, and I care deeply about our customers and the people who work here. It hurts to see a whole group of salons called dirty, but I also know your concern deserves to be heard on its own. Vy was very upset after reading the thread. I’m not saying that to make you feel responsible—only to say this has affected her too, and I hope we can speak directly rather than let things get worse online.\n\nYou’re welcome to call me at the salon or come by and talk when you’re ready. Thank you, Marisol, for encouraging us to speak again and for sharing your experience with the salon. I’m sorry, Renee, that you’re dealing with this, and I hope your toe is healing.",
+  "words": 431,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3984549045562744,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3225308954715729,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.53248405456543,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "medium",
+    "output_tokens": 523,
+    "input_tokens": 14409
+  }
+}

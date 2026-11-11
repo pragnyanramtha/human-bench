@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nDenise is reading you this because I can't be in the kitchen tonight, and I hate that. It's my week to carry the pager, which means if anything breaks I'm the one who gets the call, and I asked everybody I could think of to trade with me and nobody could. So you're getting me by letter, in Denise's voice. Denise, if you start crying partway through, hand it to Nana and she'll finish it herself.\n\nI should tell you I've been trying to write this for a week. Every time I sat down I'd get a few lines in, get choked up, and close the laptop. So if it rambles, that's why. I'd rather it ramble than not get said.\n\nI feel bad about not being there tomorrow. Everybody keeps telling me it's fine, and you're going to tell me it's fine too, probably before Denise gets to the end of this sentence. I know. I still wish I was carrying boxes.\n\nFifty-one years on Kathleen Street. I've been trying to get my head around that number and I can't. I only got the summers, and they're still some of the best stuff I've got.\n\nI remember you letting me stay up to watch the ball game on the little TV in the kitchen, first the Expos and then the Jays, as long as I dried the dishes. I thought I was getting away with something. It took me until I was about thirty to work out that you were getting your dishes dried every single night for the price of a ball game.\n\nI remember the back steps. You'd be out there at six in the morning with your tea, and I'd come out in my pyjamas and sit down beside you, and you would not say one word until that cup was done. I learned pretty quick not to try. We'd just sit. I didn't know it then, but I've had very few mornings as good as those since.\n\nAnd I remember crib. You taught me when I was about seven and you never let me win. Not once. Eight years I lost to my own grandmother. Then when I was fifteen I finally skunked you, and you got up from the table without saying much and made me a whole pan of butter tarts. I've thought about that a lot. You never went easy on me, so when I finally beat you I knew it was real, and you knew I knew. Those butter tarts were the best trophy I ever got.\n\nWhen I got the job in Toronto you mailed me a card with a twenty dollar bill taped inside it, and you wrote \"for pizza, you look thin on the computer.\" Nana, I had a salary. I had benefits. And that twenty dollars is still the thing I remember about getting that job.\n\nLast Christmas my pager went off in the middle of dinner and you asked if the internet was broken again, and whether I'd fixed it. I have never managed to explain my job to anybody as well as that. Now every time I call, you ask \"did anything break?\" and I want you to know I look forward to it. Don't stop asking.\n\nI've been thinking about the house a lot this week. You raised half this family in that kitchen. For me the house and you have always been kind of the same thing, and for a while that made tomorrow feel bigger and sadder than it should. Then I figured out I had it backwards. The kitchen was the kitchen because you were standing in it. The back steps were the back steps because you were sitting on them with your tea. All of that goes in the car with you on Saturday.\n\nI know Grandpa Walt is in every room of that house too, and I know leaving it means something for you that it doesn't mean for the rest of us. I don't have anything clever to say about that. I just didn't want you to think I hadn't thought about it.\n\nHere's the main thing I wanted to tell you, though. I'm proud of you. You picked this. Nobody sat you down, nobody made you, nobody talked you into it. You're 88 years old and you looked at things and made a big decision on your own terms, and then you got a bit excited about it, which is the part I love most. I don't know many people at any age who could do that. I hope I'm like that when it's my turn.\n\nAnd Elmwood Terrace looks nice, it really does. Second floor, and Denise tells me your window looks out on the parking lot and a big maple. I'd say look at the maple, but the parking lot is where you'll find out who's getting visitors, so maybe keep an eye on both.\n\nThey also have a crib league. I'd feel sorry for those people, except I know exactly what's coming for them and I think they should have to find out the way I did. They have no idea who's moving in upstairs. And I assume the church ladies aren't letting you off Tuesdays just because you changed your address.\n\nDenise is taking the cuckoo clock and the cedar chest, which is fair. She can enjoy that bird at three in the morning. I asked for the crib board. It's the only thing I wanted. But I don't want it yet. It goes with you to Elmwood, and it stays out where you can reach it, because I'm coming up the weekend of December 5th as soon as my rotation's done and we're playing the first game in the new place.\n\nSo have a good last night in the kitchen. Have a look around. Then go get a good sleep, because tomorrow's a big day and you've got a league to scare.\n\nI'll see you on the 5th. Put the kettle on, get the board out, and I won't say a word until your cup's done.\n\nDon't let me win.\n\nLove you, Nana.\n\n[your name]\n\nA few things to check before you send it to Denise, since I filled small gaps from your notes:\n\n- **The crib board:** I wrote it as staying with Nana at Elmwood for now so you can play on it Dec 5. Change that paragraph if it's actually going home with you.\n- **Pyjamas on the back steps:** that detail is my guess.\n- **Parking lot joke:** it assumes she'd enjoy being teased about keeping tabs on the neighbours.\n- **Church ladies:** I assumed Tuesdays are continuing after the move.\n- **\"Salary and benefits\" line:** tweak it if that's not how you'd put it.\n\nIf she has a nickname for you, sign off with that.",
+  "words": 1140,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21786896884441376,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04610028862953186,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.21875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.046255111694336,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 78.9,
+    "effort": "high",
+    "output_tokens": 7231,
+    "input_tokens": 1668
+  }
+}

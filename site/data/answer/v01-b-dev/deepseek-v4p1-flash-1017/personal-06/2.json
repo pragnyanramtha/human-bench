@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Nana,\n\nDenise is going to read this to you tomorrow night while you’re sitting in the kitchen one last time. Tomorrow is Saturday the 21st, and I’m not going to be there, so this is the next best thing I could figure out. I’ve been trying to write it for a week and mostly I’ve been opening my laptop, writing two sentences, getting choked up, and closing it again. So if this rambles, that’s why. Denise has been instructed to read it as written and not to editorialize. I know she will editorialize.\n\nI’m sorry I can’t be there for the move. I’m primary on call all week and I couldn’t get anyone to swap, and I hate it. I know you’ll say it’s fine. Everyone has already said it’s fine. But I wanted to say it to you directly: I’m sorry. I’d rather be carrying boxes up to the second floor and getting in the way than sitting here waiting for my phone to go off.\n\nFifty-one years on Kathleen Street. I’ve been trying to figure out how to say what that house means to me without making this sound like a funeral, because it isn’t one. You’re not disappearing. You’re moving. But that house has been the backdrop for basically everything, and I don’t think I understood until now how much of it I think of as you.\n\nWhen I was a kid and stayed with you in the summer, you’d let me stay up and watch the Expos or the Jays on the little TV in the kitchen if I dried the dishes. I want to state for the record that I have since looked at the labour-to-television ratio on that deal and it was not in my favour. You got a clean kitchen and I got to watch a baseball game with you. Honestly, best deal I ever made.\n\nYou taught me crib when I was seven and you never let me win. Not once. I used to think you were being ruthless. Then when I was fifteen I skunked you, and you made me a whole pan of butter tarts. That’s when I figured out you hadn’t been beating me for fun. You’d been teaching me the whole time. I’ve asked for the crib board, by the way. Denise can have the cuckoo clock and the cedar chest. I want the board we actually wore out, and I want to play you on it at Elmwood.\n\nI’ll miss the back steps. You’d sit out there with your tea at six in the morning and I’d come out and you wouldn’t say anything until the cup was done. I used to think you were waiting for it to cool. Now I think you were teaching me how to sit still. It took me about thirty years to learn, so thank you for your patience.\n\nWhen I got the job in Toronto, you mailed me a card with a $20 bill taped inside and wrote “for pizza, you look thin on the computer.” I kept the card. The twenty went on pizza, as instructed. I want the record to show I followed orders.\n\nLast Christmas my pager went off during dinner and you asked if the internet was broken again and whether I was going to fix it. I said probably. Now every time we talk you ask, “Did anything break?” I need you to know that is the most accurate performance review I get. I’ve started saying “not yet” just to keep you interested.\n\nI’ve been feeling guilty about not being there, which everyone says is dumb. Maybe it is. But I think it’s because that house has been the place where all of us landed, and you’ve been the one holding the door open. You raised half the family in that kitchen. The house is kind of you. That’s why it’s hard to picture someone else in it.\n\nGrandpa Walt died in 2019, and I know this move is one of those things where you feel him not being there. He’d have had a joke about the parking lot view and then quietly checked the locks twice. I wish he were here for that. I know you miss him. I do too. But I also think he’d be glad you picked someplace with a big maple outside the window.\n\nAnd here’s the thing I keep coming back to: you picked Elmwood yourself. Nobody made you. You looked at it, you decided, and you’re doing this on your own terms. I’m proud of you for that. I know it’s a big deal at 88, even if you’re acting like it’s just a change of address. I looked at the pictures. It actually looks nice. Second floor, the maple, the parking lot — you’ll be able to keep an eye on who’s coming and going, which you’ve always liked. I know you’re actually a bit excited about it, and I don’t want this letter to talk you out of that. And Denise tells me they have a crib league. I need a full report. If there’s a standings board, I want to know where you are on it. If there isn’t one, start one.\n\nYou still play crib with the church ladies on Tuesdays. You’re 88. You’re moving into a place with a crib league. I’m not worried about you. I’m a little worried about the crib league.\n\nI’m coming up the weekend of December 5, as soon as this rotation is done. Save me a chair and a cup of tea. I’ll dry the dishes. And bring the crib board to the new place, because the first game on it is going to be you and me, and I expect you to play like you’ve never met me. Actually, play like you’ve met me and you’re still not going to let me win.\n\nI love you. I’m proud of you. I’ll see you in December.\n\nLove,\n[Your name]",
+  "words": 992,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24832189083099365,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06139405444264412,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.28125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.204150676727295,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.3,
+    "effort": "provider default",
+    "output_tokens": 6408,
+    "input_tokens": 688
+  }
+}

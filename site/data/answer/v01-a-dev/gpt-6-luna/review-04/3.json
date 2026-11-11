@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5 stars: careful work and a great result on a camera adapter and baffle\n\nWe had Arroyo Precision Works make a camera-to-dewar adapter plate and light baffle for our near-IR camera, which we need for an upcoming Palomar run. The parts arrived much faster than expected: nine days from purchase order to delivery, compared with the 21-day quoted lead time. A larger vendor had quoted us six weeks, so Arroyo’s turnaround made a real difference to our schedule.\n\nWhat stood out most was the care they took with the drawing. There was a bolt-circle dimension on my drawing that didn’t match the units used elsewhere. That was my mistake: I’d copied it from an old drawing and failed to convert it. Arroyo caught the discrepancy and checked with me before cutting anything. I’m very glad they did—the screws would have landed inside the bore if they’d followed the dimension as written. They read the whole drawing rather than just machining what was on the page, and that attention probably saved us a costly and frustrating rework.\n\nThe parts passed our fit test. All eight screws went into the adapter plate without forcing, and flatness across the face measured under 0.01 mm on our dial indicator. The baffle threads were smooth, the anodizing was even with no bare spots, and we saw no light leak in our dark test. Everything worked as intended.\n\nRuben also went out of his way to bring the parts to Robinson Lab himself, at no extra charge. That was a very welcome help, especially with our schedule. Between the quick turnaround, the careful drawing check, the quality of the finished parts, and the extra effort on delivery, Arroyo was excellent to work with.\n\nI’d gladly use them again and recommend them to other research groups. I also hope purchasing will consider adding Arroyo Precision Works to the preferred vendor list. 5/5.",
+  "words": 301,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "304 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36705055832862854,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4212036430835724,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.751119136810303,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "medium",
+    "output_tokens": 503,
+    "input_tokens": 15357
+  }
+}

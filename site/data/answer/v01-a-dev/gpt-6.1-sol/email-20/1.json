@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Priya Menon <priya.menon@routewell.example>\nSubject: RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nPriya,\n\nThanks for owning it. Please don’t beat yourself up. I’m not throwing you under the bus with Greg. I’ll handle that conversation, and I’m going to be clear that we have a questionnaire library nobody owns and outdated answers sitting there waiting to get reused. You missed the check, but this isn’t all on you.\n\nI also haven’t forgotten September, when you stayed on until 9pm rebuilding their demo environment after the route import broke. You’ve been great on this account. One copy-paste mistake doesn’t erase that.\n\nI won’t pretend I’m not rattled. At $186k ARR on a three-year term, Brazos is my biggest deal of the year, and I’ve been working it since February. I already told my wife we’d finally do the Big Bend trip off this commission, so apparently I also need a refresher on not spending money before a signature. But none of that is yours to carry. We need to fix this together, not spend tonight assigning blame.\n\nHere’s the plan:\n\n- Please correct Q14 tonight and send it to me first, not Dana. It needs to state that we have the Type I report issued in April, that the Type II audit window closes January 31, and that the report is expected by March—not that we currently hold a Type II.\n- I talked to Marcus in security. He can join Dana and their legal team Thursday at 2. Please join that call too so we can walk through the correction together.\n- Marcus also confirmed we can provide a bridge letter from the auditor. We should offer that as supporting documentation, without implying it replaces the Type II their policy requires.\n\nI’ll review your draft and get aligned with Greg before anything goes to Dana. She seems strict but fair, and I think this is fixable if we’re honest and move quickly.\n\nThanks for sticking with me on this.\n\nJordan",
+  "words": 329,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4031287133693695,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3131236732006073,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.047308921813965,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.1,
+    "effort": "low",
+    "output_tokens": 424,
+    "input_tokens": 18771
+  }
+}

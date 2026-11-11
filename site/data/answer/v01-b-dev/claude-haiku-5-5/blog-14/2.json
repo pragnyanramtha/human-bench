@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "# Two Pairs of Hands Short on a Thursday\n\nBridget asked me to write something for the blog this month, and I said yes before I had thought about what I would say. I am seventy-four, I spent forty-one years keeping ledgers for a builders' merchant in Dereham, and I am not a natural with people. So if you are picturing a warm-hearted sort who finds hospice work easy, you have the wrong idea about me.\n\nSince the summer, the Thursday tea trolley in the day therapy unit has been two people short. We are four on a rota meant for six. One of us has moved to Sheffield to be near the grandchildren, and another is off with a dodgy knee until the new year. Thursdays run from 1.30 to 4pm. You would be on the trolley roughly one Thursday a fortnight, so it is not a weekly commitment, which suits most people who have other things on.\n\nOn a typical Thursday the unit sees fourteen to eighteen patients. Some come for the art group, some for the hand massage, and plenty just for the company. Most of them go home afterwards. It is a busy, noisy, rather jolly room, and I would not describe it as a sad place most of the time. Sad days do happen, of course. When they do, the staff look after us properly, and Bridget is always on the end of the phone if you want to talk it over afterwards. I will be honest that some weeks are harder than others. I have had a few afternoons I went home quietly from. But I have had far more that left me laughing in the car park.\n\nYou do not need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. The forty-one years of bookkeeping have turned out to be more use than I expected, mostly for remembering who takes what. Mr Hollis, a retired signalman, takes two sugars and tells me about the 1953 floods every single week. The details shift slightly each time, and I stopped correcting the dates some while ago. He is never bored of it, and neither am I.\n\nMy first week, I tipped an entire jug of milk over the trolley. Pat, one of the patients, laughed so hard she had to be handed a tissue. When she had got her breath back she told me it was the best afternoon she had had in a month. I have never been prouder of a spillage. The bourbon biscuits always go first, so we now hide a packet for the late group. That is the level of skill involved.\n\nI started in March 2022, about eighteen months after I retired. I had no regular reason to go out most weeks, and I had drifted a bit, the way people do when the diary empties. Thursdays fixed that. I now have somewhere to be, people who notice if I am not there, and a reason to put my good cardigan on. That is most of what I get out of it, and it is a fair trade for an afternoon of tea and biscuits.\n\nInduction is arranged by Bridget and takes about two hours. You will also complete a short online food hygiene course, which the hospice pays for. Nobody expects you to know anything beforehand. You will be shown the ropes by people who have been doing it long enough to have the ropes memorised.\n\nIf you think this might suit you, come along to the volunteer open afternoon on Tuesday 24 November at 2pm in the Willow Room. There will be tea and biscuits, and there is no obligation at all. You can ask whatever you like, including the difficult questions. If you would rather not come along on the day, ring Bridget on the volunteering line and she will sort something out.\n\nI would be grateful if you could bring at least one friend. We need two more people, and I would much rather have a full rota than keep asking the same three of us to cover for the gaps.",
+  "words": 694,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says the volunteer with the knee problem is temporarily off until the new year, whereas the request says they left over the summer."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.026189496740698814,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026467137038707733,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.302734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.7679309844970703,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.8,
+    "effort": "medium",
+    "output_tokens": 1608,
+    "input_tokens": 1771
+  }
+}

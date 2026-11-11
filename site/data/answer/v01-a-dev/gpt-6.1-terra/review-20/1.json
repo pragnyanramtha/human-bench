@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches — a warning for larger events**\n\nI’ve used Sunbelt for two small airport runs, both of which went well, so I trusted them with transportation for a client dinner on Thursday, November 5. Unfortunately, the experience was very different.\n\nWe had 220 guests going from the hotel to a ranch venue in Henderson. We booked four coaches for a 6:15 p.m. pickup and received written confirmation twice, most recently on Tuesday, November 3. We paid $8,400 total.\n\nOnly two buses showed up. The first arrived 55 minutes late, and the driver told me he had received the job at 5 p.m. The second bus broke down on the 215 with no working AC, leaving guests on the shoulder for about 40 minutes.\n\nI ended up putting 60 people in Ubers and Lyfts on my company card at a cost of approximately $1,900. Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime. Our client is now reviewing whether to retain us for their March event.\n\nI can forgive one late bus. What I can’t excuse is having no apparent backup plan or communication when half the booked coaches didn’t arrive. Corey was the dispatcher named on our paperwork, and the office line has gone to voicemail since Friday. I’m seeking a refund for the two coaches that never came, plus reimbursement for the rideshares.\n\nFor anyone planning airport or offsite transportation for CES season: I’d be very cautious about booking Sunbelt for a large event until they’ve fixed their dispatch issues. My previous small runs went well, but I wouldn’t rely on them for a group this size based on what happened last week.",
+  "words": 280,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4898817539215088,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995730519294739,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 14.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.975485801696777,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "low",
+    "output_tokens": 357,
+    "input_tokens": 18254
+  }
+}

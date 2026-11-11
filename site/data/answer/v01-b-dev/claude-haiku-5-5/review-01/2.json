@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars. Great tool, but read this before buying 3.2\n\nI've used Murmur since 2022. My first prototype of Lanternfolk was the ferryman scene, built over one weekend in Murmur, and that prototype is why I left my job at a mobile studio. So I'm not neutral here. I want to be fair to the tool and to the people who are now stuck with a broken version of it.\n\nWhat it does well: node-based branching dialogue that stays readable when the tree gets big. Conditions and variables are easy to reason about, barks and voice hooks are simple to wire up, and the CSV localisation export is a big part of why Lanternfolk has 412 dialogue nodes in 9 languages without me losing my mind. It's clearly made by someone who writes dialogue for a living.\n\nWhat's broken: version 3.2.0 (October 2026). If you load a save made in 3.1.x, every Murmur variable resets to its default value. In our game the ferryman forgets you already paid him. It looks like the save key changed from node path to a uid, but I haven't confirmed that. There's no fix coming from the developer. Ines pinned a note on 30 October saying 3.2 is her last version and she can't fix the bug right now.\n\nWhat to do: don't update to 3.2. Keep a copy of the 3.1.4 release. If you've already updated, replace the Murmur folder in your project's addons folder with 3.1.4 and your old saves should load again. Tobbe confirmed this in the forum thread on 21 October, and it's the same thing I'm doing in our project.\n\nWhy 4 stars and not 5: the bug and the lack of support. The source is MIT now, so someone can fork it and fix this, and I hope someone does. Until then, 3.1.4 is the version I trust. If you're buying new, start there, or wait and see whether a fork appears.\n\nI know the last two weeks of reviews have been harsh. Some of that is fair anger at a broken update. Some of it is people who lost work and needed somewhere to put that. Either way, one person kept this tool alive for four years of updates on a 19 dollar purchase. Thank you, Ines. Lanternfolk exists because of Murmur, and I'm grateful for it.",
+  "words": 380,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36337700486183167,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08082059025764465,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.8515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.9202451705932617,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.7,
+    "effort": "medium",
+    "output_tokens": 2788,
+    "input_tokens": 3449
+  }
+}

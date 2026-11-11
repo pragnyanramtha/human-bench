@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother\n\nDear Mr. Kerrigan,\n\nThank you for getting in touch, and I’m sorry to hear about your mother’s fall. We’d be glad to help Margaret get set up with weekly blister packs.\n\nWe prepare packs for seven days, with doses arranged four times a day. There is no charge for the packaging itself; the medications are billed at our usual dispensing rates. As Margaret is 81, Ontario’s Drug Benefit program covers most eligible medication costs, though any applicable copayments may still apply.\n\nWe can deliver to her building on our regular Tuesday and Friday routes, between 2 and 6 p.m. Delivery is free within 8 km, and her building is within our area. Since her first packs should be ready Saturday, you can pick them up, or we can arrange a one-time delivery before 1 p.m. that day.\n\nTo transfer her prescriptions, please send us the name and address of her current pharmacy and Margaret’s OHIP number. We can contact them directly; she does not need to sign a transfer form. Please also ask the hospital to fax her discharge prescriptions to us as early as possible on Thursday. We need all prescriptions, including the hospital’s discharge prescriptions and the transfers, before we can prepare the packs. We require about 48 hours after receiving everything, so Saturday is the realistic target.\n\nThe first packs will not be ready when Margaret is discharged on Thursday. Please confirm with the hospital discharge team what interim medication supply she will have, and ask them to help make sure she knows how to take each dose until the packs are ready for Saturday pickup or delivery. If anything about the interim supply or instructions is unclear, please have the team contact us.\n\nBecause Margaret is not currently listed as having authorized you to discuss her medications, we’ll need her permission before I can review her medication list with you. We use a signed Family Communication Consent form to record that permission. This helps protect her privacy and makes sure we have her agreement before sharing personal health information. She can sign when she picks up the packs, or we can send the form with the Saturday delivery driver.\n\nI’d also be happy to do a 20-minute MedsCheck with Margaret during the first week after discharge. I can visit her at home on Monday or Tuesday after 6 p.m. If she is comfortable with it and has signed the consent, we can include you in a medication discussion.\n\nYou can reach me directly at 905-555-0148, extension 2. I’m in the store Monday to Friday, 9 a.m. to 6 p.m.\n\nKind regards,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy",
+  "words": 442,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13904865086078644,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.32410672307014465,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.848562240600586,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.3,
+    "effort": "medium",
+    "output_tokens": 768,
+    "input_tokens": 15399
+  }
+}

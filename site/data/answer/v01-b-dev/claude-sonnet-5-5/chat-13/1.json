@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rohan, fair question, and Divya asking is fair too. You trusted me with real money, so you get the straight answer and not the LinkedIn version. Ajay, noted, I'll work on my cricket captain energy.\n\nLast Friday I let go 6 of our 14. Everyone got 2 months pay, and 4 of them already have interviews lined up, which is the only reason I've been sleeping at all. It was the worst day of my life, and yes, I'm including failing maths in 2nd sem.\n\nWhy it happened: the bridge round from the Hyderabad fund fell through on 28 Oct. The term sheet was basically ready. Then the partner said \"we love the energy\" on the call and stopped replying for 11 days. Turns out you can't pay salaries in energy.\n\nWhere we are now: after the cuts we have about 5 months of runway. The app has around 41k monthly users. The plumber and electrician side is actually growing. AC servicing is bleeding money, so we're shutting it down. The focus now is housing society tie-ups, and 3 societies in HSR have already signed pilots. I think we have a real shot with that, but it's not a sure thing.\n\nSo your 3 lakh is at risk, but it's not gone. I'm not going to tell you it's safe, because I genuinely don't know, and if I said it was safe you should trust me less. What I can say is that I'm not hiding anything and I'm not panicking.\n\nRohan, Divya, let me call you both properly this week and show you the real numbers: cash, burn, the pilots, all of it. You can ask whatever you want and I'll answer. Just tell me which evening works. Divya can bring her sad face if she wants, but I'd keep your own in the drawer for now.\n\nAlso, I'm fine. I've been eating Maggi at office at 11pm so often that the security uncle now asks if I want masala or plain. Amma asked last week if TCS is still hiring. I've said I'll keep it as plan C.\n\nSaturday I'm in. Pranav is buying, so I'm ordering the dosa AND the beer, and I'm not being polite about it.",
+  "words": 371,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33674514293670654,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15249454975128174,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.71875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.56394100189209,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.6,
+    "effort": "high",
+    "output_tokens": 1816,
+    "input_tokens": 1911
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**One star for now: the product is promising, but support is failing a small library**\n\nI’m the director of Bridger Bend Community Library, a single-branch library in Montana with two full-time staff, volunteers, and about 2,300 active cardholders. We signed a three-year Stackhouse Cloud contract in June 2026 at $14,200 per year. Migration went live Oct. 19.\n\nSince Oct. 28, checkouts only work offline on one laptop. Our holds queue was wiped—about 640 holds gone. Our support ticket has been open 12 days. We’ve had three replies, all saying the issue was “escalated to engineering.” A retired rancher drove 40 minutes for held large-print Westerns; we had no record of the hold and sent him home with nothing. One of our volunteers has been writing checkouts on index cards like it’s 1975.\n\nThe sales rep promised “a dedicated migration specialist.” We got a shared inbox.\n\nI want to be fair: the software looked good in the demo, and the staff interface is honestly better than our old system. The problem is support, not the product idea. But a small library cannot run on promises and escalation notices. Our county budget hearing is Nov. 18, and our line item is on the agenda. I have asked for a named senior person at Stackhouse to call me this week and give us a real recovery plan.\n\nTo other directors: before you sign, get support response times, escalation contacts, and migration ownership in writing. Ask who will actually answer, and when. Do not accept a shared inbox as migration support.\n\nOne star for now. I would revisit this review if Stackhouse fixes the problem.",
+  "words": 271,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.7178001403808594,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995825290679932,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.598698139190674,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.3,
+    "effort": "provider default",
+    "output_tokens": 1998,
+    "input_tokens": 507
+  }
+}

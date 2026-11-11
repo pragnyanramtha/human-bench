@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: page:wensum-valley-hospice-bookshop\nReplying to: [s05]\nCc: none\nSubject: Light Up a Life 2026 — draft for Moira to review\n\nYes, Hilary, we’re doing the tree again this year. Your mum’s name will be remembered, and you and your sister would be very welcome.\n\nOur Light Up a Life tree will be in the shop window from Saturday, and memory tags will be available in the shop from Monday 16 November. There’s a suggested donation of £3, and envelopes will be on the counter if you’d rather write your tag at home.\n\nWe’ll switch the lights on Saturday 28 November at 4pm. Gildencroft Primary’s choir will be back to sing a few carols, and Doreen is making mince pies again. All are welcome.\n\nEvery name on a tag will be read at the hospice remembrance service on Sunday 13 December at 3pm in the day centre. You don’t have to attend the service for a name to be read.\n\nI’ve been thinking about how much the tree means to people. My husband Ray died at the hospice in November 2019, seven years ago this month. The first year I hung his tag, I could hardly write his name. Now I write it at the counter, with the same pen. I don’t say that to make this about me, but because I know how hard it can be to put a name on a tag, and how much it can mean to see it there.\n\nThe tree is for anyone who is grieving, not only hospice families. And you don’t have to buy anything or write a tag to come in. If you’d just like to stand by the tree for a moment, you’re welcome to do that.\n\nThank you to everyone who remembered someone with us last year, whether you wrote a tag, came to the switch-on or simply paused by the tree. Seeing 412 names there was a moving reminder of how many lives are held in our thoughts. We’ll keep the tree lit until Twelfth Night.\n\nJean",
+  "words": 319,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "319 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1175025999546051,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1064821183681488,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.003143310546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.7123377323150635,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "medium",
+    "output_tokens": 434,
+    "input_tokens": 15736
+  }
+}

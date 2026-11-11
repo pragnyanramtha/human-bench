@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: Caught my drawing mistake before cutting, delivered in 9 days instead of 21\n\nWe ordered two parts from Arroyo for a near-infrared camera in the Ostrowski group: an adapter plate that mounts the camera to the dewar, and a light baffle tube with internal threads. Both are 6061 aluminum, black anodized. We needed them for an observing run at Palomar starting Nov 18, so there was no time for a remake if anything went wrong.\n\nOn speed: a larger vendor quoted us 6 weeks, which would have missed the run. Arroyo quoted 21 days (we paid a rush setup fee) and delivered 9 days after the PO, anodizing included. Ruben dropped the parts at Robinson himself on his way to another errand and didn't charge for delivery. I was so happy I almost hugged him.\n\nThe thing I most want other labs to know is about a mistake, and it was mine, not theirs. Every dimension on my drawing is in mm, but I copied the bolt circle from the drawing of our previous camera and left it as 4.125, which is the value in inches. As drawn, the screws would have landed inside the bore. Tiff noticed it while setting up the plate. Ruben emailed me the same day, before they cut anything. He had already worked out that it should be 104.8 mm and only asked me to confirm. A shop that just machines whatever the drawing says would have sent us a useless plate, and we would have found out a week before the telescope run. They actually read the drawing and thought about what the part is for.\n\nOn quality: we did the fit test on Nov 9.\n- The plate went onto the dewar with all 8 screws in, no forcing.\n- Flatness across the face was under 0.01 mm on the dial indicator.\n- The baffle threads are smooth.\n- No light leak. A 300 s dark frame with the lab lights on looked the same as with the dewar closed.\n- The anodize is even, with no bare spots.\n\nThey also sent an inspection sheet when the parts were ready, which I appreciated.\n\nTo be fair to other readers: this is a small shop and their listing says 3-4 weeks is typical. Our 9 days was a rush job, and I would not assume every order goes that fast. But they told us they would make our date, and they beat their own quote by 12 days. Communication was short and clear the whole time.\n\nFor purchasing: I would really like to see Arroyo on the preferred list. For one-off instrument parts, where a wrong hole pattern can cost you an observing run, their careful checking is worth more to us than a big vendor's catalog. We will use them again for the next camera parts.\n\n5/5",
+  "words": 461,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13081075251102448,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09228894859552383,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.62109375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.6539716720581055,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.8,
+    "effort": "high",
+    "output_tokens": 2731,
+    "input_tokens": 3493
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.32, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Vantorre CX-10 review\n\nWe bought this refurbished Vantorre CX-10 for $14,800, delivered and commissioned on 14 September with a six-month parts and labour warranty.\n\nThe oven has had recurring E34 steam-generator low-water lockouts. The first service report logged nine E34 errors between delivery and 22 September; the level sensor was replaced and three steam cycles tested OK. By 3 October the fault had returned four times that week. At the 6 October visit, the generator was found heavily scaled and descaled. The core probe was recalibrated after reading 63°C against 70°C on our Thermapen in the same lamb shoulder on two checks; the technician reported it was then within 1 degree. I appreciate the technician’s work.\n\nOn 27 October the unit was again showing E34, with further scale reported. Kelsall has attributed this to our water and says the visit is not covered by warranty. Our local water supplier gave us an average hardness of about 15 mg/L as CaCO₃, described as soft. The oven had been on site for about three weeks when heavy scale was first reported. I can’t establish when that scale formed, but the available timing and water information leave the cause unresolved; they don’t establish that our supply caused it. The initial service report recorded inlet pressure of 320 kPa as OK.\n\nOn 24 October, E34 locked us out at 6:10 pm during a full 60-cover service. We finished the lamb on the stove and deck oven, took pork belly off the menu and absorbed the cost.\n\nKelsall has quoted $280 plus GST ($308) for the 27 October callout, despite the unit being six weeks old and within its registered warranty period. I’m disappointed that a fault reported soon after commissioning has recurred after service, and that its cause and warranty coverage remain disputed.\n\nBased on our experience, I’d advise other kitchens to clarify what refurbished-unit warranty service covers, and how faults like this will be assessed, before buying.",
+  "words": 321,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3166494071483612,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08826979994773865,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.265625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.63273286819458,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.5,
+    "effort": "medium",
+    "output_tokens": 449,
+    "input_tokens": 15511
+  }
+}

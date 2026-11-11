@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: board:vendor-reviews\nReplying to: none\nCc: none\nSubject: Harbor Point Steno Service — Stenvale Aria 3 recalibration and number bar repair\n\nDana, this is the Harbor Point write-up I promised on the other thread. I wanted to wait until the machine had been through a real trial, not just a day of depositions. It has now done eight days of a civil trial, so here it is.\n\nEquipment: Stenvale Aria 3, serial ending 0388.\n\nWork done: full keyboard recalibration, number bar depression sensor replacement, internal cleaning, firmware update from 4.0.7 to 4.2.1, and internal battery replacement. The battery was not on the original work order. Gloria emailed to say it was holding about 60 percent of rated capacity and asked before doing it. That mattered to me. The estimate was $285 and ten business days. The final invoice was $310: $285 for the quoted work and $25 for the battery. I dropped the machine off Monday, October 19, and picked it up Tuesday, October 27—six business days. I paid by card at pickup and did not seek reimbursement; I buy and maintain my own equipment.\n\nHarbor Point is a two-person shop off York Road in Towson. Parking in back is free, which is more than I can say for most of the places I deal with. They issued a loaner, a Stenvale Aria 2, to be returned at pickup. The loaner had one problem: its tilt arm slipped mid-afternoon during a deposition, and I propped it on a legal pad for the rest of the day. I mentioned it when I returned the machine; Gloria said they would repair it. That is a loaner issue, not a repair issue, but anyone relying on a loaner should know.\n\nThe first full day back was expert testimony—an engineer who talks in numbers—and the number bar did not double a single stroke. That is the test I cared about. The machine also came back with a printed one-page service sheet listing every adjustment. I have never had that from anyone else, and I wish it were standard.\n\nThe weakness is the phone. Their line is staffed Tuesday through Thursday, 9 to 4 only. I called on Wednesday, October 21, to ask about progress; it rang out and there was no voicemail box. Gloria emailed the following day, so the gap was not long, but if you are on a Monday docket and something goes sideways over the weekend, that schedule is not much help. Email worked fine once we were in touch.\n\nAt $310 I think the price was fair for what was done, and the work has held up under a real trial load. If Dana or anyone else is deciding whether to trust an Aria to them, I would say yes, with the phone-hours caveat. I would use them again.",
+  "words": 448,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says the tilt-arm problem was mentioned when the machine was returned, but the emails show it was reported by email on 10/22, before pickup."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13547194004058838,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2524379789829254,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.7421875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.407327651977539,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.3,
+    "effort": "provider default",
+    "output_tokens": 3084,
+    "input_tokens": 2236
+  }
+}

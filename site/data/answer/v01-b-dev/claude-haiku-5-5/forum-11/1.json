@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hi everyone, and Mr. Bergeron, thank you for asking me straight. I'm Hélène, I own Pétrin Doré, and I'll answer everything here so nobody has to guess.\n\nThe short version: we are not closing. We bought the building. I signed at the notary on December 15. The owner, M. Ferland, is 81 and retiring to Sherbrooke to be near his daughter. He offered to sell to me before anyone else, and I'm very grateful he did. He has come in every morning for 17 years for his baguette, pas trop cuite, so this was emotional for him, and for me. Hearing the word \"scam\" hurt a lot. Seventeen years on this street is not something I would risk for a quick sale.\n\nMarc-Antoine, your cousin was half right. The whole building at that corner was sold this fall. It was sold to me.\n\nAbout the sign: I'm sorry. \"Grande nouvelle bientôt\" was badly worded and I should have explained it properly. My nephew Thomas wrote it at 6 in the morning, and \"grande nouvelle\" was his idea. I said ok without thinking. I wanted to keep the surprise for the reopening, and now I've had to tell you early. That's fine. You deserved an answer.\n\nThe shelves looking half empty on the 28th had nothing to do with closing. We sold everything for Christmas Eve. We made 400 bûches, and that's why there was nothing left.\n\nHere are the dates. We are closed from January 4 to January 18 for works. We reopen Tuesday, January 19, at 7 a.m. The main work is a new deck oven. The old one is from 1998 and broke down three times this year. The new one has four decks and comes from a supplier in Laval. We're also taking the space at the back, which used to be the storage room of the dépanneur, and turning it into a small seating area with 6 tables. For 17 years people have bought bread here and eaten it on the sidewalk. Finally they can sit down.\n\nNow, the carnets, since you asked directly, Mr. Bergeron. In October we sold 214 carnets at $60 each, for 12 loaves. Every carnet is still good. They have no expiry date and nothing is cancelled. If you have loaves left on yours, they're yours to use. As a thank-you, every carnet holder gets one free croissant in January. Just bring your carnet when you come in after the reopening.\n\nAnd if anyone really wants their money back for a carnet, come to the shop and I will give it back to you. No question, no form. I would rather you have your money than feel you were taken.\n\nThe three apartments upstairs stay rented, with the same tenants and the same rent. I promised them in writing and I will keep that promise.\n\nSo the big news is that the bakery is growing, not leaving. Please come to the reopening on Saturday, January 23. Coffee is on me, and everyone gets a free piece of the new bread. Come see the new oven and sit at one of the new tables.\n\nThank you, Priya, for standing up for us. Reading that from someone who knows us makes a difference on a board where people are angry. I also remember your son's chocolatine every Saturday, and I'm glad he got it. Thank you to all the regulars who defended us when they didn't have to.\n\nI understand people are worried. Mile End has lost many small shops, and when a sign is vague and people paid for bread before Christmas, it's normal to ask questions. Ask me anything, here or in the shop. I'd rather answer everything than have people guessing.\n\nHélène\nPétrin Doré, 5 rue Fairmount corner",
+  "words": 628,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "629 words, allowed 720-2200 (band 800-2000 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17799973487854004,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0471339225769043,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.4296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.000222206115723,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.7,
+    "effort": "medium",
+    "output_tokens": 3422,
+    "input_tokens": 2406
+  }
+}

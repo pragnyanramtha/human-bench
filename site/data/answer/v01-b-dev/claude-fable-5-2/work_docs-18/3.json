@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "# Fix-It Saturday at St. Ansgar\n\n**Saturday, December 5, 2026, 9 a.m. to 1 p.m.**\n**Fellowship Hall, St. Ansgar Lutheran Church, Minneapolis**\n**Enter by the alley door (there's a ramp)**\n\nBring us something broken, and we'll do our best to fix it for free.\n\nA while back, Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes in the church kitchen. That's when the idea was born. Too much gets thrown away that just needs a screw or a new cord, and this neighborhood is full of people who know how to put one in. Our council approved Fix-It Saturday last week, and I confess I'm thrilled about it.\n\n**What we can fix so far**\n\n- Small appliances\n- Lamps\n- Bikes\n- Clothing that needs mending\n- Dull knives\n- Laptops and phones (we have one retired tech guy, so be patient with him)\n\nDoris Lindqvist, who is 84 and has darned socks for this parish since the Carter years, asked to run the mending table herself. Nobody argued.\n\n**What to know**\n\n- It's free. You don't need to be a member and you don't need to sign up.\n- One item per person to start, so the line keeps moving.\n- Coffee and kringle are on us.\n- Donations to the food shelf are welcome but not expected.\n- After December 5, we'll be back the first Saturday of every month through spring.\n\nThis is good neighboring, plain and simple. There are no strings, and nobody will preach at you. So bring the broken toaster, and then stay for coffee.\n\n**We need more fixers**\n\nIf you're handy, we'd love your help, whether or not you've ever set foot in a church. We're especially looking for anyone who can do vacuums or zippers.\n\nTo volunteer, or to ask a question, contact the church office at office@stansgarlutheran.example or 612-555-0148.\n\nHope to see you there,\n\nPastor [your name]\nSt. Ansgar Lutheran Church\n\n---\n\nThis comes to about 300 words, which should fit on one page with room for a larger headline. I left the signature for your name. The \"Nobody argued\" line after Doris and the \"be patient with him\" aside are my additions, so cut them if they don't sound like you.",
+  "words": 373,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3650815188884735,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6855466961860657,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.861281633377075,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.5,
+    "effort": "high",
+    "output_tokens": 1469,
+    "input_tokens": 1459
+  }
+}

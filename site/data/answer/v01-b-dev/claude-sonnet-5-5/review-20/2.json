@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches: would not book for large events until they fix dispatch**\n\nPosting this so you have the facts before CES season.\n\n**What I booked:** 4 coaches for a client dinner for 220 people on Thursday, Nov 5. Pickup was at the hotel at 6:15, headed to a ranch venue out in Henderson. Sunbelt confirmed in writing twice, most recently on Tuesday, Nov 3. I paid $8,400 total: 50% deposit in September and the balance 7 days out. The dispatcher on everything was Corey.\n\n**What happened:**\n- Only 2 of the 4 coaches showed up.\n- The first one arrived 55 minutes late. The driver told me he was given the job at 5pm.\n- The second broke down on the 215 with the AC dead. Guests sat on the shoulder for about 40 minutes.\n- I got no call or text from Sunbelt at any point, and there was no backup plan.\n- I put about 60 guests into Ubers and Lyfts on my company card, around $1,900.\n- Dinner started at 8:40 instead of 7:00, and our caterer charged overtime.\n\n**Since then:** I've asked for a refund on the two coaches that never came, plus the rideshare costs. Their office line has gone to voicemail since Friday, and I don't have a resolution. My client is now reviewing whether to keep us for their March event.\n\n**To be fair:** They did two small airport runs for me last spring and were great, which is why I trusted them. One late bus I could have forgiven. Two no-shows, a breakdown, no backup plan and zero communication is a different problem.\n\n**My advice:** For small airport runs they may be fine, but I wouldn't book them for anything large or time-sensitive until they show they've fixed their dispatch. If you do use them, line up a backup and get a day-of confirmation with a real person.\n\nIf you've used them recently, good or bad, I'd like to hear about it.",
+  "words": 331,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.598373532295227,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8275521397590637,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.6484375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.9730650782585144,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.8,
+    "effort": "high",
+    "output_tokens": 1840,
+    "input_tokens": 1469
+  }
+}

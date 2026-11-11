@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: none\n\nMick, Priya, please don't go into 43 at 9, and nobody should be standing under that bay or in the front bedroom until the council has been.\n\nI walked past at 7 this morning and looked from the pavement opposite, not up close. Here's what I saw:\n\n- No. 41: about a metre of chimney stack is still standing, leaning towards 43. The pots have gone and the mortar at the base looks washed out. It could come down in more wind, and the Met Office has gusts around 50mph again this afternoon.\n- No. 43: a hole in the front roof slope of roughly 2 to 3 square metres, so there's probably debris in the front bedroom. There's a stepped crack from above the bay up to the first-floor window sill, 5 to 10mm wide. The bay head looks dropped by maybe 20mm, though I couldn't see the lintel under the render.\n- Loose slates on 43 and 45 over the pavement.\n\nMick, I know you mean well, but propping up under a holed roof with a loose stack above is about the worst place you could stand. Nobody knows how the loads are travelling through those floors now, and there may be debris sitting on the ceiling. Going up into the loft from inside has the same problem. Please leave it to the council's structural person.\n\nPriya, to your questions: I can't tell from the pavement whether Mrs Doherty is safe in 45. The front of 45 looks undamaged to me, but I couldn't see the party wall with 43. It's not my decision, but I wouldn't sleep in the front room tonight. I'd feel much better if she stayed with family until someone has checked 45 properly.\n\nOn the pavement, I wouldn't use it. The council has only taped off the front garden of 43, not the footway, so the slates and the stack are effectively hanging over the path. People should cross to the other side of the road, especially for the school run to St Dunstan's.\n\nTo get the footway closed, ring the council's main number and ask for the out-of-hours dangerous structures team. They may already know, but the pavement still needs closing.\n\nFor clarity, I'm a chartered structural engineer with IStructE, but this isn't a commission or professional advice, and I don't have professional indemnity cover for it. I'm speaking as a neighbour who looked from the pavement, nothing more.",
+  "words": 407,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The pavement advice does not say to use the opposite side until the council attends."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20053569972515106,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08052840828895569,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.5390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.261412620544434,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.9,
+    "effort": "medium",
+    "output_tokens": 3299,
+    "input_tokens": 3443
+  }
+}

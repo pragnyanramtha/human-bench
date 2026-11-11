@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**RA Progress Statement: Seoul–Daegu Honorific Shift Corpus**\nPrepared for the Winter 2027 funding review\n[Your name], Research Assistant (sole RA for Korean annotation)\nReporting date: November 9, 2026\n\n**Status**\n\nThe fall-term target was 6,000 annotated utterances. As of November 9, 4,200 are complete and 1,800 remain. The gap comes from a six-week period when I could not work on the new Daegu recordings because the IRB amendment covering them had not been signed. It does not reflect my annotation rate, which has been above plan since I got access.\n\n**Timeline (all dates 2026)**\n\n- **August:** Prof. Hollander requested a revised speech-level coding scheme.\n- **September 3:** I sent Prof. Hollander the IRB amendment adding the 14 new Daegu recordings for signature. I was not permitted to work with the recordings until it was signed.\n- **September 12, September 24, October 6:** I sent reminder emails about the signature. Copies are available.\n- **October 15:** The amendment was signed, and I began annotating the new recordings.\n- **November 9:** 4,200 utterances complete.\n\n**Work completed**\n\n- From September 3 to October 15, I recoded the existing 2,300 utterances under the revised speech-level scheme. This work was not in the original timeline.\n- Since October 15, I have annotated about 1,900 new utterances, averaging more than 500 a week against a planned 350.\n\nThe 1,800-utterance shortfall is smaller than the 2,100 that six weeks at the planned rate would have produced.\n\n**Projected completion**\n\nI expect to reach 6,000 utterances by the end of January 2027. At my current pace I should finish before then.\n\n**Request for the review record**\n\nAt the November 6 lab meeting, my annotation was described as \"six weeks behind,\" with the comment that this would be noted for the review. I ask that any such note state the cause: the amendment was awaiting signature from September 3 to October 15, and I had no access to the new recordings during that time. If that context cannot be included, I ask that the \"behind\" comment be left out. I also ask that the recoding of the 2,300 existing utterances be recorded as progress for the term.\n\n---\n\nTwo things to check before you post it:\n\n- **Completion date:** At 500 a week, the remaining 1,800 would take under four weeks, so \"end of January at current pace\" didn't add up. I kept end of January as the commitment and said you should finish sooner. If that date allows for finals and the break, say so in that section.\n- **The first-years:** I left out that the comment was made in front of them. It reads as a grievance in a funding file, and the dates make the case without it.",
+  "words": 450,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "452 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40590700507164,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5959627032279968,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.484375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.31650447845459,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.6,
+    "effort": "high",
+    "output_tokens": 3270,
+    "input_tokens": 1579
+  }
+}

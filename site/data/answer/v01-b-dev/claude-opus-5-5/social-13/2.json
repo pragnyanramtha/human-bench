@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Some news, and some honesty**\n\nFirst, the good bit. On Monday 16 November, Priya Bhatia joins the practice. Priya is a chartered structural engineer (IStructE) and has spent the last nine years at a consultancy in Coventry. I'm genuinely delighted she's coming on board, and it fixes the problem a lot of you will have noticed.\n\nThat problem was me. Through September and October, beam calcs and drawings were taking five to six weeks, which is far too long. I said yes to too much work on my own, and you paid for it in waiting. By October I was doing site visits in the day and calculations until midnight. My wife started calling the office \"the other house.\" One couple in Harborne had their builder standing waiting with the steel already ordered. We got it to them in three days, but only after they'd chased twice, and they shouldn't have had to. Some of you were unhappy, and one of you said so publicly. That was fair, and I'm sorry.\n\nWith Priya here, our target for beam calcs and drawings is 10 working days.\n\nIf you're waiting on us right now, your job is moving. You're welcome to message me directly and I'll tell you exactly where it stands.\n\nOne more change. From 1 January 2027, first site visits will cost £95. If you go ahead with the job, that £95 comes off your fee. I've enjoyed offering the free visit, but about a third of them never turned into a job, and that's a big part of how the diary got so stretched. To be clear about who keeps a free visit: **any visit already booked when this post goes up stays free, whatever date it's for.** The charge only applies to visits booked from now on that take place on or after 1 January.\n\nThank you to everyone who stuck with us through a slow couple of months. Things really are getting better, and I'm looking forward to showing you that.\n\nIf Priya turns up on your site in the coming weeks, please say hello and make her welcome.",
+  "words": 352,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5104759931564331,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.39398565888404846,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.774610996246338,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.6,
+    "effort": "medium",
+    "output_tokens": 925,
+    "input_tokens": 1425
+  }
+}

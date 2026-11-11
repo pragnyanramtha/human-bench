@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "# 4/5 stars — Kept my trading setup online when it actually mattered\n\nI paid $229 for the Kestrel Bastion 1500 on Voltwise in August, and during the October 14 storm here in Miami, it did exactly what I bought it for.\n\nPower dropped around 2:20 p.m. while I had a 10x long open on a SOL perp. Not a great time to suddenly be staring at three black monitors. My PC, screens, modem, and router all stayed up, though, and I closed the position cleanly in about four minutes. That alone made me very glad I had this thing.\n\nStill giving it four stars, not five. The backup part has been solid for me, but there are some genuinely annoying things you should know before putting one next to your desk.\n\n## My setup and actual runtime\n\nMy load is a PC, three monitors, a modem, and a router. While trading, the Bastion’s own display puts that at around **410W**. That’s the number I’m working from, not a separate wall-meter measurement.\n\nThe unit is rated at **1500VA / 1000W** and has pure sine wave output. The box advertises roughly **14 minutes at 500W**. In a deliberate outage test with my setup, I ran it for **11 minutes and 40 seconds before shutting down**.\n\nImportant distinction: I shut down at that point. That wasn’t a measured run all the way to an empty battery, so I can’t tell you its exact maximum runtime or say that test disproves the number on the box. What I can say is that it gave my actual trading setup nearly 12 minutes of usable backup time in that test.\n\nFor me, the point isn’t to keep trading through a whole outage. It’s to have enough time to manage an open position and shut everything down properly. On October 14, it gave me the four minutes I needed without my rig or home network dropping.\n\n## Watch which outlets you use\n\nYou get **10 outlets, but only five are battery-backed**. The other five are surge-only. There’s also a **60W USB-C port**.\n\nCount your plugs before you buy. My PC, three monitors, modem, and router add up to more devices than there are battery-backed outlets, so five is a limitation worth paying attention to for a multi-monitor desk.\n\nAnd please put your **modem AND router on the battery-backed side**. Keeping the PC running doesn’t help much if your networking gear shuts off immediately. This also can’t guarantee your internet provider stays online during a storm; my connection happened to stay up.\n\n## The stuff that bugs me\n\nThe fan is loud. During the first week, it kicked on at 3 a.m. and woke me up. Think hair dryer on low, not a quiet little PC fan. If your setup is in your bedroom, take that seriously.\n\nThe outage beeping is loud as hell too. You can mute it in the desktop app, but the mute setting resets after a firmware update. Having to remember to change it back is irritating.\n\nThe app itself looks like it escaped from Windows XP. I don’t need a beautiful dashboard for a battery, but this one looks rough. The useful part is that **automatic shutdown works**, which matters a lot more to me than the interface.\n\nIt also weighs around **30 pounds**. The battery is swappable, which I appreciate, but the replacement pack costs **$95**. That’s worth factoring into the long-term cost of a $229 unit.\n\n## Would I buy it again?\n\nYeah. It kept my setup and connection alive during a real outage with an open leveraged position, and that’s the reason I bought it.\n\nJust go in expecting a heavy box, a dated app, and more noise than you probably want. Four stars: useful backup for my trading desk, with some annoyances I’d really like Kestrel to fix.",
+  "words": 640,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: headings, bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42957332730293274,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9881448745727539,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 18.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.819782257080078,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.2,
+    "effort": "medium",
+    "output_tokens": 818,
+    "input_tokens": 13946
+  }
+}

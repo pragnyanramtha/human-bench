@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Repeated E34 steam generator faults, scale within 3 weeks of delivery\n\nBought this refurbished CX-10 (order CM-88213, delivered and commissioned 14 Sep) for $14,800 for our bistro kitchen in Fitzroy. The listing says the steam generator was descaled and pressure tested, with a 6 month parts and labour warranty. This is what happened.\n\n- 14 to 22 Sep: E34 (steam generator low water level) logged 9 times. Kelsall replaced the level sensor under warranty (SR-1190).\n- 3 Oct: E34 back 4 times in a week. The core probe was also reading low. In a lamb shoulder the oven said 63°C and our Thermapen said 70°C, same result on two tests. An under-reading probe is a food safety problem for us.\n- 6 Oct: Kelsall's tech found the steam generator heavily scaled, descaled and flushed it, and recalibrated the probe to within 1°C (SR-1236). They recommended we install a water softener, saying the scale pointed to hard water.\n- 24 Oct: E34 locked the oven out at 6.10pm on a Saturday with a full book of 60 covers. We finished the lamb on the stove and in the deck oven, and had to take the pork belly off the menu.\n- 27 Oct: E34 again, and more scale found.\n\nOn the water: I rang the water authority. Fitzroy supply averages about 15 mg/L hardness as CaCO3, which they described as soft, among the softest in the country. I can't say what condition the generator was in when it left Kelsall's workshop, but heavy scale on water that soft only 22 days after delivery doesn't add up to me. Kelsall's position is that it's a site water issue and not covered by warranty. They've invoiced $280 + GST ($308) for the 27 Oct callout, which we're disputing. The unit was six weeks old, under warranty, and the fault was there from the first week.\n\nTo be fair, the service tech has turned up each time and been easy to deal with. My issue is with the unit and with how the cause has been handled, not with him.\n\nIf you're thinking of buying a refurbished combi, get the descale and pressure test records in writing, and ask what the warranty covers if scale is blamed. Check your own water supply too. We still don't have an oven we can rely on on a full Saturday night.",
+  "words": 383,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1212187334895134,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026659540832042694,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.9375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.392035722732544,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.2,
+    "effort": "high",
+    "output_tokens": 2728,
+    "input_tokens": 3684
+  }
+}

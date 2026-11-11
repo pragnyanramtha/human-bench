@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the post — plain enough for Facebook, no name-dropping, and it owns your part without groveling:\n\n---\n\nHi Hollins family — putting this up so nobody has to keep asking my mom about me.\n\n**I'm coming.** Thanksgiving is Thursday, November 26, at Aunt Denise's in Macon, food on the table around 3. I'm bringing mac and cheese and two sweet potato pies, so nobody has to cook for me. If you're one of the cousins who missed last year, the invite stands.\n\nNow the part I actually want to say. Last year I got into it at the table and said things about people I shouldn't have said — including a crack about where somebody gets their news. That was on me. I'm not going to name names, because the point isn't who started it, and I don't want anybody else in this group sitting there feeling like they're about to get called out at dinner.\n\nI'm not sorry for what I do for work. I love it and I'd do it again. But I am sorry for how I talked in Grandma Pearl's house on a holiday. I still think about her out on the porch for that hour, and I don't love it. That wasn't the kind of evening anybody in this family needed.\n\nI also want to be straight about the lawsuit: I can't talk about open cases. Not because I'm trying to be mysterious — because I made a promise when I took this job, and I'd rather tell you \"I can't answer that\" than break it. So if somebody asks, that's a dead end. Please don't read it as me being dodgy.\n\nWhat I'm asking is one thing. For one day, let's keep the table to food, football, babies, and Tasha's new boyfriend. Leave the work stuff and the politics at the door when you walk in. We can all disagree about everything else, just not at the table on Thursday.\n\nOne more thing — whoever sent me a thumbs-up emoji for my birthday last August. I saw it. It counted for more than you probably meant it to.\n\nI want this to be a good day. I think it can be. See you Thursday.\n\n[Your name]\n\n---\n\nRoughly 360 words. Two small things worth doing alongside it: if Ray texts you back, keep it short and warm — \"See you Thursday, man\" is plenty. And consider a separate quick text to him saying you won't be talking shop on Thursday and you'd rather just have a good day with him. Doing it privately means the truce isn't something you put on him in front of forty people.",
+  "words": 444,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4680600166320801,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.38708797097206116,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.55859375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.694118499755859,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.4,
+    "effort": "provider default",
+    "output_tokens": 3060,
+    "input_tokens": 630
+  }
+}

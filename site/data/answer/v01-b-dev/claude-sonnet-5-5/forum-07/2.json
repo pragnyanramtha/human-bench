@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "**Title: The part they don't teach you in school**\n\nI've read this board for a while but never posted. This month's thread feels like the right place, because I've been thinking about one patient since I got home this week.\n\nI'll call her Mrs. H. She was 84 and came to our little independent pharmacy for seven years. She was on eleven medications, so every Thursday I made her a blister pack. She lived alone after her husband died and walked with a cane with tennis balls on the feet. I heard her coming before I saw her.\n\nEvery Thursday she brought me something. Usually poppy seed cake, wrapped in foil. Once it was a jar of pickles, and I still don't really know what I was supposed to do with them. I ate them anyway, and they were good. I'm Muslim, and the first Ramadan she was with us she remembered, and told me firmly not to touch the cake until sunset. After that, the foil had my name written on it in marker.\n\nA couple of years ago I caught an interaction. A new doctor had added something to her warfarin, and it wasn't a good combination. I called him, it got changed, and that was that. For me it was just the job. For her it was a story she told to everyone. \"He saved my life.\" Customers I had never met would tell me they'd heard about me. I never knew how to answer that, so I just said thank you.\n\nShe passed away at the end of last month. This week her daughter came in to return the unused packs and her glucometer. We stood at the counter and I counted things and did the paperwork, and we were both being very professional about it. Then she gave me a card. Inside, in her mother's handwriting, from a long time ago, it said \"for my Arabic daughter.\" She had written it and never given it to me.\n\nI made it to the back room before I cried. My tech covered the counter for ten minutes and didn't say a word about it, which is exactly what I needed.\n\nWhat I keep coming back to is this. In school we learned pharmacology, interactions, counselling, and how to read a prescription from a doctor with terrible handwriting. Nobody taught us what to do when a patient you see every week for seven years is simply gone. There's no protocol for it. We're told, kindly, not to get too attached. But how? You see someone every week. You know her pills, and you also know that her knee is bad in the cold, that she doesn't like the new bus schedule, and that she's proud of her grandchildren. That's not a customer anymore.\n\nMy father is a pharmacist in Egypt, and he knew every family in his neighbourhood. He knew who was getting married, who was sick, who had lost someone. When I moved here I assumed Canada would be more distant and professional. It isn't, not in a small pharmacy. People are people everywhere, and the counter is where they bring what they're carrying.\n\nI don't have a lesson to wrap this up with. I guess I'm just glad she was one of my patients, and a little sad that no one told me this would be part of the work.\n\nSo I'd like to ask: do you have a patient like this? Someone who stayed with you after they were gone? And how do you handle that moment, when the family walks in and the profile gets closed? I'd really like to hear how others deal with it.\n\nThank you for reading.\n\n---\n\nI left out her name, the daughter's name, dates, and your location, and I kept the details general enough that nobody could trace it back to her. If you'd like it shorter, I can trim the middle section, or I can change the title to something plainer.",
+  "words": 664,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The combination of Mrs. H's age, weekly blister packs, cane, food gifts, and warfarin interaction could identify her."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14991267025470734,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12102010101079941,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.632544040679932,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.0,
+    "effort": "high",
+    "output_tokens": 1882,
+    "input_tokens": 1530
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Review: Sunbelt Charter Coaches – Avoid for Large Group Transports Until Dispatch Is Fixed**\n\nPosted by a corporate event planner, Las Vegas, NV\n\nI'm posting this so other planners in the group have the facts before they book Sunbelt for airport runs or offsite events this CES season. I used them for a client dinner on Thursday, November 5, and it was a disaster that could have been avoided with basic communication.\n\nThe booking: 4 coaches for 220 people, hotel pickup at 6:15 PM, offsite at a ranch venue in Henderson. I had written confirmation twice, with the last confirmation on Tuesday, November 3. I paid $8,400 total—50% deposit in September, the balance 7 days out. The dispatcher on all correspondence was Corey.\n\nWhat actually happened: Only 2 buses showed up. The first was 55 minutes late, and the driver told me he got the job at 5 PM that day. The second bus broke down on the 215 with the AC dead, and passengers were stuck on the shoulder for about 40 minutes. I ended up putting 60 people in Ubers and Lyfts on my company card—roughly $1,900. Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime.\n\nI could forgive one late bus. What I can't forgive is no backup plan and no communication. The office line has gone to voicemail since Friday, and they're now dodging me on the refund for the two coaches that never arrived plus the rideshare costs. My client is reviewing whether they keep us for their March event, and that's on Sunbelt.\n\nTo be fair: they were great on two small airport runs last spring, which is why I trusted them with this. But for anything large, don't book them until they fix their dispatch. I'm sticking to what happened here so nobody can say I'm exaggerating—but the facts speak for themselves.",
+  "words": 313,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4186340868473053,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9606927037239075,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6392391920089722,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.0,
+    "effort": "provider default",
+    "output_tokens": 586,
+    "input_tokens": 519
+  }
+}

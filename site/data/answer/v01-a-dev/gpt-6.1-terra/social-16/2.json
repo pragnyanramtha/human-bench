@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline:rosario.bautista\nReplying to: none\nCc: none\nSubject: none\n\nSHE GOT HER NMC PIN TODAY!!! 🎉🎉🎉\n\n@Lorna Villaruz MY BEST FRIEND IS COMING TO LIVERPOOL!!! I am so happy I cannot even type properly 😂 After 20 years of me telling you to come, you are finally coming!!! Thank you Lord 🙏❤️\n\nLorna and I trained together in nursing school in Iloilo. Our capping ceremony was in 1996, can you believe it? Look at us now!! I still remember us in the dorm polishing our white shoes every night, and someone always borrowing my polish because she never bought her own. Lorna, I am talking about YOU 😂 Some things I never forget haha.\n\nWhen I left for the UK in 2004 you cried at the airport and said “susunod ako” – I will follow you. Well, 22 years later here we are!! You just had a little detour to Riyadh and Dubai for almost 18 years first 😂\n\nAnd today your PIN came through after all the papers and exams and waiting waiting waiting!! I am so proud of you, my friend. Remember when you were in Nottingham for your OSCE and I sent you a photo of the rain so you knew what you were getting yourself into? That was only a sample haha. Please bring a PROPER coat, not the one from Divisoria, because Liverpool wind is no joke!!! 🥶\n\nShe lands in Manchester on 14 January, around 1pm, and starts on 25 January on Ward 7 medical at Mersey Bank Hospital!!! Ward 7, you are so lucky to have her. She is the best nurse I know, always so calm and the patients love her. I know they will love her here too ❤️\n\nAnd yes Lorna, of course you can stay with us for your first month!! Ben says it is ok, especially now he knows you are bringing dried mangoes and Bicol pili for Tito Ben hahaha. I will get the spare room ready and put the thick duvet on. You will need it!!!\n\nWelcome to Liverpool and to our Filipino family here, my friend!!! We have Christmas parties, plenty of food, plenty of chismis 😂 and next year Simbang Gabi with us too. Everyone, please help me welcome Lorna when she gets here!!\n\nFrom our white shoes in Iloilo to Ward 7 in Liverpool. I cannot stop smiling today. So so proud of you, Lorna!!! Love you my sister from another mother ❤️❤️❤️ 🎉",
+  "words": 402,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.19788731634616852,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09226878732442856,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.5,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.368359088897705,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "low",
+    "output_tokens": 540,
+    "input_tokens": 19899
+  }
+}

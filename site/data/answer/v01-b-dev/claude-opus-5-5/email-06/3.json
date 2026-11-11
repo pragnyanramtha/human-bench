@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for picking this up. Here are the details you asked for. I have copied Kevin Mutua, our payroll officer, who will test whatever fix you suggest.\n\n1. Terminal model and firmware\nFour BX-300 terminals at our Embakasi depot auto-updated from 4.1.8 to 4.2.1 on the night of 27 October. Our two BX-300s at Mombasa Road were offline that week, so they are still on 4.1.8. Mombasa Road has no problem, which points to 4.2.1.\n\n2. Shift template\nNIGHT-8, 22:00 to 06:00. 38 night shift staff are affected.\n\n3. Example\nEmployee ID T-0417 clocked in at 21:54 on 30 Oct and out at 06:07 on 31 Oct.\nExport showed: 2.1 hrs REG on 30 Oct and 6.1 hrs OT15 on 31 Oct.\nExpected: 8.0 hrs REG and 0.2 hrs OT15 (we round to the nearest tenth of an hour, and the 13 minutes outside the scheduled shift should be OT15).\nEvery shift that crosses midnight is being split into two lines at 00:00, and the after-midnight part is coded OT15 instead of REG.\n\n4. Export profile\nPayroll CSV v2.\n\n5. When first noticed\n5 November, while reviewing the draft October overtime. The affected records start from about 28 October, the first night after the update.\n\nThe 4.2.1 release notes promised improved midnight rollover handling for shifts that span two days. For us it has done the opposite. Our October overtime came out materially overstated, and Kevin has had to correct it by hand from the raw punches.\n\nOur November payroll inputs close on Friday 20 November. We need either a fix or a clear workaround before then.\n\nOne direct question: can our IT team safely roll the four Embakasi terminals back from 4.2.1 to 4.1.8 without losing any punch data, including anything held in the new offline buffer? If it is safe, please send the correct procedure. If it isn't, please tell us what we should do instead. We won't touch the terminals until we hear from you.\n\nKevin can share more raw punch and export samples if that would help you reproduce the issue. We will only use staff IDs.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 362,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21920834481716156,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03427138552069664,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.720680236816406,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.3,
+    "effort": "medium",
+    "output_tokens": 1246,
+    "input_tokens": 3593
+  }
+}

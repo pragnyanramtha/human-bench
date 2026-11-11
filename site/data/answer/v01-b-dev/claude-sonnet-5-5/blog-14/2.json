@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Come and push the trolley**\n\nI'm not the sort of person who usually ends up in a piece like this. I spent 41 years keeping the books for a builders' merchant in Dereham, and my idea of a thrilling day was a ledger that balanced first time. I retired in 2020 and, if I'm honest, spent the next eighteen months drifting. Nothing was wrong. I simply had no regular reason to leave the house most weeks, and that turns into a habit faster than you'd think.\n\nIn March 2022 I started on the Thursday tea trolley in the day therapy unit, and it fixed that. I'd like to claim it was pure public spirit, but mostly I wanted somewhere to be on a Thursday afternoon.\n\nI'm writing now because we're short. The rota is meant for six and there are four of us. Two left over the summer, one to Sheffield to be near the grandchildren and one for a knee operation. Neither had had enough of the place, which is worth saying, because people tend to assume the worst.\n\nWhat people assume, I think, is that it must be either harrowing or terribly skilled, and it's neither. On a Thursday the unit sees somewhere between 14 and 18 patients. Many come for the art group or the hand massage, or just for company, and most go home afterwards. It's mostly noisy and rather jolly. You don't need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. Forty-one years of keeping ledgers straight turns out to be good training for remembering who has two sugars.\n\nThat would be Mr Hollis, a retired signalman, who tells me about the 1953 floods every week, slightly differently each time. I stopped correcting the dates a good while ago. It doesn't matter, and I'd say he tells it better than the history books.\n\nIn my first week I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she had to be given a tissue, and she told me afterwards it was the best afternoon she'd had in a month. I don't recommend this as a method, but it did settle my nerves.\n\nOther things I've learned: the bourbons always go first, so we now hide a packet for the late group.\n\nI won't pretend every week is easy. Some Thursdays are sad, and when that happens the staff look after us as well as the patients. That's all I'll say about it, except that it hasn't made me want to stop.\n\n**The practical bit**\n\n- **When:** Thursdays, 1.30 to 4pm, in the day therapy unit.\n- **How often:** one Thursday a fortnight. That's all.\n- **Induction:** Bridget, our volunteer coordinator, does it herself. It takes about two hours. There's also a short online food hygiene course, which the hospice pays for.\n\n**Come and have a look**\n\nThere's a volunteer open afternoon on **Tuesday 24 November at 2pm in the Willow Room**. It's tea and biscuits, and there's no obligation whatsoever. You can come, look around, ask whatever you like, and go home again. If you can't make it, ring Bridget on the volunteering line and she'll be glad to talk it through.\n\nI'd very much like to see at least two new faces there. Two more of you and our rota balances, which as a bookkeeper I find deeply satisfying.\n\n---\n\nTwo quick notes before you send it. I haven't included the volunteering line number because I didn't have it, so you'll want to add it. And since Mr Hollis and Pat are named, it might be worth checking with Bridget that she's happy with that, or you could just say \"one of our regulars\" instead.",
+  "words": 628,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3510478734970093,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21448731422424316,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.849170684814453,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.2,
+    "effort": "high",
+    "output_tokens": 2806,
+    "input_tokens": 1753
+  }
+}

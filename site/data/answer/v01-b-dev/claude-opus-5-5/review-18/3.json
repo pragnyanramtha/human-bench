@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4/5: Saved my position during a storm, but it has some annoying quirks**\n\nI bought the Kestrel Bastion 1500 on here in August for $229. I'm a day trader in Miami, so storms and random outages come with the territory. Most UPS reviews are either \"works great!!\" or \"died after a week,\" so I wanted to give real numbers for anyone running a trading setup.\n\n**My setup**\n\nPC, 3 monitors, modem, and router. The unit's display shows about 410W while I'm actively trading with everything on.\n\n**Specs quick**\n\n- 1500VA / 1000W, pure sine wave\n- 10 outlets total: 5 battery backed, 5 surge only\n- USB-C port, 60W\n- About 30 lbs, so it's heavy. Put it where it's staying.\n- Swappable battery, but the replacement pack is $95\n\n**The day it paid for itself**\n\nOctober 14, the storm knocked the power out around 2:20pm. I had a 10x long open on a SOL perp. If my rig or internet had dropped right then I'd have been watching it on my phone hoping nothing moved. Everything stayed on, PC, screens, wifi, no flicker, nothing. I closed the position clean in about 4 minutes and shut down. That one moment basically justified the purchase.\n\n**Actual runtime**\n\nThe box says about 14 minutes at 500W. I tested it on purpose at my ~410W load and got **11 min 40 sec** before I shut down. That's less than the box suggests, especially since I was pulling less than 500W, so I'd take the advertised number with a grain of salt. Still, almost 12 minutes is plenty to close positions, cancel orders, and shut down properly. If you need to keep trading through a long outage, this isn't for that. It's a \"get out safely\" unit, not a generator.\n\n**Big tip: put your modem and router on the battery side**\n\nPeople forget this all the time. Your PC stays on, you feel great, and then you realize your internet is dead because the modem is plugged into a surge-only outlet. Then the backup is useless for trading. Modem + router go on the battery side, period. With 5 battery outlets I had room for the PC, monitors, and network gear.\n\n**The annoying stuff (why it's not 5 stars)**\n\n- **The fan.** The first week, the fan kicked on randomly around 3am and woke me up. It's loud, like a hair dryer on low. If this sits in your bedroom you'll notice it. It's calmed down since, but it was rough at first.\n- **The beeping.** When the power cuts it beeps loud as hell. You can mute it in the desktop app, but the setting resets after a firmware update, so you'll get surprised again at some point. Small thing, but annoying when you're already stressed during an outage.\n- **The desktop app.** It looks like Windows XP. Seriously dated. But auto shutdown works, and that's what matters if you're not at your desk when the power goes. Ugly but functional.\n- **Battery cost.** $95 for a replacement pack is a lot when the whole unit was $229. Good that it's swappable and you don't have to toss the whole thing, but budget for it down the line.\n\n**Bottom line**\n\nIf you trade with leverage from home, especially somewhere like Florida where the power goes out when it feels like it, get something like this. Getting a few minutes to close a position cleanly versus watching it from a dead screen is worth way more than $229. The Bastion 1500 did exactly what I needed when it counted. The runtime came in under the box number, and the fan, beeping, and app could all be better, but the core job is solid.\n\n4 stars. Would buy again, just knowing the quirks going in.",
+  "words": 630,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6327390074729919,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9719579219818115,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 14.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.720410108566284,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.4,
+    "effort": "medium",
+    "output_tokens": 1326,
+    "input_tokens": 1406
+  }
+}

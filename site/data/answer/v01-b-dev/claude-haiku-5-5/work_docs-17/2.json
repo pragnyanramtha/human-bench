@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "## Proposal: Moving H-1B Registration Intake to January 15\n\nLast season we filed 14 registrations for six employer clients, and 9 of them came in during the final week of February. Rosa logged about 11 hours of overtime that week. Clients weren't really slow. We email the questionnaire whenever an employer asks, and nobody has been given a date, so the work piled up on us at the end. Most of the crunch comes from our process, and we can change that.\n\nMoving our internal intake deadline to January 15 would help both sides. The registration itself is simple, but errors are expensive. A wrong passport detail can mean an invalid selection. Last season, one employer sent a beneficiary's passport scan two days before the window, and it had expired in October. We caught it only because Rosa checked the dates. With more lead time, problems like that get found while there's still room to fix them.\n\nThe January date also works for HR teams. They're back from the holidays by early January and have their Q1 budgets set, and the $215 per-beneficiary fee is already in those budgets. One HR contact told us she would have happily sent everything in January if we had asked.\n\nWhat would change:\n\n- Engagement letters and a one-page questionnaire go out the week of December 7.\n- Intake closes January 15.\n- Requests after that date are handled case by case.\n- Rosa owns the tracker and gets a clean six weeks to chase gaps before the deadline.\n\nIf Marcus agrees on Thursday, we can send the December letters on schedule.",
+  "words": 268,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "Rosa's overtime is placed in the final week of February rather than the week the registration window opened."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3530288636684418,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9720957279205322,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.484501361846924,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.3,
+    "effort": "medium",
+    "output_tokens": 1497,
+    "input_tokens": 1552
+  }
+}

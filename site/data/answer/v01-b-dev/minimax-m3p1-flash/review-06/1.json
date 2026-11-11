@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: ChefMarket review draft — Vantorre CX-10, order CM-88213\n\nVantorre CX-10, unit s/n VT21-30877. Order CM-88213, delivered and commissioned 14/09/2026, $14,800 inc GST. The refurbishment notes on the listing stated the steam generator had been descaled and pressure tested, new door gasket, core probe calibrated.\n\nFaults and service history:\n\n- 22/09 (SR-1190): E34 steam generator low water level, intermittent lockout in combi and steam mode. Error log showed E34 nine times since 14/09, so from delivery day. Water level sensor replaced, 3 x steam cycles tested OK, inlet pressure 320 kPa. Warranty, no charge.\n- 03/10: E34 back four times in one week. Core probe reading low — oven 63°C against ThermoPen 70°C in a lamb shoulder, same result on both tests.\n- 06/10 (SR-1236): steam generator found heavily scaled, descaled and flushed. Core probe recalibrated, now within 1°C. Report noted the scale indicated a hard water supply.\n- 27/10: E34 again, further scale found. Attendance invoiced at $280 + GST on a unit still under the 6 month parts and labour warranty registered to 14/03/2027.\n\nOn the water: our Fitzroy supply averages about 15 mg/L as CaCO3. The water authority describes it as soft, among the softest in the country. The generator had been on our supply three weeks when the scale was found, so it is unlikely to have built in three weeks on this water.\n\nService impact: Saturday 24/10, E34 locked the unit out at 6.10pm on a full 60-cover service. Lamb finished on the stove and deck oven, pork belly 86'd. Anyone else buying refurbished should pull the fault log and check the steam generator before the warranty clock starts.\n\n---\nTo: sal@littlegertrude.example\nReplying to: [m07]\nCc: none\nSubject: ChefMarket review draft — CX-10\n\nDraft is sitting in the ChefMarket review box for KCK-4471, not submitted, nothing sent. Review window closes Thursday 12/11 so it's there for you Wednesday morning.\n\nKept it to facts: dates, error codes, the 63 vs 70 probe readings, the 3 weeks on our 15 mg/L water against the scale, and the callout charged on a unit still under warranty. Nothing on anyone personally, no dig at Dion.\n\nHave a read and hit submit if you're happy with it.",
+  "words": 344,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['sal@littlegertrude.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09163909405469894,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.049678925424814224,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.3693060874938965,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.3,
+    "effort": "provider default",
+    "output_tokens": 4408,
+    "input_tokens": 2204
+  }
+}

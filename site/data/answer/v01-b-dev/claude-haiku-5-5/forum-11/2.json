@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Re: Pétrin Doré on Fairmount closing?? sign in the window**\n\nHi everyone. Mr. Bergeron, thank you for writing to me directly. You asked for a straight answer, so here it is.\n\nI'm Hélène, I own Le Pétrin Doré, and I've been on the corner of Fairmount since March 2009. Some of you know me from the counter, and I know some of you from your kids' Saturday chocolatines.\n\n**Are we closing?** No. We are closing for two weeks, from 4 to 18 January, for works. The shop reopens Tuesday 19 January at 7h.\n\n**Why the sign?** Because I bought the building. The owner, M. Ferland, is 81 and he's retiring to Sherbrooke to be closer to his daughter. For 17 years he has come into the bakery every morning for his baguette, *pas trop cuite*. When he decided to sell, he came to me before anyone else. We signed at the notary on 15 December, and he cried a little at the table, which made me cry too. So the cousin of Marc-Antoine is half right: the building was sold. It was sold to me.\n\n**The upstairs tenants:** the three apartments stay rented, with the same tenants and the same rent. I have promised them this in writing, and I'm sending the letters this week. Nobody is being moved out, and nobody is turning our corner into condos or a vape shop.\n\n**The sign:** I'll be honest about this one. My nephew Thomas wrote it at six in the morning, and \"grande nouvelle\" was his idea. I said okay without thinking. It was a bad sign. It sounded like a secret, and when you are paying for bread every week, a secret sounds like trouble. I'm sorry for the worry. I wanted to tell you properly on the day we reopened, with the new oven and the new tables, as a surprise. I should have explained more on the door.\n\n**The half-empty shelves on the 28th:** that was Christmas Eve. We sold 400 bûches and almost everything else we had. We were sold out, and that's all it was.\n\n**What's changing:**\n- A new deck oven, four decks, from a supplier in Laval. The old one is from 1998 and it broke three times this year alone. I need an oven that doesn't stop in the middle of a rush.\n- The back of the shop, the old storage room from when this was the dépanneur, becomes a small seating area with six tables. Many of you have asked for a place to sit with your coffee for years. Now you'll have it.\n\n**The carnets.** This is the part I know you care about most, and I won't dodge it. In October we sold 214 carnets at $60 for 12 loaves. Some of you bought them as Christmas gifts. Some of you still have loaves left. Here is where things stand:\n\n- Every loaf on every carnet is still good. Carnets don't expire, and that doesn't change.\n- Every carnet holder gets one free croissant when we reopen in January. Just bring your carnet.\n- If you want your money back for your carnet, come to the counter and I will give it back. No questions, no forms. Nobody should feel stuck with a bread book from a bakery they no longer trust.\n\nI'm not saying this to make a fuss. I'm saying it because you should be able to choose.\n\n**The \"scam\" word.** I understand the worry. Mile End has lost a lot of small shops in the last few years, and when a sign goes up on the door, people fear the worst. I'd probably think the same thing if I were reading that board. But I've spent 17 years on this street, and I know everyone who has bought bread from me during that time. Hearing that I'm running a scam hurt. I'm not going to argue about it on a message board. I'd rather show you the bread.\n\n**Thank you.** Priya, thank you for standing up for us in this thread. You didn't have to. Thank you as well to everyone who wrote, \"come on, it's Hélène.\" That kind of loyalty is why I'm still here after 17 years, and it's why I wanted to keep building.\n\n**Please come.** The shop reopens Tuesday 19 January at 7h. The big party is **Saturday 23 January**. Come by for coffee and a piece of the new bread, on the house. Bring your kids, bring your carnet, bring your questions. I'll be behind the counter, probably a little flour-covered.\n\nMerci à tous.\n\nHélène\nLe Pétrin Doré\n5 rue Fairmount, corner of Waverly\nOpen since March 2009",
+  "words": 777,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the half-empty shelves on the 28th were on Christmas Eve, and says the written tenant promises are yet to be sent."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3239825367927551,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7644761204719543,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.8058565855026245,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 3663,
+    "input_tokens": 2407
+  }
+}

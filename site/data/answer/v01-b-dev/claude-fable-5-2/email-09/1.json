@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Tuesday club at Knocknacarra: good news, and something I need to own up to\n\nDear Niamh,\n\nThank you for your email of 30 October. I have two things to tell you before the review meeting on the 18th, one very good and one I need to own up to.\n\nThe good news first. The Tuesday club has taken off. We had five children most weeks in September, nine by the middle of October, and fourteen on Tuesday the 3rd of November. Declan Moran at the Salthill Book Nook has given us 120 books, mostly for the six to nine age group and a good few of them as Gaeilge, so the children now have a proper choice in front of them.\n\nThe numbers are only half of it. Two sisters from a Ukrainian family joined us in October, and the older girl now reads to the younger one in English at the end of every session. One boy who wouldn't open a book in September asked me last week could he take two home. You would have been delighted.\n\nI understand why a pause looked sensible when you wrote, and I know the insurance going up is a real worry that fourteen children don't make go away. But it would be a terrible pity to stop in January just as the thing has found its feet. Would you look at the new figures before the 18th and consider whether the pause still makes sense? I'm happy to go through them with you week by week if that would help.\n\nNow the other thing. I met Orla Keane from the Corrib Courier at the farmers' market, got carried away telling her about the club, and said \"come along any Tuesday\". She has taken me at my word and would like to come on Tuesday 24 November with a photographer.\n\nI know perfectly well that no photographs of the children are taken without your sign-off and the parents' consent forms, and that an invitation like that was yours to give, not mine. I was wrong not to check with you first, plain and simple, and I'd rather you heard it from me than from anyone else.\n\nNothing is fixed. If you'd like, I'll ring Orla and put the visit on hold until you've decided one way or the other. If you say yes, I'll collect the consent forms from the parents myself so that it makes no extra work for you. A piece in the Courier could be wonderful for us, but only if it's done properly, and that is your call.\n\nWe're upstairs in the meeting room at the library every Tuesday from 3.30 to 4.45, and you'd be very welcome to drop in and see it for yourself before the meeting.\n\nWith warm regards,\n\n[Your name]\n\nI wrote \"Tuesday the 3rd of November\" rather than \"last Tuesday\" because there has been another Tuesday since. If you have yesterday's number, it's worth adding. I also left out the club's start date, since your note says September 2025 but the attendance figures read as though it began this September.",
+  "words": 518,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2888193726539612,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06456504017114639,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.492955684661865,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.8,
+    "effort": "high",
+    "output_tokens": 3653,
+    "input_tokens": 1653
+  }
+}

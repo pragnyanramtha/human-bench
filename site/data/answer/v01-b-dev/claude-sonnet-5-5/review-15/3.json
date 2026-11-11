@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft. It's on the shorter side of your range, which suits a Google review.\n\n---\n\nUsed Kilbarrack Van Co for a move on Saturday 17 October, Phibsborough to Drumcondra. I read a lot of reviews before booking, so I'm trying to give the full picture, good and not so good.\n\nBooking was easy through their website, with a 50 euro deposit by Revolut. The quote was 340 for up to 4 hours with two lads and the van, and the whole thing took about three and a half. It's a 2 bed flat but it was mostly just my stuff, so not a massive load. The new place is a fourth floor walk up with no lift though, so it was still a bit of a slog, and the lads just got on with it.\n\nThe couch wouldn't go round the turn on the third floor landing and I thought that was it. One of the lads (Kev, I think) pulled an allen key out of his pocket, took the legs off and it went straight up. They also put my bed back together without me asking and took away a flat pack shelf I didn't want. Nothing was too much bother.\n\nNow the not so good. They were meant to arrive at 9 and got to me at half 10. In fairness, I got a text at 8:40 to say the previous job had overrun, so I wasn't left guessing, but I still spent a good while sitting on boxes with a cold coffee. Dessie knocked 40 off the price afterwards without me asking, so it came to 300, which was a nice gesture. The lateness wasn't a big deal for me, but if you've a tight handover with a landlord or a set time to return keys, it would have been. If that's you, tell them upfront and ask for the first job of the day so nothing ahead of you can overrun.\n\nThe other thing is the lamp. Everything else got wrapped in blankets, but my brass floor lamp wasn't, and the base got chipped. It was my nanny's, so I'm a bit gutted. It's a small thing in the scheme of a whole move, but if you've anything fragile or awkward like that, point it out before it goes in the van, or wrap it yourself. And lads, wrap the lamps.\n\nWould I use them again? Yeah, I would. They were the best value I found by a distance, with other quotes starting at 450 and up, and the work itself was good. The lateness and the lamp are why it's 4 stars and not 5, but I'd happily book them again and just plan around the timing.\n\n---\n\nTwo things to check before posting: that it was Kev (I kept the \"I think\"), and that 300 is what you actually paid in total. I worked that out from 340 minus the 40 off, so adjust if the deposit or anything else changed it.",
+  "words": 500,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18465758860111237,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.033219240605831146,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.50390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.7097439765930176,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.8,
+    "effort": "high",
+    "output_tokens": 2263,
+    "input_tokens": 1478
+  }
+}

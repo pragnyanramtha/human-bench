@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.56, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya,\n\nTake a breath. We’re fixing this together, and I’m not throwing you under the bus with Greg. You owned the mistake, which I appreciate, but this isn’t just a Priya problem—the questionnaire library is a mess, the language was stale, and nobody really owns it. That’s on us as a team.\n\nOne mistake also doesn’t erase everything you’ve done on Brazos. I haven’t forgotten you staying until 9 p.m. in September to rebuild their demo environment after the route import broke. Please don’t beat yourself up over this.\n\nI’d be lying if I said I wasn’t stressed. Brazos is $186K ARR on a three-year term, I’ve been working it since February, and it’s my biggest deal of the year. And yes, I’ve already told my wife we’d finally take the Big Bend trip off this commission, so there’s that. But I’m telling you that so you understand where my head is at, not because I’m putting all of that on your shoulders. My read on Dana is that she’s strict but fair. If we’re honest and move fast, this is fixable.\n\nHere’s what I need next:\n\n- **Tonight:** Please fix Q14 with our actual SOC 2 Type I status, make clear that Type II is still in progress, and include the audit window closing **January 31** and the report expected **by March**. Send the corrected version to me first—not Dana—so we can review it together.\n- **Thursday at 2:** Marcus can meet with Dana and Brazos legal. I’ll get it scheduled, and I need you on that call too.\n- **Bridge letter:** Marcus says we can provide one from the auditor confirming the status and timeline. I’ll work with him to get that lined up.\n\nI’ll handle Greg and make sure he understands both the immediate correction and the bigger library issue. For now, just focus on Q14 tonight. We’ve been a good team on this account, and we’re going to get through this the same way.\n\nJordan",
+  "words": 329,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5627892017364502,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4866388142108917,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.59375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.500565528869629,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.2,
+    "effort": "provider default",
+    "output_tokens": 2004,
+    "input_tokens": 992
+  }
+}

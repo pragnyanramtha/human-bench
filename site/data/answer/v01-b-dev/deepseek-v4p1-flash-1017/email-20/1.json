@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.57, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya,\n\nFirst, stop. You are not getting thrown under the bus. I’m not going to Greg with “Priya did it.” I’ll tell him what he actually needs to know: we had stale draft language in the questionnaire library, Q14 didn’t get checked against the trust page, and we’re fixing it today. He’s going to be mad no matter what — I’ll handle him. That’s on me, not you.\n\nYou’ve been great on this account. I still think about September when the route import broke and you stayed until 9pm rebuilding their demo environment. I’m not hanging you out to dry over one copy-paste. And honestly, the library is a mess — nobody owns it. This isn’t just a Priya problem.\n\nI won’t pretend this isn’t a big one for me. Brazos is 186k ARR on a three-year term, I’ve been working it since February, and it’s my biggest deal of the year. I already told my wife we’d finally do the Big Bend trip off this commission. But I really do think this is fixable if we’re honest and fast. Dana seems strict but fair.\n\nHere’s what I need from you:\n\n- Tonight, fix Q14 with the real Type I status and the Jan 31 audit window close. Send it to me first, not Dana. Don’t send anything to her until I’ve seen it.\n- Thursday at 2, join the call with Dana and their legal. Marcus from our security team can be on it too. He says we can give them a bridge letter from the auditor, so I want us ready to talk through that.\n- The Type II report is expected by March. That’s the story: Type I in hand, Type II in progress, window closes Jan 31, bridge letter available.\n\nDon’t beat yourself up. Let’s get Q14 fixed tonight and go into Thursday solid. I’ve got your back.\n\nJordan",
+  "words": 313,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5707760453224182,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4802725315093994,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.6171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.531564712524414,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.9,
+    "effort": "provider default",
+    "output_tokens": 2299,
+    "input_tokens": 1006
+  }
+}

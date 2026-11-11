@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmate I'm sorry I went quiet after that one text. left you hanging when everything was fucked and I should've checked in. you don't need to apologise for not replying. ceiling on your bed, gear gone, all those notebooks, then that portal bullshit from the landlord. he's a grub. you don't have to be ok about any of it.\n\nI'm off all day tomorrow now, Sam's taken my shift. Dad's said we can borrow the trailer, so I can come get you and we can get your stuff out of Priya's garage before you need to leave. Ruby's already said you can have our couch as long as you need. only catch is Clover reckons it's hers too. what time should I come round?\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nalso Tully's been onto Dee at the Lantern Room about a benefit night. we can have Sat 28th, all door money to you, and Hollow Pines have said they'd play. nothing you need to organise or perform at, and we can talk about whether you're up for it before anything gets announced. Jono's cousin has a working Yamaha you can have for now too. not your Nord, I know, but something to play when you feel like it.\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nplease don't decide you're done with Brisbane and the band while you're living out of garbage bags. come here first, have a bit of breathing room. if you still want Rocky after that I'll hear you out, but you haven't got to leave because Priya needs her couch back.\n\nyour songs are the best thing about this band. I don't want you quitting, but you don't owe us rehearsal or new songs right now either.\n\nyou drove to Gatton at 2am when my car died after that Toowoomba gig, didn't even whinge. not keeping score. just saying you don't have to do the shit bits on your own either. let me bring the trailer.",
+  "words": 316,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23339927196502686,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.041531845927238464,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.1015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.235505104064941,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.7,
+    "effort": "medium",
+    "output_tokens": 503,
+    "input_tokens": 14883
+  }
+}

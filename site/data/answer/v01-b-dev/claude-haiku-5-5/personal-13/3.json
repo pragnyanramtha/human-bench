@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Mr Ogunleye,\n\nGood day, sir. My name is [Your Name]. I am a first-year Biology student, and I believe you are the gentleman who has my bag. I am writing to thank you and to talk about getting it back.\n\nOn Friday evening, 6 November, I boarded a bus from Oshodi to Igando and forgot my black Jansport bag inside. I got down at Ikotun and only realised it was missing after the bus had gone. Thank you for calling the number on my lab manual and for not throwing the bag away. Many people would have, and I truly appreciate it.\n\nSir, I want to be open with you. The bag contains my dissecting kit, my student ID, my lab manual, two textbooks, my calculator and my glasses. My BIO 101 practical is on Wednesday, 11 November, at 10am. Without my dissecting kit and ID, I will not be allowed into the lab, so this is urgent for me.\n\nI understand you would like something for your trouble and your transport. I can give you ₦10,000. That is the full amount I have set aside from my allowance, and I am offering it sincerely as a token of thanks. The ₦40,000 is beyond what I can raise, and I hope you will understand. I am being honest with you about what I have.\n\nPlease let me know a day that suits you, as soon as possible, ideally today or tomorrow because of my practical. I suggest we meet in the daytime at the Ikotun roundabout, or at the gate of the Ikotun Police Division if that is more convenient for you. My roommate, Adaeze, will come with me so that we can complete everything quickly. Once I have checked that the bag and its contents are all there, I will give you the ₦10,000 right away.\n\nPlease reply to this message and tell me the place and time that work for you.\n\nThank you once again, sir. God bless you.\n\nYours sincerely,\n[Your Name]\n[Your Phone Number]\nBIO 101, [Department], [University]\n\n---\n\nA few things to keep in mind:\n\n- **Today is Wednesday, 11 November, the day of your practical.** Contact your lab attendant or course lecturer now, explain that your bag was lost on the bus, and ask whether you can submit or sit the practical later. Do this even if you get the bag back today.\n- **Do not pay before you see the bag.** Meet in a busy public place, open the bag with Adaeze there, and check that everything is inside before handing over any money.\n- **Keep the ₦40,000 demand in your records,** including the WhatsApp messages and call times, in case you need to report it later.",
+  "words": 455,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "455 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49684110283851624,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0511530302464962,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.513794898986816,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "medium",
+    "output_tokens": 2571,
+    "input_tokens": 1466
+  }
+}

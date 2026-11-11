@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217 never delivered: resend or full refund by Fri 13 Nov**\n\nHi there,\n\nI'm writing about order TH-48217, placed on 21 October. I paid R1,640 by card, including R95 for delivery. The order never arrived. After two emails and a phone call I'm no closer to getting either the goods or my money back, and I'm honestly really frustrated.\n\nHere's what happened.\n\nYour tracking says the parcel was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams.\" Nobody called Adams works at Bergview Pre-Primary in Plumstead. Our gate guard keeps a book of every delivery that comes through, and there's nothing logged on the 3rd. The delivery address on the order was correct. Whoever signed for that parcel, it wasn't anyone at our school, and it never came through our gate.\n\nThe order was:\n- 6 tubs of finger paint\n- 4 bags of playdough\n- 200 paper plates\n- Googly eyes\n- Glitter glue\n- 2 rolls of brown paper\n\nI emailed on 4 November and again on 6 November. Both times I got the same reply, word for word, saying my query had been escalated to your courier partner. On Friday I phoned and waited 38 minutes on hold. The lady I spoke to was friendly, but she said there's nothing she can do until the courier finishes its investigation, which could take up to 10 working days.\n\nI understand the courier needs to look into it on their side, but that's between you and them. My agreement is with Tiny Hands. I paid you, and I paid you for delivery. I didn't choose the courier and I have no relationship with them. Telling me to wait on their investigation, or to take it up with them myself, isn't a fair answer. I paid for goods that never got to me.\n\nI also want to explain why this matters so much. I'm a kindergarten teacher, and I bought these supplies with my own money for my class. My kids made their mask patterns last week, and for over a week I've been telling a room full of five-year-olds that the paint is \"coming soon.\" Our end-of-year concert is on 27 November and these supplies are meant for the props. Being R1,640 out of pocket on a teacher's salary, for something I bought for other people's children, really stings.\n\nI've ordered from you three times before with no problems at all, and that's part of why this is so disappointing. I liked using you and I'd happily have kept using you.\n\nSo here's what I'm asking for, **by Friday 13 November**:\n\n1. **Resend the full order** so it reaches the school in time for the concert, **or**\n2. **Refund the full R1,640**, including the R95 delivery fee.\n\nEither is fine. I just need one of them. I'd also really appreciate a reply from an actual person who has read this email, not another \"we have escalated your query.\" If the courier later finds the parcel or you recover the money from them, that's a matter between you and them, and I'm happy for it to stay that way.\n\nIf I don't hear back with a proper resolution by Friday, I'll go to my bank for a chargeback and leave an honest review of how this was handled. I'd really rather not do either. I'd much prefer we sort it out directly.\n\nYou can reach me at this email address. I'm also happy to send a photo of the gate register page for 3 November if that helps.\n\nThanks, and I look forward to hearing from you.\n\nKind regards,\n[Your name]\nGrade R Teacher, Bergview Pre-Primary, Plumstead\n[Your phone number]",
+  "words": 616,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4590872824192047,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9590391516685486,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.922707557678223,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.2,
+    "effort": "medium",
+    "output_tokens": 1627,
+    "input_tokens": 1557
+  }
+}

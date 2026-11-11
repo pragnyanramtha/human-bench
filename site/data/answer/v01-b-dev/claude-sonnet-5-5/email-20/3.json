@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.57, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya,\n\nThank you for owning it, but I'm not going to hand Greg your name and walk away. I'll deal with him. He's going to be mad no matter what, and that's mine to handle, not yours. The questionnaire library is a mess and nobody owns it, so this was going to bite someone eventually. It's not just on you.\n\nI won't pretend this deal doesn't matter to me. It's my biggest of the year, I've been working Brazos since February, and I already told my wife we'd finally do the Big Bend trip off this commission. So yeah, I'm a little stressed. But I think this is fixable if we're honest and fast, and Dana seems strict but fair, which is who you want on the other side of this.\n\nHere's what I need from you:\n\n1. **Fix Q14 tonight.** Use the real status: Type I issued in April, Type II audit window closes Jan 31, report expected by March. Send it to me first, not Dana. I'll look it over and we'll go from there.\n\n2. **Join the Thursday call at 2.** Marcus is setting up a call with Dana and their legal team. I want you on it. You know the questionnaire and this account better than anyone, and I'd rather have you there than have you hear about it afterward.\n\n3. **Know about the bridge letter.** Marcus says we can give them a bridge letter from the auditor to cover the gap until the Type II report lands. That's a big part of how we show them we're being straight about the timeline.\n\nPlease don't beat yourself up over this. One copy-paste mistake from an old draft doesn't cancel everything you've done on this account. I haven't forgotten you stayed until 9pm in September rebuilding their demo env when the route import broke. That's the kind of SE I want on this deal.\n\nWe're fixing this together. Send me the draft when it's ready tonight.\n\nJordan",
+  "words": 330,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.56660395860672,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.38565942645072937,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.485352516174316,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.0,
+    "effort": "high",
+    "output_tokens": 1684,
+    "input_tokens": 2145
+  }
+}

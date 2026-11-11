@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Mrs. Renee, I’m very sorry your toe is hurting and that you needed urgent care. I mean that sincerely. You have been my customer for two years, and I’m sad that we are now talking this way on the neighborhood forum. I do take your concern seriously, and I want to answer calmly and explain what I offered when you came back.\n\nWhen you showed me your toe on November 2, I offered to refund the full $45 for your deluxe pedicure and pay your urgent care copay if you brought me the receipt. That offer was not meant to say $45 makes up for your pain or the trouble you have had. I understand it does not. But I want to be clear that I offered help with the copay too, not only the pedicure refund. Both offers are still open.\n\nYou asked for $300 cash and free pedicures for one year. That was the request I said no to. I was not refusing the refund or the copay, and I was not trying to dismiss your concern.\n\nI also want to explain our cleaning practices, because some comments here say nail salons all reuse files and have dirty tubs. We sterilize our metal tools in an autoclave and open the sealed pouch in front of each customer. Each person gets a new file and buffer, which they can take home. We use a new plastic liner in the pedicure tub every time. We passed our state inspection in August 2026 with no violations, and the inspection paper is on the wall for anyone to see. I know that does not answer every question about what happened to your toe, but these are the practices we follow.\n\nAbout your October 24 appointment, Vy remembers you asking her to remove more cuticle, and she remembers saying she should not take too much. I understand your account is different. I do not want to argue about that here or suggest that asking for something makes you responsible for getting hurt. As professionals, we are responsible for knowing when to stop.\n\nI do need to speak up for Vy on one point. She was born in Houston and speaks English. She is shy, and she has been licensed for three years. If you felt she did not understand what you wanted, I want to hear about that, but saying she barely speaks English is not a fair description of her.\n\nI opened Lotus Garden in 2007 after working for my aunt. I have spent 19 years serving this Houston neighborhood, and before this I had never received an infection complaint. I am not saying that to dismiss yours. I am saying it because this salon and the trust of our customers matter very much to me. It hurts to see every salon described as dirty, without knowing how each business works.\n\nMarisol, thank you for sharing what you have seen during your visits and for encouraging us to talk.\n\nMrs. Renee, please call me at the salon or come in so we can speak directly. I would like us to listen to each other and find a way forward without fighting online. My offer of the full $45 refund and payment of your urgent care copay with the receipt still stands. I sincerely hope your toe is healing.",
+  "words": 556,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42359602451324463,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.22975166141986847,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.84410285949707,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.9,
+    "effort": "low",
+    "output_tokens": 645,
+    "input_tokens": 19481
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: #team-selection\nReplying to: s01\nCc: @rafael.ortiz\nSubject: Re: Ustroń lineup — formal request to reconsider board 2 before Friday\n\nGood evening Marek, Rafael and colleagues,\n\nI would like to make a formal request regarding board 2, before the names go to the organisers on Friday 13 November.\n\nIn October you announced two criteria for the December team event: the November FIDE list and form in club events, including the rapid qualifier of 24 October. You also wrote that the coaches of the players would be consulted before the final lineup. On the second criterion, I believe the current lineup does not follow the rule you set yourself.\n\nThe final standings of the rapid qualifier place Liliana Bąk second with 5.5/7 — wins over Maja and Antoni and a draw with Kacper — while Igor Sadowski finished with 4/7. On form in club events, Liliana is ahead.\n\nThe rating list alone, taken in isolation, is not a fair basis for the decision, and that is not only my opinion: you yourself said that form in club events counts. Liliana's -81 on the November list comes from one event only, the Katowice open in early October, which she entered while already unwell for health reasons and in which she played every game to the end. The list therefore reflects that period and not her present level. She missed roughly two weeks of training in October; she has since returned to her normal level and her last three lessons were very good.\n\nTo be clear, I have nothing against Igor — he is a good player and his place on the team is not what I question. My objection concerns the application of the rule you announced in October, and I am writing to you formally because you stated that the coaches would be consulted.\n\nBefore Friday, I would therefore ask for one of the following:\n\n1. Liliana on board 2, in line with the result of the qualifier, or\n2. a short match between Liliana and Igor before Friday, with its result deciding board 2.\n\nRegarding her health, I will say only this: health reasons. I will not go into further details, and I ask for the same discretion from everyone.\n\nThank you for considering this before the deadline.\n\nKind regards,\nOksana Melnyk\nChess coach, Kraków",
+  "words": 365,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft never says plainly that the coach was not consulted; it only recalls Marek's promise to consult coaches, so that required point is merely hinted at."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft mentions Marek’s promise to consult coaches but does not state that the writer was not consulted."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0703321024775505,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1130499467253685,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.9921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.125240325927734,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.5,
+    "effort": "provider default",
+    "output_tokens": 2268,
+    "input_tokens": 1672
+  }
+}

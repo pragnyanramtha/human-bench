@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve been reading these monthly threads for a while, but this is my first time posting. I’m leaving out a few details for privacy and calling my patient Mrs. H.\n\nMrs. H passed away recently. Her daughter came into the pharmacy to return her unused blister packs, and I’ve been thinking about it ever since I got home.\n\nI had seen her every week for years. I knew her medications, of course, but I also knew that she would usually bring me something to eat and that there was no point telling her she didn’t need to. During Ramadan, she remembered I was fasting. She would wrap up cake for me to take home and remind me not to eat it until sunset. She was coming in so we could look after her, but she was always looking after me too.\n\nOnce, I caught an interaction with a newly prescribed medication and called to get it sorted out. After that, she told people I had saved her life. I always felt embarrassed when she said it. I was just doing my job. Checking, calling, making sure the medications were safe together. To her, though, it meant something much bigger.\n\nHer daughter brought me a card her mother had written some time ago but never given me. In it, she called me her daughter.\n\nI managed to get through the conversation, but then I went into the back room and cried. My coworker covered the counter for a little while. I was grateful not to have to explain much.\n\nWe learned pharmacology in school. We learned interactions and counselling and what to do when something goes wrong. I don’t remember anyone teaching us how to say goodbye to a patient. Or what to do when someone brings back the packs you prepared, and you realise there won’t be another week to prepare for her.\n\nMy father is a pharmacist in Egypt. Growing up, I watched him know whole families, not just the person standing in front of him. I thought working in Canada would somehow be different. In this way, it really isn’t.\n\nI sometimes feel we’re supposed to keep enough distance that this doesn’t hurt so much. But when you see someone every week for years, you get attached. You notice when they’re tired. You worry when they don’t come in. You save a few minutes to hear what they want to tell you, even on a busy day.\n\nI don’t think I would want to stop caring like that. I just didn’t know how hard this part would be.\n\nHave you had a patient like Mrs. H? Someone you still think about long after you stopped filling their prescriptions?",
+  "words": 450,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16889743506908417,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3536485433578491,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.0830078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.079152822494507,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.5,
+    "effort": "medium",
+    "output_tokens": 630,
+    "input_tokens": 14027
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: sal@littlegertrude.example\nReplying to: [m07]\nCc: none\nSubject: ChefMarket review draft for Wednesday\n\nDraft for you to review before submitting:\n\nWe bought this refurbished Vantorre CX-10 (serial VT21-30877) through ChefMarket for $14,800, delivered and commissioned on 14 September with a six-month parts and labour warranty.\n\nOn 22 September, service report SR-1190 recorded nine E34 low-water-level errors in the log since delivery. The level sensor was replaced under warranty and three steam cycles tested OK. E34 returned: I reported four occurrences during the week before 3 October. At the 6 October visit (SR-1236), the steam generator was found heavily scaled, descaled and flushed, and the core probe was recalibrated. Before recalibration, I tested it twice against our Thermapen in a lamb shoulder: the oven read 63°C while the Thermapen read 70°C.\n\nOur Fitzroy water supply is reported by Melbourne Water at about 15 mg/L hardness as CaCO₃, which is soft water. The scale was found after roughly three weeks on site. That timing and the reported water hardness are why we question the conclusion that this is a site water issue. We can’t independently establish when the scale formed, but the available information does not settle its cause.\n\nOn 27 October, E34 was again reported and further scale found. Kelsall has advised that this attendance is not covered by warranty and will be charged at $280 + GST ($308 inc GST). The unit was about six weeks from delivery and within its stated warranty period. We’re asking Kelsall to review the charge and assess the recurring fault and scale in light of the service history and water information.\n\nOn Saturday 24 October, E34 locked us out at 6:10 pm during a full 60-cover service. We finished the lamb on the stove and deck oven, took pork belly off the menu and absorbed the cost.\n\nThis is our experience so far. Other kitchens considering a $14,800 refurbished combi should know about the repeated E34 faults, probe discrepancy, scale finding and disputed callout charge. The technician was professional; our concern is the unit’s reliability and how the fault and warranty have been handled.",
+  "words": 337,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: ['chefmarket:review:KCK-4471 (as a new post) (>= 250 words)']"
+      },
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['sal@littlegertrude.example']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3389571011066437,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.019829517230391502,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.59765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.528219223022461,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.0,
+    "effort": "medium",
+    "output_tokens": 478,
+    "input_tokens": 15513
+  }
+}

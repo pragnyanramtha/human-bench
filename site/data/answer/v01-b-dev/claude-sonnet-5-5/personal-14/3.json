@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the letter, ready to print:\n\n---\n\nNovember 11, 2026\n\nDear neighbors,\n\nMy name is Jess Okafor, and I live in 5A. I'm writing to all 24 units because a note was recently posted in the lobby about a drone flown from the roof deck, and it named my unit. I would rather answer it openly than leave anyone wondering.\n\nThat drone was mine. On Saturday, October 31, around 4:00 pm, I flew a new drone, a Halvard Mini 4, from the roof deck for about eleven minutes. I'm a wedding photographer, and I was testing it before a vineyard wedding in Dundee. The camera faced west toward the river and the Fremont Bridge the entire time. I never pointed it at any windows or at anyone's home, and I wouldn't want to.\n\nI understand why it looked bad. A drone buzzing over the courtyard is unsettling when you don't know who is flying it or why, and I'm sorry it worried people. I should have thought about how it would feel from below, and I should have given everyone a heads-up.\n\nI will also say that seeing my name and unit number on a note in the lobby was hard. It felt like being singled out in front of the whole building. If something concerns you, please knock on my door or send me an email. I will always be glad to talk it through.\n\nI'm happy to show the full, unedited footage to anyone who would like to see it. Just knock on 5A or write to jess.okafor@mailbox.example.\n\nThe HOA rules don't currently address drones. Until the board decides on a rule, I won't fly from the roof deck. I'll ask for the topic to be added to the agenda for the board meeting on Thursday, November 19, at 7:00 pm in the community room, and I welcome anyone who wants to weigh in to come.\n\nThank you for reading, and for being good neighbors.\n\nSincerely,\nJess Okafor\nUnit 5A\n\n---\n\nI left Doreen's name out so she isn't put on the spot, and nothing in the letter points toward 3B. If you'd rather soften or cut the paragraph about the note, it stands on its own without it.",
+  "words": 371,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['3B']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3505445420742035,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10754275321960449,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.712353706359863,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.6,
+    "effort": "high",
+    "output_tokens": 1872,
+    "input_tokens": 1474
+  }
+}

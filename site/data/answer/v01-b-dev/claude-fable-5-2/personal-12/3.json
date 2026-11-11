@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "Dear Mum, Kirsty and Linda,\n\nWee extra note in with your invite, and this bit is not for Gran's eyes, so don't leave it lying about.\n\nMorag's said I can have the salon to myself the Saturday afternoon before Gran's 80th, so I want to do everybody's hair before we go out for her dinner. It's free, my treat, and I'm absolutely buzzing about it.\n\nIt's Saturday 12 December from 1pm at Hair by Morag on Dumbarton Road. Morag shuts at 12 on a Saturday, so we'll have the place to ourselves. Dinner's booked for 8.30 that night at the Italian on Byres Road, a table for nine with Uncle Davie and Kirsty's man.\n\nThat's seven heads: the three of you, me, Gran, Ava and Ruby. Everybody can have a cut and blow dry, no bother. Ava and Ruby are getting wee braids and glitter spray, which they'll love.\n\nIf you want a colour, I need to know by Friday 27 November so I can order it in from the wholesaler. After that it's cut and blow dry only, sorry. Linda, that includes you, and the good news is we're in a salon this time, so the cooker and the dog are safe.\n\nThe big one is Gran. She told me at Easter she'd love to go silver properly but wouldn't pay salon prices for it, so that's what I want to do for her as the surprise.\n\nMum, can you be the one to get her there for 1 without letting on why? You're the best bet. Tell her whatever you like, just don't tell her the truth.\n\nBring a bottle of fizz. Morag says it's fine as long as we tidy up after ourselves.\n\nSo stick what you're wanting done in the chat (Gran's not in it, don't worry) by the 27th and I'll get everything ordered.\n\nCan't wait. Love yous x\n\nI've left the name off the bottom for you to sign.",
+  "words": 325,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11615151166915894,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.023091034963726997,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.46875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.1732306480407715,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.2,
+    "effort": "high",
+    "output_tokens": 2267,
+    "input_tokens": 1457
+  }
+}

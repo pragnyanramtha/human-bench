@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Why my pier logger reads warmer than the offshore buoy**\n\nTo the dive shops, tidepool docents, and club members:\n\nA few of you have written to ask why my pier temperature logger runs warmer than the offshore buoy, and one person suggested the logger is simply broken. It isn't, and here's the full explanation, including how I check the instrument.\n\n**The numbers.** The October mean was 15.9 C at my logger and 14.1 C at the buoy, a gap of about 1.8 C. In winter the gap shrinks to about 0.4 C.\n\n**The instrument.** The logger is strapped to a piling at 3 m depth, about 150 m from shore, and records every 10 minutes. I pull it and download the data every six weeks, and I swap the battery once a year. Calibration is a two-point check, an ice bath and a room-temperature bath, against a lab reference thermometer. The last check, in September, showed an offset of +0.12 C, well inside spec. Even uncorrected, that is less than 7% of the October gap. In August I pulled the logger up with a barnacle colony and a decorator crab living on the housing. I scraped it clean and the readings didn't change.\n\n**The real reason.** The buoy is about 25 km offshore in deep water, with its sensor just under the surface. My logger sits in shallow nearshore water in a bay that's sheltered from the upwelling that keeps the offshore water cold. Shallow water warms in the sun, and my site doesn't get the cold flushing the open coast does.\n\nOne reader sent me a screenshot overlaying the buoy record and my data, and it shows the gap tracks sunny afternoons. A bad sensor would give a steady offset regardless of weather. A gap that grows with sunshine and shrinks in winter is what you'd expect from real nearshore warming.\n\n**Which number should you use?** They answer different questions. The buoy tells you what the open ocean is doing. My logger tells you what the water is like close in. If you dive the breakwater, mine is the more relevant number.\n\nIf you'd like the raw CSV, just email me and I'll send it. If you spot something in it I've missed, I'd like to hear about that too.\n\n[Your name]",
+  "words": 383,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4173392057418823,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5373203158378601,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.142345428466797,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.6,
+    "effort": "high",
+    "output_tokens": 2072,
+    "input_tokens": 1491
+  }
+}

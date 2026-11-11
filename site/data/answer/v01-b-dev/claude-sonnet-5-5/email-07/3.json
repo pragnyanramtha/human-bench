@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Order TH-48217: not received, need a resend or full refund by Fri 13 Nov\n\nHi there,\n\nI'm writing about order TH-48217, which I placed on 21 October and paid for by card (R1,640, including R95 delivery). It never arrived, and I need this sorted out properly.\n\n**The order:**\n- 6 tubs finger paint\n- 4 bags playdough\n- 200 paper plates\n- googly eyes\n- glitter glue\n- 2 rolls brown paper\n\n**What happened:**\nTracking says the parcel was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams\". Nobody called Adams works at Bergview Pre-Primary in Plumstead, which was the correct delivery address on my order. Our gate guard keeps a book of every delivery that comes through, and there is no entry for the 3rd. The parcel never reached us.\n\nI emailed on 4 November and again on 6 November and got the same copy-and-paste reply both times, saying my query had been escalated to your courier partner. I phoned on Friday, waited 38 minutes on hold, and was told nothing can be done until the courier finishes an investigation that could take 10 working days. That isn't good enough.\n\n**Why this is on you:**\nMy contract is with Tiny Hands Edu Supplies, not the courier. I didn't choose them and had no say in who delivered. I paid you, and the goods didn't arrive. Chasing the courier is your job, not mine. I've ordered from you three times before without any problems, which is why this has been so disappointing.\n\nI'm also a teacher paying for this out of my own pocket, for other people's kids. I can't afford to be out R1,640 while a courier takes its time.\n\n**What I need:**\nBy **Friday 13 November**, please do one of the following:\n\n1. Resend the full order, or\n2. Refund the full R1,640, including the R95 delivery fee, back to my card.\n\nOn timing, our end-of-year concert is on 27 November and I need the supplies for the props. A resend only helps if it reaches us well before then. If you can't guarantee that, I'd rather have the refund and source the stuff elsewhere. In the meantime I've been telling a class of small kids that the paint is \"coming soon\" for over a week, and they're starting to ask.\n\n**What I'm asking for in reply:**\nPlease have an actual person respond to me, not another template. I'd like a confirmation of which option you're going with and when I can expect it. If you need anything else from me, such as a statement from the school or a copy of the gate book page, I'm happy to provide it.\n\nIf I haven't had a proper resolution by Friday, I'll have to dispute the charge with my bank and leave a review about my experience. I'd honestly prefer not to do either, since you've been fine to deal with until now, but I can't keep waiting.\n\nThanks, I look forward to hearing from you.\n\nKind regards,\n[Your name]\nBergview Pre-Primary, Plumstead\n[Your phone number]\nOrder TH-48217\n\n---\n\nFill in your name and number before sending. If you'd like it a little shorter or a bit firmer, I can adjust it.",
+  "words": 538,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5057703256607056,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4169749319553375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.12313175201416,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "high",
+    "output_tokens": 1682,
+    "input_tokens": 1562
+  }
+}

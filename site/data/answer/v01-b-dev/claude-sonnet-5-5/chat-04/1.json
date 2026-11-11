@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: @renee.whitlock\nReplying to: s01\nCc: none\nSubject: Football rundown for Monday's admin meeting\n\nRenee,\n\nHere's my rundown for the meeting. Good week all around.\n\nGame: We beat Brookhollow 31-14 Friday night. That locks up 2nd in the region. Tavion Hurst ran for 188 yards and 2 TDs, and his long one in the 3rd quarter was a good one. Our line pushed them 5 yards back on that whole drive, the best I've seen them block all year. The defense held Brookhollow to 46 yards rushing in the second half. Deshawn Pettaway had 3 sacks and 7 tackles, and the kids voted him defensive player of the week in the locker room before the coaches even got together. That tells you something about this team.\n\nPlayoffs: We got a HOME game. We host Clanton Valley Friday, Nov 13 at 7pm at Ridge Field. Please tell Dr. Pruitt, and let folks know we'd love a big crowd out there. The ticket office has presale going. The boosters are also looking for 6 more people on concessions.\n\nAcademics: Our 9 weeks grade check came back with all 52 players eligible, nobody on the list. Tonya Greer's Tuesday/Thursday study hall is the reason, and she deserves the credit, not me. She's keeping it going through the playoffs.\n\nBoosters: The Boston butt sale finished at 208 butts sold and $6,240 raised. The goal was $4,500. The money goes toward new sideline headsets. Hargrove's Meat Market did the smoking at cost, so a thank you to them is in order. Carla Mims and the booster club did a great job.\n\nBuses: If we win Friday and go on the road, I'll get the bus request to you right away so it's in 5 days out like transportation needs.\n\nLet me know if you need anything else before noon.\n\nCoach Tillman",
+  "words": 292,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.04531006142497063,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05905292555689812,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.9921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.675827503204346,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.7,
+    "effort": "high",
+    "output_tokens": 1578,
+    "input_tokens": 2864
+  }
+}

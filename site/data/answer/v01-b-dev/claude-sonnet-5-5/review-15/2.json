@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can paste in:\n\n---\n\n**4 stars**\n\nMoved from Phibsborough to Drumcondra on Saturday 17 October with Kilbarrack Van Co. Overall I'd use them again, but there are a couple of things worth knowing if you're thinking of booking.\n\nThe good stuff first. Price was the main reason I went with them. The quote was €340 for up to 4 hours with two lads and the van, and every other quote I got was €450 or more. It was a 2 bed flat but mostly my own stuff, and the whole job took about three and a half hours, including a fourth floor walkup with no lift at the new place. The two lads were stuck in the whole time, no messing.\n\nThe highlight was the couch. It wouldn't make the turn on the third floor landing and I was already bracing for a nightmare. The younger lad (Kev, I think) produced an allen key from his pocket, took the legs off, and it went straight in. Took about a minute. They also put my bed back together without me asking and took away a flat pack shelf I didn't want. Booking was easy through the website, with a €50 deposit by Revolut.\n\nNow the not so good. They were meant to arrive at 9 and got to me at half 10. Dessie did text at 8:40 to say the previous job had overrun, which I appreciated, but I still spent a good while sitting on boxes with a cold coffee. He knocked €40 off afterwards without me even asking, which was decent of him and not something I expected. For me the lateness was an annoyance and not a disaster, but if you've got a tight handover with a landlord or a hard deadline for the keys, it could be a real problem. I'd ask for a firm arrival time when booking and not schedule anything important straight after.\n\nThe other thing was my brass floor lamp. The base got chipped. They wrapped everything else in blankets but the lamp wasn't wrapped, which I think is how it happened. It's only a chip, and I'm not making a big deal of it, but it was my nanny's so I was a bit gutted. If you've got anything fragile or sentimental, tell them up front, or wrap it yourself beforehand. Lads, wrap the lamps!\n\nSo 4 stars from me, not 5. Good value, hardworking, friendly, and they made an effort to put things right when the morning went sideways. I'd book them again, with a bit of buffer built into the morning and the lamp wrapped in a duvet.\n\n---\n\nIt comes to about 480 words. Two things to check before posting: whether it was Kev, since you weren't sure (you could change it to \"one of the lads\" if so), and whether you want the lamp line to stay in. I think it's what keeps the review believable and useful, and the tone is light enough that Dessie shouldn't take it badly.",
+  "words": 506,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32093191146850586,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0863954946398735,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.71875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.5977687835693359,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 44.3,
+    "effort": "high",
+    "output_tokens": 2142,
+    "input_tokens": 1476
+  }
+}

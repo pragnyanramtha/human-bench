@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5 stars — careful work and fast turnaround for our near-IR camera\n\nArroyo made a camera-to-dewar adapter plate and a light baffle tube for our near-IR camera, and I’m really happy with both the parts and the way they handled the job. We needed them for our November 18 Palomar run, so getting the fit right and having time to test everything mattered a lot.\n\nThe biggest reason I’d recommend them is that they actually read the drawing. Tiff noticed that the bolt circle on my adapter plate drawing was listed as 4.125 while the other dimensions were in millimeters. That was my mistake: I had copied the dimension from an old camera drawing, where it was in inches. Instead of guessing or cutting to the number as written, they stopped and asked me to confirm. Ruben explained what they had found and why it didn’t make sense. It could have been a big problem if they hadn’t caught it, and I’m grateful they took the time to check.\n\nThe finished parts also passed our fit test on Monday. The plate went onto the dewar with all eight screws going in without forcing, and we measured less than 0.01 mm flatness across the face with a dial indicator. The baffle threads were smooth, and we saw no light leak in our dark test. The black anodize was even, with no bare spots. Those details gave us confidence going into the Palomar run.\n\nThe turnaround was much faster than promised. Our PO quoted 21 days, but the parts were delivered in nine days. For comparison, a larger vendor had quoted us six weeks. Ruben drove the parts to Robinson himself, at no charge. I was so happy when they arrived that I almost hugged him!\n\nFor other labs and purchasing teams: this was a prototype job with a rush setup fee, so I wouldn’t assume every order will have the same turnaround. But on this job Arroyo combined fast delivery with careful attention to the drawing and parts that worked when we tested them. I’d be very happy to use them again, and I hope purchasing will consider adding them to the preferred vendor list. 5 stars.",
+  "words": 354,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "356 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37741172313690186,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2654340863227844,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.198693752288818,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.1,
+    "effort": "low",
+    "output_tokens": 467,
+    "input_tokens": 19682
+  }
+}

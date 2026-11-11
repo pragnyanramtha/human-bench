@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.53, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Your money is stuck. Here’s what we know and what we’re doing.\n\n**Tuesday, 10 November 2026**\n\nSince Friday morning, you haven’t been able to withdraw your money from Pinha. Our payments partner, Northvale Payments, blocked all outgoing transfers without warning. Deposits and round-ups have stopped too.\n\nYour money is held in a safeguarded account, separate from Northvale’s own money. Northvale cannot use it. But right now, we cannot move it to you until Northvale releases it. That distinction matters: your money is not lost, but it is also not available to you when you need it. I know that’s frightening and infuriating.\n\nWe are angry too. And you have every right to be angry with us as well. We relied on one payments partner without a backup, and that was our mistake.\n\nHere’s what happened, what we’re doing, and what you can do now.\n\n## What happened\n\nOn **4 November**, Northvale emailed us to say it was ending its commercial relationship with Pinha. The email gave us 30 days’ notice and cited a “risk appetite review”. It did not give us a more specific reason.\n\nThen, at **09:00 on 6 November**, Northvale blocked all outgoing transfers without warning, before that notice period had ended. That meant you could no longer withdraw from Pinha. Deposits and round-ups also stopped.\n\nNorthvale Payments is an e-money institution based in Vilnius. It holds Pinha customer money in a safeguarded account, separate from its own funds. The money is not lost, and Northvale cannot use it for its own purposes. But we cannot move the balances to you or to a new partner until Northvale releases them.\n\nOn **7 November**, we filed complaints with Banco de Portugal and the Lithuanian central bank. Rui, our CEO, is in calls with lawyers and Banco de Portugal today.\n\n## What happens next\n\nWe have signed with a new partner, **Ostra Bank in Lisbon**. To move your balances there, we need Northvale to send us the balances file and we need Banco de Portugal’s approval.\n\nOur current estimate for the migration is **10 to 15 working days**. That is an estimate, not a promise or a withdrawal date. It depends on steps that are not entirely in our control. We will tell you when we know more, including if the estimate changes.\n\nWe are also trying to get individual releases for people facing urgent situations. We cannot promise that Northvale will approve them, but we are making those requests.\n\n## What you can do now\n\nIf you need your money urgently for **rent, medical costs or because you’ve lost your job**, email **urgent@pinha.example** with **URGENTE** in the subject line. Please tell us what you need and why it is urgent, so we can use that information when requesting an individual release.\n\nFor other questions, please contact our support team. We have received around **1,900 support emails since Friday**, and three people are answering them. Replies are currently taking about **two days**. I’m sorry you have to wait for an answer on top of waiting for your money.\n\nYou do not need to contact us to cancel your Pinha monthly fee. We have **cancelled the fee for November and December for everyone**.\n\n## We should have been better prepared\n\nI’m Pinha’s product designer. I designed the screen that says, “your money is always yours, take it out anytime”. I look at it now and feel sick. The first part still matters: it is your money. But right now you cannot take it out anytime, and we told you that you could.\n\nWe were naive to depend on a single partner without a backup. That decision is ours, not yours. You trusted us with money you were putting aside for things that matter, and we did not have another route ready when Northvale blocked withdrawals.\n\nA woman in Porto wrote to us in capital letters about saving for three years for a car deposit. The stand has given her until Friday, 13 November. I read her email on the metro and nearly cried. I keep thinking about what 10 to 15 working days means when someone else has given you until Friday.\n\nI can’t tell her, or anyone else, that the money will be released in time. We are trying to get individual releases for urgent cases, and we will keep pushing Northvale. Their account manager stopped answering our calls on Friday; the phone now goes to voicemail. That does not mean we will stop trying.\n\nYou deserve to be angry. I’m not going to ask you to calm down, and I’m not going to pretend a safeguarding arrangement makes it acceptable that you can’t reach your own money.\n\n## We’ll keep you informed\n\nWe will post updates on this blog **every Monday and Thursday until this is solved**, even if the update is that we are still waiting. We’ll tell you what has changed, what has not, and whether our estimate has changed.\n\nFor now, the most important things to know are:\n\n- Your money is held in a safeguarded account, separate from Northvale’s own money. It is not lost, but withdrawals are blocked.\n- We have signed with Ostra Bank. The migration needs the balances file from Northvale and approval from Banco de Portugal.\n- The current estimate is **10 to 15 working days**, not a guaranteed date.\n- If your situation is urgent, email **urgent@pinha.example** with **URGENTE** in the subject line.\n- Your monthly fee is cancelled for November and December.\n\nThank you to everyone who has written to us, especially those who have taken the time to explain what this means for them. We’re reading your messages. We owe you answers, and we owe you access to your money.\n\nInês  \nProduct Designer, Pinha",
+  "words": 957,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5258077383041382,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9703762531280518,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.0054216384887695,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.2,
+    "effort": "low",
+    "output_tokens": 1203,
+    "input_tokens": 19309
+  }
+}

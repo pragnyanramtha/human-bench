@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays rewiring a shed for a buddy. Pics are below. I've been doing this 26 years and I still wasn't ready for this one, so grab a coffee. Here's the inventory.\n\nThe shed was getting power from THREE orange extension cords daisy chained together. They ran out a basement window, across the yard, and under the deck where nobody would ever see them. One of the connections was a splice wrapped in duct tape. Not electrical tape. Duct tape. Somebody stood there with a roll of the same stuff you use on a heating duct and said yep, that's good.\n\nThe breaker feeding all this was a 30 amp. The wire it was feeding is 14 gauge, which is rated for 15. So if anything went wrong, the wire would've gotten hot enough to start a fire before that breaker even thought about tripping. The breaker is supposed to protect the wire. This one was basically just watching.\n\nThe outlet in the shed was hooked up with speaker wire. Speaker wire. I held it up and just looked at it for a while.\n\nThe GFCI outlet was a regular outlet with a GFCI sticker on it. A sticker. Somebody's out there thinking a sticker will save you when you're standing on a damp floor holding a power tool.\n\nThe ceiling fan was hanging from a box held up by one drywall screw. One. Every time it turned on, it was a coin flip.\n\nInside the junction box was a mouse nest. The mice were fine, totally unbothered, probably paying no rent. I did evict them though. Sorry fellas.\n\nThen I opened the panel and on the inside of the door, in Sharpie, it says SHED - DONT TOUCH - RON. The wife is standing right behind me and goes \"who's Ron?\" Like I'd know. I do not know Ron. Ron has a lot to answer for, and Ron is apparently the only guy who's allowed to touch it.\n\nNow here's the thing. Whoever did this wasn't evil. He wasn't trying to hurt anybody. He was cheap, and a little proud of himself, and that's honestly most of what I see. Every one of these jobs, the guy thought he did great. It worked, the light came on, nothing blew up. That's the problem. \"It works\" and \"it's safe\" aren't the same thing, and the gap between them is where houses burn down.\n\nWhat I did to fix it: trenched 18 inches down, ran proper 12/2 UF cable to the shed, put in a 20 amp GFCI breaker, a real box, real outlets, and hung the fan on a proper brace. Nothing fancy. It's the normal way to do it, which is the whole point.\n\nI got paid in two pizzas and a case of Yuengling, so don't go thinking I'm getting rich off this. The beer was good though.\n\nSo here's my one ask. If you need electrical work done, call a licensed electrician and get a permit pulled. Don't call your buddy who watched a few videos. Don't call your nephew's friend. I'm not saying that because I want the work, I've got plenty. I'm saying it because the stuff I found in that shed is exactly what puts a family out of their house at 3 in the morning, and most of the time you can't see it. It's behind a wall, under a deck, or inside a box with a mouse in it.\n\nA licensed guy costs more upfront. A house fire costs a whole lot more than that, and it doesn't come with an insurance company that's happy to hear the wiring was done by a guy named Ron.\n\nAnd if you've got a shed, a garage, or a man cave and you don't know what's feeding it, ask somebody who does. Go look, and if you see an orange cord going out a window, you already know what I'm going to say.\n\nShed's good now. Fan is on. Nothing smells like burning.",
+  "words": 671,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The ending reveals the private message's details that the fan is on and nothing smells like burning."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11451232433319092,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05016046389937401,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.234375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.208343029022217,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.3,
+    "effort": "high",
+    "output_tokens": 2752,
+    "input_tokens": 2869
+  }
+}

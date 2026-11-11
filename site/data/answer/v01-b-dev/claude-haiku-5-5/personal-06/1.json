@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.55, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nDenise is going to read this to you in the kitchen, so I'm going to pretend I'm sitting at the table with a cup of tea, the way I'd be if I were there. I'm sorry I'm not. I know you already told me it's fine, and I know you meant it, but I'm still sorry.\n\nI want to start with the house on Kathleen Street, because that's where all of this comes from. You've lived there fifty-one years. You raised half the family in that kitchen. Everyone who came through it, from Aunt Denise's friends to the neighbourhood kids who wandered in for a snack, ended up a little bit yours. I've always thought the house was partly yours, the way a good coat is partly the person who wears it. So if it feels strange leaving it, that makes sense to me. It's supposed to.\n\nSome of my best summers were in that kitchen. You'd let me stay up to watch the Expos or the Jays on that little TV on the counter, as long as I dried the dishes first. I did a lot of dishes for a kid who was mostly there for baseball. I think you knew that and let me do it anyway, which is how I learned that a lot of things you do for people are really about keeping them close.\n\nAnd the crib. You taught me when I was about seven, and you never once let me win. Not once. I'd get desperate and you'd just pick up your cards and say, \"Well, that's your problem, Aidan.\" Then I finally skunked you when I was fifteen, and you didn't even act mad. You made me a whole pan of butter tarts and said, \"Don't get used to it.\" I have been trying to beat you ever since, and I still haven't managed it. I'm starting to think you were never going to let me.\n\nWhen I moved to Toronto for the job, you mailed me a card with a twenty-dollar bill taped inside. The card said, \"For pizza. You look thin on the computer.\" I still have that card. I'm not telling you that to make you feel guilty about it. I just want you to know I've kept it, and I think about it more than you'd guess.\n\nNow, the pager thing. Last Christmas it went off in the middle of dinner, and I went and took the call in the hall, and when I came back you looked at me and asked, \"Did the internet break again? Did you fix it?\" Everybody laughed, and I was embarrassed, and it was the most you-thing you've ever said. And ever since then, every time we talk on the phone, before you even say hello, you ask, \"Did anything break?\" I've started to think of that as one of my favourite things you do. You've made my job into a running joke between us, and you're the only person who gets to make fun of it like that. Good news for you: this week nothing has broken, and I'm on call for the whole thing, so you'd better be ready for a phone call every day to check.\n\nI also want to talk about the back steps. You'd sit out there at six in the morning with your tea, and if I came out and sat next to you, you wouldn't say a word until the cup was empty. At first I thought you were ignoring me. Later I figured out that it was the only quiet time you had in the whole day, and you were letting me be part of it without making me talk. I don't think I've ever had a conversation that calm with anyone else. I hope you get a bit of that at Elmwood. I hope they have steps, or a bench, or a spot by that big maple where you can sit with your tea in peace.\n\nSpeaking of Elmwood. I looked at the place online, and I'll admit it looks nice. The room is on the second floor, looking out at the parking lot and the big maple. I'm choosing to believe the maple is the real selling point. And they have a crib league. A crib league, Nana. I have a feeling you'll be running it within a month and that the other residents have no idea what's coming. Denise told me you're excited, and I'm really glad. You picked this yourself. Nobody talked you into it or pushed you toward it. You looked at what was coming and decided to make the move on your own terms, and that takes a lot of courage, even if it doesn't look like much from the outside. I'm proud of you for doing it. I wanted to say that out loud.\n\nI'm going to be honest and say I got a little choked up writing some of this, which is why it took me a week. But I don't want this to be a sad letter. You'd hate that. You'd tell me to stop being so dramatic and go wash the dishes.\n\nSo here's the plan. I'm coming up the weekend of December 5th, as soon as my rotation is done. I'm bringing the crib board, because Denise is taking the cuckoo clock and the cedar chest, and I asked for the board, and I'm not giving it back. We're going to set it up at Elmwood on the first night. I'll bring my good cards. You'll tell me I'm holding them wrong. We'll play, and you'll win, and I'll pretend I'm surprised. And after that, we'll do it again, and again, until I finally beat you. I don't think I'm going to manage it. But I'd like to keep trying, because that's what you taught me to do.\n\nThank you for the kitchen, the butter tarts, the twenty dollars, the stories, the tea on the back steps, and all the patience you had for a kid who wanted to win at cards. Thank you for asking if anything broke. I love you, Nana. I'll see you on the 5th. Save me a chair by the window.\n\nLove,\nAidan",
+  "words": 1036,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5548364520072937,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2397526651620865,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.423828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.856840133666992,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 2110,
+    "input_tokens": 1689
+  }
+}

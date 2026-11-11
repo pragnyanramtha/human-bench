@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: board:vendor-reviews\nReplying to: none\nCc: none\nSubject: Harbor Point Steno Service — Stenvale Aria 3 recalibration\n\nI’m a court stenographer in Baltimore, and I recently had Harbor Point Steno Service in Towson work on my Stenvale Aria 3. I’m writing this after using it through eight days of a civil trial, including a full day of expert testimony. Dana asked about Harbor Point because her Aria 3 was double-stroking on the number bar; that was also the problem I needed addressed.\n\nI dropped the machine off Monday, October 19, for a full recalibration, number bar sensor inspection, cleaning and firmware update. Harbor Point estimated 10 business days and quoted $285. I picked it up Tuesday, October 27, six business days later. The invoice came to $310: $285 for the labor and parts, plus $25 for a replacement internal battery. Gloria checked with me before replacing the battery, which I appreciated. I paid personally, as I do for all my equipment; the court does not reimburse me.\n\nHarbor Point is a two-person shop off York Road, with free parking in back. They offered a loaner, an Aria 2, while mine was being serviced. Its tilt arm slipped during a deposition one afternoon, and I propped it up with a legal pad for the rest of the day. I let Gloria know afterward. She thanked me and said they would repair the arm before lending it out again.\n\nI did try to call on Wednesday, October 21, to ask about progress. The call rang out, and there was no voicemail box set up. Gloria emailed me the following day with an update and to ask about the Aria 3’s battery, which she said was holding about 60% of its rated capacity. That email exchange worked well, but the phone situation is a real limitation: the line is staffed Tuesday through Thursday, 9 to 4 only. If you’re working a Monday docket and need to reach someone, plan accordingly.\n\nThe machine came back with a printed, one-page service sheet listing every adjustment. I’ve never had that from anyone else, and it made the work easier to understand. The invoice also itemized the work and notes a 90-day warranty. Most importantly, the number bar did not double a single stroke during the trial. My first full day back was expert testimony from an engineer who talks in numbers, which was a useful real-world test.\n\nSo, Dana: based on my experience, I’d trust Harbor Point with your Aria. Gloria did good, careful work, and $310 felt fair for what was done. I’d just keep the limited phone hours in mind if timing or getting a quick answer is important.",
+  "words": 428,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22737081348896027,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07515178620815277,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.219250679016113,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.2,
+    "effort": "medium",
+    "output_tokens": 733,
+    "input_tokens": 15683
+  }
+}

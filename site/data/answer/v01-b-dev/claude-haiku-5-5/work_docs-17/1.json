@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Earlier Intake Deadline for H-1B Registrations\n\nI'd like to move our internal intake deadline for H-1B registrations to January 15, instead of accepting questionnaires on a rolling basis through February. Last season, 9 of our 14 registrations came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened, and that pattern is hard to sustain across more clients.\n\nMost of the crunch came from our process rather than from clients being slow. We send the questionnaire whenever an employer asks, and nobody has been given a target date. Several HR contacts have told us they would have been glad to send everything in January if we had asked. Their budgets for the $215-per-beneficiary registration fee are already set in Q1, and HR teams are back from the holidays by early January, so a January date fits their calendar.\n\nAn earlier deadline also reduces risk. The registration itself is simple, but errors are costly: a wrong passport detail can make a selection invalid. Last season, a beneficiary's passport scan arrived two days before the window had opened and had expired in October. We caught it only because Rosa checked the dates. With more time, that kind of problem gets found and fixed while there is still room to correct it.\n\n**What would change:**\n\n- Engagement letters and a one-page questionnaire go out the week of December 7.\n- Intake closes January 15.\n- Late requests after that date are handled case by case, with the risk explained to the client.\n- Rosa owns the tracker and has roughly six weeks, from December 7 to January 15, to chase missing documents and gaps before the deadline.\n\nThis is a service improvement: clients get a clear date, and our team gets a steadier workload and fewer last-minute errors. I'd like Marcus's agreement on Thursday so the December letters can go out on schedule.",
+  "words": 321,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3415847718715668,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9990410208702087,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.8309712409973145,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 7.9,
+    "effort": "medium",
+    "output_tokens": 1318,
+    "input_tokens": 1545
+  }
+}

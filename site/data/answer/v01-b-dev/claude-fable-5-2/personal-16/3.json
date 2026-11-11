@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why my pier logger reads warmer than the offshore buoy**\n\nTo the local dive and tidepool community,\n\nSeveral of you have written to ask why the water temperatures from my pier logger run warmer than the offshore buoy, and one of you suspects the logger is broken. It's a fair question, so here is the full answer.\n\nFirst, the numbers. In October the pier logger averaged 15.9 C and the buoy averaged 14.1 C, a gap of about 1.8 C. In winter the gap shrinks to about 0.4 C.\n\nThe two instruments sit in very different water. The logger is strapped to a piling at 3 m depth, about 150 m from shore. The buoy is roughly 25 km offshore over deep water, with its sensor just under the surface. Shallow nearshore water warms in the sun, and the bay is sheltered from the upwelling that keeps the offshore water cold. One reader sent me a screenshot with the two records overlaid, which was a real help, because it shows the gap tracking sunny afternoons. That pattern points to solar heating, and it fits with the gap shrinking in winter.\n\nAs for the instrument, it logs every 10 minutes. I pull it and download the data every six weeks, and I swap the battery once a year. The calibration check is two-point, an ice bath and a room-temperature bath, both read against a lab reference thermometer. The last check was in September 2026 and showed an offset of +0.12 C, well inside spec and far too small to explain a 1.8 C difference.\n\nFouling is the other thing people ask about. In August I pulled the logger up with a barnacle colony and a decorator crab living on the housing. I scraped it clean and the readings didn't change.\n\nSo the gap is real oceanography, not instrument error. The buoy and the logger answer different questions. The buoy tells you what the open coast is doing. The logger tells you what the water is like at the pier. If you dive the breakwater, mine is the more relevant number.\n\nIf you'd like the raw CSV to check any of this yourself, email me and I'll send it.\n\n[Your name]\n[Field station], Monterey",
+  "words": 373,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3015706539154053,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1959494799375534,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.86198902130127,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.7,
+    "effort": "high",
+    "output_tokens": 1707,
+    "input_tokens": 1492
+  }
+}

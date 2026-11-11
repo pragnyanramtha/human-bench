@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's your letter — have a read and change anything that sounds off:\n\n---\n\nHiya all,\n\nQuick one to go with the invites, because there's a bit of a plan afoot and I need your help.\n\nGran's 80th is Sunday 13 December, and the dinner's booked for Saturday the 12th at 8.30pm at the Italian place on Byres Road — table for the nine of us with Uncle Davie and Kirsty's man. But before all that, I've got the salon to myself from 1pm on the Saturday. Morag closes at 12, so it's ours for the whole afternoon, and I'm doing everyone's hair for free. On me, no arguments.\n\nHere's how it works: we get everyone in from 1pm, done and dusted by about half five so there's time to get changed, then off we go for dinner.\n\nMum — the one thing I need you to sort is getting Gran to the salon for 1pm without letting on why she needs to be there. She thinks she's coming straight to the dinner, so if you can wangle a cuppa and a wander beforehand, that'd be perfect.\n\nAva and Ruby can have wee braids and a bit of glitter spray. They'll absolutely love it.\n\nFor everyone else, a cut and blowdry is no problem. If you want a colour doing as well, I need to know by Friday 27 November so I can order it in from the wholesaler — I'm not doing a root touch-up with a box from the shop, I've been there. Last time I did a colour in a kitchen, remember. Not happening again. This time we've got proper chairs, proper clips, and the dog's nowhere near it.\n\nAlso — bring a bottle of fizz. Morag says that's fine as long as we tidy up before we leave.\n\nReplies by the 27th please, even if it's just \"nothing, just a cut.\" And if there's anything you're desperate for, say it before then so I can get the colours ordered in.\n\nOh, and between you three — I know Gran's been after going properly silver since Easter, so I have a few ideas. She's not paying salon prices, but she's not getting salon prices either.\n\nSee you all on the Saturday,\n[Your name]\n\n---\n\n**One practical thing:** slip this in with the three invites for your mum, Kirsty and Linda only — keep it out of Gran's envelope or the surprise's dead in the water. And maybe have a think about what you'd do for Gran's colour now, in case she's asked what she \"needs\" to get done.",
+  "words": 431,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3237549364566803,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15085195004940033,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.5657477378845215,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 55.4,
+    "effort": "provider default",
+    "output_tokens": 2274,
+    "input_tokens": 663
+  }
+}

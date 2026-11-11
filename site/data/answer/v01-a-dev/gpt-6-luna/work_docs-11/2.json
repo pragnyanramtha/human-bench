@@ -1,0 +1,83 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "# Helping Your Riverside Midwife Find You\n\n**A little planning can make a big difference when your baby is on the way.** Our midwives are coming to support you, like a trusted friend — and we want to get to your door quickly and safely, even at 3am.\n\n## When to call\n\nRiverside home birth cover starts from **37 weeks of pregnancy**. If you think labour has started **before 37 weeks**, contact your maternity unit straight away and follow the advice you’ve been given. Your booking team will explain which hospital to contact and how to get there.\n\nFrom 37 weeks, when labour starts, **phone the Riverside birth line**. Please don’t call your midwife’s personal mobile: the birth line connects you with whoever is on call. Keep the number somewhere easy to find, and save it in your phone before you need it.\n\nIf you’re unsure what to do, call the birth line and talk it through with the midwife.\n\n## Help us find the right door\n\nA street address doesn’t always tell the whole story — especially in the dark, in a row of similar houses, or on a street where the house name matters more than the number.\n\nWhen you call, tell us clearly:\n\n- Your full address, including the **postcode**\n- The house or building name, if there is one\n- The flat number, **and which building or entrance** it is in\n- Any useful directions, such as a landmark or which side of the street you’re on\n\nIf your home has no number, please tell us that when you call. “Rosemary Cottage” is helpful; “the cottage somewhere near the chippy” is a little more of an adventure.\n\nIf you live in a block of flats, please make it clear where your flat is. Flat 14 isn’t always near flat 13 — sometimes they’re in different buildings. Tell us the block name, entrance, floor and the best way to get in. If possible, have someone meet us at the entrance. A friendly wave from a window can help too.\n\n**what3words** or a location pin can also help. If you use either, share it through the contact method the birth-line midwife agrees with you. Please don’t assume the birth line can receive WhatsApp messages or pins unless the midwife confirms that.\n\n## Make your home easy to spot\n\nA few small clues can save precious minutes:\n\n- Turn on the **porch or outside light**, especially at night.\n- If it’s safe and practical, put a clear sign, balloons or another easy-to-see marker by the gate or entrance.\n- Keep your phone nearby and your ringer on, in case we need to check directions.\n- If someone is meeting us, make sure they know where to wait and can hear their phone.\n\nPlease only use balloons or signs if they’re safe, allowed where you live and won’t block the path. No one needs a midwife doing obstacle-course training on the way to your door.\n\n## Parking: two cars, lots of bags\n\nUsually **two midwives attend a home birth**, and they often come in separate cars. If you can, leave space for two cars nearby. We carry equipment, including a large bag and gas and air equipment; there may also be birthing-pool equipment if that’s part of your plan. The easier it is to park and reach your door, the sooner we can bring everything in.\n\nSome areas, including parts of Anfield and Kensington, have permit parking. Please check the rules for your street ahead of time and ask your council about visitor permits if needed. If you already have a valid visitor permit, leave it ready to use as instructed. Please don’t use a permit that isn’t valid for the area or time.\n\n## Clear the way — and make room for pets\n\nPlease clear the hallway and stairs as much as you can. Move shoes, washing baskets, toys and anything else that could trip someone. Lego is tiny, but a midwife carrying a big bag can confirm it has a very big personality.\n\nIf you have pets, please arrange for them to stay safely in another room or with someone you trust when the midwives arrive. We’re fond of animals, but enthusiastic greetings can make it hard to carry equipment safely — especially around the stairs. Pippin the Staffie, this is not a personal attack.\n\n## A warm welcome, no fuss\n\nYou don’t need to make the house spotless, put the kettle on or apologise for anything. We’re coming to care for you and your baby, not inspect the hallway. A clear route, a way in and a little help with directions are more useful than a perfect cup of tea.\n\nWe know you may be busy, excited or worried when you call. Keep this page somewhere handy, and ask us at your booking visit if anything is unclear. We’d much rather answer a question early than go sightseeing around the wrong block.\n\n## Fridge checklist\n\n**Before 37 weeks**\n\n☐ I know which maternity unit to contact if labour starts before 37 weeks.  \n☐ I know how to get there and have the hospital contact details handy.\n\n**From 37 weeks**\n\n☐ The Riverside birth-line number is saved in my phone and written somewhere easy to find.  \n☐ I’ll phone the birth line when labour starts — not my midwife’s personal mobile.  \n☐ I know my full address, postcode, house or building name, and flat details.  \n☐ I’ve thought about useful directions, a location pin or what3words.  \n☐ We know how to make the entrance easy to spot, and where someone can meet the midwives.  \n☐ We’ve checked parking and visitor-permit rules for our street.  \n☐ We’ll leave space for two cars if possible.  \n☐ The hallway and stairs are clear, and pets can stay safely in another room.  \n☐ The porch light is ready to go on at night.\n\n**Questions?** Ask your Riverside community midwife at your booking visit. We’re looking forward to meeting you — and finding your front door.",
+  "words": 1003,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The notes say to send a what3words or WhatsApp pin to the birth line phone, but the piece tells families not to assume the birth line can receive WhatsApp messages or pins, which weakens the point and conflicts with the notes."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.7843934893608093,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9947168231010437,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -6.120015621185303,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.8,
+    "effort": "medium",
+    "output_tokens": 1254,
+    "input_tokens": 14173
+  }
+}

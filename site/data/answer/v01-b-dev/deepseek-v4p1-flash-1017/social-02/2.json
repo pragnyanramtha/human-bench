@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays rewiring a buddy’s shed. I went over to help “clean up a couple outlets.” Two Saturdays later I’ve seen enough to write a safety pamphlet and maybe take up drinking.\n\nThe highlights, and I’m using “highlights” loosely:\n\n- Power ran from the house through three orange extension cords daisy-chained out a basement window, across the yard, and under the deck. That’s not a circuit, that’s a laundry line for electrons.\n- One splice was wrapped in duct tape. Not electrical tape. Duct tape. I’ve seen better connections on a middle school science project.\n- A 30-amp breaker feeding 14-gauge wire. For the non-electricians: that’s like putting a rocket engine on a lawn mower and hoping for the best. The wire gets hot before the breaker ever thinks about tripping.\n- The shed outlet was hooked up with speaker wire. Speaker wire. It’s great for a ZZ Top cassette, not for anything carrying house current.\n- The “GFCI” was a regular outlet with a GFCI sticker stuck on it. Sticker’s doing a lot of work. Zero amps of actual protection.\n- Ceiling fan box held up by one drywall screw. One. I’ve hung pictures with more hardware.\n- Mouse nest in the junction box. Mice were fine. Unbothered. Probably had better job security than the previous electrician.\n- Inside the panel door, in Sharpie: “SHED - DONT TOUCH - RON.” I open the panel, my wife looks over and goes, “Who’s Ron?” Ma’am, I don’t know, but I don’t trust his spelling or his torque.\n\nHere’s the thing: this guy wasn’t evil. He was cheap, in a hurry, and a little proud of himself. That’s most of these jobs. Nobody sets out to burn a house down. They set out to save $400 and not get a permit, and then the wire gets hot behind a wall and the next thing you know the fire department is on the lawn.\n\nSo if your garage, shed, basement, or “man cave” has extension cords doing permanent wiring, duct tape splices, a breaker that’s too big for the wire, speaker wire, or a GFCI sticker on a regular outlet, please don’t cover it up and “keep an eye on it.” Call a licensed electrician. Not your buddy who watched a YouTube video and owns a multimeter. I love your buddy. Your buddy is gonna burn your house down.\n\nWe fixed it right: trenched 18 inches, 12/2 UF cable, 20-amp GFCI breaker, real boxes, real outlets, fan on a proper brace. Paid in two pizzas and a case of Yuengling, which is union scale for a favor.\n\nPics to follow once I get them sorted. And Ron, wherever you are, I hope your duct tape holds. It won’t.",
+  "words": 458,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43269553780555725,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3395722210407257,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.2589559555053711,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.9,
+    "effort": "provider default",
+    "output_tokens": 4384,
+    "input_tokens": 1494
+  }
+}

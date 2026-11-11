@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmate I'm sorry I went quiet. you said you're not ok and I should've got back to you properly. you don't need to apologise for anything. ceiling on your bed, all your gear and your song notebooks gone, then that portal bullshit from the landlord. he's a grub. that's a massive amount to cop and you're not dealing with the rest of it on your own.\n\nI'm off all day tomorrow now, Sam's taken my shift. Dad's said we can borrow the trailer, so I can come to Priya's and we can get your bags out of the garage before you have to leave. Ruby's already said you can have our couch as long as you need. only catch is Clover reckons it's her bed too. no need to sort a whole new life by Wednesday, just come here and we'll get you fed and work out what's next.\n\nalso Tully's been onto Dee at the Lantern Room about a benefit night. she's offered Sat the 28th, all door money to you, and Hollow Pines are keen to play too. nothing you need to organise or perform at. if you're up for it we can handle it. Jono's cousin has a working Yamaha you can have in the meantime too. obviously doesn't replace the Nord, but it's there.\n\nplease don't call time on Brisbane or the band this week. if Rocky's what you want once you've had a bit of breathing room, I'll listen, but don't let this shit make the decision for you. your songs are the best thing about our band. you don't owe us rehearsal Thursday or anything else right now.\n\nyou drove to bloody Gatton at 2am when my car died after that Toowoomba gig and didn't even whinge. you don't have to earn the same back, mate. we're here.\n\nwhat time should I come round tomorrow?",
+  "words": 311,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1733572632074356,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03216865658760071,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.4296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.975983619689941,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.9,
+    "effort": "low",
+    "output_tokens": 391,
+    "input_tokens": 19984
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: January 15 intake deadline for H-1B registrations\n\nI'd like us to set a firm internal date for cap registration intake this season: January 15. Right now we email the questionnaire whenever an employer asks for it, and there's no date attached. Last season we filed 14 registrations for 6 employer clients, and 9 of the 14 came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened.\n\nI don't see this as a client problem. Nobody gave them a date, so they worked to the only one they knew, which was the window itself. One HR contact told me afterward she'd have happily sent everything in January if we'd asked. Most of the crunch comes from our own process, and that's the part we can fix.\n\nThe risk matters as much as the workload. The registration itself is simple, but errors are expensive: the wrong passport on a registration can mean an invalid selection. Last season a passport scan for a Brightwater Analytics beneficiary reached us two days before the window, and the passport had expired in October. We caught it only because Rosa checked the dates. With more lead time, that's a routine fix instead of a scramble.\n\n**What would change**\n\n- Engagement letters and the one-page questionnaire go out the week of December 7, with January 15 stated as the intake date.\n- Intake closes January 15. Anything that arrives later, we handle case by case.\n- Rosa owns the tracker and gets a clean six weeks before the window opens to chase gaps.\n- Nothing changes on cost. The registration fee is still $215 per beneficiary, and employers already budget for it in Q1.\n\nJanuary 15 is realistic. HR teams are back from the holidays and have their budgets set. I'd present it to clients as better service: a clear date, an earlier start, and time to sort out problems before they matter.\n\n**For Thursday:** if we agree on the date, the December letters can go out on schedule.",
+  "words": 343,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40565386414527893,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9959004521369934,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.500391960144043,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.3,
+    "effort": "high",
+    "output_tokens": 2138,
+    "input_tokens": 1525
+  }
+}

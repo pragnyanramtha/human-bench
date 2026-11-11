@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.62, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya,\n\nThank you for owning it, but please don't spend another minute beating yourself up. One stale answer in a library that nobody owns isn't a you problem, it's a process problem, and that's how I'll frame it with Greg. I'm not throwing you under the bus. I'll handle Greg. You and I are fixing this together.\n\nI'll be honest about where my head is. This is my biggest deal of the year, I've been working it since February, and I already told my wife we'd finally do the Big Bend trip off this commission. So yeah, I'm a little freaked out. But I also haven't forgotten you staying until 9pm in September to rebuild their demo env when the route import broke. You've been great on this account, and one copy-paste mistake doesn't change that.\n\nI really think this is fixable if we're honest and fast. Dana seems strict but fair, and I'd rather she see us deal with it straight than find out anything else the hard way. Here's what I need from you:\n\n1. **Q14 tonight.** Rewrite it with the real status: Type I issued in April, Type II audit window closes Jan 31, report expected by March. Send it to me first, not Dana. I want to read it before anything goes out.\n\n2. **Thursday at 2.** Marcus from our security team is doing a call with Dana and their legal team. Please join. You know this account and the questionnaire better than anyone, and it helps to have you there.\n\n3. **The bridge letter.** Marcus says the auditor can give us one to cover the gap until the final report lands. I want you to know about it before the call so it's not a surprise if it comes up.\n\nPing me when Q14 is ready and I'll turn it around quickly. Thanks for jumping on this.\n\nJordan",
+  "words": 313,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6154077649116516,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.272265762090683,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.453805923461914,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.4,
+    "effort": "high",
+    "output_tokens": 1825,
+    "input_tokens": 2144
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: DRAFT — 3-star review, not for posting yet\n\nHarbourline fitted out my 2021 Ford Transit for my mobile dog-grooming business, and I want to start with the part they genuinely got right: the stainless tub and ramp are excellent. They’re the best thing about the van. Dogs walk right in, the setup is easy to work with, and I still love it.\n\nThen, on October 27, a fitting on the hot-water line let go halfway through a groom. I had water across the floor and down into the cabinet, and a 110-pound Bernese named Moose in the tub. Moose sat there through the whole flood like a king surveying his indoor pool. He was completely unbothered; I was doing enough screaming for both of us. He went home half-groomed and, according to his owner, apparently thought he’d been to a pool party. Five stars for Moose’s attitude, but obviously that isn’t what we’re rating here.\n\nThe van was off the road from October 27 until November 6. I lost six bookings, plus the rest of the day the leak happened. When your van is your whole shop, that’s not a minor inconvenience.\n\nThe leak itself isn’t actually what made me angriest. Stuff breaks. What got to me was the initial response: before anyone had inspected it, Glenn said these lines don’t just let go and suggested the heater had probably been run dry or someone had been hanging things off the pipe, which would be “user error” and not covered. Neither had happened, and the pipe is behind a cabinet door. The earliest appointment offered was November 3, with a $180 diagnostic fee.\n\nTo Glenn’s credit, the eventual answer was very different. When the van was finished, he told me the compression fitting on the outlet was a cheaper one his supplier had swapped in, said that was on them, and replaced all the fittings on the hot side. He also refunded the $180. That was owning it, and he deserves credit for doing so.\n\nMy advice to other groomers or trades considering them: get the warranty details in writing before the work starts, and ask the awkward questions too. My invoice included a 12-month workmanship warranty excluding misuse or user error, but I’d now want clarity on who decides what counts as user error, how diagnostic fees work if the problem turns out to be theirs, and what happens when a repair leaves your business parked.\n\nThree stars because the tub and ramp really are great, and the final resolution was fair. But nearly two weeks of disruption, cancelled bookings, and feeling nudged toward blame before the van had even been looked at made the whole experience much harder than it needed to be.",
+  "words": 447,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30635878443717957,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3672913610935211,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.000921249389648,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 47.6,
+    "effort": "provider default",
+    "output_tokens": 2796,
+    "input_tokens": 2000
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "## Kestrel Bastion 1500 Review: 4/5 — It Saved My 10x Long, But It Won't Run My Whole Desk\n\nI bought the Kestrel Bastion 1500 off Voltwise in August 2026 for $229. The reason I needed it is simple: my apartment loses power more often than I'd like, and I trade leveraged. What I didn't expect was that I'd end up using it for the one job that actually matters — keeping my rig and my internet alive long enough to get out of a position cleanly.\n\n### The numbers\n\n| Spec | Detail |\n|---|---|\n| Capacity | 1500VA / 1000W, pure sine wave |\n| My measured load | ~410W (PC + 3 monitors + modem + router, read off its own display) |\n| Actual runtime at 410W | 11 min 40 sec (tested by pulling the plug on purpose) |\n| Box claim | ~14 min at 500W |\n| Outlets | 10 — 5 battery-backed, 5 surge-only |\n| USB-C | 60W |\n| Weight | ~30 lbs |\n| Replacement battery pack | $95 |\n\nHere's the math the box doesn't do for you: \"14 min at 500W\" implies roughly 117Wh of usable energy. My actual result — 410W for 11 min 40 sec — works out to about 80Wh delivered. So the sticker number is optimistic. Plan on ~80Wh. At a genuine 500W you'd get closer to 10 minutes, not 14. Either way, treat it as a \"close out and shut down\" device, not a \"keep working\" device.\n\n### October 14\n\nPower dropped around 2:20pm. I was 10x long SOL perps. The rig stayed up, the wifi stayed up, and I closed the position in about 4 minutes with room to spare. No panic-click, no scrambling to find a hotspot. One avoided bad fill, and the unit paid for itself on that afternoon alone.\n\n### What bugs me about it\n\n- **The fan.** First week, the fan kicked on at 3am and woke me up. It's loud — like a hair dryer on low — and it cycles more than I'd like under sustained load. If your desk is in your bedroom, know this going in.\n- **The beeping.** On outage it's loud af. You *can* mute it in the app, but the setting resets after a firmware update. Re-mute it every time or you're awake at 3am.\n- **The desktop app looks like Windows XP.** Auto-shutdown works, and that's what I actually care about, but the UI hasn't been touched in a decade. Don't expect a polished battery dashboard.\n- **$95 for a replacement battery pack**, on top of the $229. If you're buying this as multi-year outage insurance, factor that in, plus the fact that degradation in 3-4 years hits your wallet.\n- **30 lbs.** Don't plan on moving it around. Put it next to your desk, near an outlet, since it needs wall power to recharge.\n- **Only 5 of the 10 outlets are battery-backed.** Plugging your PC into a surge-only outlet is the classic screw-up: the lights come on, you assume you're protected, and you're not.\n\n### Tips if you get one\n\n- **Put the modem and router on the battery-backed side.** People forget this and lose internet even though the PC is fine. My number one tip.\n- **Need more minutes?** Drop a monitor's brightness to zero or shut one off entirely. That load cut extends runtime more than anything else.\n- **Set the auto-shutdown threshold in the app now**, and test it once on purpose like I did. You want to know it works before the outage, not during it.\n- **Test the runtime with your own gear.** The sticker doesn't know your load.\n\n### Who it's for\n\nTraders running a desktop rig and a couple of monitors who need a few minutes to flatten a position and shut down cleanly, with internet kept alive through it. If you need 30+ minutes of runtime, or you have a server that genuinely has to stay up, step up to a 2000W+ unit or a second battery pack. If you're in an area with frequent outages and need real multi-hour runtime, a small generator is the better buy. This is a \"don't get wrecked\" device.\n\n### Verdict\n\n**4/5.** It did exactly what I needed on Oct 14, and the fan noise and ugly app are real complaints but minor next to what it bought me. The only thing I actually want changed is the beep resetting after firmware updates — and honestly, another 20 minutes of runtime would make this a 5.",
+  "words": 763,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: headings, tables, bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4437772035598755,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9407274723052979,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 13.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.4379828870296478,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.7,
+    "effort": "provider default",
+    "output_tokens": 3049,
+    "input_tokens": 650
+  }
+}

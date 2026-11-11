@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, I am so sorry your toe got hurt and you had to go to urgent care and miss a week in your shoes. I really mean that. You have been coming to my salon for 2 years and I care about you. I don't want to fight on here, but a lot of people are reading this so I want to share what happened from our side, calmly.\n\nYou came in Saturday Oct 24 for the deluxe pedicure. Every metal tool we use goes through the autoclave and stays in a sealed pouch, and we open it in front of the customer. Marisol said the same thing. Files and buffers are brand new for each person, and you take them home with you. The tub gets a new plastic liner every single time. We had our state inspection in August 2026 and passed with no violations. The paper is on the wall by the front desk and anyone can come look. Since you filed with the state, they are welcome to come check us again. We have nothing to hide.\n\nDuring the pedicure you asked for the cuticle cut more because you wanted it really clean. My tech said she didn't want to go too far, and you told her it was fine, you always do it that way. I'm not saying this to blame you. I'm saying it because it's what happened, and so people understand she was being careful. Next time we will be more firm about stopping, even when the customer asks for more. That's on us and we will do better.\n\nWhen you came back on Nov 2 and showed me your toe, I did not mean to shrug at you. I'm sorry if that's how it felt. I offered your full $45 back, and I told you I would also pay your urgent care copay if you bring the receipt. You asked for $300 cash and free pedicures for a year, and I said no to that. I still think my offer is fair, and it is still open. You can come get it any time.\n\nAbout my tech. She is my niece. She has been licensed 3 years and she was born right here in Houston. English is her first language, she is just quiet and shy with new people. It hurt a lot to read that she barely speaks English. She read this whole thread and cried all night, and now she is talking about quitting nails. She feels terrible that your toe got hurt.\n\nI have been in Houston 19 years. I worked for my aunt first, then opened Lotus Garden in 2007. In all that time we never had one infection complaint until now. So when I read that all these places are dirty and reuse files, that hurt the most. We are not all the same. Many of us work very hard to keep everything clean and safe because we care about the people sitting in our chairs. Please don't judge every salon by one post you read online.\n\nRenee, I would really like to talk with you, not on the forum. Please call me at the salon or just come in, and we can sit down together. I want to make this right with you.\n\nAnd Marisol, thank you so much for your kind words and for being fair. 4 years you have been coming to us, and that means a lot to me and my family, especially this week.\n\nThu\nLotus Garden Nails",
+  "words": 586,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22108519077301025,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05898085609078407,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.2819099426269531,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.8,
+    "effort": "medium",
+    "output_tokens": 1335,
+    "input_tokens": 2115
+  }
+}

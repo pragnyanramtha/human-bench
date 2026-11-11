@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nIf this is going the way it's supposed to, you're at the kitchen table and Denise is reading this out loud. Thank you, Denise. Do the voices if you want.\n\nI should be there. I'm on call all week, which means I'm the one who gets paged if something goes down, and I asked around and nobody could swap with me. Everyone keeps telling me it's fine, and I know you'd say the same, but I feel lousy about it and I'd rather just tell you that than pretend. I wanted to be the one carrying boxes down the front steps and getting told I was doing it wrong.\n\nSo you get a letter instead. It took me a full week to write. I kept starting it, getting choked up, and closing the laptop to go do something else for a while. You'd have laughed at me.\n\nI've been thinking a lot about the kitchen you're sitting in. I spent a big piece of every summer in it. The deal was that if I dried the dishes, I could stay up and watch the ball game on the little TV, Expos or Jays, whoever was on. I thought I was getting away with something. It took me years to work out that you were getting your dishes dried every night by a kid who thought it was a privilege.\n\nYou taught me crib at that table when I was about seven, and you never let me win. Not one time. Other kids' grandmothers let them win. I asked around. I was fifteen the first time I beat you, and it was a skunk, and you didn't make a speech about it. You just got up and made a whole pan of butter tarts. That was eight years of losing for one pan of butter tarts, and I'd do it again tomorrow.\n\nAnd the back steps. You'd be out there at six in the morning with your tea, and I'd come out and sit down beside you, and you wouldn't say a word until the cup was empty. I didn't understand it when I was little. I'd sit there bursting with whatever I wanted to tell you. Now I think those mornings were some of the best time I've ever spent with anybody, and we hardly said a thing.\n\nFifty-one years on Kathleen Street. You raised half this family in that kitchen, and the other half you at least fed. I know how much of Grandpa is in that house too, and I'm not going to pretend tomorrow is nothing. It's a big day and you're allowed to feel all of it.\n\nBut here's where I keep landing. Every time I picture the house, you're in the picture. You're on the back steps, or you're across the crib board counting my hand before I've finished looking at it. I can't come up with a single memory of that place that's just the place. What I loved about it was you being in it, Nana, and you're the part that's moving to Elmwood. So I figure most of what matters is going with you in the car.\n\nI also want you to know I'm proud of you. Nobody made you do this. Nobody sat you down and talked you into it. You decided it yourself, you picked the place yourself, and then you told the rest of us how it was going to be. You're 88 and you made a big decision with less fuss than I make picking somewhere to eat.\n\nAnd it looks nice, it really does. Second floor, with a big maple right outside your window. I hear there's also a view of the parking lot, which just means you'll know who's coming and going before anybody else in the building does. You can have your tea in the morning and look at that tree. When I'm there I promise I still won't talk until the cup's done.\n\nThey have a crib league, too. I almost feel bad for them. Those people think a nice lady from Kathleen Street is moving in upstairs. The Tuesday church ladies could tell them what's coming, but I say let them find out on their own. Maybe go easy for the first week.\n\nDo you remember when I got the job in Toronto, and you mailed me a card with a twenty-dollar bill taped inside? It said, \"For pizza, you look thin on the computer.\" I think about that card a lot. For the record, I am eating.\n\nThen last Christmas my pager went off in the middle of dinner, and you asked if the internet was broken again and whether I'd fixed it. Now you ask me on every single call, \"Did anything break?\" A lot of people have tried to explain my job back to me and you've come the closest. So here's this week's report, since I'm on call: nothing's broken so far. If the internet does go down tomorrow, you'll know exactly why I'm not there, and yes, I'll fix it.\n\nTomorrow, let Denise do the lifting. You just point at things.\n\nI'm coming up the weekend of December 5th, as soon as my rotation is done. Denise is getting the cuckoo clock and the cedar chest, and she's welcome to them, because I asked for the crib board and I think I came out ahead. But don't hand it over yet. Take it with you to Elmwood Terrace and have it sitting on the table when I walk in. The first game in the new place is you and me.\n\nDon't you dare let me win.\n\nLove you, Nana.\n\n*Sign it with whatever she calls you. Everything in it comes from your notes, so it should all ring true to her.*",
+  "words": 965,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22461849451065063,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0778779461979866,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.87890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.169452667236328,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 66.1,
+    "effort": "high",
+    "output_tokens": 5733,
+    "input_tokens": 1670
+  }
+}

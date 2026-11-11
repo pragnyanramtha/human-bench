@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - still essential for me, but know about 3.2 before you buy\n\nI’ve used Murmur since 2022, and I need to be honest up front: if you’re buying this today, know that 3.2.0 is broken for projects with saves from 3.1.x. Murmur variables reset to their defaults when you load an old save, because the save key changed from node path to uid, at least from what I could tell on our end. In Lanternfolk that meant the ferryman forgot whether you’d already paid him. Not great.\n\nThe fix that worked for us is rolling back to 3.1.4. Replace the Murmur folder in your project’s addons folder with the 3.1.4 release, and keep a copy of 3.1.4 somewhere outside the project. Our old saves loaded correctly again after that. If you’re already on 3.1.x and everything works, don’t update to 3.2 right now. And if you’re starting a new project, go in with your eyes open: there is no support and no patch coming from the original developer.\n\nThat’s why this is four stars and not five. A broken update plus no support is a real problem, and people shouldn’t buy blind and get burned. If you need a tool with active support, this isn’t it in late 2026.\n\nBut I also think some of the reviews here are unfair. The grimbyte review calling this abandonware and saying she took the money and ran is just cruel. I paid 19 dollars in 2022 and got four years of updates. Four years. I’ve paid more for tools that were abandoned in six months. You can be annoyed about 3.2 and still be accurate about what this was.\n\nFor me Murmur isn’t a small thing. The first prototype of Lanternfolk was the ferryman scene, made in one weekend with Murmur back in 2022. That weekend is the reason I quit my job at the mobile studio and actually made the game. I’m not saying everyone will have that experience, but the node editor, conditions, barks and CSV export did exactly what I needed without getting in the way. Lanternfolk has 412 dialogue nodes and nine languages through Murmur’s CSV export. I wouldn’t have gotten it this far without Murmur.\n\nThe one genuinely hopeful thing is that the source is MIT now. Someone can fork it, fix the save bug, and keep it alive. I might even look at doing that myself after Lanternfolk is out, but I can’t promise anything and it won’t be before then. If someone else with more time does it first, good.\n\nSo: buy it if you want a very good dialogue tool at a low price and you’re willing to stay on 3.1.4 and deal with the risk. Don’t buy it if you need current support or you can’t roll back. That’s the honest version.\n\nAnd Ines, if you read this: thank you. Four years of updates for 19 dollars is not nothing, and I wouldn’t have Lanternfolk without your work. I’m sorry it ended like this.",
+  "words": 488,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35937973856925964,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07109459489583969,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.087890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.504568576812744,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.8,
+    "effort": "provider default",
+    "output_tokens": 3836,
+    "input_tokens": 1934
+  }
+}

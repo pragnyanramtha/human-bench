@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: Draft review — 3 stars\n\nThree stars. There are things I really love about my Harbourline grooming van fitout, but the way a plumbing problem was initially handled made an already stressful situation harder than it needed to be.\n\nFirst, the good: the stainless tub and ramp are honestly the best thing about the van. The dogs walk right in, and for someone who spends her working days getting dogs into and out of a bath, that is no small thing. Harbourline did the fitout in August, and I want to give credit for the parts that make my job easier. This isn’t a case of everything being terrible.\n\nOn October 27, a fitting on the hot water line let go halfway through a groom in Bedford. Water went across the floor and down into the cabinet. My client, Moose, a 110 lb Bernese, sat in the tub through the whole flood like a king surveying his new waterfront property. He did not care. I was the one screaming. Apparently only one of us had concerns about the business implications of an indoor pool.\n\nI had to towel him off and send him home half done, then cancel the rest of that day. The van was off the road from October 27 to November 6. I lost six bookings on top of the rest of the day when it happened. For a mobile groomer, the van being out of action means work is out of action too.\n\nThe leak itself wasn’t what made me angry. Stuff breaks. What bothered me was the response before anyone had inspected it. Glenn’s email said these lines don’t just let go and suggested the heater had been run dry or someone had been hanging things off the pipe. He said that would be user error and wouldn’t be covered. Neither of those things had happened, and the pipe was behind a cabinet door.\n\nThe earliest appointment offered was November 3, with a $180 diagnostic fee. Having to cancel clients while also feeling like I was being blamed for the failure was the frustrating part.\n\nTo Glenn’s credit, he did own it in the end. On November 6, he told me the outlet compression fitting was a cheaper one his supplier had substituted and said, “that’s on us.” He replaced all the fittings on the hot side and took the $180 charge off. That was the right outcome, and it deserves to be included here just as much as the initial response does.\n\nSo, three stars: a tub and ramp I genuinely love, a plumbing failure that cost me working time, an initial response I wasn’t happy with, and responsibility taken in the end.\n\nFor other groomers or trades considering a fitout, my advice is to get the warranty details in writing, including how diagnostic fees and possible user-error claims are handled. My invoice did include a 12-month workmanship warranty with a misuse/user-error exclusion, but I wish I’d asked more about how that would work in practice.\n\nI’d have felt very differently about the experience if it had started with “let’s look at it” rather than a suggestion I’d caused it. Moose, meanwhile, appears to have no complaints about the facilities.",
+  "words": 531,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18680179119110107,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.28213462233543396,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.14125919342041,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.0,
+    "effort": "medium",
+    "output_tokens": 667,
+    "input_tokens": 15457
+  }
+}

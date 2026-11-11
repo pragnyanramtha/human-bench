@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast 2026\n\nHi Rhonda, its Gary from the bus garage again. Hope you and everybody at the diner are doing good. It's that time of year so I wanted to get us on your books before the back room fills up.\n\nWe'd like to do Saturday December 19, back room, 7am same as always. If the 19th is no good the 12th would work too, just let me know which one and I'll tell everybody.\n\nThis year we got 24 counting Earl and his wife Carol. That's 19 drivers, 3 from the shop, and the two of them. Same as last time would be great, the big pans of eggs and home fries and the biscuits and gravy with everybody ordering there own meat off the menu. Last year was $11 a head and that was more than fair. If its gone up a little this year thats fine, I know what everything costs now. Just let me know what the number is so I can tell the guys. Separate checks again please, that worked real good last year.\n\nCouple other things this year.\n\nLonnie is on a walker now since his hip so he can't do the steps out front. Can we use the side door with no steps? Will it be unlocked at 7 or should I call when we get there so somebody can open it for him?\n\nPatsy can't eat eggs anymore. Could you do her some oatmeal or pancakes or whatever you got that's easy? She's not picky she just can't do the eggs.\n\nNow the big one. Earl is retiring. He's been driving 31 years and his last day is the 18th, the day before the breakfast. He doesn't know we're doing anything for him so please keep it quiet if he comes in or calls. Carol knows and she's the one who told me. He'd hate a big speech but we want to do something for him.\n\nHere's what I wanted to ask you. Can we bring a cake in from Sugarcreek Bakery or would you rather we didn't bring outside food? The other idea, and honestly the one I like better, is just a big tray of your cinnamon rolls with a candle stuck in the middle. Earl loves them. Carol said so too, and I'll be honest yours are better than any cake anyway. If you could do that how many would we need for 24 people, and what would it run us? Would that go on one check? I'll pay for it myself so it doesn't get split up.\n\nAnd I hate to even bring this up because I know you felt bad about it, but last year the coffee ran out around 8:15 when the urn quit on you. It wasn't no big deal and nobody was mad. You said you'd have a backup next time so I just wanted to check if there's an extra pot or urn we could have going in the back room. You know how bus drivers are about coffee lol, most of us been up since 4.\n\nI'll get you the final count by the Wednesday before like you want. If its the 19th that would be the 16th. It should stay right around 24 but you know how it is somebody always gets sick or can't make it.\n\nThanks again Rhonda, we look forward to this every year and the guys always talk about it after. Let me know on the date and the other stuff when you get a chance.\n\nMerry Christmas a little early,\nGary Hollins",
+  "words": 594,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08718201518058777,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.012493334710597992,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.40625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.879859447479248,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.1,
+    "effort": "medium",
+    "output_tokens": 1435,
+    "input_tokens": 4019
+  }
+}

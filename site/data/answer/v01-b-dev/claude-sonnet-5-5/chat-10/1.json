@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can send:\n\nRick, I've had a few days to cool off and I'm still pissed, so I'm going to say this once and say it straight.\n\nYou told Gary Pruitt I'd list his house for 1%. One percent. You never asked me, and I have never quoted that number to anybody. My listing side is 2.5%.\n\nI gave up my whole Saturday on that house. Pulled comps, did the walkthrough, put together a full listing packet. Six hours, plus the drive from north Phoenix. Then Gary texts me Sunday night that he's going with ListLite for $3,995. No hard feelings, he says. And honestly I'm not mad at Gary. I'm mad at you.\n\nWhen I called you, all you said was \"that's business, sis, can't win 'em all.\" It's not business when I never agreed to the deal and I'm the one who ate the cost. Now this morning you've already given Denise my cell so I can \"pick my brain\" about her rental. Same thing happened with your softball guy two years ago. I let it go then. I'm not letting it go again.\n\nSo here's how it works from now on. Don't hand out my number. Don't quote my commission to anyone. If somebody wants my help, you ask me first, every time, before you say a word to them. And I'm not calling Denise. You can tell her that yourself.\n\nTo be clear, I'm always happy to help actual family. Mom, your kids, you. Advice is free, always. But I'm not going to be the reason you look like a big shot to your friends while I do the work for nothing.\n\nI love you and I'm still coming to Thanksgiving. I just need you to hear me on this one.",
+  "words": 298,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34831592440605164,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17765170335769653,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8515625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.469548225402832,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.8,
+    "effort": "high",
+    "output_tokens": 1444,
+    "input_tokens": 1496
+  }
+}

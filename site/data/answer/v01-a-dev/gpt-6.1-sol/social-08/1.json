@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Our Winter School on Elliptic Curves and Modular Forms wrapped up on Saturday after three days, 5–7 November 2026, in Seminar Hall 2, Department of Mathematics, Sahyadri Institute of Science, Pune.\n\nOn behalf of my fellow organisers, Ketaki Joglekar and Faizan Mirza, thank you to everyone who made this student-run school possible.\n\nWe received 112 applications and selected 41 MSc and early PhD participants from 9 states, based on a statement and one reference. The institute’s student initiative grant of Rs 2.4 lakh supported the school, covering hostel stay and travel for 18 outstation students. That support made it possible for students to join us from further away.\n\nThank you to our speakers: Dr. Nilesh Dharmadhikari from Hyderabad for the lectures on Mordell–Weil; Dr. Sunanda Iyer from Chennai for modular forms; and Dr. Tomasz Wierzbicki, joining online from Kraków, for computations in Sage. We are grateful to our faculty mentor, Prof. Anuradha Venkatesan, for guiding us through organising the school.\n\nA special thank you to Mr. Prakash Salunke, who sorted out hostel rooms at 11 pm after a booking mix-up, and to the office staff and volunteers. Our six PhD teaching assistants put real care into the problem sessions. The participants made those sessions work by asking questions, trying things and helping each other.\n\nTwo moments will stay with me. When the power went out for nearly two hours on day two and laptops ran out of charge, we moved the afternoon problem session to the canteen with two rolling whiteboards. It turned out to be our best session.\n\nAn MSc student from Silchar also spotted an error in a worked example in Sunanda ma’am’s notes. She corrected it live and thanked him. That was a lovely example of the kind of classroom we wanted.\n\nFor MSc students especially, I think small schools like this can offer more than a big conference: time to ask a question, get stuck and work through it together. The PhD-led problem sessions are a format we want to keep.\n\nSlides and problem sheets will be on the department website within two weeks. We hope to hold a second edition in late 2027, subject to grant funding. Thank you all for these three days.",
+  "words": 369,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23394875228405,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.117796890437603,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.9765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.682804584503174,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 39.6,
+    "effort": "low",
+    "output_tokens": 1077,
+    "input_tokens": 55969
+  }
+}

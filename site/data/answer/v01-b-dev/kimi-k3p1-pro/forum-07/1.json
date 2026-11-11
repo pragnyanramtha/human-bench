@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "This is my first time posting in one of these threads, although I’ve read them for a long time. I got home hours ago and I’m still thinking about one of my patients, so I thought I would write it down here.\n\nMrs. H. passed away recently. Today her daughter came in to return her unused blister packs and her glucometer.\n\nMrs. H. was in her eighties and had been coming to us for about seven years. Almost every Thursday, she came in for her weekly blister pack. She lived alone after her husband died and walked with a cane that had tennis balls on the bottom. Somehow, she nearly always brought me something too. Sometimes it was poppy seed cake. Once it was a jar of pickles, which I accepted very gratefully even though I had no idea what I was supposed to do with them.\n\nDuring Ramadan, she remembered that I was fasting. She brought cake as usual, wrapped it in foil with my name on it, and told me very firmly that I was not to eat it until sunset.\n\nA few years ago, a new prescriber added a medication that interacted with her warfarin. I caught it and called the doctor. To me, it was part of the job: check the profile, notice the problem, make the call, document it. Mrs. H. told everyone that I had saved her life. I never quite knew what to say when she did that. I appreciated it, but I also wanted to tell her that any pharmacist should have caught it. I was just doing what I was supposed to do.\n\nToday, along with the medications, her daughter gave me a card. Her mother had written it some time ago but had never given it to me. Inside, in her handwriting, were the words “for my Arabic daughter.”\n\nThat was the part that finished me. I ended up crying in the back room, and my coworker covered the counter for ten minutes until I could pull myself together.\n\nPharmacy school taught us pharmacology, interactions, calculations, counselling points, and how to document an intervention. Nobody taught us what to do when a patient’s daughter brings back the last few packs you prepared for her. Nobody teaches you how to say goodbye to someone whose medications you checked every week for years.\n\nMy father was also a pharmacist in Egypt. He knew the families who came into his pharmacy, their children, who was caring for whom, and who was having a difficult time. When I came to Canada, I thought pharmacy here might be different somehow. More distant, perhaps. In some ways it is not different at all. You still become part of people’s routines, and they become part of yours.\n\nWe talk about professional boundaries, and of course they matter. We are not supposed to become too attached. But what does “too attached” mean when you have seen someone almost every Thursday for seven years? When you know she will probably have something wrapped in foil for you, and you know she will pretend it is nothing?\n\nI don’t really have a neat lesson to finish with. I just keep thinking about that card, and about the fact that next Thursday her name won’t be in the pile.\n\nHas anyone else had a patient like this? Someone who quietly became part of the rhythm of your work, and whose absence you felt much more than you expected?",
+  "words": 577,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The combination of her weekly blister packs, cane with tennis balls, and distinctive gifts could identify Mrs. H."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20807600021362305,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07802513986825943,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.6760125160217285,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 75.9,
+    "effort": "provider default",
+    "output_tokens": 3144,
+    "input_tokens": 571
+  }
+}

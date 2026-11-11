@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars. Great tool, but skip 3.2 for now\n\nI've used Murmur since 2022 (I bought v1.3 for $19) and it's the reason Lanternfolk exists. The first prototype was the ferryman scene, built in one weekend with Murmur. That weekend is when I quit my job at a mobile studio. Four years and a full game later, with 412 dialogue nodes and nine languages through the CSV export, I'd still pick it over anything else I've tried.\n\nWhy 4 stars and not 5: 3.2.0 has a save bug. If you load a save made in 3.1.x, every Murmur variable resets to its default. In our game the ferryman forgot you'd already paid him. I suspect the save key changed from node path to a uid, but I haven't confirmed that. It's reproducible, and a few people in the forum have confirmed the workaround below.\n\nIf you haven't updated yet, don't update to 3.2. If you already have, replace the Murmur folder in your project's addons folder with the 3.1.4 release. Keep a copy of 3.1.4 somewhere safe. Saves from 3.1.x load fine on 3.1.4. That's what I'm shipping on.\n\nSupport: Ines stepped back on 30 October and said 3.2 is the last version she'll make, so don't expect a fix from the original author. The source is now public under MIT. That means anyone can patch the save bug or fork the project, and I'd rather see that happen than see people give up on a good tool.\n\nOn the reviews: some of the recent ones are harsh, and the one from Grimbyte is more cruel than fair. Four years of updates for a $19 tool isn't abandonment, and the save bug is real but it's one bug in one release. If you're deciding whether to buy, read the 3.2 issue and decide on that.\n\nThank you, Ines. A lot of small things got made possible because of the way you built this: the node graph, the barks, the CSV export. I hope you're doing alright.",
+  "words": 327,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "343 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2444293051958084,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06374026089906693,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.15625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.735699653625488,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.1,
+    "effort": "medium",
+    "output_tokens": 2507,
+    "input_tokens": 3448
+  }
+}

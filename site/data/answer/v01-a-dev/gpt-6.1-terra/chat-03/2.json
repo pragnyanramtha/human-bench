@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nMia, I’m really sorry I went quiet on you. You’ve had an absolute shit of a time and I should’ve been there. And you don’t need to apologise for going quiet yourself.\n\nFirst things first: Ruby says you can stay on our couch for as long as you need. Only catch is Clover will 100% try to sleep on you. Sam’s taken my shift tomorrow so I’m off all day, and Dad’s trailer is ours to borrow. I can come over and help get your stuff out of Priya’s garage before her mum arrives, then bring it back here. What time works for you? Don’t worry about sorting it all first, we can figure that out together.\n\nAlso, the landlord is an absolute grub. “Lodge a maintenance request” after your ceiling came down? Unreal. If you want, I can sit with you and help take photos and sort through the paperwork and messages. You shouldn’t have to deal with that on your own.\n\nTully’s had an idea for a benefit night for you: Dee’s offered us the Lantern Room on Sat 28th, with the door money going to you, and Hollow Pines are keen to play too. Only if you’re up for it, obviously. And Jono’s cousin has an old Yamaha you can have to tide you over. It’s not your Nord, but it works.\n\nPlease don’t make a call on Rocky or quitting the band right now. You’ve just had your room fall on you, for fuck’s sake. Your songs are the best thing about this band and we’d hate to lose you, but there’s no pressure to do anything musical until you’re ready.\n\nYou drove all the way to Gatton at 2am to rescue me after the Toowoomba gig and didn’t even complain. Let me turn up for you now. You’re not on your own, mate. Call or text whenever, and I’ll see you tomorrow.",
+  "words": 317,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4202842712402344,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17530284821987152,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.686037063598633,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.1,
+    "effort": "low",
+    "output_tokens": 422,
+    "input_tokens": 19988
+  }
+}

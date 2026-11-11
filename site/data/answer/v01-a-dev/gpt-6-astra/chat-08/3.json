@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: charity stream nov 21 — games, hair dye, $600 goal\n\n@everyone charity stream is SATURDAY NOV 21, 10am–10pm eastern for Linden Community Pantry. putting this up early so half the server doesn’t find out the day of again lol. last year we raised $212 even with my terrible notice. this year the goal is $600.\n\ndonate here: lindenpantry.example/mrkz\ndonations go straight to the pantry, not through me, with nothing taken off. rook is matching the first $100 people donate, so those first donations count DOUBLE.\n\nLinden is serving around 340 families a week, and Denise said their shelves are the lowest she’s seen before Thanksgiving. through their wholesale partner, every $1 gets about 4 pounds of food. so even $3 helps — that’s about 12 pounds.\n\nthe consequences for me:\n- $100: full round with my controller upside down\n- $250: chat picks my hair dye color and i do it ON STREAM\n- $400: one hour of chat-picked songs. no skipping. unfortunately\n- $600: i vlog a grocery pickup arranged by the pantry. they get the donations and buy the food\n\nyes charity streams can be a little cringe. counterpoint: you get hair dye content and a pantry gets food. i can live with that lol\n\nfirst half is community lobbies, anyone can join and ill drop the code. second half, chat votes on the game every 2 hours. no repeat maps larry i promise\n\nno card or no money to spare? you can still help. share this, invite someone, or come hang out and play. if you’re local, canned and boxed food can go in the pantry’s blue bin by the side door Saturdays 9am–1pm. you do NOT have to donate to join anything.\n\nput nov 21 in your calendar now. come ruin my hair for a good reason",
+  "words": 291,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12723658978939056,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1353055089712143,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.2337790727615356,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.8,
+    "effort": "medium",
+    "output_tokens": 421,
+    "input_tokens": 15007
+  }
+}

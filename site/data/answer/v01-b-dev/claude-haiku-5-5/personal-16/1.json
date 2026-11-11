@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why the pier logger reads warmer than the buoy**\n\nHello all,\n\nSeveral of you have asked why the water temperature from my pier logger runs warmer than the offshore buoy, and a couple of you suggested the logger is broken. It isn't. Here is the explanation, along with the checks I run so you can judge for yourselves.\n\nFirst, the numbers. In October the pier logger averaged 15.9 °C and the buoy averaged 14.1 °C, a gap of about 1.8 °C. By winter that gap shrinks to around 0.4 °C.\n\nThe two instruments are measuring different water. The logger is strapped to a piling about 150 m from shore, at 3 m depth. The buoy sits about 25 km offshore, with its sensor just below the surface in deep water. Shallow water inside the bay warms in the afternoon sun and doesn't receive much of the cold water that upwells offshore. That is the main reason for the gap. It is largest in late summer and autumn, when the sun is strongest and the bay is most sheltered, and smallest in winter. One reader sent an overlay of both records showing the gap tracking sunny afternoons, which is what this kind of heating predicts.\n\nHere is how I check the logger. It records every 10 minutes. Every six weeks I pull it, download the data, and inspect it for fouling. I replace the battery once a year. Calibration is a two-point check against a lab reference thermometer, using an ice bath and a room-temperature bath. The most recent check, in September, found an offset of +0.12 °C, well inside spec. In August I pulled the logger up and found a barnacle colony and a decorator crab living on the housing. I scraped it clean, and the readings did not change.\n\nSo the logger is measuring what it should. The buoy and the logger answer different questions. If you dive or walk the breakwater, the pier logger is probably the more relevant number for you. If you want a picture of open-ocean conditions across the region, the buoy is the better reference.\n\nIf you'd like the raw CSV, email me and I'll send it. I'm glad to walk anyone through the methods who wants to check my work.\n\n[Your name]\nMarine biologist, [University] Field Station\nMonterey, California",
+  "words": 387,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2345978170633316,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17357106506824493,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.263051986694336,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "medium",
+    "output_tokens": 1917,
+    "input_tokens": 1516
+  }
+}

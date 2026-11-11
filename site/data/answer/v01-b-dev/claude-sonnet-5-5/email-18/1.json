@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Saturday alarm\n\nKristen,\n\nHere's my side of Saturday. It was my popcorn, and I'm not going to pretend otherwise.\n\nAround 10:40 I put a bag in the break room microwave, hit the popcorn button, and walked out front instead of standing there watching it. That was my mistake. A customer needed a shear pin for his snowblower and it took longer than I figured, maybe 6 or 7 minutes. The popcorn burned while I was out there and the alarm went off.\n\nThe store was cleared for about 25 minutes. The engine from up on Hertel came and found no damage, just smoke and a god-awful stink.\n\nSo the record is straight, the September alarm wasn't me. That was the sensor in the paint aisle. But that doesn't change Saturday. This one is on me, not the microwave.\n\nI'll cover the $175 from Northpoint. You can take it out of my check or I'll bring in cash, whichever is easier for you.\n\nI feel bad about the customers standing out in the cold, and about the Hendersons leaving a full cart. They usually come back, but they shouldn't have had to be put out like that.\n\nI'd like to keep my Saturday shifts if Gary is willing. I like the weekend crowd, and I need the hours for heating oil. I understand it's his call, and I'll do whatever I can to earn his confidence back.\n\n31 years on the job and my first alarm as a civilian is over a bag of butter popcorn. One of the guys on the engine was Mikey Szymanski, who I broke in as a probie back in '03. I'll never hear the end of it. My wife said the van smelled like a burnt movie theater, so I'm getting it from every side.\n\nI'm also buying Denise her coffee.\n\nThanks for hearing me out, Kristen. Let me know what else Gary or the insurance people need from me.\n\nWalt",
+  "words": 328,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2486862987279892,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05836951732635498,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.138596773147583,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.6,
+    "effort": "high",
+    "output_tokens": 1790,
+    "input_tokens": 1946
+  }
+}

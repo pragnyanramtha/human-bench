@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Quick heads-up: today is Wednesday 11 Nov, so the practical is this morning. I've written the message to ask for a meeting before 10am today, with a fallback if he can't make it. If you've already sorted the practical some other way, change that part back to \"any day this week.\"\n\n---\n\nGood morning Mr Ogunleye,\n\nMy name is the owner of the black Jansport bag you found in the danfo from Oshodi to Igando last Friday evening, 6th November. I came down at Ikotun and forgot it on the bus.\n\nFirst of all, I want to sincerely thank you. Many people would have just thrown the bag away or kept it, but you took the time to find my number and call me. When you said God sent you, I really believed it, and I am still grateful.\n\nSir, I want to be honest with you. I am a first-year student and I don't have ₦40,000. That amount is more than the whole bag and everything inside it is worth. The things inside are mostly important to me alone: my lab manual, dissecting kit, student ID card, two textbooks, a calculator and my glasses. They won't be of much use to anyone else.\n\nWhat I can do is give you ₦10,000 for your transport and as a thank you for your kindness. That is my whole allowance, but I am willing to give it because the bag is very important to me.\n\nMy BIO 101 practical is today by 10am, and without my dissecting kit and ID card I will not be allowed into the lab. If it is possible to meet this morning before 9am, it would really help me. If today is not possible, please let me know the earliest day and time that works for you.\n\nI will come with my roommate, and I suggest we meet either at Ikotun roundabout or in front of Ikotun police division gate, since both places are easy to locate and close to where you stay. I will give you the ₦10,000 once I collect the bag.\n\nThank you again, sir. I am hoping to hear from you soon.\n\nRespectfully,\n[Your name]\n[Your phone number]\n\n---\n\nA few tips:\n- Don't send any money by transfer before you see the bag. Pay cash on the spot when you collect it.\n- Meet only in daytime and stay where people are around.\n- If he refuses to come down from 40k, still tell your lab attendant or course rep this morning that your kit was lost. Some labs will let you share a kit or give you a note for the day.",
+  "words": 441,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4452138841152191,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.029617369174957275,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.42631196975708,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.4,
+    "effort": "medium",
+    "output_tokens": 1162,
+    "input_tokens": 1438
+  }
+}

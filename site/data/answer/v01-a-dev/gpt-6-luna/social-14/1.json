@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hey, Hollins Family Ties — I wanted to say this here so everyone knows: I’m coming to Thanksgiving, and I’m looking forward to seeing you all.\n\nI’ll bring mac and cheese and two sweet potato pies. I have Thursday, November 26 at Aunt Denise’s in Macon, eating around 3, on my calendar.\n\nI’ve been thinking about last year. I’m proud of the work I do, but I’m sorry for how I talked at the table. I took a jab instead of keeping my cool, and I hate that Grandma Pearl ended up spending so much of the holiday out on the porch. I still feel bad about that.\n\nI’m not looking to reopen the argument or put anyone on the spot. I’d just love for us to call a truce on work and politics for the day. I can’t discuss open cases anyway, so questions about “the lawsuit” are a dead end. How about we keep the table to food, football, babies, and Tasha’s new boyfriend? That sounds like a much better way to spend Thanksgiving together.\n\nI know we can get under each other’s skin sometimes, but there’s a lot of love in this family too. A birthday text—even one thumbs-up emoji—can mean a lot. I want this to be a good day, and I’m glad I’ll be there.",
+  "words": 220,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "221 words, allowed 225-440 (band 250-400 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5173342823982239,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.47386571764945984,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.08779764175415,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 7.8,
+    "effort": "medium",
+    "output_tokens": 281,
+    "input_tokens": 13942
+  }
+}

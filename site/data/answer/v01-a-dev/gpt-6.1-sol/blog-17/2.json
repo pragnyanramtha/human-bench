@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Draft — Correction to the daily takings and GST template: please check before filing\n\nThere is an error in versions 1.0, 1.1 and 1.2 of my daily takings and GST template. If you used one of these versions to record GST-inclusive takings, please do not use its GST total to file your return. If you have already filed, please check the figures and the correction route below.\n\nI uploaded the corrected version, v1.3, on 8 November. There have been 412 downloads since the template was first posted on 12 August. That is not a count of affected users, but it is enough that a quiet change to the download link is not sufficient.\n\nWhat went wrong\n\nColumn F multiplied takings by 9%. That works when the amount entered excludes GST. It does not work when the amount already includes GST. To extract the GST portion from inclusive takings, the calculation is takings × 9/109.\n\nRavi’s example makes the difference clear. His GST-inclusive takings of $1,090 produced $98.10 GST in the old template. The correct GST is $90. The template overstated it by $8.10.\n\nThis affects people who entered GST-inclusive takings, which will include most hawkers using the sheet. It does not affect the GST calculation for amounts entered excluding GST. The quarterly Box 1 sales total was calculated independently and was correct in the affected versions. The error affected the Box 6 GST total.\n\nHow I missed it\n\nI tested v1.0 against my own sample figures, which were already excluding GST. The check passed. I did not test the inclusive-takings calculation properly, and the error carried through into v1.1 and v1.2.\n\nThe error was mine. I am sorry. Melvin is right to be upset: people trusted this template because I am an accountant, and they should have been able to rely on the calculation. Thank you, Ravi and Shu Fen, for catching it and spelling out the problem.\n\nIf you have already filed Q3 using the sheet\n\n1. Keep a copy of the original workbook and the return you submitted. Do not overwrite them. You need a record of how the filed figures were arrived at.\n\n2. Check which version you used and whether the amounts you entered included GST. If you used v1.0, v1.1 or v1.2 with inclusive takings, recalculate using v1.3, available from the download link on the original template post.\n\n3. Set H2 to match the amounts you actually enter. Select “prices exclude GST” only for entries excluding GST. Use the inclusive setting for receipts that include GST collected, even if your menu prices are shown excluding GST. It is the amount entered, not the menu wording, that matters.\n\n4. Compare the corrected quarterly Box 6 total with the amount you filed. Keep the calculation showing the difference. Box 1 was not affected by this formula error; do not change it just because Column F was wrong.\n\n5. Before submitting a correction, read IRAS’s “Correcting Errors Made in GST Return” page on iras.gov.sg and speak to whoever files your GST return. If you file yourself, check with IRAS if you are unsure. IRAS has its own rules on whether an error can be adjusted in a later GST F5 or requires a GST F7. Do not assume either route applies automatically.\n\nThis particular error overstates GST; it does not cause an underpayment to IRAS. That does not make it harmless. You may have paid more than you needed to, and the correction needs to be handled properly.\n\nIf you have not filed yet, use v1.3, check H2 and review the recalculated figures before filing. Please do not continue using the older versions.",
+  "words": 591,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.04180562123656273,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0208786278963089,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.843990325927734,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.7,
+    "effort": "low",
+    "output_tokens": 807,
+    "input_tokens": 20396
+  }
+}

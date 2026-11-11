@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Rue Saint-Hubert. We need to talk, and we need to talk now**\n\nDenis,\n\nI am writing this in English because your wife reads it better than you read French, and I want you to understand every word, no excuses. I started this email six times. Every time I wrote it in French, the words came out ugly. So you get English, and you get the truth.\n\nOn Thursday at six in the morning, I was shaping baguettes in my own shop when a man I had never seen walked in with a camera. He said he was a photographer for the agency and that you told him I was fine with the sale. Fine with it, Denis. I had flour on my arms. I had to sit down on a sack because my legs would not hold me, and Karine had to calm me down. You were not there. You were in Calgary, and a stranger told me my building is for sale.\n\nI found the listing afterwards, online, on Centris. One million, one hundred fifty thousand dollars. I read it three times on my phone standing in the back. Three floors on Saint-Hubert, papa's building, bought in 1979. My bakery has been downstairs for thirty-one years. I know that to you it is a number on a website. To me it is the place where I have opened the door every morning for most of my life.\n\nLet me tell you what I have done, because you seem to have forgotten. I pay rent to the estate, 2,400 dollars a month, and I have never been late, not once. In 2019 the roof was leaking over the ovens, and I paid 38,000 dollars for a new one out of my own pocket, because nobody else was going to do it. I did not send anyone a bill. I did not ask you for a cent. I did it because it is our building and I was taking care of it.\n\nAnd in September I called you. I told you the caisse had pre-approved me for 410,000 dollars and asked you to let me buy your half. You said we would talk about it. Then after maman's funeral you called me and said, \"No rush, we decide together.\" Together! Denis, when did we ever decide anything together? I was the one who took care of the building, the tenants, the taxes, the bakery, and maman when she was sick. You were far away. And now you want to decide together, but with an agent you hired without telling me?\n\nYou did not even call me. You let an agent tell me, like I am a tenant who did not pay. Maybe that hurts most of all. Not the money. That you could not pick up the phone.\n\nI know what you think. You think I am sentimental, that I am going to cry about old walls. Yes, I am sentimental. But this is also business, and you know it. I have six employees who depend on this place. I have thirty-one years of clients who line up at seven in the morning. If the building goes to a developer, they tear it down or turn it into condos, and my rent doubles or the bakery is gone. I cannot survive that. I have shown you the numbers. Do not pretend this is only my feelings.\n\nDo you remember when we were kids and papa let you sleep in the back room with the flour sacks? You loved that room. You said it smelled like the whole world. I remember because I was jealous. I was the one who got up early to help him, and you got the flour sacks. I am not saying this to make you feel guilty. I am saying it because that room is part of who we are, and I cannot believe the brother who loved it would sell it to a man with a camera.\n\nSo here is what I need, and I need it clearly.\n\nFirst, take the building off the market this week. Call the agent yourself and tell him it is off. Not your wife, not an email. You.\n\nIf you cannot do that, then give me first right to buy at the 410,000 I am approved for, or at a fair price we agree on with an appraiser we both trust. I will go to the notary with you. I am ready now.\n\nThird, call me. Not your wife, not a text. Me, on the phone, this weekend. I want to hear your voice when you answer. I am sure your wife means well, but this conversation is between you and me.\n\nI want to be clear about one thing. I am not writing this to tell you I hate you. I do not hate you. I am angry, and I think you need to feel how angry I am, because you did not see my face on Thursday morning. But I am not going to lose my brother over a building. Maman spent her whole life making sure we stayed a family, and I will not let papa's building be what breaks it.\n\nSo please, Denis. Call me. Stop this sale. Let us sit down and do this like the family we are.\n\nYour sister,\n\n[Your name]\n\n---\n\nI used \"your wife\" instead of a name since you didn't give me hers or your sister's name. You can swap in her name if you want it more personal. Check the figures against your papers before you send it.",
+  "words": 930,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5462895035743713,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07137256115674973,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.945765972137451,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.5,
+    "effort": "medium",
+    "output_tokens": 3830,
+    "input_tokens": 1549
+  }
+}

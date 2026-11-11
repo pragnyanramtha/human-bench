@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok im absolutely fuming and I need to vent for a sec.\n\non august 30 I posted my flash sheet for the sept 13 flash day. I drew the whole sheet myself, and the switchblade moth was my favorite thing on it. it got tattooed in the first hour. cool, great, exactly how flash day is supposed to go.\n\ntonight a friend sends me a listing from StickerBurrow Co. they are selling a “Knife Moth Vinyl Decal” for $6.50, or 3 for $15, and it is MY moth. not inspired by it. not a similar moth. same crack in the blade, same wing pattern, same linework. they didnt even flip it. its a straight scan of my drawing with a different name slapped on it so they can sell it on a water bottle.\n\nI messaged them, told them I have the original drawing and the dated post, said I never gave anyone permission to print it, and asked them to take it down. their response was basically “love your work!” followed by “our artists create original designs inspired by trending styles” and “moths are a very common tattoo motif.” then they told me I can send a registered copyright through their support form.\n\nso you love my work enough to sell an exact copy of it, but when I ask you to stop, suddenly its just a totally unrelated moth and you have no idea what im talking about. sure. a common motif does not usually come with the exact same little crack in the blade, but ok.\n\nand before anybody says “its just a $6 sticker,” no. when I sell flash, it goes ONE time to ONE person. thats the whole deal. thats what the client paid for. I draw it, one person claims it, I tattoo it on them, and I dont sell it again. that doesnt become less true because somebody with a scanner decides they can make pocket change off it.\n\nto the person who has this tattoo: im not naming you or putting your messages on here, but I need to say this plainly. I did not sell your tattoo. I did not make those stickers, I did not license the design, and I did not give these people permission to use it. im sorry you had to see that and wonder if I had. I told you it was one of one and I meant it. somebody stealing the drawing after the fact was not part of that deal, and im doing what I can to get it taken down.\n\nif you have two minutes, please go report the listing. its StickerBurrow Co, “Knife Moth Vinyl Decal,” $6.50 or 3 for $15. report it as stolen/copied artwork or copyright infringement, whatever option the platform gives you. and please dont buy it or buy from them. if you already got one without knowing where it came from, im not mad at you. but now you know.\n\nsmall studios and independent artists dont have lawyer money sitting around for every random sticker shop that decides our work looks cute, and these places know it. the whole process is built to exhaust the person who actually drew the thing while they keep making money off it in the meantime. im tired of it.\n\nanyway. please report it. rant over.",
+  "words": 553,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The post never says the client contacted Jo that night thinking Jo was selling stickers of her tattoo; it only hints at this with 'sorry you had to see that and wonder if I had'."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not explicitly say the client contacted Jo that night thinking Jo was selling stickers of her tattoo."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.05181990936398506,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03847936913371086,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.546875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.39177131652832,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 66.6,
+    "effort": "provider default",
+    "output_tokens": 3097,
+    "input_tokens": 2144
+  }
+}

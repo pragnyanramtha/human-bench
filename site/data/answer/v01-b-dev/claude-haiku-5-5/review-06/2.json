@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Vantorre CX-10 refurbished: recurring E34 faults, probe drift and warranty dispute\n\nWe bought this CX-10 (order CM-88213, delivered and commissioned 14 September 2026) for a 60-cover bistro in Fitzroy. Here is the timeline.\n\n14 Sep onwards: E34 (steam generator low water level) logged on the unit. Service report SR-1190 (22 Sep) replaced the water level sensor and passed three steam cycles.\n\n3 Oct: E34 back four times that week. Core probe reading low. In a lamb shoulder the oven read 63°C and our Thermapen read 70°C. We repeated it twice with the same result.\n\n6 Oct (SR-1236): steam generator found heavily scaled, descaled and flushed. Core probe recalibrated and now within 1°C of the Thermapen.\n\n24 Oct: E34 lockout at 6:10pm during a full service of 60 covers. We finished the lamb on the stove and deck oven and had to take the pork belly off the menu for the night.\n\n27 Oct: E34 again, with further scale found.\n\nOn water: our Fitzroy supply averages about 15 mg/L as CaCO3, which the water utility describes as soft. The unit had been in service about three weeks when the scale was first found. The seller's report attributes the scale to hard water and recommends a softener. That doesn't match the supply data, and we'd like the seller to explain it.\n\nOn warranty: the listing states 6 months parts and labour, registered to 14 March 2027. The 27 Oct attendance has been invoiced at $280 + GST ($308) on the basis that the fault is a site water issue. A six-week-old unit with a recurring fault should not be charged a callout.\n\nFor anyone considering this unit: get the water hardness requirements and descaling interval in writing before you buy, and ask how the seller handles recurring faults under warranty.",
+  "words": 287,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the callout has been invoiced, but Brett said it would be invoiced."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13606874644756317,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.019549142569303513,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.46875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.22619891166687,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.6,
+    "effort": "medium",
+    "output_tokens": 2787,
+    "input_tokens": 3699
+  }
+}

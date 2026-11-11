@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Some good news to start. Priya Bhatia joins the practice on Monday 16 November. Priya is a chartered structural engineer (IStructE) and has spent the last nine years at a consultancy in Coventry. I'm very happy about this, and it's the fix for a problem some of you know all too well.\n\nNow the part I owe you. In September and October, beam calculations and drawings were taking five to six weeks. That is far too long, and several of you were left waiting with builders booked. One couple had their builder standing on site with the steel already ordered. We got their calculations to them in three days, but only after they had chased us twice, and they should never have had to chase at all. A few of you were unhappy and one of you left a sharp review. I understand why.\n\nThe slow weeks were my fault. I said yes to too much work on my own. By October I was on site visits all day and doing calculations until midnight, and my wife had started calling the office \"the other house\". That's an explanation, not an excuse. I'm sorry to everyone who waited.\n\nWith Priya here, our target for beam calculations and drawings is 10 working days. If you're waiting on us at the moment, your job is moving, and you can message me directly if you want to know where it stands.\n\nOne other change. The free first site visit is coming to an end. I liked offering it, but about a third of those visits never turned into a job, and that is time taken from the work already on my desk. Here's how it will work:\n\nFirst site visits that take place from 1 January 2027 will cost £95.\nIf you go ahead with us, the £95 comes off your fee.\nAny visit already booked as of today stays free, whatever its date, including dates in the new year.\nVisits that take place before 1 January are free, as they are now.\n\nLast thing. Priya will be out on site visits before long, so if she turns up at your door, please say hello and make her welcome.\n\nThank you for sticking with us.\n\nI left out that the couple were in Harborne, since neighbours could work out who they are; it's easy to add back if they wouldn't mind.",
+  "words": 397,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The final sentence is a note about the task rather than part of the post."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22686593234539032,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.049654558300971985,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.1954885721206665,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.9,
+    "effort": "high",
+    "output_tokens": 2370,
+    "input_tokens": 1432
+  }
+}

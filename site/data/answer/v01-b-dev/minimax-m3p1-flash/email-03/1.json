@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr. Kerrigan,\n\nThank you for contacting us, and please pass on my best wishes to Margaret for a smooth recovery. We would be very glad to look after her blister packs. I am the pharmacist who will be responsible for her medication file, and I will be your point of contact from here.\n\n1. Weekly blister packs and cost\nWe prepare weekly blister packs, seven days at a time, with each dose sorted by the time of day. There is no charge for the packaging itself. Margaret would pay only the normal dispensing fee, and at 81 she is covered by ODB for the large majority of her prescriptions. I will review anything that is not fully covered with you before we start.\n\n2. Delivery or pickup\nWe deliver free of charge within 8 km of the pharmacy, and Mississauga Valley Blvd is comfortably within that range, so we can deliver right to her building. Our regular delivery runs are Tuesdays and Fridays, between 2 and 6 pm. Since you would like everything in place before she comes home, we can also arrange a one-off Saturday drop-off in the morning, before 1 pm. Pickup at the store is fine too, whichever suits you better.\n\n3. Moving her prescriptions to us\nThere is no form for Margaret to sign for the transfer; we call her current pharmacy and handle it on our side. We would just need the name and address of the pharmacy on Dundas, plus her OHIP health card number, at the first pickup or delivery.\n\n4. The pharmacist call and medication review\nYes, I would be glad to go through her new medication list with you in detail. We do need Margaret's permission before we can discuss her medications with anyone else, so I will need a signed Family Communication Consent form on file. It is a short form, and it simply records that Margaret authorizes us to speak with you about her medications — that way her privacy is protected and we only share information with the people she has chosen. She can sign it at the store at pickup, or we can have the driver bring it out for her to sign at home.\n\nWhat I need from you\n\n- Would you please ask the hospital to fax her discharge prescriptions to us early Thursday morning? Once we have all of her prescriptions — the discharge ones and the transferred ones — the first packs take about 48 hours to prepare, so a Thursday morning fax means we can have them ready for Saturday.\n\n- The first packs will not be ready on the day she comes home. Could you please confirm with the discharge team that Margaret will have an interim supply covering Thursday through Saturday, and ask them to go through every dose with her, with you helping, until we hand over the blister packs on Saturday? That way there are no missed doses and no confusion about timing.\n\n- I would also like to complete a MedsCheck with Margaret once she is settled at home. It is free, takes about 20 minutes, and I come to her, confirm each medication against her list and make sure the new routine is manageable. I am available Monday or Tuesday evenings after 6 pm and can come to her building — please let me know which evening works best.\n\nIf you would find it easier to talk any of this through than to put it in writing, you can reach me directly on 905-555-0148, extension 2. I am in the store Monday to Friday, 9 am to 6 pm.\n\nThank you for thinking of us for Margaret's care. We look forward to it.\n\nKind regards,\n\nRania Haddad, PharmD\nCommunity Pharmacist\nErindale Park Pharmacy\n905-555-0148 ext. 2\n\n---\n\nTo: joel.santos@erindaleparkrx.example\nReplying to: m02\nCc: none\nSubject: Notes for the Kerrigan file - Margaret (blister packs) - my offers and requests\n\nHi Joel,\n\nThanks for pulling the details together. Here is what I have sent to Douglas Kerrigan so the team is working from the same page.\n\nPatient: Margaret Kerrigan (81), request from her son Douglas (647-555-0193).\n\nMy offers:\n- Weekly blister packs, 7 days x 4 times a day. No charge for packaging, normal dispensing only; ODB covers most at 81. I will flag any non-covered meds to Douglas before we start.\n- Free delivery within 8 km, regular runs Tuesdays and Fridays 2-6 pm. I have offered a one-off Saturday drop-off before 1 pm at her building so the packs are there for her return. Pickup also available.\n- Free MedsCheck at her home in the first week, about 20 minutes. I will go Monday or Tuesday after 6 pm, once she is settled.\n- Pharmacist medication review by phone with Douglas, once the consent form is signed.\n\nMy requests to Douglas:\n- Hospital to fax the discharge prescriptions to us early Thursday morning so the packs are ready for Saturday.\n- Confirm with the discharge team that Margaret has an interim supply Thursday to Saturday, and that they go through every dose with her, with Douglas helping, until Saturday pickup or delivery.\n- Name and address of her current Dundas pharmacy and her OHIP number, for the transfer.\n- Margaret signs the Family Communication Consent form (at pickup, or we send it with the driver).\n\nNext steps for us:\n- Chase the Thursday fax and the old pharmacy details; target all prescriptions in by Thursday morning.\n- Pack the consent form with the Saturday delivery.\n- Call Douglas to confirm the Saturday window and the MedsCheck evening once he replies.\n\nI am on 905-555-0148 ext. 2, in the store Mon-Fri 9-6, and will speak with him directly if that is easier than email.\n\nThanks,\nRania",
+  "words": 938,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['joel.santos@erindaleparkrx.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      },
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "920 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3272261321544647,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07839884608983994,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1298828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.1508009284734726,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.1,
+    "effort": "provider default",
+    "output_tokens": 4507,
+    "input_tokens": 2098
+  }
+}

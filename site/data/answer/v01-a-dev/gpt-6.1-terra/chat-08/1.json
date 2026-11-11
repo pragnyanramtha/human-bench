@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: Linden Community Pantry charity stream — Nov 21\n\n@everyone CHARITY STREAM NOV 21 🥫\n\nPosting this early because last year we raised $212 and half the server didn’t even know it was happening until basically the day of 😭 not making that mistake again\n\nSaturday, November 21\n10am–10pm (Columbus time)\nGoal: $600 for Linden Community Pantry\n\nDonate here: lindenpantry.example/mrkz\n\nThe money goes straight to the pantry, and they use it to buy food. Denise from the pantry said they’re serving around 340 families a week and their shelves are really low going into Thanksgiving. Through their wholesale partner, $1 gets them about 4 pounds of food.\n\nRook is matching the first $100 people donate, so those early donations count double up to his $100 match. Even $3 helps. And seriously, if you can’t give, no guilt at all.\n\nNo card? You can still help a ton: show up, join a lobby, share the stream or donation link, and tell a friend about it. You can also drop canned or boxed food in the blue bin by the pantry’s side door on Saturdays from 9am–1pm.\n\nFor everyone asking what we’re playing: first half is community lobbies, anyone can join and I’ll drop the code. Second half, chat votes on a game every 2 hours. No repeat maps, Larry, I got you.\n\nAnd yes I saw the “charity streams are begging” allegations. Counterpoint: is it begging if you get hair dye content out of it lol\n\n$100: I play a full round with the controller upside down\n$250: chat picks my hair dye color and I dye it ON STREAM\n$400: one hour of chat-picked songs, no skipping\n$600: I vlog a grocery pickup arranged by the pantry (they buy the food with the donations)\n\nCome hang out for however long you can. Let’s get some food on those shelves and maybe make me regret giving chat hair dye privileges.",
+  "words": 310,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24442045390605927,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19503317773342133,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.28125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.36904239654541,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.8,
+    "effort": "low",
+    "output_tokens": 444,
+    "input_tokens": 19327
+  }
+}

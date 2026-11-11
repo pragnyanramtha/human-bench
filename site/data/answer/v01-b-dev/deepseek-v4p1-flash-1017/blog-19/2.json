@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: What went wrong with our Wellsford Road collision figures\n\nOn 2 November we published an analysis of Department for Transport collision records which named Wellsford Road as the Bristol road with the most injury collisions between 2021 and 2025, with 41. That figure was wrong. The correct number is 23, which places Wellsford Road sixth rather than first. The table was corrected on 6 November and a note has been on the article since then. What follows is the fuller account we owe readers, and particularly residents of Wellsford Road.\n\nWhat went wrong\n\nThe figures came from a join between the collision records and a separate road reference table. That join was not clean. Where a collision matched more than one record against the same road, it was counted twice, so the same accident index appeared more than once in that road's tally. Eighteen duplicate entries were removed from Wellsford Road's total, most of them at the Pell Street and Kingsmere Road junctions. We now count each accident index once per road.\n\nThe error was not confined to the top line. Rerunning the whole citywide table: Kingsmere Road moves from 34 to 32, Alder Hill is unchanged at 31, Tanner's Way from 29 to 28 and Crossfield Road from 27 to 26. Hambrook Lane enters fifth with 24. No other road in the table moves by more than two places.\n\nWhy it mattered\n\nThe original article was read about 48,000 times. The wrong number travelled a great deal further than the correction has, and it was repeated in good faith by people who had no reason to doubt us. A Fishponds resident went back to the published DfT data herself, could not get anywhere near 41, and queried it. She was right, and we are grateful she took the trouble to check.\n\nWe understand the practical effect of this. Parents have been asking whether it is safe to walk their children to Wellsford Primary, and residents have had to argue against a description of their road that we put into circulation. That is on us, and we apologise to them without reservation.\n\nIt is worth being clear about what the corrected figure does and does not say. Twenty-three injury collisions over five years is still twenty-three: three of them serious, none fatal. Nothing here suggests the road is problem-free, and we are not making that argument. What we are saying is that the number we published was wrong, and that judgements people formed from it were formed on a false basis.\n\nWhat changes\n\nFrom now on, every ranked table we publish will be accompanied by the cleaned dataset and the code used to produce it, so that anyone who wants to check our working can. And no ranked table will be published until a second analyst has reproduced it independently from source. Both changes are desk-wide and permanent.\n\nThe mistake was the desk's, not any one person's. We are not going to pretend otherwise, and we are not going to treat a line at the foot of an article as the end of the matter.\n\nI have offered to attend the Fishponds Streets Forum open meeting on Tuesday 17 November at Fishponds Library, and I will be there to answer questions in person.\n\nNell Garside, Data Desk\n\n---\n\nTo: martin.okoro@westernledger.example\nReplying to: [i02]\nCc: none\nSubject: Wellsford explainer - draft on the blog, not scheduled\n\nMartin,\n\nThe draft is saved on the Data Desk blog and not scheduled, so it is yours to look at first. It covers the four things standards asked for: what went wrong in plain terms, the corrected figures, the process changes, and an apology to residents for the impact. No individuals named beyond my byline, and nothing on the council's 20mph proposals. I have also offered to go to the forum meeting on the 17th and answer questions.\n\nHappy to make the apology warmer or the technical section shorter if you think it needs either.\n\nNell",
+  "words": 634,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['martin.okoro@westernledger.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.022066766396164894,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.023808160796761513,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.2578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.899669647216797,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.5,
+    "effort": "provider default",
+    "output_tokens": 2720,
+    "input_tokens": 2832
+  }
+}

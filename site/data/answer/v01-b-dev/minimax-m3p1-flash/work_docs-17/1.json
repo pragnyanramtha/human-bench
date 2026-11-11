@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can paste into the planning doc:\n\n---\n\n## Proposal: Move H-1B Registration Intake Deadline to January 15\n\n**Where we are now**\n\nLast season we filed 14 registrations for six employer clients, and 9 of those 14 came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened. Looking back, most of that crunch traces to our own process rather than client behavior: today intake is open-ended, and we email the questionnaire whenever an employer asks for it. Nobody has a date to work toward, so filings land wherever they land. One HR contact told me she'd have happily sent everything in January if we'd simply asked.\n\n**The proposal**\n\nEngagement letters and a one-page questionnaire go out to all six clients the week of December 7, with an internal intake deadline of January 15. Anything arriving after that gets handled case by case. The $215 per-beneficiary registration fee is already budgeted by employers in Q1, and HR teams are back from holidays with budgets set, so a mid-January date fits how they actually plan.\n\n**Why this reduces risk**\n\nThe registration itself is simple, but errors are expensive — a wrong passport number invalidates the selection, and there's no clean fix once a selection is made. Brightwater Analytics sent a beneficiary's passport scan two days before the window opened; it had expired in October, and we only caught it because Rosa checked the dates. Earlier, structured intake gives us time to verify documents instead of receiving them and racing.\n\n**What changes**\n\n- Week of Dec 7: engagement letters and one-page questionnaire to all six clients\n- Jan 15: intake closes; late submissions handled case by case\n- Rosa owns the tracker, with a clean six weeks to chase gaps\n- Confirm with Marcus Thursday so the December mailing can go out\n\nSix weeks is realistic and gives Rosa room to follow up without the February spike. From the client's side, this reads as better service — a date they can plan around — not as a scolding for being late.\n\n---\n\nA couple of judgment calls: I kept Brightwater's example factual rather than framed as a client failure, and I put the Marcus sign-off as a \"what changes\" item since he's generally agreeable but you said he hates anything that reads as pressure. Say the word if you'd rather soften or sharpen the case-by-case language before it goes in the doc.",
+  "words": 412,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43394699692726135,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9738040566444397,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 15.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.891185760498047,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.4,
+    "effort": "provider default",
+    "output_tokens": 1460,
+    "input_tokens": 696
+  }
+}

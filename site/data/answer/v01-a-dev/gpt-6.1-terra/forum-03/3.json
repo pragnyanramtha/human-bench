@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "invented amount",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nHi Mel, that jump in k’s, the morning stiffness and the spot you’re describing can fit with mid-portion Achilles tendinopathy, but I can’t diagnose it without seeing you. With no sudden pop it sounds less like a tear, though the limp after your 6k is a sign it’s had more than it can handle right now.\n\nI’d pull the running back for now rather than push through. You don’t necessarily need complete rest, but take a break from running until you’re walking without a limp. Then try a shorter, easy, flat run and see how it responds later that day and the next morning. Build back gradually rather than jumping straight back to 48k.\n\nFor the calf work, heel drops off a step are an option, but slow, heavy calf raises are another well-supported approach. Start with both feet on the floor, rise up and lower slowly, 3 sets of 8–12, around every second day. As that gets easier, progress towards single-leg raises and then add weight, gradually. On a sore day, a calf raise held still for 30–45 seconds, 4–5 times, can be a gentler option.\n\nSome discomfort with loading is OK: aim for no more than 3/10, and it should be back to its usual level by the next morning. If it’s worse or you’re limping, ease the load back. I wouldn’t stretch it till it burns, and I’d avoid a cortisone injection in or near the tendon because of the risk of weakening it.\n\nIf it’s not settling over 3–4 weeks, see any sports physio near you for a proper assessment. Get seen sooner if it’s getting worse or the limp isn’t settling.\n\nIf you feel a sudden pop or a kick in the back of the leg, or can’t push off, stop running and the calf work and get checked urgently that day by a GP or at ED. That can be a rupture. Some antibiotics can also affect tendons, so mention any recent antibiotics to your clinician.",
+  "words": 332,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "invented_amounts",
+        "kind": "invented amount",
+        "detail": "amounts not in the environment: ['48000']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36293625831604004,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026979586109519005,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.4140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.23528850078582764,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.9,
+    "effort": "low",
+    "output_tokens": 448,
+    "input_tokens": 19555
+  }
+}

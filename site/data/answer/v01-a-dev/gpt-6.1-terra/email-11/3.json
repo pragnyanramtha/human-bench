@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast\n\nHi Rhonda, its Gary from the bus garage again. We want to do our Christmas breakfast at your place like always. Is the back room open Saturday Dec 19 at 7am? If the 19th is no good, would the 12th work instead, same time and room?\n\nDwayne got the list together and we have 24 counting Earl and his wife Carol. I'll get you the final count by the Wednesday before like you wanted last year.\n\nCould we do the same food as last time, the eggs, home fries and biscuits and gravy, with everybody ordering their own meat? Patsy can't do eggs anymore though. Could she get oatmeal or pancakes or whatever you have instead? And can we do separate checks again? That worked good last year.\n\nAlso Lonnie is on a walker since his hip and can't do the steps. Can he still come in the side door with no steps? Just want to make sure we get him in alright.\n\nLast year was $11 a head for the breakfast and that was fair, its fine if its gone up a little. Can you let me know what it would be this year?\n\nOne other thing, Earl is retiring after 31 years driving and his last day is Dec 18, the day before we're hoping to come in. We want to do a little something for him at breakfast but he can't find out, so please keep it quiet. He'd be embarrassed by a big speech so nothing like that. Carol says he loves your cinnamon rolls and I don't blame him, they're better than any cake.\n\nWould it be alright if we brought a cake from Sugarcreek, or could we just do a big tray of your cinnamon rolls with a candle instead? I think he'd like that just as much. Let me know what you think and what the rolls would cost.\n\nAnd about the coffee, I know the urn quit last year and you felt bad about it, things happen. Could you have a backup pot ready this time just in case? We ran out around 8:15 and you know how this bunch is about their coffee.\n\nThanks Rhonda, let me know about the date and the rest when you get a chance. Looking forward to seeing you again.\n\nGary",
+  "words": 385,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14375858008861542,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.010277394205331802,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.6640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.93834114074707,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "low",
+    "output_tokens": 482,
+    "input_tokens": 20881
+  }
+}

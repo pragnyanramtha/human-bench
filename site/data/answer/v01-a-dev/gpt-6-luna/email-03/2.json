@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother\n\nDear Mr. Kerrigan,\n\nThank you for getting in touch. I’m sorry to hear about your mother’s fall, and I hope she is doing well. We’d be glad to help Margaret get settled with blister packs and make the transition home as smooth as possible.\n\nWe prepare weekly blister packs with doses organized four times a day. There is no charge for the packaging itself; the usual dispensing costs apply. At 81, Margaret’s prescriptions are generally covered through the Ontario Drug Benefit program, though any applicable copayments would depend on her coverage.\n\nWe can deliver to her building. Our regular delivery days are Tuesday and Friday, between 2 and 6 p.m., and delivery is free within 8 km. For the first packs, we can arrange pickup on Saturday or, if delivery would be easier, a one-time drop-off before 1 p.m. Saturday.\n\nTo transfer her prescriptions, please send us the name and address of her current pharmacy and Margaret’s OHIP number. We can contact them directly; she does not need to sign a transfer form. It would also help if you could ask the hospital discharge team to fax her discharge prescriptions to us early Thursday morning. Once we have all prescriptions, including the transfers, we need about 48 hours to prepare the packs, so Saturday is the earliest realistic timing.\n\nThe first packs won’t be ready at the time of discharge on Thursday. Please confirm with the discharge team that Margaret will have enough medication to bridge the gap, and ask them to help her understand and take each dose as directed until the packs are ready for Saturday pickup or delivery. I know it’s important to have a clear plan for those first few days, especially with new medications, so please let us know if the team needs to coordinate with us about getting the prescriptions to the pharmacy.\n\nI’d also be happy to complete a MedsCheck with Margaret during the first week after she comes home. It takes about 20 minutes, and I can visit her at home if that is more convenient. I’m available Monday or Tuesday after 6 p.m.; please let me know which evening works best.\n\nBefore we discuss Margaret’s medications with you, we’ll need her permission. We use a signed Family Communication Consent form to record who she authorizes us to speak with. This helps protect her privacy and ensures we only share information with people she has approved. She can sign the form at pickup, or we can send it with the driver.\n\nYou’re welcome to call me directly at 905-555-0148, extension 2. I’m in the store Monday to Friday, 9 a.m. to 6 p.m. I understand you work during the day, so email is also fine, and we can arrange a time to speak once Margaret has signed the consent.\n\nWe’d be pleased to look after Margaret’s blister packs and support her as she returns home. Please send the current pharmacy’s name and address, and let me know whether Monday or Tuesday evening would suit for the MedsCheck.\n\nKind regards,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy",
+  "words": 514,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2710011601448059,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3687218725681305,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.766218185424805,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.6,
+    "effort": "medium",
+    "output_tokens": 666,
+    "input_tokens": 15406
+  }
+}

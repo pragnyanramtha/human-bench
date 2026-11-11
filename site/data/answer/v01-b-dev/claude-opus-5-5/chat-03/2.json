@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.48, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nmia I'm so sorry I went quiet, work's been flat out but that's no excuse. I'm here now. and you've got nothing to apologise for, seriously\n\nyou're not sorting any of this out on your own ok. here's what's already happening\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\n- I'm off all day tomorrow, Sam took my shift. I'll grab dad's trailer and we'll get all your stuff out of Priya's garage before her mum turns up. dad says use it whenever and mum says they're thinking of you\n- Ruby says you can have her couch for as long as you want. only catch is Clover will 100% try to sleep on you\n- Tully's sorted a benefit night at the Lantern Room on sat the 28th. Dee's giving all the door money to you and Hollow Pines are playing too\n- Jono's cousin has an old Yamaha keyboard in his shed and it's yours. not a nord but it works, so you can keep playing while we figure out the rest\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nalso your landlord is a grub. \"please lodge a request via the portal\" when there's hail in your bed is unreal\n\nI know you're thinking about Rocky and I get it. but please don't decide anything this week while you're running on no sleep and living out of garbage bags. if you still want to go in a month or two that's a different conversation, just not like this. your songs are the best thing about this band and I'm not saying that to be nice. losing the notebooks is gutting, but the songs never came from the notebooks, they came from you. we know them too and we'll help you get them back down\n\nyou drove out to Gatton at 2am to get me and didn't even whinge about it once. this is the least we can do. what time works tomorrow? I can be at Priya's whenever",
+  "words": 315,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48499393463134766,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.051341067999601364,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.8515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.607399940490723,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.4,
+    "effort": "medium",
+    "output_tokens": 1619,
+    "input_tokens": 2606
+  }
+}

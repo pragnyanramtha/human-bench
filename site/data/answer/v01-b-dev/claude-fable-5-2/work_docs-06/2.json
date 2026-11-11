@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: Check your Brightline 6% developer: batch LX2291 is the wrong strength\n\nAnyone who buys off the Kelvin Trade rep, please read this before your next colour.\n\nKelvin Trade have confirmed that one batch of Brightline Pro 6% (20 vol) Cream Developer, the 1L bottles, was filled wrong at the factory. Bottles labelled 6% may have 12% (40 vol) in them. The batch is LX2291 and it was supplied between 19 October and 5 November.\n\nOn Saturday a client of mine got a burn on her scalp during a bleach retouch, using a bottle from this batch that I'd opened new that morning. Aileen had the same batch on a highlights client on Thursday. That's two chairs in here already, and plenty of us buy off the same rep.\n\nHOW TO CHECK\n\nThe batch code is not on the box. It's only printed on the base of the bottle, so take every bottle out and turn it over.\n\nCheck the open ones in your trolley as well as the stock in the back.\n\nIf it says LX2291, stop using it, even if it's been fine so far. If you can't read the code, I'd leave that one alone too.\n\nKelvin Trade say other batches and other strengths aren't affected.\n\nWHAT IT DOES\n\nIt lifts far too fast. Mine was near pale yellow at 18 minutes on a retouch that normally takes 35 to 40.\n\nFoils get hot. Aileen's were roasting and she thought she'd left the heater too close. If your foils are hotter than they should be, don't blame the heater, check the bottle.\n\nOn the scalp, the usual tingle turns into proper burning. My client had a red patch at the crown and a couple of spots at the nape.\n\nIf you've had anyone in the last three weeks who lifted quicker than you expected or said it was hot, go and look at which bottle you used.\n\nIF SOMEONE REACTS IN THE CHAIR\n\nGet it off straight away. Rinse with cool running water, no shampoo, and keep rinsing a good while. I did over 15 minutes, and I'd keep going if it's still burning.\n\nDon't put any creams or anything else on it.\n\nDon't wait to see how it goes. The NHS line is that chemical burns need medical help, and it's 999 if it's bad, blistering, or there's any swelling or bother breathing. The link is on Gail's patch test sheet in How We Do Things.\n\nWrite it in the incident book at the desk.\n\nIF YOU'VE ALREADY HAD A PROBLEM\n\nKeep that bottle back. Don't bin it and don't hand it in with the rest. Take dated photos, and write down what you mixed and the timings while you still remember. Your insurer will want all of it.\n\nSENDING THE REST BACK\n\nThe rep is in on Tuesday and will take bottles back, or you can take them to the Kelvin Trade depot at Hillington. They're giving full credit.\n\nKelvin Trade's email says sorry for any inconvenience. It's not an inconvenience, somebody's scalp got burnt, so please check your bottles today.\n\nIf you're not sure about a bottle, come and find me and I'll show you where the code is.\n\nKirsty",
+  "words": 524,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The first-aid advice contradicts the supplied guidance by reserving 999 for severe symptoms and omits the approximately one-hour rinse and hospital assessment."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14782269299030304,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.029689764603972435,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.234375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.0055692195892334,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 58.4,
+    "effort": "high",
+    "output_tokens": 5193,
+    "input_tokens": 3579
+  }
+}

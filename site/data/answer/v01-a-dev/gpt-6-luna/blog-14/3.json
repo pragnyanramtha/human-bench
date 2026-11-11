@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## A Thursday with the tea trolley\n\nWhen I retired in 2020, after 41 years of bookkeeping—mostly for a builders’ merchant in Dereham—I thought I’d enjoy the slower pace. And I did, for a while. But after 18 months without much reason to go out most weeks, I found I was drifting a bit. I started volunteering at Wensum Vale Hospice in March 2022. Thursdays have given the week a shape again.\n\nI help with the tea trolley in the day therapy unit, from 1.30 to 4pm. There are usually 14 to 18 patients in on a Thursday. Some come for the art group or a hand massage; some are glad of a bit of company. Most go home afterwards.\n\nIt’s not a sad place on a Thursday, mostly. It can be noisy and rather jolly. Mr Hollis, a retired signalman, takes two sugars and tells me about the 1953 floods every week—slightly differently each time. I’ve stopped correcting the dates. And the bourbon biscuits always go first, so we now hide a packet for the late group.\n\nI should admit that my first week didn’t go quite to plan. I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she needed a tissue. She told me it was the best afternoon she’d had in a month. I can’t claim the spill was a deliberate way of cheering anyone up, but it was a useful reminder that you don’t have to get everything right to be welcome.\n\nSome weeks are hard, of course. Sad days happen, and the staff look after us when they do. But that isn’t the whole story of volunteering here, and you don’t need nursing skills to help with the trolley. You need to be able to push it, remember who takes what, and listen. As it turns out, 41 years of keeping ledgers straight is quite handy for the remembering.\n\nThe commitment is one Thursday a fortnight. Bridget, our volunteer coordinator, does an induction of about two hours, and there’s a short food hygiene course online, which the hospice pays for. It’s all manageable, and you won’t be left to work it out on your own.\n\nWe’re four on a rota meant for six. Two people left over the summer: one moved to Sheffield to be nearer the grandchildren, and the other had a knee operation. We’d love a couple more people to join us.\n\nIf you’d like to find out more, there’s a volunteer open afternoon on **Tuesday 24 November at 2pm in the Willow Room**. There’ll be tea and biscuits, and there’s no obligation. Bridget will be there to answer questions, or you can ring her on the volunteering line.\n\nYou don’t have to be a saint, or especially skilled. You just have to be willing to give a Thursday afternoon and a bit of attention to the people you meet. I’m glad I did.",
+  "words": 489,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3146624267101288,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5320913195610046,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.092623233795166,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.4,
+    "effort": "medium",
+    "output_tokens": 649,
+    "input_tokens": 28330
+  }
+}

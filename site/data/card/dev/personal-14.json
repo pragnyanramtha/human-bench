@@ -1,0 +1,631 @@
+{
+  "id": "personal-14",
+  "set": "dev",
+  "set_name": "Public, invented scenarios",
+  "channel": "personal",
+  "mode": "direct",
+  "tone": "formal",
+  "words": [
+    250,
+    400
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "wedding-photographer",
+    "role": "wedding photographer",
+    "age": 32,
+    "english": "US",
+    "lives": "Portland, Oregon",
+    "writing_level": "everyday",
+    "excluded_channels": []
+  },
+  "sent_to_model": "Someone in my building taped a note in the lobby calling me a creep for flying my drone off the roof deck. I need a letter to all the residents that I can slip under doors, everyone gets one. It needs to be formal and calm because honestly I'm upset and I don't trust myself to write it without it getting snippy. I want to explain what I was actually doing, say sorry that it worried people, and offer to show the footage. Please don't name or hint at who I think wrote the note.\n\n- building is Larkspur Lofts on N Williams, 24 units, I'm in 5A, been here 3 years\n- flew Sat Oct 31 around 4pm, about 11 min total, new drone (Halvard Mini 4) testing it before a vineyard wedding in Dundee\n- camera pointed west at the river and the Fremont Bridge the whole time, never at windows\n- HOA rules say nothing about drones. Board meeting is Nov 19, 7pm, community room\n- note said \"Whoever is spying with a drone from the roof - we know it's you in 5A. Creep.\" with my unit number\n- a neighbor I like (Doreen, 2C) told me her grandkids were freaked out seeing it hover\n- I get why it looked bad, a buzzing thing over the courtyard is weird if you don't know\n- calling me a creep in the lobby with my unit number on it was not ok, felt like being outed\n- I think it's 3B (old parking spot fight) but NOT putting that in\n- offer to show the full unedited clip to anyone, knock on 5A or email me at jess.okafor@mailbox.example\n- not flying from the roof again until the board decides on a rule, I'll ask them to add it to the Nov 19 agenda\n- ask that next time people come talk to me directly instead of notes\n\n(About me: wedding photographer, 32, Portland, Oregon. Length: it should come to roughly 250-400 words.)",
+  "hidden": {
+    "must_include": [],
+    "must_cover": [
+      "Explains the drone test and where the camera was pointed.",
+      "Apologises for worrying residents and offers anyone the full unedited clip, with contact via 5A or jess.okafor@mailbox.example.",
+      "States the pause on roof flights pending a board rule and requests direct conversation about future concerns.",
+      "Commits to asking the board to add drone rules to the November 19 meeting agenda."
+    ],
+    "must_not_reveal": [
+      "The identity of the suspected note writer, including unit 3B or hints about the earlier parking dispute."
+    ],
+    "format": {
+      "headings": false,
+      "tables": false,
+      "bold": false,
+      "bullets": false
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a model-written solution, used only to show the checks can be met",
+    "words": 363,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.1980189085006714,
+        "reads_human": false
+      },
+      "editlens-roberta-large": {
+        "score": 0.09586802124977112,
+        "reads_human": true
+      },
+      "vanguard-modernbert-large": {
+        "score": -1.2421875,
+        "reads_human": true
+      },
+      "tropa-mini-deberta-large": {
+        "score": 7.542113304138184,
+        "reads_human": false
+      }
+    }
+  },
+  "source": null,
+  "outputs": [
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.29686152935028076
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3589825928211212
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "coherent",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": true
+      },
+      "score": 0.1334252804517746
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 1,
+      "verdict": "pass",
+      "reason": "",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": true
+      },
+      "score": 0.13627593219280243
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.42047199606895447
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "assistant talk or a placeholder",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3700697422027588
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.31, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3059929311275482
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.38, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.37943723797798157
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "facts",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.3036879301071167
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting, required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.5126938819885254
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4831914007663727
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "required or barred words",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.3505445420742035
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.37, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.37482988834381104
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.33, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3344168961048126
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.28, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.2815018594264984
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.42, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.42199721932411194
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.36, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.36147403717041016
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.31, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3132365345954895
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.6089445948600769
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.48063960671424866
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4793106019496918
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.42, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4217364490032196
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.47, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4659384489059448
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.35, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3548905551433563
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.48222628235816956
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.49932679533958435
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.35, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3515649735927582
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.6054121851921082
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.46221962571144104
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.5322979092597961
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "length",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.2315944880247116
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting, length, assistant talk or a placeholder",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.35504022240638733
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting, length",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4721660315990448
+    }
+  ],
+  "components": {
+    "request": "Someone in my building taped a note in the lobby calling me a creep for flying my drone off the roof deck. I need a letter to all the residents that I can slip under doors, everyone gets one. It needs to be formal and calm because honestly I'm upset and I don't trust myself to write it without it getting snippy. I want to explain what I was actually doing, say sorry that it worried people, and offer to show the footage. Please don't name or hint at who I think wrote the note.",
+    "notes": {
+      "facts": [
+        "building is Larkspur Lofts on N Williams, 24 units, I'm in 5A, been here 3 years",
+        "flew Sat Oct 31 around 4pm, about 11 min total, new drone (Halvard Mini 4) testing it before a vineyard wedding in Dundee",
+        "camera pointed west at the river and the Fremont Bridge the whole time, never at windows",
+        "HOA rules say nothing about drones. Board meeting is Nov 19, 7pm, community room"
+      ],
+      "anecdotes": [
+        "note said \"Whoever is spying with a drone from the roof - we know it's you in 5A. Creep.\" with my unit number",
+        "a neighbor I like (Doreen, 2C) told me her grandkids were freaked out seeing it hover"
+      ],
+      "opinions": [
+        "I get why it looked bad, a buzzing thing over the courtyard is weird if you don't know",
+        "calling me a creep in the lobby with my unit number on it was not ok, felt like being outed",
+        "I think it's 3B (old parking spot fight) but NOT putting that in"
+      ],
+      "wants": [
+        "offer to show the full unedited clip to anyone, knock on 5A or email me at jess.okafor@mailbox.example",
+        "not flying from the roof again until the board decides on a rule, I'll ask them to add it to the Nov 19 agenda",
+        "ask that next time people come talk to me directly instead of notes"
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "personal-14",
+      "split": "dev",
+      "channel": "personal",
+      "mode": "direct",
+      "tone": "formal",
+      "audience": "community",
+      "stakes": "tense",
+      "band": "short",
+      "persona_id": "wedding-photographer",
+      "persona": {
+        "id": "wedding-photographer",
+        "role": "wedding photographer",
+        "age": 32,
+        "english": "US",
+        "first_language": null,
+        "lives": "Portland, Oregon",
+        "writing_level": "everyday",
+        "excluded_channels": []
+      },
+      "prompt": "Someone in my building taped a note in the lobby calling me a creep for flying my drone off the roof deck. I need a letter to all the residents that I can slip under doors, everyone gets one. It needs to be formal and calm because honestly I'm upset and I don't trust myself to write it without it getting snippy. I want to explain what I was actually doing, say sorry that it worried people, and offer to show the footage. Please don't name or hint at who I think wrote the note.",
+      "notes_pack": {
+        "facts": [
+          "building is Larkspur Lofts on N Williams, 24 units, I'm in 5A, been here 3 years",
+          "flew Sat Oct 31 around 4pm, about 11 min total, new drone (Halvard Mini 4) testing it before a vineyard wedding in Dundee",
+          "camera pointed west at the river and the Fremont Bridge the whole time, never at windows",
+          "HOA rules say nothing about drones. Board meeting is Nov 19, 7pm, community room"
+        ],
+        "anecdotes": [
+          "note said \"Whoever is spying with a drone from the roof - we know it's you in 5A. Creep.\" with my unit number",
+          "a neighbor I like (Doreen, 2C) told me her grandkids were freaked out seeing it hover"
+        ],
+        "opinions": [
+          "I get why it looked bad, a buzzing thing over the courtyard is weird if you don't know",
+          "calling me a creep in the lobby with my unit number on it was not ok, felt like being outed",
+          "I think it's 3B (old parking spot fight) but NOT putting that in"
+        ],
+        "wants": [
+          "offer to show the full unedited clip to anyone, knock on 5A or email me at jess.okafor@mailbox.example",
+          "not flying from the roof again until the board decides on a rule, I'll ask them to add it to the Nov 19 agenda",
+          "ask that next time people come talk to me directly instead of notes"
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [],
+      "must_not_include": [
+        "3B",
+        "3-B",
+        "3 B",
+        "parking spot",
+        "parking dispute",
+        "parking disagreement",
+        "parking argument",
+        "parking fight",
+        "parking conflict"
+      ],
+      "must_cover": [
+        "Explains the drone test and where the camera was pointed.",
+        "Apologises for worrying residents and offers anyone the full unedited clip, with contact via 5A or jess.okafor@mailbox.example.",
+        "States the pause on roof flights pending a board rule and requests direct conversation about future concerns.",
+        "Commits to asking the board to add drone rules to the November 19 meeting agenda."
+      ],
+      "must_not_reveal": [
+        "The identity of the suspected note writer, including unit 3B or hints about the earlier parking dispute."
+      ],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: s01\nCc: none\nSubject: none\n\nRenee,\n\nHere’s the football rundown for Monday’s admin meeting and Dr. Pruitt’s board report. Been a week, so I’ll keep it tight.\n\nFriday night: Vulcan Ridge 31, Brookhollow 14. That locks up second in the region. Tavion Hurst had 188 yards and 2 TDs; his long one in the third was behind the best blocking I’ve seen from our line all year—they pushed them about 5 yards back on that whole drive. The kids also voted Deshawn Pettaway defensive player of the week in the locker room before the coaches even met. He had 3 sacks and 7 tackles.\n\nPlayoffs: AHSAA brackets are out. We host Clanton Valley in the first round Friday, Nov. 13, at 7 p.m. at Ridge Field. Presale starts Tuesday. I need gate and chain crews confirmed by Wednesday, and the boosters need six more people on concessions. Please make sure Dr. Pruitt knows it’s a home playoff game and folks should come out.\n\nGrades: nine-week grade check is clean. All 52 kids on the roster are eligible, nobody on the list. That’s Tonya Greer’s doing—her Tuesday/Thursday study hall is the reason, and she should get the credit, not me. She’s keeping it going through the playoffs.\n\nBoosters: Boston butt sale final was 208 butts sold, $6,240 raised against a $4,500 goal. Money goes to the new sideline headsets. Hargrove’s Meat Market smoked them at cost.\n\nBus note: if we win and go on the road, I’ll get you the transportation request. I know it’s due five days out for playoff away games.\n\nThanks,\nCoach",
+  "words": 259,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24351955950260162,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35548296570777893,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.62109375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.229328155517578,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.5,
+    "effort": "provider default",
+    "output_tokens": 2970,
+    "input_tokens": 1538
+  }
+}

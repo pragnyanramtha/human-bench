@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone charity stream is Saturday Nov 21, 10am to 10pm, for the Linden Community Pantry. I'm posting early this time so nobody finds out the day of lol\n\ngoal is $600. last year we pulled in $212 and I know we can beat that. rook is also matching the first $100, so the first $100 counts double.\n\ndonate here: lindenpantry.example/mrkz\nit goes straight to the pantry, nothing taken off. through their wholesale partner every $1 gets them about 4 pounds of food. they're serving around 340 families a week and their shelves are the lowest they've seen going into Thanksgiving. even $3 actually helps.\n\nthe mods put together the incentives:\n$100 = I play a full round with the controller upside down\n$250 = chat picks my hair dye color and I do it ON STREAM\n$400 = an hour of only chat-picked songs, no skipping\n$600 = I vlog a grocery pickup arranged by the pantry\n\nno card? you can still help. canned and boxed food goes in the blue bin by the pantry's side door, Saturdays 9 to 1. sharing this, hanging in chat, and just showing up all count too.\n\nhow the stream works: first half is community lobbies, anyone can join and I'll drop the code. second half chat votes on the game every 2 hours. no repeat maps, I promise larry.\n\nand if charity streams are cringe to you, that's fair, come watch me dye my hair on camera anyway. it's not begging if you get hair dye content out of it. nobody has to give anything, and if you can't, no stress at all. see you on the 21st",
+  "words": 275,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20872139930725098,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.042395491153001785,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.6640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.081425189971924,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "high",
+    "output_tokens": 1762,
+    "input_tokens": 2804
+  }
+}

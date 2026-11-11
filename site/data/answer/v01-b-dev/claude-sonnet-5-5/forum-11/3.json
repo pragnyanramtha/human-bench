@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hello D. Bergeron, and hello everyone,\n\nMy nephew showed me this thread this morning and I read it twice with my coffee. First, you are right. People deserve a straight answer before the 4th, and I should have given one sooner. I wanted to keep the surprise for the reopening, but a surprise is not so nice when people are worried. So here it is, the whole story.\n\n**We are not closing. We bought the building.**\n\nMarc-Antoine, your cousin is half right. The building was sold in the fall, but it was sold to me! M. Ferland, who owned it, is 81 and is retiring to Sherbrooke to be with his daughter. He offered to sell to me before anybody else, and we signed at the notary on December 15. Some of you know M. Ferland, because for 17 years he came every morning for his baguette pas trop cuite. He cried a little at the notary, and I was not far behind. So no condos, no bank, no vape shop. The Pétrin Doré stays on the corner.\n\n**Why we are closed from January 4 to 18**\n\nIt is for works, and good ones. Our old oven is from 1998 and it broke three times this year, always at the worst moment. A new deck oven with 4 decks is coming from a supplier in Laval. We are also taking the space at the back, the old storage of the dépanneur, and putting 6 small tables. Finally you will be able to sit down with your coffee and your croissant, which people have been asking me for years.\n\nWe reopen **Tuesday, January 19, at 7 am**.\n\n**The carnets**\n\nI will say this clearly because it is the question that matters most. Every carnet is good. I sold 214 of them in October, $60 for 12 loaves, and all of them are still valid. They have no expiry date, so nobody has to rush. And because we close for two weeks, every carnet holder gets a free croissant in January, as a thank you for waiting.\n\nIf somebody is not comfortable and wants the money back, just come and see me at the bakery and I give it back. No question, no problem. But I really hope you will keep your carnet and come eat the bread from the new oven.\n\nnoodle_and_crumb, it was a fair question and you asked it politely. Your 7 loaves are safe.\n\n**The upstairs tenants**\n\nThere are 3 apartments above the bakery, and I know the news about the building must have been scary for those families. Nothing changes for you. Same tenants, same rent, and I promised it to you in writing. You are not going anywhere.\n\n**About the sign and the empty shelves**\n\nThe sign was written by my nephew Thomas at 6 in the morning. \"Grande nouvelle\" was his idea and I said ok without thinking, because I was busy with the bread. I see now how it looked from the street, and I am sorry for that. For the shelves on the 28th, we sold everything for Christmas Eve, 400 bûches, and that is why there was nothing left. It had nothing to do with closing.\n\n**Honestly**\n\nI will not pretend it did not hurt a little when I read the word scam. I have been on this street for 17 years, since March 2009, and I know a lot of you by name, and your kids too. But I also understand it. Mile End has lost many small shops, and people are tired of getting bad news about the places they love. When a sign says \"closed\" and nobody explains, it is normal to think the worst. That one is on me, not on you.\n\nSo thank you to Priya, and to everyone who spoke up for us without even knowing the news. That means more to me than you think. Thank you also to the ones who asked hard questions, because it pushed me to finally say it.\n\n**Come celebrate with me**\n\nI would love to see everybody at the bakery on **Saturday, January 23** for the reopening. Coffee and a piece of the new bread are free for everyone. Come see the new oven, try the new tables, and say hello to M. Ferland's old corner, which is now ours for a long time.\n\nIf you have other questions before then, ask here or just come knock on the door. I am usually there early, and always with flour on my hands.\n\nMerci à tous, and see you soon.\n\nHélène\nBoulangerie Le Pétrin Doré\n\n---\n\nI left out a start time for the party on the 23rd because you didn't give me one. You may want to add it. Also, I wrote that the refund is \"the money back\" without saying whether it's the full $60 or only the unused loaves, so check that this is what you want to promise.",
+  "words": 822,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18693269789218903,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13902868330478668,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.078125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.7441022396087646,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.9,
+    "effort": "high",
+    "output_tokens": 3824,
+    "input_tokens": 2388
+  }
+}

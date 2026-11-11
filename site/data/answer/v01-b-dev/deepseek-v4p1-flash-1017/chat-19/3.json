@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Mikaela, and Grant since you asked too — here’s the proper version. Short story: we’re glad we did it, but there are bits that’ll bite you if you’re not on your game, so I’ll give you both sides.\n\nWe’re 290 cows, mostly 3-way crossbreds. Started 10 in 7 on 21 Sept, just after mating started. We skip Tuesday, Thursday and Saturday arvo milkings plus Sunday arvo, so four once-a-days a week. Mornings still 5.15 every day.\n\nMilksolids are down about 6% on the same weeks last year, going off the Fonterra app. Our rep had said expect 8–10, so we’ve done better than that, but it’s still a real 6%. I wouldn’t pretend otherwise.\n\nSCC jumped from 110k to about 180k in the first three weeks, then came back to around 135k now. Not a disaster, but it did move. And we had a heifer with mastitis go bad on a skipped arvo — didn’t spot it till next morning and she lost a quarter. That’s the bit I’d want you to hear properly. On the skip days you have to be on your game with teat spraying and checking cows, or it bites you.\n\nGood bits: lame cows way down — 4 on the lame list now vs 11 this time last year. Long walk to the back paddocks is 1.8km, so that’s telling us something. Cows came round quicker than I thought too, about four days of bellowing at the gate then they were fine. Kieran, our 2IC, said it’s the first spring he hasn’t wanted to quit by October. And the first skipped Sunday arvo Dave and me went to Hamilton to see the grandkids — first Sunday off in spring in 20 odd years. That one was pretty bloody good.\n\nHonestly, I wouldn’t go back. The hours alone are worth the 6%. If Tom’s knees are bad, the arvos off will help him more than anything. But I’m not trying to talk you into it and have you blaming me in March — go in with your eyes open about the mastitis risk and the checking side.\n\nCome and look at the shed rosters and numbers at the field day on the 19th, that’ll show you how we’ve set it up. Or ring me if that’s easier — texting does my head in.\n\nThanks again for all the help when Dave did his shoulder, by the way. That was huge.",
+  "words": 404,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.27771997451782227,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10656315088272095,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.9296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.412937641143799,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.2,
+    "effort": "provider default",
+    "output_tokens": 2357,
+    "input_tokens": 888
+  }
+}

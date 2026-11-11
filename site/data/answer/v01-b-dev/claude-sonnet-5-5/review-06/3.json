@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: none\n\nWe bought this refurbished CX-10 for $14,800, delivered and commissioned at our Fitzroy kitchen on 14 Sep. The listing said the steam generator was descaled and pressure tested, with a 6 month parts and labour warranty. This is what happened in the first seven weeks.\n\nWe started getting E34 (steam generator low water level) within days, with intermittent lockouts in combi and steam modes. The seller's tech attended on 22 Sep. There were nine E34 entries in the error log since 14 Sep, and he replaced the level sensor under warranty. E34 was back within two weeks, four times in one week. The core probe was also reading low: 63 on the oven display against 70 on our Thermapen in a lamb shoulder, with the same result on two tests.\n\nOn 6 Oct the tech found the steam generator heavily scaled, descaled and flushed it, and recalibrated the probe to within 1 degree. His report recommended we install a water softener because the scale indicated a hard water supply.\n\nThat doesn't match what we know. I rang our water supplier, who said Fitzroy's supply averages about 15 mg/L as CaCO3, which is soft, among the softest in the country. The unit had been on our water for about three weeks when the scale was found. Heavy scale in that time on soft water is hard to explain, and it's hard to square with a generator listed as descaled before sale. I'd like to know what was actually checked before it was shipped.\n\nE34 kept coming back. On Sat 24 Oct it locked us out at 6.10pm with a full book of 60 covers. We finished the lamb on the stove and in the deck oven, took the pork belly off the menu and absorbed the cost. On 27 Oct the tech found more scale. The seller is now invoicing that visit at $280 + GST ($308), calling it a site water issue outside warranty, on a unit that was six weeks old and covered until March 2027.\n\nThe tech who attended was professional each time. My issue is with the condition the unit arrived in and how the warranty is being applied. If you're thinking of buying one, ask for the descaling and test records, check the core probe against your own thermometer on delivery, and get it in writing how scale-related faults are handled under warranty before you pay.",
+  "words": 400,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10484733432531357,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0390414334833622,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0703125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.1846394538879395,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.9,
+    "effort": "high",
+    "output_tokens": 2832,
+    "input_tokens": 3682
+  }
+}

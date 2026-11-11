@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Mikaela, sorry it’s taken me a bit to get back to you — and thanks again for all the help when Dave did his shoulder. You guys went above and beyond.\n\nWe’ve got 290 cows, mostly three-way crossbreds, and started 10-in-7 on 21 September, after mating had started. We skip Tuesday, Thursday and Saturday afternoon milkings, plus Sunday afternoon. Mornings are still 5.15 every day, so it’s four once-a-days a week rather than a later start.\n\nHonestly, production has taken a hit, but not as much as we were expecting. The Fonterra app has us about 6% down on the same weeks last year. Our rep had said to expect 8–10%, so we’re doing better than that, but six percent is still six percent. For us, the hours and the difference it’s made to the people on the farm are worth it — I wouldn’t go back.\n\nCells did jump at first: from about 110,000 to around 180,000 for the first three weeks. They’re back to about 135,000 now. It hasn’t been a disaster, but it’s something to watch. You have to be really on your game with teat spraying and checking cows on the skip days, or it can bite you. We had a heifer with mastitis go bad on a skipped afternoon and didn’t spot it until the next morning. We lost a quarter. That’s the ugly side of having a longer gap between milkings, and I wouldn’t gloss over it.\n\nOn the other hand, lameness is way down. We’ve got four on the lame list now, compared with 11 at this time last year, and we’ve got a 1.8 km walk to the back paddocks. The cows took to the routine faster than I thought: about four days of bellowing at the gate, then they were fine.\n\nThe biggest difference has been the people. Kieran, our 2IC, reckons it’s the first spring he hasn’t wanted to quit by October. And that first skipped Sunday afternoon, Dave and I went to Hamilton to see the grandkids — first Sunday off in spring in 20-odd years. If Tom’s knees are bad, those afternoons off could make a real difference.\n\nIt’s not a free win: you’re still up at the usual time every morning, production is down, and the skipped milkings mean you need to be extra sharp about udder health. But for us, the trade-off has been worth it.\n\nCome have a look at our shed rosters and numbers at the field day on the 19th if you like. And ring me if you want to talk it through — much easier than texting!",
+  "words": 435,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2624015510082245,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03295512869954109,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.76171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.509350538253784,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "medium",
+    "output_tokens": 575,
+    "input_tokens": 14317
+  }
+}

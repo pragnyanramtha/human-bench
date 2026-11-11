@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Review of Sunbelt Charter Coaches**\n\nI booked Sunbelt Charter Coaches for a client dinner on Thursday, November 5, with pickup at our hotel at 6:15 p.m. and transportation to a ranch venue in Henderson. The event was for 220 people. We booked four coaches and received written confirmation twice, most recently on Tuesday, November 3.\n\nWe paid $8,400 total: a 50% deposit in September and the balance seven days before the event. On the evening, only two buses arrived. The first was 55 minutes late; its driver told us he received the job at 5 p.m. The second bus broke down on the 215 with no working AC, leaving passengers on the shoulder for about 40 minutes.\n\nWith half the coaches missing, I arranged rideshares for 60 people and put about $1,900 on my company card. Dinner began at 8:40 instead of 7, and the caterer charged us overtime. One late bus might be understandable; having no apparent backup plan or communication when two of four coaches were missing was not.\n\nThe dispatcher listed on our paperwork was Corey. Since Friday, calls to the office line have gone to voicemail. I’m seeking a refund for the two coaches that never arrived, as well as reimbursement for the rideshare costs.\n\nSunbelt handled two small airport runs for us last spring, and those went well. That positive experience is why I trusted them with a larger booking. This time, the failure affected our client relationship, and the client is now reviewing whether to keep us for its March event.\n\nBased on this experience, I’d caution other planners against booking Sunbelt for a large event until they can demonstrate reliable dispatch, communication, and backup coverage. These are the facts of what happened; I’m sharing them so others can make an informed decision.",
+  "words": 299,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6250575184822083,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995759129524231,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.039453506469727,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.4,
+    "effort": "medium",
+    "output_tokens": 379,
+    "input_tokens": 13975
+  }
+}

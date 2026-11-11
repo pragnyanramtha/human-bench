@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "Good day Mr. Kehinde Ogunleye,\n\nI am the student whose black Jansport bag you found inside the Oshodi–Igando bus on Friday, 6 November. I got down at Ikotun. Thank you very much for calling the number in my lab manual and for keeping the bag. Honestly, many people would have thrown it away, so I do not take your kindness for granted.\n\nThe bag contains my lab manual, dissecting kit, student ID card, two textbooks, calculator and my glasses. My BIO 101 practical is on Wednesday, 11 November at 10 a.m., and without the kit I will not be allowed into the lab. The lab attendant is very strict, so this is really urgent for me.\n\nWhen we first spoke, you were polite and even said God sent you to help me. I appreciated that. On the second call, you said I should send ₦40,000 before you return the bag. Sir, I honestly do not have that kind of money. I am a first-year Biology student, and ₦10,000 is all the allowance I have. I am offering it to you sincerely for your transport and as a thank-you. With respect, ₦40,000 is more than the bag and everything inside are worth, and I cannot raise that amount before Wednesday.\n\nPlease, let us settle this respectfully. You can choose any day before Wednesday that is convenient for you. I can meet you in the daytime at Ikotun Roundabout or the open area by Ikotun Police Division gate — whichever is easier for you. My roommate Adaeze will come with me so that the meeting is clear and comfortable for both of us. I am not trying to threaten you at all; I only want us to meet in a public place during the day.\n\nKindly reply so we can arrange it. Thank you, sir.\n\n[Your name]",
+  "words": 305,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10082614421844482,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1082955002784729,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.6484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.741436958312988,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.5,
+    "effort": "provider default",
+    "output_tokens": 2122,
+    "input_tokens": 510
+  }
+}

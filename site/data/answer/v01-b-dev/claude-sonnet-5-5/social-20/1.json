@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to rant and I'm really not in a good mood so bear with me\n\nsome sticker shop called StickerBurrow Co is selling my switchblade moth. the one off my flash sheet. its listed as \"Knife Moth Vinyl Decal\" for $6.50 or 3 for $15. Deb sent me the listing tonight (thank you Deb, hate that you had to) and I opened it and felt my stomach drop, because it's not \"similar\" to mine. it's mine. same crack in the blade. same wing pattern. they didn't even flip it. it's a straight scan of my linework.\n\nfor anybody who wasn't around for it, I drew that sheet over three weekends at my kitchen table and posted it August 30 for the flash day on Sept 13. I have the original drawing and I have the post. that moth is my favorite thing I drew all year.\n\nso I messaged them, politely, and asked them to take it down. their reply was \"love your work!\" (lol) and then that their artists make original designs \"inspired by trending styles,\" that moths are a very common motif, and that if I have a registered copyright I can send it through their support form. have a great day!\n\nyeah, moths are common. a moth with a switchblade with a specific crack in the blade that is the same as mine is not a coincidence, it's my drawing with a price tag on it. and \"inspired by\" doesn't mean scanned.\n\nI'm gonna explain how flash works for the people who don't know, because it matters here. flash gets sold ONE time to ONE person. that's the whole deal. somebody pays for it, it goes on them, and nobody else gets it. that's what they're paying for. it's why people come to flash days at all. and now someone's coworker is walking around with a sticker of it and thinks the artist sold it.\n\nwhich brings me to the part that really got me. the person who got this tattoo messaged me tonight, and they thought I was the one selling stickers of their tattoo. so, to you, if you're reading this: it was not me. I did not sell your tattoo. I never would and I never will. you paid for a one of one and that's what you got from me. I'm so sorry this happened and I'm handling it. you did nothing wrong.\n\nand I know exactly what places like this are counting on. small artists don't have lawyer money. a registered copyright and a legal fight are way out of range for most of us, and these sticker shops know that, so they say \"send us a registered copyright\" and wait for you to give up. a lot of us just do give up, because what are you gonna do. well I'm not giving up quietly, I'm just gonna be loud about it.\n\nso here's what I'm asking:\n\n- go report the listing. the shop is StickerBurrow Co and the listing is \"Knife Moth Vinyl Decal.\" use whatever report button the platform has. if you tell them it's stolen artwork and it's an exact copy of mine, say so.\n- please don't buy from them. not the moth, not anything else. if they'll do it to me they're doing it to other people too.\n- if you see my work anywhere that I didn't put it, tell me. send me the link. I'd rather know.\n- and if you're an artist who's been through this, I'd love to hear what worked. I'm not above taking advice.\n\nI'm not asking anybody to dogpile anyone or send anybody hate. just report it and spend your money somewhere else. I made that thing with my own hands and I want it back.\n\nI'm gonna go drink some water and maybe scream into a pillow. thank you for listening to me yell. rant over (for now)",
+  "words": 652,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft does not say the client got the tattoo in the first hour of flash day."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11608774214982986,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01748989336192608,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.06827712059021,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.7,
+    "effort": "high",
+    "output_tokens": 1957,
+    "input_tokens": 3737
+  }
+}

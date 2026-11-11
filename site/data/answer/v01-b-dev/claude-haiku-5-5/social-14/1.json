@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey everybody,\n\nA lot of you have been asking Mom whether I'm coming to Thanksgiving this year, so I'll answer here: yes, I'm coming. I want to be there, and I want it to be a good day.\n\nI also owe some of you an apology. Last year at the table I got into it with a family member and said things I shouldn't have. It made the whole afternoon harder for everybody, and it especially got to Grandma Pearl. Grandma, I'm sorry I made you go sit out on the porch. That's on me, and I hate that it happened at your table.\n\nI'm not sorry for the work I do. I'm a paralegal at a civil-rights nonprofit and I'm proud of it. But I am sorry for how I talked at a holiday dinner, and I want to do better.\n\nSo here's my ask: can we give each other a truce on the work and politics stuff for one day? I can't talk about open cases anyway because of confidentiality, so if anyone asks about \"the lawsuit,\" you'll get a polite \"I can't get into that\" from me, and I'd rather we just not go there. Let's keep the table to food, football, babies, and Tasha's new boyfriend. (Tasha, we want the full report.)\n\nLogistics:\n- Thursday, November 26\n- Aunt Denise's place in Macon\n- Eating around 3\n\nI'm bringing mac and cheese and two sweet potato pies, so plan accordingly. And cousins who haven't been around in a while, come on, we'd love to see you.\n\nSee everybody there.",
+  "words": 263,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits the specific insult, the relative’s provoking but good nature, and his August birthday thumbs-up."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43527355790138245,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09666973352432251,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.3515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.8757119178771973,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.4,
+    "effort": "medium",
+    "output_tokens": 1542,
+    "input_tokens": 1454
+  }
+}

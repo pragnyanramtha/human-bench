@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "work_docs-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Thanks, Deirdre, for asking me and giving me space to say how I feel, rather than just announcing the change. I do understand the numbers and why Bronwyn needs the extra help in Grade 00. I’m not asking to fight the move, but I also don’t want to pretend I’m fine with it. I’m honestly really sad.\n\nNoma has been with me in the Seahorses for three years, since my first year teaching, and she’s helped me find my feet in so many ways. From showing me how to manage the sign-in sheets and parent WhatsApp group to sitting under the jungle gym with Zayd when he couldn’t cope, she’s been such a big part of this classroom. The children ask for “Noma’s song” at morning ring every day. I know she’ll only be across the courtyard, which does help, but it will still be a big adjustment.\n\nMy main concern is the start of the year. Those first weeks of Grade R are hard, with little ones crying at the gate and learning the routine, and settling a new group while Charlene is also finding her feet feels like a lot at once. Could you please take these two handover requests to SMT?\n\n- Would it be possible for Charlene to come in for a day or two during 1–4 December, before her official start on 11 January, to spend time with Noma and see our routine?\n- Could Noma join us for morning ring for the first week the children are back, from 14 January, even just for 15 minutes? That familiar start would help, especially for Luthando and Mia, who already know her from aftercare.\n\nI want to welcome Charlene properly and give her a good start too. Some overlap would make this feel much more manageable. Thank you for hearing me out.",
+  "words": 306,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3767419159412384,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5205504298210144,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.2286248207092285,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 381,
+    "input_tokens": 14363
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "other check, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: [CP-48213] Overtime coding issue on night shifts\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nHello Faith,\n\nThanks for coming back on this. Here are the specifics you asked for.\n\n1. Terminal model and firmware: four BX-300 terminals at our Embakasi depot, now running firmware 4.2.1. They auto-updated from 4.1.8 on the night of 27 October. The two BX-300s at Mombasa Road are still on 4.1.8 and are not affected, which is why the day shift looks clean.\n\n2. Shift template: NIGHT-8, 22:00-06:00, at Embakasi depot. The Mombasa Road day shift template shows no problem.\n\n3. Example (staff ID only, as we do not pass our people's personal details to vendors): T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export produced two lines, 2.1 hrs REG on 30 Oct and 6.1 hrs OT15 on 31 Oct. What we expect is 8.0 hrs REG plus 0.2 hrs OT15. The shift totals 8 h 13 min, and since payroll rounds durations to the nearest tenth of an hour that is 8.2 hrs, of which the 13 minutes outside the scheduled shift should be OT15.\n\n4. Export profile: Payroll CSV v2.\n\n5. First noticed: 5 November, when Kevin reviewed the draft October overtime. The split appears to have started around 28 October. 38 staff on nights are affected and the draft October overtime came out about KES 212,000 too high. The 4.2.1 release notes promised improved midnight rollover handling for shifts spanning two calendar days, so the opposite seems to have happened.\n\nOn the rollback: our IT colleague Brian Ochieng manages the terminals and can roll Embakasi back, but he would rather have your confirmation first so he does not lose punch data. Can you tell us plainly whether it is safe to roll the four Embakasi terminals back to 4.1.8, and whether that affects the 30-day offline punch buffering?\n\nWe need either a fix or a clear workaround before payroll inputs close on Friday 20 November. Kevin will test whatever you propose and will feed the results back to you. Please keep all correspondence to staff IDs only.\n\nMany thanks,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 347,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: [\"support@clockpoint.example (reply to m01) (cc ['kevin.mutua@tausifreight.example']) (>= 150 words) (with [['BX-300', 'BX300'], ['Payroll CSV v2', 'CSV v2', 'CSV version 2']])\"]"
+      },
+      {
+        "check": "reply_item",
+        "kind": "other check",
+        "detail": "unknown item: ['CP-48213']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1908756047487259,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04768912121653557,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.8140869140625,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "provider default",
+    "output_tokens": 1920,
+    "input_tokens": 2137
+  }
+}

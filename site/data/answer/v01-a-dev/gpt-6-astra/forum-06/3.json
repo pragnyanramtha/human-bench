@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-4471\nReplying to: p01\nCc: none\nSubject: Draft for Denise’s review — Clinic privacy and November 14 location\n\nWe’re writing on behalf of Cascade Legal Rights Project to address the concerns raised here and confirm the details for Saturday’s free tenant rights clinic.\n\nReceiving a letter from a law firm shortly after asking for help can be frightening. We understand why that timing would raise questions about whether your information was shared. People should be able to ask for help without feeling that doing so puts them at greater risk, and we take these concerns seriously.\n\nOur policy prohibits sharing, selling, or otherwise disclosing clinic attendee information to landlords or their attorneys. Clinic sign-in records are retained internally in locked storage.\n\nMagistrate-court eviction filings are public records, and some law firms use those records to send mailings to tenants. Public filings are a likely explanation for the letters described here, but we cannot establish the source of any particular letter in this thread. To protect people’s privacy, we will not discuss anyone’s individual circumstances or confirm whether someone attended a clinic.\n\nThe clinic is still happening Saturday, November 14, from 10 a.m. to 1 p.m. The library’s meeting room will be closed for HVAC repairs, so we have moved the clinic to Mt Zion fellowship hall in East Atlanta. The accessible entrance is on the side, by the parking lot.\n\nThe clinic remains free and walk-in, with no appointment needed. Volunteer attorneys and staff can review eviction notices and court papers and explain your options. You are still welcome, including if you have questions or concerns about privacy.\n\nPlease contact clinic@cascaderights.example or call our office at 404-555-0187 with questions about the clinic or our handling of attendee information. Please avoid posting names, addresses, case details, or other personal information here, whether your own or someone else’s. Thank you for giving us the opportunity to respond.",
+  "words": 297,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39550456404685974,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3332861363887787,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.159087181091309,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.2,
+    "effort": "medium",
+    "output_tokens": 401,
+    "input_tokens": 15267
+  }
+}

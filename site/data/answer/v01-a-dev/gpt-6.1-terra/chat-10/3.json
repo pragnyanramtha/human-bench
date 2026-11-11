@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need you to hear me out because I’m really pissed about how you handled this.\n\nYou told Gary I’d list his house for 1% as a “family rate” without asking me. My listing side is 2.5%, and I never offered 1% to anyone. I spent about six hours Saturday pulling comps, walking through the house and putting together a full listing packet, plus the drive from north Phoenix. Then Gary went with someone else. I’m not mad at him for making the choice he thought was best.\n\nI’m mad at you. When I called you, “that’s business, sis, can’t win ’em all” really rubbed me the wrong way. You made a promise about my work and my commission, and I was the one who spent her Saturday on it. This isn’t the first time, either. The same kind of thing happened with your softball friend a couple of years ago, and I let it go then.\n\nNow you’ve given Denise my number so she can pick my brain, again without asking me. I’m not calling Denise. Please tell her that yourself.\n\nIt feels like you get to look like the big shot with your friends while I’m expected to do the work for free. I’m always happy to help actual family—Mom, your kids, whoever—and I don’t charge for advice. But your friends and coworkers aren’t automatically entitled to my time or a discount.\n\nFrom now on, don’t give out my number or quote my commission without asking me first. Every time.\n\nI love you, and yes, I’m still coming to Thanksgiving at your place. But I need you to take this seriously and stop.",
+  "words": 276,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44901928305625916,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5803822875022888,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.060302734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.850083351135254,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.8,
+    "effort": "low",
+    "output_tokens": 347,
+    "input_tokens": 19055
+  }
+}

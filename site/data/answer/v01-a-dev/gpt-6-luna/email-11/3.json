@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: Christmas breakfast\n\nHi Rhonda,\n\nIt’s Gary from the bus garage. We’re getting the Christmas breakfast together again and I wanted to see if you have the back room open Saturday, December 19 at 7am, same as always. If that date doesn’t work, could you do Saturday the 12th instead?\n\nDwayne sent me the sign-up list. We’re at 24 counting Earl and Carol. Could you let me know if that number works for the back room and what the per-person price is this year? The $11 a head last year was fair, and we’re fine if it’s gone up a little. We’d like to do the family-style eggs, home fries and biscuits and gravy again, with people ordering their own meat off the menu, if that’s still how you do it. And separate checks worked fine last time, so we’d like to do that again.\n\nOne thing: Patsy can’t have eggs anymore. Could you let me know what you might be able to do for her instead? Oatmeal, pancakes, or whatever else you have would be fine; I just want to make sure there’s something she can eat.\n\nAlso, Lonnie is using a walker since his hip, so he needs to come in the side door with no steps. Is that door available for us to use that morning, and is there anything we should know about getting him into the back room?\n\nAnd about the coffee: last year the urn quit and we ran out around 8:15. I know you felt bad about it, and I appreciate you making sure there’d be a backup next time. Would you be able to have a backup coffee pot ready again this year, just in case? I’m sure we’ll go through plenty with 24 of us.\n\nWe’d like to do something small for Earl since he’s finishing up after 31 years of driving the day before. Please keep that quiet, though—he can’t find out ahead of time. He loves your cinnamon rolls, and honestly they’re better than any cake. Would it be all right if we brought a cake from Sugarcreek, or would you rather we just get a big tray of your cinnamon rolls and put a candle on it? Either way is fine with us.\n\nI’ll get you the final count by the Wednesday before, like you asked last year. Let me know if the 19th is open and what you think about the food and the other arrangements.\n\nThanks,  \nGary",
+  "words": 408,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3473472595214844,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14684076607227325,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.8828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.05222225189209,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "medium",
+    "output_tokens": 630,
+    "input_tokens": 15782
+  }
+}

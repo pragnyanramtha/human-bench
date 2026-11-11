@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Rohan, fair question da. Divya’s question is even fairer. I’m not going to give you the LinkedIn version — you trusted me with real money, you get the actual thing.\n\nShort version: bad month, real cuts, company still alive, your money at risk, not gone. I can’t promise it’s safe because I genuinely don’t know. If I say “don’t worry bro” I’m lying and you should rightly throw a dosa at my head on Saturday.\n\nWhat happened: the Hyderabad bridge round fell through on 28 Oct. Term sheet was basically ready, then it wasn’t. On Friday I let go 6 of 14 people. Not “half the team,” Ajay — 6/14, my 2nd sem maths is still haunting me. Gave everyone 2 months’ pay, and 4 of them already have interviews lined up. That part I can at least look at without wanting to disappear.\n\nRunway now is about 5 months after the cuts. App is around 41k monthly users. Plumbers/electricians side is actually growing. AC servicing side is bleeding money, so we’re shutting it. New plan is housing society tie-ups — we’ve already signed 3 pilots in HSR. I think we have a real shot there. Not a sure thing. Real shot.\n\nYour 3 lakh is on the same friends-round terms as everyone else’s. No special treatment, no secret side deal, no “Rohan’s money is in a different bucket.” It’s in the same boat as the rest of us. The boat has a leak, we’re bailing water, and we’ve just thrown out some heavy stuff to stay afloat. That’s the honest picture.\n\nThe VC partner said “we love the energy” on the call and then went silent for 11 days. Eleven. I’ve had fewer silent treatments from relatives after I chose startup over TCS. Amma asked last week if TCS is still hiring, so believe me, my mother has already run a worse-case scenario on my life.\n\nFiring people was the worst day of my life. Worse than failing maths in 2nd sem, and that one had a re-exam option. So no, I’m not doing the “we are crushing it” dance. And I’m not doing a funeral either. I’m eating Maggi at office so often that the security uncle now asks “masala or plain?” like it’s a wine list.\n\nRohan, don’t start practising the sad face yet. But don’t put it away fully either. What I can promise is transparency: let’s do a call this week, you and Divya, I’ll show you the numbers — runway, burn, the society pipeline, what we’re shutting, what happens in the bad case. No slides, no jazz, just the dashboard and me answering whatever you ask.\n\nAnd yes, I’m coming Saturday. Pranav is buying. That’s the only financial promise I’m making this week.",
+  "words": 459,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "Never says he is fine (only hinted at), and the 'half the team' remark is wrongly attributed to Ajay when Rohan said it."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38166341185569763,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3892546594142914,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.6796875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.298097610473633,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.1,
+    "effort": "provider default",
+    "output_tokens": 1607,
+    "input_tokens": 866
+  }
+}

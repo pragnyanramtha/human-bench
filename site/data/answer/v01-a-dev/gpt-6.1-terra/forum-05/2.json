@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nI did read the changelog. After looking into this further, I found the cause in PR #812: the default wave_frame in LineList.__init__ changed from 'air' to 'vacuum'. My spectra are calibrated in air, so using vacuum rest wavelengths by default explains the shift I reported. The vacuum-to-air wavelength ratio around H-alpha is about 1.00028, consistent with the offset I’m seeing.\n\nFor anyone else affected, the workaround in my case is to set the frame explicitly:\n\nLineList(..., wave_frame='air')\n\nI’m annoyed that this was marked solved and attributed to my calibration without checking the version change. I spent two days thinking my wavelength calibration was broken and re-reduced arc lamps for 40 spectra unnecessarily. m_okonkwo also reported a small offset after updating, so this may affect others using long-slit data.\n\n“Works for me” doesn’t establish that the behavior is unchanged for everyone. If your input is already in vacuum wavelengths, or you’re working with radio data, you may not see the same effect. A useful test would compare 2.4.3 and 2.5.0 using the same air-calibrated optical spectrum and configuration.\n\nThe 2.5.0 changelog describes #812 as a “refactor” of LineList and spectral frame handling. That doesn’t tell users the default changed, and I didn’t see a deprecation warning. Could a maintainer please reopen this thread and add an explicit line to CHANGES.md about the changed default, or issue a warning when wave_frame is not set? That would help other users spot the issue before spending time rechecking their calibration.",
+  "words": 246,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40080368518829346,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.32261335849761963,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.617630958557129,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.6,
+    "effort": "low",
+    "output_tokens": 369,
+    "input_tokens": 20221
+  }
+}

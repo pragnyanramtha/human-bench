@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hiya you lot,\n\nI've got a wee plan for Gran's 80th and I need your help with it. Shhh, she doesn't know!\n\nMorag has said I can have the salon to myself on Saturday 12 December (her big day is the Sunday), so I'm going to do everyone's hair for free before we head out for Gran's dinner. Morag closes at 12, so I'll have the place from 1pm. It's Hair by Morag on Dumbarton Rd, you all know it.\n\nThat's seven heads: Mum, Kirsty, Linda, Gran, me, Ava and Ruby. Cut and blowdry for everybody, no bother. Colour too if you fancy it, but I need to know what you want by **Friday 27 November** so I can order from the wholesaler. If I don't hear by then it's cut and blowdry only, sorry!\n\nLinda, before you ask, yes I'm doing yours in the salon this time. The cooker and the dog have suffered enough.\n\nMum, you're the key to this one. Gran needs to be at the salon for 1 without knowing why, and you're the best one to manage that. She said at Easter she'd love to go silver properly, so I'm planning to do that for her. It's free, so there'll be no arguing about salon prices.\n\nKirsty, Ava and Ruby can get wee braids and glitter spray. They'll love it. Let me know if there's anything they've got their hearts set on.\n\nPlease bring a bottle of fizz. Morag says that's fine as long as we tidy up after ourselves, so nobody sneak off early.\n\nThen it's dinner at 8.30 at the Italian on Byres Rd. The table's booked for 9, so Uncle Davie and Kirsty's man are coming too.\n\nSo text me by the 27th with what you'd like done, and not a word to Gran!\n\nI'm buzzing for this. See you on the 12th xx\n\n---\n\nI put in that you're planning silver for Gran, since she said she'd love it. If you'd rather check with your mum first, change that line to something like \"Mum, can you find out what Gran fancies?\"",
+  "words": 350,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31094440817832947,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.024257026612758636,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.21875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.27895238995552063,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.6,
+    "effort": "high",
+    "output_tokens": 2365,
+    "input_tokens": 1456
+  }
+}

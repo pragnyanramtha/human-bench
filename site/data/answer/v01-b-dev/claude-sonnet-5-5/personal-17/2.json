@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To whoever is dumping their rubbish in the bin at No. 14**\n\nI'm the person at No. 14 with the grey bin, the one with the 14 painted on the lid in white. I'm writing to every house on the terrace because I don't know which of you it is, and I'm fed up.\n\nFor about a month now, someone has been filling my bin with their own bags. This isn't a few bits slipped in. It's full black bags, every week. Last Tuesday I got home at 3am after work and the lid wouldn't even close. There were three bags in there that weren't mine, and one of them had nappies in it.\n\nMy bin is charged by weight at 41 cent a kilo. My last bill was €63.20 for two months. It's normally around €25. So I've been paying for your rubbish, and I'm not doing it anymore.\n\nThere was also a gas bill envelope in one of the bags. The name was torn off, but the address was the terrace. So I know it's someone who lives here. Someone also saw a car pull up on Tuesday evening, so it's not as anonymous as you might think.\n\nI work nights, and I'm not a pushover. I'm not looking for a row. I just want it to stop.\n\nIf you're stuck for how to get rid of your waste, ask me. I'll tell you who to ring, it's not hard. What isn't okay is using my bin and leaving me with the bill.\n\nIf it carries on, I'll start putting a padlock on the bin. I'd rather not have to, but I will.\n\nWhoever it is, stop, and we can all get on with our lives.\n\n**No. 14**\n\n---\n\nI left out your name since you didn't give one. If you want people to be able to reply, you could add a line like \"Pop a note through my door if you want to talk.\" Say the word and I'll work it in.",
+  "words": 335,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4203908145427704,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.34186044335365295,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.6878851652145386,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.8,
+    "effort": "high",
+    "output_tokens": 971,
+    "input_tokens": 1316
+  }
+}

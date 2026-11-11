@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: [m01]\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr. Kerrigan,\n\nThank you for getting in touch, and I am sorry to hear about your mother's fall. I hope her week on the cardiac floor has been as comfortable as it could be. We would be very glad to look after her medications, and I will answer your questions in the order you asked them.\n\n1. Weekly blister packs. Yes, we prepare them - seven days at a time, with each day divided into four dosing times. There is no charge for the packaging itself. You would only pay the usual dispensing fee, and as your mother is 81 and covered by ODB, most of that is covered.\n\n2. Delivery. Yes, we deliver to her building. Deliveries run Tuesdays and Fridays between 2 and 6 pm, free within 8 km, and her condo is well inside that. Thursday is not a delivery day, so for the first packs we can either hold them here for pickup or I can arrange a one-off drop on Saturday before 1 pm, whichever suits you better.\n\n3. Moving her prescriptions. We take care of that for you. We call the pharmacy on Dundas directly and arrange the transfers. All we need from you is that pharmacy's name and address, and your mother's OHIP number. There is no form for her to sign for the transfer itself.\n\n4. Speaking with me. Yes, of course - I am happy to call you in the evening once I have her list in front of me. There is one thing I need first, and I would rather explain it than just send a form. Because of privacy legislation, I am not able to discuss your mother's medications with you until she has given her permission in writing. We use a short Family Communication Consent form for this. It simply records that she is happy for me to speak with you about her medications; it protects her privacy, and once it is signed I can keep you fully in the loop without any awkwardness. She can sign it when the first pack is picked up, or we can send it home with the driver.\n\nTwo things I would like to ask of you:\n\n- Please ask the discharge team to fax the prescriptions to us early on Thursday, including anything new she will be starting. We need all of them - the discharge prescriptions and the transfers - before we can build the packs, and it takes about 48 hours. If the fax reaches us Thursday morning, the packs will realistically be ready on Saturday. The team can reach us on 905-555-0148 ext. 2 if they need to confirm anything.\n\n- The first packs will not be ready on discharge day, and I would rather be straight with you than promise something we cannot deliver. Could you confirm with the discharge team that she has an interim supply to cover her until Saturday, and that someone helps her with every dose in the meantime? Once the packs arrive, every dose is sorted by day and time, so it becomes much simpler.\n\nOne more thing I would like to offer: a MedsCheck at her home during her first week back - about 20 minutes, in person, at no cost. With several new medications, it is a good opportunity to go through them with her, make sure she is comfortable with the packs, and answer any questions. I could come on Monday or Tuesday after 6 pm if that works for you both.\n\nIf anything is unclear, my direct line is 905-555-0148 ext. 2, and I am in the store Monday to Friday, 9 to 6.\n\nKind regards,\nRania Haddad\nPharmacist, Erindale Park Pharmacy\n\n---\n\nTo: joel.santos@erindaleparkrx.example\nReplying to: [m02]\nCc: none\nSubject: Kerrigan file - notes on what I have offered and asked for\n\nHi Joel,\n\nThanks for pulling all of that together. I have drafted a reply to Mr. Kerrigan using your details - I will review it in the morning before I open. For the file, this is what I have committed to and asked for:\n\n- Family Communication Consent signed by Margaret before we discuss anything with Douglas. Offer: she signs at pickup, or we send the form with the driver.\n- MedsCheck at her home in the first week - Monday or Tuesday after 6 pm, 20 minutes.\n- Ask Douglas to have the hospital fax the discharge prescriptions early Thursday, plus the transfers, so packs can be ready Saturday.\n- Ask him to confirm an interim supply and that the discharge team helps with every dose until Saturday.\n- First packs: hold for pickup or your one-off Saturday drop before 1 pm - I have left the choice with him.\n- Transfers: we still need the old pharmacy's name and address plus her OHIP number.\n\nCan you flag the file so the consent form and the MedsCheck are not missed once the fax comes in. My direct line is on the letter I sent him.\n\nThanks,\nRania",
+  "words": 813,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['joel.santos@erindaleparkrx.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11108081787824631,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10915243625640869,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.1522128582000732,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.6,
+    "effort": "provider default",
+    "output_tokens": 3543,
+    "input_tokens": 1961
+  }
+}

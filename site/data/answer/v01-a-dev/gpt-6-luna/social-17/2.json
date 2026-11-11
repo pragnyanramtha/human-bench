@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: page:wensum-valley-hospice-bookshop\nReplying to: none\nCc: none\nSubject: Light Up a Life 2026 — draft for Moira to review\n\nThis is a draft for Moira to look over before we post it.\n\nHilary asked whether we’re doing the tree again this year. We are, and her mum’s name is very welcome on it again.\n\nOur Light Up a Life tree is for anyone grieving someone they miss — you don’t have to be a hospice family. Memory tags will be available in the shop from Monday 16 November. The suggested donation is £3, and there’ll be envelopes on the counter if you’d rather write your tag at home.\n\nThe tree will be in the window, and we’ll switch on the lights on Saturday 28 November at 4pm. Gildencroft Primary choir are coming back to sing a few carols, and Doreen will be bringing her mince pies again. We’d love to see you, but please know you can simply come and stand by the tree. You don’t need to buy anything.\n\nAll the names on the tags will be read at the hospice remembrance service on Sunday 13 December at 3pm, in the day centre. You don’t need to attend the service for your person’s name to be read.\n\nIt’s seven years this month since my husband Ray died at the hospice. The first year I hung his tag, I could hardly write his name. Now I write it at the counter, with the same pen. I still pause over it, but I’m glad to have that small, familiar moment each year. I know everyone’s grief is different, and this tree is here for all of us who want a place to remember.\n\nThank you to everyone who added a name or came to stand with us last year. Seeing the tree fill with names, and being together for the carols, meant a great deal. We hope you’ll join us again this year, in whatever way feels right for you.\n\nJean",
+  "words": 311,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "310 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32606640458106995,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18747864663600922,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.91015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.533416986465454,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "medium",
+    "output_tokens": 462,
+    "input_tokens": 31533
+  }
+}

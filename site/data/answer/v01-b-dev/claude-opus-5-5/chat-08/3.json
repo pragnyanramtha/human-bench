@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone CHARITY STREAM IS SAT NOV 21 🍞\n\n10am to 10pm, 12 hours, all for the Linden Community Pantry. posting this early bc last year half of u found out the day of and we ended at $212. not this time\n\n**goal: $600**\nand tj_rook is matching the first $100 so the first 100 bucks basically counts double. thank u rook fr\n\n**donate here:** lindenpantry.example/mrkz\nit goes straight to the pantry, nothing gets taken off. denise from the pantry said every $1 = about 4 lbs of food bc of their wholesale partner. they're feeding around 340 families a week rn and she said the shelves are the lowest she's seen before thanksgiving. so yeah it actually matters\n\n**incentives (mods cooked):**\n$100 → i play a full round with the controller upside down\n$250 → chat picks my hair dye color and i do it ON STREAM\n$400 → 1 hour of chat-picked songs, no skipping (please be nice)\n$600 → i vlog a grocery pickup the pantry sets up\n\n**what we're playing:**\nfirst half is community lobbies, anyone can join, i'll drop the code. second half chat votes on a new game every 2 hrs. no repeat maps larry i promise\n\n**no card? u can still help:**\n• drop canned or boxed food in the blue bin by the pantry's side door, saturdays 9 to 1\n• just hang out in chat, it helps more than u think\n• share the link with ur family/friends\n\nalso even $3 is like 12 lbs of food, that's real. and if u can't give anything that's completely fine, i just want u there. nobody's gonna get called out or anything\n\nand i get it, some ppl think charity streams are cringe and honestly fair, some of them are. but this is basically a normal stream except the money goes to a pantry down the road and u might get to pick my hair color. i'll take a little cringe for that lol\n\npinning this. see u the 21st 🫡",
+  "words": 337,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24544574320316315,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21881379187107086,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.2109375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.071345329284668,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "medium",
+    "output_tokens": 1051,
+    "input_tokens": 2803
+  }
+}

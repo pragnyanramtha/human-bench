@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Kestrel Bastion 1500 Review — 4 Stars: Solid Backup, but the 14-Minute Claim Is Optimistic**\n\nI run a crypto day-trading setup out of a home office in Miami — trading PC, three monitors, modem, router — and I picked up the Kestrel Bastion 1500 from Voltwise in August 2026 for $229 because storm season here doesn't negotiate with your positions. Short version: it did its job during the October 14 outage and I'd buy it again, but the runtime on the box is meaningfully better than what you'll actually get, and a couple of the software quirks are genuinely annoying.\n\n**Why I bought it**\n\nMy load sits around 410W according to the unit's own display while I'm actively trading. 1500VA / 1000W, pure sine wave, 10 outlets with 5 on battery, plus a 60W USB-C port. On paper that's more headroom than I need.\n\n**The storm test (Oct 14)**\n\nPower dropped around 2:20pm. I was 10x long on a SOL perp, and the rig and wifi stayed up the whole time. I closed the position cleanly in about 4 minutes, then let the battery ride afterward specifically to test it. That's the single biggest reason this thing earned its keep — the *internet* stayed up, not just the desktop. Which leads me to the tip below, because I see people get this wrong constantly.\n\n**Real runtime numbers (please read this one)**\n\nThe box claims roughly 14 minutes at 500W. My load is *lower* — 410W — so if that claim scaled even roughly linearly, I'd expect somewhere around 16–17 minutes. I tested it deliberately and got **11 minutes 40 seconds** before shutting down. That's about 30% under what the claim implies, and at a *lower* discharge rate, which should have helped rather than hurt.\n\nI'm not calling it a scam. The hardware feels solid and one home test isn't a lab. But if you're planning around \"14 minutes,\" plan on 11–12 at a ~410W rig. And test it yourself before you need it — you do not want to be learning your real runtime at 2:20pm with a live position on.\n\n**What I like**\n\n- **Auto-shutdown works**, which matters more than anything else here. I can set a cutoff and the PC goes down cleanly instead of getting yanked.\n- 5 battery-backed outlets, which is enough to cover rig, modem, router, and a monitor with room to spare.\n- 60W USB-C is genuinely useful if you're running a laptop setup.\n- $229 is fair for 1500VA with a hot-swappable pack.\n- Pure sine wave, no odd behavior with my PC PSU.\n\n**What bugs me**\n\n- **The fan.** It kicked on at 3am the first week and woke me up. It's loud — like a hair dryer on low. Nothing close to the silent units out there.\n- **The desktop app looks like Windows XP.** It functions fine, but it makes the whole product feel cheap.\n- **The outage beep is loud**, and muting it resets after a firmware update. I've now re-muted it twice.\n- **The replacement battery pack is $95** — about 40% of what I paid for the unit — and the listing doesn't state a cycle rating.\n- It's around 30 lbs. Not a complaint, just know what you're lifting.\n- 5 of the 10 outlets are surge-only. Not a dealbreaker, but an easy mistake.\n\n**Tip for other traders**\n\nPlug your modem and router into the **battery-backed** side. I constantly see people protect the desktop, lose the modem, and then wonder why their internet died anyway. Related: set the auto-shutdown threshold around 20–25% remaining so you're not racing the clock to flatten a position.\n\n**Bottom line**\n\n4 stars. It did exactly what I needed in a real outage, and quietly enough that I stopped thinking about it day to day. The runtime claim is inflated, the fan is loud, and the app needs an actual redesign — but if you need a short bridge to cover one trading session, not an all-night gaming marathon or a server closet, this is a solid buy at $229. Just test it first and know your real numbers.",
+  "words": 687,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.9301595687866211,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9679014682769775,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 22.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.1754162311553955,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 36.3,
+    "effort": "provider default",
+    "output_tokens": 3350,
+    "input_tokens": 650
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "RA Progress Statement — Seoul–Daegu Honorific Shift Corpus  \nReporting date: November 9, 2026\n\nI am the only RA on this NSF-funded project doing Korean annotation. The fall-term target was 6,000 utterances annotated. As of this reporting date I have completed 4,200.\n\nTimeline:\n- September 3, 2026: IRB amendment to add the 14 new Daegu recordings sent to Prof. Hollander for signature.\n- September 12, September 24, October 6, 2026: I sent reminders about the amendment (emails retained).\n- October 15, 2026: Prof. Hollander signed the amendment. I could not begin annotating the new recordings before this date.\n- October 15–November 9, 2026: approximately 1,900 utterances annotated, over 500 per week. The original plan was 350 per week.\n\nDuring the six-week signature wait, I recoded the existing 2,300 utterances using the revised speech-level scheme Prof. Hollander requested in August. That work was not in the original timeline and is complete. It should be counted as progress for the fall term.\n\nAt the current pace, I expect to reach 6,000 utterances by the end of January 2027.\n\nAt the November 6, 2026 lab meeting, the annotation was described as “six weeks behind.” Without the signature timeline, that phrasing suggests slow or careless work, which is not the case. The delay in annotating the new recordings corresponds to the period when the amendment was awaiting signature and I was not authorized to work with those recordings.\n\nI request that the funding review note either include the signature delay as the reason the new-recording annotation started later than planned, or omit the “six weeks behind” comment. I also ask that the recoding of the 2,300 utterances be recorded as completed work.",
+  "words": 277,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13972443342208862,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12252992391586304,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.39453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.7474164962768555,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.5,
+    "effort": "provider default",
+    "output_tokens": 2482,
+    "input_tokens": 611
+  }
+}

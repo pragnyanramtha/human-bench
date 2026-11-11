@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217 – missing delivery, replacement or refund requested**\n\nDear Tiny Hands customer service,\n\nI’m writing about order TH-48217, which I placed on 21 October and paid for by card. The total was R1,640, including R95 for delivery.\n\nThe tracking says the order was delivered to Bergview Pre-Primary in Plumstead on Tuesday, 3 November at 11:42, and signed for by “M. Adams”. Nobody by that name works at our school. Our gate guard, Uncle Faizel, keeps a book of every delivery, and there is no record of one arriving on 3 November. I’ve also checked the order, and the delivery address was correct.\n\nI emailed on 4 and 6 November and received the same reply both times: “we have escalated your query to our courier partner”. I then phoned on Friday and spent 38 minutes on hold, only to be told that nothing could be done until the courier finishes its investigation, which could take another 10 working days.\n\nI understand that you need to follow up with the courier, but I bought and paid for these supplies from Tiny Hands, and I didn’t choose the courier. I don’t think it’s reasonable for me to be left waiting indefinitely, or to be sent back to the courier to sort this out myself.\n\nThe order was for six tubs of finger paint, four bags of playdough, 200 paper plates, googly eyes, glitter glue and two rolls of brown paper. I bought these with my own money for my class. The children made their mask patterns last week, and I’ve been telling them for a week that the paint is “coming soon”. We also need the supplies for props for our end-of-year concert on 27 November.\n\nI’ve ordered from you three times before without any problems, which is why this has been so frustrating. R1,640 is a lot of money to be out of pocket on a teacher’s salary, especially for supplies I bought for my pupils.\n\nPlease **either resend the full order or refund the full R1,640, including delivery, by Friday, 13 November**. I’d also appreciate a proper, personal response explaining how you intend to resolve this, rather than another template saying the matter has been escalated.\n\nIf I don’t receive an answer by then, I’ll have to pursue a chargeback with my bank and leave a review of my experience. I’d much rather resolve it directly with you, so please let me know as soon as possible what you can do.\n\nKind regards,  \n[Your name]  \n[Your contact number]",
+  "words": 419,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.497609943151474,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7604840397834778,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.488540649414062,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.9,
+    "effort": "low",
+    "output_tokens": 545,
+    "input_tokens": 19097
+  }
+}

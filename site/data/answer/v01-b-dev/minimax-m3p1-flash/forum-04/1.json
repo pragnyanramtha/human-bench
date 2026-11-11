@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "required or barred words, privacy, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: dm:Gary_41\nReplying to: d01\nCc: none\nSubject: DRAFT - not sent yet - Re: your message about the chimney breasts\n\nGary, understood, and thank you for telling me. Nothing about your house goes on the forum. I've drafted a short post saying nobody should go into 43 or 41 this morning and to keep off the footway; happy to send you the wording first, and I can phone you any time after half nine this morning, or say the word and I'll hold the post back until we've spoken.\n\nTwo things in the meantime: put the chimney breast removal in writing to your insurer now, and keep Tomasz's details, because the council's structural officer and the insurer will both ask about that work. Please also keep people out of 41 while that stack leans over the wall.\n\n---\n\nTo: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: DRAFT - not posted yet - Re: Chimney come down on Ashbourne Terrace in the wind??\n\nFrom what I could see from the pavement at 7 this morning: nobody should be going into 43 this morning.\n\nI'm a structural engineer, but here I'm just a neighbour who looked from the street. This is what I saw, not formal advice.\n\nWhat I saw: about 1.2m of the stack still stands on 41, leaning towards 43, with the mortar washed out at the base, and 50mph gusts are forecast again this afternoon. 43's front roof slope is holed (roughly 2-3 square metres), with debris in the front bedroom. A stepped crack runs from the bay head up to the first floor cill, 5-10mm wide, and the bay head looks dropped by about 20mm. Loose slates are on the gutter line of 43 and 45, directly over the footway.\n\nMick: I know it's well meant, but please don't go in at 9 with the props. Propping under a hole in the roof with a loose stack above is the worst place to stand: the floors may be carrying debris and nobody knows how the loads run now, and nobody should be looking in the loft from inside. Please leave it to the council's structural officer.\n\nJoJo: your cousin isn't wrong that terraces like this are generally robust, but this one is damaged, which is a different thing.\n\nPriya: they already know, but the tape only crosses the front garden of 43 and the footway is still open, so please keep the school run on the other side of the road. Out-of-hours dangerous structures is via the main council number, so please chase them to close the footway. On Mrs Doherty: staying or going is her and her family's call, not mine, but I wouldn't sleep in the front room at 45 tonight, and I'd want her with family until 45 has been checked.",
+  "words": 421,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "private_leak",
+        "kind": "privacy",
+        "detail": "leaked: ['Tomasz', 'chimney breasts']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      },
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['Tomasz']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22127358615398407,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05954809859395027,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.204662561416626,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 70.3,
+    "effort": "provider default",
+    "output_tokens": 12561,
+    "input_tokens": 2068
+  }
+}

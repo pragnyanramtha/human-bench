@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: jan.thornton@mailbox.example, pete.thornton@mailbox.example, carol.rigby@mailbox.example\nReplying to: none\nCc: none\nSubject: Caravan 2027 costs and weeks\n\nDear Jan, Pete and Carol,\n\nThe park bill for 2027 has come in at £5,087 all in. Split four ways as always between me, Jan, Pete and Carol, that works out at £1,271.75 each. It's gone up again, by £351 on last year. There's nothing I can do about it, the park sets the fees.\n\nPlease can everyone pay me by 31 January 2027, into the same account as before, as the park wants the full amount by then. If it suits anyone better, paying in two lots is fine: £635.87 in December and £635.88 in January, so long as it's all paid by 31 January.\n\nThe weeks are:\n\nPete and Linda: 29 May to 5 June 2027, May half term.\nMe and Bev: 5 to 12 June 2027, so handover on 5 June.\nJan: 7 to 14 August 2027.\nCarol: Easter week and a week in September. Carol, let me know which September week you want and I'll put it down.\n\nThere's no clashes with any of that.\n\nPete, on the shower tray you mentioned, I went up on 26 October and put a new one in. It was £140 in parts but I've not put it on the bill, it's done now.\n\nPlease can everyone remember to turn the water off at the stop tap when you leave. The park has moaned about it again, so make sure it's done every time.\n\nOne other thing so nobody's surprised later: the park says caravans over 15 years old will need a condition survey before the 2028 season. Our van is 16 years old now, so that will apply to us.\n\nAny problems let me know.\n\nRegards\nMick",
+  "words": 278,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2304137945175171,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01509662065654993,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.155281066894531,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.5,
+    "effort": "provider default",
+    "output_tokens": 2065,
+    "input_tokens": 2429
+  }
+}

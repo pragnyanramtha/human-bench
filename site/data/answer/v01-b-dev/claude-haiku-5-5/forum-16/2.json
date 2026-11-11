@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, I am sorry your toe hurt. I really mean that. I know the last few weeks have been hard for you, and I want to tell you and everyone here what happened from my side, calmly.\n\nMy name is Thu. I have owned Lotus Garden Nails on Bellaire for 19 years, since 2007, and before this we never had one infection complaint.\n\nRenee came in on Saturday, October 24, for a deluxe pedicure ($45). Her technician was my niece Vy. Vy has been licensed for 3 years and was born right here in Houston. She is quiet and a little shy when she first meets someone, but she speaks English well and she and Renee were able to talk during the appointment.\n\nThis is how we work every time. Our tools go through the autoclave. We open a sealed pouch in front of the customer. The file and buffer are new for each person, and they go home with you. We put a plastic liner in the tub for every customer. Our state inspection was in August 2026. We passed with no violations, and the paper is on our wall if anyone wants to see it.\n\nDuring the pedicure, Renee asked Vy to cut the cuticle more, and then more, because she wanted it very clean. Vy told her not to take too much. Renee said it was fine and that she always gets it done this way. I am not saying this to blame anyone. I am saying it because it is part of what happened, and I want people to have the whole story.\n\nWhen Renee came back on November 2 with a red toe, I offered her a full refund of the $45. I also offered to pay her urgent care copay if she brings me the receipt. That offer is still open. I did not offer the $300 in cash and a free pedicure for a year that she asked for, and I know that was not the answer she wanted. I wish we had been able to talk it through better that day.\n\nSome people in this thread wrote that all nail salons are dirty. That part hurt me the most. We are not all the same. We work hard, we follow the rules, and we care about our customers. My niece read these posts, and it has been very hard for her.\n\nMarisol, thank you for asking if the owner could be spoken to again. You are right that talking directly is the best way to fix this.\n\nRenee, you have been my customer for two years, and I still want to make this right. Please call the salon or come by and we can sit down and talk. I am here.",
+  "words": 459,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34769317507743835,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08475355058908463,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.03125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.70845627784729,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.1,
+    "effort": "medium",
+    "output_tokens": 2637,
+    "input_tokens": 2139
+  }
+}

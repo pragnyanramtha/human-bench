@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**One star, for now: Stackhouse support has left our library stranded**\n\nWe are a single-branch library in Bozeman, Montana, with two full-time staff, volunteers, and about 2,300 active cardholders. In June 2026 we signed a three-year Stackhouse contract at $14,200 a year. Our migration went live October 19.\n\nThe staff interface is better than our old system, and I want to say that plainly. The demo was convincing. The problem is what happened after go-live, and how support has handled it.\n\nSince October 28, checkouts have worked only offline, and only on one laptop. The holds queue was wiped, which erased roughly 640 holds. We have no reliable record of who was waiting for what. A retired rancher drove 40 minutes for a held set of large-print Westerns. We had no record of the hold and had to send him home empty-handed. Our volunteer is now recording checkouts on index cards.\n\nOur support ticket has been open 12 days. We have received three replies, and each one said the issue was \"escalated to engineering.\" We were promised a dedicated migration specialist. What we received was a shared inbox.\n\nLibraries considering Stackhouse should press these questions before signing:\n\n- Who is the named migration contact, and what is their direct line?\n- What is the committed response time for a system-down or data-loss issue, in writing?\n- What happens to holds and circulation records if the migration fails, and what is the rollback plan?\n- Which libraries migrated in the last six months, and will you put them in touch with us?\n\nWe are paying for our gaps in staff hours, patron trust, and a budget hearing on November 18. Our county commissioners will be reading this too, and they should know that we are not writing to tear down a product. A vendor that sells to libraries has to answer when a library is in trouble, and right now Stackhouse has not.\n\nI hope the call from a senior Stackhouse person this week leads to real answers. I would revisit this rating if they fix the problem.\n\n---\n\nBefore posting, check these against your records: the 640 holds, the October dates, and the 12-day and three-reply counts. Also decide whether you want to keep the rancher story. I left his name out, which is the right call. If the commissioners will read this, make sure every specific claim is one you can document.",
+  "words": 403,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4564535319805145,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4776310920715332,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2594830989837646,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "medium",
+    "output_tokens": 2050,
+    "input_tokens": 1484
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft — text-message cadence, so it breaks up naturally if you send it in pieces:\n\n---\n\nHey Rick. I said I'd write to you about this and kept chickening out, so here it is.\n\nI'm not mad at Gary. Gary's fine, Gary made a call I respect, went with ListLite for $3,995 and \"no hard feelings.\" My problem is you.\n\nYou told Gary I'd list his house for 1%. You never asked me. I told you my listing side is 2.5% and that the family rate wasn't a number I'd agreed to — but you said 1% out loud to your buddy anyway, and that's the number I got painted with. Then I spent my whole Saturday, the 7th, six hours plus the drive up from north Phoenix, pulling comps, doing the walkthrough, printing a full listing packet. Six hours. And when I called you about it, all I got was \"that's business sis, can't win 'em all.\" No. The part where you promise my work for my money isn't business. That's just you.\n\nAnd then this morning you handed Denise my cell. You already gave her my number. That's twice now — same thing you did with your softball guy two years ago, and I let it go then. I'm not letting it go this time.\n\nSo this is what I need: I'm not calling Denise. You call her and you explain it, that's yours to handle. From now on, if somebody wants to talk to me, you ask me first, every time. And you don't quote my commission, my rates, or anything about my business to another human being until I've said yes.\n\nWhat I will say is this, and I mean it — if it's real family, if it's Mom, if it's your kids, if it's somebody I actually love, I'll pick up the phone and give advice and it won't cost a dime. Ask me. I'd do it for free today. What I won't do is be the free labor behind your pitch to the guys.\n\nI'm still coming to Thanksgiving. I'm still your sister. But this stops here.\n\n---\n\nWant me to soften the Gary paragraph, or punch up the Denise part? Right now the anger lands on Rick, not Gary, which I think is where you want it.",
+  "words": 386,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4046541154384613,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2590146064758301,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.87109375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.086375713348389,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.4,
+    "effort": "provider default",
+    "output_tokens": 1384,
+    "input_tokens": 688
+  }
+}

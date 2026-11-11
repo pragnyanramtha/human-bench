@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast\n\nHi Rhonda, its Gary from the bus garage. Its that time again and we want to do our Christmas breakfast at your place like always. Is the back room open Saturday Dec 19 at 7am? If the 19th is no good could we do Saturday the 12th instead, same time and room?\n\nDwayne sent me the list and we got 24 counting Earl and his wife Carol. I'll get you the final count by the Wednesday before like you wanted last year, so you know how much food to make.\n\nCould we do the same food as last year, the eggs, home fries and biscuits and gravy, with everybody ordering their own meat? The $11 a head was fair and its fine if its gone up a little, just let me know what it is this year. Separate checks again too please, that worked good.\n\nPatsy cant do eggs anymore so could she get oatmeal or pancakes or whatever you've got that would work instead? And Lonnie is on a walker since his hip. Can he come in the side door with no steps? Just want to make sure he can get in alright.\n\nAlso we want to do a little something for Earl but he cant find out, so please keep it quiet. His last day driving is Dec 18, the day before breakfast, after 31 years. Carol said he would be embarrassed by a big speech so nothing like that, just a little something for him.\n\nWould it be alright if we brought a cake from Sugarcreek, or could we get a big tray of your cinnamon rolls with a candle in one? Earl loves those rolls and honestly they're better than any cake. Let me know what you think would work best.\n\nOne other thing, I know you felt bad about the coffee last year when the urn quit around 8:15. Things break and nobody was upset with you. You mentioned having a backup next time, would you have another pot handy just in case? You know how this bunch is about their coffee.\n\nLet me know about the date and all the rest when you get a chance. Thanks Rhonda, looking forward to seeing you.\n\nGary",
+  "words": 370,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17874442040920258,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.011035687290132046,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.2578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.146313667297363,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.1,
+    "effort": "low",
+    "output_tokens": 465,
+    "input_tokens": 20885
+  }
+}

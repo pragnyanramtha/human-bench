@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Fix-It Saturday at St. Ansgar**\n*Bring the broken toaster. Stay for coffee.*\n\n**Saturday, December 5, 2026, 9 a.m. to 1 p.m.**\nFellowship Hall, St. Ansgar Lutheran Church, Minneapolis\nEnter by the alley door (there's a ramp)\n\nThis whole idea started in our church kitchen, when Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes. I stood there thinking about how much gets thrown away that only needs a screw or a new cord. The church council approved the idea last week, and I'll admit I'm thrilled. On December 5, we open the doors.\n\n**How it works**\nBring something broken. A volunteer fixer will look it over with you, and if it can be fixed, you'll walk out with it working.\n\n- It's free. No membership, no sign-up. Just show up.\n- One item per person to start, so the line keeps moving.\n- Coffee and kringle are on us.\n- Donations to the food shelf are welcome but never expected.\n\n**Who's fixing**\nSo far we have volunteers for small appliances, lamps, bikes, clothing mending, and knife sharpening, plus one retired tech guy for laptops and phones. The mending table will be run by Doris Lindqvist, who is 84 and has been darning socks for this parish since the Carter years. She asked to run it herself, and none of us was about to argue.\n\n**Our promise**\nThis is good neighboring, plain and simple. No strings, and nobody will preach at you.\n\n**What comes next**\nAfter the first one, Fix-It Saturday will be held the first Saturday of every month through spring.\n\n**We could use more fixers**\nIf you're handy, please join us. We especially need someone who can handle vacuums or zippers, but if you have a skill that keeps things out of the landfill, we want to hear from you.\n\n**Questions or want to volunteer?**\nContact the church office at office@stansgarlutheran.example or 612-555-0148.\n\nBring the toaster. Stay for the coffee. We'll see you there.\n\n[Your name]\nPastor, St. Ansgar Lutheran Church\n\n---\n\nI left your name as a placeholder at the bottom. This should fit on one page with room for a little art if you want it.",
+  "words": 361,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5965461730957031,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.43733611702919006,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.3534301519393921,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "high",
+    "output_tokens": 1966,
+    "input_tokens": 1466
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Re: Finance wants to scrap salary advances completely. Am I wrong to push back?**\n\nPeter, you're not wrong about most of this, and nine years in payroll means you've seen the damage up close. The \"permanently one month behind\" problem is real. I'd also say the Finance Manager has a fair point that a scheme with no limit is a cash-flow problem. Where I'd differ is on the conclusion. We tried closing the window, and it didn't go the way the advice suggests.\n\nSome background, since Brenda asked. Earlier this year we shut down our informal advances after Finance raised the same concerns you've listed. We gave two months' notice, ran one financial literacy session with our SACCO, and pointed people to the SACCO and banks. For the first few weeks it looked like it was working. Then we started seeing things we hadn't expected.\n\nIn the six months after closing, reception logged 61 calls from debt collectors and loan apps. Some of the apps were phoning supervisors, who had been listed as referees on the loan applications. That created workplace problems we'd never had to handle before. Unplanned absence in the two days after month-end went up. Our fleet manager linked at least three missed Mombasa runs to drivers who were dealing with loan problems. I can't prove that closing advances was the only cause, but the timing lined up, and nobody here was pointing at anything else.\n\nThe SACCO route is also slower than people assume. Loans take two to three weeks and usually need guarantors. That's no use to someone whose child has been sent home over school fees on a Tuesday. The loader I'm thinking of at our Changamwe depot had six apps out at once by the time he came to me, and he was borrowing from one to repay another. It took us four months, working with payroll, to untangle it. He's not an unusual case. He's just the one that reached HR.\n\nSo in September we reopened it, but as a written policy rather than a favour. The rules are:\n\n- Maximum 40% of net pay per request.\n- Once per pay cycle.\n- Repaid in full at the next payroll, no fee.\n- Requested through the payroll portal, not through my office.\n- Before approval, we check that total deductions stay within two-thirds of wages, which is the Employment Act limit. In practice nobody is left with nothing at month end.\n\nHere is how it has worked since. We get roughly 55 to 70 requests a month, averaging about KES 9,000. Almost all are repaid at the next payroll. The only losses have been two leavers, and the total written off for the year is about KES 14,000. Finance's concern about forecasting has mostly gone away, because the maximum exposure is known in advance. At a 70-request month, the most that goes out is about KES 630,000, and it comes back at the next payroll. Our Finance Manager now defends the scheme himself, because it's a fixed ceiling rather than a surprise.\n\nPeter, I'd also say the financial literacy session was useful, and I'd keep it. But for a lot of our lower-grade staff, on pay around KES 28,000 a month, there's very little room to absorb an unexpected bill. Literacy helps people plan. It doesn't create a buffer for the month a school fee bill lands.\n\nBrenda, if it helps for the 18th, here's what I'd take in:\n\n1. **Put the write-off cost next to the absence cost.** Our write-offs were about KES 14,000 for the year. The harder numbers to pull are absence days, missed runs and the staff time spent on loan-app calls. Ask your ops and reception teams to log those for a month or two. Those costs tend to be spread across departments, so nobody notices them until you add them up.\n2. **Propose a ceiling, not a yes or no.** Cap it at a percentage of net, limit it to once per cycle, and recover it in full at the next payroll. That answers Finance's forecasting concern directly.\n3. **Set a clear approval route.** Requests through payroll, with a check against the two-thirds rule, means HR isn't the lender of first resort, which addresses Peter's concern too.\n4. **Keep a review point.** Agree to look at the numbers after three or six months. That gives Finance a way to stop it if it isn't working, and it shows the MD you're not asking for a blank cheque.\n\nYour firm's workforce will differ from ours, so test the numbers against your own payroll before the meeting. But I'd push back on \"close the window and people adjust.\" In our experience they adjusted by borrowing from somewhere else, and the cost came back to us in other forms.\n\nWanjiru_K",
+  "words": 801,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The closure and reopening happened in 2025, not earlier this year and this September."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43434181809425354,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21843735873699188,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.373545169830322,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.8,
+    "effort": "medium",
+    "output_tokens": 3126,
+    "input_tokens": 2814
+  }
+}

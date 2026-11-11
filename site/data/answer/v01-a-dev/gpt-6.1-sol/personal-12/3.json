@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Mum, Kirsty and Auntie Linda,\n\nRight, I’ve got a wee surprise planned for Gran’s 80th and I’m absolutely buzzing about it!\n\nMorag’s said I can have Hair by Morag on Dumbarton Rd all to ourselves on **Saturday 12 December from 1pm**. She shuts at 12 on a Saturday, so we’ll have the place for a proper family pamper afternoon before Gran’s birthday dinner. Her birthday’s not till the Sunday, but we’re starting the celebrations early!\n\nI want to do everyone’s hair **for free** — that’s me, Mum, Kirsty, Linda, Gran, Ava and Ruby. Seven heads to get looking lovely! Cuts and blow-dries are no bother, and anyone wanting colour can get that done too, but **please let me know what you fancy by Friday 27 November** so I can order everything in from the wholesaler and work out who’s getting what done when. Even if you’re just wanting a cut and blow-dry, give me a shout so I can get a plan together.\n\nGran said at Easter she’d “love to go silver properly” but wasn’t paying salon prices, so I’m hoping we can treat her to that if she still fancies it. No pressure on her — it’s her treat! And Linda, we’ll be doing yours somewhere with no cooker or dog in the firing line this time 😂\n\nAva and Ruby can have wee braids and glitter spray. They’ll be in their element!\n\n**Mum, can you get Gran there for 1pm without letting on why?** You’re our best bet for keeping this a surprise, so we’ll leave the cover story to you. Nobody breathe a word to her!\n\nDinner’s booked for **8.30pm that night at the Italian place on Byres Rd**, table for nine with Uncle Davie and Kirsty’s man joining us.\n\nBring a bottle of fizz along — Morag says that’s fine as long as we tidy everything up afterwards.\n\nHonestly, I can’t wait. A wee afternoon together getting spoiled, then out to celebrate our birthday girl. Just get your hair requests back to me by the 27th!\n\nLove yous xxx",
+  "words": 343,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3205627202987671,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2743605077266693,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.391868591308594,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.2,
+    "effort": "low",
+    "output_tokens": 459,
+    "input_tokens": 18241
+  }
+}

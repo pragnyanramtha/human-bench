@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Good day, Mr Kehinde Ogunleye.\n\nMy name is [your name], the owner of the black Jansport bag you found in the danfo from Oshodi to Igando on Friday evening, 6th November. I am writing so that everything I want to say is clear in one place.\n\nFirst of all, thank you, sir. Many people would have left the bag in the bus or thrown it away, but you took the time to call the number on my lab manual. I have not forgotten that, and I am very grateful.\n\nLet me explain my situation. I am a first-year student, and the things inside that bag (my lab manual, dissecting kit, student ID card, two textbooks, calculator and my glasses) are only useful to me. I have a BIO 101 practical on Wednesday, 11th November, by 10am, and without the dissecting kit and ID card I will not be allowed into the lab. That is why I am so anxious to get it back.\n\nAbout the 40,000 naira you mentioned on our second call: sir, I do not have that kind of money, and the bag with everything inside it does not reach that amount. What I can give you is 10,000 naira, for your transport and as my thank you for keeping the bag safe. That is my whole allowance. I will hand it to you in cash when I collect the bag and confirm that my things are complete.\n\nI can come to Ikotun to meet you, so you will not need to travel far. I will come with my roommate, in the daytime. We can meet at Ikotun roundabout, or in front of the Ikotun police division gate, since everybody knows those two places and it will be easy to find each other. If there is another open place around there that is easier for you, tell me.\n\nPlease, sir, choose any day before Wednesday and a time that suits you, and I will be there.\n\nOn our first call you said it was God that sent you to find the bag. I believe that, and I am asking you to help me finish the good thing you started.\n\nI will be waiting for your reply. Thank you, and God bless you.\n\nYours faithfully,\n[your name]\n\nPut your name in the two places before you send it. Don't transfer any money ahead, no matter what he says; pay only when the bag is in your hand and you have checked inside.",
+  "words": 413,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4617534577846527,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.021424027159810066,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.9375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.51349139213562,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.1,
+    "effort": "high",
+    "output_tokens": 2810,
+    "input_tokens": 1446
+  }
+}

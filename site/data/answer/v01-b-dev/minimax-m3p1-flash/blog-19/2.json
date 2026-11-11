@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: DRAFT — Wellsford Road: how we got the figure wrong, and what we are changing\n\nA note on the Data Desk\n\nOn 2 November we published an analysis of Department for Transport collision records for 2021 to 2025, ranking the Bristol roads on which people are most often injured. We placed Wellsford Road in Fishponds at the top of the list with 41 recorded injury collisions. That figure was wrong. The correct figure is 23, which places the road sixth.\n\nA correction has sat on the article since 6 November and the table has been updated. That is not enough. A line at the bottom of a story is not an account of an error of this size, and the people who live and walk on that road are owed a fuller explanation. This post is that explanation.\n\nHow the number went wrong\n\nDfT collision records carry a unique accident index for each crash. To build a road-level table, we joined those records against a road lookup file. That join was not one-to-one. A number of collisions sit at or near junctions where road records overlap, and the same accident index was matched to Wellsford Road more than once and then counted again in the road's total.\n\nEighteen of the 41 entries were duplicate counts of accidents already on the list. Count each accident index once per road and the total is 23. This is not a rounding-down or a reclassification. The same data, correctly joined, produces a different number.\n\nThe corrected figures\n\nWe have rerun the table for every road in the city, not just Wellsford Road. The revised top six are: Kingsmere Road 32, Alder Hill 31, Tanner's Way 28, Crossfield Road 26, Hambrook Lane 24 and Wellsford Road 23, now sixth. No other road moves more than two places.\n\nWhat it cost, and why we are sorry\n\nThe original article was read more than 48,000 times and shared nearly 2,000 times. The wrong figure travelled much further than the correction did. Wellsford Road was described locally as Bristol's deadliest road. Parents asked whether it was safe to walk their children to Wellsford Primary. And the number was quoted in public discussion as though it were settled fact.\n\nWe are sorry. This was our mistake, made at the desk, by a process that was not built to catch it. It belongs to the Data Desk, not to one person.\n\nReaders checked our work before we did. A member of the Fishponds Streets Forum went back to the published DfT data herself and could not get anywhere near 41. She was right to do it, and she was right. That was more rigorous than the analysis we put on the site.\n\nWhat 23 still means\n\nWe are not going to spin this. 23 is still 23. Of those collisions, three were serious and none was fatal. Sixth place does not make a road safe; it means 23 people were hurt on that road over five years, and the original instinct to examine it was not mistaken. What we got wrong was the number we put on it.\n\nWhat changes from now on\n\n- A second analyst will reproduce any ranked table from the source data before it runs, rather than check it after publication.\n- We will publish the cleaned dataset and the code behind each ranked table, so readers can audit the result instead of taking it on trust.\n- Where a figure counts something in a particular way, we will say so at the point we publish it, not in a footnote later.\n\nCome and ask us\n\nWe have been invited to the open meeting of the Fishponds Streets Forum at Fishponds Library on Tuesday 17 November at 7pm, and we would like to come and answer questions in person. Nothing here replaces that conversation. If you would rather put a question in writing, please do.\n\nAnd if you find an error in the corrected table, tell us. We would rather hear from you than defend the work.\n\nThe Western Ledger Data Desk",
+  "words": 661,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.02026364766061306,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.017080193385481834,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.2734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.851961135864258,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.8,
+    "effort": "provider default",
+    "output_tokens": 4119,
+    "input_tokens": 2942
+  }
+}

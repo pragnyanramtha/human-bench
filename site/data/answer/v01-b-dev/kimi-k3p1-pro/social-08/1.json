@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "Our student-run Winter School on Elliptic Curves and Modular Forms concluded on Saturday. On behalf of my co-organisers, Ketaki Joglekar and Faizan Mirza, and our whole team: thank you to everyone who made these three days possible.\n\nHeld from 5–7 November 2026 at Seminar Hall 2, Department of Mathematics, Sahyadri Institute of Science, Pune, the school brought together 41 MSc and early-PhD participants from nine states. We received 112 applications and selected participants based on their statements and one reference each. For a student-organised school, that response meant a great deal to us.\n\nA huge thank you to our speakers: Dr. Nilesh Dharmadhikari (Hyderabad) for his lectures on the Mordell–Weil theorem, Dr. Sunanda Iyer (Chennai) for her course on modular forms, and Dr. Tomasz Wierzbicki, who joined us online from Kraków, for sessions on computations in Sage. Our faculty mentor, Prof. Anuradha Venkatesan, guided us throughout while giving the student team room to run the school ourselves.\n\nNot everything went according to plan. On day two, a power cut lasting nearly two hours left laptops drained, so we moved the problem session to the canteen with two rolling whiteboards. It turned into perhaps our best session of the three days. In another session, an MSc student from Silchar spotted an error in a worked example in Sunanda ma’am’s notes. She corrected it live and thanked him—a lovely reminder of what a classroom should feel like.\n\nThe six PhD students who volunteered as TAs made the problem sessions genuinely interactive. That format worked especially well, and it is something we would retain. Smaller schools like this can matter more to MSc students than large conferences: there is time to stop, ask a basic question, work something out and ask again.\n\nThank you to every volunteer, participant and member of staff who helped. Special thanks to Mr. Prakash Salunke, who sorted out hostel rooms at 11 pm when the booking went wrong.\n\nThe school was supported by ₹2.4 lakh from the institute’s Student Initiative Grant, which covered hostel accommodation and travel for 18 outstation students. We hope to return with a second edition in late 2027, if we can secure funding again.\n\nSlides and problem sheets will be uploaded to the department website within two weeks. To everyone who taught, asked questions, solved problems or helped behind the scenes: thank you for making this school what it was.",
+  "words": 396,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It names the co-organisers but does not thank them."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16020895540714264,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2354525923728943,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.7734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.969685077667236,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 65.8,
+    "effort": "provider default",
+    "output_tokens": 3369,
+    "input_tokens": 646
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Saturday alarm\n\nKristen,\n\nHere's the straight story.\n\nSaturday, Nov. 7, about 10:40, I put a bag of popcorn in the break room microwave, hit the popcorn button and walked out front. A customer needed a shear pin for his snowblower and it took longer than I figured, maybe 6 or 7 minutes. By then the bag had burned and set off the alarm. The store was cleared out for about 25 minutes. The engine from up on Hertel came and checked it over. There was no fire and no damage, just smoke and stink.\n\nIt's on me, not the microwave. I walked away from it, and I of all people know better.\n\nOne thing for Gary's file: the September alarm was not me. That was the sensor in the paint aisle.\n\nI'll cover the $175. Take it out of my check or I'll bring in cash, your call.\n\nI feel bad about everybody standing out in the lot in that cold, and about the Hendersons leaving a full cart. I think they'll be back, they always are, but that one's still on me. I also owe Denise a coffee and I'll make good on it this week.\n\nIf it helps any, I've been paying for it. I did 31 years on the job, and my first alarm as a civilian is over a bag of butter popcorn. One of the guys on the engine was Mikey Szymanski, who I broke in as a probie back in '03. He will never let me forget this. My wife said the van smelled like a burnt movie theater.\n\nLast thing. I'd really like to keep my Saturday shifts. I like the weekend crowd and I need the hours for heating oil. I know Gary's not happy and I don't blame him. If he wants to hear it from me directly, I'm glad to talk to him.\n\nSorry for the trouble, Kristen.\n\nWalt",
+  "words": 321,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2566602826118469,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04676361754536629,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.975770950317383,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "high",
+    "output_tokens": 1381,
+    "input_tokens": 1950
+  }
+}

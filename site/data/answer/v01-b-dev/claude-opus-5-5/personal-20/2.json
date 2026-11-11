@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hi everyone,\n\nThank you for all the calls, texts, and prayers. My phone has not stopped ringing, so I'm writing one letter to answer everybody at once. Please share it with anyone who is asking.\n\nEarly Sunday morning, November 8, around 2am, a lady drove her car right through the front window of Lotus Glow Nails. Thank God nobody was inside, and the driver is okay too. The police came, and her insurance will pay for everything.\n\nThe front glass is gone, and one pedicure chair is completely smashed. The car stopped exactly at that pedicure chair, like she wanted a spa day. My daughter says she got the first drive-thru pedicure in Houston. All the nail polish broke, so the floor looks like a rainbow threw up. My husband says finally the shop is modern art. 😄\n\n**When we open again:** Before we can reopen, the city inspector has to check the wall. Our contractor says we will open again on **Monday, November 16**.\n\n**Where to find us this week:** Me, Trang, and Kim are working at my cousin Hoa's salon, **Pearland Nail Bar**. To book, call or text my cell at **832-555-0147**. We'd love to see you there!\n\n**Gift cards:** All gift cards are still good. Nobody loses any money.\n\nI'm okay, really. I cried a little Sunday morning, but now I'm fine. After 11 years on Bellaire Blvd, it's hard to see the shop like this. But I know God protected us, because nobody was inside. A window and a chair we can fix.\n\nThank you so much for all the texts and the food. Mrs. Dung brought me pho this morning and it made my whole day better. I'm so lucky to have friends, neighbors, church family, and customers who are like family to me. Many of you have been coming to me for a long time, and that means everything.\n\nPlease don't worry about me. Laugh a little with me instead! See you this week in Pearland, and back home at Lotus Glow on November 16.\n\nWith love and thanks,\n[Your name]\nLotus Glow Nails",
+  "words": 350,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4863710403442383,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.42285335063934326,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.234375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.18927288055419922,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.7,
+    "effort": "medium",
+    "output_tokens": 892,
+    "input_tokens": 1376
+  }
+}

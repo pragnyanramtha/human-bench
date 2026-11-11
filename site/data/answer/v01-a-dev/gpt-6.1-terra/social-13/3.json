@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "I’m really pleased to share some good news: **Priya Bhatia joins us on Monday 16 November**.\n\nPriya is a chartered structural engineer (IStructE) who’s spent the last nine years at a consultancy in Coventry. Having her on the team means we can get back to giving your projects the attention and turnaround they deserve. Our target for beam calculations and drawings is now **10 working days**.\n\nI also owe some of you an apology. In September and October, calculations and drawings were taking five to six weeks. Several clients waited far too long, and I know a few were understandably unhappy.\n\nThe slow weeks were my fault. I said yes to too much work while trying to handle it alone. In October, I was doing site visits during the day and calculations until midnight. My wife started calling the office “the other house”.\n\nOne couple in Harborne had their builder waiting and the steel already ordered. We got their calculations to them in three days, but only after they’d chased me twice. That wasn’t good enough.\n\nIf you’re waiting for work from us now, please know your job is moving. You can message me directly if you’d like an update.\n\nThere’s one other change I want to let you know about. First site visits taking place **from 1 January 2027** will cost **£95**, which will be deducted from our fee if you go ahead with us. The free visit was something I was happy to offer, but around a third of visits didn’t turn into a job, and I need to make sure we can keep giving each project the time it needs.\n\n**Any visit already booked when this post is published will still be free, whatever date it takes place.**\n\nI’m genuinely excited about this next chapter and very happy to have Priya on board. If she comes out to your home, please give her a warm welcome!",
+  "words": 319,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4341125786304474,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.534003496170044,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.71875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.123854875564575,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "low",
+    "output_tokens": 391,
+    "input_tokens": 18286
+  }
+}

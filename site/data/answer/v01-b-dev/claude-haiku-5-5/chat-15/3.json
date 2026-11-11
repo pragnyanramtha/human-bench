@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán, here's the full picture.\n\n**What the logger says**\n- Fridge went above 8°C at 22:50 Sat and came back under 8°C at 05:00 Sun. That's about 6 hrs 10 min out of range.\n- Peak was 11.6°C at 02:15 Sun.\n- Overnight Fri low was 4.1°C, which is normal, so it was fine going into the weekend.\n\nThe alarm was going the whole time, but the logger only beeps locally with no texts, and nobody's in on a Sunday. I found it at 07:55 this morning. The door wasn't fully clicked shut, and the box of Hartmann's bags from Saturday's delivery was stacked against it. The seal is also cracked bottom left, and I had to lean on the door with my hip to get it to click. Marta mentioned that seal back in July, so it was a known issue. I think it was the box and the seal together. Saturday's delivery got put away in a rush at closing after the RTA collie ran late, and the door just didn't seal. I don't think this is about anyone's fault. It was the door.\n\n**What's in it**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 2 cat flu/FeLV combos\n- 4 vials insulin\n\nRoughly €1,150 at cost across the lot.\n\n**What Munster Vet Supplies said**\nI rang the tech line at 08:40 and spoke to Niamh, the pharmacist. Her instruction was to quarantine everything and not use any of it. I've emailed her the logger CSV and the batch numbers for the vaccines. She's checking with the manufacturers and will come back by Wednesday.\n\nOn the insulin, Niamh checked the manufacturer's storage sheet for our product against the logger readings and cleared the four vials for use. So those are fine.\n\n**What I've done**\n- The vaccines are sealed in a bag labelled DO NOT USE in the lab fridge. I've checked it's sitting at 5.2°C and started a new temp sheet for it.\n- Nothing gets binned until the supplier comes back. Most of it is probably fine, but that's their call, not mine.\n\n**What I'd suggest**\n- Aoife can rebook the three boosters for Thursday or Friday if the supplier clears the stock, or we can borrow from Carrigaline. Bonnie's puppy vax is already moved to Wednesday. Aoife, please keep holding the boosters until we hear back.\n- Add a lock-up check on the fridge door to the closing checklist.\n- The current ThermaTrak logger only beeps locally. A new one with SMS alerts is about €180 from the supplier catalogue. Ciarán, can you OK that?\n- The door seal needs replacing anyway. Can you approve that too?\n\nHappy to go through any of it before you ring at 2.",
+  "words": 462,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3716275691986084,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.33309370279312134,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.515625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.3942291736602783,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 2962,
+    "input_tokens": 2268
+  }
+}

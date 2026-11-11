@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: christmas breakfast this year\n\nHi Rhonda its Gary from the bus garage again. Time to get the christmas breakfast on the books at your place like we do every year. I'm hoping for Saturday Dec 19, back room, 7am same as always. If the 19th dont work for you the 12th would be fine too, whichever one you got open. Just let me know.\n\nLooks like 24 of us this year counting Earl and his wife Carol. I'll get you the final count by the Wednesday before like you asked, thats no problem.\n\nCouple things I got to ask about. Lonnie is on a walker now since his hip, so he needs to come in the side door where there aint no steps. Can we make sure thats open for him? And Patsy says she cant do eggs anymore, not eggs or oatmeal or pancakes or whatever, she needs something else. Is there anything you could do for her, doesnt have to be fancy.\n\nNow the reason this year is a big one. Earl is retiring. He drove 31 years and his last day is the 18th, the day before we come in. He dont know nothing about this so please keep it quiet when we're in there, Carol says he'd be embarrassed by a big speech anyhow. So we want to do something small for him. Heres my question. Would it be better to bring a cake over from Sugarcreek Bakery, they quoted me $56 for a half sheet with writing and a little bus on top, or would you rather we just get a big tray of your cinnamon rolls and put a candle in one? Earl loves your cinnamon rolls, I mean loves them, and honest to God they're better than any cake I ever had. So I'm leaning that way but I wanted to ask you first since its your kitchen.\n\n$11 a head was fair last year and its fine if its up a little, I know everything went up. Separate checks again like always, that worked out good.\n\nOne more thing and I'm asking nice, not complaining. Last year the coffee ran out around 8:15, you said a urn quit on you and the new girl didnt catch it. I know you felt bad about it and you didnt have to. Could we just have a backup pot ready this time? With 24 of us and Earl being Earl, thats a lot of coffee.\n\nThats all I got. Thanks Rhonda, see you soon.\n\nGary Hollins",
+  "words": 417,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It never actually asks Rhonda for this year's per-person price; it only says $11 was fair and a small increase is fine."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11881957203149796,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.011956420727074146,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.34375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.32891845703125,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 4.5,
+    "effort": "provider default",
+    "output_tokens": 918,
+    "input_tokens": 2377
+  }
+}

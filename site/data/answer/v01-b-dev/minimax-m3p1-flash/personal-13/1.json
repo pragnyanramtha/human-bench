@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the message — formal in tone, but written to sound like you:\n\n---\n\n**Dear Mr Kehinde Ogunleye,**\n\nGood day sir. I hope this message finds you well. My name is [Your Name], a first-year Biology student at [University]. I am the owner of the black Jansport bag that you found.\n\nI lost the bag on Friday, 6 November, on the danfo from Oshodi to Igando. I got down at Ikotun and only realised at home that the bag was gone. When I saw your missed calls I did not know who you were until you explained, and I have to say thank you. You went out of your way to hold on to my things, and I am truly grateful. Many people would have simply thrown it away. When you said on the phone that God sent you, I believe he did.\n\nOn the issue of money, I want to be honest and open with you, sir. I am a student, and 40,000 naira is more than I can manage, honestly. The bag and everything inside it — my lab manual, dissecting kit, student ID card, two textbooks, my calculator and my glasses — cannot be worth that. What I can do is give you 10,000 naira to cover your transport and as a thank you. That is my whole allowance, so please bear with me. I am not trying to take advantage of your kindness; I am only a student trying to retrieve my belongings.\n\nMy practical is on Wednesday, 11 November at 10am, and the lab attendant is very strict. Without my dissecting kit and my ID card I will not be allowed into the hall, and that is why I am trying so hard to sort this out. I do not want to cause you any trouble, and I do not want you to feel I am playing with you.\n\nIf 10,000 naira is acceptable, could we meet somewhere convenient? My roommate Adaeze can come with me, and we can meet during the daytime. Ikotun roundabout would be fine, or the gate of the Ikotun police division if that is closer to you. Please let me know which day suits you, any day before Wednesday, and please reply to this message or call me so that I know we have agreed.\n\nThank you again, sir. I appreciate your kindness, and I look forward to hearing from you.\n\nGod bless you.\n\n*[Your Name]*\n*[Your Phone Number]*\n\n---\n\nTwo small notes: I left the police division as a neutral landmark rather than mentioning it as an option to threaten him with — same place, no edge to it. And if he doesn't reply by Monday evening, send one short follow-up: *\"Good evening sir, I am still waiting for your reply. My practical is on Wednesday, so please let me know if we can meet on Tuesday. Thank you.\"*",
+  "words": 480,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "477 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26665493845939636,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05886191129684448,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.197267055511475,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.5,
+    "effort": "provider default",
+    "output_tokens": 1632,
+    "input_tokens": 672
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Formal Complaint – Order TH-48217 Not Delivered – Request for Resend or Full Refund**\n\nDear Tiny Hands Edu Supplies Customer Service,\n\nI am writing to formally complain about order TH-48217, which I placed on 21 October and paid for by card (R1,640 including R95 delivery). Despite the courier's tracking showing the parcel as delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams,\" no such delivery ever took place at Bergview Pre-Primary in Plumstead. There is nobody at the school by that name, and our gate guard, Uncle Faizel, keeps a written record of every delivery that comes through the gate. Nothing was recorded on the 3rd, and no parcel arrived. The delivery address on my order was correct.\n\nI emailed your team on 4 November and again on 6 November. Both times I received the same copy-paste response: \"we have escalated your query to our courier partner.\" I then phoned on Friday and spent 38 minutes on hold, only to be told that nothing can be done until the courier finishes an \"investigation\" that could take 10 working days.\n\nI want to be clear about why this is not acceptable. My contract is with Tiny Hands Edu Supplies, not with the courier. I paid you, and I never chose or appointed the courier — you did. It is therefore your responsibility to resolve this, not mine. Asking me to \"sort it out with the courier\" is not a resolution; it is passing the problem back to the customer who has already paid in full.\n\nThis order was not a casual purchase. I am a kindergarten teacher and I paid for these items with my own money — R1,640 is a significant amount on a teacher's salary, and it was spent on supplies for other people's children. The items (6 tubs of finger paint, 4 bags of playdough, 200 paper plates, googly eyes, glitter glue, and 2 rolls of brown paper) are needed for our end-of-year concert on 27 November. The children have already made the mask patterns and I have been telling them for a week that the paint is \"coming soon.\" I now have to explain to a class of small children why the materials they are waiting for have not arrived, through no fault of theirs or mine. I have used your company three times before without any issue, which makes this experience all the more disappointing.\n\nI am therefore requesting one of the following, by Friday 13 November:\n\n1. A full resend of the complete order at no additional cost to me, or\n2. A full refund of R1,640, including the delivery fee.\n\nI also expect a proper, personal reply that actually addresses my complaint — not another template response and not another escalation notice. I would like confirmation of what is being done and by when.\n\nIf I do not receive a satisfactory response by 13 November, I will lodge a chargeback with my bank for the full amount and leave a public review detailing this experience.\n\nI have been patient and polite throughout, but I have reached the end of that patience. Please treat this as a formal complaint and respond accordingly. My order number is TH-48217 and my contact details are below.\n\nKind regards,\n\n[Your Name]\nKindergarten Teacher, Bergview Pre-Primary\n[Phone number]\n[Email address]",
+  "words": 555,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6387427449226379,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7811757922172546,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.565325736999512,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 5.4,
+    "effort": "provider default",
+    "output_tokens": 1047,
+    "input_tokens": 584
+  }
+}

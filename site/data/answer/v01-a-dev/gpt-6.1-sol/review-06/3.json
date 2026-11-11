@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Draft for Sal — recurring E34 faults on refurbished Vantorre CX-10\n\nWe paid $14,800 including GST for this refurbished CX-10, delivered and commissioned on 14 September. The listing stated that the steam generator had been descaled and pressure tested, the core probe calibrated, and the unit carried a six-month parts and labour warranty.\n\nOur experience:\n\n22 September: Service report SR-1190 recorded nine E34 errors since delivery. E34 was identified as steam generator low water level, causing intermittent lockout in combi and steam modes. The technician replaced the level sensor, measured inlet pressure at 320 kPa, recorded it as OK, and successfully tested three steam cycles. This visit was covered under warranty.\n\n3 October: We reported another four E34 faults that week. We also reported the core probe reading 63°C against 70°C on our Thermapen in a lamb shoulder, with the same result on two checks.\n\n6 October: Service report SR-1236 recorded heavy scale in the steam generator. It was descaled and flushed, and the probe recalibrated to within one degree. The technician recommended a water softener.\n\n24 October: E34 locked us out at 6.10 pm with a full booking of 60 covers. We finished the lamb using the stove and deck oven, took pork belly off the menu and absorbed the cost.\n\n27 October: Further E34 and scale were reported following another attendance. Brett subsequently advised that this was a site-water issue, excluded from warranty, with a $280 plus GST callout charge ($308 total).\n\nOn 7 October, our water supplier advised average Fitzroy supply hardness was approximately 15 mg/L as CaCO3, which is soft. That is supply information, not a test at the oven inlet. It does not establish when the scale formed, but heavy scale after approximately three weeks warrants a documented explanation rather than simply attributing it to hard site water.\n\nDion has been professional. Our concern is the recurring faults, reliability during service and disputed warranty coverage. Other kitchens considering this equipment should know this history before committing this amount of money.",
+  "words": 324,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13291823863983154,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23385149240493774,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.1015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.548396110534668,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.3,
+    "effort": "low",
+    "output_tokens": 462,
+    "input_tokens": 19834
+  }
+}

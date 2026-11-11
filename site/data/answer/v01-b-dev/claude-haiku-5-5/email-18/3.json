@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Saturday alarm\n\nKristen,\n\nHere's the straight story.\n\nSaturday the 7th, around 10:40, I put a bag of butter popcorn in the break room microwave, hit the popcorn button, and walked out front. A guy needed a shear pin for his snowblower, which I figured would take two minutes. It took six or seven. By the time I got back, the alarm was going and the whole building was clearing out.\n\nThe store was empty for about 25 minutes while the engine from Hertel came out. No damage, no fire, just smoke and a smell that my wife says rode home with us in the van, like a burnt movie theater. Nobody got hurt, and Denise grabbed the drawer like a pro.\n\nTo be clear about September: that wasn't me. That was the sensor in the paint aisle. I know that doesn't help Gary, but I want the file right.\n\nThis one's on me, not the microwave. I knew the break room rule, I knew I was walking away from it, and I did it anyway. I'm sorry for the trouble and the cost. I also feel bad about the Hendersons leaving a full cart and getting run out into the cold. They'll be back, they always are, but I know it wasn't great for them.\n\nI'm happy to cover the $175 for the Northpoint dispatch. You tell me which works better: take it out of my check, or I bring you cash. Your call.\n\nI'd like to keep my Saturday shifts if that's possible. I like the weekend crowd, and I need the hours to get through the heating oil bill this winter. If Gary wants to revisit the schedule, I'll go along with whatever you two decide.\n\nOne more thing for the record. One of the guys on that engine was Mikey Szymanski, who I broke in as a probie back in '03. He will never let me forget this. Thirty-one years on the job and my first alarm as a civilian is over a bag of butter popcorn. I'll take it.\n\nAnd Denise, I owe you a coffee. I'll bring it in Monday.\n\nWalt",
+  "words": 358,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says Walt knew the break room rule before the incident, but Kristen announced the popcorn ban afterward."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39614415168762207,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10509075969457626,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.003645896911621,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.6,
+    "effort": "medium",
+    "output_tokens": 1965,
+    "input_tokens": 1978
+  }
+}

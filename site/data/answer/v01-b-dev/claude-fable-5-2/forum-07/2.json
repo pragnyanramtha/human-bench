@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "required or barred words, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft for the thread:\n\n---\n\nFirst time posting here, though I've been reading this thread for a long time.\n\nOne of my blister pack patients passed away at the end of last month. I'll call her Mrs. H, and I'm keeping the details vague because her privacy still matters to me even though she is gone. Her daughter came in this week to return the unused packs and her glucometer, and I have not stopped thinking about it since I got home.\n\nMrs. H was in her 80s and had been coming to us since 2019. We are a small independent, just me and one tech. She was on eleven medications and picked up her blister pack every Thursday. She lived alone after her husband died a few years ago, and she walked with a cane that had tennis balls on the bottom.\n\nEvery Thursday she brought me something. Usually it was poppy seed cake. Once it was a jar of pickles that I honestly did not know what to do with. When it was Ramadan, she remembered. She wrapped the cake in foil, wrote my name on it, and told me I was not allowed to eat it until sunset.\n\nA few years ago a new doctor added a medication that interacts with her warfarin. I caught it and called him. That's all. But after that she told everybody I saved her life. I kept telling her I just did my job, and she kept telling people anyway.\n\nWhen her daughter returned the meds, she also gave me a card. Her mother wrote it a long time ago and never gave it to me. Inside it says \"for my Arabic daughter.\"\n\nI went to the back room and cried. My tech covered the counter for ten minutes.\n\nSchool taught us pharmacology and interactions. Nobody taught us how to say goodbye to a patient, and with Mrs. H I didn't even get the chance. One Thursday she was there and then she wasn't.\n\nMy father was a pharmacist too, in Egypt. He knew all the families who came to him. I thought it would be different in Canada, more professional distance, more people just passing through. It's not different. We are not supposed to get attached, I know that. But you see someone every week for seven years. You know her medications better than her own family does, and she knows when you are fasting. I don't know how you don't get attached to that.\n\nI still have the card in my bag. I haven't decided where to put it.\n\nDoes anyone else have a patient like this? I would like to hear about them.\n\n---\n\nThings to check before you post:\n\n- **Privacy:** I left out her first name, exact age, the dates, her daughter's name, Priya's name, the Mississauga/Dundas location and that she was Polish. Together they could point to her or to your store.\n- **Timing:** I wrote \"this week\" for the daughter's visit because your notes say Nov 9 but you also said today. Change it if you like.\n- **Two lines I added:** \"I didn't even get the chance\" to say goodbye, and the card being in your bag. Cut or change them if they're not true.",
+  "words": 544,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      },
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['Dundas']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4364731013774872,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08993745595216751,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.745957612991333,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.9,
+    "effort": "high",
+    "output_tokens": 2931,
+    "input_tokens": 1529
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Four stars. Good for us, but not for every congregation.**\n\nWe are a Lutheran congregation in Minneapolis with a nave about 92 feet long. Last winter we bought a Lindqvist Optics PT-20 to replace the webcam we had been streaming worship with since 2020. We paid $2,140 through Chancel AV in February 2026, plus $95 for the wall mount. Here is what it has done for us, and what it hasn't.\n\n**Setup.** The camera is mounted on the balcony rail at the back of the nave. It runs on PoE, so one cable carries power and video up to the balcony, which was the main reason we chose it. Our old office PC runs OBS and sends the stream to our YouTube channel. The camera offers NDI HX and plain HDMI out. We use the NDI route. I am not an engineer and I won't pretend otherwise, but the setup took one afternoon with someone who knew what they were doing, and I have learned more about video than I expected to.\n\nWe have nine presets: altar, pulpit, lectern, font, choir loft, piano, a wide shot, and two for the chancel steps. Presets are the feature that makes this camera work for a liturgical space. Our first Sunday, they drifted a few degrees by the time of the sermon. Firmware 2.4, released in March, fixed that, and they have held since.\n\nAutofocus is the one real annoyance. When someone walks between the camera and the pulpit, it hunts for a moment. We solved this by locking focus on each preset. That works, but it is a step you have to remember.\n\n**Picture quality.** The image is sharp and the 20x optical zoom lets us frame the pulpit or the font without moving anything. On a normal Sunday, with the lights up, the picture is clean at 1080p60. Our 30 to 60 regular viewers most weeks, many of them homebound, notice the difference.\n\nThe real test was our Easter Vigil in April, the candlelight service. We sang \"Christ the Lord Is Risen Today\" by candlelight alone, and the picture got grainy in that low light, but it stayed usable. The old webcam showed nothing but dots. I would not call it good in candlelight, but it was good enough to share the service, and that matters to us.\n\nOne of our members, who is 82 and homebound, called after a Sunday to say she could finally read the hymn numbers on the board. I can't put a number on that, but it is the best reason we bought the camera.\n\n**Running it.** Our acolyte, a sixteen-year-old in our congregation, runs the camera from the free web app on a tablet. He learned it in one afternoon. We have not needed a technician on a Sunday morning.\n\nThe manual is thin and the translation is rough in places. Chancel AV's tech support was excellent, though. Our contact there walked us through the presets and the firmware update by phone, patiently and without making us feel foolish.\n\n**What it did not fix.** Audio is not the camera's job, and this camera did nothing for our sound problem. Our congregation's audio issues, the mics, the balance, the room's echo, are still there and need their own money and attention. If you are buying a camera hoping it will improve how worship sounds to people at home, it will not. Plan for audio separately.\n\n**Would I buy it again?** Yes. For a congregation of our size, with a long nave, a balcony mount and a need for several framed shots, this camera does what we needed. But a congregation under 100 might do well with something cheaper. The PT-20 is more camera than a small room may require, and the price is real money for a parish that is watching every dollar. If your space is small and your shots are simple, look at the mid-range options first.\n\nFour stars. It is worth the money for us, and we have no regrets, but we would not call it a miracle.\n\n---\n\nI left out members' names and used \"one of our members\" and \"a sixteen-year-old\" since the review will be public. Put them back if you'd like, but it's a good idea to check with those people first.",
+  "words": 713,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34690573811531067,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1627456247806549,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.5657361149787903,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 40.8,
+    "effort": "medium",
+    "output_tokens": 1672,
+    "input_tokens": 1651
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Wellsford Road: what we got wrong, and how\n\nOn 2 November the Ledger published an analysis of Department for Transport collision records which named Wellsford Road in Fishponds as the Bristol road with the most injury collisions between 2021 and 2025. We gave the figure as 41. That was wrong. The correct figure is 23, which places Wellsford Road sixth, not first.\n\nA correction and a corrected table have been on the article since Friday 6 November. But the original has been viewed more than 48,000 times, so the wrong number travelled a good deal further than a line at the foot of the page can reach. Residents are owed a fuller account, and this is it.\n\nThe mistake was ours. The DfT gives every recorded collision a unique reference, the accident index. To count collisions by road, we match those records against a list of roads. In our analysis that matching step duplicated some of the pairings, so the same collision appeared twice in a road's tally. On Wellsford Road, 18 entries were duplicates, most of them at the junctions with Pell Street and Kingsmere Road. Removing them takes the total from 41 to 23. We now count each accident index once per road.\n\nThe corrected figures for injury collisions, 2021 to 2025, are:\n\nKingsmere Road: 32 (we originally said 34)\nAlder Hill: 31 (unchanged)\nTanner's Way: 28 (originally 29)\nCrossfield Road: 26 (originally 27)\nHambrook Lane: 24 (not in our original top five)\nWellsford Road: 23 (originally 41)\n\nWe have rerun the whole citywide table. No other road moves more than two places.\n\nThe table was not independently reproduced before it was published. It should have been. The article carried my byline, and the failure belongs to the Data Desk as a whole, not to any one person on it.\n\nThe Fishponds Streets Forum wrote to us two days after publication to say that people who had lived on the road for decades did not recognise the figure. One of its members had gone through the published DfT data herself and could not get anywhere near 41. She was right.\n\nI am sorry. A road was described across the city as Bristol's most dangerous on the strength of a number we had got wrong, and the people who live on it and use it every day were caused worry they should not have had. Anyone who has quoted the figure of 41 should use 23.\n\nSome parents have asked whether it is safe to walk their children to Wellsford Primary. I cannot answer that for any family, and I will not pretend a table can. What I can do is say what the records show. Over five years there were 23 collisions on Wellsford Road in which someone was injured. Three were classed as serious. None was fatal. That is a very different picture from the one we first published. It is not a clean bill of health either, and I am not offering it as one. Twenty-three is still 23.\n\nTwo things change as a result. From now on, any ranked table we publish will be reproduced from scratch by a second analyst before it runs. And we will publish the cleaned data and the code alongside it, so that readers can check our working in the way the forum's member did, without having to start from nothing.\n\nThe forum has invited the Ledger to its open meeting at Fishponds Library on Tuesday 17 November at 7pm. I would like to accept, and to answer questions about the article in person.",
+  "words": 586,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The piece reveals the private fact that the table was not independently checked before publication."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.015508495271205902,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.028425266966223717,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.59375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.3789290189743042,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 47.4,
+    "effort": "high",
+    "output_tokens": 3973,
+    "input_tokens": 4749
+  }
+}

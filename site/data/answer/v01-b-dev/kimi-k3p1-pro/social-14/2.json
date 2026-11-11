@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.44, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties — I know some of y’all have been asking Mom whether I’m coming to Thanksgiving, so I wanted to say it here plainly: yes, I’m coming, and I’m really looking forward to seeing everybody.\n\nWe’ll be at Aunt Denise’s in Macon on Thursday, November 26, eating around 3. I’m bringing the mac and cheese and two sweet potato pies, so y’all can relax on at least two dishes.\n\nLast Thanksgiving got ugly, and I’ve thought about it a lot since. For the cousins who weren’t there, the short version is that a conversation about my job turned into an argument, and Grandma Pearl ended up sitting out on the porch for about an hour. I still feel terrible about that. I’m not sorry for the work I do or for believing in it, but I am sorry for how I talked at Grandma’s holiday. The crack about somebody getting their news from a gas station TV was mine, and it was uncalled for. I got poked, but I chose how I answered, and that part is on me.\n\nI also don’t want anybody turned into the family villain over this. The uncle I was arguing with is not a bad man. He sent me a thumbs-up on my birthday in August, which, coming from him, is basically a hug. I noticed, and I appreciated it.\n\nSo can we call a one-day truce on work and politics? And I say that knowing some of y’all may still have questions. I can’t discuss open cases anyway because of confidentiality, so anything about “the lawsuit” is going to be a dead end, even over pie.\n\nLet’s keep the table to food, football, babies, and Tasha’s new boyfriend. I want this to be a good day — especially for Grandma — with full plates, too much noise, and nobody sitting on the porch because of an argument. Love y’all. See you there.",
+  "words": 322,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4370708465576172,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3588224947452545,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.5266289710998535,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.3,
+    "effort": "provider default",
+    "output_tokens": 1928,
+    "input_tokens": 473
+  }
+}

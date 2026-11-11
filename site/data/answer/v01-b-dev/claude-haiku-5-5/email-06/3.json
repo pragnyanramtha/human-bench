@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for picking this up. Details below, numbered to match your list.\n\n1. Terminal model and firmware: BX-300. The four Embakasi depot terminals updated automatically from 4.1.8 to 4.2.1 on the night of 27 October. The two at Mombasa Road are still on 4.1.8, and their day-shift overtime exports correctly.\n\n2. Shift template: NIGHT-8, 22:00 to 06:00.\n\n3. Example: staff ID T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export showed 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15 (the 13 minutes past the scheduled end, rounded to the nearest tenth), a total of 8.2 hours.\n\n4. Export profile: Payroll CSV v2.\n\n5. Kevin Mutua in payroll first spotted it on 5 November while reviewing the October draft. Our records suggest it started around 28 October. Any shift that crosses midnight is split into two lines, and the after-midnight line is coded OT15. Thirty-eight night staff are affected, and the draft October overtime was about KES 212,000 too high. We have corrected it by hand from the raw punches, but we cannot keep doing that.\n\nThe 4.2.1 release notes promised better midnight rollover handling, so this is the opposite of what we were told. We need either a fix or a clear workaround before November payroll inputs close on Friday 20 November.\n\nBrian Ochieng in our IT team manages the terminals. Could you tell us plainly whether he can safely roll the Embakasi terminals back to 4.1.8 without losing stored punch data? He would rather have your answer than guess. 4.2.1 added up to 30 days of offline punch buffering, so we need to be sure nothing buffered is lost.\n\nKevin will be testing any fix, so I have copied him. Please send your findings to both of us.\n\nKind regards,\n\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 322,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The 13 minutes were outside the scheduled shift in total, not all past its scheduled end."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22252674400806427,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.061289165169000626,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.28118896484375,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.8,
+    "effort": "medium",
+    "output_tokens": 2679,
+    "input_tokens": 3618
+  }
+}

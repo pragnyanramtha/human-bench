@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:rosario.bautista\nReplying to: none\nCc: none\nSubject: none\n\nShe's got her PIN!!! @Lorna Villaruz is now an officially registered nurse in the UK and I cannot stop smiling, I am typing this with shaking hands 😭🎉🎉🎉\n\nOkay, let me tell you all the story, because it is a long one haha.\n\nLorna and I trained together in nursing school in Iloilo. Capping ceremony 1996, same hairstyle, same dream. In our dorm we polished our white shoes every night, and every single night she borrowed MY polish. Not once did she buy her own. 22 years of friendship and I think she still owes me a tin 😂\n\nThen she went to Riyadh and then Dubai, almost 18 years of nursing abroad. And when I left for the UK in 2004, she cried at the airport and said \"susunod ako, I will follow you.\" Girl, it took 22 years, but you did it!! For 20 of those years I have been telling her \"come to Liverpool, come to Liverpool,\" and finally she is coming 🥹\n\nAnd she did all of it the hard way. Papers, IELTS, CBT, then the OSCE in Nottingham. I sent her a photo of the rain there so she knows exactly what she is getting into. She still said yes anyway. That is how much she wants to be here 😂\n\nNow the important dates, so everybody can pray for good weather:\n\n✈️ 14 January: Lorna lands in Manchester around 1pm\n🏥 25 January: she starts on Ward 7, with induction first and then her preceptorship\n\nShe will stay with us for the first month, in the spare room. Ben says ok!! (He did not really have a choice haha, but he is happy, and he is also waiting for the dried mangoes and the Bicol pili she promised him.) I have already started clearing Andrea's boxes out of that room, and there will be a heater and a very thick duvet, because I know she will freeze.\n\nTo Ward 7: you do not know it yet, but you are so lucky. Lorna is the best nurse I know. She is calm, she is kind, and the patients love her. When everything is crazy she is the one who stays steady. I have known her since we were girls in white uniforms, and I promise you she will be the colleague you want on your shift. Please look after her, and feed her, she will never ask 😂\n\nLorna, a few things before you come:\n\n1. Bring a proper coat. A PROPER one. Liverpool wind is no joke, and the rain in the photo was the friendly version.\n2. Bring warm socks. More than you think.\n3. Do not worry about anything else. The bank, the SIM card, the bus to town, the council tax, we will do it all together. I will show you the 14 bus on your first week.\n\nTo all our kabayan here in Liverpool, please welcome her. She is joining our Filipino family, the Christmas parties, the pancit (not ten of them please), the karaoke, and next year Simbang Gabi, all nine nights, with us. I already told her she is not allowed to say no 😂\n\nLorna, I am so proud of you, and so happy I could cry in the middle of clinic. You did it, my sister from another mother. Welcome home, even before you land. I will be at the arrivals with a coat in my hand.\n\nSalamat sa Diyos!! Love you, Charing ❤️🙏\n\n#NMCPIN #Liverpool #FilipinoNurses #Iloilo1996 #SusunodAko",
+  "words": 583,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The claim of 22 years of friendship conflicts with their training together in 1996."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.07810073345899582,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.034807588905096054,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.52734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.7361104488372803,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.1,
+    "effort": "high",
+    "output_tokens": 2363,
+    "input_tokens": 3835
+  }
+}

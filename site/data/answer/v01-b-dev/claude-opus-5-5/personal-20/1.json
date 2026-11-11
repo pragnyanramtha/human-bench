@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear friends, neighbors, church family, and all my beautiful ladies,\n\nThank you so much for all the calls, texts, and prayers. My phone has not stopped ringing, so I am writing everyone at once!\n\nIf you have not heard: around 2am on Sunday, November 8, a lady drove her car right through the front window of Lotus Glow Nails. Thank God, nobody was inside, and the driver is okay. The police came, and her insurance will pay for everything.\n\nThe front glass is gone, and one pedicure chair is completely smashed. The car stopped exactly at the pedicure chair, like she really wanted a spa day. My daughter says she got the first drive-thru pedicure in Houston. All the nail polish spilled, and now the floor looks like a rainbow threw up. My husband says finally our shop is modern art.\n\nI will be honest, I cried a little that morning. Eleven years on Bellaire Blvd is a long time, and that shop is like my second home. But now I am okay. God protected us because nobody was there. Glass and chairs we can replace. People we cannot.\n\n**When we open again:**\nThe city inspector has to check the wall first. My contractor says we should **reopen Monday, November 16**.\n\n**Where to find us this week:**\nMe, Trang, and Kim are working at my cousin Hoa's salon, **Pearland Nail Bar**. Please call or text my cell at **832-555-0147** and I will set up your appointment. Don't let your nails suffer just because a car came to visit!\n\n**Gift cards:**\nAll gift cards are still good. Nobody loses any money.\n\nThank you again for every text, every prayer, and all the food. Special thank you to Mrs. Dung, who brought me pho this morning. It was exactly what my heart needed.\n\nPlease don't worry about me. Laugh a little with me, and I will see you soon with beautiful nails.\n\nWith love and gratitude,\nLotus Glow Nails\n\n---\n\nYou can sign your own name at the end if you want, like \"Love, [your name] – Lotus Glow Nails.\"",
+  "words": 348,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5003816485404968,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.47797656059265137,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.688833713531494,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.5,
+    "effort": "medium",
+    "output_tokens": 870,
+    "input_tokens": 1379
+  }
+}

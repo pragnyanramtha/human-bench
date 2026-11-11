@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Fake blue tablets: please read this and talk to your kids this week\n\nPlease read this, even if you think it's not your kids.\n\nPolice have warned about blue tablets being sold as diazepam or \"Xanax\" around south Manchester. Some have been found to contain nitazenes, synthetic opioids that can be far stronger than heroin. You can't tell by looking whether a pill is real. Several people have needed hospital treatment in the last fortnight, and the police have said their priority is preserving life.\n\nI'm a nurse, and I'm asking every parent here to talk to their kids this week, not after half term or whenever it comes up. I know some of you will roll your eyes. My teenager did last night, over his tea. He listened anyway, then asked me what pinpoint pupils meant, which tells me it went in.\n\nWhat to look for: extreme drowsiness, pinpoint pupils, slow or noisy breathing, blue or grey lips, or someone who can't be woken properly.\n\nIf someone you're with looks like this, ring 999 straight away. Don't wait to see if they sleep it off, and don't put them to bed. Breathing can stop while someone is lying there, and the brain can be damaged within minutes without oxygen. If they're breathing but not responding, put them in the recovery position, stay with them, and keep talking to them. Tell the call handler what you think they've taken.\n\nPlease don't let worry about getting into trouble stop you calling. The ambulance and police are there to get help to the person, not to punish whoever rang. Scared kids don't ring for help, and that's the problem we need to fix.\n\nNaloxone nasal spray can reverse an opioid overdose, including one caused by nitazenes, though sometimes more than one dose is needed. It's free from the Brightpath drug and alcohol service on Stockport Road, next to the launderette. Anyone can ask, you don't need to give a name, and the training takes about ten minutes. They're open Monday to Friday 10 till 4, and until 7 on Thursdays. Get one, keep it at home or in your bag, and learn how to use it.\n\nPlease keep any talk about Saturday free of names and guesses. Slagging kids off helps nobody. What helps is parents and teenagers who know what to do if it happens again.\n\nMost importantly, share this, don't just like it. Send it to your parent group chats, your family, and your mates with teenagers. The people who need it most are the ones who won't see it on the noticeboard.",
+  "words": 420,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It includes a statistic about several people needing hospital treatment despite the request not to add statistics."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33384349942207336,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10743522644042969,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.494140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.7116575241088867,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.3,
+    "effort": "medium",
+    "output_tokens": 3267,
+    "input_tokens": 3121
+  }
+}

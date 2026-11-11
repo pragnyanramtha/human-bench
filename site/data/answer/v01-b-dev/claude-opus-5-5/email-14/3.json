@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: jan.thornton@mailbox.example\nReplying to: none\nCc: pete.thornton@mailbox.example, carol.rigby@mailbox.example\nSubject: Caravan 2027 costs and weeks\n\nDear Jan, Pete and Carol,\n\nThe park bill for 2027 has come in at £5,087 all in. That is the pitch fee, rates and water, and the gas safety check in March. Split four ways the same as always, that is £1,271.75 each.\n\nIt has gone up again, nearly £350 on last year. I am sorry about that but there is nothing I can do, the park sets it.\n\nPlease can you pay me by 31 January into the same account as before, as the park wants it all by then. If anyone would rather pay in two lots that is fine, £635.87 in December and £635.88 in January. That goes for everyone, just let me know.\n\nThe weeks for next year are as follows. There are no clashes this year.\n\nCarol Easter week, and a week in September. Carol let me know which week in September you want.\nPete and Linda 29 May to 5 June (May half term).\nMe and Bev 5 to 12 June. Pete, we will do the handover on the 5th.\nJan 7 to 14 August.\n\nThe park reopens on 1 March.\n\nPete mentioned the shower tray was cracked. I went up on 26 October and put a new one in. It came to £140 for parts but I am not putting it on the bill, it is done.\n\nPlease can everyone make sure the water is turned off at the stop tap when you leave. The park has moaned at us about it again.\n\nOne more thing so nobody is surprised later. The park says caravans over 15 years old need a condition survey before the 2028 season. Ours is 16 year old now, so we will need one done. I will find out more and let you know nearer the time.\n\nAny problems let me know.\n\nRegards\nMick",
+  "words": 305,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.05701005086302757,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.012739735655486584,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.5178958177566528,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "medium",
+    "output_tokens": 1078,
+    "input_tokens": 4080
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.51, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Peter, I can see where you’re coming from, especially having run payroll for nine years. The risk of people taking an advance every month is real, and so is the problem of recovering money when someone leaves. I also agree that an informal arrangement, where HR is making individual decisions without clear limits, is not a good system.\n\nBut I disagree with closing the window altogether. We tried almost exactly what you’ve suggested, and we ended up reopening it.\n\nI work in logistics. We have about 340 staff across Nairobi and Mombasa, mostly drivers, turn-boys, loaders and warehouse clerks. Finance had the same concerns: cash flow, repeat requests and whether we should be acting as a lender. We closed advances in February 2025, after giving two months’ notice and holding a financial literacy session with the SACCO.\n\nThe need for money didn’t go away.\n\nIn the six months after we closed the scheme, calls to the office from debt collectors and loan apps went from a handful to **61 logged by reception**. Some apps were calling supervisors because employees had listed them as referees. So while the loan may have been the employee’s own contract, the consequences were arriving at work.\n\nWe also saw unplanned absence rise on the two days after month-end. Our fleet manager linked at least three missed Mombasa runs to drivers taking time to “sort out” loans. I can’t put a precise shilling figure on all of that or claim that every absence was caused by the closure. But the reception log, the calls to supervisors and the missed runs were enough to make us question whether we had actually saved what we thought we had.\n\nOne of our loaders in Changamwe had six loan apps going at once by the time he came to me, borrowing from one to pay another. It took us four months, working with payroll, to unwind it. That was HR and payroll time too. It just didn’t appear under “salary advance administration”.\n\nOn the SACCO point, I’m in favour of them. The financial literacy session was useful as well. But our SACCO loans take two to three weeks and require guarantors. That doesn’t help much when your child is sent home from school over fees on a Tuesday. And for someone earning KES 28,000 a month, knowing how to budget is not always enough to produce emergency money that isn’t there. Banks and SACCOs have their place; they aren’t necessarily a substitute for a small, immediate advance.\n\nWe reopened advances in September 2025, but not on the old informal basis. We put in a written policy:\n\n- A maximum advance of **40% of net pay**.\n- No more than one request per pay cycle.\n- The full advance is recovered at the next payroll.\n- No fee.\n- Requests go through the payroll portal, not through my office.\n- Payroll checks the employee’s existing deductions before approval. The Employment Act limits total deductions to two-thirds of wages, and we check against that limit rather than assuming the advance can be recovered.\n\nThe cap is a ceiling, not an entitlement to take 40% regardless of other deductions. We need to make sure the recovery is lawful and that the employee isn’t left with nothing at month-end.\n\nSince reopening, we’ve had about 55–70 requests a month, averaging around KES 9,000. That is significant use, so I wouldn’t pretend Peter’s concern about repeat borrowing has disappeared. It’s something to monitor. But we’ve recovered everything except amounts owed by two leavers; the total written off was roughly KES 14,000 for the year. There is still administration involved, even with the portal, but we can now measure the requests and the losses instead of relying on an informal arrangement.\n\nThe interesting part is that our Finance Manager now defends the scheme himself. With a fixed ceiling and requests going through payroll, the forecast impact is known in advance rather than turning up as a surprise. We’re not pretending there is no cash-flow impact. We’re making it visible and putting a boundary around it.\n\nBrenda, for your meeting on the 18th, I’d suggest going in with a proposal rather than simply asking Finance to keep things as they are. Your Finance Manager is right to be uncomfortable with an unwritten scheme and people taking advances every month. Ask payroll for your own figures if you can get them: how many requests you receive, typical amounts, how many employees request repeatedly, what is outstanding at payroll, any losses on exit and the time spent administering the process.\n\nThen put a bounded option beside the proposal to close it: a cap, one request per pay cycle, full repayment at the next payroll, a defined approval route and a deductions check. The exact cap has to work for your payroll and cash flow; 40% of net pay is what we use, not a figure you have to copy. You could also agree to review the scheme after a set period and bring the numbers back to Finance and the MD.\n\nI’d ask them to compare the cost of administering advances and any write-offs with the costs that might sit elsewhere: reception dealing with collection calls, supervisors being contacted, HR and payroll time spent helping employees out of debt, absence and disrupted operations. Some of those will be harder to attribute or price, so I wouldn’t present them as a guaranteed saving. But they belong in the discussion.\n\nPeter, I wish the two-month notice and literacy session had been enough for us. They weren’t. People did adjust, but some adjusted by taking expensive short-term loans, and the workplace ended up dealing with the fallout. For us, the answer wasn’t to carry on with an open-ended favour system. It was to replace it with rules that staff, payroll and Finance could all see.",
+  "words": 972,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5112195014953613,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.030354784801602364,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.167055130004883,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.7,
+    "effort": "low",
+    "output_tokens": 1181,
+    "input_tokens": 19924
+  }
+}

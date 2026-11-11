@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone\nCharity stream for the Linden Community Pantry: Saturday, Nov 21, 10am–10pm. Goal is $600. Rook is matching the first $100, so early donations count double. Donate here: lindenpantry.example/mrkz — it goes straight to the pantry, nothing taken off. Through their wholesale partner, $1 = about 4 lbs of food. They're serving ~340 families a week and shelves are low before Thanksgiving.\n\nPosting this early because last year half the server found out day-of and we raised $212. No pressure if you can't donate — every bit helps, even $3. If you can't give, you can still help by joining lobbies, voting on games, sharing the link, or dropping canned/boxed food in the blue bin by the pantry's side door Saturdays 9–1.\n\nIncentives from the mods, because apparently this is not begging if I suffer:\n$100 — full round with controller upside down\n$250 — chat picks my hair dye color, done on stream\n$400 — one hour of only chat-picked songs, no skipping\n$600 — I vlog a grocery pickup arranged by the pantry\n\nSchedule: first half community lobbies (anyone can join, I'll drop codes), second half chat votes on the game every 2 hrs. No repeat maps, Larry. If you don't have a card, you can still help — join, vote, share, or bring food to the bin. Let's get the pantry stocked.\n\n---\nTo: #general\nReplying to: c05\nCc: none\nSubject: none\n\nTotally fair to be skeptical, but this one's pretty concrete: the donation page goes straight to the pantry, and through their wholesale partner $1 gets about 4 lbs of food. Nobody has to donate — joining lobbies, voting, or sharing the link helps too. If it's still cringe, the mods are making me dye my hair on stream at $250, so at least you get a show out of it.",
+  "words": 295,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3339766561985016,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1829136461019516,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.665262460708618,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.5,
+    "effort": "provider default",
+    "output_tokens": 5744,
+    "input_tokens": 1575
+  }
+}

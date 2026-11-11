@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: @marco\nReplying to: i02\nCc: none\nSubject: none\n\nMarco. Desert Palms. You told me \"14 units all good\" Saturday and there is not one code in the sheet. Nothing after Ortiz Tire on the 12th. Yvette called Lupe at 7:50 this morning. Tenant in 9B lost her key and wants 3 copies today, and I got nothing to cut from.\n\nAnd your pinning tray is sitting on the counter in her leasing office, pins and all, for the customer to find.\n\nThis is the second time. Kessler in September, same exact thing, and I told you then. In August I put it out to everybody: codes go in the sheet same day, before you leave the van. Address, unit, code. That is not a suggestion and it is not optional. I dont care if its 9 at night.\n\nHere is what happens today. You go back out to Desert Palms and decode 9B first so we can get that tenant her keys. Then do the rest of bldg B, all 14 if you can get in. Every code goes in the sheet before you leave the property. Not tonight, not tomorrow. Text me as soon as 9B is in so I can start cutting.\n\nBring my tray back while you are out there.\n\nNow listen. I am not looking to get rid of you. You do good work and your hands are as good as anybody I have had in this shop. But a rekey with no codes is half a job. It makes us look like amateurs to a property manager who hands us 14 units at a time, and it leaves me standing at the machine with nothing. When you tell me a job is done I need to be able to trust it is done.\n\nThis cant keep happening Marco. Get it fixed today.",
+  "words": 299,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.03257645294070244,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.018387047573924065,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.321950912475586,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "medium",
+    "output_tokens": 1364,
+    "input_tokens": 2534
+  }
+}

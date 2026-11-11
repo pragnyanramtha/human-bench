@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject: Re: Saturday alarm**\n\nKristen,\n\nHere's my side of Saturday, straight.\n\nAround 10:40 I put a bag of popcorn in the break room microwave, hit the popcorn button, and walked out front. A customer needed a shear pin for his snowblower and it took longer than I thought, six or seven minutes. That was plenty of time for it to go wrong. The store was cleared for about 25 minutes until the engine from Hertel got there. No damage, just smoke and a stink.\n\nIt's on me. Not the microwave. I walked away from it, and that's the one thing you never do. I also owe everybody an apology for standing out in the cold, and I feel bad about the Hendersons' cart. They'll be back, they always are, but that one's on me too. For the record, the September alarm wasn't me, that was the sensor in the paint aisle. But Saturday was all mine.\n\nI'll cover the $175. You can take it out of my check or I'll bring cash, whichever you prefer.\n\nI'd really like to keep my Saturday shifts. I like the weekend crowd, and I need the hours for heating oil. I'll keep my eyes on whatever's in that microwave from here on, and I'm fine with the popcorn ban.\n\nA little humor at my own expense, since you know I can't help it: 31 years on the job and my first alarm as a civilian is over a bag of butter popcorn. One of the guys on that engine was Mikey Szymanski, who I broke in as a probie back in '03. I will never hear the end of it. My wife said the van smelled like a burnt movie theater.\n\nI'm also buying Denise her coffee.\n\nThanks for hearing me out.\n\nWalt",
+  "words": 299,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3268832266330719,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04816894233226776,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.9140625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.912353992462158,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.3,
+    "effort": "high",
+    "output_tokens": 1615,
+    "input_tokens": 1955
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: Re: Redshifts shifted after upgrade to lumenfit 2.5.0?\n\nYes, I read the changelog. The 2.5.0 entry only says \"Refactor LineList and spectral frame handling (#812).\" I went through PR #812 and found the actual cause. Being told I didn't read the changelog and that the thread is solved was frustrating, especially after two days spent on the wrong problem.\n\nPR #812 (merged Oct 22) changed the default in LineList.__init__ from wave_frame='air' to wave_frame='vacuum'. Rest wavelengths are now treated as vacuum unless you pass wave_frame explicitly, and nothing warns you about it. For air-calibrated data, the vacuum/air ratio at 6563 Å is about 1.00028, roughly 83 km/s. That matches the shift I see in every object: H-alpha and [NII] both come out low by the same amount.\n\nI suspected my arc-lamp wavelength solution and re-reduced around 40 spectra before checking the frame default. m_okonkwo also reports a small offset on long-slit data after upgrading, so this isn't one person's setup.\n\n\"Works fine for me\" doesn't test this. If your data is already vacuum or radio, you wouldn't see a change, so it says nothing about users with air-calibrated spectra. Please check reports like this against the diff before closing them.\n\nWorkaround until this is resolved:\n\n    LineList(..., wave_frame='air')\n\nor set the frame explicitly everywhere LineList is constructed.\n\nRequests:\n- Please reopen this thread.\n- Add a line to CHANGES.md saying the LineList default changed from air to vacuum in 2.5.0, not just \"refactor.\"\n- Emit a warning when wave_frame is not set, or keep 'air' as the default for one release with a deprecation notice.",
+  "words": 255,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not say that the dismissive calibration advice caused the unnecessary calibration work."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3178325593471527,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2445443719625473,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.4065792560577393,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.2,
+    "effort": "medium",
+    "output_tokens": 2416,
+    "input_tokens": 3061
+  }
+}

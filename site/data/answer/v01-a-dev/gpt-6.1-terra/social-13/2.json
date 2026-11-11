@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Some good news to start: Priya Bhatia is joining us on Monday 16 November!\n\nPriya is a chartered structural engineer with IStructE and joins us after nine years at a consultancy in Coventry. I’m genuinely delighted to have her on board. If she comes out to see you, please say hello and make her feel welcome.\n\nPriya joining us means we can get back to the level of service we should be giving you. Our target for beam calculations and drawings is now **10 working days**.\n\nI also owe some of you an apology. In September and October, turnaround times stretched to five or six weeks. Several clients waited far too long, and I know a few were unhappy. One left a sharp review, and I can understand why.\n\nThe slow weeks were my fault. I said yes to too much work while trying to do it alone. In October I was doing site visits during the day and calculations until midnight. My wife started calling the office “the other house”!\n\nOne couple in Harborne had their steel ordered and their builder standing by. We got their calculations to them in three days, but only after they’d chased me twice. They shouldn’t have had to.\n\nIf you’re waiting for calculations now, please know your job is moving. You can message me directly if you’d like an update.\n\nThere’s one other change I need to let you know about. First site visits **taking place from 1 January 2027** will cost £95. If you go ahead with us, that £95 will be deducted from your fee. Any visit already booked when this post is published will still be free, whatever date it takes place.\n\nI’ve been glad to offer the first visit free, but about a third of visits never turned into a job, and it’s no longer something we can sustain.\n\nThank you for sticking with us. I’m looking forward to a better few months ahead, and to introducing you to Priya.",
+  "words": 331,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3806283175945282,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.37770184874534607,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.6325418949127197,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.9,
+    "effort": "low",
+    "output_tokens": 404,
+    "input_tokens": 18284
+  }
+}

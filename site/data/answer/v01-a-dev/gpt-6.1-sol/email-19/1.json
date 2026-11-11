@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Beth,\n\nJust replying to you, not the whole group. Landed off a Lagos and my head’s mush, so bear with me.\n\nI know things haven’t been right since Lowri’s 40th in November, and her reply won’t have helped. I’m not going to pick through what was said about her ex or who said what after. You both said things, and I don’t think sorting it over email is going to do anyone any favours. My feeling is she’s sorry really, but she’s stubborn. You might recognise that bit!\n\nWould you think about coming just for Saturday? Leave the cottage on Friday to them, miss the paddleboarding, and get to Tenby for six. Train from Cardiff Central is about two and a half hours, I think — we can check times — and I’ll pick you up from the station. I’ve got the twin room so you can kip in with me Saturday night. Just come for the meal and a night with us, without having to face the whole weekend.\n\nI swapped my Orlando with Kerry from work to get this weekend off, lost a night stop I’d really wanted as well. Not saying that to make you feel bad, just that I’d really been looking forward to us all being there for her.\n\nNia rang me crying last week asking whether you were still coming. She doesn’t know you’ve pulled out yet. You’re the person who sat with her in the Heath every night when her mam was bad in 2019. Of course she wants you there.\n\nI know you’ll see her at Margam on 17th April, and you’re doing the reading, but I don’t think that makes this not matter. I’d hate you to miss it and wish afterwards you’d come. She’ll miss you, not whatever present you send.\n\nDon’t send Lowri any money yet. Have a think first, once the sting’s gone out of that email. Saturday only, with me collecting you and a bed sorted — will you think about it?\n\nSiân xx",
+  "words": 337,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21803416311740875,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18382568657398224,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.4375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.553678274154663,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.8,
+    "effort": "low",
+    "output_tokens": 420,
+    "input_tokens": 19563
+  }
+}

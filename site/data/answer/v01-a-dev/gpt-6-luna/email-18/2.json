@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject: Re: Saturday alarm**\n\nHi Kristen,\n\nHere’s my account of what happened Saturday.\n\nAt about 10:40, I put a bag of butter popcorn in the break-room microwave, pressed the popcorn button, and went back out front. A customer needed a shear pin for his snowblower, and helping him took longer than I expected—maybe six or seven minutes. By the time I got back, the store had cleared out. The engine from Hertel arrived about 25 minutes later. Thankfully, there was no damage—just smoke and a burnt-popcorn smell.\n\nIt was my popcorn, and it was my mistake. The microwave didn’t do anything wrong; I left it unattended. The September alarm wasn’t me—that was the paint-aisle sensor—but I know that doesn’t make Saturday any less of a mess. I’m sorry the customers had to stand outside in the cold, and I feel bad about the Hendersons leaving their full cart.\n\nI’ve been on the job 31 years, and my first alarm as a civilian was over a bag of butter popcorn. My wife says the van smelled like a burnt movie theater. I’m sure Mikey Szymanski, who I broke in as a probie back in ’03, will remind me of it for years.\n\nI’ll cover the $175 dispatch charge. You can take it out of my check, or I can bring in cash—your call. I’ll buy Denise her coffee, too.\n\nI’d really like to keep my Saturday shifts. I enjoy the weekend crowd, and I need the hours for heating oil. I understand Gary’s concern, and I’ll make sure this doesn’t happen again.\n\nWalt",
+  "words": 262,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The request says the store was cleared out for about 25 minutes, but the piece says the engine arrived about 25 minutes later, which changes the stated timeline."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46280670166015625,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9806790947914124,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.556641101837158,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.5,
+    "effort": "medium",
+    "output_tokens": 348,
+    "input_tokens": 14312
+  }
+}

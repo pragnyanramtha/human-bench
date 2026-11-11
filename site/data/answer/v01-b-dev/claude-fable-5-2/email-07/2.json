@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Order TH-48217 never arrived, please resend or refund by Friday 13 November\n\nHi there,\n\nThis is my third email about order TH-48217, and I'm asking that a person actually reads it and replies to me properly, not with another template.\n\nI placed the order on 21 October and paid R1,640 by card, which includes R95 for delivery. It was for 6 tubs of finger paint, 4 bags of playdough, 200 paper plates, googly eyes, glitter glue and 2 rolls of brown paper, to be delivered to Bergview Pre-Primary in Plumstead. The delivery address on the order is correct.\n\nYour tracking says it was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams\". There is nobody at our school called Adams. Our gate guard, Faizel, writes every delivery that comes through the gate into a book, and there is nothing in it for the 3rd. I can send you a photo of the page if that helps. Wherever that parcel went, it didn't come to us.\n\nI emailed on 4 November and again on 6 November, and both times got the same copy and paste reply saying you have \"escalated the query to your courier partner\". I phoned on Friday, sat on hold for 38 minutes, and was told nothing can be done until the courier finishes its investigation, which could take 10 working days. Now I'm being told to sort it out with the courier myself.\n\nI'm sorry, but that isn't right. I ordered from Tiny Hands and I paid Tiny Hands. I didn't choose the courier, you did. If they delivered my order to the wrong place, that is between you and them. It shouldn't be my job to chase them, and I shouldn't be sitting without my order or my money while the two of you work it out.\n\nI also want you to understand why this matters so much. I'm a pre-primary teacher and I paid for this out of my own pocket. R1,640 is a lot of money on a teacher's salary, and it was spent on supplies for other people's children. My class made their mask patterns last week and I've been telling them the paint is \"coming soon\" ever since. Our end of year concert is on 27 November and I need these supplies for the props, so waiting two more weeks for an investigation leaves me with almost no time.\n\nI've ordered from you three times before with no problems at all, which is exactly why I came back, and why this has been so disappointing.\n\nI need one of two things by Friday 13 November:\n\n1. The full order sent again, in time for me to use it before the concert, or\n2. A full refund of R1,640, including the delivery fee, back to my card.\n\nIf I don't have a proper answer by then, I'll ask my bank to do a chargeback and I'll leave a review about how this was handled. I'd honestly rather not do either. I'd much rather get my order and carry on buying from you like I have before.\n\nPlease let me know which option it will be.\n\nKind regards,\n[Your name]\nBergview Pre-Primary, Plumstead\n[Your cell number]\n\nAdd your name and number at the bottom, and take out the line about the photo if you'd rather not ask Uncle Faizel for one.",
+  "words": 562,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.451950341463089,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03621165081858635,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.4453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.6978559494018555,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.1,
+    "effort": "high",
+    "output_tokens": 2738,
+    "input_tokens": 1559
+  }
+}

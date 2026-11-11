@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.47, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**An open letter to our friends, neighbours and school families**\n\nHi everyone,\n\nI’m writing this as one letter because my phone has been going mad since Saturday night, and I’m just too tired to answer everybody one by one. Please feel free to forward it to anyone who has been asking after me.\n\nFirst of all, **I’m safe, and so is Marmalade.** I’m staying with my sister in Rondebosch for now. Thank you to everyone who has called, messaged, dropped things off or checked in. I’ve been crying at almost every message. People have been so kind, and I’m sorry if I haven’t replied. I’m getting through comments and messages slowly, so please don’t be offended if you don’t hear back from me.\n\nThe short version is that a fire started at around 11:40pm on Saturday, 7 November, in a ground-floor flat at Lindale Court on Station Road in Obs. I live in flat 12 on the second floor. There are 14 flats in the block, and thankfully everyone got out. Two people were treated for smoke inhalation at Groote Schuur and sent home.\n\nThe fire department has said an electrical fault is a possible cause, but they’re still investigating, so I don’t want to guess or add to any stories going around.\n\nI woke up because our neighbour, Uncle Faizel, was banging on every door on our floor, in his vest and slippers. I grabbed my phone and Marmalade and got out with nothing else. Marmalade then hid under a car for two hours, which was a very Marmalade thing to do, but we eventually got her out. Furniture can be replaced. Marmalade can’t.\n\nMy flat is basically gone. There’s smoke and water everywhere, and the ceiling came down in the lounge. My landlord has said nobody will be able to move back in for at least six weeks. I’m very grateful to have somewhere safe to stay with my sister while I work out what comes next.\n\nSo many people have asked what I need, and I’ve found that surprisingly hard to answer. I honestly hate asking for help and feel a bit weird about having a fundraiser, but Zinhle told me to shut up and accept it. So I’m listening to her.\n\nThe most helpful things right now are:\n\n- **Help towards a deposit for a new place.**\n- **School shoes in size 6 and work clothes in size 34.**\n- **A working laptop, even an old one.** All my lesson planning was on mine.\n\nI **don’t need more clothes in general**, though. People have already given me so much, and I’ll pass the extras on to others from the flats. We also don’t need food—my sister’s freezer is full! Please don’t feel you need to bring anything.\n\nOne of my school moms left a bag of clothes on my sister’s gate at 7am on Sunday without even knocking. I don’t think she knows how much that meant to me. To everyone who has done something kind, whether it was a big thing or just sending a message: thank you.\n\n**Zinhle’s fundraiser**\n\nMy friend Zinhle has set up a BackaBuddy page to help me get back on my feet:\n\n**backabuddy.example/thandi-lindale-court**\n\nThe target is R25 000, and it had already reached R11 400 this morning. I’m honestly overwhelmed. Thank you to everyone who has donated or shared it. Please don’t feel any pressure to give.\n\nThere is also another page being shared called **“Thandi Fire Relief”**, as well as a WhatsApp message asking people to EFT money to a Capitec account. **Neither of these is mine or Zinhle’s fundraiser.** I’ve reported them. Please don’t send money to that account or share that page thinking it’s for me. If you’d like to help, please use Zinhle’s BackaBuddy link above.\n\n**To my Little Acorns families**\n\nFor those who don’t know me through school, I teach the Ladybirds at Little Acorns Pre-Primary in Mowbray. I had taken home some things to laminate for our end-of-year concert, and they were lost in the flat: 22 crowns and the children’s handprint banner.\n\nBut please don’t worry—the concert on **27 November is still happening**, and the Ladybirds will have their crowns. We’ll make a plan.\n\nI’ll be back at school on Wednesday. I’m looking forward to seeing my little ones, but I’d really appreciate it if we didn’t make a big thing of the fire in front of the children.\n\nThank you again, everyone. It’s been a lot to take in, but the kindness from our neighbours, friends and school community has made a difficult few days feel a little less frightening. I’m safe, Marmalade is safe, and for now I’m taking things one day at a time.\n\nWith love,  \n**Thandi**",
+  "words": 787,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4663551151752472,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9941458702087402,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.3943490982055664,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.7,
+    "effort": "low",
+    "output_tokens": 1034,
+    "input_tokens": 18612
+  }
+}

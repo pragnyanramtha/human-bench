@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nI did read the changelog. The 2.5.0 entry says \"Refactor LineList and spectral frame handling (#812)\", which doesn't tell anyone that default behavior changed. PR #812 (merged Oct 22) changes LineList.__init__ from wave_frame='air' to wave_frame='vacuum'. Rest wavelengths are now vacuum by default, and no deprecation warning is raised.\n\nFor air-calibrated data, that shifts the fitted redshifts. The vacuum/air ratio at H-alpha (6563 Å) is about 1.00028, which is roughly 83 km/s, and that matches the offset I see on every object, with the same sign. I spent two days re-checking my arc-lamp wavelength calibration and re-reducing about 40 spectra before I found this. The thread was marked solved before anyone checked whether the default had changed.\n\n\"Works for me\" doesn't rule this out. If your data is already in vacuum, or you're fitting radio data, you wouldn't see the difference. m_okonkwo also reports a small offset on long-slit data after updating, so this isn't only my setup.\n\nWorkaround for anyone affected: pass the frame explicitly, for example LineList(..., wave_frame='air'), and check that your redshifts match 2.4.3.\n\nRequests:\n- Reopen this thread.\n- Add a line under 2.5.0 in CHANGES.md saying the LineList default wave_frame changed from 'air' to 'vacuum'.\n- Emit a DeprecationWarning when wave_frame isn't set explicitly, at least for one release.\n\nI'm happy to test a patch against my optical slit data.",
+  "words": 224,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not explicitly connect the dismissive calibration advice to the time wasted on unnecessary calibration work."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1875983625650406,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06964856386184692,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.6640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.8980753421783447,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.8,
+    "effort": "medium",
+    "output_tokens": 2070,
+    "input_tokens": 3062
+  }
+}

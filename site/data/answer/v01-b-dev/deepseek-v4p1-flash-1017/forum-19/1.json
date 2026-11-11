@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, breathe. Put the key in your pocket and step away from the bakkie.\n\nStraight up: do NOT crank it again. Not once. Every time it turns over, that pump is running on petrol and petrol lubricates nothing — it's like washing your hands with sand. Key out.\n\nKobus means well, but that's old Land Rover advice from the days of donkey pumps. Your 2019 common rail is a different animal — the pump and injectors run to tolerances that petrol destroys. And don't pour diesel on top, the petrol's still in there, all you get is expensive petrol.\n\nBecause it ran, knocked, died, and then you cranked it 5 or 6 times, there may already be damage. That's the honest answer. Worst case is pump and injectors, and Tash isn't far off with her number. The good news: if the pump and injectors check out, it's drain the tank, flush the lines, new fuel filter, bleed the system — usually R2 500 to R4 500. I can't promise you a total tonight, nobody can until it's on a lift.\n\nTonight: tow it, don't drive it. Check your insurance first — most policies include a roadside tow, so don't pay a cash towie before you've checked. I'm at Umbilo, open Saturday 7 till 12. Thabo's on duty, he can drain it first thing.\n\nAnd borrow a bakkie for tomorrow anyway. Don't plan your wedding around a drained tank — that cake doesn't care what it travels in. Sort the sound system and the cake tonight with someone else's keys, deal with the Isuzu on Monday.\n\nOne customer did this twice in the same year at the same garage. We made him a sticker for his fuel flap. And in 1995, my first year as an apprentice, I put diesel in the boss's Golf. He still tells it at every braai.\n\nYou'll laugh about this at your 10th anniversary. Tonight: key out, tow it, borrow a bakkie. Congrats on the wedding — go marry your woman.",
+  "words": 335,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30671426653862,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14281529188156128,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.2890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.22127288579940796,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 5.8,
+    "effort": "provider default",
+    "output_tokens": 1255,
+    "input_tokens": 1001
+  }
+}

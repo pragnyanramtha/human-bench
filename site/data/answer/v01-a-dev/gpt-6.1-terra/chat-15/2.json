@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán, full picture below for your call at 2.\n\nThe logger shows the fridge went **above 8°C at 22:50 on Saturday** and came back **below 8°C at 05:00 on Sunday** — about **6 hours 10 minutes out of range**. The peak was **11.6°C at 02:15 Sunday**. The minimum overnight Friday was 4.1°C, so that was normal.\n\nI found the alarm beeping at 07:55 this morning. It keeps beeping until someone resets it, so that doesn’t mean it was still over range at that point. The door hadn’t fully clicked shut, and a box of Hartmann’s bags from Saturday’s delivery was stacked against it. I had to lean on the door with my hip to get it to click, and the seal is cracked at the bottom left corner. It looks like the box and the dodgy seal together stopped it closing properly. Saturday clinic finished late with the RTA collie and the delivery was put away in a rush at closing — this was the door, not down to any one person.\n\nThe stock in the fridge was:\n\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 2 cat flu/FeLV combos\n- 4 vials of insulin\n\nRoughly **€1,150 at cost** for the lot.\n\nI rang the Munster Vet Supplies tech line at **08:40** and spoke to **Niamh, the pharmacist**. Her initial advice was to quarantine everything and not use it, and to email them the logger CSV and batch numbers. They’ll check with the manufacturers and come back to us **by Wednesday**.\n\nNiamh checked the manufacturer’s storage sheet for our insulin against the logger readings and **cleared the four insulin vials for use**. The **vaccines are not cleared** and need to stay quarantined until we hear back. I’ve put them in a sealed bag marked **DO NOT USE** in the lab fridge. That fridge is at **5.2°C** and I’ve started a new temperature sheet for it. I wouldn’t bin the vaccines before the supplier comes back — they may be fine, but that’s not our call.\n\nAoife, please keep holding the boosters for now. If the supplier clears the vaccines, could you rebook them for Thursday/Friday? Otherwise we can look at borrowing stock from Carrigaline.\n\nFor prevention, the old ThermaTrak logger only beeps locally — there’s no text alert if nobody’s here. There’s an SMS-alert logger in the supplier catalogue for about **€180**. Ciarán, can you OK that and a **new door seal**? I’d also add a fridge-door check to the closing checklist so we’re checking it has actually clicked shut.",
+  "words": 428,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33325159549713135,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2898734509944916,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.72265625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.65571665763855,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.4,
+    "effort": "low",
+    "output_tokens": 605,
+    "input_tokens": 19593
+  }
+}

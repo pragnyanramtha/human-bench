@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hiya you three,\n\nRight, here's the plan, and I'm buzzing about it. Morag's said I can have the salon to myself on the Saturday afternoon before Gran's 80th, so I'm going to do everyone's hair for free before we go out for her dinner.\n\n**When:** Saturday 12 December, 1pm. Morag shuts at 12, so we'll have the place to ourselves.\n**Where:** Hair by Morag, Dumbarton Rd. You all know it.\n**Who:** Mum, Kirsty, Linda, Gran, Ava, Ruby and me. That's seven heads, so I'll be needing the full afternoon.\n\nGran doesn't know, so not a word! Mum, you're the best bet for getting her there for 1 without telling her why. I'll leave the excuse to you.\n\n**What you're getting:** A cut and blowdry for everyone. If you want colour as well, I need to know by **Friday 27 November** so I can order it in from the wholesaler. Tell me after that and I can't promise anything. Just text me what you're after.\n\nGran said at Easter she'd love to go silver properly, so I'll order that in for her. Ava and Ruby are getting wee braids and glitter spray, and they'll love it.\n\nLinda, before you say anything, yes, this is partly so I'm not doing your colour in your kitchen again. The cooker and the dog have suffered enough.\n\nBring a bottle of fizz. Morag's fine with it as long as we tidy up after ourselves, so nobody leave a glass on her counter.\n\nThen it's the Italian on Byres Rd at 8.30, table for 9 with Uncle Davie and Kirsty's man joining us. We'll all be looking gorgeous for it.\n\nSo that's the 12th at 1pm, fizz in hand, and your colour choices to me by the 27th. Any questions, just text me.\n\nLove you all xx",
+  "words": 301,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3294799327850342,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21333624422550201,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.296875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.231190204620361,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.6,
+    "effort": "high",
+    "output_tokens": 2393,
+    "input_tokens": 1460
+  }
+}

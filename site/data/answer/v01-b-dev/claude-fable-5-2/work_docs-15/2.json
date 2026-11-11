@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.53, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Lee: buying a dumper between us instead of hiring**\n\nI know you'd rather see it written down than have me going on at you in the van, so here are the sums.\n\n**What hiring cost us this year**\n\nWe had the tracked dumper out 14 days from the place in Sittingbourne. £85 a day plus £30 delivery each time, so roughly £1,600 all in. That money's gone and we've nothing to show for it.\n\nAnd that's only what's on the invoices. In September they didn't have one, so we barrowed 6 ton of muck at Hernhill. It took two extra days and your back was gone for a week. Then there was the morning the driver turned up at 11 and we lost half the morning.\n\n**What's for sale**\n\nA bloke in Faversham has a 2019 500kg tracked one, £1,650 ono. He says it had new tracks fitted last spring. Halves is £825 each, less if we can knock him down.\n\n**Does it pay**\n\nAt this year's use it pays for itself in about a year. If we only used it half as much, it'd take about two years. That's before servicing and repairs, so I'm not pretending it costs nothing after that. But we've already got three patio digs and the Boughton drive booked in for spring, so it'd be earning straight away.\n\nIf it doesn't work out, we sell it on. They hold their value, so we wouldn't be far out of pocket.\n\n**How we'd run it**\n\nWe've known each other 15 years, so I'm not worried about sharing it, but it's best to agree it up front:\n\n- It lives in my lean-to at the yard, which is covered and costs us nothing.\n- Servicing is split 50/50.\n- Whoever breaks it pays for it.\n\n**Saturday**\n\nCome and look at it with me this Saturday, before someone else has it. Have a proper go over it yourself, and if it's a dog we walk away and we've lost nothing but an hour. Let me know what time suits.",
+  "words": 341,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5288340449333191,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5118600726127625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.546875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.911388397216797,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.6,
+    "effort": "high",
+    "output_tokens": 1908,
+    "input_tokens": 1385
+  }
+}

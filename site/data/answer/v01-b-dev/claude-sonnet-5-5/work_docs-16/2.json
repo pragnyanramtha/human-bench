@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**RA Progress Statement: Seoul-Daegu Honorific Shift Corpus**\nPrepared for the Winter 2027 funding review\nDate: November 9, 2026\n\n**Current status**\nThe fall term target was 6,000 annotated utterances. As of today I have annotated 4,200. I am the only RA doing Korean annotation on this project.\n\n**Cause of the gap**\nThe 14 new Daegu recordings could not be annotated until the IRB amendment adding them was approved. The amendment was sent to Prof. Hollander for signature on September 3, 2026, and signed on October 15, 2026, a span of six weeks. I sent reminders on September 12, September 24, and October 6, and I have those emails on file. I did not work with the new recordings during this period because the amendment had not been approved.\n\n**Work completed during the wait**\nWhile the amendment was pending, I recoded the original 2,300 utterances using the revised speech-level scheme requested in August. This work was not part of the original timeline, and it is now finished.\n\n**Progress since approval**\nSince October 15 I have annotated about 1,900 utterances, a rate of over 500 per week against a planned 350.\n\n**Timeline**\n- September 3: amendment sent for signature\n- September 12, 24 and October 6: reminders sent\n- September 3 to October 15: original 2,300 utterances recoded to the revised scheme\n- October 15: amendment signed, work on new recordings begins\n- November 9: 4,200 utterances annotated\n- End of January 2027: 6,000 utterances annotated\n\n**Expected completion**\n1,800 utterances remain. I expect to reach 6,000 by the end of January 2027, and at my current pace it may come sooner.\n\n**Request for the review**\nI ask that the review record that the shortfall against the fall target follows from the six-week delay in IRB amendment approval (September 3 to October 15), and that the recoding was completed in that period. If that context will not be included, I ask that the \"six weeks behind\" characterization be left out, since on its own it does not describe what happened.\n\nA note on the numbers: 1,800 utterances at 500+ a week is about four weeks of work, so \"end of January\" is a conservative commitment. I wrote it that way, with the line that it may come sooner, so you aren't boxed in if the new recordings turn out harder. If you'd rather commit to an earlier date, that's an easy change. I also left out the detail about the first-years being present, since it's better suited to a conversation than to a funding file.",
+  "words": 421,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The closing note addresses the user about drafting choices rather than forming part of the progress statement."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3009139597415924,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3472432792186737,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.328125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.174202919006348,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.3,
+    "effort": "high",
+    "output_tokens": 2484,
+    "input_tokens": 1584
+  }
+}

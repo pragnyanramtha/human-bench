@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear friends, neighbors, church family, and all my sweet longtime customers,\n\nAfter 11 years on Bellaire Blvd, Lotus Glow Nails had a visitor we were not expecting. On Sunday, November 8, around 2 a.m., a car came through our front window.\n\nThank God, nobody was inside, and the driver is okay too. The police came, and her insurance will cover the damage. I truly believe God protected us. Glass and chairs can be replaced. People cannot.\n\nOur front glass is gone, and one pedicure chair is smashed. The car stopped exactly at the pedicure chair, like she really wanted a spa day. My daughter says she got the first drive-thru pedicure in Houston! The floor looks like a rainbow threw up, and my husband says finally the shop is modern art. I do not recommend this kind of remodeling.\n\nI cried a little in the morning, but I am okay now. Please don’t worry about me.\n\n**We hope to reopen Monday, November 16.** That is the contractor’s estimate, but the city inspector must check the wall before we can open safely. I will let everyone know when we get the final okay.\n\n**This week, Trang, Kim, and I will be working at my cousin Hoa’s salon, Pearland Nail Bar.** To make an appointment or find us, please **call or text my cell: 832-555-0147.**\n\nAnd please don’t worry about your gift cards. **Your Lotus Glow Nails gift cards are still good. Nobody will lose their money.**\n\nThank you for all the calls, texts, prayers, and food. Mrs. Dung brought pho this morning, and that helped my heart as much as my stomach. My phone has been ringing nonstop, so please pass this message around by group text or email to help everyone get the update.\n\nI am so grateful for all of you. We will get through this, one bowl of pho and one nail appointment at a time.\n\nWith love,  \nYour Lotus Glow Nails family",
+  "words": 325,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3655047118663788,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.31867727637290955,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.078125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.789309501647949,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.0,
+    "effort": "low",
+    "output_tokens": 419,
+    "input_tokens": 18241
+  }
+}

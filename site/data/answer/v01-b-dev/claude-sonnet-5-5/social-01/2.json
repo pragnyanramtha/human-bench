@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: none\n\nChildren's ibuprofen recall: what happened and what to do\n\nIf you bought Corvane children's ibuprofen (berry, 100 mg/5 mL, 120 mL bottle) from us, please read this whole post.\n\nWhat happened\nThe problem is the syringe in the box, not the medicine. The numbers printed on the syringe barrel are wrong. Every mark holds double what it says. The line marked 2.5 mL actually measures 5 mL, and the line marked 5 mL actually measures 10 mL. A parent following the label exactly would give twice the intended dose.\n\nThe medicine itself is fine. It is not contaminated and it is not expired (expiry 08/2027). The recall is only about the syringe.\n\nWhich boxes\nLots CV6114A and CV6114B. The lot number is printed on the bottom of the box. If your bottle has a different lot number, this recall does not apply to it.\n\nWhat to do\n1. Check the lot number on the bottom of the box.\n2. If it is one of those two lots, do not use the syringe that came in the box. Throw it out.\n3. Come in for a correctly marked replacement syringe (details below).\n\nIf your child may have been given too much\nCall the Ontario Poison Centre at 1-800-268-9017 right away. Tell them your child's age and weight, how much was given, and when. We can't tell from a Facebook post whether a particular child is okay. It depends on weight, how many doses were given, and how the kidneys are doing. The poison centre will assess your child, so if you have any doubt about the dose, please call.\n\nDo not give another dose until the poison centre or your doctor says it's okay.\n\nGo to the ER or call 911 if your child is very sleepy or hard to wake, is vomiting blood, is not peeing, or has a seizure.\n\nWhat we are doing\n- New syringes are arriving from our supplier today before noon. They are free for anyone who needs one, and you don't need a receipt.\n- If you would rather return the bottle, you can get a full refund through the product recall.\n- We will be open extra hours this Saturday, 10 to 4, for exchanges.\n- We received the recall notice on Nov 6. We took the remaining bottles off the shelf and put signs up on Nov 7. Over-the-counter sales don't come with a phone number, so we could not call people directly. That is why I'm posting this here.\n\nPlease share this with anyone you know who bought this product. If you have questions, come in or call us and one of the pharmacists will talk to you.\n\nRania Haddad, Pharmacist\nCedarbrook Pharmacy\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nI know this is scary, so here are the facts. The recall is for the syringe in the box, not the medicine. The marks on the syringe are printed wrong and each one holds double what it says. The medicine is fine, not contaminated, and not expired (exp 08/2027).\n\nAffected lots are CV6114A and CV6114B, printed on the bottom of the box. If yours is one of those, don't use the syringe in the box.\n\nIf you think a child got too much, call the Ontario Poison Centre at 1-800-268-9017 and don't give another dose until they or your doctor say it's okay. Go to the ER or call 911 if a child is very sleepy, hard to wake, vomiting blood, not peeing, or has a seizure.\n\nWe have free replacement syringes today, no receipt needed. Full details are on the Cedarbrook Pharmacy page.\n\nRania, pharmacist at Cedarbrook",
+  "words": 599,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09933644533157349,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02926780842244625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.2431640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.1907260417938232,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 34.7,
+    "effort": "high",
+    "output_tokens": 4432,
+    "input_tokens": 3766
+  }
+}

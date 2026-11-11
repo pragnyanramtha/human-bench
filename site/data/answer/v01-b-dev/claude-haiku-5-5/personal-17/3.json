@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To whoever has been putting their bags in my bin,\n\nI don't know who you are, so I'm putting this through every letterbox on the terrace. If it's you, you know what you did.\n\nMy grey bin is the one with 14 painted on the lid in white. Greenmount Bins charge by weight, €0.41 a kilo, and my last bill was €63.20 for two months. It's usually around €25. That's me paying for your rubbish. For about a month now, every week there's been full bags in it that aren't mine, and I'm not paying for them anymore.\n\nLast Tuesday I got home from a gig around 3am. The lid wouldn't close. There were three black bags in there that I didn't put in, and one had nappies in it. Lovely. I also found a gas bill envelope in one of the bags with the name torn off. Whoever you are, you have a house with a gas bill and you're too lazy to pay for your own bin. Sort it out.\n\nThe fella across the road says he saw a car pull up on Tuesday evening. He didn't see who was in it, but it's obviously someone who doesn't want to be seen doing it.\n\nI work nights behind a bar. I'm not a pushover, and I'm not covering for you any longer. If this keeps going, I'm putting a padlock on the bin, and you can explain to the bin men why your bags are sitting on the path.\n\nI'm not looking for a row. I still have to live here, and so do you. But if you're stuck, if you can't afford your own bin or you've nowhere to put the stuff, just ask me and I'll tell you who to ring. It's not hard. Stop doing it and that's the end of it.\n\n14 Aughrim Terrace",
+  "words": 310,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.06918727606534958,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11290683597326279,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.041912317276001,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "medium",
+    "output_tokens": 1743,
+    "input_tokens": 1337
+  }
+}

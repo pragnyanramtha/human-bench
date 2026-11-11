@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## The Thursday tea trolley\n\nI began volunteering at Wensum Vale Hospice in March 2022, about eighteen months after I retired. I’d spent 41 years keeping books, mostly for a builders’ merchant in Dereham, and at 74 I wasn’t looking for a new career. I just found that retirement left me without much reason to go out most weeks. I drifted a bit. Thursdays gave the week a shape again.\n\nI help with the tea trolley in the day therapy unit, from 1.30 to 4pm. On a Thursday there are usually about 14 to 18 patients. Some come for the art group or a hand massage; others come for a cup of tea and a bit of company. Most go home afterwards.\n\nIt’s not a sad place on a Thursday, mostly. It’s noisy and rather jolly. The bourbon biscuits always go first, so we now hide a packet for the late group. Mr Hollis, a retired signalman, takes two sugars and tells me about the 1953 floods every week—slightly differently each time. I’ve stopped correcting the dates.\n\nI wasn’t especially graceful when I started. In my first week, I spilled an entire jug of milk over the trolley. Pat, one of the patients, laughed so much she had to be given a tissue. She told me it was the best afternoon she’d had in a month. So much for needing to get everything right.\n\nYou don’t need nursing skills to help. You need to be able to push a trolley, remember who takes what, and listen. It turns out 41 years of keeping ledgers straight is useful for the remembering part.\n\nSome weeks are hard. People are unwell, and sad days do happen. The staff look after us when they do. But that isn’t the whole story of volunteering here, and it certainly isn’t the whole story of a Thursday afternoon.\n\nAt the moment there are four of us on a rota intended for six. Two people left over the summer: one moved to Sheffield to be near her grandchildren, and the other had a knee operation. We’re hoping a couple of new volunteers might join us.\n\nThe commitment is one Thursday a fortnight. Bridget, our volunteer coordinator, provides an induction of about two hours, and there’s a short food hygiene course online, which the hospice pays for.\n\nIf you’d like to find out more, there’s a volunteer open afternoon on **Tuesday 24 November at 2pm in the Willow Room**. There’ll be tea and biscuits, and there’s no obligation to sign up. I’d love to see at least two new faces there. Or you can ring Bridget on the volunteering line and have a chat.\n\nYou don’t have to be a saint, or terribly skilled. It helps if you can push a trolley, remember the two sugars, and make room for a story you’ve heard before.",
+  "words": 476,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.27413657307624817,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4984222948551178,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.438208818435669,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "medium",
+    "output_tokens": 596,
+    "input_tokens": 14144
+  }
+}

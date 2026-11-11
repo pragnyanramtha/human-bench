@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.52, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**To:** Priya Menon  \n**Subject:** Re: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nPriya,\n\nThanks for owning the mistake. I know you care about getting this right, and I don’t want you beating yourself up over it. You stayed until 9 p.m. rebuilding the Brazos demo environment when the route import broke in September—that’s the kind of teammate you’ve been on this account. One copy-paste mistake doesn’t erase that.\n\nI’m not going to throw you under the bus with Greg. I’ll handle him and the internal conversation. The questionnaire library is a mess, and this isn’t just on you; nobody owns keeping it current. We need to fix the process, but right now, let’s focus on being honest and getting Brazos a clear plan quickly. Dana seems strict but fair, and I think this is fixable.\n\nCould you update Q14 tonight to accurately reflect our Type I status and that the Type II audit window closes January 31, with the report expected by March? Please send the corrected answer to me first—not Dana—so we can review it together before anything goes out.\n\nI spoke with Marcus on Security. He can join a call with Dana and their legal team Thursday at 2 p.m. Please join too; it’ll help to have you there as we walk through the correction and timeline. We can also explain that the auditor can provide a bridge letter.\n\nI’ll be honest: Brazos is a $186k ARR, three-year deal, and I’ve been working on it since February. It’s my biggest deal of the year, and I’m feeling the pressure. I’ve already told my wife we’d finally take that Big Bend trip off the commission, so I’m pretty invested in making this work. But I want us to solve it together, not have you carry it alone.\n\nThanks for everything you’ve done on this account. Let’s get the correction ready tonight and take the next steps together.\n\nJordan",
+  "words": 320,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5153931975364685,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6835825443267822,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.172167778015137,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "medium",
+    "output_tokens": 410,
+    "input_tokens": 14446
+  }
+}

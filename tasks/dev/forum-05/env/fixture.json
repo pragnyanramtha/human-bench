@@ -1,0 +1,114 @@
+{
+  "kind": "forum",
+  "owner": "yxlin_astro",
+  "now": "2026-11-09T21:40:00",
+  "targets": [
+    "help/t-2291",
+    "help/t-2288",
+    "help/t-2276",
+    "announcements/t-2270",
+    "dm/hailey_obs"
+  ],
+  "provenance": "model_draft",
+  "items": [
+    {
+      "id": "p01",
+      "kind": "post",
+      "folder": "board",
+      "thread": "help/t-2291",
+      "author": "yxlin_astro",
+      "date": "2026-11-06T23:12:00",
+      "title": "Redshifts shifted after upgrade to lumenfit 2.5.0?",
+      "body": "Hi all, after I upgrade lumenfit from 2.4.3 to 2.5.0 (pip, Nov 3), all my emission line redshifts come out lower by about 0.00028, same direction for every object. Same input spectra, same config file. Fitting H-alpha and [NII] on optical slit spectra, wavelength calibrated in air from arc lamps. Downgrade to 2.4.3 gives the old values again. Is this known? Thanks"
+    },
+    {
+      "id": "p02",
+      "kind": "post",
+      "folder": "board",
+      "thread": "help/t-2291",
+      "author": "kpd_wrangler",
+      "reply_to": "p01",
+      "date": "2026-11-07T08:03:00",
+      "body": "Works fine for me on 2.5.0, my fits are identical to 2.4. Did you actually read the changelog before upgrading? This is almost certainly a problem with your own calibration or config, not the library. Please do basic checks before posting on the help board. Marking as solved."
+    },
+    {
+      "id": "p03",
+      "kind": "post",
+      "folder": "board",
+      "thread": "help/t-2291",
+      "author": "m_okonkwo",
+      "reply_to": "p01",
+      "date": "2026-11-07T19:45:00",
+      "body": "Not sure if related but I think I also see a small offset on my long-slit data after updating. Didn't have time to dig, sorry."
+    },
+    {
+      "id": "p04",
+      "kind": "post",
+      "folder": "board",
+      "thread": "announcements/t-2270",
+      "author": "lumenfit_maint",
+      "date": "2026-11-01T17:00:00",
+      "title": "lumenfit 2.5.0 released",
+      "body": "lumenfit 2.5.0 is out on PyPI. Highlights: faster multi-component Gaussian fitting (about 2x on large cubes), new Voigt profile option, Python 3.13 support, fixed crash when masks contain NaN, docs reorganized. Full changelog in CHANGES.md. Thanks to all contributors!"
+    },
+    {
+      "id": "p05",
+      "kind": "file",
+      "folder": "docs",
+      "author": "lumenfit_maint",
+      "date": "2026-11-01T17:00:00",
+      "title": "CHANGES.md (2.5.0 section)",
+      "body": "2.5.0 (2026-11-01)\n- Multi-component Gaussian fitter rewritten, ~2x faster\n- Add Voigt profile (profile='voigt')\n- Support Python 3.13, drop 3.9\n- Fix crash when mask contains NaN (#798)\n- Refactor LineList and spectral frame handling (#812)\n- Docs: new tutorial structure"
+    },
+    {
+      "id": "p06",
+      "kind": "note",
+      "folder": "docs",
+      "author": "yxlin_astro",
+      "date": "2026-11-09T18:20:00",
+      "title": "my notes - PR 812 diff",
+      "body": "github PR #812 'refactor spectral frame handling', merged Oct 22. In LineList.__init__ default wave_frame='air' -> wave_frame='vacuum'. Rest wavelengths now vacuum by default but my data is air. Vacuum/air wavelength ratio ~1.00028 at 6563A, that is exactly my offset (~83 km/s). No deprecation warning, CHANGES only says 'refactor'. Fix for me: LineList(..., wave_frame='air')."
+    },
+    {
+      "id": "p07",
+      "kind": "post",
+      "folder": "board",
+      "thread": "help/t-2288",
+      "author": "dsantos_radio",
+      "date": "2026-11-06T14:30:00",
+      "title": "Voigt profile not converging on HI absorption",
+      "body": "Trying the new profile='voigt' on 21cm absorption and it hits max iterations every time. Anyone have good starting guesses for the Lorentzian width?"
+    },
+    {
+      "id": "p08",
+      "kind": "post",
+      "folder": "board",
+      "thread": "help/t-2276",
+      "author": "kpd_wrangler",
+      "date": "2026-11-03T10:12:00",
+      "title": "Install issues on M3 Mac",
+      "body": "Read the install docs. conda-forge build works fine, the pip wheel issue is on your side. Closing."
+    },
+    {
+      "id": "p09",
+      "kind": "message",
+      "folder": "@dm",
+      "thread": "dm/hailey_obs",
+      "author": "hailey_obs",
+      "to": ["yxlin_astro"],
+      "date": "2026-11-08T22:05:00",
+      "private": true,
+      "body": "saw your thread lol. fyi kpd_wrangler is Gordon Pruett, he sits on the Carnegie fellowship committee this cycle. I know he's rude to everyone but maybe don't make it personal since your application is in his pile. Keep this between us ok"
+    },
+    {
+      "id": "p10",
+      "kind": "post",
+      "folder": "board",
+      "thread": "announcements/t-2270",
+      "author": "fbeaumont",
+      "reply_to": "p04",
+      "date": "2026-11-02T09:40:00",
+      "body": "Voigt option is great, thanks! The speedup on IFU cubes is real, 40 min down to 18 for me."
+    }
+  ]
+}

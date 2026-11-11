@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Order TH-48217: not delivered, need resend or full refund by Fri 13 Nov\n\nHi there,\n\nI'm writing about order TH-48217, placed on 21 October and paid in full by card (R1,640, including the R95 delivery fee). I emailed on 4 and 6 November and phoned on Friday, and each time I got the same reply, so I'm going to be direct.\n\nThe tracking says the order was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams\". Nothing was delivered to Bergview Pre-Primary in Plumstead that day. Nobody at the school is called Adams, and our gate guard, Uncle Faizel, keeps a book of every delivery that comes through the gate. There is no entry for the 3rd. The delivery address on my order was correct.\n\nThe order is:\n- 6 tubs finger paint\n- 4 bags playdough\n- 200 paper plates\n- Googly eyes\n- Glitter glue\n- 2 rolls brown paper\n\nI understand you use a courier, but I never chose them and I have no contract with them. My contract is with Tiny Hands Edu Supplies, and I paid you. My understanding is that under the Consumer Protection Act the goods are your responsibility until they are actually delivered to me at the address I gave, so telling me to sort it out with the courier doesn't work for me. When I phoned on Friday, I was told the courier's investigation could take up to 10 working days and that your team can't do anything until it's finished. That isn't an answer.\n\nThis is also not a small thing for me. I'm a kindergarten teacher on a teacher's salary, and I've put R1,640 of my own money into this for my class. The kids have already made the mask pattern from last week and have been waiting to paint. For a week I've been telling them the paint is \"coming soon.\" Our end-of-year concert is on 27 November and I need these materials for the props. I've ordered from you three times before without any problems, which is why this has been so frustrating.\n\nI need one of these two things:\n\n1. Resend order TH-48217 in full to Bergview Pre-Primary, Plumstead, in time for the concert, or\n2. A full refund of R1,640, including the delivery fee, to my original card.\n\nPlease confirm which one you're doing by Friday 13 November. If I don't hear back from a person by then, I'll open a chargeback with my bank and leave a review of my experience with Tiny Hands Edu Supplies. I would much rather sort this out with you directly, so please reply to me personally and not with a template.\n\nThank you,\n\n[Your name]\nKindergarten teacher, Bergview Pre-Primary\n[Phone number]",
+  "words": 458,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39246487617492676,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.24469441175460815,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.328125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.053797721862793,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.6,
+    "effort": "medium",
+    "output_tokens": 2506,
+    "input_tokens": 1581
+  }
+}

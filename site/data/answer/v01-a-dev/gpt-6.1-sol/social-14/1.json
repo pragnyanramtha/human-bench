@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties ❤️ Let me answer the question folks keep asking my mama: yes, I’m coming to Thanksgiving! Thursday, Nov. 26, at Aunt Denise’s in Macon, eating around 3. I’m bringing the mac and cheese and two sweet potato pies, so leave me some oven space.\n\nBefore we get there, I want to say something about last year. For those who weren’t there, there was an argument at the table about my work, and I helped turn it ugly. The comment about somebody getting their news from a gas station TV? That was mine. It was a cheap shot, and I’m sorry I said it.\n\nI’m not sorry for the work I do. I am sorry for how I talked at Grandma’s holiday. Grandma Pearl ended up sitting on the porch for about an hour, and I still feel bad that a day she should’ve been enjoying turned into something she needed to get away from.\n\nI don’t think anybody involved is a bad person. We know how to poke at each other in this family, and last year I took the bait and poked right back. There’s been some kindness since then, too, even if we haven’t actually talked about what happened. I haven’t missed that.\n\nSo I’m asking for a one-day truce on work and politics. That includes questions about “the lawsuit.” As a paralegal, I can’t discuss open cases because of confidentiality, so that conversation is a dead end anyway. Please don’t take it personally when I won’t get into it.\n\nCan we keep the table talk to food, football, babies, and Tasha’s new boyfriend? Tasha, please let him know we’re mostly harmless.\n\nI’m coming because I want to see everybody, eat too much, and have a good day with my family. Looking forward to it. ❤️",
+  "words": 302,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The August birthday thumbs-up from the relative is only vaguely hinted at as 'some kindness since then' and is never recalled, so that required point is missing."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4394393861293793,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2630021572113037,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.082414627075195,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.1,
+    "effort": "low",
+    "output_tokens": 384,
+    "input_tokens": 18223
+  }
+}

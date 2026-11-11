@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Set a January 15 H-1B Registration Intake Deadline\n\nI propose that we set January 15 as our internal deadline for receiving H-1B registration information and documents. This would give us more time to review each case carefully, resolve missing information and flag issues before the registration window opens. It’s a service improvement—not a response to clients being late. We haven’t given employers a date to work toward, and one HR contact said she would have been happy to send everything in January if we’d asked.\n\nLast season, we filed 14 registrations for six employer clients, and nine arrived in the final week of February. Rosa logged roughly 11 hours of overtime during the week the window opened. Under our current process, we send the questionnaire whenever an employer asks, with no set intake date. That leaves too much work concentrated at the last minute.\n\nThere is also a real accuracy risk. Brightwater Analytics sent a beneficiary’s passport scan two days before the window opened. The passport had expired in October; Rosa caught the dates, but a wrong passport can make a selection invalid. Registration itself is simple, but errors can be expensive. Moving the deadline up gives us time to check documents and follow up rather than discovering a problem at the edge of the filing window.\n\nJanuary 15 is realistic: HR teams are back from the holidays, and employers have set their Q1 budgets. The $215-per-beneficiary registration fee is already part of that planning.\n\n**What would change:**\n- Send engagement letters and a one-page questionnaire during the week of December 7.\n- Close standard intake on January 15; handle later requests case by case.\n- Have Rosa own the tracker, with a clean six weeks after the deadline to chase gaps and coordinate follow-up.\n\nIf Marcus agrees when we meet Thursday, we can finalize the approach and send the December letters.",
+  "words": 314,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4460808336734772,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9992721676826477,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 12.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.563812255859375,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "medium",
+    "output_tokens": 382,
+    "input_tokens": 13989
+  }
+}

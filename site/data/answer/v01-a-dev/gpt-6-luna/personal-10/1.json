@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-10",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**An open letter to friends, neighbours, school families and everyone who’s been checking in**\n\nI’m safe. I’m staying with my sister in Rondebosch with Marmalade, who is also safe, after a frightening fire at my building in Observatory on Saturday night.\n\nThe fire started at about 11:40 pm on Saturday, 7 November, in a ground-floor flat at Lindale Court on Station Road. I live on the second floor, in flat 12. Everyone got out. Two people were treated for smoke inhalation at Groote Schuur Hospital and then sent home. The fire department says an electrical fault may have been involved, but it’s still being investigated, so I’m not going to guess at the cause.\n\nMy flat is badly damaged by smoke and water, and the lounge ceiling came down. The landlord says nobody will be able to go back into the building for at least six weeks. I woke up when my neighbour, Uncle Faizel, went around our floor banging on every door in his vest and slippers. I grabbed my phone and Marmalade and got out. I didn’t take anything else. Marmalade hid under a car for two hours afterwards, which was terrifying at the time and feels a little funny now that I know she’s okay.\n\nA lot of people have messaged, called and offered help. I’m so grateful. I’ve cried at so many of your messages. I’m also exhausted, and my phone has been going mad since Saturday, so I can’t answer everyone one by one. Please don’t take it personally if I reply slowly—or don’t manage to reply to a DM at all. I wanted to write one proper update that people can pass along, rather than trying to explain everything again and again.\n\nI hate asking for help, and I feel strange about there being a fundraiser at all. Zinhle told me to shut up and accept it, so I’m trying. She set up a BackaBuddy fundraiser to help me with the immediate costs of starting over. The link is **backabuddy.example/thandi-lindale-court**. The target is R25,000, and it had reached R11,400 this morning. If you’re able to contribute, thank you. If you can’t, sharing the link or simply sending a kind message means a lot too.\n\n**Please be careful about other fundraisers.** There is a page called “Thandi Fire Relief” on another site, as well as a WhatsApp message asking people to EFT money into a Capitec account. Neither is mine, and I haven’t authorised them. I’ve reported the fake page. The only fundraiser I’m asking people to share is Zinhle’s BackaBuddy page at the link above. Please don’t send money to an account or link unless it’s that one.\n\nFor anyone who has asked what would actually help, the biggest things are:\n\n- Help with the deposit for a new place.\n- School shoes and work clothes: shoe size 6, clothing size 34.\n- A working laptop, if anyone has an old one they no longer need. All my lesson planning was on mine.\n\nI **don’t** need more clothes in general—I have too many already, and I’ll pass extras on to the other flats. I don’t need food either; my sister’s freezer is full. Please don’t feel you need to send things just because you want to do something. Furniture can be replaced. Marmalade can’t.\n\nI’m a teacher at Little Acorns Pre-Primary in Mowbray, where I teach the Ladybirds, our Grade 00 class of four- and five-year-olds. Some of you will know that I’d brought home things to laminate for the end-of-year concert. They’re gone now: 22 crowns and the children’s handprint banner. One of the parents dropped off a bag of clothes at my sister’s gate at 7 am on Sunday, without even knocking. That small, thoughtful gesture has stayed with me.\n\nTo the Ladybirds’ families: **the concert on 27 November is still happening, and the children will have crowns.** We’ll sort it out. I’m due back at school on Wednesday, and I’d really appreciate it if you didn’t make a big thing of what happened in front of the children.\n\nThank you to Uncle Faizel, to my sister, to Zinhle, to everyone who has checked in, and to everyone who has helped or offered to help. I’m safe, Marmalade is safe, and I’m taking things one step at a time. I may be slow to respond, but I’m reading your messages and I’m grateful for every one.\n\nPlease feel free to forward this letter.",
+  "words": 741,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32734471559524536,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8766023516654968,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.9312982559204102,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.7,
+    "effort": "medium",
+    "output_tokens": 973,
+    "input_tokens": 14298
+  }
+}

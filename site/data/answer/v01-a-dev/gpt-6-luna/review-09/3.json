@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4/5 stars — a big improvement for our livestream, but not a fix for everything**\n\nOur congregation bought the Lindqvist Optics PT-20 from Chancel AV in February 2026 for $2,140. The wall mount cost another $95. We’re a small Lutheran congregation in Minneapolis, and the camera sits on the balcony rail at the back of our 92-foot nave. It feeds into OBS on our old office PC, which streams our services to YouTube. We usually have 30–60 viewers on a Sunday.\n\nSetup was manageable, even for someone who isn’t an engineer. The PT-20 has 20x optical zoom, 1080p60 video, NDI HX, and a regular HDMI output. It’s powered over Ethernet, so we only needed one cable running up to the balcony. We set up nine presets: the altar, pulpit, lectern, font, choir loft, piano, a wide shot, and two views of the chancel steps. Erik, our 16-year-old acolyte, controls it from the free web app on a tablet. He had the hang of it in an afternoon.\n\nThe presets didn’t stay quite where we put them at first: on the first Sunday, they had drifted a few degrees by the sermon. A firmware update, version 2.4, fixed that for us in March. The manual is thin and badly translated, so it took some trial and error. When I called Chancel AV, Marcy was excellent on the phone and helped us get sorted.\n\nThe picture is the clearest improvement over our old webcam. During the Easter Vigil in April, the camera got grainy in the candlelight, but the image stayed usable. Our old webcam would have shown little more than dots. One of our homebound members, Delores, who is 82, called to say she could finally read the hymn numbers on the board. That mattered to us.\n\nIt isn’t perfect. Autofocus can hunt when someone walks between the camera and the pulpit, so we lock focus on the presets instead. And the camera did nothing for our sound problem. Audio isn’t its job, and buying a better camera won’t make a bad microphone or a difficult room sound better. If you’re weighing this purchase, budget and plan for audio separately.\n\nI’d give the PT-20 **4 out of 5 stars**. We would buy it again, and the zoom, presets, and improved picture have made our stream much more useful for people who can’t be in the pews. But it’s a meaningful expense: a congregation with fewer than 100 members might do fine with a cheaper option, depending on the room and what they need to show. For us, the upgrade was worth the money, with the caveats above.",
+  "words": 436,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43208035826683044,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9123887419700623,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.711711883544922,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.0,
+    "effort": "medium",
+    "output_tokens": 580,
+    "input_tokens": 14088
+  }
+}

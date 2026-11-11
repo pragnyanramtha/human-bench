@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# The other side of morning\n\nMy last night shift was on Saturday: 9pm to 7.30am, in majors. Fourteen years after my first one as an SHO in 2012, I handed over on Sunday morning, collected my things and left.\n\nI had expected to feel relieved. I did feel relieved. What I hadn’t expected was how much else came with it.\n\nFrom Monday I’m on the days-only rota. There are good reasons for that. My knees have made their views known for a while, my sleep has become less a routine than an ongoing negotiation, and my GP has pointed out, with the patience of someone who has made this point before, that my blood pressure is not a joke anymore.\n\nI know this is the right move. I also feel a bit like a traitor for being relieved.\n\nIt’s hard to explain the attachment to people who haven’t worked nights. The hours are punishing, your body never quite knows what day it is, and there are stretches when everyone you love seems to be awake while you’re trying to sleep, or asleep while you’re trying to stay awake. But nights have been the shape of my working life for fourteen years. They’ve given me colleagues I trust, a particular kind of quiet, and more 4am toast than any sensible person needs.\n\nSomeone always makes toast in the staff room at four. Nobody admits to starting it. You go in for a cup of tea and there it is, or the toaster is warm, or there’s someone standing beside it looking innocent. I don’t know whether this counts as a tradition if nobody will take responsibility, but it has lasted longer than most department initiatives.\n\nI think nights are where the department is most itself. There are fewer managers around, for one thing, and perhaps because of that—or perhaps just because everyone is tired enough to dispense with the performance—there’s more honesty. Someone will tell you plainly that they’re struggling. Someone else will take over for ten minutes so they can have a drink. There is kindness in the way people look out for one another without making a speech about it.\n\nI don’t want to pretend it’s always harmonious. People get tired and short with each other. Things are missed, then caught, and sometimes the hours seem to move backwards. But there is a particular feeling to a team working its way towards morning together, and I will miss being part of it.\n\nDuring my first winter of nights, I cried in the car park at the Infirmary because I couldn’t remember whether I had given a second dose. I had. What I remember most clearly now is the frost on the windscreen.\n\nI was so frightened of getting something wrong. I still am, in the way I think most doctors are, though I’ve got better at recognising when I need to check something rather than letting the worry run away with me. That first winter feels a long way off, but I can still picture the car park.\n\nPeople tend to think nights in emergency medicine are about adrenaline. Sometimes they are. Mostly, I think, they’re about staying kind at five in the morning when you feel empty. Listening properly when you’ve already listened to a great many people. Finding enough patience to explain something again. Remembering that even if this is your tenth hour at work, it may be someone else’s first frightening hour in hospital.\n\nLast winter, an old gentleman held my hand at around three in the morning and told me I had his daughter’s hands. He went home three days later. I’ve thought about him since, and about how much can be said in a small moment in the middle of a long night.\n\nAnd then there is what the hours take. I missed both my nieces’ naming ceremonies over video because of nights. My sister, in Bangalore, never once complained. I’m grateful to her for that, though I wish she’d had less reason to be understanding. There are things you can catch up on afterwards, and things you can’t quite.\n\nI’ve missed other ordinary things too: evenings when I could have been at home, mornings when I was there but too tired to be much company. I don’t have a tidy way of weighing those against the work, or the people I’ve met through it. I’m not sure there is one.\n\nThis isn’t a complaint about staffing. I’ve written enough of those, and I’m sure I will again. This is more difficult to write, perhaps because there isn’t an argument to make. I’m glad I did nights. I’m glad I’m stopping. Both are true, even if I haven’t quite made peace with either.\n\nOn Sunday morning I drove home down the London Road as the sun was coming up, listening to the Radio 4 shipping forecast on catch-up. Somewhere along the way I realised I would not see that light from this side again: heading home from the department while the day was beginning for everyone else.\n\nIt caught me out. I’d handed over, said goodbye and made it to the car without much ceremony, and then there I was on the London Road feeling sad about daylight.\n\nFolasade, our charge nurse on nights, has been doing them for twenty-two years and still beats me up the stairs. She was there on Saturday, getting on with things as she always does. I like knowing that she’ll be there on another night soon, probably arriving at the top of those stairs before everyone else.\n\nAnd at four, I expect, someone will make toast. Nobody will own up.",
+  "words": 943,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.19239695370197296,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6942798495292664,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.54296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.5102683305740356,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.7,
+    "effort": "low",
+    "output_tokens": 1127,
+    "input_tokens": 19135
+  }
+}

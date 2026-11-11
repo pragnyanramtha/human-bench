@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: [p02]\nCc: none\nSubject: none\n\nThis should not have been marked solved. I did read the changelog, and I have now found the actual cause: PR #812 changed the default in `LineList.__init__` from `wave_frame='air'` to `wave_frame='vacuum'`.\n\nMy spectra are wavelength-calibrated in air. At 6563 Å, the vacuum/air wavelength ratio is about 1.00028, which matches the roughly 0.00028 downward redshift offset (about 83 km/s) I reported. There was no deprecation or runtime warning, and CHANGES.md describes this only as “Refactor LineList and spectral frame handling (#812).” Nobody should have to guess that “refactor” means a default affecting scientific results has changed.\n\n“Works fine for me” is not a test of this case. If your data already use vacuum wavelengths, or you are working with radio data, identical results would not contradict this. Also, m_okonkwo reported a possible offset on long-slit data, so this is not just my setup.\n\nThe calibration-focused response sent me in the wrong direction. I spent two days re-reducing arc lamps for 40 spectra, on top of repeating the fits and downgrading to check the behavior. That time could have been avoided with one clear sentence in the changelog—or without the premature dismissal.\n\nWorkaround for anyone else affected: set `wave_frame` explicitly when constructing the line list:\n\n`LineList(..., wave_frame='air')`\n\nUse this for spectra calibrated in air rather than relying on the new default.\n\nCould a maintainer please reopen this thread? Please also add the default change prominently to the 2.5.0 section of CHANGES.md and consider warning when `wave_frame` is not explicitly set, so other users do not silently get shifted redshifts.",
+  "words": 257,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3669045865535736,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.28649404644966125,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.02726149559021,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.2,
+    "effort": "provider default",
+    "output_tokens": 1621,
+    "input_tokens": 1645
+  }
+}

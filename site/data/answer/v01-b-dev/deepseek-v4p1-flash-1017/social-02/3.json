@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "invented amount",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays fixing the electrical in a buddy’s shed. I went in thinking it was gonna be a couple outlets and a light. I came out with a list that reads like a safety pamphlet somebody wrote after a fever dream.\n\nFor starters, the power to the shed was three orange extension cords daisy-chained out the basement window, across the yard, and under the deck. One splice was wrapped in duct tape. Not electrical tape. Duct tape. I’ve seen a lot in 26 years, but duct tape on a live splice still gets a little golf clap.\n\nThe breaker feeding all this was a 30 amp on 14 gauge wire. If you don’t know what that means, congratulations, you’re safer than whoever did this. The shed outlet was hooked up with speaker wire. The “GFCI” was a regular outlet with a GFCI sticker stuck on it. That’s like putting a salad sticker on a cheeseburger and calling it health food.\n\nCeiling fan box was held up by one drywall screw. One. And when I opened the panel, there was a mouse nest in the junction box. Mice were fine. Unbothered. Probably had better job security than me.\n\nThe panel door had SHED - DONT TOUCH - RON written on it in Sharpie. The wife was standing there when I opened it and goes, “Who’s Ron?” Like I’d know. I don’t know, honey. Ron’s a legend, I guess.\n\nHere’s the thing: the guy who did this wasn’t evil. He was cheap and a little proud. That’s most of these. Somebody’s buddy watches a video, saves a couple hundred bucks, and now the family’s sleeping over a live wire and a prayer. This stuff burns houses down. It doesn’t usually look dramatic first. It looks like a shed that works fine until it doesn’t.\n\nI trenched 18 inches, ran 12/2 UF, put it on a 20 amp GFCI breaker, real boxes, real outlets, fan on a brace. Paid in two pizzas and a case of Yuengling, which is either a great deal or a cry for help depending on your day.\n\nIf you’ve got a shed, garage, basement, whatever, and the wiring looks like a science fair project, please call a licensed electrician. Not your buddy with a YouTube video. Not your cousin who “knows a little bit about it.” Not a guy named Ron with a Sharpie and a dream. Get it checked. Your house is a bad extension cord away from being a campfire story.",
+  "words": 418,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "invented_amounts",
+        "kind": "invented amount",
+        "detail": "amounts not in the environment: ['100']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48881396651268005,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3113572299480438,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.609375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.127701759338379,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.0,
+    "effort": "provider default",
+    "output_tokens": 3512,
+    "input_tokens": 1494
+  }
+}

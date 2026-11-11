@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: [p04]\nCc: none\nSubject: Re: Achilles sore after upping my k's - rest or push on?\n\nHi Mel — thanks for the extra detail. A quick jump in running volume can overload the Achilles. The stiffness and soreness you describe could fit a mid-portion tendon problem, but I can’t diagnose it from a forum post or rule out other causes without examining you.\n\nYou don’t necessarily need complete rest, but since you were limping after that 6k, ease off running for now rather than pushing through. Keep to activity that doesn’t leave you limping or noticeably worse later that day or the next morning. Build back gradually as it settles.\n\nFor calf loading, heel drops are one option; heavy, slow calf raises are also commonly used in rehab. Start with a manageable load and progress gradually, ideally with guidance if you’re unsure how to do them. On more painful days, gentle isometric calf holds (holding a calf raise without moving) may be more comfortable. A useful guide is up to 3/10 pain while loading, provided it settles by the next morning. If pain is higher, you limp, or it’s worse the next day, reduce the load.\n\nI’d avoid forcing stretches into pain, and cortisone injections around the Achilles tendon aren’t a recommended fix because of concerns about tendon damage. Some antibiotics, including ciprofloxacin, can also affect tendons; if you’re taking one and develop tendon pain, contact your prescriber promptly.\n\nIf it’s not settling over the next 3–4 weeks, see any sports physio locally for an assessment and a tailored plan. If you feel a sudden pop or like you’ve been kicked in the back of the leg, or you can’t push off, stop running and calf exercises and get checked urgently that day by a GP or at ED, as those can be signs of a rupture.",
+  "words": 291,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4113837480545044,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.31240445375442505,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.211547374725342,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "medium",
+    "output_tokens": 400,
+    "input_tokens": 15228
+  }
+}

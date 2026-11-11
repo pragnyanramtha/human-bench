@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last 2 Saturdays redoing the electric in a buddy's shed. Not saying who, he knows who he is. But I gotta share what we found out there, because I been doing this 26 years and I still stood there for a minute just looking at it.\n\nI wrote it all down so nobody could say I made it up:\n\n- Power to the shed was 3 orange extension cords plugged into each other. Out the basement window, across the yard, under the deck.\n- One splice was wrapped in duct tape. Not electrical tape. Duct.\n- 30 amp breaker feeding 14 gauge wire. More on that in a sec.\n- The shed outlet was hooked up with speaker wire. Like for a stereo.\n- The \"GFCI\" was a regular outlet with a GFCI sticker stuck on it. A sticker.\n- Ceiling fan box held up by 1 drywall screw. One.\n- Mouse nest in the junction box. Mice were fine. Unbothered. Best tenants on the property.\n- And inside the panel door, in sharpie: SHED - DONT TOUCH - RON\n\nSo I open the panel, his wife is standing right there, and she goes \"who's Ron?\" Like I'd know. Lady I just got here.\n\nI never met Ron. But I know Ron. I've met about 400 of him. Ron wasn't evil. Ron was cheap and a little proud, and that's most of these. He got power out to his shed, it turned on, and he figured that means he did it right.\n\nHere's the part that isn't funny. All of that stuff \"worked.\" The lights came on. The fan spun. That's what gets people.\n\nA breaker is there to protect the wire. 14 gauge is good for 15 amps. Put it on a 30 and that wire can carry double what it should before the breaker does a thing, so the wire is the part that gets hot. Inside a wall. Where you can't see it.\n\nExtension cords aren't made to live outside year round, and these were sitting under a wood deck with a duct tape splice in the middle.\n\nThe sticker might be the worst one. A real GFCI is what saves you when something goes wrong with wet hands or a wet floor. A sticker saves nobody, but everybody who plugged in out there thought they were covered.\n\nAnd the fan on one drywall screw was spinning over people's heads.\n\nBad wiring works fine right up until the night it doesn't, and by then you're standing in the yard in your socks watching the fire trucks pull up.\n\nWhat we did: dug a trench 18 inches down, ran 12/2 UF cable made to be buried, put it on a 20 amp GFCI breaker, real box, real outlets, fan hung on a proper brace. Nothing smells like burning anymore, which is the standard you're going for.\n\nI got paid in 2 pizzas and a case of Yuengling. That's the friends rate and no, it's not available.\n\nSo if you got a shed, a garage, a basement, whatever, and you need electric run to it, call a licensed electrician. Not your buddy who watched a video. Not your nephew's friend who'll do it for cash Saturday. The video doesn't show you what size wire goes on what breaker, and it's not gonna be there when it goes wrong. Yeah a licensed guy costs more. It's still a lot cheaper than a house.\n\nAnd if you open your panel and there's a name in there in sharpie telling you not to touch something, call somebody that week.\n\nPics below. The duct tape one is my favorite.",
+  "words": 608,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18534062802791595,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10442668199539185,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.984930992126465,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.1,
+    "effort": "high",
+    "output_tokens": 3292,
+    "input_tokens": 2866
+  }
+}

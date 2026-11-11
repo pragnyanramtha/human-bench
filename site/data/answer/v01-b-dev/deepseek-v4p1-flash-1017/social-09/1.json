@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "@Kavya, I’m tagging you because I’d rather you hear this from me directly, even though it’s public. And to everyone in Foundry91 cohort 4 who’s been tagging me since yesterday — I owe you a clear answer.\n\nKavya’s post was about founders in your own cohort hiring from your team with big hikes. I know it was about DabbaDost. I’m not going to pretend otherwise, and I’m not going to get into a public back-and-forth. But some things need correcting, and one thing needs owning.\n\nFirst, the part that’s on me: two of her engineers joined us recently. I knew where they worked from day one. I should have called Kavya before we made either offer, not after. I didn’t. That’s my mistake and I own it. In a batch of 11 startups hiring from the same small pool in HSR and Koramangala, this will keep happening unless we handle it better as a cohort.\n\nBut the details being repeated aren’t right. We put a backend dev opening on our LinkedIn page and Instahyre on 14 Sept, open to anyone. The first person applied himself on 19 Sept. The second came as his referral two weeks later. Nobody from my side DMed anyone. The offer was 22% over current CTC, not 40. Both joined on 3 Nov. I’m not naming them — they didn’t ask for this.\n\nOn ESOPs: we have a pool. It’s small, but it’s real and on paper since January. Saying we promised something we don’t have isn’t fair to the people who’ve bet on us.\n\nI did WhatsApp Kavya after the second offer was accepted. I didn’t hear back, and then the post came. I’m not saying that to score a point. I’m saying it because I’d have preferred a call to a comment section too.\n\nKavya and I go back to demo day in March 2026 — SitterNest and DabbaDost. She sat with me till 1am in the Koramangala office fixing our Razorpay webhook mess. I’ve never forgotten that. She’s a good friend and I’m not writing this to fight her. I’m writing because I respect her enough to correct the record myself instead of letting 60 comments do it.\n\nSuggested rule for our cohort: if you’re interviewing someone from another batch company, give that founder a heads up before you make the offer. Simple. No permission needed, just a call.\n\nKavya, coffee or a call is open. This week, whenever you’re okay with it. I’d rather we sort this as friends than as a LinkedIn thread.",
+  "words": 422,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2757079303264618,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3074755370616913,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.37890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.735937118530273,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.8,
+    "effort": "provider default",
+    "output_tokens": 11355,
+    "input_tokens": 661
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hi Mum, Kirsty and Linda,\n\nI’ve got a wee surprise planned for Gran’s 80th and I’m absolutely buzzing about it! Keep it to yourselves though, she can’t know yet!\n\nMorag’s said I can have Hair by Morag to myself on Saturday 12 December from 1pm, after she closes up at 12. I thought it would be lovely to get us all together and do everybody’s hair for free before we head out for Gran’s birthday dinner that night.\n\nThat’s me, Mum, Kirsty, Linda and Gran, plus Ava and Ruby, so seven heads altogether! I can do a cut and blow-dry for everyone, and the wee ones can have braids and glitter spray if they fancy it. I think they’ll love that.\n\nIf any of you want a colour done, can you let me know **what you’re after by Friday 27 November**? I need to get the order in to the wholesaler, so I can only promise colours if I know in time. Gran said at Easter she’d love to go silver properly but wouldn’t pay salon prices, so I’d love to chat to her about that on the day and see what she fancies. I’ll make sure I’ve got what I need in just in case.\n\nAnd Linda, this time we can keep the dye away from your cooker and the dog!\n\nMum, do you think you could get Gran to the salon for 1 without telling her why? You’re probably our best bet for getting her there without her getting suspicious!\n\nDinner’s booked for 8.30 at the Italian on Byres Road, a table for nine with Uncle Davie and Kirsty’s man joining us too. Bring a bottle of fizz for the afternoon if you fancy it. Morag’s fine with that as long as we tidy up after ourselves.\n\nLet me know what you’d all like done. Can’t wait to spoil Gran and have a wee afternoon together!\n\nLove xxx",
+  "words": 320,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2579924166202545,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03641797974705696,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.528087854385376,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "low",
+    "output_tokens": 407,
+    "input_tokens": 19023
+  }
+}

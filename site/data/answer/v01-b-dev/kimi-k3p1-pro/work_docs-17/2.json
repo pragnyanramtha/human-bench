@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## H-1B Cap Season: Proposed January 15 Intake Deadline\n\nFor Thursday’s planning discussion, I’d like us to move our internal deadline for H-1B registration intake to January 15. The goal is better service and a more manageable review process: employers get a clear request and timeline early, and we get enough time to resolve problems before the registration window.\n\nLast season, we filed 14 registrations for six employer clients, and nine of those 14 came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened. Most of that crunch was our process, not client delay. We currently email the questionnaire whenever an employer asks, with no set intake date, so we have never given clients a deadline to work toward. One HR contact told me she would happily have sent everything in January if we had asked.\n\nAn earlier deadline also protects us. Brightwater Analytics sent a beneficiary’s passport scan two days before the window; it had expired in October, and we caught it only because Rosa checked the dates. The registration itself is straightforward, but errors are expensive—a passport problem can mean an invalid selection. January 15 would give Rosa a clean six weeks to chase gaps and correct discrepancies rather than compressing those checks into the final days.\n\n**What would change:**\n\n- **Week of December 7:** Send engagement letters and the one-page questionnaire to anticipated cap-season employer clients, instead of waiting for individual requests.\n- **January 15:** Close routine intake and have Rosa’s tracker reflect what is complete and what still needs follow-up.\n- **After January 15:** Handle later requests case by case, based on timing and the specific circumstances, rather than treating the deadline as an absolute bar.\n- **Follow-up:** Rosa owns the tracker and uses the six-week runway for document gaps, questions, and date checks.\n\nJanuary 15 is realistic: HR teams are back from the holidays and have their budgets set. The December letter can also confirm the $215 registration fee per beneficiary, which employers already budget for in Q1. If Marcus agrees on Thursday, we can finalize the materials and send the December letters on schedule.",
+  "words": 360,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4148155450820923,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9990748763084412,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 16.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.937848091125488,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.3,
+    "effort": "provider default",
+    "output_tokens": 1948,
+    "input_tokens": 535
+  }
+}

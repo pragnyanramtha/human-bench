@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Please talk to your kids about the fake pill warning\n\nParents and teenagers, please take a minute to read this. The police warning is on here already, but I’m worried it’s getting missed.\n\nBlue tablets are being sold locally as diazepam or Xanax. Some have been found to contain nitazenes, synthetic opioids that can be far stronger than heroin. You can’t tell what’s in a pill just by looking at it, and someone taking one may not know what they’ve taken.\n\nSigns that someone is in trouble include extreme drowsiness, pinpoint pupils (the black centre of the eye looks very small), slow or noisy breathing, and blue lips.\n\nIf someone has taken something and becomes unwell, call 999 straight away. Tell the call handler what you know and follow their instructions. Don’t wait to see if they improve and don’t put them to bed to sleep it off.\n\nI’m an ICU nurse, and this is a general point, not about any particular person: when people panic, they might put a mate to bed and only ring for help hours later. By then their brain may have been without enough oxygen for too long. Making that call quickly can save a life.\n\nI know teenagers might be frightened about getting themselves or a mate into trouble. Please don’t let that stop you calling. The police have literally said their priority is preserving life. You can deal with everything else afterwards.\n\nNaloxone nasal spray can reverse the effects of opioids, including nitazenes. You can get a free kit from Brightpath drug and alcohol service on Stockport Road, next to the launderette. Anyone can ask, no name needed, and the training takes about 10 minutes. They’re open Monday to Friday, 10–4, and until 7 on Thursdays. If you have naloxone, use it as you’ve been shown, but still call 999 immediately and follow the call handler’s instructions.\n\nI had this chat with my lad, who’s 14, over his tea last night. There were eye rolls, obviously, but he listened and even asked me what pinpoint pupils meant. It doesn’t have to be a big lecture. Just make sure they know the signs, know to call 999 and know they won’t be left to deal with it alone.\n\nPlease talk to your kids THIS week, not after half term or whenever there’s a better moment. And please stop slagging kids off. It helps nobody. Scared kids don’t ring for help, and that’s the whole problem.\n\nPlease share this, don’t just like it. It might reach someone who needs it.",
+  "words": 415,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3058808743953705,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06674160808324814,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.8461522459983826,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.4,
+    "effort": "low",
+    "output_tokens": 565,
+    "input_tokens": 20202
+  }
+}

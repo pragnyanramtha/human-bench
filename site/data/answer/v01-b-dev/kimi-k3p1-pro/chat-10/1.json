@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I’m really pissed, and I need you to hear me instead of brushing this off with “that’s business.”\n\nYou told Gary Pruitt I’d list his four-bedroom house in Chandler off Ray for 1%, calling it a “family rate,” without asking me. I have never quoted 1% to anybody. My listing side is 2.5%. You offered up my time and cut my commission so you could look like a big shot to your friend.\n\nI spent Saturday, Nov. 7, pulling comps, doing the walkthrough, and printing a full listing packet. That was about six hours of work, plus the drive from north Phoenix. Then Gary texted Sunday night that he was going with ListLite’s $3,995 flat fee and “no hard feelings.” Honestly, I’m not mad at Gary. He made his choice. I’m mad at you for putting me in that position, and then acting like it was nothing when I called.\n\nAnd now you’ve already given Denise my cell so she can “pick my brain” about her rental. No. I’m not calling Denise. You gave her my number and got her expectations up, so you can tell her you spoke out of turn.\n\nThis is the same thing that happened with your softball guy two years ago. I let it go then. I’m not letting it go now.\n\nDo not hand out my number, quote my commission, or volunteer my time again. Ask me first, every time. I’m happy to help actual family—Mom, your kids, whoever—and I’ve never charged family for advice. But your friends and coworkers don’t automatically get free work from me, and they definitely don’t get a discount you invented.\n\nI love you, and I’m still coming to Thanksgiving. I’m not trying to make this some huge family thing. But I need you to understand that I’m angry, and this stops now.",
+  "words": 305,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It confirms attending Thanksgiving but does not say it is at Rick’s place."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4208066463470459,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.527413547039032,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.31614875793457,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 43.3,
+    "effort": "provider default",
+    "output_tokens": 1599,
+    "input_tokens": 529
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\n@dana.okoye Yes, this is a reasonable DIY job. With a helper and everything staged, figure on 2–3 hours. The yard’s $465 quote isn’t a ripoff, but doing it yourself will teach you a lot about Sea Wren.\n\nFirst, one important amendment to Hector’s suggestion: don’t run green automotive antifreeze through the Yanmar. That’s ethylene glycol—toxic, and not rated for this raw-water application. Hector’s helped plenty of us aboard, but I’d steer you away from that part of his method. Use pink propylene glycol RV/marine antifreeze for both the engine’s raw-water side and the domestic water system. Neither green nor pink belongs in the river; engine discharge comes out through the exhaust.\n\nYour 3GM30F is freshwater-cooled, with a heat exchanger, so there are two separate circuits. On the closed coolant side, check the strength with a hydrometer. At 50/50, you want protection good to roughly -20°F. The raw-water side is the one that freezes and cracks expensive parts. During that Christmas freeze a few years back, three boats on C dock cracked exhaust elbows or strainers. Every one had skipped or rushed the raw-water side.\n\nFor supplies, estimate about 2 gallons of pink for the engine and 2–3 for the water system. Those are only estimates—buy enough to complete both manufacturers’ winterizing procedures and verify the resulting protection. It’s usually around $6/gallon at West Marine or Walmart. Keep a spare raw-water impeller aboard too.\n\nTo: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nHere’s the engine order I’d use:\n\n1. Warm the engine, then change the oil and filter while the oil is warm.\n2. Top off the fuel tank, add stabilizer, and run the engine about 10 minutes so treated fuel gets through the system.\n3. Move on to the raw-water flush and winterizing. Before starting that work, set up collection for the exhaust discharge. Your helper should watch both water flow and the collection setup. Capture all winterizing discharge for proper disposal.\n4. Follow the Yanmar and antifreeze manufacturers’ procedures. Close the seacock, arrange for the strainer to feed antifreeze with the engine at idle, and keep the raw-water pump wet throughout. Shut down when the procedure is complete and leave the seacock closed.\n5. Check the discharged mixture for the required winter protection. Pink color alone doesn’t prove it’s protected.\n\nIf you want to pull the old impeller afterward and inspect it, go ahead. Just don’t run or crank the engine with the raw-water pump dry.\n\nTo: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nFor the domestic water system, deal with the water heater before pumping pink through everything. Your Catalina’s bypass valve is behind the companionway steps. Switch off the water-heater breaker before draining the tank, and leave it off until the tank has been refilled in spring. Drain the tank first; otherwise you’ll waste roughly 6 gallons of antifreeze filling it. Then set the bypass and follow the water-system and antifreeze procedures for the rest of the plumbing. Collect that discharge as well for appropriate disposal.\n\nThat’s the whole shape of the job: coolant strength check, warm-oil service and fuel treatment, careful raw-water protection, then the domestic system. Nothing mysterious, but the order and collection matter.\n\nI can come down Saturday morning if you’d like a second set of hands.",
+  "words": 527,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "3 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23606355488300323,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.28225672245025635,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.28125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.703469276428223,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 50.6,
+    "effort": "provider default",
+    "output_tokens": 2847,
+    "input_tokens": 1681
+  }
+}

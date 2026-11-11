@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Last Saturday, we wrapped up the student-run Winter School on Elliptic Curves and Modular Forms, held from 5–7 November 2026 at Seminar Hall 2, Department of Mathematics, Sahyadri Institute of Science, Pune.\n\nWe received 112 applications and selected 41 MSc and early PhD participants from 9 states, based on a statement of interest and one reference. For many of us, these numbers still feel a little unreal.\n\nKetaki Joglekar, Faizan Mirza and I organised the school, and we are deeply grateful to our faculty mentor, Prof. Anuradha Venkatesan, for her guidance and patience throughout. Thank you to our speakers: Dr. Nilesh Dharmadhikari (Hyderabad) for his lectures on Mordell–Weil, Dr. Sunanda Iyer (Chennai) for introducing modular forms, and Dr. Tomasz Wierzbicki, who joined online from Kraków, for sessions on computations in Sage. Thank you also to our six PhD volunteers for running the problem sessions. This format worked especially well, and we hope to retain it.\n\nThe institute’s Rs 2.4 lakh student initiative grant made the school possible, covering hostel accommodation and travel for 18 outstation students. We are also grateful to Mr. Prakash Salunke and the office staff, particularly for sorting out hostel rooms at 11 pm after a booking mix-up.\n\nThe three days had their share of unscripted moments. When day 2 lost power for nearly two hours and laptops began dying, we moved the problem session to the canteen with two rolling whiteboards. It turned into perhaps the best session of the school. Another highlight was an MSc student from Silchar spotting an error in a worked example in Sunanda ma’am’s notes; she corrected it live and thanked him. That, to me, captured what a school like this should be.\n\nLarge conferences have their place, but smaller schools matter enormously for MSc students: there is room to pause, ask basic questions, make mistakes and try again.\n\nThank you to every participant for bringing such curiosity and generosity to the classroom. Slides and problem sheets will be uploaded to the department website within two weeks.\n\nOn behalf of the organising team, we hope to return with a second edition in late 2027, subject to funding. We would be glad to hear from potential supporters and collaborators.",
+  "words": 367,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.25380590558052063,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06539878994226456,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6171875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.906421661376953,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 59.1,
+    "effort": "provider default",
+    "output_tokens": 3851,
+    "input_tokens": 646
+  }
+}

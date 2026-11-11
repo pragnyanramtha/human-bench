@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast\n\nHi Rhonda its Gary from the bus garage. Hope you and everybody at the diner are doing good. We want to do the christmas breakfast at your place again this year like always. The sign up sheet filled up fast, everybody looks forward to it.\n\nCan we have the back room Saturday Dec 19 at 7am? If the 19th is no good for you the 12th would work too, same time.\n\nWe got 24 this year counting Earl and his wife Carol. Last year I told you 20 or 22 so its a few more. Will the back room hold 24 ok? If its tight let me know and we'll figure something out.\n\nThis year is kind of a big one. Earl is retiring. He drove 31 years and his last day is Friday the 18th, so the breakfast is the day after. He doesn't know we're doing anything for him and we want to keep it that way. Carol knows, but if Earl comes in or calls please don't say anything to him, and maybe tell the girls too. He'd be embarrassed by a big speech so we're just going to keep it simple.\n\nEarl loves your cinnamon rolls, honestly I think they're better than any cake. So I wanted to ask which you'd rather do. I can bring a cake from Sugarcreek Bakery if that's ok with you, or we could skip the cake and you do a big tray of your cinnamon rolls with a candle in the middle. Whatever is easier on your end, just tell me what you'd charge for the rolls.\n\nSame food as last time is fine, the family style eggs, home fries, and biscuits and gravy, and everybody orders there own meat. Last year it was $11 a head. What is it this year? It was fair and I don't mind if its up a little, I just want to tell everybody ahead of time.\n\nCouple things I need to ask. Patsy can't do eggs anymore. Could you do something else for her instead, like oatmeal or pancakes or whatever you have that works? Let me know if that changes the price for her.\n\nAlso Lonnie is on a walker since his hip and can't do steps. Is there a side door into the back room with no steps that he could use? If it's normally locked could you have it open that morning?\n\nLast year the coffee ran out around 8:15 when the urn quit. I know you felt bad about it and you don't need to, stuff happens. This bunch drinks a lot of coffee though lol, so could you keep a backup pot or something ready just in case? I'd sure appreciate it.\n\nSeparate checks again please, that worked fine last time. And I'll get you the final count by the Wednesday before like you want. For the 19th that would be Dec 16.\n\nThanks Rhonda, let me know what you think about all that.\n\nGary",
+  "words": 497,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09903407096862793,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.012589506804943085,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.171875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.386875629425049,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.0,
+    "effort": "high",
+    "output_tokens": 3409,
+    "input_tokens": 4021
+  }
+}

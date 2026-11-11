@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: Bethan Rees\nSubject: Re: Nia's hen - Tenby final plan + money!!\n\nBeth,\n\nJust replying to you, not getting into this on the group email. Landed back from Lagos and my head’s absolute mush, so bear with me.\n\nWould you have a think about coming just for Saturday? Leave the Friday at the cottage if you don’t fancy it. You only need to get to Tenby for 6, and the train from Cardiff Central is about two and a half hours ish. I’ll pick you up from the station and you can kip in with me Saturday night, I’ve got the twin room. We can get ready together and go down for the meal.\n\nI know November was horrible and I’m not going to pick through what you or Lowri said at her 40th. I wasn’t in the middle of it and I’m not taking sides now. I do wonder if she’s sorry and just doesn’t know how to get past being stubborn. Neither of you is exactly keen on going first, mind.\n\nBut this is Nia. You sat with her in the Heath every night when her mam was bad in 2019. You don’t need me telling you how much you mean to her. She rang me last week worrying about whether you were still coming. She doesn’t know you’ve decided not to yet, and I’d much rather you two had a chat than me speaking for either of you.\n\nWe’ll all be at Margam on 17th April, you doing your reading, and I’d hate for you to wish then that you’d come for the meal. I swapped Orlando with Kerry from work to get this weekend off and lost a night stop I really wanted. Not saying that to make you feel bad — I just really want us there together for her.\n\nAnyway, don’t send Lowri any money yet. Hang on a bit and have a think. Saturday, a meal, and a bed with me next door. No paddleboard required.\n\nSiân xx",
+  "words": 333,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Bethan's possible regret is hinted at, but the piece never says Nia will remember who wasn't there, and Nia is described as 'worrying' rather than ringing in tears."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11718466132879257,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.051930174231529236,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.5546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.4209389686584473,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.3,
+    "effort": "low",
+    "output_tokens": 417,
+    "input_tokens": 18778
+  }
+}

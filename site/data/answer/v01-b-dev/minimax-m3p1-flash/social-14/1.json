@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the post:\n\n---\n\nHey everybody — I'm coming to Thanksgiving this year. 🦃\n\nThursday, Nov 26, at Aunt Denise's in Macon, eating around 3. I'll be there early, because I'm bringing mac and cheese and two sweet potato pies and I want time to get settled before everybody starts showing up.\n\nA couple of things I need to say.\n\nLast year I let a disagreement about my job turn into a bad scene at that table. I made a cheap shot — the gas station TV crack was mine, and it wasn't a good one. I also talked to Grandma Pearl in a way that made her get up and walk out to the porch and sit by herself for about an hour, and that's the part I feel worst about. Nobody should have to sit alone on a holiday. I'm sorry for how I talked at that table, and I'm sorry for what it cost everybody in the room.\n\nWhat I'm not sorry for is my job. I actually like what I do. And if anybody has questions about the lawsuit or anything else we handle, I genuinely can't answer them — client confidentiality, open cases, the whole bit. So please don't put me on the spot about it, and please don't put anybody else on the spot about it either. That's not me being cagey, that's just the job.\n\nWhat I'm asking for is one day. Let's keep the table to food, football, babies, and Tasha's new boyfriend. Give that man a hard time, but gently, because I haven't met him yet and I'm already protective of him. Work talk and politics talk can wait till Monday.\n\nAnd since I'm in here — I got a thumbs up emoji for my birthday in August from Uncle Ray, and for him that is basically a hug, so I appreciated it more than he probably knows. That's who he is, and he's a good man. I'd rather say that out loud than leave it alone.\n\nI want this one to be good. Y'all come hungry, because those pies are not making it home on their own.\n\nSee you Thursday. 💛\n\n---\n\nA few choices worth flagging: I kept the gas station TV line as yours without tying Ray to it in that paragraph, so he's not put on the spot — he only gets named in the warm part, which gives him something good to be known for in public. The Grandma Pearl paragraph is deliberately the shortest apology so it doesn't read as groveling, and the confidentiality paragraph gives the \"no questions about the lawsuit\" ask a reason that isn't just \"I don't want to talk about it.\" Want it shorter, warmer, or with the Ray thumbs-up line moved up top?",
+  "words": 463,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "454 words, allowed 225-440 (band 250-400 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4154696464538574,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16915440559387207,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.765398979187012,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 40.5,
+    "effort": "provider default",
+    "output_tokens": 3679,
+    "input_tokens": 630
+  }
+}

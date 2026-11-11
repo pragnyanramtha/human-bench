@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To whoever is putting their rubbish in my bin,\n\nI'll be straight with you because I'm too annoyed to be anything else. The grey bin with 14 painted on the lid in white is mine, at No. 14 Aughrim Terrace. Greenmount charge by weight, 41 cent a kilo, and I pay for every kilo that goes in it. My last bill was €63.20 for two months. Normally it's around €25. That's me paying for your bags, and I'm not paying for them anymore.\n\nLast Tuesday I got home at 3am after a gig and the lid wouldn't shut. There were three black bags in there that aren't mine. One of them had nappies in it. This isn't a few bits here and there. It's full bags, and it's been happening every week for about a month.\n\nI work nights, I'm on my feet until late, and I'm not in the mood to be cleaning up after anyone. So I'm asking you once, plainly: stop. Take your rubbish to your own bin, to the dump, or pay for your own collection like the rest of us. If you're not sure how, ask me and I'll tell you who to ring. It's not hard.\n\nIf it keeps happening, I'll be putting a padlock on the bin and bringing the weight figures to the bin company.\n\nI'm not looking for a fight with anyone on this terrace. I just want it to stop, and I want whoever is doing it to know I'm not a pushover.\n\nNo. 14",
+  "words": 255,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16034244000911713,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09025535732507706,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.15625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.236914157867432,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.7,
+    "effort": "medium",
+    "output_tokens": 1631,
+    "input_tokens": 1333
+  }
+}

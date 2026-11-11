@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction to my takings and GST template: what went wrong and what to do now\n\nRavi Subramaniam and Shu Fen caught a mistake in the GST formula in my daily takings template. Thank you both for checking it and setting out the correct calculation. I am posting this separately, rather than leaving the correction in the comments, because anyone who used an earlier version needs to see it.\n\nWhat was wrong\n\nColumn F multiplied the day’s takings by 9%. That works only when the takings entered exclude GST. It is wrong for GST-inclusive takings: the GST portion within an inclusive receipt is 9/109 of that receipt, not 9%.\n\nRavi’s example shows the difference plainly. For his $1,090 day of GST-inclusive takings, the template calculated GST of $98.10. The correct figure is $90. The sheet therefore overstated the GST by $8.10.\n\nThe mistake was mine, and there is no excuse for it. When I tested v1.0, I used my own sample figures, which were already GST-exclusive. Multiplying those by 9% produced the expected answer, so my check passed. I had not properly tested the sheet with inclusive receipts. That is how I missed it.\n\nWhich versions are affected\n\nThe faulty formula was in v1.0, v1.1 and v1.2. I corrected it in v1.3, which I uploaded on 8 Nov 2026. There have been 412 downloads since the template was released on 12 Aug, although not everyone who downloaded it will be affected.\n\nOnly people who entered GST-inclusive takings are affected by this error. That includes most hawkers recording the receipts they actually collected. If all the amounts you entered already excluded GST, this particular error did not affect your calculation.\n\nIn v1.3, cell H2 must match the amounts you enter. Select “prices exclude GST” only when the entered amounts exclude GST. Use the inclusive setting for receipts that include GST collected, even if your menu prices exclude GST.\n\nThe quarterly Box 1 sales total was calculated independently and was correct in v1.0 to v1.2. This error affected the GST figure used for Box 6.\n\nIf you have already filed Q3 using the sheet\n\n1. Download a fresh copy of v1.3 from the original template post. Do not continue using an earlier version.\n\n2. Set H2 correctly, then copy your Jul-Sep daily cash, NETS and PayNow entries into columns B to D. Use the same receipt amounts you originally recorded; do not strip GST out of them yourself before choosing the inclusive setting.\n\n3. Check the corrected quarterly summary and compare its Box 6 figure with the GST figure you used in your filed Q3 GST F5. Keep both the original and corrected sheets, together with a note of which version you used.\n\n4. If the figures differ, go to IRAS’s page on correcting errors in GST returns, or contact the person who filed the return for you. IRAS has its own rules on whether an error is corrected in a later F5 or requires a GST F7. Please follow its current guidance for your circumstances rather than assuming which route applies.\n\n5. Changing the Excel sheet does not change the return already submitted. Complete the correction route advised by IRAS or your filer and keep the relevant confirmation with your records.\n\nIf you have not filed yet, replace the old sheet with v1.3 and check H2 before using the quarterly summary.\n\nBecause this formula overstated GST, this particular error did not cause anyone to underpay IRAS. Some users may have paid more GST than necessary, so please check the correction route rather than leaving it or guessing at an adjustment.\n\nMelvin is right to be upset. People trusted the template partly because I am an accountant, and I take that seriously. I am sorry for the work and worry this has caused. The responsibility for the faulty check is mine; the important thing now is for everyone affected to recalculate the figures and correct any filing through the proper route.",
+  "words": 643,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08326684683561325,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.021761193871498108,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.08154296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.1742682456970215,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 61.0,
+    "effort": "provider default",
+    "output_tokens": 4391,
+    "input_tokens": 2621
+  }
+}

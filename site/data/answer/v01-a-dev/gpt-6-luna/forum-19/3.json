@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.48, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, first: congratulations on the wedding. And don’t panic about the R40,000 yet—that’s a worst-case scare, not a diagnosis.\n\n**Don’t turn the key again. Leave it out, and don’t add diesel or try to drive it.** You’ve already driven it and cranked it several times, so there’s a chance the petrol has damaged the high-pressure pump or injectors. Kobus means well, but that’s old Land Rover advice; modern common-rail diesels need proper lubrication, and topping up won’t fix the mix.\n\nGet it towed and have the pump and injectors checked before anyone tries to start it. If they’re okay, the usual fix is to drain the tank, flush the lines, fit a new fuel filter and bleed the system. That’s generally around **R2,500–R4,500** at my shop, but I can’t promise the total until it’s inspected.\n\nI’m at UmbiloSpanner in Umbilo. We open Saturday 7–12, and Thabo can drain it first thing. Check your insurance for roadside towing before paying a tow guy cash—many policies include it.\n\nFor tonight, please don’t sit there negotiating with the key. One customer did this twice in the same year at the same garage; we made him a sticker for his fuel flap. My first year as an apprentice, in 1995, I put diesel in the boss’s Golf. He still tells that story at every braai, so you’re in good company.\n\nAnd borrow a bakkie for the cake and sound system tomorrow. Don’t plan the wedding around a drained tank. Keep that key out, get the tow sorted, and go get some sleep.",
+  "words": 258,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4827202558517456,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3717536926269531,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.827236175537109,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.2,
+    "effort": "medium",
+    "output_tokens": 360,
+    "input_tokens": 14455
+  }
+}

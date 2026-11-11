@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: [p05]\nCc: none\nSubject: none\n\nMick, please don't go into 43 this morning, and Priya, please don't hand over a key yet. I know the offer is kindly meant, but it's the most dangerous thing anyone could do there right now.\n\nI walked past at 7 and looked from the opposite pavement. I'm a chartered structural engineer, but I'm saying this as a neighbour who has only seen it from the street. It isn't a survey or professional advice, and I haven't been inside.\n\nWhat I saw: about 1.2m of the stack on 41 is still up, leaning towards 43, with the mortar washed out at its base. The Met Office has gusts of 50mph again this afternoon, so it could come down at any time. The front roof of 43 has a hole of 2 to 3 square metres. There's a stepped crack, 5 to 10mm wide, from the top of the bay up to the first floor window sill, and the top of the bay looks to have dropped about 20mm.\n\nMick, under the bay is exactly where you'd be standing: below a holed roof with a loose stack above it. The floors may be loaded with rubble, and nobody knows at the moment which parts of the house are carrying what. A prop in the wrong place can make things worse. The loft is out of the question. Leave it to the council's dangerous structures officer.\n\nJoJo, your cousin's right that these terraces are tough in general. This is a damaged one though, and that's a different thing.\n\nPavement: no, not in front of 41 to 45. There are loose slates along the gutters of 43 and 45, directly above the footway, and the tape only covers Priya's front garden. Please use the other side of the road until the council has been, especially on the school run. The council know about the house, but nobody has closed the footway. If anyone can ring, it's the main council number, ask for dangerous structures.\n\nMrs Doherty: I can't tell you she's safe, and it isn't my decision. The front of 45 looks undamaged and the stack sits on the wall between 41 and 43, not on her side. But I couldn't see the wall between 43 and 45 from the street. In her place I wouldn't sleep in the front room tonight, and it would be better if she went to family until 45 has been checked.",
+  "words": 404,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23048974573612213,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05092579126358032,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.03125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.424659490585327,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.3,
+    "effort": "high",
+    "output_tokens": 2925,
+    "input_tokens": 3421
+  }
+}

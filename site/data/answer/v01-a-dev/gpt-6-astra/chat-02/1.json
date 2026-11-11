@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, yes, this is a reasonable afternoon’s work for you and a helper. Allow 2–3 hours, with the supplies and instructions in hand. The $465 isn’t a ripoff, but learning to do it yourself is worthwhile.\n\nHector, one correction before Dana buys anything: green automotive antifreeze isn’t the right product to run through her raw-water system. Ethylene glycol is toxic, and that automotive product isn’t rated for this job. For the raw-water side and domestic water system, use pink propylene glycol RV/marine antifreeze labeled for those uses and the protection needed here. Neither green nor pink belongs in the river. What goes through the engine’s raw-water side comes out the exhaust.\n\nHere’s the order I’d use:\n\n1. Sort out the two cooling circuits. Your 3GM30F is freshwater cooled, with a heat exchanger. The closed coolant circuit is separate from the seawater circuit. Check the closed circuit’s coolant strength with a hydrometer suitable for that coolant, with the engine cold before opening the cap. A proper 50/50 mix should give protection to about −20°F; confirm the actual reading and the coolant specification. Don’t replace that coolant with pink winterizing fluid. The raw-water side is the part we need to drain/protect deliberately.\n\n2. Gather everything before starting. Oil, filter, diesel fuel stabilizer, antifreeze, collection containers, and the Yanmar and antifreeze manufacturers’ winterizing instructions. Figure roughly two gallons of pink for the engine and another two or three for the water system, about $6 a gallon at West Marine or Walmart. Those are shopping estimates, not completion criteria. Buy enough to finish the specified procedures and verify protection.\n\nSet up collection at the exhaust before running the engine. Your helper needs to watch both exhaust flow and the collection arrangement. Capture all winterizing discharge for appropriate disposal ashore, including the water-system discharge.\n\n3. Do the warm work first. With normal cooling-water supply established, warm the engine, then stop it and change the oil and filter while warm. Top up the fuel tank without overfilling, add stabilizer at the label dose, and run about ten minutes to circulate it. Check for leaks. Then stop the engine before changing over the raw-water supply.\n\n4. Winterize the raw-water circuit. Close the intake seacock and arrange the strainer feed to supply antifreeze according to the engine’s procedure. Run at idle, keeping the pump supplied and wet throughout. Don’t let it suck the supply container dry. Follow both manufacturers’ procedures, and check the discharged mixture for the required winter protection using the product’s specified test method. Pink coming out is not proof: residual water dilutes it.\n\nOnce complete, stop the engine. Leave the seacock closed and put a reminder at the controls so nobody starts it that way. If supply or exhaust flow stops during the job, shut down immediately.\n\nKeep a spare impeller aboard. You can pull the old one for inspection after the running is finished; just make sure its condition and any removal are recorded for spring. Never run the pump dry.\n\n5. Do the domestic water system. Switch off the water-heater breaker before draining anything, and leave it off until the heater is refilled in spring. Drain the water heater first, then bypass it; your Catalina’s bypass valve is behind the companionway steps. Otherwise you’ll waste six gallons of pink filling the heater. Drain the freshwater tank and follow the system and antifreeze instructions through the pump and every hot and cold outlet, collecting the discharge and verifying protection rather than judging by color.\n\nThe raw-water job is the one not to rush. That Christmas freeze a few years back left three boats on C dock with cracked exhaust elbows or strainers. All three had skipped or hurried that side.\n\nI can come down Saturday morning if you’d like a second set of hands. You do the work; I’ll watch the flow and help catch what comes out.",
+  "words": 644,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22913531959056854,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09316924959421158,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.95703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.060568809509277,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 45.1,
+    "effort": "medium",
+    "output_tokens": 835,
+    "input_tokens": 15133
+  }
+}

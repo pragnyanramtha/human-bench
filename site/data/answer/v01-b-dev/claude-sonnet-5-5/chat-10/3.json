@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need to say this, and I'm trying to keep it civil, so bear with me.\n\nYou told Gary Pruitt I'd list his house for 1%. One percent. My listing side is 2.5%, and I never said 1% to anybody. You threw that number out like it was yours to give. Then I spent my whole Saturday on it. Comps, the walkthrough, a full listing packet, about 6 hours plus the drive from north Phoenix. Sunday night Gary texts that he's going with ListLite for $3,995, no hard feelings. So I did all of that for nothing.\n\nWhen I called you, you said \"that's business, sis, can't win em all.\" It's not business. Business is when I get to set the terms. You set them for me and I ate the cost.\n\nAnd this morning you tell me you already gave Denise my cell so she can \"pick my brain\" about her rental. This is the second time. Same thing happened with your softball guy two years ago and I let it go. I'm not letting it go this time. You get to look like a big shot with your friends and I do the work for free.\n\nI'm not mad at Gary. He's allowed to shop around. I'm mad at you.\n\nSo from now on: don't give out my number and don't quote my commission to anyone. Ask me first, every time. If I say yes, great. If I say no, that's the answer, and you're the one who tells them.\n\nI'm not calling Denise. You can tell her.\n\nFor actual family, mom, your kids, anybody like that, I'm always happy to help and I'll never charge for advice. That's not what this is about.\n\nWe're still good for Thanksgiving. But I need you to hear me on this one.",
+  "words": 302,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2463008016347885,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07878688722848892,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.1015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.677542209625244,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "high",
+    "output_tokens": 1470,
+    "input_tokens": 1505
+  }
+}

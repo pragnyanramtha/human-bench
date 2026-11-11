@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: none\n\n3 out of 5 stars\n\nHarbourline did the grooming fitout on my Transit this summer, and I'll start with the good stuff because there's a lot of it. The tub and ramp are honestly great. Dogs walk right in, the tether rail is exactly where you want it, and the layout works for someone who spends all day in a van with wet animals. It's the best thing about my van. The invoice was $9,400 plus HST for the whole build (tub, tanks, water heater, plumbing, cabinetry, wiring), and the work you can see is solid.\n\nThen came October 27. Mid-groom in Bedford, the fitting on the hot water line let go. I had a 110 lb Bernese named Moose in the tub, and water went across the floor and down into the cabinet. I'd love to say I stayed calm. I did not. I was the one screaming. Moose sat in that tub like a king at a spa, completely unbothered, wondering why the staff was panicking. His owner told me later he thought it was a pool party. He went home half done, one fluffy side and one wet sheepdog side, and I cancelled the rest of my day.\n\nHere's where the stars came off. I emailed Glenn right away. His reply was that those lines \"don't just let go,\" that it's usually a heater run dry or someone hanging things off the pipe, so it would be user error and not covered. The earliest he could get me in was Nov 3, with a $180 diagnostic fee. I've never run it dry, and the pipe is behind a cabinet door, so nothing was hanging off it. Stuff breaks, especially on a new build, and I'm not mad about that. What got me was being told it was probably my fault before anyone had looked at it, and being asked to pay $180 to find out.\n\nThe cost was real, too. The van was off the road from Oct 27 to Nov 6, which meant six cancelled bookings plus the rest of the day of the leak. When you're a one-person mobile business, no van means no income.\n\nCredit where it's due, though. Once Glenn got into it, he found the actual cause: the compression fitting on the outlet was a cheaper one his supplier had swapped in. He said plainly that it was on them, replaced all the ones on the hot side, and took the $180 off. Plenty of shops would have dug in, and he didn't. That's the part that kept this from being a 2.\n\nGlenn told me he'd be reading this, so hi Glenn. I've tried to keep it fair and stick to what happened. The build is good and the ending was good. The middle is what I'd change.\n\nFor other groomers or tradespeople thinking about a fitout here (or anywhere), a few things I'd do differently:\n\n- Get the warranty terms in writing, and ask exactly what counts as \"misuse or user error\" and who decides. Mine had that exclusion, and it was the first thing mentioned when something went wrong.\n- Ask what brands and grades of parts are going into the plumbing, and ask to be told if anything gets substituted.\n- Ask about repair turnaround. If you work out of your vehicle, a week off the road costs a lot more than the part.\n- Take photos of the install at pickup so everyone's looking at the same thing later.\n\nGreat tub, rough middle, good finish. Moose has since been rebooked and I'm told he's thrilled about it.",
+  "words": 600,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24282854795455933,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1083877757191658,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.43359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.75148868560791,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.2,
+    "effort": "high",
+    "output_tokens": 3212,
+    "input_tokens": 3673
+  }
+}

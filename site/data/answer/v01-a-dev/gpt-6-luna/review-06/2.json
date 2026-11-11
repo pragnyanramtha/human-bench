@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Draft review — Vantorre CX-10 (order CM-88213)\n\nWe bought this refurbished Vantorre CX-10 for $14,800, delivered and commissioned on 14 September 2026. The listing said the steam generator had been descaled and pressure tested, the core probe calibrated, and the unit came with a six-month parts and labour warranty.\n\nOn 22 September, service recorded nine E34 low-water-level errors since delivery and replaced the level sensor under warranty. E34 returned; on 6 October, the technician found the steam generator heavily scaled, descaled and flushed it, and recalibrated the core probe. Before recalibration, the oven read 63°C against 70°C on our Thermapen in a lamb shoulder; we repeated the check twice with the same result. The probe was then reported within 1°C.\n\nThe technician recommended a water softener, but our water provider gave Fitzroy’s average hardness as about 15 mg/L as CaCO3, which it described as soft. The scale was found after roughly three weeks on site. I can’t establish when it formed, but the finding leaves a question about the unit’s condition at delivery and the refurbishment work.\n\nOn 27 October, E34 recurred and further scale was reported. Kelsall says this is a site water issue and has invoiced a $280 + GST callout, despite the unit being around six weeks into its warranty. The seller has asked us to hold off on a review while it works through the issue.\n\nOn Saturday 24 October, E34 locked us out at 6:10 pm during a full 60-cover service. We finished lamb on the stove and deck oven, 86’d the pork belly and absorbed the cost.\n\nThe unit has had recurring faults and disrupted service. I’d want clear answers on the scale, recurring E34 errors and warranty callout before buying.",
+  "words": 280,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.179998978972435,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20032845437526703,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.94921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.178378582000732,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.9,
+    "effort": "medium",
+    "output_tokens": 736,
+    "input_tokens": 15511
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Please read and share: fake blue pills, and what to do if someone goes down\n\nI know the police warning about fake tablets is already on here and I know a lot of people have scrolled past it. So I'm putting it on its own, because it matters. Please read it, and please share it. Don't just like it.\n\nBlue tablets are being sold in south Manchester as diazepam or \"Xanax\". They aren't. Some of them contain nitazenes, which are synthetic opioids and can be far stronger than heroin. You can't tell by looking at one, and neither can the person selling it.\n\nIf someone has taken something and you see extreme drowsiness, tiny pinpoint pupils, slow or noisy breathing, or blue lips, ring 999 straight away. Not in a bit, not once you've seen if they come round. Now.\n\nThe next part is for the teenagers reading, or the ones who'll get this passed to them. When someone goes down, the mates around them panic, and what often happens is they put them in bed to sleep it off and ring for help hours later. I'm a nurse, and I'm telling you that by then the brain can have been without oxygen for too long. Sleepy is not the same as safe. If you can't wake them properly, or their breathing sounds wrong, that's an emergency. Ring 999 and the call handler will tell you what to do while you wait.\n\nAnd please don't worry about getting in trouble. The police have said in their own warning that their priority is preserving life. Nobody ever regrets making the call. People do regret waiting.\n\nThere's also something practical you can do. Naloxone nasal spray reverses the effects of opioids, and it's free. Brightpath drug and alcohol service on Stockport Road, next to the launderette, hands out kits to anyone who asks. You don't have to give your name, and the training takes about 10 minutes. They're open Monday to Friday 10 to 4, and Thursdays till 7. Naloxone doesn't replace 999, you still ring, but it can buy time. Worth having in the house if you've got teenagers, and worth having if you haven't.\n\nParents, please talk to your kids this week. Not after half term, not when there's a better moment. There isn't one. I had this chat with my 14 year old last night over his tea. There were eye rolls, but he listened, and then he asked me what pinpoint pupils meant. That's the bit that stuck with me. They take it in even when they're pretending not to.\n\nLast thing. I've seen a lot of people on here slagging kids off over the weekend, and I get that people are frightened and angry. But it doesn't help anyone. A scared kid doesn't ring for help, and that is the whole problem. If a teenager thinks they'll be in bother for calling, someone's mate stays in that bed. We want every young person in Levy and Longsight to know that if their friend goes down, they ring, and nobody will have a go at them for it.\n\nSo please share this with your family group chats, your kids' football and dance groups, and anyone you know with a teenager. The more people who've seen it before they need it, the better.",
+  "words": 539,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2649347484111786,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02714448980987072,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.41796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.269932270050049,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.8,
+    "effort": "high",
+    "output_tokens": 2736,
+    "input_tokens": 3108
+  }
+}

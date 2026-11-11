@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Good evening, Mr Kehinde Ogunleye.\n\nThank you for contacting me about my black Jansport bag, which I left in the Oshodi-to-Igando bus on Friday evening, 6 November. I got down at Ikotun. I’m grateful you found it and kept it safe rather than leaving it behind.\n\nThe bag contains my BIO 101 lab manual, dissecting kit, student ID, two textbooks, calculator and glasses. My practical is on Wednesday, 11 November, at 10 a.m., and we have been told we cannot enter without our kits. I’m a first-year student, and I’m very worried about getting everything back in time.\n\nI understand that returning the bag will take your time and may involve transport, and I’m happy to thank you for that. However, I can’t afford the ₦40,000 you requested. It’s far beyond what I can manage, and more than the value of the bag and books. I can offer ₦10,000 from my allowance for your transport and as a thank-you. That is genuinely all I can afford.\n\nPlease let me know if you can accept that and choose a time before Wednesday for me to collect the bag. My roommate Adaeze can come with me, and we can meet during the day at Ikotun Roundabout or at the gate of Ikotun Police Division—whichever is more convenient for you. I’m suggesting these as public, easy-to-find meeting points, not to cause any trouble.\n\nI hope we can settle this respectfully and quickly. Please let me know what day and time would work for you. Thank you again for keeping my belongings safe; I would really appreciate your help getting them back before my practical.\n\nKind regards,  \n[Your name]",
+  "words": 275,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.378507137298584,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2266056090593338,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.933751106262207,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "medium",
+    "output_tokens": 365,
+    "input_tokens": 13979
+  }
+}

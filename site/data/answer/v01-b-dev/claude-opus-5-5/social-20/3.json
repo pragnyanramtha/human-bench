@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent again and this time I actually need yall to do something about it.\n\nso remember the switchblade moth? the one off my sept 13 flash sheet that I wouldnt shut up about? I posted that sheet aug 30, drew the whole thing over like 3 weekends at my kitchen table, and the moth went in the first hour of flash day. favorite thing Ive drawn all year.\n\ntonight a friend sends me a link. theres a sticker shop called StickerBurrow Co selling it as a \"Knife Moth Vinyl Decal.\" $6.50 or 3 for $15. and its not like a moth with a knife that kinda looks similar. its MY moth. same little crack in the blade, same wing pattern, same everything. they didnt even flip it lol. its a straight scan of my linework. thats not \"inspired by,\" thats just taking it.\n\nso I messaged them. told them its my design, I have the original drawing and the post from august, please take it down. here is the reply I got, basically word for word:\n\n\"Hey! Love your work.\" (love it so much you sell it for $6.50 apparently)\nthen \"moths are a very common tattoo motif\" and they \"can't remove listings based on similarity alone\"\nand if I have a registered copyright I can \"send it through our support form.\" Have a great day!\n\ncool. thanks. love that for me.\n\nheres the thing people dont always get about flash. when you buy a flash piece from me you are buying a ONE of ONE. I tattoo it on ONE person ONE time and then its retired. thats the whole deal. thats what the client is paying for. they walk out with something nobody else has. so when some sticker place prints it on vinyl and sells it 3 for $15, it isnt only my work getting ripped off. its the person wearing it who paid for something that was supposed to be theirs.\n\nand these sticker places KNOW small artists and small shops dont have lawyer money. they know \"send us a registered copyright\" is basically \"go away\" for most of us. it works because most people dont have the time or money to fight it and they bank on that. it sucks and it happens constantly, not just to me.\n\nso heres what Im asking:\n- please go report the listing. its the \"Knife Moth Vinyl Decal\" on StickerBurrow Co. report it as stolen artwork / IP\n- dont buy from them. not this one, not anything\n- if youve got a sticker of it already please dont feel bad, you didnt know. just maybe dont rebuy lol\n- share this if you want. the more reports the better\n\nand to the person who got the moth. I know you saw it, and I know it probably looked like I sold you a one of one and then turned around and sold stickers of it. I didnt. I would never. I had zero idea this existed until tonight and Im just as mad as you are. your tattoo is still yours and I am doing everything I can to get this taken down. Ill message you properly too but I wanted it out here so its clear.\n\nif you make stuff, sign it, date it, post it somewhere with a timestamp. it wont stop people like this but it helps when you have to prove its yours.\n\nok thats it. Im gonna go be mad somewhere else. rant over (for now)",
+  "words": 588,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft does not say the client contacted Jo that night thinking Jo was selling stickers of her tattoo."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.06438765674829483,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.014791999943554401,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.9765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.6170241832733154,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.4,
+    "effort": "medium",
+    "output_tokens": 1437,
+    "input_tokens": 3742
+  }
+}

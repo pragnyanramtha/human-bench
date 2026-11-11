@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kristen,\n\nHere's the straight story. No excuses — it was my popcorn.\n\nSaturday, Nov. 7, around 10:40, I put a bag in the break room microwave and hit the popcorn button. Then I went out front. A customer needed a shear pin for his snowblower, and it took longer than I figured, maybe six or seven minutes. By the time I got back it had already gone off. Store was cleared out about 25 minutes. The engine came from Hertel. No damage, just smoke and stink.\n\nThe September alarm was not me — that was the sensor in the paint aisle. But this one is on me, not the microwave. Thirty-one years on the job, and I get my first alarm as a civilian over a bag of butter popcorn. Mikey Szymanski was on the engine. I broke him in as a probie back in '03, and he will never let me forget this. My wife said the van smelled like a burnt movie theater.\n\nI feel bad about the Hendersons leaving a full cart. They'll be back, they always are, but I still feel bad. I'm sorry for putting everybody out in the cold, and sorry for the extra headache with Gary and the insurance people.\n\nThe $175 is on me. Take it out of my check or I'll bring cash, your call. Put Denise's coffee on me too.\n\nPlease keep me on Saturdays. I like the weekend crowd, and I need the hours for heating oil. I'll stay clear of the microwave.\n\nWalt",
+  "words": 255,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2325437217950821,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20564986765384674,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.455078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.3981950283050537,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.0,
+    "effort": "provider default",
+    "output_tokens": 2404,
+    "input_tokens": 873
+  }
+}

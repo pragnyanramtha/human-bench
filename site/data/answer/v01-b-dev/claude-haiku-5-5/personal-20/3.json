@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear friends, neighbors, and church family,\n\nSome of you already know, and I am sorry my phone has been ringing nonstop! Yes, a car drove through the front window of Lotus Glow Nails on Bellaire Blvd early Sunday morning, around 2 a.m. Please don't worry. Nobody was inside, the driver is okay, the police came, and her insurance will pay for the damage. God protected us, because if anyone had been in the shop, it would have been a very different story.\n\nThe front glass is gone and the pedicure chair got smashed. The car stopped exactly at the pedicure chair, like she wanted a spa day! My daughter says the driver got the first drive-thru pedicure in Houston. My husband says the floor, with all the broken glass, looks like modern art. So now I am laughing a little. I did cry a little in the morning, but I am okay now.\n\nThe city inspector has to check the wall before we can open again. My contractor says we can reopen on Monday, November 16.\n\nUntil then, Trang, Kim, and I are working this week at my cousin Hoa's salon, Pearland Nail Bar. If you need nails, please call or text my cell at 832-555-0147. We would love to see you there.\n\nYour gift cards are still good, so please keep them and use them when we reopen. Nobody loses any money.\n\nThank you so much for all the texts, calls, and prayers. Thank you also to Mrs. Dung, who brought pho this morning. My heart is full. I am very lucky to have such good friends.\n\nWith love,\n[Your name]\nLotus Glow Nails",
+  "words": 275,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29991772770881653,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1774163693189621,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.46170711517334,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.7,
+    "effort": "medium",
+    "output_tokens": 1576,
+    "input_tokens": 1404
+  }
+}

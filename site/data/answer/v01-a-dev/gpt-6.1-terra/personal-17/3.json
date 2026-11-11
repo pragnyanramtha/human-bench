@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To whoever is using my bin,**\n\nSomeone on this terrace has been putting full bags of rubbish into my grey bin at No. 14, and I’ve had enough of it. This isn’t someone slipping in the odd bit of rubbish. It’s been happening every week for about a month.\n\nThe bin is with Greenmount Bins and I’m charged 41 cent a kilo. My last bill was €63.20 for two months. It’s usually around €25. I’m renting here and paying for my own waste, not somebody else’s as well.\n\nI put the bin out on Tuesday night for collection on Wednesday morning. Last Tuesday, I got home at 3am after a gig to find the lid wouldn’t even close. There were three black bags in it that weren’t mine, including one with nappies. I found a gas bill envelope in one of the bags with Aughrim Terrace on it, but the name was torn off. A neighbour across the road also saw a car pull up on Tuesday evening, though he didn’t see who it was.\n\nThe bin has **14 painted in white on the lid**, so it’s not hard to tell it’s someone else’s. Whoever is doing it, stop putting your rubbish in my bin. It’s as simple as that.\n\nIf you’re stuck and don’t know how to get your own bin sorted, ask me and I’ll tell you who to ring. It’s not hard. But I’m not paying for your rubbish anymore.\n\nI work nights, but that doesn’t mean I won’t notice what’s going on, and it doesn’t make me a pushover. If this keeps happening, I’ll start locking the bin with a padlock.\n\nI’d rather not have to do that. Please just use your own bin from now on.\n\nNo. 14, Aughrim Terrace",
+  "words": 295,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4032295048236847,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9682815670967102,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.3649580478668213,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "low",
+    "output_tokens": 383,
+    "input_tokens": 18179
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Mrs. Renee, I am very sorry your toe is hurting and that you had to go to urgent care. I mean that sincerely. You have been my customer for two years, and I am sad that you felt I did not care when you came back. I did care, and I still do. I want to answer calmly because your health matters, and so does making sure our neighbors have the correct information.\n\nWhen you came in on November 2 and showed me your toe, I offered to refund the full $45 for your October 24 deluxe pedicure. I also offered to pay your urgent care copay if you brought the receipt. I want to make that clear because my offer was not only the $45 refund. Both offers are still open. We did not agree on the additional compensation you requested, but that does not mean I am dismissing your pain or refusing to help.\n\nI also want to explain our cleaning procedures for anyone reading this thread. We sterilize our reusable tools in an autoclave and open the sealed pouch in front of each customer. Every customer gets a new file and buffer, which they can take home afterward. We use a new plastic liner in the pedicure tub each time. We passed our state inspection in August 2026 with no violations, and the inspection paper is displayed on our wall. I share this to answer the concerns about cleanliness, not to say your experience does not matter.\n\nVy, who did your pedicure, is my niece and has been licensed for three years. She was born here in Houston and speaks English. She is quiet and sometimes shy, but that is not the same as not understanding English. I am sorry you felt you could not explain what you wanted. Her understanding of the conversation about cutting the cuticle is different from yours. I do not think arguing about that here will help either of you, and I would rather discuss it with you directly and listen.\n\nI opened this salon in 2007 after working for my aunt. In 19 years, this is the first infection complaint I have received. I take it seriously. I cannot determine here what caused your toe problem, and I do not want to make claims I cannot support. But I do hope people will not assume that every nail salon is dirty or that we do not care about our customers.\n\nMarisol, thank you for sharing what you have seen during your visits and for encouraging us to talk.\n\nMrs. Renee, please call me at the salon or come in so we can speak directly. My offer of the full $45 refund and reimbursement of your urgent care copay with a receipt remains open. I hope your toe heals soon, and I hope we can find a respectful way to resolve this.\n\nThu, Lotus Garden Nails",
+  "words": 484,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3295401334762573,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15883441269397736,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.7890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.234681129455566,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.5,
+    "effort": "medium",
+    "output_tokens": 626,
+    "input_tokens": 14407
+  }
+}

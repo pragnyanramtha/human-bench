@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nMia, that's absolutely fucked, I'm so sorry. And sorry I've been so quiet — work's been flat out but that's not an excuse, I should've been there instead of one text. I'm off all day tomorrow now, Sam took my shift. I'll bring Dad's trailer round first thing in the morning and we'll get everything out of Priya's garage before her mum gets there. You don't have to deal with that on your own. We'll get your stuff somewhere dry and work out the rest after that.\n\n---\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nRuby says her couch is yours for as long as you want it — fair warning, Clover will absolutely try to sleep on you. Tully's sorted a benefit night at the Lantern Room for Sat 28th, door money goes to you, and Hollow Pines are playing. Jono's cousin has an old Yamaha keyboard you can borrow til you get something better. So that's a couch, a trailer, a gig and a keyboard sorted. You're not on your own with any of this.\n\n---\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nAnd please don't move back to Rocky like this. Not saying never, just don't make that call while everything you own is in garbage bags. You drove out to Gatton at 2am to get me when my car carked it after the Toowoomba gig and didn't even complain. I'm not going to just watch you quit. I mean it. Your songs are the best thing about our band and the landlord's a grub. Come do the benefit, see how you feel after. I'll be at Priya's in the morning.",
+  "words": 258,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31119468808174133,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12640666961669922,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.53515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.31084126234054565,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.4,
+    "effort": "provider default",
+    "output_tokens": 4208,
+    "input_tokens": 1446
+  }
+}

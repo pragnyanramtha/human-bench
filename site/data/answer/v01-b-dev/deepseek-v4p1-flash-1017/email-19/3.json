@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.32, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject: Re: Nia's hen - Tenby final plan + money!!**\n\nBeth,\n\nNot replying on the group, don't worry. Just wanted to say my bit to you and then leave it with you. I've just landed from Lagos so ignore any typos.\n\nFirst off, I'm not giving you a row about this and I'm not taking sides. I know things are awkward with Lowri and that's making it easier to just not go. But I don't think you should chuck the whole weekend because of it.\n\nI swapped my Orlando trip with Kerry from work to get this weekend off. Cost me a night stop I really wanted, so I'm not going to pretend I'm not bothered.\n\nThe thing that's sticking with me is Nia. She rang me last week in tears asking if you were still coming. She doesn't know you've pulled out yet. And you sat with her in the Heath every night when her mam was bad in 2019 — she hasn't forgotten that. She'll remember who wasn't there this time an' all.\n\nYou don't have to do the whole thing. Skip the cottage Friday if you want. You only need to be in Tenby for 6 on the Saturday. Train from Cardiff Central is about 2.5 hours, I'll pick you up from the station. And you can kip in with me, I've got the twin room.\n\nI know it was Lowri's 40th in November and something got said about her ex, and both of you had a go. I honestly think she's sorry, she's just stubborn — same as you, mind.\n\nDon't send her the £85 yet. Hang on a bit.\n\nAnd Beth, I think you'll regret it if you don't come. Nia's wedding is 17th April at Margam and you're doing a reading — this is all the run-up to that.\n\nAt least come for the meal on the Saturday. Just think about it, that's all I'm asking.\n\nSiân x",
+  "words": 324,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31836578249931335,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19380205869674683,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.08251953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.730135440826416,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.4,
+    "effort": "provider default",
+    "output_tokens": 1572,
+    "input_tokens": 1020
+  }
+}

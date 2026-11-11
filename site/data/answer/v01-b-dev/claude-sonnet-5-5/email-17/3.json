@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Appa, Amma, Kiran, Divya,\n\nI've just come off a run of nights and read everything properly. First, Appa and Amma: I'm thrilled. Truly. Anika has already made a laminated welcome timetable, and it includes \"Paati teaches us rasam, Tuesdays\". Rohan is ready to hand over the vegetable patch.\n\nKiran, you're right that you should have been asked, and I'd rather say so plainly. The idea came from Appa in August, on the phone, when Rohan was showing him the vegetable patch on video and he said \"I could grow drumsticks there\". When the agent needed my sponsor letter and bank statements, I started the paperwork, and that was the moment I should have picked up the phone to you. I didn't. That's on me, and I'm sorry.\n\nOn Appa's heart, you're right that visitors don't get free NHS treatment, and I'd rather answer this properly than reassure you with nothing behind it. Dr. Prakash has agreed to do Appa's review in March, before they fly, and a video consult in July, and he's happy to share his notes with me. I've got an insurance quote with pre-existing cardiac cover, about £640 each for the six months, and the agent says it covers the stent. Leicester Royal is 15 minutes from our house, and I know half the cardiology team. The annexe at the back is finished, all on the ground floor with no steps, and has its own shower with a grab rail. I can't promise nothing will ever happen, nobody can, but I'd be far more comfortable with Appa under my roof, 15 minutes from a good cardiac unit, than anywhere else I can think of in England. I'm happy to send you the insurance quote if you'd like to see it.\n\nAmma, Kiran's point about the six months is a fair one, and I don't want you to feel locked in. Your return ticket will be flexible, so if you've had enough after six weeks, or you just miss your own kitchen and your own people, you can go home any time. Nobody will take it personally.\n\nOn Ganesh Chaturthi, I don't want it to be lost either, and I think we can keep it. There are two ways to do it. Amma and Appa could fly from Leicester to Pune in September for the festival and finish the trip there, or you could all come to us in August. If it's the second, please let me cover the flights for the four of you. I'd love to have you here, and it would be a real pleasure for me.\n\nCould we do a family video call this Sunday? 4pm UK, 9.30pm India. That way we can talk it through together, and Kiran and Divya can ask anything that's still bothering them. Appa, Amma, please do join. I'd like to hear from you both too, and not just by email.\n\nKiran, thank you for putting your worries plainly. They were the right ones to raise, and I'd rather have them out in the open now than later.\n\nWith love,\nMeera",
+  "words": 513,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23367856442928314,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03605954721570015,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.482421875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.280720710754395,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.9,
+    "effort": "high",
+    "output_tokens": 2480,
+    "input_tokens": 2383
+  }
+}

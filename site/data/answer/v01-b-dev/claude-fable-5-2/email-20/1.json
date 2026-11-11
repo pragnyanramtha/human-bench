@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya,\n\nFirst thing: I'm not throwing you under the bus with Greg. He's going to be mad no matter what, and I'll handle him. What he'll hear from me is that the questionnaire library is a mess and nobody owns it, because that's the truth. Old draft language sitting in there was going to bite somebody eventually, and this time it was us.\n\nI won't pretend I'm calm. Brazos is my biggest deal of the year, I've been working it since February, and I already told my wife we'd finally do the Big Bend trip off this commission. So yeah, my stomach dropped when I read Dana's email. But I also remember you staying on until 9pm in September rebuilding their demo environment when the route import broke. This deal doesn't get this far without you, and one copy-paste miss doesn't change that. Please don't beat yourself up.\n\nI think this is fixable if we're honest and fast. Dana seems strict but fair. I talked to Marcus on security and he can do a call with Dana and their legal team Thursday at 2. I'd like you on that call too. The real timeline is that the Type II audit window closes Jan 31 and the report is expected by March. Marcus says we can give them a bridge letter from the auditor in the meantime, so we have something concrete to offer.\n\nWhat I need from you tonight is a corrected Q14. It should state the actual Type I status and the Jan 31 date. Send it to me first, not Dana. Greg doesn't want anything going back to her until he and I have talked, and I want us all saying the same thing on Thursday.\n\nWe're fixing this together. Call me if you want to talk any of it through.\n\nJordan",
+  "words": 304,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44877108931541443,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11323169618844986,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.2578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.781691551208496,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.3,
+    "effort": "high",
+    "output_tokens": 2126,
+    "input_tokens": 2134
+  }
+}

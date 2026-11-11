@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: none\n\nThree stars, and I'll explain why.\n\nI had Harbourline build out my mobile grooming van last year. It's a 2021 Ford Transit with a stainless tub, a ramp, a tether rail, fresh and grey tanks, and an on-demand hot water heater. The tub and ramp are honestly the best thing about the van. Dogs walk right in, and the tether rail keeps the big ones from wandering. Glenn clearly knows how to build a setup that works for the dogs and for the person grooming them.\n\nNow the part that cost me.\n\nOn October 27, a fitting on the hot water line let go in the middle of a groom. I was in the tub with a 110 lb Bernese named Moose, who stayed completely calm through the whole thing and seemed to think it was a pool party. I was the one screaming. There was water across the floor and running down into the cabinet. I cancelled the rest of the day and sent Moose home half done.\n\nGlenn's first reply said lines like that don't just let go. He suggested the heater had been run dry or that someone was hanging things off the pipe, which would make it user error and not covered by the 12-month warranty. I had never run the heater dry, and nothing hangs off a pipe that sits behind a cabinet door. He wanted a $180 diagnostic fee before he'd look at it, and the earliest appointment was almost a week out. I cancelled six bookings to wait for it.\n\nThe van was off the road from October 27 to November 6. That's ten days, six lost appointments, and a lot of towels.\n\nWhen the van was finished, Glenn admitted the fitting was a cheaper part his supplier had swapped in, so the fault was on their side. He replaced all the hot-side fittings and refunded the $180. He did own it in the end, and I'm giving him credit for that.\n\nWhat keeps this at three stars is the user error call. Stuff breaks. Fittings fail, and that's a normal part of fitting out a van. What bothered me was being told it was my fault before anyone had looked at it, and having to push for a fix that was clearly their responsibility.\n\nIf you're hiring Harbourline or any trade, get the warranty terms in writing, especially what counts as \"user error.\" Our invoice excluded it but never explained what it meant. Know what you're agreeing to before the work starts.\n\nGlenn, I hope you read this. You did the right thing at the end, and I appreciate it. Next time, look at the part before you blame the customer.",
+  "words": 449,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the van was fitted out last year, but the invoice is dated August 2026."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32770344614982605,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2233489751815796,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.407175064086914,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.9,
+    "effort": "medium",
+    "output_tokens": 2859,
+    "input_tokens": 3696
+  }
+}

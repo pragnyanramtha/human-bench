@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject: Mrs. H. and the part nobody teaches you**\n\nI've been lurking on this board for a while and never posted, but I've been thinking about one of my patients since I got home today, so here I am.\n\nI'm a community pharmacist, 39, at a small independent in Mississauga. Mrs. H. came to us for about seven years. She was 84, Polish, and she was on eleven medications, all in weekly blister packs that she picked up every Thursday. Her husband died a few years before she started coming to us, and after that she lived alone. She walked with a cane that had tennis balls on the bottom, and you could hear her coming down the aisle before you saw her.\n\nEvery Thursday she brought me something. Poppy seed cake most weeks. Once, a jar of pickles, and I honestly did not know what to do with them, so I thanked her and she laughed at me. During Ramadan she remembered that I was fasting in a way I didn't expect. She told me not to eat her cake until sunset, and she had wrapped it in foil with my name written on it in marker. I still have the foil in my drawer.\n\nIn 2023 a new doctor added a medication that interacts with her warfarin. I caught it during verification, called him, and we sorted it out before she ever took a dose. She then told everyone she met that I saved her life. I told her I just did my job. That's what we're supposed to say, and it's true, but it didn't feel like the whole story to me.\n\nShe passed away at the end of October. Her daughter came into the store this month to return the unused packs and her glucometer. She was very composed and very polite, and she handed me a card. Inside, her mother had written, a long time ago, \"for my Arabic daughter.\" She had never given it to me. She had been keeping it, I think, for the right moment, and I guess that moment never came while she was alive.\n\nI cried in the back room. My tech covered the counter for about ten minutes so I could pull myself together. I'm not someone who usually cries at work.\n\nHere's what I keep coming back to. School taught us pharmacology, interactions, dosing, renal adjustments, all of it, and I'm grateful. Nobody taught us how to say goodbye to a patient. We're told not to get too attached, and in a lot of ways that's sensible. But you see someone every single week for seven years. You know which pills she takes at night and which ones make her nauseous. You know her cane, her cake, her jokes. Then one week the packs stop coming, and there's no protocol for that. You just return the stock and wait for the next Thursday to feel strange.\n\nMy father was a pharmacist in Egypt, and he knew most of his families personally. When I started this career I thought Canada would be different, more professional, less personal. I was wrong about that. People are people here too. The job is the same job wherever you do it.\n\nSo I wanted to ask the people on this board: has anyone else had a patient like this? How did you handle it, especially the first time? Did you go to the funeral, or send anything to the family? Does anyone have a way of coping that actually works, or do you just keep going to work and let it sit?\n\nThanks for reading. It helps to write it down somewhere.",
+  "words": 609,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts",
+      "private"
+    ],
+    "reasons": [
+      "It incorrectly says her husband died before she began visiting and reveals an identifying combination of patient details."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5082947611808777,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08068939298391342,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.086448669433594,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.2,
+    "effort": "medium",
+    "output_tokens": 1648,
+    "input_tokens": 1554
+  }
+}

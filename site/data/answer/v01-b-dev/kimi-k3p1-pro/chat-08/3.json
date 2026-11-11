@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone CHARITY STREAM: SATURDAY, NOVEMBER 21, 10AM–10PM\n\nwe’re raising $600 for Linden Community Pantry, and yes, i’m posting this early and pinning it this year. last year we raised $212, but half the server didn’t know until the day of because i posted way too late. not doing that again lol\n\ndonate at lindenpantry.example/mrkz — it goes straight to the pantry with nothing taken off. through their wholesale partner, every $1 means about 4 pounds of food, so even $3 helps. they’re serving around 340 families a week and the shelves are really low going into thanksgiving.\n\nrook is matching the first $100 donated, so that first $100 counts double.\n\nincentives:\n🍖 $100 — i play a full round with the controller upside down\n🍖 $250 — chat picks my hair dye color and i dye it ON STREAM\n🍖 $400 — one hour of chat-picked songs only, no skipping\n🍖 $600 — i vlog a grocery pickup arranged by the pantry (they handle the donations and buy the food)\n\ngames: first half is community lobbies, anyone can join and i’ll drop the code. second half, chat votes on a new game every 2 hours. larry, no 12 hours of the same map, i promise.\n\nno card or can’t donate? you can still help by showing up, sharing this post, joining games, and getting other people to stop by. locals can also drop canned/boxed food in the blue bin by the pantry’s side door on saturdays, 9am–1pm. if you can’t give, genuinely no guilt—hanging out and spreading the word matters.\n\nit’s a full day of games, terrible decisions, and hopefully a lot of food for linden. mark it down, bring your friends, and come hang out even if you’re just there to make the hair dye vote worse.\n---\nTo: #general\nReplying to: [c05]\nCc: none\nSubject: none\n\ndevon you’re ignoring the artistic value of chat picking my hair color and me playing with the controller upside down, but ok lol. nobody has to donate—come play, vote on games, or share the post. paige, no card needed: sharing/hanging out helps, and there’s a food drop-off option too. details in #announcements.",
+  "words": 350,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32816171646118164,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26484110951423645,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.2080078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.401082992553711,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 62.0,
+    "effort": "provider default",
+    "output_tokens": 4202,
+    "input_tokens": 1548
+  }
+}

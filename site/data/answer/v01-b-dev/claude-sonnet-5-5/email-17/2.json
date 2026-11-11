@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Kiran, Appa, Amma, Divya,\n\nFirst, I'm thrilled. Amma and Appa here for the whole summer is wonderful news, and I've been grinning about it ever since Appa first mentioned it.\n\nKiran, you're right that you should have been asked, and I'd rather say so than defend myself. It started in August, on a call, when Rohan was showing Appa the vegetable patch and Appa said, \"I could grow drumsticks there.\" I took him at his word. When the agent needed my sponsor letter and bank statements, I started the visa paperwork, and that was the moment I should have phoned you. I didn't, and that's on me, not on Appa or Amma.\n\nYour worries are fair ones, so let me take them in turn.\n\n**Appa's heart.** You're right that visitors don't get free NHS treatment. That's why I've already got a travel insurance quote with pre-existing cardiac cover, about £640 each for the six months, and the agent says it covers the stent. Dr. Prakash has agreed to do Appa's review in March, before they fly, and a video consult in July, and he's happy to share his notes with me. The annexe at the back is finished: ground floor, no steps, its own shower with a grab rail. Leicester Royal is 15 minutes from our house and I know half the cardiology team. I work in emergency medicine, so I'll be keeping a close eye on this, probably more than Appa will enjoy.\n\n**Amma's six weeks.** This is fair too. Six months is a long stretch away from her own house and her own people. Her return ticket is flexible, so she can go home whenever she wants, with no explanations needed. In the meantime, Anika has made a laminated welcome timetable that includes \"Paati teaches us rasam, Tuesdays\", so Amma already has a class waiting for her.\n\n**Ganesh Chaturthi.** I don't want this to be lost, and I don't think it has to be. There are two ways to do it. Amma and Appa could fly from Leicester to Pune in September for the festival and finish their trip there. Or the Pune family could come to us in August, and if that appeals, I'd love to cover your flights. Either works for me, so choose whichever suits you.\n\nCould we do a family video call this Sunday, 4pm UK / 9.30pm India? It would be good to talk it all through together, and for Amma and Appa to say in their own words what they'd like. And Kiran, if you want to go through any of this with me before then, I'm around.\n\nThank you for putting it plainly. I'd much rather hear it than not.\n\nAmma, bring the pickles. And Divya, I'll look out for the murukku achu.\n\nLove,\nMeera",
+  "words": 465,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41904309391975403,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19603437185287476,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.331298828125,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.4,
+    "effort": "high",
+    "output_tokens": 4177,
+    "input_tokens": 2384
+  }
+}

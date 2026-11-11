@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.44, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Set January 15 as Our H-1B Registration Intake Deadline\n\nFor the next cap season, I propose setting January 15 as our internal deadline for H-1B registration intake, with later requests handled case by case. This would give employers a clear timetable and give us more room to review information, resolve gaps, and prepare for the registration window. The goal is better service and a more manageable workload—not a stricter approach to clients.\n\nLast season, we filed 14 registrations for six employer clients, with nine of the 14 arriving during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened. Much of that compression reflects our current process: we send the questionnaire whenever an employer asks, without setting an intake date. One HR contact said she would happily have sent everything in January if we had asked. January 15 seems realistic: HR teams are back from the holidays, budgets are set, and employers already budget for the $215-per-beneficiary registration fee in Q1.\n\nAn earlier deadline also gives us a meaningful risk-control buffer. The registration itself is straightforward, but errors can be expensive; incorrect passport information can invalidate a selection. Brightwater Analytics’ passport scan, received two days before the window opened, had expired the previous October. Rosa caught it because she checked the dates. Building review time into the schedule makes that kind of safeguard less dependent on a last-minute catch.\n\nThe practical changes would be:\n\n- Send engagement letters and a one-page questionnaire the week of December 7, clearly stating the January 15 intake deadline.\n- Have Rosa own the tracker, with a clean six weeks after intake closes to chase gaps, check documents, and flag unresolved issues.\n- Review requests received after January 15 case by case, based on capacity and whether there is enough time for a proper review.\n\nIf Marcus agrees at Thursday’s planning meeting, we can finalize the timetable and prepare the December letters. This gives clients clearer expectations while reducing avoidable overtime and registration risk.",
+  "words": 338,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4393889009952545,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995711445808411,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 19.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.375258445739746,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.1,
+    "effort": "low",
+    "output_tokens": 413,
+    "input_tokens": 19059
+  }
+}

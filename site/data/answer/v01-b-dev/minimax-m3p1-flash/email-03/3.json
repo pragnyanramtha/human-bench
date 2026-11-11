@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Blister packs for Margaret Kerrigan — welcome to Erindale Park Pharmacy\n\nDear Mr. Kerrigan,\n\nThank you for writing to us, and welcome to Erindale Park Pharmacy. I am Rania Haddad, the community pharmacist here, and I will be looking after Margaret's medications myself. I am glad to hear she is coming home Thursday, and I will do what I can so that her blister packs are in place before she is settled back in.\n\nBlister packs and cost\nYes, we prepare weekly blister packs arranged for seven days at four times a day. There is no charge for the packaging itself. Margaret will simply pay her normal dispensing fee, and at 81 most of that is covered by the Ontario Drug Benefit.\n\nDelivery or pickup\nWe deliver free of charge within 8 km of the pharmacy, and her building on Mississauga Valley Blvd is comfortably within that area. Our regular delivery days are Tuesdays and Fridays, 2 to 6 pm. Since she is arriving home on Thursday, we can either make a one-off delivery on Saturday before 1 pm, or you are very welcome to collect the packs from the store. Once we are established, we can also place her on our regular Tuesday delivery.\n\nMoving her prescriptions to us\nThere is no form for Margaret to sign for this. I only need the name and address of her current pharmacy on Dundas and her OHIP health card number, and I will call them and have the records transferred over.\n\nGoing over the new medication list\nI would be glad to review her new medications with you, either in person at the store or by phone in the evening, and to make sure she is comfortable with the new routine. Before we are able to discuss Margaret's prescriptions with anyone else, we do need her signed permission, so we use a short Family Communication Consent form. It is entirely for Margaret's benefit and protects her privacy: she remains the patient, and her medication information stays confidential with us. She can sign it here at the store, or I will send it with the driver for her to sign at home.\n\nTwo requests, please\nFirst, to have her first packs ready on Saturday, could you ask the discharge team to fax or e-prescribe her prescriptions to us early on Thursday and let us know if any part of the list will follow later? Once we have all of them, our technician needs about 48 hours to build the packs properly.\n\nSecond, as the first packs will not be ready on Thursday itself, please speak with the discharge team about an interim supply — enough medication to cover her at home until Saturday — and help her with every dose until we deliver or you collect. It is a short bridge, and it keeps her from missing anything while she is still recovering.\n\nA medication review at home\nOnce she is home, I would also like to offer a MedsCheck: a free 20-minute review in which I come to her home and check every medication against her list, the bottles and the packaging. I can come Monday or Tuesday evening, after 6 pm, whichever suits her better. There is no charge for this service.\n\nIf anything is easier to discuss by phone than in writing, you can reach me directly on 905-555-0148, extension 2. I am in the store Monday to Friday, 9 am to 6 pm.\n\nI look forward to looking after Margaret.\n\nKind regards,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy\nDirect: 905-555-0148 ext. 2\n\n---\n\nTo: rania.haddad@erindaleparkrx.example\nReplying to: m02\nCc: none\nSubject: Notes — Kerrigan blister pack reply (draft to review before opening)\n\nNotes for the file — Margaret Kerrigan (81), discharge Thursday from Credit Valley. Draft reply written, not sent.\n\nOffers made in the draft:\n- MedsCheck at home, first week, 20 minutes, no charge — offered Monday or Tuesday evening after 6 pm (both evenings offered so he can pick).\n- Free delivery within 8 km; her building qualifies. Regular delivery Tuesdays and Fridays, 2–6 pm, plus a one-off Saturday drop before 1 pm offered as an alternative to store pickup.\n- No charge for blister pack packaging; normal dispensing only, mostly covered by ODB.\n- Pharmacist review of the new medication list with Douglas, in store or by phone.\n- Direct line 905-555-0148 ext 2 given; store hours Mon–Fri 9–6 stated.\n\nRequests made in the draft:\n- Hospital to fax or e-prescribe all discharge prescriptions early Thursday so packs can be built (~48 hours once ALL prescriptions, including transfers, are in hand).\n- Confirm an interim supply with the discharge team for Thursday–Saturday, and that Douglas will help with every dose until Saturday pickup or delivery.\n- Old pharmacy name and address on Dundas plus Margaret's OHIP number, so I can call and transfer.\n- Margaret's signed Family Communication Consent form before we discuss her medications with him — offered for signature at the store or sent with the driver.\n\nNext steps before I send:\n1. Check with Joel that the one-off Saturday drop before 1 pm is still open and that the consent form can go out with the driver.\n2. Call the old pharmacy once Douglas supplies the details and the OHIP number; confirm the transfer so the Thursday fax is complete.\n3. Log the MedsCheck home visit (Mon or Tue after 6) once he confirms which evening, and note her address and phone for the delivery route.\n4. Confirm with Joel whether the hospital has faxed anything yet Thursday morning, and chase any scripts that arrive late.",
+  "words": 904,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['rania.haddad@erindaleparkrx.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      },
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "894 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.162966787815094,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.017512528225779533,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.373046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.669273376464844,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.2,
+    "effort": "provider default",
+    "output_tokens": 3462,
+    "input_tokens": 2098
+  }
+}

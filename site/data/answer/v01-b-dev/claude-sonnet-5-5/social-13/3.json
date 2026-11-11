@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Some good news, some honesty, and one change to how we work.\n\nFirst the good news: Priya Bhatia joins us on Monday 16 November. She's a chartered structural engineer (IStructE) and spent nine years at a consultancy in Coventry. If you see her on site, please say hello. We're really glad to have her.\n\nNow the honest part. In September and October, beam calculations and drawings were taking 5 to 6 weeks. That's far too long. Several of you waited longer than you should have, some with builders ready to start. One couple had their builder standing by with the steel already ordered. We got their calculations to them in 3 days, but only after they'd chased us twice, and they shouldn't have had to. A few of you were quite unhappy, and you were right to be. I'm sorry.\n\nThe slow weeks were my fault. I said yes to too much work on my own. I was out on site visits all day and doing calculations until midnight, and my wife started calling the office \"the other house\". That wasn't fair on her, and it certainly wasn't fair on you.\n\nPriya fixes that. Our turnaround target for beam calcs and drawings is now 10 working days. If you're waiting on something right now, your job is moving, and you're welcome to message me directly for an update.\n\nOne more change. From 1 January 2027, first site visits will cost £95, which is deducted from your fee if you go ahead with us. The free visit was nice, but about a third of them never turned into a job, and that's a lot of time I can't afford to give away while we sort out the backlog. Any visit already booked by the time you read this stays free, whatever date it's on, and so does any first visit that takes place before 1 January.\n\nThank you to everyone who's stuck with us through a rough couple of months. I'm genuinely looking forward to the next few.",
+  "words": 337,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The free-visit protection is incorrectly extended to bookings made after publication but before the reader sees the post."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30472084879875183,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06337045133113861,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.8671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.145873546600342,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.1,
+    "effort": "high",
+    "output_tokens": 1850,
+    "input_tokens": 1432
+  }
+}

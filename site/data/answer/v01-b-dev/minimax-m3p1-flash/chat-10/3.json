@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft — firm, no cussing, and you can send it as-is:\n\n---\n\nRick, I need to say something and I want to do it before I get really angry, because if I wait I'll say things I can't take back.\n\nYou told Gary I'd list his house for 1%. I never said that number to anyone, ever. My side is 2.5% and that's what I quoted him. So when Gary asks who set that rate, the answer is you.\n\nAnd 1% on a $400,000 house is about $4,000. That's exactly what he ended up paying ListLite flat. So the \"family rate\" you promised him wasn't a discount — it was me working for nothing.\n\nHere's what I did for that nothing. Saturday. Pulled comps, did the walkthrough, printed a full listing packet. Six hours plus the drive up from north Phoenix. For 1%.\n\nAnd Sunday night Gary texts he's going with the flat fee, \"no hard feelings.\" Then I call you and I get \"that's business sis, can't win em all.\" I'm not mad at Gary, Rick. He made his choice and he was polite about it. I'm mad at you.\n\nBecause this is the second time. The softball guy, two years ago. I let it go then. You get to be the guy who knows everybody and throws my name around like it's a favor to your friends, and I do the actual work for free. That's not generous. That's using me.\n\nAnd this morning you text that Denise wants to \"pick my brain\" about selling her rental — and you'd already given her my cell. Not asked. Just handed out.\n\nSo here's where this lands. I'm not calling Denise. You tell her. And going forward you don't hand out my number and you don't quote my commission to anybody without asking me first. Every time.\n\nI want to be clear about one thing though: I'm happy to help family. Mom, your kids, me, anyone we actually love. Advice, strategy, a phone call, whatever — no charge. You know that. What I'm not doing is unpaid listing prep for your coworkers.\n\nI'm still coming to Thanksgiving. I'm still your sister. This just stops.\n\nI'm not going to argue with you about it. You can be annoyed, I don't care. But I'm not doing this again.\n\n---\n\nOne thought: don't send it while you're still heated — read it out loud first, and if anything sounds too sharp, that line is probably the one to soften. The Denise paragraph and the \"I'm not doing this again\" line are the two that will actually land, so keep those intact.",
+  "words": 440,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45021963119506836,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.40027114748954773,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.845021724700928,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "provider default",
+    "output_tokens": 1630,
+    "input_tokens": 688
+  }
+}

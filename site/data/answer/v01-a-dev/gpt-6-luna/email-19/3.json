@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hi Beth,\n\nI’ve just landed, so forgive me if this comes out a bit muddled. I’m not trying to get in the middle of things with you and Lowri, or tell you how you should feel. I just wanted to message you privately because I’d really love you to be there for Nia, even if it’s only for the Saturday.\n\nI know things got pretty hurtful at Lowri’s 40th, and you both said things. I can see why the thought of a whole weekend together feels difficult. But you don’t have to do the cottage on Friday or the paddleboarding. You could get the train from Cardiff Central on Saturday — it’s about two and a half hours — and I’ll pick you up. You’d only need to be there for six, and you can share my twin room that night.\n\nNia rang me crying last week asking if you were still coming. She doesn’t know you’ve pulled out, and I know how much you’ve meant to her over the years. You were there with her every night at the Heath when her mam was poorly in 2019. I think having you there for the meal would mean a lot to her.\n\nI swapped my Orlando trip with Kerry at work to get the weekend off, and gave up a night stop I’d really wanted. I’m not saying that to make you feel bad — I just want you to know I’m making the effort because this matters to me, and I’d love to spend the Saturday with you.\n\nI honestly think you might regret missing it. And I wonder if Lowri’s sorry, even if she’s finding it hard to say so. You’re both stubborn, but you don’t have to sort everything out before you come.\n\nPlease don’t send Lowri the £85 just yet. Have a think about Saturday, no pressure to decide right now. And Nia’s wedding’s on 17 April at Margam — she’ll be so glad to have you there for your reading.\n\nLove,  \nSiân",
+  "words": 337,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Says Beth might regret missing it but never says Nia will remember who wasn't there, so that required point is missing."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4081988036632538,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5181122422218323,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.2421875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.9870758056640625,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "medium",
+    "output_tokens": 417,
+    "input_tokens": 14455
+  }
+}

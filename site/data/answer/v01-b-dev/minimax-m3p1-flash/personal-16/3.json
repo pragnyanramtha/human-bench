@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why my pier logger reads warmer than the offshore buoy (it isn't broken)**\n\nA few of you have emailed me about this, and one of you implied my logger is faulty. It isn't. Since the question keeps coming up — from the dive shops, the docent list, and the club newsletters — here is the whole picture, including how I check the instrument, so people can stop guessing.\n\n**The numbers.** In October, my pier logger averaged 15.9 °C. The offshore buoy averaged 14.1 °C for the same month: a gap of about 1.8 °C. In winter that gap shrinks to roughly 0.4 °C.\n\n**Why the two numbers differ.** They aren't measuring the same water. My logger is strapped to a piling at 3 m depth, about 150 m from shore. The buoy sits roughly 25 km offshore with its sensor just under the surface, in deep water. Shallow nearshore water warms in the sun, and the bay is sheltered from the upwelling that keeps the offshore water cold. The gap tracks sunny afternoons — one of you sent me an overlay of the buoy and my data, which was genuinely useful, because you can see it plainly.\n\n**Why it isn't my instrument.** Twice a year I run a two-point calibration check: an ice bath and a room-temperature bath, compared against our lab reference thermometer. At the last check, in September 2026, the offset was +0.12 °C — well inside spec. In August I pulled the logger up and found a barnacle colony and a decorator crab living on the housing. I scraped both off and the readings didn't change. The logger samples every 10 minutes and I pull and download it every six weeks, swapping the battery once a year.\n\nSo this is real oceanography, not instrument error. The buoy answers \"what is the offshore water doing?\" Mine answers \"what is the water doing where we dive?\" If you are diving the breakwater, mine is the more relevant number. If you are swimming at the breakwater on a sunny afternoon, expect the pier to read several degrees warmer than the buoy.\n\n**The raw data.** If you want the actual CSV — ten-minute records, with my calibration notes and download dates — just email me and I'll send it. I'd rather you check my work than assume.\n\nHappy to talk it through at the club meeting.\n\n— [Name], Marine Biologist\nUniversity Field Station, Monterey",
+  "words": 404,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3750780522823334,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9620656371116638,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.40788745880127,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.8,
+    "effort": "provider default",
+    "output_tokens": 1306,
+    "input_tokens": 672
+  }
+}

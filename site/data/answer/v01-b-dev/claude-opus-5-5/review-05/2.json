@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: Great tub, one very wet Tuesday, and get your warranty in writing\n\n3 stars\n\nI'm a mobile dog groomer and Harbourline did the full grooming fitout on my Transit this summer: tub, ramp, water tanks, propane water heater, floor, cabinets, dryer mount, the works. There's good and bad here, so here's all of it.\n\nThe good first, because there's a lot of it. The stainless tub and ramp are honestly the best thing about my van. Dogs walk right up the ramp and into the tub on their own. I don't have to do a deadlift every time a big dog shows up, which my back appreciates a lot. The tether rail is in exactly the right spot, the coin-grip floor actually grips, and the layout works for how I groom. Day to day, I love this van.\n\nNow the bad. On October 27 I was in Bedford with Moose, a 110 lb Bernese, in the tub, halfway through his groom. That's when the fitting on the hot water line let go. Water sprayed everywhere. It covered the floor and ran down into the cabinet. I was yelling and grabbing towels and trying to shut things off. Moose just sat in the tub like a king the whole time, completely unbothered, like the flood was a spa feature. One of us handled it with dignity and it wasn't me. I had to towel him off and send him home half groomed, one side fluffy and one side not. Then I cancelled the rest of my day.\n\nI emailed Glenn right away. The reply is the part that actually bothered me. I wasn't mad about the leak itself. Stuff breaks. But before anyone had looked at the van, I was told these lines don't just let go, that it was probably because the heater had been run dry or someone had been hanging things off the pipe, and that this would be user error and not covered by warranty. I have never run it dry. Nothing hangs off that pipe either, because it's behind a cabinet door. On top of that there was a $180 diagnostic fee just to look at it, and the earliest opening was November 3, almost a week out.\n\nSo the van was off the road from October 27 to November 6. I lost six bookings plus the rest of that first day. For a one-person business, that hurts.\n\nTo be fair to Glenn, here's how it ended. When he got into it, he found that his supplier had swapped in a cheaper compression fitting on the outlet. He told me straight up that it was on them. He replaced all the fittings on the hot side and took the $180 off. I appreciate that he owned it. Plenty of shops would have stuck with the \"user error\" line. He didn't, and that counts for something.\n\nWhy 3 stars: the build quality on most of the van is genuinely good, and I'd probably be at 4 or 5 if the leak had been handled differently from the start. \"Must be your fault\" before anyone has looked at the problem is a rough thing to hear when you're standing in an inch of water. The week-long wait was also hard on a working vehicle.\n\nMy advice to other groomers, trades, or anyone else whose van IS their business: get the warranty terms in writing and go over them before you pick up. Mine covers workmanship for 12 months but excludes misuse or user error, and that exclusion is pretty broad. Ask what counts as user error. Ask whether parts swapped in by suppliers are covered. Ask how fast they can get a working vehicle in for repairs. It'll save you a stressful week.\n\nWould I go back? For the tub and ramp setup, probably yes, because it's that good. I'd just have everything nailed down on paper first.\n\nMoose has since been rebooked and finished. Both sides are fluffy now.",
+  "words": 650,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23634600639343262,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.052546173334121704,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.903323173522949,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.0,
+    "effort": "medium",
+    "output_tokens": 1683,
+    "input_tokens": 3672
+  }
+}

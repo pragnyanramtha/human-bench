@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Kestrel Bastion 1500: saved my position, annoyed me a little. 4/5**\n\nBought this on Voltwise in Aug 2026 for $229. I day trade crypto full time, so a power cut with a position open is the nightmare scenario. Mine happened on Oct 14 during a storm. Power dropped around 2:20pm while I was 10x long on a SOL perp. The PC, monitors, modem and router all stayed up, and I closed the position clean in about 4 minutes. No scramble, no phone hotspot panic. It paid for itself right there.\n\n**The numbers (since specs alone don't tell you much)**\n\n- 1500VA / 1000W, pure sine wave\n- My load: PC + 3 monitors + modem + router, about 410W while trading (read off the unit's own display)\n- Box claims roughly 14 min at 500W. I tested it on purpose at my actual load and got **11 min 40 sec** before I shut down\n\nThat second one is worth noticing. I was pulling less than the 500W on the box and still got about 2 minutes under the rated time. So don't buy this expecting to ride out a long outage. For trading it's plenty: enough time to close positions, save everything and shut down properly. It is not a \"keep working through the blackout\" unit.\n\n**Setup**\n\n10 outlets total, 5 battery backed and 5 surge only. Put your modem and router on the battery side. People forget this, and then the PC stays on but the internet dies anyway, which is useless when you need to exit a trade. There's also a 60W USB-C port, which is handy.\n\nIt weighs around 30 lbs, so you're not moving it around much. The battery is swappable, but a replacement pack is $95, so factor that in over the long run.\n\n**What bugged me**\n\n- **The fan.** First week, it kicked on at 3am out of nowhere and woke me up. It's loud, like a hair dryer on low. If your desk is in your bedroom like mine, keep that in mind.\n- **The beeping.** The outage alarm is loud as hell. You can mute it in the desktop app, but the setting resets after a firmware update, so you have to go back and redo it.\n- **The app.** It looks like Windows XP. Honestly it's ugly. But the auto shutdown works, and that's the one thing I actually need from it, so I'm not mad about it.\n\n**Verdict**\n\nIt did the one job that mattered when it counted, and I'd buy it again. It loses a star for the runtime coming in under the box number at a lighter load, the loud fan, and the alarm setting that keeps resetting. None of those are dealbreakers, they're just annoying.\n\n**Good fit if:** you run a typical single-PC trading setup around 400W or less and want time to exit and shut down cleanly.\n\n**Not a good fit if:** you want long runtime, you need something quiet, or you're running a bigger rig with multiple machines.\n\n**Pros**\n- Held my full setup for 11:40 at 410W\n- Pure sine wave\n- Auto shutdown works\n- Swappable battery\n- 5 backed-up outlets plus USB-C\n\n**Cons**\n- Runtime came in under the box claim\n- Fan is loud, and it woke me up at 3am\n- Alarm mute resets after firmware updates\n- App looks terrible\n- Heavy, and $95 for a replacement battery\n\nIf you trade on leverage, get some kind of backup. Even a small outage at the wrong moment can cost you way more than $229.",
+  "words": 594,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4885576069355011,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3170800507068634,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 14.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.54047155380249,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.1,
+    "effort": "high",
+    "output_tokens": 1686,
+    "input_tokens": 1419
+  }
+}

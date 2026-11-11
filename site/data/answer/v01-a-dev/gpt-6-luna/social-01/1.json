@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: Important recall notice: Corvane children’s ibuprofen\n\nWe’re sharing an important update about Corvane Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry), 120 mL bottles, lots CV6114A and CV6114B. Please check the lot number on the bottom of the box before using the bottle.\n\nThe recall is for the oral syringe supplied in the box. Its markings were printed incorrectly: each mark represents twice the volume shown. For example, the mark labelled 2.5 mL measures 5 mL, and the mark labelled 5 mL measures 10 mL. The ibuprofen suspension itself meets specifications and is not contaminated or affected by the recall. The expiry date is 08/2027.\n\nIf you have one of these lots, stop using the supplied syringe and discard it. Do not give another dose until a poison centre or doctor advises that it is safe to do so. We’ll have correctly marked replacement oral syringes available free of charge at Cedarbrook Pharmacy today, Monday, before noon. No receipt is needed. You can also return the product for a refund under the product recall. We’ll be open an extra day, Saturday, 10 a.m.–4 p.m., for exchanges.\n\nWe received the recall notice on the evening of November 6 and put notices on our door and by the children’s aisle the morning of November 7. These were over-the-counter sales, so we don’t have contact details for most purchasers and can’t call everyone directly. We’re sorry for the worry this is causing and are sharing this information so families can check their boxes and get a safe replacement syringe.\n\nIf a child may have received a dose measured with the affected syringe, or you’re unsure how much they received, contact the Ontario Poison Centre at 1-800-268-9017 or a doctor now. They can assess the situation based on the child and the doses given. Do not rely on a Facebook post to assess an individual child. Call 911 or go to the emergency department if a child is very sleepy or hard to wake, is vomiting blood, is not peeing, or has a seizure.\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nWe’ve posted the recall details and what to do on the Cedarbrook Pharmacy page. Please check the lot on the bottom of the box: the affected lots are CV6114A and CV6114B. The issue is the syringe markings, not the medicine. If your child may have received a dose measured with that syringe, or you’re unsure of the amount, call the Ontario Poison Centre at 1-800-268-9017 or a doctor for advice. Replacement syringes will be available free at Cedarbrook today before noon.",
+  "words": 415,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10586615651845932,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08814782649278641,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.7759811878204346,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 890,
+    "input_tokens": 15449
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: URGENT — Brightline Pro 6% batch LX2291 may be 12% (40 vol)\n\nHi everyone,\n\nImportant one for anyone who buys Brightline Pro from the Kelvin Trade rep. Kelvin Trade have sent a product notice: batch LX2291 of Brightline Pro 6% (20 vol) Cream Developer 1L may actually contain 12% (40 vol). So if you think you’re mixing 6%, you could be putting double-strength developer on. This batch was supplied between 19 October and 5 November 2026. Other batches and other strengths are not affected.\n\nHow to check: the batch code is NOT on the box. It’s printed on the BASE of the bottle. Turn the bottle upside down and look for LX2291. Check the open bottles in your trolley as well as the stock in the back. Don’t just check the box and assume you’re fine.\n\nWhat it can do: because it’s double strength, lift can be much faster than normal. On Saturday I had a client react during a full head bleach retouch — burning at the crown after about 18 minutes, scalp red, and the lift was far too quick, near pale yellow at 18 minutes when it normally takes 35–40. We rinsed straight away with cool water. Aileen’s foils on Thursday got roasting hot and she thought it was the heater; hers is also LX2291. Lorna, Aileen thought you got a box off him too, so please check yours. Hair can over-process, go patchy or brassy, and scalps can burn. This isn’t a patch-test or allergy thing — it’s the wrong strength in the bottle.\n\nWhat to do:\n- Stop using any bottle from batch LX2291 now.\n- The Kelvin rep is in Tuesday. You can hand bottles back to him, or take them to the Hillington depot for a full credit.\n- If you’ve had a problem with a bottle, KEEP IT. Don’t bin it. Put it aside with your notes.\n- Check every 6% Brightline bottle you’ve got, open and unopened.\n\nIf someone reacts in the chair:\n1. Stop the service and rinse with cool running water straight away. No shampoo, no creams or other chemicals.\n2. Rinse well. For a suspected chemical burn, NHS advice is plenty of cool or lukewarm running water for about an hour, and chemical burns need hospital assessment. Call 999 immediately if there’s breathing difficulty, throat swelling or collapse, and don’t wait for blistering or severe pain before getting help. Link: https://www.nhs.uk/conditions/acid-and-chemical-burns/\n3. Put gloves on, help them remove any contaminated clothing or cape if needed, and write it in the incident book at the desk. Record the batch number and keep the bottle.\n\nI’ve kept my bottle and I’m dealing with it through the proper channels. If anyone else has had a reaction or a dodgy result from this batch, please tell me and keep the bottle. Better to over-check than have another sore head.\n\nThanks,\nKirsty",
+  "words": 467,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The reaction guidance omits the instruction to call 999 immediately for a suspected chemical burn."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21892131865024567,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09430419653654099,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.388671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.646123886108398,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.1,
+    "effort": "provider default",
+    "output_tokens": 3717,
+    "input_tokens": 1968
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nHere are the details you asked for.\n\n1. Terminal model and firmware: Four ClockPoint BX-300 terminals at our Embakasi depot, now running firmware 4.2.1. They auto-updated on the night of 27 October. The two terminals at our Mombasa Road site are still on 4.1.8 and are not affected — the day shift there is coding correctly.\n\n2. Shift template: NIGHT-8, scheduled 22:00–06:00, at Embakasi depot. 38 staff work this template, and all of their punches are affected.\n\n3. Example: Employee ID T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export shows two lines — 2.1 hrs REG on 30 October and 6.1 hrs OT15 on 31 October. We expect 8.0 hrs REG plus 0.2 hrs OT15. Payroll rounds durations to the nearest tenth of an hour, so the 8 hrs 13 min total is 8.2 hrs, with only the 13 minutes outside the scheduled shift coded OT15.\n\n4. Export profile: Payroll CSV v2, which feeds our monthly payroll run.\n\n5. First noticed: Kevin Mutua (copied on this email) spotted it on 5 November while reviewing the draft October overtime. The pattern itself appears to date from around 28 October, the day after the update. Worth flagging that the 4.2.1 release notes promised improved midnight rollover for shifts spanning two calendar days — on our terminals it is doing the opposite. The draft October overtime came out about KES 212,000 too high as a result.\n\nWe need either a fix or a clear workaround before our payroll inputs close on 20 November. Kevin will test whatever you propose on the Embakasi terminals and report back to you directly.\n\nOne plain question, please: is it safe for Brian Ochieng, who manages our terminals, to roll the four Embakasi terminals back from 4.2.1 to 4.1.8? He is willing to do it, but he wants your confirmation that no punch data will be lost, and we would rather not lose the October records while this is investigated. If a rollback is not advisable, please tell us what you recommend instead.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 354,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2869093716144562,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12324956059455872,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1279296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.915116310119629,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "provider default",
+    "output_tokens": 2765,
+    "input_tokens": 2137
+  }
+}

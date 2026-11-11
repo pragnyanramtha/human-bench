@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4 stars. Good value and mostly great, but the timing and one breakage are worth knowing about before you book.**\n\nI moved from Phibsborough to Drumcondra in October: a 2-bed flat, but mostly my own stuff, and a 4th-floor walkup with no lift at the new place. I booked Kilbarrack Van Co through their website. The quote was €340 for up to 4 hours with two lads and a van. The job took about three and a half hours, and the price was the best I found. The other quotes I got were over €450.\n\n**The bad bit first:** they were late. I was meant to be there at 9 and they arrived at 10:30. They texted at 8:40 to say the previous job had overrun, which was useful, but it still meant I sat around on boxes with a cold coffee waiting. If you have a tight handover with a landlord or a fixed time for keys, book them with that in mind or build in some slack. For me it was an annoyance. For someone with a strict deadline it could be a real problem.\n\n**The breakage:** I had a brass floor lamp that got chipped. They wrapped everything else in blankets but not that. It was my nan's lamp, so I was a bit gutted. My advice: if you have anything sentimental or fragile, wrap it yourself and say so when you book, or ask them to put it in the van separately. Don't assume it's covered.\n\n**The good bit:** the couch wouldn't go round the turn on the third floor. One of the lads took the legs off with an allen key he had in his pocket, and it went straight through. They also put the bed back together without being asked. They took away a flat-pack shelf I didn't want, which saved me a trip to the dump. Dessie knocked €40 off the price because of the lateness, and I hadn't even asked him to. That was decent of him.\n\nThe deposit was €50, paid by Revolut. Nothing unusual there.\n\nWould I use them again? Yes, honestly, for the price and the work they put in. I'd just make sure the fragile stuff is sorted before they arrive and leave a bit of time on the day in case they're late.",
+  "words": 386,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5493691563606262,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3050999343395233,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.4449312686920166,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.0,
+    "effort": "medium",
+    "output_tokens": 1050,
+    "input_tokens": 1494
+  }
+}

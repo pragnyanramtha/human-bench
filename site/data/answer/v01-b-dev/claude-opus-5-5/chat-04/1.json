@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: s01\nCc: none\nSubject: none\n\nMorning Renee, here's my rundown for the admin meeting. Pull whatever you need.\n\nGAME\nWe beat Brookhollow 31-14 Friday night, and that locks up 2nd in the region.\n- Tavion Hurst ran for 188 yards and 2 TDs. His long TD came in the 3rd quarter, and our line pushed them 5 yards back the whole drive. Best I've seen them block all year.\n- Deshawn Pettaway had 3 sacks and 7 tackles. The kids voted him defensive player of the week in the locker room before us coaches even met. That one meant a lot to me.\n- Our defense held them to 46 yards rushing in the second half.\n\nPLAYOFFS\nWe got a HOME playoff game. First round is Clanton Valley this Friday, Nov 13, 7pm at Ridge Field. Please make sure Dr. Pruitt knows, and if y'all can push it to faculty and families I'd appreciate it. We want that place packed. Ticket presale starts Tuesday.\n\nACADEMICS\nThe 9 weeks grade check came back clean. All 52 kids on the roster are eligible and nobody is on the list. That's Tonya Greer's doing. Her Tuesday/Thursday study hall is the reason, and she deserves the credit, not me. She's keeping it going through the playoffs.\n\nBOOSTERS\nThe Boston butt sale wrapped up. We sold 208 butts and raised $6,240. The goal was $4,500. That money is going toward new sideline headsets. Carla Mims ran the whole thing, and Hargrove's Meat Market smoked them at cost, so they deserve a shout out too. Boosters are also lining up extra concession help for Friday.\n\nTRANSPORTATION\nI haven't forgotten about the bus requests needing to be in 5 days out. If we win Friday and draw a road game in round 2, I'll get that request to you as soon as the bracket posts.\n\nLet me know if you need anything else before noon.\n\nCoach Tillman",
+  "words": 315,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36665669083595276,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16365636885166168,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.056640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.523721694946289,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 1059,
+    "input_tokens": 2860
+  }
+}

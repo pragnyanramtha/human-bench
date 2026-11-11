@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: The building on Saint-Hubert**\n\nDenis,\n\nI have been trying to write to you since Thursday, but I am so angry and hurt that it has taken me until now to find the words.\n\nAt six in the morning, I was in the bakery shaping baguettes when a photographer from the agency came into my shop. He told me you had said I was okay with him being there. I was not okay with it. I did not even know the building was on the market. Karine had to calm me down because I was so upset.\n\nThat is how I learned you were selling Papa’s building: from a stranger with a camera, standing in my bakery. Not from you.\n\nAfterward, I found the listing on Centris. The asking price is $1,150,000. You had time to speak to an agent, arrange a listing and send a photographer, but you could not pick up the phone and tell me what you were doing. I am your sister, Denis, and I own half of that building. I deserved to hear it from you.\n\nWhat makes this even harder to understand is what you said to me after Maman’s funeral: “No rush, we decide together.” I trusted you when you said that. **Together** does not mean I find out from a photographer.\n\nPapa bought the three-storey building on rue Saint-Hubert in 1979. There is the bakery downstairs and the two apartments upstairs. Since Maman died in February and the estate was settled in August, the building has belonged half to you and half to me. I know it is yours too, and I am not saying you should never be able to sell your share. But you cannot expect me to accept being left in the dark about something that affects my work, my home in this neighbourhood, and our family.\n\nI have been in that bakery for 31 years. I have paid $2,400 a month in rent to the estate, and I have never been late once. When the roof needed replacing in 2019, I paid the $38,000 myself. I did that because the building needed it and because I cared about keeping it in good condition. I think that needs to be part of our conversation now.\n\nYou may think I am being sentimental, and yes, I am. It is Papa’s building. I still remember how he used to let you sleep in the flour sacks room at the back when we were kids, and how much you loved it. You have your own memories there, even if you are far away in Calgary now. But this is also business. I have six employees who depend on the bakery, and clients who have been coming through that door for years. I have spent 31 years building something there.\n\nMy lease ends on April 30, 2027. I am frightened of what happens if the building is sold to a developer. Maybe they will want to tear it down or turn it into condos. Maybe the rent will be doubled. I do not know what a buyer would do, and that uncertainty is frightening enough. I cannot survive a rent that doubles, and I cannot just move 31 years of work somewhere else overnight.\n\nYou also know I want to buy your half. I told you on the phone in September that the caisse had pre-approved me for $410,000. I understand that we may not agree yet on the price or on how to account for the roof. I am ready to sit down and discuss all of it seriously. But I cannot have that discussion with you if you are making plans through an agent without telling me.\n\nI am asking you to take the building off the market this week so we can talk and see whether we can reach an agreement for me to buy your share. If you will not take it off the market, then at the very least I want us to agree that I will have the first opportunity to buy before you proceed with another buyer. I also want you to stop arranging visits or sending people into the bakery without speaking to me first.\n\nI am furious with you, Denis. What you did was hurtful and, frankly, cowardly. You should have called me yourself. I need you to understand that I am not going to pretend this was a small misunderstanding.\n\nBut I am writing because I still want us to find a way through it. You are my brother. We have just lost Maman, and I do not want to lose you too. I want us to be able to look back and say that even though this was difficult, we treated each other fairly and spoke honestly.\n\nPlease call me yourself this week. I do not want an answer by text from your wife. I need to hear from you directly, and I need us to have a real conversation about what happens next.\n\nYour sister,  \n[Your name]",
+  "words": 836,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.47852468490600586,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.44748473167419434,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.389369010925293,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.6,
+    "effort": "low",
+    "output_tokens": 985,
+    "input_tokens": 18347
+  }
+}

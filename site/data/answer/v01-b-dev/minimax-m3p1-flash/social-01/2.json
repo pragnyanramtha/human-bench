@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: none\n\nHi parents — please read this carefully. This one matters.\n\n**The medicine itself is fine.** The Corvane children's ibuprofen (berry, 120 mL) is not contaminated, not expired and does not need to be thrown out. The expiry is 08/2027.\n\n**What's actually wrong is the syringe printed in the box.** On the affected syringes the graduations are printed at half their true volume: the line marked 2.5 mL actually measures 5 mL, and the line marked 5 mL actually measures 10 mL. A caregiver following the numbers on that syringe gives roughly twice the intended dose. That's the whole issue — the printing on the syringe, nothing else.\n\n**Which bottles to check**\n- Corvane Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry), 120 mL bottle\n- Lot CV6114A or CV6114B — printed on the bottom of the box\n- Expiry 08/2027\n\nDifferent lot on your box? Then this doesn't apply to you. Not sure? Bring the box in and we'll read it with you.\n\n**What to do**\n1. Stop using the syringe that came in the box, and throw it out.\n2. Check the lot number on the bottom of the box.\n3. Come in for a free, correctly marked oral syringe. Our replacements land this morning before noon — free for anyone, no receipt and no purchase needed. Lost the box? Come anyway, we'll help.\n4. Once you have a correct syringe, the medicine can be used as directed. If you'd rather not use it at all, bring the product back for a full refund. We'll be open extra on Saturday, November 14, 10 am–4 pm for exchanges and returns.\n\n**On the timing:** the manufacturer's recall notice reached us the evening of November 6. We had signs on our front door and beside the kids aisle by the morning of November 7, and we pulled our remaining stock off the shelf that day. Much of this product sold over the counter, where we have no phone number for the customer, so there is no way for us to call every family who bought it. That's why we're asking people to check their own cabinets.\n\n**If your child has already had a dose from an affected syringe**\n- Please don't give another dose until a poison centre or your doctor says it's okay.\n- Call the **Ontario Poison Centre: 1-800-268-9017 or 416-813-5900** (24 hours). It's free and they will tell you whether your child needs to be seen. Have your child's weight, and the times and amounts of doses, handy if you can.\n- Go to emergency / call 911 if your child is very sleepy or hard to wake, is vomiting blood, is not urinating, or has a seizure.\n\n**About your child's dose:** the syrup is 100 mg/5 mL and the correct amount depends on your child's weight, so nobody can tell from a Facebook post whether a particular child was given too much. Weight, how many doses were given, and how the kidneys are handling it all matter — that assessment belongs with the poison centre or your doctor. Bring your child's weight to the counter and we'll work out the correct volume with you.\n\nWe know this is frightening. We'll sort it out with you at the counter. — Cedarbrook Pharmacy, Erin Mills Pkwy\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: [p01]\nCc: none\nSubject: none\n\nHi everyone — I work at Cedarbrook Pharmacy on Erin Mills Pkwy, so I can answer the questions being asked below.\n\n**The medicine is not the problem.** The Corvane children's ibuprofen (berry, 120 mL, exp 08/2027) is not contaminated and not expired. The recall is about the syringe printed in the box: every mark on it is half of what it should be, so the syringe marked 5 mL actually holds 10 mL — following it gives about double the dose. That's the whole issue.\n\nIf you have the Corvane bottle: check the lot on the bottom of the box (CV6114A or CV6114B), and please don't use the syringe that came with it. Free, correctly marked syringes are at our pharmacy from this morning — no receipt needed — and we can refund the product. Extra hours Saturday, November 14, 10 am–4 pm, for exchanges.\n\nIf your child has already had a dose: please don't give another until a poison centre or your doctor says it's okay. **Ontario Poison Centre: 1-800-268-9017 or 416-813-5900**, 24 hours — they assess your child and tell you whether to bring them in. Emergency (911/ER) if your child is very sleepy or hard to wake, vomiting blood, not peeing, or having a seizure.\n\nFull details, including how the dose is worked out by weight, are on our page under \"Kids' ibuprofen: what's actually wrong and what to do.\" We're open from 9 this morning if you'd rather talk it through in person.",
+  "words": 793,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30976957082748413,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2606375515460968,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.4164960384368896,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 61.4,
+    "effort": "provider default",
+    "output_tokens": 7157,
+    "input_tokens": 2136
+  }
+}

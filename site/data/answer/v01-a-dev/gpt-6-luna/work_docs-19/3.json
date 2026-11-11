@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Deirdre, thank you for asking and for acknowledging what Noma and I have built. I’m really sad to lose her from the Seahorses. She’s been with me for three years, since my first year teaching, and she’s taught me so much along the way. I understand the numbers and that Bronwyn needs the extra help; I’m not asking to change the allocation. But I don’t want to pretend it won’t be a big adjustment for the children or for me.\n\nThe first weeks of Grade R can be tough, with new children settling in and Charlene also getting to know the class. Noma knows the children and routines so well: Luthando and Mia already know her from aftercare, the children ask for her isiXhosa songs at morning ring, and she was such a steady support for Zayd when he was struggling in Term 2.\n\nCould Charlene come in for a day or two during the last week of term, between 1 and 4 December, to meet Noma and see the routine? And would it be possible for Noma to pop in for morning ring for a few minutes during the first week back, from 14 January—even just 15 minutes? I think that continuity would help the children and give Charlene a gentler start.\n\nI’m grateful you asked for our thoughts rather than just announcing the change. Thanks for taking this to SMT.",
+  "words": 232,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2929137647151947,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.37777265906333923,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.25,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.727958679199219,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 7.7,
+    "effort": "medium",
+    "output_tokens": 291,
+    "input_tokens": 14363
+  }
+}

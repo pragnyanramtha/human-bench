@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nMel, the jump in k’s, morning stiffness and soreness a few centimetres above the heel could fit mid-portion Achilles tendinopathy — basically a tendon struggling with the increase in load. Nothing sudden makes a tear less typical, but I haven’t seen your leg, so can’t diagnose it or rule one out here.\n\nThe limping after your 6k is the bit I’d pay attention to. Feeling better once you warm up doesn’t mean the tendon’s happy with that run. Back off running for now until you’re walking comfortably. Then try shorter, easy, flat runs, leaving out hills and speedwork. Cycling or swimming can keep you ticking over if comfortable.\n\nProgressive calf loading is usually the mainstay, rather than complete rest:\n- Heel drops are an option, but heavy, slow calf raises are another well-supported approach — not clearly superior, and no need to chase pain off a step.\n- Start with controlled two-leg raises on flat ground, straight-knee and bent-knee versions. Something like 2–3 sets of 8–12 every other day is a starting point, not a prescription. Gradually add resistance as tolerated.\n- On sore days, a supported calf-raise hold may be easier: try a few 20–30-second holds if comfortable. They’re not guaranteed pain relief.\n\nA conservative guide is no more than 3/10 pain during loading, no limping, and back to your usual baseline by the next morning. If morning pain or stiffness increases, reduce the weight, reps or running. Don’t push through escalating pain.\n\nSkip stretching it until it burns. Cortisone injections into or around the Achilles aren’t a routine fix because of tendon weakening and rupture concerns.\n\nGiven you’re limping, I’d get assessed sooner if that persists. Otherwise, if it’s not clearly settling over 3–4 weeks, see any sports physio locally — no particular clinic needed.\n\nIf you get a sudden pop, a feeling like someone kicked the back of your leg, or can’t push off, stop running AND calf exercises and get checked that day by a GP or ED: possible rupture.\n\nSome antibiotics, particularly fluoroquinolones, can increase tendon problems. If you’re taking or recently took one, flag the Achilles pain promptly with your prescriber.",
+  "words": 357,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3912581503391266,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11850523948669434,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.296875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6874020099639893,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.4,
+    "effort": "medium",
+    "output_tokens": 496,
+    "input_tokens": 15228
+  }
+}

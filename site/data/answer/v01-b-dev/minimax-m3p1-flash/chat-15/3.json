@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Morning all — logger numbers first, then what the supplier said.\n\n**Logger (old ThermaTrak, downloaded 08:00)**\n- Fri overnight min: 4.1°C — normal\n- Sat 22:50 — went over 8°C\n- Sun 02:15 — peak 11.6°C\n- Sun 05:00 — back under 8°C\n- So roughly 6 hours 10 minutes out of range\n\nOne thing to note: this unit has no remote alerts, it just beeps in the room, so it kept going until someone physically reset it. I found it at 07:55 this morning.\n\n**What happened:** the door wasn't fully latched. A box of Hartmann's bags from Saturday's delivery was stacked up against it. Saturday clinic ran late with the RTA collie and the delivery got put away in a rush at closing. On top of that the seal has been playing up all summer and the bottom left corner is cracked — it needs a proper shove to click, I had to lean on it with my hip this morning. So it's the box and the seal together, either one on its own wouldn't have done it.\n\n**Stock in the fridge:**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 4 vials insulin\n- 2 cat flu/FeLV combos\n- Roughly €1,150 at cost\n\n**Munster Vet Supplies:** rang the tech line at 08:40 and spoke to Niamh, the pharmacist. Her instructions were to quarantine everything, don't use any of it, email her the logger CSV and the batch numbers, and she'll check with the manufacturers and come back to us by Wednesday. She already checked the manufacturer's storage sheet for the insulin product we stock against our readings and cleared those 4 vials for use, so those are back in and labelled. Everything else is quarantined in a sealed bag marked DO NOT USE in the lab fridge, sitting at 5.2°C, with a new temp sheet running on it.\n\nAoife — please hold the three boosters this afternoon, and leave Bonnie on Wednesday as you've already moved her. If Munster clears the stock we can rebook for Thursday or Friday, and if we're short I can pull stock across from Carrigaline branch. I'd rather nothing goes out until Niamh comes back to us on Wednesday, and I'm not binning anything before then either — most of it will probably be fine but it's not my call to make.\n\n**Two things I need you to OK:**\n1. The new logger with SMS alerts from the supplier catalogue — about €180. The old one only beeps locally, which is no use if nobody's in the building.\n2. A replacement door seal. That needs doing regardless, cracked corner and all.\n\nOne more suggestion — add a check on the closing checklist that the fridge door is properly shut and that delivery boxes aren't stacked against it. If the door isn't latched the logger won't tell us anything anyway.\n\nI'll email Niamh the CSV and all the batch numbers now so we're in her system before Wednesday.",
+  "words": 501,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3138127028942108,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2397802323102951,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.0203306674957275,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "provider default",
+    "output_tokens": 1985,
+    "input_tokens": 1183
+  }
+}

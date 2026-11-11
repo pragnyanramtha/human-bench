@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nMia, I’m so sorry I went quiet when all this was happening. You don’t need to apologise for not replying. What happened to your room and all your stuff is so shit, and your landlord’s a grub.\n\nYou can stay on our couch as long as you need. Ruby’s already said yes, only catch is Clover will 100% try to sleep on you. Sam’s taken my shift so I’m off all day tomorrow. Dad’s said I can borrow the trailer, so I can come get your stuff out of Priya’s garage before her mum arrives and bring it here. What time works? I can come earlier if that helps.\n\nAnd please don’t feel like you have to decide about Rocky right now. If you want to go back eventually that’s your call, but you don’t have to pack up your whole life and leave the band because of one completely fucked week. Your songs are the best thing about Soft Servo. I know the notebooks and the Nord can’t just be replaced, but Jono’s cousin has a working Yamaha you can have for now. We can see what we’ve got in old recordings and messages too, whenever you’re ready.\n\nTully’s also talked to Dee at the Lantern Room about a benefit night on Sat 28th. All the door money would go to you, and Hollow Pines are keen to play. No pressure to do anything or even be there, just wanted you to know we’re on it.\n\nYou drove all the way to Gatton at 2am when my car carked it after the Toowoomba gig and didn’t even complain. Let me show up for you now. You’re not on your own, mate.",
+  "words": 282,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4549534320831299,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11826479434967041,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6762765645980835,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.4,
+    "effort": "low",
+    "output_tokens": 369,
+    "input_tokens": 19986
+  }
+}

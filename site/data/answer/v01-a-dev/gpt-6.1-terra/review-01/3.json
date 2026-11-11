@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.30, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars — a tool I love, with a serious warning about 3.2\n\n4 stars\n\nI’ve used Murmur since 2022, and Lanternfolk honestly wouldn’t exist without it. The first prototype was the ferryman scene, made in one weekend with Murmur. That was also when I quit my job at a mobile studio to make the game. We now have 412 dialogue nodes, and the CSV export has helped us get the game into nine languages.\n\nSo this is a difficult review to write, but anyone buying it now needs to know: version 3.2.0 has a serious save bug. In our project, when we loaded saves made in 3.1.x, Murmur’s variables reset to their defaults. For example, the ferryman forgot that you’d already paid him. That kind of thing can break a game’s dialogue and progression.\n\nRolling back to 3.1.4 fixed it for us, and our old saves loaded correctly again. Another user confirmed that replacing the Murmur folder in the project’s addons folder with the 3.1.4 release worked for them too. We’re keeping a copy of 3.1.4 in our project and not updating to 3.2. I can’t promise that rollback will fix every project, so please back up your project and saves before changing versions, and test it with your own saves.\n\nThe listing says Ines has stepped back and 3.2 will be her last version. As things stand, there’s no ongoing support or promised fix for the bug. If you’re considering buying Murmur, factor that in. It’s still a lovely tool in many ways, but I wouldn’t want anyone to buy the current version without knowing the risk.\n\nI understand why people are frustrated. Broken saves are a big deal, especially when you’re trying to ship a game. But I think the grimbyte review is cruel. I paid $19 in 2022 and got four years of updates from an independent developer. That doesn’t make the bug okay, but I don’t think it’s fair to say she took our money and ran. The current listing price is $29, and new buyers deserve to make their decision with the current situation in mind.\n\nThe source is now public under the MIT licence, so someone can fork it. I might even look into that myself after Lanternfolk launches, though I’m not promising a fix.\n\nThank you, Ines, for making Murmur and for all the work you put into it. It helped me make something I’d wanted to make for a long time.",
+  "words": 397,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3030014634132385,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.37710344791412354,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.022907257080078,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "low",
+    "output_tokens": 561,
+    "input_tokens": 19680
+  }
+}

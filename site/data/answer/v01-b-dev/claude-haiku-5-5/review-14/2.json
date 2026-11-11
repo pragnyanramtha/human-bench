@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**One star for now: good staff interface, unreliable migration support**\n\nBridger Bend Community Library is a single branch with two full-time staff, a volunteer corps, and about 2,300 active cardholders. We signed a three-year contract with Stackhouse Cloud in June 2026 at $14,200 per year. Our migration went live on October 19.\n\nThe staff interface is the best part of this product, and I want to be fair about that. The demo was accurate, and our staff find the day-to-day screens easier to use than our old system.\n\nThe migration and support have been a different story. Since October 28, checkouts have worked only offline, and only on one laptop. The holds queue was wiped, removing around 640 active holds from our records.\n\nThe effects have been real. A patron drove 40 minutes to pick up a held set of large-print Westerns. We had no record of the hold and had to send him home empty-handed. Our volunteer is now recording checkouts on index cards.\n\nOur support ticket has been open 12 days. We have received three replies, each saying the issue was \"escalated to engineering.\" During the sales process we were promised a dedicated migration specialist. What we got was a shared inbox.\n\nThis review is not about the software idea. It is about how Stackhouse handled the move. Before you sign, ask for written support response times, the name of the person responsible for your migration, and a clear answer on what happens to your holds and circulation records if the system fails. Get those answers in writing before the contract is signed.\n\nI would revisit this rating if the migration is fixed and support starts giving specific answers. For now, one star.",
+  "words": 285,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6224520802497864,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995759129524231,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.321138858795166,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.6,
+    "effort": "medium",
+    "output_tokens": 1583,
+    "input_tokens": 1483
+  }
+}

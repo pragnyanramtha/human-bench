@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Rating: ★☆☆☆☆** (I'll revise if support problems are resolved)\n\nBridger Bend Community Library is a single branch with two full-time staff, a volunteer crew, and about 2,300 active cardholders. We moved our catalog and circulation to Stackhouse Cloud on October 19 under a three-year contract at $14,200 a year. Since then the experience has been poor, and I'm posting so other directors can weigh it before they sign.\n\nThe demo was persuasive, and I'll say so plainly: the staff interface is better than our old system. The problem is what happens when something goes wrong.\n\nSince October 28, checkouts have worked only offline, and only on one laptop. The holds queue was wiped, and around 640 holds disappeared. One patron drove 40 minutes to pick up a set of large-print Westerns he had on hold. We had no record of the hold, and he went home empty-handed. Our volunteer has been recording checkouts on index cards.\n\nWe opened a support ticket 12 days ago. We've received three replies, and each one says the issue was escalated to engineering. None has included a timeline for a fix.\n\nOur sales process promised a dedicated migration specialist. What we received was a shared support inbox.\n\nOther libraries should get support commitments in writing before signing. Ask for a named migration contact, guaranteed response times for outages involving data loss, and a documented plan for data recovery or rollback if the migration fails. Ask for references from libraries that migrated in the past six months, not from the sales team. And confirm exactly what happens to your holds and circulation records if something breaks.\n\nOur complaint is with migration and support, not with the product concept. We would gladly revise this rating if Stackhouse restores our holds data, assigns a dedicated contact, and fixes the offline checkout problem.\n\n[Your name]\nDirector, Bridger Bend Community Library\nBozeman, Montana\n\n---\n\nBefore posting, check that every fact matches your records, especially the 640 holds figure, which your notes list as \"around.\" I left out the Nov. 18 hearing and the call from Stackhouse. Mentioning the hearing could come across as a pressure tactic, and the review holds up better without it.",
+  "words": 364,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3897739350795746,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4978426992893219,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.281867980957031,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "medium",
+    "output_tokens": 2080,
+    "input_tokens": 1483
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.47, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Dumper – the sums**\n\nLee,\n\nI know you'd rather see it written down than have me banging on about it in the van, so here's the lot.\n\n**What we spent this year**\nWe had the tracked dumper from the place in Sittingbourne 14 days this year. £85 a day plus £30 delivery every time, so roughly £1,600 all in. That money's gone and we've got nothing to show for it.\n\n**What's for sale**\nBloke in Faversham is selling a 2019 500kg tracked one for £1,650 ono. He says it had new tracks fitted last spring. Halves is £825 each, less if we knock him down a bit.\n\n**Does it pay?**\nAt this year's use it pays for itself in about a year. Even if we only use it half as much, it's paid off in about two. That's before servicing and repairs, so call it a bit longer to be fair, but we've already got 3 patio digs and the Boughton drive booked in for spring, so I don't see us using it less.\n\n**The stuff that doesn't show on the bill**\n- September at Hernhill, when they didn't have one. We barrowed 6 ton of muck, it added 2 days to the job, and your back was gone for a week. That cost us more than a day's hire.\n- The time the driver turned up at 11 and we lost half the morning standing about.\nWith our own we just load it on and go.\n\n**How we'd run it**\n- Lives in my lean-to at the yard, so it's covered and out of the weather.\n- Servicing and normal running costs split 50/50.\n- Whoever breaks it pays for it.\n\n**If it doesn't work out**\nWe sell it on. These things hold their value, so we'd get most of it back. Worst case we lose a bit, which we'd have spent on hire anyway.\n\n**Saturday**\nI want to go and look at it this Saturday before someone else has it. Come with me. You can kick the tracks, check it over, and if you're not happy we walk away, no hard feelings. Fifteen years in and I've not steered you wrong yet. Well, not often.\n\nLet me know and I'll pick you up.\n\nCheers",
+  "words": 376,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4688125550746918,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4167284071445465,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.3046875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.7260174751281738,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.8,
+    "effort": "medium",
+    "output_tokens": 855,
+    "input_tokens": 1385
+  }
+}

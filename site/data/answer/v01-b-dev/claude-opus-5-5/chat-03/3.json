@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmia I'm so sorry I went quiet, work's been flat out but that's no excuse. I'm here now. and don't you dare apologise for going quiet yourself, your ceiling literally fell on your bed\n\nok here's what's happening. I'm off all day tomorrow (wed), Sam took my shift. dad says we can borrow the trailer so I'll come grab all your stuff out of Priya's garage before you have to be out. just tell me what time\n\nRuby says you can crash on her couch for as long as you want. her only warning is Clover will 100% try to sleep on you, so that's the rent sorted lol. mum says they're thinking of you too, she sent kisses\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nalso band stuff. Tully's sorted a benefit night at the Lantern Room on sat the 28th, Dee's giving us the night and all the door money goes to you. Hollow Pines are playing too. and Jono's cousin has an old Yamaha keyboard in his shed you can have to tide you over. it's not the nord but it works and it'll get you playing again\n\nthe landlord is a grub. \"lodge it via the portal\" while you've got hail in your bedroom, honestly unreal. don't let that guy be the reason you leave\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nabout Rocky. if you actually want to go back one day, fine. but not like this, not because of one awful week and a useless landlord. you're exhausted and everything's in garbage bags, that's not the time to make that call\n\nand you can't quit on us anyway. your songs are the best thing about this band and everyone knows it, me Tully and Jono included. the notebooks are gone but the songs are still in your head, we'll help you get them back down\n\nyou drove to Gatton at 2am to get me when my car died after Toowoomba and didn't even whinge about it once. you're not doing this on your own. let us help\n\ncall me tonight if you're up for it, or just text me a time for tomorrow",
+  "words": 345,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26519641280174255,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.030001739040017128,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.0772786140441895,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.9,
+    "effort": "medium",
+    "output_tokens": 1060,
+    "input_tokens": 2609
+  }
+}

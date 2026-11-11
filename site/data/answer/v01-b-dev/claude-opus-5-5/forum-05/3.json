@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.49, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nI did read the changelog before upgrading. The cause is in the library, not in my calibration, and I'd like this thread reopened.\n\n**What changed:** PR #812 (\"refactor spectral frame handling\", merged Oct 22) changed the default in `LineList.__init__` from `wave_frame='air'` to `wave_frame='vacuum'`. Rest wavelengths are now vacuum by default. My spectra are calibrated in air from arc lamps. The vacuum/air ratio at H-alpha is about 1.00028, and that is exactly the offset I reported. Every redshift is lower by ~0.00028 (~83 km/s), all in the same direction. That's not a coincidence.\n\n**Why the changelog didn't help:** the only line about this in CHANGES.md is \"Refactor LineList and spectral frame handling (#812)\". Nobody could read that and guess a default changed in a way that shifts results. A refactor normally means no change in behavior. There's also no warning at runtime, so the fit just quietly gives different numbers.\n\n**Why \"works for me\" doesn't settle it:** if your data is already in vacuum wavelengths, or you work in radio, the new default makes no difference to you. That doesn't mean the problem is on my side. m_okonkwo also reported an offset on long-slit data in this thread, so it's not just me.\n\nBefore I found the PR I spent two days assuming my wavelength calibration was broken and re-reduced the arc lamps for 40 spectra. That was wasted work. I don't want other people with air-calibrated optical data to lose time the same way, especially when the thread is marked solved and they stop reading.\n\n**Workaround** for anyone who lands here (2.5.0, air-calibrated spectra):\n\n```python\nLineList(..., wave_frame='air')\n```\n\nSetting it explicitly gives the same redshifts as 2.4.3 for me. Pinning to 2.4.3 also works.\n\n**Request to maintainers:**\n\n1. Please reopen this thread, or unmark it as solved, so people searching for the offset can find the actual cause.\n2. Please add a clear line to the 2.5.0 section of CHANGES.md, something like \"Default `wave_frame` in LineList changed from 'air' to 'vacuum' (#812). Results change for air-calibrated data.\"\n3. Please consider a warning when `wave_frame` is not set explicitly, at least for a release or two, so the change isn't silent.\n\nI'm happy to open an issue or a small PR for the CHANGES entry if that helps.",
+  "words": 377,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.487628698348999,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.25070592761039734,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.118651390075684,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "medium",
+    "output_tokens": 1243,
+    "input_tokens": 3038
+  }
+}

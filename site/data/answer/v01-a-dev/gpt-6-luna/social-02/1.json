@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: Shed project\n\nDRAFT — Shed redo, part two: the part where I explain why we did not simply put a nice rug over everything and call it a day.\n\nI spent the last two Saturdays getting a shed’s electrical sorted out. The “before” list was so long it needed its own union card. Three orange extension cords daisy-chained out a basement window, across the yard and under the deck. One splice wrapped in duct tape. A 30-amp breaker feeding 14-gauge wire. An outlet connected with speaker wire. And the “GFCI”? A regular outlet wearing a GFCI sticker, which is a bold career change but not an actual safety feature.\n\nThe ceiling fan box was held up by one drywall screw. There was a mouse nest in a junction box, and the mice seemed perfectly content with their accommodations. Inside the panel door, somebody had helpfully written “SHED — DON’T TOUCH — RON.” I opened the panel and the wife standing there asked, “Who’s Ron?” Fair question. At that point, I was wondering if Ron was still in there.\n\nWe fixed it properly: trenched for buried cable, installed the right breaker and wiring, and put in real boxes, outlets and a fan brace. The mice were left to pursue other real estate. I was paid in two pizzas and a case of Yuengling, which is a respectable package unless the pizza was also expected to pass inspection.\n\nThis isn’t a story about some cartoon villain. The guy wasn’t evil; he was cheap and a little proud. That’s most of these situations. Somebody figures they can save a few bucks, borrows a video’s confidence, and turns a shed into a collection of “that’ll probably be fine.” I get the temptation. I also get called when “probably” starts smelling like burning.\n\nElectrical mistakes don’t always give you a warning, and a sticker, a YouTube tutorial, or a buddy who’s handy isn’t a substitute for the right work. Bad wiring can shock somebody or start a fire that takes the whole house with it. If you need electrical work, call a licensed electrician. Not your buddy with a YouTube video. Please.\n\nNo names, no address, and no shame parade—just a reminder that the funny-looking shortcuts can be dangerous. I’ll add the pictures once I’ve picked the ones that don’t make the shed look like it needs its own lawyer.",
+  "words": 393,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35682082176208496,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2633441984653473,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.355496883392334,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "medium",
+    "output_tokens": 714,
+    "input_tokens": 14940
+  }
+}

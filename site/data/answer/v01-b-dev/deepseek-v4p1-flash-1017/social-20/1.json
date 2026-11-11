@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent for a sec and then I need a favor.\n\na friend sent me a listing tonight from a sticker shop called StickerBurrow Co. they're selling \"Knife Moth Vinyl Decal.\" $6.50, or 3 for $15. it's my switchblade moth. the one I drew for the sept 13 flash day, the sheet I posted august 30, the one that went in the first hour. same crack in the blade. same wing pattern. they didn't even flip it. it's a straight scan of my linework, not a \"similar vibe.\"\n\nso I messaged them. polite. hey, that's mine, here's the original drawing, here's the post from august, please take it down. and they wrote back \"Love your work! Our artists create original designs inspired by trending styles. Moths are a very common tattoo motif and we can't remove listings based on similarity alone. If you have a registered copyright feel free to send it through our support form. Have a great day!\"\n\nhave a great day. ok.\n\nhere's the part that actually gets me. flash is sold ONE time to ONE person. that's the entire deal. you pay for a design nobody else is walking around with. the person who got this moth paid for that and sat in my chair for it, and then a sticker of it shows up online for six dollars and they get to feel like they got played, and they get to feel like I'm the one who did it. I'm not. I would never. and I hate that they had to wonder about it for even a minute tonight. if that's you reading this: it wasn't me. I'm not putting your name on this because it's not your mess, but you should know I'm as mad as you are.\n\nand no, \"moths are a common motif\" doesn't cover it. I know what a moth is. I know other people draw moths. this isn't a moth, it's my moth, down to the chipped spot on the blade that I put in because the drawing looked too clean without it. now ask a lawyer what it costs to prove that. that's the whole game, right? small shops don't have lawyer money and these sticker operations know it. they know a registered copyright is a few hundred bucks and a court date is a few thousand and the stickers are six fifty. so they say have a great day and keep selling.\n\nso here's the favor. go find the listing and report it. don't message them, don't argue with them, just report it. and don't buy from them. this is my drawing and my problem, that's why it's going up here and not on the shop page, but I'm not gonna sit quietly while somebody scans my sheet and sells it back to the internet either.\n\nrant over. gonna go draw something out of spite.",
+  "words": 480,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft does not say the client contacted Jo that night about the stickers."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13412533700466156,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05496975779533386,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.02392578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.5869152545928955,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.8,
+    "effort": "provider default",
+    "output_tokens": 3005,
+    "input_tokens": 2177
+  }
+}

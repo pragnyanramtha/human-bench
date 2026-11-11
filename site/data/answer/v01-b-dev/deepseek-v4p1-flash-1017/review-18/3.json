@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4/5 — Saved a live SOL trade during a storm, but it’s not perfect**\n\nBought the Kestrel Bastion 1500 on Voltwise in Aug 2026 for $229. I’m a crypto day trader in Miami, so my setup is PC + 3 monitors + modem + router. The UPS display says I’m pulling around 410W while trading. That’s the number that matters here, not the 1500VA sticker on the box.\n\nThe reason I’m writing this: Oct 14 storm, power dropped around 2:20pm. I had a 10x long open on a SOL perp and was not trying to get wrecked because the power went out. My rig stayed up, wifi stayed up, and I closed the position clean in about 4 min. That one save basically paid for the thing.\n\nRuntime is the part people need real numbers on. The box says around 14 min at 500W. I tested mine on purpose at my actual ~410W load and got 11 min 40 sec before I shut it down. So plan for around 10–12 min at a similar load, not 14. That’s enough to close trades, save work, and shut down properly. It is not a generator. If you’re running a bigger multi-GPU rig or a bunch of extra screens, do the math first and don’t expect it to carry you through a long outage.\n\nIt’s pure sine wave, which is what you want for a PC. 10 outlets total, but only 5 are battery backed and 5 are surge only. USB-C 60W port is there. It weighs like 30 lbs. Battery is swappable, but the replacement pack is $95, which is kind of steep. At least it’s not disposable.\n\nStuff that bugs me: first week the fan kicked on at 3am randomly and woke me up. It’s loud, like a hair dryer on low. The desktop app looks like Windows XP and I hate opening it, but the auto shutdown works, which is the actual reason I bought it. The outage beeping is loud as hell. You can mute it in the app, but mine reset after a firmware update, so don’t assume it stays muted. Also, plug your modem and router into the battery-backed side. People forget that and then wonder why their PC is still on but they have no internet. If you’re trading, internet is the whole thing.\n\nWould I buy it again? Yeah, for a normal trading desk around 400W. It did exactly what I needed during a real outage. I’m giving it 4 stars because the core job is solid, but the fan noise, ugly app, and beep setting resetting keep it from being 5. If you need longer runtime, buy bigger or add a second pack. Don’t pretend 12 minutes is all day.",
+  "words": 456,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5232643485069275,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8744431138038635,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.572694301605225,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "provider default",
+    "output_tokens": 2815,
+    "input_tokens": 494
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #team-selection\nReplying to: s01\nCc: none\nSubject: none\n\nMarek, I ask that you reconsider the proposed lineup before submitting the names on Friday, 13 November. I do not agree with placing Liliana in reserve on the basis of the November rating list alone.\n\nIn your post of 1 October, you stated that selection would take into account both the November FIDE list and form in club events, including the rapid qualifier, and that the players’ coaches would be consulted before the final lineup. I have not been consulted about Liliana, and I would like my assessment and her qualifier result to be considered before the decision is finalised.\n\nIn the qualifier on 24 October, Liliana finished second with 5.5/7, ahead of Igor on 4/7. She beat Maja and Antoni and drew with Kacper. Although a rapid event is not the same as a classical tournament, this was specifically identified as part of the selection process, so its results should carry weight.\n\nThe November list places Igor at 1874 and Liliana at 1851. However, as noted when the list was posted, Liliana’s 81-point loss came entirely from the Katowice event. Health reasons affected her participation there and led to approximately two weeks away from training in October. In my assessment, that result does not accurately reflect her current playing strength. She is now back to her normal level, and her last three lessons have been very good.\n\nThis is not a criticism of Igor or his suitability for the team. My concern is that we apply the announced criteria consistently and include the coaches’ assessments.\n\nI therefore request that Liliana be placed on board 2. Alternatively, I would support a short match between Liliana and Igor before Friday, with the format and selection implications agreed in advance. Please confirm that the lineup will be reviewed before submission and which of these options we can arrange.",
+  "words": 306,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2907900810241699,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3442552983760834,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.766130447387695,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.3,
+    "effort": "medium",
+    "output_tokens": 400,
+    "input_tokens": 14979
+  }
+}

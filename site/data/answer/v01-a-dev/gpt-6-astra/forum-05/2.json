@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: Please reopen: PR #812 changed the default wavelength frame\n\nI did read the changelog. I have now traced the issue to PR #812, and the relevant entry—“Refactor LineList and spectral frame handling”—does not say that a default changed.\n\nIn that PR, the default in LineList.__init__ changed from wave_frame='air' to wave_frame='vacuum'. My optical slit spectra are wavelength calibrated in air, as I stated in the original post. With the new default, the rest wavelengths are in vacuum instead. Around H-alpha, the vacuum/air wavelength ratio is approximately 1.00028, consistent with the redshift offset I reported, roughly 83 km/s. Explicitly setting the frame to air fixes the issue for my data.\n\nFor anyone finding this thread with the same problem, the workaround for air-calibrated spectra is to specify the frame when constructing the line list:\n\nLineList(..., wave_frame='air')\n\nUse the frame that matches your spectra; this is not a recommendation to set all data to air.\n\nI am frustrated that this was dismissed as “almost certainly” my calibration or configuration and marked solved without establishing the cause. I spent two days investigating my wavelength calibration and re-reducing arc lamps for 40 spectra unnecessarily. Being told to “do basic checks” and asked whether I had actually read the changelog was not helpful, especially when the changelog omitted the behavior change.\n\n“Works fine for me” does not test this particular failure mode unless the wavelength frame and relevant data are comparable. Data already in vacuum, or radio data, would not necessarily show this optical air/vacuum mismatch. m_okonkwo also reported a possible offset in this thread, which warrants checking rather than closing the report.\n\nPlease reopen the thread. Could the maintainers add an explicit line to CHANGES.md documenting the old and new defaults and the workaround? A warning when wave_frame is not explicitly set would also help prevent users from silently getting shifted results.",
+  "words": 298,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34901463985443115,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3322453200817108,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.5390625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.3606696128845215,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.7,
+    "effort": "medium",
+    "output_tokens": 430,
+    "input_tokens": 15118
+  }
+}

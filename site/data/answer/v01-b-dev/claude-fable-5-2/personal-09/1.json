@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Papa's building. Call me.\n\nDenis,\n\nI am writing this because if I call you right now, I will say things I can't take back. So please read it to the end, and then call me.\n\nThursday morning at 6, I was shaping the baguettes when a man walked into my shop with a camera. He was a photographer from a real estate agency. He said he was there to take pictures for the listing, and that Mr. Denis had told him I was OK with it. I did not know what he was talking about. Karine had to take me aside and calm me down, in my own shop, in front of my staff. Afterwards I looked on Centris and there it was: Papa's building, for sale at $1,150,000.\n\nThat is how I learned that my brother is selling the building where I have worked for 31 years. I learned it from a stranger. You did not call me. You did not even write. You let an agent do it for you, and you told them I had agreed, which is false, and you know it is false. I will say it plainly: that was cowardly. I never thought I would use that word about you.\n\nAfter Maman's funeral, you called me and you said, \"No rush, we decide together.\" I have been hearing that word in my head since Thursday. Together. I believed you. The estate was settled in August, it is now November, and I find out about a sale from a man with a camera. Explain to me where the \"together\" is in that.\n\nLet me remind you of a few things, because maybe from Calgary they look different.\n\nThe building is half yours and half mine. That is how Maman left it. I never agreed to sell it, nobody asked me, and I signed nothing.\n\nIn September I told you on the phone that I want to buy your half. I told you the caisse had pre-approved me for $410,000. So you knew there was a buyer, a serious one, with the bank already behind the offer, and that the buyer was your own family. You went to an agent anyway, without one word to me.\n\nI know you think I am being sentimental about this. Yes, it is Papa's building. He bought it in 1979, and I have spent most of my life on the ground floor of it. I won't pretend that means nothing to me. But this is also business, Denis. I have six employees who pay their rent with what they earn in that shop. I have 31 years of clients. I pay $2,400 in rent every month and I have never been late, not one time. In 2019, when the roof had to be replaced, I paid the $38,000 myself, for a building I did not even own. I did it because that is what you do for a family building.\n\nMy lease ends on April 30, 2027. That is less than six months from now. Nobody pays $1,150,000 for a three-storey on rue Saint-Hubert to keep a bakery downstairs at $2,400 a month. A developer will buy it. He will either tear it down or turn it into condos and double my rent. I have done the numbers many times, and the bakery does not survive that. So you are not only selling a building. You are closing my business and putting six people out of work. And you were going to let me find out from a listing.\n\nSo here is what I am asking.\n\nTake the building off the market this week. Then we talk, the two of us, the way you said we would.\n\nIf you refuse to do that, then at the very least give me the first right to buy, in writing, before anyone else is allowed to make an offer. If the problem is the price, tell me your number. We can get the building evaluated properly and sit down with the figures like adults. I am not asking you for a gift. I am asking you to sell your half to me and not to a stranger who will erase everything Papa built.\n\nAnd I want your answer by phone, from you. I do not want a text, or a message passed through your wife. I have nothing against her, but this is between you and me. You are the one who made this decision, so you are the one who can call and explain it to me.\n\nOne more thing, and then I stop. When we were kids, Papa used to let you sleep in the back room on the flour sacks. You loved it in there. You would come out white from head to foot and Maman would shout at both of you. That room is still there, Denis. I see it every day. I would like to know if you thought about it for even one second before you called that agent.\n\nI am furious with you. I have not been this angry at anyone in my life. But I am writing to you and not to a lawyer, because you are my brother and I do not want to lose you over this. I already lost Maman this year. That is enough.\n\nCall me this week.\n\n[your name]\n\nTwo things before you send it:\n\n- **Signature:** I left it open because I don't know how you sign with him.\n- **Notary:** Since you own half, the building normally can't be sold without your signature. It's worth asking a notary this week where you stand, whatever Denis answers.",
+  "words": 939,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2353518158197403,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13529151678085327,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.6760445833206177,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 55.5,
+    "effort": "high",
+    "output_tokens": 4398,
+    "input_tokens": 1529
+  }
+}

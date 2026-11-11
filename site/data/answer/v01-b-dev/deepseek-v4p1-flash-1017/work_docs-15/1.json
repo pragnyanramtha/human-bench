@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.54, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Dumper – have a read before I bend your ear in the van**\n\nLee,\n\nWe've been doing the bigger jobs together fifteen years now, so I'll keep this short and put it in writing rather than go on at you.\n\n**What the hire's costing us**\n\nWe had the tracked dumper off Sittingbourne 14 days this year. £85 a day, plus £30 delivery every time, came to roughly £1,600 all in. That's money out the door every time and nothing to show for it at the end.\n\n**What's for sale**\n\nBloke in Faversham's got a 2019 500kg tracked one up at £1,650 ono. Says new tracks went on last spring. Halves is £825 each. It'd live in my lean-to at the yard, under cover, so no extra cost there.\n\n**Why I reckon it stacks up**\n\n- We've already got three patio digs and the Boughton drive booked for spring.\n- In September the hire place didn't have one, so we barrowed six ton of muck at Hernhill by hand. Two extra days, and your back was shot for a week.\n- Delivery driver turned up at 11 once and we lost half the morning standing about.\n- At this year's use it pays for itself in about a year. At half that use, about two years. That's before servicing and repairs.\n- If it doesn't work out we sell it on. These hold their value.\n\n**Running it**\n\nServicing 50/50, and whoever breaks it pays for it. Simple as that, no arguments.\n\n**Saturday**\n\nCome and have a look with me before someone else has it. I'll pick you up at 9 if that suits.",
+  "words": 272,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5420868992805481,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.40909600257873535,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.768449306488037,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 6.3,
+    "effort": "provider default",
+    "output_tokens": 1201,
+    "input_tokens": 469
+  }
+}

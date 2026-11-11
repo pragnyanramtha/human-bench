@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can print and slip under doors — it's on the formal side, so it should hold your tone steady.\n\n---\n\n**To all residents of Larkspur Lofts, 24 units on N Williams**\n\nDear Neighbors,\n\nI'm writing about the drone flight on Saturday, October 31, at around 4:00 p.m. I want to explain what I was doing, apologize for the concern it caused, and suggest a way forward.\n\nMy name is Jess Okafor. I live in 5A and have been here three years, and I'm a wedding photographer. On Saturday I took a new drone (a Halvard Mini 4) up onto the roof deck for a short test flight — about eleven minutes in total — before a vineyard wedding in Dundee. The camera was pointed west the entire time, at the Willamette River and the Fremont Bridge. It was never pointed at the building, at windows, at the courtyard, or at anyone's home. No footage of residents or of any interior exists.\n\nI also understand how it looked. A small aircraft hovering and buzzing over the courtyard is genuinely unsettling if you don't know what it is or where it's pointed, and for anyone watching from the ground — especially the children in this building — it was frightening. I'm sorry for that. I should have been more thoughtful about where a first flight would be visible from, and I accept that the sound and sight of it reached all of you with no explanation from me.\n\nSo that nothing is left to guesswork: the full, unedited clip is available to any resident who would like to see it. Please knock on 5A, or email me at jess.okafor@mailbox.example, and I'll send it or play it for you in the lobby.\n\nI'm also aware that the HOA rules currently say nothing about drones. I will be asking the board to add a drone policy to the agenda for the November 19 meeting at 7:00 p.m. in the community room. Until the board has considered it, I will not fly from the roof deck again.\n\nFinally, a note posted in the lobby named my unit. Whether or not it was intended kindly, being identified in writing felt worse to me than the flight itself. If something about me, my equipment, or my habits concerns you, please come and speak to me directly. I would much rather knock on your door than read about it on paper.\n\nThank you for reading this, and for living next door to me.\n\nSincerely,\n\nJess Okafor\n5A, Larkspur Lofts\njess.okafor@mailbox.example\n\n---\n\nA couple of choices worth flagging: I kept the reference to frightened children general rather than specific, so nobody can trace it back to Doreen. And the letter acknowledges the lobby note without naming or characterizing whoever wrote it — it states the fact and moves on, which keeps the focus on the apology and the offer of footage rather than on the conflict.",
+  "words": 491,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "493 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35504022240638733,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20033518970012665,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.048638343811035,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.5,
+    "effort": "provider default",
+    "output_tokens": 2639,
+    "input_tokens": 685
+  }
+}

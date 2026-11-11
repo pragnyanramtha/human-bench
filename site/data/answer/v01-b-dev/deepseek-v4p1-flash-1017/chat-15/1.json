@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán — full picture below, no waffle.\n\nLogger download: went over 8°C on Sat at 22:50, back under 8 at Sun 05:00, so about 6 hrs 10 min out of range. Peak was 11.6°C at 02:15 Sun. Min overnight Fri was 4.1°C, normal. The alarm stays beeping until someone resets it — I found it at 07:55 this morning. The door wasn’t fully clicked shut, and a box of Hartmann’s bags from Saturday’s delivery was stacked against it. I had to lean on the door with my hip this morning to get it to click, and the seal is cracked at the bottom left corner. Marta’s right that the seal has been dodgy since summer — I think it was the box and the seal together, not one thing. Saturday clinic finished late with the RTA collie and the delivery got put away in a rush at closing. It wasn’t someone leaving it open on purpose — it was the door.\n\nStock that was in it: 14 DHPPi, 9 lepto L4, 6 intranasal kennel cough, 3 rabies, 4 vials insulin, 2 cat flu/FeLV combos. Roughly €1,150 at cost.\n\nSupplier: rang Munster Vet Supplies tech line at 08:40, spoke to Niamh, the pharmacist. She said quarantine everything, don’t use it, email the logger CSV and batch numbers, and they’ll check with the manufacturers and come back by Wednesday. She checked the manufacturer’s storage sheet for the insulin product we stock against the logger readings and cleared those four vials for use.\n\nSo at the minute: vaccines are all quarantined in a sealed bag labelled DO NOT USE in the lab fridge — that’s sitting at 5.2°C and I’ve started a new temp sheet for it. The only thing cleared is the four insulin vials. I wouldn’t bin anything until the supplier comes back; most of these are probably fine but it’s not my call.\n\nLogger is the old ThermaTrak — only beeps locally, no text alerts, which is why nobody heard it Sunday. New one with SMS alerts is about €180, the one from the supplier catalogue. Door seal needs replacing anyway. Can you OK the SMS logger and a new seal? I’d also add a lock-up check on the fridge door to the closing checklist — make sure it’s clicked and nothing stacked against it.\n\nAoife: hold this afternoon’s boosters for now. If the supplier clears the stock, you can rebook them for Thurs/Fri; if not, we can borrow stock from Carrigaline branch. Ciarán, that’s the bones of it for your 2 o’clock.",
+  "words": 423,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.19145850837230682,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11050159484148026,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.4037954807281494,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.1,
+    "effort": "provider default",
+    "output_tokens": 4454,
+    "input_tokens": 1048
+  }
+}

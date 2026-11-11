@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Shared/Ops & HR\nReplying to: none\nCc: none\nSubject: Embakasi casuals pay: Monday briefing for Brian (DRAFT)\n\nDRAFT, for Achieng to review before it goes to Brian.\n\nBrian,\n\nThis is what happened, what you can say on Monday, what you shouldn't say, and what to do if Ouma's group won't load. Read it Sunday, keep the key points in your head Monday. The facts below have been checked with Kevin and Njeri.\n\nWHAT HAPPENED\n\nFriday's casual pay did not go out. Our bulk payment file was rejected by the bank on Friday afternoon, after the bank's cut-off. The bank upgraded its system on 25 November and now requires a new file template. One field in our file was too long for the new format, so the whole file was rejected and nothing was paid. The rejection alert went to an old finance mailbox, so nobody saw it in time. That is our failure, not the casuals'. Say it plainly.\n\nFinance has moved the payment to M-Pesa. Our target is money on phones by 11am Monday. Kevin's words were \"I won't promise earlier\", and neither should we.\n\nPeninah has the list. 198 numbers are confirmed. 14 we could not reach, mostly new loaders from the Athi River intake. Those 14 need to give her correct numbers in person. She will be at Embakasi from 7:30 with a printout.\n\nNjeri has approved KES 500 per head for Monday lunch and fare for every casual on the affected list. It goes in the same M-Pesa batch. The M-Pesa charges are on the company, not deducted from anyone.\n\nNjeri has also asked for an apology from management, in person, on Monday. That is your job.\n\nWHAT YOU CAN SAY\n\n\"The pay didn't go out on Friday. That's the company's mistake and I'm sorry.\"\n\n\"The money is going to M-Pesa. Our target is 11 o'clock. I'll come back to you at 11 with where it stands, whatever it is.\"\n\n\"Everyone on the list gets KES 500 for lunch and fare, in the same batch, and the M-Pesa charges are on the company.\"\n\n\"If your number is wrong, Peninah is here from 7:30 to fix it with you face to face. Bring your phone.\"\n\n\"Nobody is being dismissed or threatened today. We'll sort this out together.\"\n\nWHAT YOU MUST NOT SAY\n\nDon't say \"by lunch\", \"tomorrow\", \"this afternoon\", or any time you don't have from Kevin in writing. In Mombasa 2024 the supervisor said \"by lunch\", the money came at 4pm, and half the shift sat down. We are not doing that again.\n\nDon't promise it won't happen again. Say what is being done, not \"never\".\n\nDon't promise the 14 will be paid on Monday until Peninah has the right number and Kevin has confirmed the batch includes them.\n\nDon't talk about company finances, cash, bank balances, or why the company is short of anything. If someone asks, say: \"The delay was the bank file. That's what I know. If I find out more I'll tell you.\"\n\nDon't mention contracts, termination, or replacement. The procedure says no threats on the day, and it's also simply the wrong thing to say.\n\nDon't name or blame individuals, especially finance staff, in front of the group.\n\nDon't bring up Ouma's family or personal situation in front of the group.\n\nDon't present the 9am Kisumu departure as a threat to the men. Explain it as a fact: if the trucks miss 9, we lose the offloading slot at the mill.\n\nOUMA AND THE KISUMU TRUCKS\n\nThe procedure is clear. Work stoppages are not a grievance channel. Operations and HR handle them together, and nobody is dismissed or threatened with dismissal on the day.\n\nOuma is loud but he is not a bad man. He has four kids and rent. Talk to him first, in private, before you address the whole group.\n\n1. 5:30: Arrive at the depot. Find Joseph Kiprono first. Ask him who is refusing and who is just following the others.\n\n2. About 6:00: Speak to Ouma privately, away from the group. Joseph can be there if Ouma wants him. Ask what he needs to hear. Give him the facts above. Ask for his help getting the trucks loaded. Don't argue with him.\n\n3. About 6:30: Speak to the whole group. Use the script above. Keep it short. Let them ask questions and answer honestly. Give them a time for the next update: 11am.\n\n4. From 7:30: Peninah arrives. Get the 14 numbers sorted. Offer payslip printouts to anyone who wants one. People whose numbers are confirmed can see that for themselves.\n\n5. 8:00: Decision point. If the Kisumu trucks are still not loading, call Njeri and confirm who from HR is on the floor with you. Njeri should confirm this before Monday. Also tell the mill by 8:00 that the Kisumu trucks may miss the 9am slot, so they can rebook. Don't wait until 9.\n\n6. If people refuse to load: no dismissal, no written warnings, and no threats on the day. Note names and times for HR. We deal with it properly after Monday, under the procedure.\n\n7. 10:30: Ask Kevin for confirmed payment status. Don't go back to the group without it.\n\n8. 11:00: Go back to the group with an update, even if it is \"not yet, and here's the reason.\" Don't skip this. Missing this is how trust goes.\n\nIf the group still won't load, keep talking. Don't make any decision about the trucks without Njeri. Don't push trucks out by force.\n\nWHO TO CALL\n\nI'm up from 4:30 and boarding the 7:05 flight. WhatsApp me before I board if anything changes. After that I'm unreachable until Wednesday evening.\n\nFor payment status: Kevin Mwangi.\n\nFor approvals and any decision on the trucks: Njeri Wambua.\n\nFor the pay list and numbers: Peninah Auma.\n\nOne last thing. You're walking in there not defensive. The guys did nothing wrong. Say sorry, say what is happening, and be back at 11 with the truth. That is the job.\n\nAchieng",
+  "words": 985,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts",
+      "private"
+    ],
+    "reasons": [
+      "The bank rejected the file before cutoff, though the rejection was noticed after cutoff; the draft also hints that the company is short of cash."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24317365884780884,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.025141088292002678,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.5546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.837759017944336,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 47.1,
+    "effort": "medium",
+    "output_tokens": 9373,
+    "input_tokens": 3840
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "## 4/5 stars — Kept my trading setup online when it actually mattered\n\nI bought the Kestrel Bastion 1500 from Voltwise in August for $229. I’m a crypto day-trader in Miami, so the whole reason I wanted a battery backup was pretty simple: I don’t want a Florida storm deciding when I exit a trade.\n\nOn October 14, it earned its spot under my desk. Power went out around 2:20 p.m. while I had a 10x long open on SOL perps. My PC, all three monitors, modem and router stayed up. I had enough time to close the position cleanly, which took about four minutes, instead of scrambling onto my phone and hoping everything connected.\n\nThat’s what I bought it for. It did the job. But there are definitely some things I’d want to know before buying it again.\n\n### My setup and actual runtime\n\nThe Bastion is rated at **1500VA / 1000W**, with pure sine wave output. My setup is a PC, three monitors, a modem and a router. While I’m trading, the UPS’s own display puts that load at around **410W**. That’s not a reading from a separate power meter, but it gives you a reference point.\n\nThe box advertises approximately **14 minutes at 500W**. In a deliberate outage test with my usual setup, I ran it for **11 minutes and 40 seconds before shutting everything down myself**.\n\nImportant distinction: that wasn’t the battery dying at 11:40. That’s when I ended the test, so I can’t tell you its full runtime or verify the advertised figure. What I can say is that mine kept my roughly 410W setup running for that long, and it comfortably covered the four minutes I needed during the actual storm.\n\nFor me, this is time to close positions and shut down properly, not a reason to keep trading through an outage.\n\n### Check which outlets you’re using\n\nYou get **10 outlets, but only five have battery backup**. The other five are surge-only. There’s also a **60W USB-C port**.\n\nPut your modem and router on the battery-backed side. Seriously. Keeping three monitors lit doesn’t help much if your internet equipment goes down immediately. That’s an easy detail to miss when you’re plugging everything in.\n\n### The annoying stuff is genuinely annoying\n\nThe fan is loud. During the first week, it kicked on at 3 a.m. and woke me up. “Hair dryer on low” is about the closest comparison I have. If your trading setup is in your bedroom, don’t brush that off.\n\nThe outage beeping is also loud as hell. You can mute it through the desktop app, but that setting reset after a firmware update, so check it again afterward.\n\nSpeaking of the app, it looks like it came from the Windows XP era. I don’t need beautiful software for a battery, but this is rough. The automatic shutdown works, though, which matters more to me than how it looks.\n\nIt’s also around **30 pounds**, and while the battery is replaceable, the replacement pack costs **$95**. Worth factoring into the price.\n\n### Bottom line\n\n**Four stars.** It kept my rig and internet running during a real outage with an open leveraged position. That’s a pretty strong recommendation from me. The noise, dated app and resetting mute setting keep it from five stars, but for giving me time to exit a trade and shut down on my own terms, I’m glad I bought it.",
+  "words": 570,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: headings, bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37415194511413574,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9424774050712585,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.430350303649902,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.4,
+    "effort": "low",
+    "output_tokens": 786,
+    "input_tokens": 18238
+  }
+}

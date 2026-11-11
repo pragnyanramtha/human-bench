@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.60, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Dumper — the sums**\n\nLee,\n\nWe've been at this 15 years, so hear me out. I know you'd rather not spend the money, but I've written it down so you can look at it properly, instead of me going on at you in the van.\n\n**What hiring cost us this year**\n14 days on the tracked dumper from Sittingbourne at £85 a day, plus £30 delivery every time. That's about £1,600 gone, and we've got nothing to show for it at the end.\n\n**What buying looks like**\nBloke in Faversham has a 2019 500kg tracked one. £1,650 ono, and he says new tracks went on last spring. Halves is £825 each, one off. It can live in my lean-to at the yard, covered, so there's no storage to pay for.\n\n**Work already in the book**\nThree patio digs and the Boughton drive for spring. That's before anything else comes in.\n\n**It's not just the hire bill**\n- In September the hire place had nothing free, so we barrowed six ton of muck at Hernhill. Two extra days, and your back was gone for a week.\n- Delivery driver turned up at 11 once and we lost half the morning standing about.\n\n**The payback**\nAt this year's use it pays for itself in about a year. At half that use, about two. That's before servicing and repairs — I'm not pretending those are free.\n\n**Running costs**\nServicing 50/50. Whoever breaks it pays for the repair. Simple as that, no arguing about it after.\n\nAnd if it doesn't work out, we sell it on. They hold their value, so the money isn't gone, it's just sat in a dumper.\n\nCome and look at it with me Saturday. He's got others after it, so I don't want to hang about.",
+  "words": 297,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5989585518836975,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5760895609855652,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.686244487762451,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 5.8,
+    "effort": "provider default",
+    "output_tokens": 1241,
+    "input_tokens": 469
+  }
+}

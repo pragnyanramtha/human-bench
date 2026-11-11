@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Subject: RE: Saturday alarm\n\nKristen,\n\nYou've got it right. It was my popcorn. Saturday around 10:40 I put a bag in the break room microwave, hit the popcorn button, and walked out front to help a guy who needed a shear pin for his snowblower. That took longer than I figured, maybe six or seven minutes, and by the time I got back the smoke was already coming out of the break room. Then the alarm went and we all had to clear out.\n\nI'm not going to dress it up. The alarm was my doing, not the microwave's. I'm sorry for the mess, for everybody standing out in the cold, and for the wait while the engine from up on Hertel came out. Nobody got hurt and there was no real damage, just smoke and a smell that hung around. My wife says my van smelled like a burnt movie theater for the rest of the day, so I can't say I was surprised.\n\nFor the record, the September alarm was not me. That was the sensor in the paint aisle. I'd like that noted somewhere, even if it doesn't help.\n\nOne of the guys on the engine was Mikey Szymanski. I broke him in as a probie back in '03, and he's already let me know he'll never let this go. Thirty-one years on the job and my first call as a civilian is over a bag of butter popcorn. I'll take that.\n\nI feel bad about the Hendersons leaving their cart at the register. I know they'll be back, they always are, but I'm sorry they had to walk away from a full cart.\n\nOn the $175, I'll cover it. You can take it out of my check or I can bring cash, whatever works best for you and Gary. Just tell me which.\n\nI'd really like to keep my Saturday shifts. I like the weekend crowd, and I need the hours to pay for heating oil this winter. If Gary wants to rethink the schedule, I'll go along with what you decide, but I'm asking for another shot.\n\nI'll buy Denise her coffee, and I owe her a coat-sharing apology too. And yes, I heard you on the popcorn.\n\nWalt",
+  "words": 374,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2217198610305786,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07451529800891876,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.459066867828369,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "medium",
+    "output_tokens": 1806,
+    "input_tokens": 1974
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: nov 21 charity stream — hair dye is on the line\n\n@everyone charity stream is SATURDAY NOV 21, 10am–10pm eastern, for Linden Community Pantry. putting this up early so half the server doesn’t find out while we’re already live again lol. save the date, come play, bring a friend.\n\nlast year we raised $212 even with my terrible notice. this year the goal is $600, and rook is MATCHING the first $100 people donate. so the first $100 counts double. huge thank you rook\n\ndonate here: lindenpantry.example/mrkz\ndonations go straight to the pantry, nothing taken off. they buy the food through their wholesale partner, where every $1 gets about 4 pounds of food. even $3 helps. they’re serving around 340 families a week right now, and Denise said the shelves are the lowest she’s seen before Thanksgiving.\n\nwhat you’re making me do:\n$100 — full round with my controller upside down\n$250 — chat picks my hair dye color and i do it ON STREAM\n$400 — an hour of chat-picked songs, no skipping\n$600 — grocery pickup vlog, arranged by the pantry. they buy the food, i’m there to document the pickup\n\nyes it’s a charity stream. yes there will probably be cringe. i don’t think it counts as begging if you get to turn my hair into a highlighter out of it lol. mostly we’re gonna play games and hopefully help stock some shelves.\n\nfirst half: community lobbies, anyone can join, i’ll drop codes.\nsecond half: chat votes on a game every 2 hours. no repeat maps, larry, i heard you.\n\nno card or no money to spare? you can still help by sharing this, inviting someone, or hanging out and keeping chat alive. locals can also drop canned and boxed food in the pantry’s blue bin by the side door, Saturdays 9–1.\n\nseriously, no guilt if you can’t donate. come play anyway. set a reminder for nov 21 and help me make this one less last-minute than last year.",
+  "words": 321,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26078641414642334,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2426828145980835,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.255859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.7530386447906494,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.5,
+    "effort": "medium",
+    "output_tokens": 462,
+    "input_tokens": 15013
+  }
+}

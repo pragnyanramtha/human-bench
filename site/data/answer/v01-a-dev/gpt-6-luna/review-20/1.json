@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "I can help you write a factual review, but I can’t post it to the vendor board from here. Here’s a draft you can review and post tonight:\n\n**A serious dispatch failure on a 220-person event**\n\nWe booked Sunbelt Charter Coaches for a client dinner on Thursday, November 5, for 220 guests. The plan was four coaches to pick people up at the hotel at 6:15 p.m. and take them to a ranch venue in Henderson. Sunbelt confirmed the booking in writing twice, most recently on Tuesday, November 3. We paid $8,400 total, with half deposited in September and the balance paid seven days before the event.\n\nOnly two buses arrived. The first was 55 minutes late; its driver told us he’d received the assignment at 5 p.m. The second bus broke down on the 215 with no air conditioning, leaving passengers on the shoulder for about 40 minutes. We received no useful communication or backup plan. I arranged rideshares for 60 guests on my company card, at a cost of about $1,900.\n\nThe dinner, scheduled to start at 7 p.m., began at 8:40, and the caterer charged us overtime. One late bus might be understandable. Confirming four coaches and delivering two—with one late, one broken down, and no clear response—is not acceptable for an event of this size. The client is now reviewing whether to keep us for its March event.\n\nI’ve contacted Sunbelt to request a refund for the two coaches that never arrived, as well as reimbursement for the rideshare costs. The dispatcher listed on our paperwork was Corey. The office line has gone to voicemail since Friday, and I have not resolved the refund.\n\nI had a good experience with Sunbelt on two small airport runs last spring, which is why I trusted them with this booking. Based on what happened, I would not book them for a large event unless they can demonstrate that their dispatch and contingency plans have changed. Other planners should weigh that risk carefully, especially during a busy season.",
+  "words": 338,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43730342388153076,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.44128215312957764,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.582857131958008,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "medium",
+    "output_tokens": 425,
+    "input_tokens": 13962
+  }
+}

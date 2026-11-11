@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5/5 — Careful drawing review, excellent fit, and delivery well ahead of schedule\n\nFive stars for Arroyo Precision Works. They made a camera-to-dewar adapter plate and an internally threaded light baffle for our near-IR camera, and both passed our fit test on Monday. We need the camera for a Palomar observing run starting November 18, so getting these parts right and having time to test them before the run really mattered.\n\nThe most important thing they did was catch a mistake in my drawing before cutting metal. Tiff noticed that I had put a 4.125 bolt-circle dimension on a sheet where the other dimensions were in millimeters. It should have been 4.125 inches, or about 104.8 mm. I had copied it from an old camera drawing and missed the units. This was entirely my mistake. Ruben emailed to confirm rather than guessing or machining exactly what was written, pointing out that the screws would otherwise land inside the bore. That check saved us from a plate that would not have worked and a very stressful scramble before our run. Please pass along another thank-you to Tiff.\n\nThe finished parts were just as good as that first interaction suggested. On Monday, all eight screws went into the adapter plate without any forcing. We measured less than 0.01 mm variation across the face with the dial indicator. The baffle threads were smooth, and the black anodizing was even, with no bare spots. We also checked for light leaks with the lab lights on and a 300-second dark frame: the result was the same as with the closed dewar. No light leak showed up in that test. These are the details I would want to know if another lab recommended a shop to me, rather than just hearing that the parts “looked great.”\n\nTiming was another huge help. A larger vendor had quoted us six weeks. Arroyo quoted 21 days and delivered in nine days from the purchase order, including anodizing. Our order did include a $300 rush setup fee, so I would not present this as their standard turnaround or expect every job to take nine days. But for this order, they finished substantially earlier than promised and gave us time to check everything before taking the camera to the telescope.\n\nRuben also brought the parts to Robinson himself, at no delivery charge. After worrying about whether we would have everything ready in time, I was honestly so relieved I nearly hugged him.\n\nBased on this experience, I would absolutely use Arroyo again, and I would like to see purchasing consider them for the preferred-vendor list. This was one order, but it gave us concrete reasons to trust them with future work: careful reading of the drawings, a clear question when something did not make sense, parts that fit properly, and delivery well ahead of the quoted schedule. For a lab buying custom instrument parts, that combination matters a lot.",
+  "words": 475,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2564220428466797,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1904512643814087,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.5546875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.391998291015625,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.0,
+    "effort": "medium",
+    "output_tokens": 613,
+    "input_tokens": 15357
+  }
+}

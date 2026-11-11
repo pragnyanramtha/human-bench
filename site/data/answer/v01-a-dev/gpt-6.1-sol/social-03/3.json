@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Fake tablets warning — please talk to your kids this week\n\nPlease take a minute to read the police warning on here about fake tablets, and share this rather than just liking it. Parents and teenagers both need to know what to do.\n\nPolice have warned about blue tablets being sold around south Manchester as diazepam or “Xanax”. Some have been found to contain nitazenes — synthetic opioids that can be far stronger than heroin. You cannot tell what’s in a tablet by looking at it, or because someone says they’ve had the same ones before.\n\nI’m an ICU nurse, but this is general safety advice. I’m not commenting on any incident or anyone’s care, and please don’t use this post to name people or repeat rumours.\n\nIf someone has taken something and becomes very drowsy, is difficult to wake, has tiny “pinpoint” pupils, slow or noisy breathing, or blue lips: ring 999 straight away. You do not need to wait for every sign. If they collapse or you cannot wake them, call immediately.\n\nPlease, please don’t put them to bed to “sleep it off”. Don’t leave them alone and don’t wait to see whether they’re better in a few hours. Someone can look as though they’re sleeping when their breathing is dangerously slow. Without enough oxygen, the brain can be seriously damaged. Waiting can cost someone their life.\n\nPut your phone on speaker and follow the ambulance call handler’s instructions. Tell them where you are and what you think the person has taken, even if you’re not sure. If they’re unconscious but breathing normally, put them in the recovery position. If they’re not breathing normally, the call handler can talk you through CPR.\n\nTo any young person reading this: if your mate goes down, getting help is the most important thing you can do. Don’t let fear of getting into trouble stop you ringing. The police have literally said: “Our priority is preserving life.” That isn’t a promise about every possible consequence, but it is a very clear message about what matters in that emergency. You are not letting your mate down by calling an ambulance.\n\nNasal naloxone can reverse an opioid overdose, including one caused by nitazenes. It does not replace an ambulance: ring 999 even if you give it and they seem to improve. Follow the kit instructions and the call handler’s advice.\n\nBrightpath drug & alcohol service on Stockport Road, next to the launderette, has free nasal naloxone kits. Anyone can ask, no names needed. Training takes about 10 minutes. They’re open Monday to Friday, 10–4, and Thursdays until 7.\n\nParents: please have this conversation with your kids THIS week. Not after half term or when it feels less awkward. I spoke to my lad, who’s 14, over his tea last night. There were eye rolls, obviously, but he listened. He asked what pinpoint pupils meant. That’s a conversation worth having.\n\nYou don’t have to assume your child is taking anything to teach them how to get help for a friend.\n\nAnd can we stop slagging kids off? Shaming them helps nobody. Scared kids hesitate to ring for help, and that hesitation is exactly what we need to prevent. They need to hear that they should call immediately, tell the truth and stay with their mate.\n\nPlease share this so it reaches the people who haven’t read the police post. Have the awkward conversation. Make sure your kids know: call 999, don’t put someone to bed, don’t wait.",
+  "words": 571,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2682477831840515,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2245112657546997,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.1412967443466187,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.8,
+    "effort": "low",
+    "output_tokens": 756,
+    "input_tokens": 19421
+  }
+}

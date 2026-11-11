@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the letter. I've kept it sharp but civil — no names, no accusations that could blow up on the street, and it leaves them a way out before you have to escalate.\n\n---\n\n**Dear Neighbour,**\n\nIf you've been putting your rubbish in my bin, I'd like you to stop.\n\nThat's the whole ask. But since nobody's left a note on the lid, I'm leaving one on your doormat.\n\nLet me be straight about what's been happening. My bin goes out Tuesday night and comes back Wednesday morning. Last Tuesday I got home at 3am after a gig and the lid wouldn't shut — because there were three full black bags in it that weren't mine. One had nappies in it. Another had a gas bill envelope in it with the name torn off, but Aughrim Terrace was still on it, so somebody's been a bit careless.\n\nAnd this isn't a one-off. It's been going on for a month now. Every week. Full bags — not a stray bit of cardboard.\n\nWhile you might know perfectly well whose bin that is, so do I. My last bill came in at €63.20 for two months, when it usually sits around €25. Greenmount charge by weight, 41p a kilo. So every extra bag in there is being paid for by me, out of my wages, at 3 in the morning. That's not a small favour, and it's not a small amount of money either.\n\nSomeone across the road saw a car pull up on the terrace on Tuesday evening, so whoever it is — you know you've been noticed.\n\nIf you're the one, and you're stuck without a bin of your own or yours has been overflowing, then ask and I'll tell you who to ring. There's no need to be awkward about it, and there's no shortage of companies. I'm also well aware that some people have been treating my bin like a free service because they think a stranger's bin is an open door. That's not happening any more.\n\nIf it keeps going, the lid's getting a padlock on it. That's not me playing games, it's just what happens when a bin stops being free.\n\nI work nights. I'm not a pushover and I'm not pretending this is fine. I'm giving you the chance to stop before it stops being a letter and becomes an actual problem.\n\nWhoever it is: it stops. Simple as.\n\n**No. 14, Aughrim Terrace**\n*(the grey bin with the 14 painted on the lid in white)*\n\n---\n\nTwo things I deliberately left out: the fella across the road stays unnamed, because \"he told me\" identifies him and puts him in a spot if this escalates. And I kept the padlock line in but framed it as practical housekeeping rather than a threat, so it can't be quoted back at you as intimidation. Also the 14 on the lid means it's obviously from you — that's the point, but worth knowing before it's in every letterbox on the street.",
+  "words": 502,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "496 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32691505551338196,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.24280495941638947,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.317234516143799,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.0,
+    "effort": "provider default",
+    "output_tokens": 2437,
+    "input_tokens": 598
+  }
+}

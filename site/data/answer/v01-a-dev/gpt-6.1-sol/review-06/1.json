@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Draft for Sal — recurring E34 faults on refurbished Vantorre CX-10\n\nWe paid $14,800 including GST for this refurbished combi, delivered and commissioned on 14 September. The listing stated the steam generator had been descaled and pressure tested, the core probe calibrated, and a six-month parts and labour warranty included.\n\nOn 22 September, service report SR-1190 recorded nine E34 errors since delivery. E34 was identified as steam generator low water level, causing intermittent lockouts in steam and combi modes. The technician replaced the level sensor, recorded inlet pressure at 320 kPa as OK, and tested three steam cycles successfully.\n\nBy 3 October, E34 had returned four times that week. We also reported the core probe reading 63°C against our Thermapen’s 70°C in a lamb shoulder, with the same discrepancy on two checks. On 6 October, SR-1236 recorded heavy scale in the steam generator. It was descaled and flushed, and the probe recalibrated to within one degree.\n\nThe technician recommended a water softener. On 7 October, I rang the water company and was told Fitzroy’s supply averages about 15 mg/L hardness as CaCO3, which is soft. That is supply information, not a test at our oven inlet, so it does not establish where the scale came from. However, heavy scale after roughly three weeks warrants an explanation given the advertised pre-delivery descale.\n\nOn Saturday 24 October at 6.10 pm, E34 locked us out during a fully booked 60-cover service. We finished the lamb using the stove and deck oven, took pork belly off the menu and absorbed the cost.\n\nBrett’s 28 October email confirmed E34 and further scale at the 27 October visit. Kelsall attributed this to site water and advised a $280 plus GST callout charge ($308 total), outside warranty. We dispute that charge and the attribution without site-specific water evidence.\n\nDion has been helpful. Our concern is the recurring faults, the refurbishment checks and warranty coverage. Other kitchens considering this spend should know our experience.\n\n---\nTo: sal@littlegertrude.example\nReplying to: m07\nCc: none\nSubject: Review draft — deadline discrepancy\n\nDraft only, not posted. ChefMarket’s reminder says Thursday 12 November, but the listing’s 60-day rule, counting 14 September as day one, gives 12 November as day 60. That date is Thursday. Please check the window before submitting Wednesday morning.",
+  "words": 354,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['sal@littlegertrude.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2151460498571396,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11422201246023178,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.672597885131836,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.7,
+    "effort": "low",
+    "output_tokens": 550,
+    "input_tokens": 20623
+  }
+}

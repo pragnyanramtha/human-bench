@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Fake blue pills: parents and teenagers, please read this one\n\nI'm putting this up as its own post because the police warning from Friday has sunk down the page and I don't think many people have read it.\n\nI'm a nurse and I live round here with a teenager of my own. This isn't about Saturday or about anybody in particular, and I won't be answering questions on that. It's about what to do.\n\nWhat the police have said: blue tablets are being sold in south Manchester as diazepam or Xanax. They're fakes. Some have been found to contain nitazenes, which are synthetic opioids that can be far stronger than heroin.\n\nSigns that someone who's taken something is in trouble:\n- extreme drowsiness\n- pinpoint pupils (the black bit of the eye shrunk right down to a dot)\n- slow or noisy breathing\n- blue lips\n\nIf you're with someone and you see any of that, ring 999 straight away. Don't wait to see if they come round.\n\nThis next bit is general, not about anyone. What goes wrong is that mates panic. They're frightened of getting someone in trouble, so they put their friend to bed to sleep it off and ring hours later. By then the brain has been without oxygen for too long. Someone breathing slow and noisy is not sleeping it off.\n\nIf you're a teenager reading this, please don't worry about getting in trouble. The police have put it in writing: \"Our priority is preserving life.\" Ring, and stay with your mate.\n\nTo the adults, slagging the kids off on here helps no one. Scared kids don't ring for help, and that's the whole problem. If we want them to pick up the phone, they need to know they won't get torn to bits for it afterwards.\n\nSomething practical as well. Naloxone is a nasal spray that reverses opioids, and you can get a kit free from Brightpath drug and alcohol service on Stockport Road, next to the launderette. Anyone can ask and they don't take names. The training takes about 10 minutes. They're open Monday to Friday 10 till 4, and till 7 on Thursdays. It doesn't replace the ambulance, so you still ring 999.\n\nI had the chat with my own lad last night over his tea. He's 14. There were eye rolls, but he listened, and he asked me what pinpoint pupils meant. That was all it took. It doesn't have to be a big sit-down.\n\nSo I'm asking two things:\n\n1. Parents, talk to your kids this week. Don't leave it till it's all died down. Tell them the signs, and tell them that if a friend goes down they ring 999 and you will not be angry with them for it.\n\n2. Share this, don't just like it. A like doesn't put it in front of the families who haven't seen it.\n\nThanks for reading.",
+  "words": 475,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2697768211364746,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08670592308044434,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.556451320648193,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.5,
+    "effort": "high",
+    "output_tokens": 3227,
+    "input_tokens": 3098
+  }
+}

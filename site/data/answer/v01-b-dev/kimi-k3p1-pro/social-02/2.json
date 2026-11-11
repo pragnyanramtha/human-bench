@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays redoing the electric in a buddy’s shed. No names, no address, he asked me to keep him out of it. I’m not looking to embarrass the homeowner. The wiring, however, has earned this.\n\nFirst clue was inside the panel door, written in Sharpie:\n\nSHED - DONT TOUCH - RON\n\nHis wife is standing there with me and goes, “Who’s Ron?”\n\nLady, I’ve been here ten minutes. I was hoping you knew.\n\nThen I started finding things. The greatest hits:\n\n- Power to the shed was three orange extension cords daisy-chained out the basement window, across the yard, and under the deck. Basically an extension cord with a yard around it.\n\n- One splice was wrapped in duct tape. Not electrical tape. Duct tape. Duct tape has a thousand uses. Somehow electricity keeps getting added to the list by people who should not be adding anything to a list.\n\n- A 30 amp breaker feeding 14 gauge wire. For the non-electricians, that is not “extra capacity.” That is sizing the protection wrong and giving the wire a chance to become the fuse.\n\n- The shed outlet was hooked up with speaker wire. Unless the plan was for the receptacle to play Steeler radio, no.\n\n- The “GFCI” was a regular outlet with a GFCI sticker stuck on it. A sticker is not shock protection. I can put a Corvette sticker on my lawn mower, but I’m still not driving it on the Parkway.\n\n- The ceiling fan box was held up by one drywall screw. One. I’ve seen sandwiches with better support.\n\n- There was a mouse nest in the junction box. Mice were fine, unbothered, apparently current on their rent. Honestly they had the most secure housing situation in the whole shed.\n\nWhoever did the original work wasn’t evil. He was cheap and a little proud. That’s most of these. Trouble is, electricity does not care that you meant well or saved a couple bucks.\n\nWe tore it out and did it right. Trenched 18 inches, 12/2 UF cable, 20 amp GFCI breaker, actual electrical boxes, actual outlets, and the fan mounted to a real brace. Fan runs, outlets work, nothing smells like warm regret.\n\nTotal invoice was two pizzas and a case of Yuengling. I thought that was a pretty fair deal until I remembered I still have to look at Ron’s handwriting in my sleep.\n\nNow the serious part, because as funny as this list is, this stuff burns houses down. Sheds, garages, houses, all of it. It shocks people. It starts fires inside things where nobody sees them until it’s way too late. A regular outlet wearing a GFCI sticker does not protect anybody, and three cords under a deck do not become wiring because they’ve survived one summer.\n\nIf you need a shed fed, a garage outlet, a new circuit, whatever it is, call a licensed electrician. Not your buddy who watched a YouTube video. Not your nephew’s friend who says he’s “been around it.” Not the guy whose whole inspection process is plugging something in and saying, “See?”\n\nGet the permit and inspection where they’re required. Ask questions. Anybody worth hiring should be able to explain what they’re doing without getting defensive.\n\nAnd if you open a panel and find DONT TOUCH - RON, for once, take the advice.",
+  "words": 559,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24550561606884003,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10020319372415543,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2038466930389404,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 64.6,
+    "effort": "provider default",
+    "output_tokens": 3688,
+    "input_tokens": 1492
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, yes, you can do this yourself. Figure 2-3 hours with a helper, not 20 minutes. The $465 isn't a ripoff, but it's a good job to learn on your own boat.\n\nFirst, a gentle correction to Hector, who I know means well: don't use the green automotive stuff. That's ethylene glycol. It's toxic and isn't rated for the raw water side. What you want is the pink propylene glycol RV/marine antifreeze. One more thing: neither green nor pink belongs in the river, and the raw water side discharges out the exhaust, so you'll be catching it (more on that below).\n\nHow your engine is set up: the 3GM30F is freshwater cooled with a heat exchanger, so there are two separate sides.\n\nCoolant side: this is a closed loop that already has antifreeze in it. Check its strength with a hydrometer. A 50/50 mix is good to about -20F. If it tests fine, you're done with that side.\n\nRaw water side: seawater comes in through the seacock and strainer, passes through the heat exchanger, and goes out the exhaust. Water left in there is what freezes and cracks things. This is the side that matters.\n\nShopping list:\n- Pink antifreeze. Estimate about 2 gal for the engine and 2-3 for the water system. Treat those as estimates and buy enough to finish the procedure and confirm protection. It's about $6/gal at West Marine or Walmart.\n- Oil, oil filter, fuel stabilizer\n- A coolant hydrometer, plus a way to test the strength of what comes out the exhaust\n- Buckets or jugs to collect discharge, and a spare impeller\n\nOrder of work:\n\n1. Warm up the engine, then change the oil and filter while it's warm. Warm oil drains better and carries the gunk out with it.\n\n2. Top off the fuel tank, add stabilizer, and run the engine about 10 minutes so treated fuel works through the system.\n\n3. Before you do the raw water flush, set up collection at the exhaust outlet. Your helper's job is to watch the flow and make sure it all ends up in the bucket. Capture all of it for proper disposal, none into the river.\n\n4. Raw water flush:\n- Close the seacock.\n- Feed pink antifreeze in through the strainer with the engine at idle.\n- Keep the pump wet the whole time. Have the next jug ready so the pump never sucks air.\n- When the discharge tests at the protection you need, shut the engine off. Go by the test, not by the pink colour. Pink-looking water can still be mostly water.\n- Leave the seacock closed for the winter.\n\nFollow Yanmar's procedure and the directions on the antifreeze jug for the details. They win if anything I've said conflicts.\n\n5. Impeller: keep a spare aboard regardless. If you want, pull the old one and look it over for cracked or missing vanes. Just never run the pump dry, with or without antifreeze.\n\n6. Fresh water system:\n- On that Catalina the water heater bypass valve is behind the companionway steps.\n- Switch off the water heater breaker before you drain anything, and leave it off until you refill in the spring.\n- Drain the heater tank first and set the bypass. Skip that and you'll pour 6 gallons of pink into the heater for nothing.\n- Pump antifreeze through until each faucet runs pink. Collect that discharge too rather than letting it go down the sinks and overboard.\n\nWhat can go wrong: the Christmas freeze a few years back cracked exhaust elbows or strainers on three boats on C dock. Every one of them had skipped or rushed the raw water side. Take your time on that part and you'll be fine.\n\nIf you'd like a second set of hands, I'm happy to come down to Sea Wren Saturday morning. Just tell me what time.\n\nWalt",
+  "words": 648,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14101074635982513,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05697488784790039,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.2041015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.352654457092285,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.7,
+    "effort": "medium",
+    "output_tokens": 1933,
+    "input_tokens": 3132
+  }
+}

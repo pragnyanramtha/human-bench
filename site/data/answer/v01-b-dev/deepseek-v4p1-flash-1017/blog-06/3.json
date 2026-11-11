@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Jonno, Mate: The Coolroom Story**\n\nJonno. Mate. You’ve messaged me four times about the coolroom. I’m not typing it out again, so here it is. This blog has about 40 readers and you and Mum are most of them, so it’s basically a group chat with extra steps. I’ve just finished a double, so if this is all over the shop, blame the espresso machine.\n\nAlso, you’ve been in London since Feb and you’ve gone soft. I can tell. You asked if everyone was “okay”. You’d have lost your mind if you were here. You’d have been no help, but you’d have lost your mind.\n\nRight. Cup Day. Tuesday 3 November 2026. I found the coolroom at 6.40am. Thermometer said 11 degrees. Not 11 and a bit. 11. The compressor had died overnight, sometime between Monday night and Tuesday morning, because of course it did. Cup Day lunch was 140 covers, set three-course menu. The big one. Raff was off, so I was running it. Wally from Coldline couldn’t come till Wednesday and the part was coming from Sydney. So the plan was: pray, and move dairy.\n\nWe emptied the coolroom into the two undercounters, the bar fridge, and Marta next door let us use half her walk-in. Marta runs the cafe next to us and she’s a saint, but she’s also a businesswoman. More on that later. We lost about $1,800 of stock. Mostly dairy and the duck legs. I’m not going to pretend that didn’t sting, but the duck legs had a good innings.\n\nThe beef shin was the fun bit. Benny and I had to get 30kg of it down the laneway on a milk crate trolley. In the rain. One wheel fell off. Picture two grown men in aprons trying to push a milk crate trolley with a wonky wheel, in the rain, with 30kg of beef shin. It was like a shit version of a farming show. A lady on table 9 later asked if the beef was “free range from the laneway” because she’d seen us out the window. I said “yeah, local”. What else do you say? She loved it.\n\nKev the dishy saved the day with ice. He filled the old esky with ice from the servo. Fourteen bags. The servo guy asked if we were having a party. Kev said “yeah, mate” because there’s no time to explain a coolroom to a servo guy at 8am. Fourteen bags of ice in an esky is not a solution, but it’s a start. Bistro kitchens run on bar fridges and spite. That’s the whole industry, really.\n\nThen the panna cotta. At 12.15 we had to 86 it. Dessert became “affogato with whatever”. People loved it more. More than the panna cotta. Which is annoying, because the panna cotta was good. But you can’t argue with 140 people at lunch who are three wines deep and just want ice cream and coffee. So we leaned into it. “Affogato with whatever” is probably on the menu now.\n\nMarta made us pay her back in croissant credit. I owe her about three weeks of staff meal. She’s got a ledger. I’ve seen it. I’m not saying she runs the street, but I’m not not saying it. If you come home, you’re doing a shift at hers to pay it off. Consider it your welcome back.\n\nMy horse in the sweep was called Ice Cold Lad. Came second last. The universe is taking the piss. I had to stand there in the kitchen, after the coolroom dying, after the beef shin trolley, after the panna cotta, and watch a horse called Ice Cold Lad come second last. I think that’s the moment I stopped being angry and started finding it funny. You’d have been on the floor. You’d have cried, then laughed, then cried again. Soft.\n\nPhil, the owner, kept saying “just make it work, mate”. That’s not a plan. That’s a sentence. But to be fair, we made it work. The whole team was locked in. Nobody whinged. The floor staff were running plates and the kitchen was running on adrenaline and bar fridge space. Honestly, it was the best service we did all year. Everyone was on it. It was weirdly fun. Don’t tell Phil I said that, he’ll think “just make it work” is a strategy.\n\nYou’d have hated it. You’d have loved it. You’d have been useless. You’d have been exactly the kind of person I’d want in the shit with me, which is why I’m annoyed you’re in London. London has made you soft. You probably have a routine now. You probably eat lunch at a desk. You probably say “lovely” unironically.\n\nAnyway. That’s what happened with the coolroom. The compressor got fixed Wednesday, the stock got written off, the duck legs went in the bin, and the bistro is still standing. Marta still has her ledger. Kev still has the esky. The milk crate trolley is gone. I’m not going to talk about the trolley.\n\nI’ll shout you a croissant. You can help me carry the next 30kg of beef shin, and bring a wheel. Come home ya flog.",
+  "words": 858,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3111877143383026,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17034344375133514,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.328125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.7166812419891357,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.9,
+    "effort": "provider default",
+    "output_tokens": 7214,
+    "input_tokens": 710
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: Re: Chimney come down on Ashbourne Terrace in the wind??\n\nI’m a chartered structural engineer with IStructE, but I need to be clear: I’m not acting as an engineer here. This isn’t a commission, I have no PI cover for free advice, and I haven’t been inside any of these houses. This is just me as a neighbour, looking from the pavement opposite at 7 this morning.\n\nMick, please don’t go into 43 at 9 with props. This really must not go ahead. Propping under a holed roof with a loose stack above is about the worst place you could stand: you’d be underneath the thing you’re trying to hold, the floors may already be carrying debris, and nobody knows the load path now. And please don’t do a loft inspection from inside. That is exactly the sort of close work that needs to wait for the council’s dangerous structures engineer.\n\nWhat I could see: about 1.2m of no.41’s stack still standing, leaning toward 43; pots gone; mortar washed out at the base. No.43’s front roof slope is holed, and there’s a stepped crack in the brickwork from the bay head up to the first-floor cill, roughly 5–10mm. The bay head looks to have dropped. Loose slates are sitting over the footway at the 43/45 gutter line. The council tape is only across 43’s front garden — not the pavement.\n\nJoJo, your cousin isn’t wrong that Victorian terraces are generally robust. But this is a damaged one, which is a different situation.\n\nUntil the council has been, please walk on the other side of the road, especially on the school run. The out-of-hours dangerous structures contact is via the main council number; they know already, but nobody has closed the footway, so keep chasing.\n\nPriya, on Mrs Doherty: it isn’t my decision, and I can’t certify no.45. From the front it looks undamaged, and no.41’s stack sits on the 41/43 party wall, not 45. But I wouldn’t sleep in the front room at 45 tonight; better she goes to family until 45 has been checked.",
+  "words": 335,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26409268379211426,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12450932711362839,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.59375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.579245567321777,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.9,
+    "effort": "provider default",
+    "output_tokens": 3207,
+    "input_tokens": 1943
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "id": "ref-work_docs-02",
+  "set": "ref",
+  "set_name": "Public, built from real writing",
+  "channel": "work_docs",
+  "mode": "direct",
+  "tone": "technical",
+  "words": [
+    800,
+    2000
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "ref-work_docs-02-datasette-developer",
+    "role": "Datasette developer",
+    "english": "unknown",
+    "writing_level": "everyday",
+    "excluded_channels": []
+  },
+  "sent_to_model": "I'm working on Datasette permissions and need to write up where I've got to for the project's issue tracker. While thinking through actor restrictions for #1855, I ended up building a permission simulator, and that has raised a few other design questions. Can you help me turn my notes into a development post, including the prototype implementation? I want to share what prompted it, how the checks work, and why I've decided to move the tool somewhere less public. I also want to discuss defining permissions centrally, how plugins would register theirs, and the unresolved questions around abbreviations and resource names. Include the current status too, since I've now added tests and made the tool available with root access. Include prototype code for the actor-restriction hook, simulator form/client, and POST handler; a complete repository diff is unnecessary.\n\n- Issue #1855 proposes actor property _r for additional permission restrictions; simulator developed alongside that work.\n- Working simulator deployed; tests now added. Access requires authenticating as root first.\n- Permission records contain action name, abbreviation, database-required flag, table/query-required flag, and default authorization result.\n- Database-only actions: execute-sql, view-database-download, view-database. Each defaults to allowed.\n- Actions needing neither resource field: debug-menu and permissions-debug default denied; view-instance defaults allowed.\n- Database plus table/query actions: delete-row, insert-row, drop-table default denied; view-query and view-table default allowed.\n- Abbreviations: execute-sql=es; drop-table=dt; delete-row=dr; insert-row=ir; view-query=vq; view-table=vt; view-database-download=vdd; view-database=vd; view-instance=vi; debug-menu=dm; permissions-debug=pd.\n- Plugin proposal: register_permissions(), matching existing register_commands() and register_routes() naming.\n- default_permissions.py gains separate permission_allowed implementations. Existing handler becomes permission_allowed_default with tryfirst; new handler evaluates actor restrictions.\n- Absent actor or empty _r means abstention. Restrictions only deny or abstain, never grant; actions without an explicit allowance are rejected.\n- _r scopes: a for global allowances; d keyed by database; t nested by database/table. Lists contain action initials. Canned-query behavior unresolved.\n- allow_debug.html retains its GET form and adds a POST simulator with CSRF token, actor JSON textarea, and root as initial actor.\n- Permission selector offers eleven core actions; JavaScript uses registry metadata to show the appropriate database and table/query inputs.\n- Simulator submission uses fetch with URLSearchParams from FormData; response JSON appears in a formatted browser alert.\n- special.py supplies PERMISSIONS to the template. POST decodes actor JSON, builds a tuple from nonempty resource inputs, calls permission_allowed using USE_DEFAULT.\n- POST response includes actor, permission, resource, result. Prototype touches datasette/default_permissions.py, datasette/templates/allow_debug.html, and datasette/views/special.py.\n- Original simulator location allowed public access. Hypothetical checks could reveal whether hidden database or table names exist.\n- Simulations enter the permission-check history. Decision: relocate simulator to /-/permissions and require that page's existing access permission.\n- Both permission handlers register with specname=\"permission_allowed\"; the default handler retains tryfirst=True.\n- Global allowances checked first; database allowances apply only to view-database, view-database-download, execute-sql; table allowances apply to non-string two-element resources.\n- Present allowance values must be lists; a matching allowance returns None immediately.\n- Building the interface exposed missing metadata: needed to determine which actions require database names, table names, both, or neither.\n- Noticed the security and history-pollution problems after putting the first prototype on the existing allow-debug page.\n- Keeping default authorization on each Permission record feels cleaner than scattering default=True arguments throughout permission checks.\n- Plugin action names can use naming conventions for uniqueness; initial-based abbreviations are much harder to keep unique.\n- Resource arguments switching between database strings and two-element tuples feel awkward; this work might offer an opportunity to improve them.\n- Make abbreviations optional: supply them for core actions, discourage plugins from declaring them. Consider rejecting conflicting permission registrations during startup.\n- Find a concise term covering a table, SQL view, or canned query for the resource's second component.\n\n(About me: Datasette developer. Length: it should come to roughly 800-2,000 words.)",
+  "hidden": {
+    "must_include": [],
+    "must_cover": [
+      "Include prototype code for the actor-restriction hook, simulator form/client and POST handler, relating the simulator to #1855. Explain that absent/empty _r abstains, matching allowances abstain rather than grant, and unmatched nonempty restrictions deny.",
+      "Explain the information exposure and permission-history problems behind relocating the tool.",
+      "Discuss central permission definitions and plugin registration, optional abbreviations supplied for core actions but discouraged for plugins, and possible startup rejection of conflicting permission registrations.",
+      "Raise the resource representation and naming questions.",
+      "Report that tests exist and the deployed tool requires root access."
+    ],
+    "must_not_reveal": [],
+    "format": {
+      "headings": true,
+      "tables": true,
+      "bold": true,
+      "bullets": true
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a real piece of writing by a real person",
+    "words": 1334,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.092642642557621,
+        "reads_human": true
+      },
+      "editlens-roberta-large": {
+        "score": 0.0383954681456089,
+        "reads_human": true
+      },
+      "vanguard-modernbert-large": {
+        "score": -1.6640625,
+        "reads_human": true
+      },
+      "tropa-mini-deberta-large": {
+        "score": -3.760355234146118,
+        "reads_human": true
+      }
+    }
+  },
+  "source": {
+    "dataset": "common-pile/github_archive",
+    "record": "https://github.com/simonw/datasette/issues/1881",
+    "date": "2022-11-03",
+    "licence_note": "Apache-2.0 (repository licence recorded by Common Pile; applicability to issue/PR text is uncertain)",
+    "eligible": false,
+    "text_sha256": "f9584fbb5101bf8fd13f4bef34be6efa2350e99c0ac2c4a79ba8da71eb909298"
+  },
+  "outputs": [],
+  "components": {
+    "request": "I'm working on Datasette permissions and need to write up where I've got to for the project's issue tracker. While thinking through actor restrictions for #1855, I ended up building a permission simulator, and that has raised a few other design questions. Can you help me turn my notes into a development post, including the prototype implementation? I want to share what prompted it, how the checks work, and why I've decided to move the tool somewhere less public. I also want to discuss defining permissions centrally, how plugins would register theirs, and the unresolved questions around abbreviations and resource names. Include the current status too, since I've now added tests and made the tool available with root access. Include prototype code for the actor-restriction hook, simulator form/client, and POST handler; a complete repository diff is unnecessary.",
+    "notes": {
+      "facts": [
+        "Issue #1855 proposes actor property _r for additional permission restrictions; simulator developed alongside that work.",
+        "Working simulator deployed; tests now added. Access requires authenticating as root first.",
+        "Permission records contain action name, abbreviation, database-required flag, table/query-required flag, and default authorization result.",
+        "Database-only actions: execute-sql, view-database-download, view-database. Each defaults to allowed.",
+        "Actions needing neither resource field: debug-menu and permissions-debug default denied; view-instance defaults allowed.",
+        "Database plus table/query actions: delete-row, insert-row, drop-table default denied; view-query and view-table default allowed.",
+        "Abbreviations: execute-sql=es; drop-table=dt; delete-row=dr; insert-row=ir; view-query=vq; view-table=vt; view-database-download=vdd; view-database=vd; view-instance=vi; debug-menu=dm; permissions-debug=pd.",
+        "Plugin proposal: register_permissions(), matching existing register_commands() and register_routes() naming.",
+        "default_permissions.py gains separate permission_allowed implementations. Existing handler becomes permission_allowed_default with tryfirst; new handler evaluates actor restrictions.",
+        "Absent actor or empty _r means abstention. Restrictions only deny or abstain, never grant; actions without an explicit allowance are rejected.",
+        "_r scopes: a for global allowances; d keyed by database; t nested by database/table. Lists contain action initials. Canned-query behavior unresolved.",
+        "allow_debug.html retains its GET form and adds a POST simulator with CSRF token, actor JSON textarea, and root as initial actor.",
+        "Permission selector offers eleven core actions; JavaScript uses registry metadata to show the appropriate database and table/query inputs.",
+        "Simulator submission uses fetch with URLSearchParams from FormData; response JSON appears in a formatted browser alert.",
+        "special.py supplies PERMISSIONS to the template. POST decodes actor JSON, builds a tuple from nonempty resource inputs, calls permission_allowed using USE_DEFAULT.",
+        "POST response includes actor, permission, resource, result. Prototype touches datasette/default_permissions.py, datasette/templates/allow_debug.html, and datasette/views/special.py.",
+        "Original simulator location allowed public access. Hypothetical checks could reveal whether hidden database or table names exist.",
+        "Simulations enter the permission-check history. Decision: relocate simulator to /-/permissions and require that page's existing access permission.",
+        "Both permission handlers register with specname=\"permission_allowed\"; the default handler retains tryfirst=True.",
+        "Global allowances checked first; database allowances apply only to view-database, view-database-download, execute-sql; table allowances apply to non-string two-element resources.",
+        "Present allowance values must be lists; a matching allowance returns None immediately."
+      ],
+      "anecdotes": [
+        "Building the interface exposed missing metadata: needed to determine which actions require database names, table names, both, or neither.",
+        "Noticed the security and history-pollution problems after putting the first prototype on the existing allow-debug page."
+      ],
+      "opinions": [
+        "Keeping default authorization on each Permission record feels cleaner than scattering default=True arguments throughout permission checks.",
+        "Plugin action names can use naming conventions for uniqueness; initial-based abbreviations are much harder to keep unique.",
+        "Resource arguments switching between database strings and two-element tuples feel awkward; this work might offer an opportunity to improve them."
+      ],
+      "wants": [
+        "Make abbreviations optional: supply them for core actions, discourage plugins from declaring them. Consider rejecting conflicting permission registrations during startup.",
+        "Find a concise term covering a table, SQL view, or canned query for the resource's second component."
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "ref-work_docs-02",
+      "split": "ref",
+      "channel": "work_docs",
+      "mode": "direct",
+      "tone": "technical",
+      "audience": "colleague",
+      "stakes": "routine",
+      "band": "long",
+      "persona_id": "ref-work_docs-02-datasette-developer",
+      "persona": {
+        "id": "ref-work_docs-02-datasette-developer",
+        "role": "Datasette developer",
+        "age": null,
+        "english": "unknown",
+        "first_language": null,
+        "lives": null,
+        "writing_level": "everyday",
+        "excluded_channels": []
+      },
+      "prompt": "I'm working on Datasette permissions and need to write up where I've got to for the project's issue tracker. While thinking through actor restrictions for #1855, I ended up building a permission simulator, and that has raised a few other design questions. Can you help me turn my notes into a development post, including the prototype implementation? I want to share what prompted it, how the checks work, and why I've decided to move the tool somewhere less public. I also want to discuss defining permissions centrally, how plugins would register theirs, and the unresolved questions around abbreviations and resource names. Include the current status too, since I've now added tests and made the tool available with root access. Include prototype code for the actor-restriction hook, simulator form/client, and POST handler; a complete repository diff is unnecessary.",
+      "notes_pack": {
+        "facts": [
+          "Issue #1855 proposes actor property _r for additional permission restrictions; simulator developed alongside that work.",
+          "Working simulator deployed; tests now added. Access requires authenticating as root first.",
+          "Permission records contain action name, abbreviation, database-required flag, table/query-required flag, and default authorization result.",
+          "Database-only actions: execute-sql, view-database-download, view-database. Each defaults to allowed.",
+          "Actions needing neither resource field: debug-menu and permissions-debug default denied; view-instance defaults allowed.",
+          "Database plus table/query actions: delete-row, insert-row, drop-table default denied; view-query and view-table default allowed.",
+          "Abbreviations: execute-sql=es; drop-table=dt; delete-row=dr; insert-row=ir; view-query=vq; view-table=vt; view-database-download=vdd; view-database=vd; view-instance=vi; debug-menu=dm; permissions-debug=pd.",
+          "Plugin proposal: register_permissions(), matching existing register_commands() and register_routes() naming.",
+          "default_permissions.py gains separate permission_allowed implementations. Existing handler becomes permission_allowed_default with tryfirst; new handler evaluates actor restrictions.",
+          "Absent actor or empty _r means abstention. Restrictions only deny or abstain, never grant; actions without an explicit allowance are rejected.",
+          "_r scopes: a for global allowances; d keyed by database; t nested by database/table. Lists contain action initials. Canned-query behavior unresolved.",
+          "allow_debug.html retains its GET form and adds a POST simulator with CSRF token, actor JSON textarea, and root as initial actor.",
+          "Permission selector offers eleven core actions; JavaScript uses registry metadata to show the appropriate database and table/query inputs.",
+          "Simulator submission uses fetch with URLSearchParams from FormData; response JSON appears in a formatted browser alert.",
+          "special.py supplies PERMISSIONS to the template. POST decodes actor JSON, builds a tuple from nonempty resource inputs, calls permission_allowed using USE_DEFAULT.",
+          "POST response includes actor, permission, resource, result. Prototype touches datasette/default_permissions.py, datasette/templates/allow_debug.html, and datasette/views/special.py.",
+          "Original simulator location allowed public access. Hypothetical checks could reveal whether hidden database or table names exist.",
+          "Simulations enter the permission-check history. Decision: relocate simulator to /-/permissions and require that page's existing access permission.",
+          "Both permission handlers register with specname=\"permission_allowed\"; the default handler retains tryfirst=True.",
+          "Global allowances checked first; database allowances apply only to view-database, view-database-download, execute-sql; table allowances apply to non-string two-element resources.",
+          "Present allowance values must be lists; a matching allowance returns None immediately."
+        ],
+        "anecdotes": [
+          "Building the interface exposed missing metadata: needed to determine which actions require database names, table names, both, or neither.",
+          "Noticed the security and history-pollution problems after putting the first prototype on the existing allow-debug page."
+        ],
+        "opinions": [
+          "Keeping default authorization on each Permission record feels cleaner than scattering default=True arguments throughout permission checks.",
+          "Plugin action names can use naming conventions for uniqueness; initial-based abbreviations are much harder to keep unique.",
+          "Resource arguments switching between database strings and two-element tuples feel awkward; this work might offer an opportunity to improve them."
+        ],
+        "wants": [
+          "Make abbreviations optional: supply them for core actions, discourage plugins from declaring them. Consider rejecting conflicting permission registrations during startup.",
+          "Find a concise term covering a table, SQL view, or canned query for the resource's second component."
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [],
+      "must_not_include": [],
+      "must_cover": [
+        "Include prototype code for the actor-restriction hook, simulator form/client and POST handler, relating the simulator to #1855. Explain that absent/empty _r abstains, matching allowances abstain rather than grant, and unmatched nonempty restrictions deny.",
+        "Explain the information exposure and permission-history problems behind relocating the tool.",
+        "Discuss central permission definitions and plugin registration, optional abbreviations supplied for core actions but discouraged for plugins, and possible startup rejection of conflicting permission registrations.",
+        "Raise the resource representation and naming questions.",
+        "Report that tests exist and the deployed tool requires root access."
+      ],
+      "must_not_reveal": [],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

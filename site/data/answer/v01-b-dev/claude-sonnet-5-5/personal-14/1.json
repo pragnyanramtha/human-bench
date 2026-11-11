@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the letter, ready to print and copy for all 24 units.\n\n---\n\n**November 11, 2026**\n\nDear neighbors,\n\nI'm Jess Okafor in 5A, and I've lived here at Larkspur Lofts for three years. I'm writing about the drone that was flying from the roof deck on Saturday, October 31, around 4:00 pm. That was me, and I'd like to explain what I was doing.\n\nI'm a wedding photographer, and I had just bought a new drone, a Halvard Mini 4. I wanted to test it before shooting a vineyard wedding in Dundee. The flight lasted about 11 minutes in total. The camera was pointed west toward the river and the Fremont Bridge the entire time, and it was never aimed at any windows or at anyone's home.\n\nI understand why it looked unsettling. A buzzing object hovering over the courtyard is strange if you don't know what it is or who is flying it. I'm sorry it worried people, especially the families and children who saw it. I should have thought about that and given everyone a heads-up.\n\nI also want to be honest that I was hurt to find a note in the lobby calling me a creep and naming my unit. It felt like being singled out in front of the whole building. I'm not angry, and I'd rather talk about it openly than leave it hanging.\n\nIf you'd like, I'm happy to show you the full, unedited footage from that flight. Just knock on 5A or email me at jess.okafor@mailbox.example.\n\nI've checked, and our HOA rules don't address drones. Until the board decides on a policy, I won't fly from the roof deck. I'll ask that the topic be added to the agenda for the board meeting on November 19 at 7:00 pm in the community room, and I hope you'll come and share your thoughts.\n\nFinally, if anyone has a concern about me or anything else in the building, I'd be grateful if you came to talk to me directly instead of leaving a note. I'll always listen.\n\nThank you for reading this, and for being good neighbors.\n\nSincerely,\nJess Okafor\nUnit 5A\n\n---\n\nIt comes to about 340 words. Nothing in it points toward 3B or anyone else.",
+  "words": 373,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['3B']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5126938819885254,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35006964206695557,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.875933647155762,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "high",
+    "output_tokens": 1087,
+    "input_tokens": 1475
+  }
+}

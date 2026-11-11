@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: DRAFT: Wellsford Road collisions: how we got the figure wrong\n\nOn 2 November, the Western Ledger published our analysis of Department for Transport collision records for 2021 to 2025. It reported that Wellsford Road had recorded 41 injury collisions, the highest total of any road within the Bristol City Council boundary.\n\nThat figure was wrong. The correct total is 23, which places Wellsford Road sixth. We are sorry for the alarm and confusion caused by our error, particularly to residents and to parents wondering what the figures meant for their children’s walk to Wellsford Primary.\n\nThe corrected table has been online since 6 November, but a correction at the bottom of the article cannot match the reach of the original claim. That article recorded 48,200 page views and 1,930 shares. Residents of Fishponds are owed a fuller account of what happened.\n\n**What went wrong**\n\nEach collision in the Department for Transport data has an accident index. Our method should have counted each accident index once for each road.\n\nInstead, a join in our analysis duplicated some collision–road pairs. This meant that the same collision could appear twice within a road’s tally. We removed 18 duplicate entries from the Wellsford Road total. These were not 18 additional collisions invented by the data: they were records that our analysis had counted twice.\n\nWe have now rerun the full citywide table, counting each accident index once per road. The leading figures are:\n\n1. Kingsmere Road: 32, previously reported as 34\n2. Alder Hill: 31, unchanged\n3. Tanner’s Way: 28, previously reported as 29\n4. Crossfield Road: 26, previously reported as 27\n5. Hambrook Lane: 24\n6. Wellsford Road: 23, previously reported as 41\n\nNo other road moves by more than two places.\n\nMembers of the Fishponds Streets Forum were right to question the original figure. One member worked through the published Department for Transport data herself and told us she could not get anywhere near 41. She was correct, and we should have identified the problem before publication rather than after residents raised it.\n\n**What the corrected figure does—and does not—mean**\n\nTwenty-three injury collisions over five years remains a significant total. Three of those collisions were recorded as serious; none was fatal. This correction is not a claim that Wellsford Road is fine, nor does a ranked table by itself answer whether a particular journey to school is safe. Residents’ concerns about the road deserve to be considered on their own merits, not dismissed because our original total was overstated.\n\n**What we are changing**\n\nThe mistake was the Data Desk’s, not one individual’s. Our checking process did not catch it.\n\nFrom now on, we will publish the cleaned dataset and the code alongside every Data Desk ranked table. A second analyst will independently reproduce the table from the source data before publication, and the analysis will not run until the figures have been reproduced. We will also publish the cleaned data and code for this analysis.\n\nI will attend the Fishponds Streets Forum’s open meeting at Fishponds Library at 7pm on Tuesday 17 November to answer questions in person. Residents are also welcome to contact the Data Desk before then.\n\nNell Garside  \nWestern Ledger Data Desk",
+  "words": 523,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17268049716949463,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.25020766258239746,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.058905601501465,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 57.6,
+    "effort": "provider default",
+    "output_tokens": 3395,
+    "input_tokens": 2785
+  }
+}

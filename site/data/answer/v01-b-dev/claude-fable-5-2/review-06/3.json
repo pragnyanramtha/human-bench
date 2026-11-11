@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Refurbished Vantorre CX-10: E34 lockouts from day one, scale, and a probe reading 7 degrees low\n\nWe paid $14,800 inc GST for this refurbished Vantorre CX-10 (s/n VT21-30877). Kelsall delivered and commissioned it at our bistro in Fitzroy on 14 September. The listing says the steam generator was descaled and pressure tested and the core probe calibrated. That hasn't matched what we got.\n\n14 to 22 Sept: E34 (steam generator low water level) kept locking us out of combi and steam modes. Kelsall's report SR-1190 shows nine E34s in the error log since 14 September. They replaced the water level sensor under warranty. The same report has our inlet pressure at 320 kPa, OK.\n\nWeek to 3 Oct: E34 came back four times. The core probe was also reading low. In a lamb shoulder the oven said 63°C and our Thermapen said 70°C. We tested twice and got the same result.\n\n6 Oct (SR-1236): the generator was found heavily scaled, then descaled and flushed. The probe was recalibrated to within 1 degree. The report recommends we fit a softener because the scale \"indicates hard water supply\".\n\nSat 24 Oct: E34 locked the oven out at 6.10pm with a full book of 60 covers. We finished the lamb on the stove and in the deck oven, took the pork belly off the menu and wore the cost.\n\n27 Oct: E34 again, and more scale found three weeks after the descale. Kelsall told us this is a site water issue, not covered by warranty, and that the callout will be invoiced at $280 + GST ($308).\n\nOn the water: we rang our supplier. Fitzroy averages about 15 mg/L hardness as CaCO3, which they call some of the softest in the country. The oven had been on that water for 22 days when the heavy scale was found. A generator doesn't scale that badly in three weeks on water that soft. We think the scale was in the unit when it arrived.\n\nThe technician has been fine to deal with every time. Our problem is the condition of the unit against the listing, and being charged a callout on a six-week-old oven with a six-month parts and labour warranty.\n\nIf you're looking at a refurbished combi from this seller, ask for the descale and probe calibration records before you pay, and check the error log on the day it's commissioned.",
+  "words": 381,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0860920250415802,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.019574390724301338,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.703125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.14646375179290771,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 51.0,
+    "effort": "high",
+    "output_tokens": 4845,
+    "input_tokens": 3680
+  }
+}

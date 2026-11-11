@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nDenise is going to read this to you tomorrow night in the kitchen, so I’m warning you now: she’ll probably do voices, and she’ll definitely cry before I do. I’m sorry I’m not there. I’m primary on call all week and I couldn’t find anyone to swap, and I’ve been trying not to be dramatic about it, but I am a bit dramatic about it. I’ve started this letter about a dozen times and closed the laptop every time, so if it rambles, that’s why.\n\nBy the time Denise reads this, it’s the night before the move. Saturday the 21st. Fifty-one years on Kathleen Street. That’s a long time. I keep thinking about how much of our family has gone through that kitchen—birthdays, ordinary Tuesdays, everyone standing around waiting for something to come out of the oven. You raised half of us in that room. I don’t know how you did it, but I know it’s true.\n\nI thought about Grandpa Walt a lot this week. I know 2019 left a hole in all of this, and I know the house has felt different since. He’d be proud of you for making this call yourself. He’d also probably have something dry to say about the parking lot view. He’d be right.\n\nI don’t want this to sound like a funeral for the house. It isn’t. Elmwood actually looks nice, and I’m glad you’re excited, because I’m excited for you. Second floor, a big maple, and a view of the parking lot. That’s a good setup. You’ll be able to see who’s coming and judge their parking, which honestly is a better security system than anything I’ve got at work.\n\nI’ve been thinking about summer nights at the house. The little TV in the kitchen, the Expos or the Jays on, and you letting me stay up as long as I dried the dishes. I want to be clear that I know now the dishes were not worth a whole inning. But I did them anyway. I still think about that TV.\n\nAnd the back steps. You’d be out there at six in the morning with your tea, and I’d come out and sit down. You never said a word until the cup was done. I used to think you were waiting for the neighbourhood to wake up. Now I think you were just teaching me how to sit still. I’m still bad at it.\n\nYou taught me crib when I was seven and you never let me win. Not once. I used to think you were being mean. Now I know you were teaching me. The first time I skunked you I was fifteen, and you didn’t say “good game” or “finally.” You made a whole pan of butter tarts. That’s the highest honour in our family. I’ve been chasing that feeling ever since.\n\nWhen I got the job in Toronto, you mailed me a card with a $20 bill taped inside. The note said, “for pizza, you look thin on the computer.” I kept the card. The $20 did exactly what you told it to.\n\nLast Christmas my pager went off during dinner and you asked if the internet was broken again and if I could fix it. I said yes and went out to the hallway. Now every time we talk you ask, “did anything break?” It’s the best status check I get. I’ve had bosses who cared less.\n\nI know you still play crib on Tuesdays with the church ladies. I hope they know what they’re in for. And Elmwood has a crib league, which is honestly the best thing I’ve heard about the place. You’re going to walk in there with fifty years of church-lady crib experience and destroy them. By March you’ll be running the league and there’ll be a standings sheet taped to the door. Don’t let them cheat.\n\nDenise is taking the cuckoo clock and the cedar chest. I asked for the crib board. I think that’s fair. The clock is loud, the chest is heavy, and the crib board is where the real family history is.\n\nI’m proud of you. I know people say that about big moves, but I mean it. You picked this. Nobody made you. You did the hard thing yourself, and that takes guts at any age, let alone eighty-eight. You’re not going because you have to. You’re going because you decided it was time. That’s different.\n\nI feel guilty about not being there. I know it’s not logical. You’d probably tell me to stop being daft and ask if anything broke. But I’m sorry anyway. Everyone keeps saying it’s fine, and I know they mean well, but it doesn’t feel fine from here. I’ll be up the weekend of December 5, once rotation’s done, and I’m not going to make a big thing of it. I’ll just be there.\n\nI don’t want to make this letter heavier than it needs to be. The house was never just the house. It was you in the kitchen, and the back steps, and the little TV, and the crib board, and the butter tarts. You’re taking all of that with you. The rest of us just got to borrow it for a while.\n\nSo save me a seat at the new table. The weekend of December 5, once rotation’s done, we’re setting up the crib board. First game at Elmwood. I’ve been practising. It won’t help, but I’ve been practising. And if you skunk me before I’ve had a cup of tea, I’m going to be very mature about it and only complain a little.\n\nLove,\nYour favourite crib opponent (don’t tell the others)",
+  "words": 946,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3849039077758789,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.43170663714408875,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.07763671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.29122257232666,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 42.6,
+    "effort": "provider default",
+    "output_tokens": 9245,
+    "input_tokens": 688
+  }
+}

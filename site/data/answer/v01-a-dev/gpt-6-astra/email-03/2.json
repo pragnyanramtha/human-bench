@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr Kerrigan,\n\nThank you for contacting Erindale Park Pharmacy. We would be pleased to help your mother with her medications as she returns home. I appreciate your wanting to have everything arranged before Thursday, particularly with several changes to her medication list.\n\nWe prepare weekly blister packs covering seven days, with up to four medication times each day. There is no charge for the packaging itself. Her usual prescription charges would still apply; Ontario Drug Benefit covers most eligible prescription costs for seniors, and we can confirm any amounts payable once we have her prescriptions and coverage information.\n\nWe offer free delivery within eight kilometres, and your mother’s building on Mississauga Valley Boulevard is within our delivery area. Our regular delivery days are Tuesdays and Fridays, between 2 and 6 p.m. For her first packs, we can arrange pickup on Saturday or a one-off Saturday delivery before 1 p.m. Please let us know which you would prefer.\n\nTo transfer her prescriptions, please provide her current pharmacy’s name and address. We will contact them directly, and no transfer form needs to be signed. We will also need her OHIP number; please call us with that rather than sending it by email.\n\nPlease ask the hospital discharge team to fax her discharge prescriptions to us early Thursday morning. Preparing the first packs takes approximately 48 hours after we have received all her prescriptions, including the transfers, so Saturday is our expected starting point provided everything arrives in time.\n\nImportantly, her first blister packs will not be ready when she leaves hospital on Thursday. Please confirm with the discharge team that she will have an appropriate interim medication supply and someone to help her with every dose until the packs are picked up or delivered on Saturday. This will help avoid any gap or confusion while she moves to the new system.\n\nI would be happy to arrange an evening call to review her medication list with you. Before discussing her medications, however, we need Margaret’s permission, recorded on our signed Family Communication Consent form. This protects her privacy while allowing us to involve you in the way she wishes. She can sign the form at pickup, or we can send it with the driver. Once we have her signed consent, we can arrange the discussion.\n\nI would also like to offer her a MedsCheck at home during her first week back. This is an approximately 20-minute, in-person medication review. I can visit Monday or Tuesday after 6 p.m.; please let me know whether either evening would suit her.\n\nMy direct line is 905-555-0148 ext. 2. I am in the store Monday to Friday, 9 a.m. to 6 p.m., and we can arrange an evening conversation.\n\nKind regards,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy",
+  "words": 463,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17972217500209808,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.29628467559814453,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.498046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.203577041625977,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.6,
+    "effort": "medium",
+    "output_tokens": 673,
+    "input_tokens": 15399
+  }
+}

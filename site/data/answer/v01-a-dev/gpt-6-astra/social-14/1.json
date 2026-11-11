@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties ❤️ Mom keeps getting asked if I’m coming to Thanksgiving, so let me answer for myself: yes, I’m coming! I’ll be at Aunt Denise’s in Macon on Thursday, Nov. 26, ready to eat around 3. I’m bringing the mac and cheese and two sweet potato pies, so please make some room.\n\nI also want to say something before we’re all sitting around the table. Last Thanksgiving, a conversation about my job turned into an argument, and I did my share of making it ugly. Not everybody in here was there, and I’m not going to give a play-by-play. But I took a personal shot when I could’ve taken a breath, and that part is on me.\n\nI’m not sorry for the work I do. I am sorry for how I talked at Grandma’s holiday. Grandma ended up sitting out on the porch for close to an hour, and I still feel bad that a day she should’ve been enjoying with us turned into something she needed to get away from.\n\nI don’t think anybody needs to be the villain here, and I’m not looking for an apology thread or a rematch in the comments. I’d just like to ask for a one-day truce on work and politics. That includes questions about “the lawsuit”—I can’t discuss open cases because of confidentiality, so that conversation really is a dead end.\n\nCan we keep the table talk to food, football, babies, and Tasha’s new boyfriend? Tasha, please let him know we’re mostly friendly.\n\nI’ll do my part to leave the last word alone. I’m coming because I want to see everybody, eat too much, and have a good day with my family. Looking forward to it. ❤️",
+  "words": 288,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Leaves out that the relative likes to poke but isn't a bad guy, and the August thumbs-up birthday text; 'nobody needs to be the villain' doesn't cover either."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.447573184967041,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.338464617729187,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.109375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.3821330070495605,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.9,
+    "effort": "medium",
+    "output_tokens": 401,
+    "input_tokens": 13940
+  }
+}

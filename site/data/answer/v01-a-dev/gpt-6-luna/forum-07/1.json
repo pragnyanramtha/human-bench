@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.58, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**The Thursday packs**\n\nOne of my blister-pack patients passed away recently, and I’m still thinking about her.\n\nI’ll call her Mrs. H. She came to our pharmacy every Thursday for her weekly packs. I’d known her for years, and Thursday had its own little routine: she’d come in with her cane, the ends covered in tennis balls, and usually bring me something she’d made. Poppy seed cake was a favorite. Once, she brought a jar of pickles, and I honestly had no idea what to do with it.\n\nWhen Ramadan came around, she remembered. She’d wrap a piece of cake in foil with my name on it and tell me not to eat it until sunset. It was such a small kindness, but I always remember it.\n\nA few years ago, a new medication was prescribed that could interact with her warfarin. I called the doctor to sort it out. Afterward, Mrs. H told everyone I’d saved her life. I hadn’t—I’d done my job. But she made me feel that the job mattered.\n\nShe passed away recently. Her daughter came in to return the unused packs and her glucometer, and gave me a card. Inside was a note Mrs. H had written long ago: “For my Arabic daughter.” She’d never given it to me. I read it in the back room and cried. My colleague covered the counter for a few minutes while I collected myself.\n\nSchool teaches us pharmacology, interactions, and how to get the details right. Nobody really teaches you how to say goodbye to a patient. We’re told to keep professional boundaries, and of course that matters. But when you see someone every week for years, it’s hard not to care. The work isn’t only the medication; sometimes it’s the little rituals and the trust built over time.\n\nMy father was a pharmacist in Egypt. He knew the families who came into his pharmacy, and I thought working in Canada might feel different. It doesn’t, at least not in the ways that matter.\n\nI’m grateful Mrs. H trusted me with a small part of her life. And I’m grateful her daughter shared that note with me.\n\nHave any of you had a patient whose small routines or kindness stayed with you long after they were gone?",
+  "words": 379,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5779426693916321,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995664954185486,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.73484992980957,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.1,
+    "effort": "medium",
+    "output_tokens": 468,
+    "input_tokens": 14025
+  }
+}

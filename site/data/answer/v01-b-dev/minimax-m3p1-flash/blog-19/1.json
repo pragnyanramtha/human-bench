@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Correcting the record: how we got the Wellsford Road figures wrong\n\nDRAFT — for editor sign-off before publication. Deliberately not scheduled.\n\nCorrecting the record: what we got wrong about Wellsford Road\n\nBy Nell Garside, Data Desk\n\nOn 2 November the Western Ledger published an analysis of Department for Transport collision records for 2021 to 2025, ranking the Bristol roads where people are most often injured in crashes. We reported that Wellsford Road in Fishponds topped the list, with 41 recorded injury collisions over five years.\n\nThat figure was wrong. The correct number is 23, which places Wellsford Road sixth. We corrected the table and added a note to the article on 6 November. The note was accurate. It was also far too small a thing to have offered a road that our own article had described as the worst in the city. This post is the fuller account.\n\nWHAT WENT WRONG\n\nThe analysis matched official collision records to road names so that each road could be given a total. Where a single collision was recorded against more than one road, the join returned the same accident index more than once for a road, and the tally counted it a second time. Eighteen duplicate entries were removed from Wellsford Road's total, most of them clustered around the Pell Street and Kingsmere Road junctions. The rule we now apply is a simple one: each accident index is counted once per road.\n\nWe re-ran the whole citywide table on that basis. Wellsford Road falls to sixth. Kingsmere Road moves from 34 to 32, Tanner's Way from 29 to 28, Crossfield Road from 27 to 26, Alder Hill is unchanged on 31, and Hambrook Lane enters the top five on 24. No other road moves more than two places.\n\nWHY IT WAS NOT CAUGHT\n\nThe honest answer is that nobody checked. This was a failure of the desk, not of one person. We had no second analyst reproduce the table before it ran, and we had no independent check on a figure that was heading for a headline. It took a reader to do it: a member of the Fishponds Streets Forum worked through the published DfT data herself and could not get anywhere near 41. She was right, about the number and about our failure to check it. We should have found this ourselves.\n\nHOW FAR IT TRAVELLED\n\nThe article was read more than 48,000 times and shared close to 2,000 times. \"The deadliest road in Bristol\" became a local description of Wellsford Road. People who have lived there for decades did not recognise their own street in our table, and parents asked us whether it was safe to walk their children to Wellsford Primary. A correction at the foot of a page does not undo that. The number travelled, and it was our number.\n\nWHAT 23 DOES AND DOES NOT MEAN\n\nTwenty-three is still twenty-three. Three of those collisions were serious, and none was fatal. We are not telling anyone that Wellsford Road is fine, and the correction should not be read as reassurance. Our table ranked roads against each other. It never told you whether any particular junction was safe, and it was never a substitute for the official collision record, which remains the right place to look at individual incidents. Anyone with specific concerns about Wellsford Road should go to that published data and to the council's own collision records.\n\nWe should also have changed the article's headline when we changed the table, and given the correction a piece of its own here rather than a line at the bottom.\n\nWHAT WE ARE CHANGING\n\nFrom now on, whenever we publish a ranked table, we will publish the underlying data and the code that produced it, so that anyone can check our work instead of taking it on trust. A second analyst will reproduce the figures before they run. And where we get something wrong, we will explain it here, on the Data Desk blog, in the same terms as the original claim.\n\nAN APOLOGY, AND AN OFFER\n\nWe are sorry. A wrong number about a street where people live, walk and bring up children is not a technical matter, and we handled it as one until a member of the public pushed back. The mistake belonged to the desk, and it was ours to own.\n\nWe will attend the Fishponds Streets Forum open meeting on Tuesday 17 November, 7pm, at Fishponds Library, and I will answer questions about the article, the analysis and the error in person. If you would rather raise something beforehand, the forum's usual routes are the quickest way to reach us.\n\nNell Garside\nData Desk, Western Ledger",
+  "words": 770,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It reveals that no second analyst checked the table before publication, a fact supplied only in the private message."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0196351557970047,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02418442629277706,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.049560546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2025837898254395,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.5,
+    "effort": "provider default",
+    "output_tokens": 4131,
+    "input_tokens": 2942
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: What went wrong with the Wellsford Road figure\n\nOn 2 November, we reported that Wellsford Road had 41 injury collisions between 2021 and 2025, more than any other road in Bristol. That was wrong. The corrected figure is 23, which puts Wellsford Road sixth in the citywide ranking.\n\nThe error came from how we joined the collision records to road records. Some collision–road pairs were duplicated, so the same accident index was counted more than once in Wellsford Road’s total. We have removed 18 duplicate entries and rerun the citywide table. The count now treats each accident index once per road.\n\nThe corrected figures for the five roads named in the original article are: Wellsford Road, 23; Kingsmere Road, 32; Alder Hill, 31; Tanner’s Way, 28; and Crossfield Road, 26. Hambrook Lane is fifth, with 24. The corrected table has been online since 6 November.\n\nThe original article has had more than 48,000 views. A correction at the bottom of the page was not enough to explain what happened or reach everyone who saw the original claim. A reader who checked the published Department for Transport data could not reproduce our figure. She was right to question it. We are sorry to Fishponds residents for the alarm and confusion our error caused, including for parents asking whether it is safe to walk their children to Wellsford Primary. We also recognise that the wrong figure was shared and repeated beyond our article.\n\nThis was a failure by us as a desk. We published a ranked table without a second analyst reproducing the results, and we should have caught the duplicated records before publication. We will publish the cleaned data and code alongside ranked tables from now on, and require a second analyst to reproduce each table before it runs.\n\nThe corrected count does not mean Wellsford Road is without risk. Twenty-three injury collisions is still 23, including three serious injuries; none was fatal. We will not use the error to dismiss residents’ concerns, or claim that these figures alone settle questions about safety on the road.\n\nI will attend the Fishponds Streets Forum meeting at Fishponds Library on 17 November at 7pm to answer questions in person. We owe residents a clear account, and we will listen to what they want to know.",
+  "words": 374,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12478826195001602,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01679885946214199,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.5546875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.813159465789795,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "medium",
+    "output_tokens": 500,
+    "input_tokens": 16251
+  }
+}

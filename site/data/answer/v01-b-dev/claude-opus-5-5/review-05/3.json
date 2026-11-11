@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: 3 stars - Great tub, rough warranty experience, fixed right in the end\n\n3 stars\n\nI run a mobile dog grooming business, and Harbourline did the full fitout on my Transit back in August: tub, ramp, tanks, propane water heater, floor, cabinets, the works. This review is half a love letter to my tub and half a cautionary tale, so bear with me.\n\nThe good first, because there's a lot of it. The stainless tub and ramp are honestly the best thing about the van. Dogs just walk right up and in. No lifting, no wrestling, no 80 lb lab deciding to go limp on me halfway through. The tether rail is in exactly the right spot, the coin-grip floor actually grips, and the layout works for how I groom. Day to day I've been really happy with the build.\n\nNow the ridiculous part.\n\nOn October 27 I was in Bedford with Moose, a 110 lb Bernese, in the tub when the fitting on the hot water line let go. Water everywhere. All over the floor and down into the cabinet. I'd like to say I handled it calmly, but I was the one screaming. Moose sat in that tub through the whole flood like a king on his throne and did not care one bit. I had to towel him off and send him home half done (one fluffy half, one wet sheepdog half). His mom told me later he thought it was a pool party, so at least one of us had a good day. I cancelled the rest of my day.\n\nI emailed Glenn right away. The reply the next day said these lines don't just let go, that it's usually because the heater's been run dry or someone's been hanging stuff off the pipe. That would be user error and not covered by the warranty. The earliest he could get me in was a week later, and there'd be a $180 diagnostic fee to look at it.\n\nThat's the part that made me mad, not the leak itself. Stuff breaks, I get it, especially in a van that bounces around Halifax potholes all day. But I've never run that heater dry and nothing hangs off that pipe because it's behind a cabinet door. Being told it was probably my fault before anyone had even looked at it didn't feel great, especially with the van sitting there useless.\n\nThe van ended up off the road from October 27 to November 6. For a one-person mobile business that's a big deal. I lost 6 bookings plus the rest of that first day.\n\nTo be fair to Harbourline, here's how it ended. When Glenn actually got in there, he found that the compression fitting on the outlet was a cheaper part his supplier had swapped in. He said that was on them, replaced every fitting on the hot side, and refunded the $180 diagnostic fee. He owned it, and I appreciate that. Not every shop would. The repair has been solid since.\n\nSo why 3 stars? The build is great and the fix was done right, but the experience in between was stressful. Starting with \"user error, not covered\" before diagnosing anything, plus the wait, cost me real money and a week of panic. If he'd led with \"let's take a look and figure it out,\" this would probably be a 4.\n\nMy advice for other groomers, tradespeople, or anyone running their business out of a Harbourline van: get your warranty details in writing and be clear on what counts as \"misuse or user error\" before you need it. Mine said 12 months workmanship, excluding misuse or user error, and that one line is what the whole first week turned on. Ask what parts are going in too, if you can.\n\nWould I go back? For the tub and ramp, honestly yes. I'd just go in knowing what to ask for up front.\n\nMoose, for the record, gives it 5 stars and would like to know when the next pool party is.\n\n- Jess, Fluff Bus Mobile Grooming",
+  "words": 666,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20028896629810333,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05846615508198738,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.7675721645355225,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.1,
+    "effort": "medium",
+    "output_tokens": 1721,
+    "input_tokens": 3667
+  }
+}

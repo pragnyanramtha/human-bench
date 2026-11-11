@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Urgent: Order TH-48217 marked delivered but not received**\n\nDear Tiny Hands Edu Supplies Customer Service,\n\nI’m writing about order **TH-48217**, placed on 21 October and paid for by card. The total was **R1,640, including R95 delivery**. The order contained six tubs of finger paint, four bags of playdough, 200 paper plates, googly eyes, glitter glue and two rolls of brown paper.\n\nThe tracking says the parcel was delivered on **Tuesday, 3 November at 11:42**, and signed for by “M. Adams”. It did not arrive at Bergview Pre-Primary in Plumstead, where the delivery address on my order was correct. Nobody at the school is called Adams. Our gate guard, Uncle Faizel, records every delivery in a book, and there is no entry for this parcel on 3 November.\n\nI emailed on 4 November and again on 6 November, but received the same reply both times: “we have escalated your query to our courier partner.” I also spent 38 minutes on hold on Friday. The person I spoke to said nothing could be done until the courier completed its investigation, which could take up to 10 working days.\n\nI understand that you may need to investigate what happened, but I don’t consider it reasonable to leave me without the goods or my money while I wait. I paid Tiny Hands Edu Supplies, and I didn’t choose the courier. I’m asking you to resolve this directly with me—not simply refer me back to the courier or send another template response.\n\nI’m a kindergarten teacher, and I paid for these supplies myself for the children in my class. We’ve already started making the mask patterns, and I’ve been telling the kids the paint is “coming soon” for a week. We also need the materials for props for our end-of-year concert on 27 November. I’ve used your company three times before without a problem, which is why this has been especially disappointing. R1,640 is a significant amount to be out of pocket on a teacher’s salary.\n\nPlease **either resend the complete order at no extra cost or issue a full refund of R1,640, including the delivery charge**. I need this resolved by **Friday, 13 November**. Please also have someone review the case and send me a proper response confirming what you’ll do and when—not another generic escalation update.\n\nIf I don’t receive a clear response and resolution by then, I’ll ask my bank to pursue a chargeback and will share an honest account of my experience in a review.\n\nI hope you’ll take ownership of this and resolve it promptly. I look forward to hearing from someone who can help.\n\nKind regards,  \n[Your name]  \nBergview Pre-Primary  \nPlumstead, Cape Town",
+  "words": 445,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4675520360469818,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.832982063293457,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.219375610351562,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.0,
+    "effort": "medium",
+    "output_tokens": 585,
+    "input_tokens": 14040
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why my pier logger reads warmer than the offshore buoy**\n\nHi all,\n\nThree of you have emailed recently asking why the water temperatures from my pier logger run warmer than the offshore buoy, and one of you suspects the logger is broken. It's a fair question, so here is the full answer.\n\nFirst, the numbers. In October the pier logger averaged 15.9 C and the buoy averaged 14.1 C, a gap of about 1.8 C. In winter the gap shrinks to about 0.4 C.\n\nThe two instruments sit in very different water. My logger is strapped to a piling at 3 m depth, about 150 m from shore. The buoy is about 25 km offshore over deep water, with its sensor just under the surface. Shallow nearshore water warms in the sun, and the bay is sheltered from the upwelling that keeps the offshore water cold.\n\nOne reader sent me a screenshot with both records overlaid, which was genuinely helpful, because it shows the gap tracking sunny afternoons. That is what real oceanography looks like. A sensor with a fixed error would be off by the same amount on foggy mornings and in January.\n\nAs for the instrument itself, it logs every 10 minutes. I pull it and download the data every 6 weeks, and I swap the battery once a year. I check calibration at two points, an ice bath and a room-temperature bath, against a lab reference thermometer. The last check was in September 2026 and the offset was +0.12 C, well inside spec.\n\nIn August it came up with a barnacle colony and a decorator crab living on the housing. I scraped it clean and the readings didn't change.\n\nSo neither number is wrong. The buoy and the logger answer different questions. The buoy tells you about open coastal water, and mine tells you about the sheltered nearshore. If you dive the breakwater, mine is the more relevant number.\n\nIf you'd like to check any of this yourself, email me and I'll send the raw CSV.\n\nThanks,\n[Your name]\n[Field station]\n\nI left the signature blank since I don't have your name or the station's.",
+  "words": 359,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3953116834163666,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23139894008636475,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.032572746276855,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.1,
+    "effort": "high",
+    "output_tokens": 1753,
+    "input_tokens": 1487
+  }
+}

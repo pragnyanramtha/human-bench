@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Good news first: Priya Bhatia is joining us on Monday 16 November, and I’m genuinely delighted to welcome her to the practice.\n\nPriya is a chartered structural engineer with IStructE and has spent the past nine years at a consultancy in Coventry. Having her on board means we can give jobs the attention they need and get calculations and drawings back to you more quickly. Our target for beam calculations and drawings is now **10 working days**.\n\nI also want to be honest about why that matters. In September and October, some clients waited five to six weeks for their calculations. Several waited far too long, and I know a few were understandably unhappy.\n\nThe slow weeks were my fault. I said yes to too much work while trying to handle it alone. In October I was out on site visits during the day and doing calculations until midnight. My wife started calling the office “the other house”!\n\nOne couple in Harborne had their builder waiting and the steel already ordered. We got their calculations to them in three days, but only after they’d had to chase twice. That’s not how I want us to work.\n\nIf you’re waiting for a job now, please know it is moving. You’re welcome to message me directly if you’d like an update.\n\nThere’s one other change to let you know about. **First site visits taking place from 1 January 2027 will cost £95**, which will be deducted from our fee if you go ahead with the work. We’ve always been happy to offer the first visit free, but around a third of visits don’t turn into a job, so we need to make this change.\n\n**Any visit already booked when this post is published will still be free, whatever date it takes place.**\n\nThank you to everyone who has been patient with us. I’m looking forward to what we can do with Priya on the team. If you see her when she comes out to site, please say hello!",
+  "words": 336,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3936116397380829,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3992762863636017,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.046875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.4342610836029053,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.6,
+    "effort": "low",
+    "output_tokens": 405,
+    "input_tokens": 18282
+  }
+}

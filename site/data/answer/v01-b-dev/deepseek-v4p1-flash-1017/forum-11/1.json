@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**D. Bergeron —**\n\nYou're right that you deserve a straight answer, and you're getting one. I'm sorry it came out as a sign in the window and a rumour on this board instead of from me directly. I'll answer everything you asked, and a few other things going around, because some of what I read here was wrong and one or two lines hurt.\n\nFirst, the headline: **we are not closing. We are not moving.** Nobody is turning the corner into condos with a vape shop downstairs. The building was sold, that part is true. It was sold to me.\n\nM. Ferland is 81. He's retiring to Sherbrooke to be close to his daughter, and he offered me the building before it went to anybody else — before a listing, before an agent, before anyone had a chance to bid on it. We signed at the notary on December 15. I was keeping it quiet because I wanted to announce it at the reopening with coffee and a proper party. That was the surprise. My nephew killed it with a marker at six in the morning.\n\nBecause that's all the sign is. Thomas wrote it at 6h before school, \"grande nouvelle\" was his idea, and I said ok without thinking, with my hands still in the dough. It read like either a lottery win or a funeral. That's on me, not on him.\n\nFor the shelves on the 28th: that was Christmas Eve. We sold everything, including 400 bûches. An empty shelf on December 28 means we sold bread, not that we're locking the door.\n\nAnd Marc-Antoine's cousin is half right. The building sold. To me. He can check the date at the notary, it's the 15th of December.\n\nNow the carnets, because this is the part that stings, and I want to be very clear. We sold 214 of them in October. Sixty dollars for twelve loaves. **None of them expire.** Not in January, not in June, not in two years if that's how you eat bread. They are all good, and every carnet holder gets a free croissant from me in January, no coupon needed, just say it at the counter. And if somebody genuinely wants their money back — for any reason at all, including because they read this thread and got nervous — come in and I'll give it back. No questions, no lecture, no face. I'm not going to hold anybody's sixty dollars hostage to prove a point.\n\nAbout the works: we're closed January 4 to 18 and we reopen **Tuesday, January 19 at 7h**. The old deck oven is from 1998 and it broke three times this year. The third time I nearly sat down on the floor in the back. The new one is a four-deck, coming from our supplier in Laval, and I've been saving for it a long time.\n\nWe're also taking the space at the back, the old storage that belonged to the dépanneur. Six small tables. Finally people can sit down with a coffee instead of eating their chocolatine standing on the sidewalk in February.\n\nOn the apartments: the three upstairs stay rented. Same tenants, same rent. I promised them that in writing before anything was signed and I'll say it here too, in public. I'm not putting anybody out on the street so I can have a nicer facade.\n\nM. Ferland has come in every morning for 17 years for his baguette pas trop cuite. He cried a little at the notary. He asked me to keep the bread exactly the same and I told him I would.\n\nWe've been on that corner since March 2009. Seventeen years, same street, same oven until now.\n\nSo here's the thing, and then I'll stop. I understand the worry. I really do. Mile End has lost a lot of small shops, and every time it's the same story: a sign, a rumour, then a bank or a vape shop. So I'm not angry that people asked. If I'd seen that sign and those shelves I might have asked too. But \"scam\"? That one hurt. Seventeen years on Fairmount, and I've probably written more IOUs on the back of receipts than I can count. That's not nothing to read on a Monday morning.\n\nThank you, Priya. And thank you to the ones who said \"wait, ask her first.\" You have no idea what that counts for when you're up at four in the morning.\n\nSo come and see for yourselves. **Saturday, January 23**, doors open all day — coffee and a piece of the new bread, free, for anybody who walks in. Customers, neighbours, people from this board, including the ones who thought I was running off with their sixty dollars. Come and look at the oven. Bring your carnet.\n\nHélène Gagnon\nBoulangerie Le Pétrin Doré, 5 rue Fairmount",
+  "words": 807,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It incorrectly says December 28 was Christmas Eve."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40791425108909607,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.22372083365917206,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.4632391929626465,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.9,
+    "effort": "provider default",
+    "output_tokens": 3447,
+    "input_tokens": 1200
+  }
+}

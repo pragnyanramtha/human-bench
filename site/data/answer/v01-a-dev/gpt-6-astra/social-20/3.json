@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent for a sec because apparently “please stop selling my drawing” is a complicated request now.\n\nStickerBurrow Co is selling my switchblade moth as a “Knife Moth Vinyl Decal.” $6.50 each or 3 for $15. I drew that moth at my kitchen table for the sept 13 flash day. posted the sheet august 30. I have the original drawing. this isnt me seeing another moth with a knife and deciding I invented bugs with weapons. its MY moth. same wing pattern, same little crack in the blade. they didnt even flip it. its a straight scan of my linework.\n\nso I messaged them, told them where it came from, told them I didnt give anybody permission to print it, and asked them to take it down.\n\ntheir response starts with “Love your work.” which is a pretty fucking funny thing to say to somebody whose work youre selling without asking. then its “Moths are a very common tattoo motif” and if I have a registered copyright I can send it through their support form. “Have a great day!”\n\ndude. I KNOW MOTHS ARE COMMON. I draw them. you can draw one too. thats actually the thing Im asking you to do. draw YOUR OWN.\n\nand before anybody says its just a sticker, its not just a sticker to me. my flash from that sheet is sold ONE time to ONE person. thats the whole deal. somebody pays for that design knowing Im not gonna keep selling it to whoever else wants it. I dont get to make that promise and then quietly turn around and put the same drawing on water bottles.\n\nso let me be really clear for the person wearing this piece, and anybody else wondering: those stickers are not mine. I didnt make them, I didnt approve them, I didnt license the drawing, and Im not getting paid for them. I have not sold your tattoo out from under you. the promise I made about that design hasnt changed. somebody else copying it doesnt mean I decided that promise didnt matter.\n\nI keep saying I wont trace another artists tattoo off pinterest because somebody sat down and DREW THAT. apparently that basic amount of respect is too much to ask when theres a 3 for $15 deal involved.\n\nsmall shops and working artists dont have endless lawyer money or hours to spend chasing this shit through support forms. these sticker places know it. meanwhile Im the one having to explain that no, I didnt turn around and sell a design I promised to one person. thats the part thats really got me pissed.\n\nif you want to help, please look up StickerBurrow Co’s “Knife Moth Vinyl Decal” and report the listing through the platform for copying my artwork. dont buy it. please dont go threaten anybody or flood their DMs either. report the actual listing, thats what Im asking.\n\nand please dont tag the studio page into this. Im posting on my personal page because its my drawing and my issue to deal with.\n\nanyway. “love your work” but not enough to stop selling it when I ask. cool.",
+  "words": 526,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Never says the client got the moth tattooed in the first hour, and only hints that she messaged Jo that night thinking Jo was selling stickers of her tattoo, so two required points are missing."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.06509115546941757,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.020122693851590157,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.5390625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.7358248233795166,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 46.4,
+    "effort": "medium",
+    "output_tokens": 655,
+    "input_tokens": 15601
+  }
+}

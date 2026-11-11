@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Priya Menon <priya.menon@routewell.example>\nSubject: RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nHey Priya,\n\nThanks for owning it. Please don’t beat yourself up. We need to correct the answer, but I’m not going to throw you under the bus with Greg. I’ll handle that conversation. I’ll be straight with him about what happened, including the fact that we have a questionnaire library nobody owns and outdated language sitting there for people to use. That’s not all on you.\n\nYou’re right that this one means a lot to me. It’s $186k ARR on a three-year term, and I’ve been working it since February. I already told my wife we’d finally do the Big Bend trip off this commission, so yes, seeing Dana’s email made my stomach drop. But that’s context, not something I’m putting on your shoulders. I also haven’t forgotten you staying until 9pm in September rebuilding their demo environment when the route import broke. One copy-paste mistake doesn’t erase everything you’ve done on this account.\n\nI think this is fixable if we’re honest and move quickly. Dana seems strict but fair. Here’s what we need to do:\n\n- Please fix Q14 tonight to reflect the actual status: Type I issued in April; Type II audit window closes January 31, with the report expected by March. Send it to me first, not Dana. We’ll review it together and align with Greg before anything goes out.\n- Marcus can join a call with Dana and their legal team Thursday at 2. Please join that call too so we can walk through the correction and next steps together.\n- Marcus also confirmed we can provide a bridge letter from the auditor. We should have him explain exactly what it covers rather than assume it satisfies their Type II requirement.\n\nWe can’t promise they’ll accept the timeline, but we can give them a clear, accurate answer and a credible path forward.\n\nWe’re fixing this together. Thanks for jumping on it tonight.\n\nJordan",
+  "words": 328,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4143243134021759,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.334915429353714,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.547184944152832,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.8,
+    "effort": "low",
+    "output_tokens": 426,
+    "input_tokens": 18769
+  }
+}

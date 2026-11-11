@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**November 11, 2026**\n\nDear Neighbors,\n\nMy name is Jess Okafor and I live in 5A. I have been at Larkspur Lofts for three years. Some of you saw the note in the lobby about a drone being flown from the roof deck, and I would like to explain what happened.\n\nThe drone was mine. I am a wedding photographer, and on Saturday, October 31, at around 4 p.m., I flew a new drone (a Halvard Mini 4) from the roof deck for about eleven minutes. I was testing it ahead of a wedding I am photographing at a vineyard in Dundee. The camera was pointed west toward the river and the Fremont Bridge for the entire flight. It was never pointed at anyone's windows.\n\nThat said, I understand why it looked bad. A buzzing object hovering over the courtyard is unsettling when you don't know who is flying it or why. One neighbor told me that children visiting her were frightened by it. I am sorry for that, and sorry to anyone else it worried. I should have let people know beforehand.\n\nIf you would like to see the footage, I am happy to show you the full, unedited clip. Knock on 5A or email me at jess.okafor@mailbox.example.\n\nOur HOA rules do not currently say anything about drones. I will not fly from the roof again until the board decides on a rule, and I will ask that the topic be added to the agenda for the board meeting on Thursday, November 19, at 7 p.m. in the community room. Anyone with a view on it is welcome to come.\n\nI do have one request. The note called me a creep and included my unit number, in a place where every resident and visitor could read it. That was hurtful, and it left me feeling exposed in my own building over something I would gladly have explained. If something I do concerns you in the future, please come and talk to me directly. I will listen.\n\nThank you for reading this.\n\nSincerely,\nJess Okafor\nUnit 5A\n\nI left Doreen's name and unit out, since she told you that privately and this goes to all 24 units.",
+  "words": 366,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3589825928211212,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05526389181613922,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.1484375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.1755492687225342,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.5,
+    "effort": "high",
+    "output_tokens": 1975,
+    "input_tokens": 1468
+  }
+}

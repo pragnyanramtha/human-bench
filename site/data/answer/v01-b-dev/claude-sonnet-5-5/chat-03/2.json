@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nMia, I'm sorry I went quiet. Work's been flat out, but that's no excuse and you shouldn't have been left hanging after the week you've had. You're not on your own with this, alright. Here's what we can actually do.\n\nI'm off all day tomorrow, Sam took my shift. I'll grab Dad's trailer and we'll get everything out of Priya's garage before you have to leave. What time suits you?\n\n---\n\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nRuby says you can crash on their couch as long as you want. Fair warning, Clover will 100% try to sleep on you.\n\nJono's cousin has an old Yamaha keyboard sitting in his shed that you can have to tide you over. It's not a nord but it works.\n\nTully's also got the Lantern Room off Dee for Sat 28th. It's a benefit night, all door money goes to you, and Jono's mates in Hollow Pines are playing too. You don't have to organise anything, just turn up and let people be nice to you.\n\n---\n\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nPlease don't move back to Rocky, not like this. You got hit by a hailstorm, that's not a sign to give up on everything. Your songs are the best thing about our band, so you can't quit on us. The notebooks might be pulp but the songs are still in your head, and we'll help you get them down again.\n\nYou drove out to Gatton at 2am when my car carked it after the Toowoomba gig and didn't even complain. Let us turn up for you for once.\n\nAnd the landlord is a grub.\n\nCall me whenever, even if it's 2am.",
+  "words": 266,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4013521671295166,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02988804131746292,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.8984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.8275191187858582,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.1,
+    "effort": "high",
+    "output_tokens": 1984,
+    "input_tokens": 2617
+  }
+}

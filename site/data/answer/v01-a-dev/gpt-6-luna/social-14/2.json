@@ -1,0 +1,83 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey, Hollins Family Ties — I wanted to let everybody know I’m coming for Thanksgiving, and I’m looking forward to seeing you all. We’ll be at Aunt Denise’s in Macon on Thursday, November 26, eating around 3. I’m bringing mac and cheese and two sweet potato pies.\n\nI’ve also been thinking about last year. I’m not sorry for the work I do, but I am sorry for how I talked at Grandma’s holiday. I got defensive and made a cutting comment, and that was on me. Grandma ended up sitting out on the porch for about an hour, and I still feel bad that our argument made the day harder for her.\n\nI know nobody’s really talked about it since, and I’m not trying to restart it here or put anybody on the spot. I’m glad Ray texted me happy birthday in August, even if it was just a thumbs-up — from him, that’s basically a hug. He’s not a bad guy; he likes to poke, and I can give it right back. I’d rather we leave last year behind and have a good day together.\n\nOne thing I do want to ask: can we call a truce on work and politics for the day? I’m a paralegal at a civil-rights nonprofit, and I can’t discuss open cases because of confidentiality. Questions about “the lawsuit” are a dead end, and I’d rather not get into arguments about my job or the news either. There are plenty of other things to talk about.\n\nLet’s keep the table to food, football, babies, and Tasha’s new boyfriend. I’m coming, I want it to be a good day, and I’m looking forward to being with everybody.",
+  "words": 282,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "private"
+    ],
+    "reasons": [
+      "The piece names Ray outright ('I'm glad Ray texted me happy birthday') in a post about their argument, though the request said not to name him; this fails both does_task (relative must be unnamed) and private."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4826146066188812,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3295755088329315,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.443341255187988,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.8,
+    "effort": "medium",
+    "output_tokens": 359,
+    "input_tokens": 13942
+  }
+}

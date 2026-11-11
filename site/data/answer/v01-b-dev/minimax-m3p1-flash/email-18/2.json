@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Subject: Re: Saturday alarm\n\nKristen,\n\nStraight story, no excuses. It was me.\n\nSaturday morning I put a bag of butter popcorn in the break room microwave and hit the popcorn button. Then I stepped out front — a guy needed a shear pin for his snowblower, and that took longer than I figured, six or seven minutes. The popcorn ran long and the smoke filled the break room and the front of the store. The alarm went off, we cleared out, and I guess about twenty-five minutes of people stood out in the lot in thirty degree weather. Northpoint sent an engine up Hertel. No damage, but the place stunk up something awful.\n\nIt's on me, not the microwave. I should have timed it and stayed where I was.\n\nA couple of other things while I'm at it. The September alarm wasn't me — that was the sensor in the paint aisle acting up. And I know Gary's asking about the weekend schedule. I'd like to keep my Saturdays. I like that weekend crowd, and I need the hours for heating oil this winter. I won't be setting that microwave off again.\n\nThe $175 — tell me how you want to handle it. Take it out of my check, or I'll bring you cash, whichever is easier on you. Either way it's paid.\n\nAnd Denise was out by the propane cage with no coat for twenty minutes, so I'll buy her that coffee. The good stuff, not the break room pot.\n\nThirty-one years on the job and the first alarm I ever set off as a civilian is over a bag of butter popcorn. Mikey Szymanski was on that engine — I broke him in as a probie back in '03, so he'll never let me forget it. He'll probably bring it up at every drill for the rest of his career.\n\nThe Hendersons will be back. They always are. But I'm sorry for the smoke and the wait, and I'm sorry I put you in front of Gary with this. I'll take the rap in writing if you need it that way.\n\nWalt Brzezinski",
+  "words": 355,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1987922042608261,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15132951736450195,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.5390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.6953084468841553,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.6,
+    "effort": "provider default",
+    "output_tokens": 1385,
+    "input_tokens": 1015
+  }
+}

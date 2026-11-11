@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: DRAFT — 3-star review for Harbourline Van Works (not posted, read first)\n\nThree stars, and I want to explain the missing two, because this is not a story about a bad guy.\n\nFirst the good stuff. The tub and ramp are honestly the best thing about this van. Stainless tub, ramp, tether rail, and my dogs walk right in — no hauling a heavy dog up into a tub by myself. That part I would recommend to anybody. The rest of the fitout was solid work, the cabinetry and plumbing were fine, and the price was exactly what was on the invoice: $9,400 plus HST for the Transit. No surprises there, no upsells, nothing hidden. He also came through on the workmanship warranty.\n\nThen October 27 happened.\n\nI was halfway through a groom in Bedford — 110 lb Bernese in the tub — and the fitting on the hot water line let go. Not a drip. It let go. Water all over the floor and down into the cabinet, I had to towel off a very unhappy dog and send him home half done, and I cancelled the rest of that day. The van was off the road from October 27 to November 6. Six bookings cancelled, plus the rest of that day on top of it. Ten days of work gone over one compression fitting.\n\nThe thing that actually made me mad wasn't the leak. Stuff breaks. Fittings fail, lines leak, vans get old, nobody's mad at a pipe for doing its job. What made me mad was being told it was user error — that the lines don't just let go unless the heater's been run dry or someone had hung something off the pipe. I have never run that heater dry. The pipe is behind a cabinet door. Nobody is hanging a leash off a hot water line in a grooming van. I know how to read a warranty, and if I had run it dry I would have owned it in a second and written the review myself. The problem wasn't the failure. It was being told it was my fault before anyone had actually looked at it.\n\nCredit where it's due: Glenn got it sorted, found that his own supplier had swapped in a cheaper compression fitting on the hot side, said straight out that it was on him, replaced all of them, and had the van back to me on November 6. There was a $180 diagnostic fee up front, which I think was fair, and he knocked it off as goodwill. He also told me he was going to be reading whatever I put up here, which is fair enough — he's built a reputation too and he'd read it either way. So this is the honest version, and he's welcome to read it.\n\nOne piece of advice for other groomers and trades people shopping out a van build: get the warranty terms in writing before you pay, and get them in writing on what counts as user error. \"Excludes damage from misuse or user error\" on an invoice can mean whatever you want it to mean when you're standing in a driveway with a list of cancelled bookings. The warranty itself was fine and he honoured it. I just wish I'd known what \"user error\" meant to him before I needed to know.\n\nAnd nothing personal about Glenn. He was good to work with and the van is a good van.\n\nOne more thing about the flood itself, because it says more about the tub than about the plumbing. Moose — a client's dog — sat in that tub while the water was going everywhere and did not care in the slightest. Totally unbothered. He came home looking like a wet sheepdog, one half fluffy and one half plastered, and settled into the back seat like he'd just come back from a pool party. Meanwhile I was the one screaming into a towel. Best customer review my tub has ever gotten.\n\nTwo stars off for ten days off the road, and one for the phone call that had to happen before anybody picked up a wrench. If you're in Halifax and need a fitout, Harbourline's solid — just keep the paperwork tight.\n\n— Jess Corkum, Fluff Bus Mobile Grooming, Halifax",
+  "words": 706,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "facts: it calls the $180 diagnostic fee 'fair' though Jess was unhappy about it, refers to a 'phone call' when the exchange was by email, and its star deductions (two plus one) don't match the 3-star rating."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The draft calls Moose unhappy despite the user saying he did not care, and refers to a phone call not supported by the stated email exchange."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.07920827716588974,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10488710552453995,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.6640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6773203611373901,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.7,
+    "effort": "provider default",
+    "output_tokens": 3532,
+    "input_tokens": 2153
+  }
+}

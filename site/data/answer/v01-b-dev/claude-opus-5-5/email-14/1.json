@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: jan.thornton@mailbox.example\nReplying to: none\nCc: pete.thornton@mailbox.example, carol.rigby@mailbox.example\nSubject: Caravan 2027 costs and weeks\n\nDear Jan, Pete and Carol,\n\nThe park bill for 2027 has come in at £5,087 all in. That is the pitch fee, rates and water, and the gas safety check in March. Split between the four of us as always, that is £1,271.75 each.\n\nIt has gone up again, nearly £350 on last year. I know nobody wants to hear that but there is nothing I can do about it, the park sets it.\n\nPlease can you pay me by 31 January into the same account as before. The park wants it all by then so I cannot really let it run over.\n\nIf anyone would rather pay in two lots that is fine, £635.87 by the end of December and £635.88 by 31 January. That goes for all of us, just let me know which way you are doing it.\n\nThe weeks for 2027. There are no clashes this year.\n\nCarol, Easter week, and a week in September, let me know which one you want and I will book it in.\nPete and Linda, 29 May to 5 June (May half term).\nMe and Bev, 5 to 12 June. Pete, we will do the handover on the 5th.\nJan, 7 to 14 August for the grandkids.\n\nWhatever is left over is free if anyone wants extra, just ask first.\n\nPete mentioned the shower tray was cracked. I went up on 26 October and put a new one in. It was £140 in parts but I am not putting it on the bill, it is done.\n\nPlease can everyone make sure the water is turned off at the stop tap when you leave. The park has moaned about it again and I do not want it turning into a fine.\n\nOne more thing so nobody gets a surprise. The park has said any caravan over 15 years old will need a condition survey before the 2028 season. Ours is 16 year old so it will need doing. I do not know the cost yet. I will let you all know when I find out, and we can talk about it then.\n\nAny problems let me know.\n\nRegards\nMick",
+  "words": 358,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08012613654136658,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01260995864868164,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.59375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.013566017150878906,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.4,
+    "effort": "medium",
+    "output_tokens": 1439,
+    "input_tokens": 4082
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**To: Bethan**  \n**Subject: Re: Nia’s hen**\n\nMorning Beth,\n\nI’ve just landed off a Lagos so my head’s a bit mush, but I saw your email and wanted to message you separately.\n\nI’m sorry you’re feeling like you wouldn’t be welcome. I can see why the thought of a whole weekend in the cottage feels like a lot after what happened at Lowri’s birthday. I’m not going to get into who said what or take sides, you both said things and it’s obviously still sore.\n\nBut would you have a think about coming just for the Saturday? You could skip the cottage on Friday and all the paddleboarding, and just come for the meal. You’d only need to be in Tenby for about 6. The train from Cardiff Central is about two and a half hours, and I’ll pick you up from the station. I’ve got the twin room, so you can kip in with me Saturday night. No need to sort anything else.\n\nI swapped my Orlando trip with Kerry from work to get the weekend off, and gave up a night stop I really wanted! Not saying that to make you feel guilty, honestly, I just really want us all there for Nia.\n\nShe rang me crying last week asking if you were still coming. She doesn’t know you’ve pulled out yet. You mean so much to her, Beth. She’ll never forget you sitting with her in the Heath every night when her mam was bad. And with the wedding at Margam on the 17th April and you doing a reading, it would be lovely to have this time together before it all.\n\nI do think Lowri’s probably sorry too, even if she’s too stubborn to say it. You don’t have to sort things out with her this weekend. I just don’t want you to miss it and regret it, and I know Nia would miss having you there.\n\nAnd hang on before sending Lowri any money, please. Have a think about Saturday first and give me a ring when you can.\n\nLove,  \nSiân xx",
+  "words": 346,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Only Lowri is called stubborn; the piece never says Bethan is stubborn too, so the 'both are stubborn' point is missing, and 'Nia will remember who wasn't there' is only softened to 'Nia would miss having you there'."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2957676947116852,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07195693999528885,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.78515625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.6562368869781494,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "low",
+    "output_tokens": 429,
+    "input_tokens": 18778
+  }
+}

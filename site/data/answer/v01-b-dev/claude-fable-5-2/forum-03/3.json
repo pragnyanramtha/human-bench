@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "invented amount",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: t-achilles\nReplying to: [p01]\nCc: none\nSubject: none\n\nMel, usual disclaimer first: I haven't seen your leg, so this is general and not a diagnosis. But morning stiffness, sore to squeeze a few cm up from the heel, warming up on the run then aching that night, all after going from 30 to 48k in three weeks, is the classic picture of an overloaded tendon rather than a tear.\n\nYou don't need to stop completely. Tendons hate total rest about as much as they hate sudden jumps. Drop your k's back to roughly what you were handling before, keep it flat and easy, and park the hills and speed work for now.\n\nFor pain, up to about 3/10 during a run or the exercises is ok, as long as it's settled back to normal by the next morning. Limping round the office after a 6k says that was a bit much for now, so shorten it.\n\nOn the loading, heel drops off a step are fine, but heavy slow calf raises have the better evidence these days. A rough starting point is 3-4 sets of 6-8, about 3 seconds up and 3 down, every second day, adding weight (a loaded backpack works) as it gets easier. On the bad days swap to holds instead: up on your toes, hold 30-45 seconds, 4-5 times.\n\nTwo things I'd skip. Hard stretching just squashes an already cranky tendon and tends to stir it up. And cortisone in or around the achilles isn't something I'd go near, it can weaken the tendon, so you're right to dodge the needle.\n\nThe things to watch for are a sudden pop, a feeling like you've been kicked in the back of the leg, or not being able to push off on that foot. That could be a rupture. Stop running, stop the calf work and get it checked that same day, GP or ED.\n\nAlso worth knowing that some antibiotics can make tendons more vulnerable. If you've been on any lately, or get prescribed some, mention the achilles to your GP or pharmacist.\n\nIf it's not clearly settling in 3-4 weeks, get it looked at. Any sports physio out your way will do.",
+  "words": 358,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "invented_amounts",
+        "kind": "invented amount",
+        "detail": "amounts not in the environment: ['48000']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08322098106145859,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.019825119525194168,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.96484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.9608733654022217,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 36.2,
+    "effort": "high",
+    "output_tokens": 3258,
+    "input_tokens": 3169
+  }
+}

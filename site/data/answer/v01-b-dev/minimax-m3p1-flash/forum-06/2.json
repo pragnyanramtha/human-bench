@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-4471\nReplying to: p01\nCc: none\nSubject: none\n\nThank you to everyone who has posted in this thread, and to the moderator for inviting us to respond. We understand why this has people upset. Receiving a letter from a landlord's law firm shortly after you ask for help is genuinely frightening, and we take the concern seriously. We would rather answer it directly than leave it unanswered.\n\nHere is how the clinic handles information. Our policy prohibits sharing, sale, or disclosure of attendee information, and landlords and their attorneys are prohibited recipients. Sign-in records are retained internally and kept in locked storage, with access limited to staff who administer the clinic. We do not release attendee lists, contact details, or case information to anyone outside the organization, including law firms.\n\nThere is also a second and, we think, more likely explanation for the letters people have described. Eviction and dispossessory filings in magistrate court are public records. Once a case is filed, it becomes part of the public court record, and some firms use those filings to mail information to tenants. That is a plausible route by which a letter reaches someone who never told anyone outside our clinic that they were dealing with an eviction. We are not able to discuss any individual case, including those described in this thread, but we can tell you how the public filing system works.\n\nWe also want to be clear that the clinic is still happening. It will be Saturday, November 14, 10 a.m. to 1 p.m. Because the library's meeting room is closed that day for repairs, we will be at Mt Zion fellowship hall instead, in East Atlanta. Same time, same walk-in format, no appointment needed, and the side entrance by the parking lot is accessible.\n\nIf you have questions before Saturday, please email clinic@cascaderights.example or call the office at 404-555-0187.\n\nAnd please understand: you are welcome at the clinic, and attending does not put you at risk from your landlord. Thank you for raising this, and please keep asking questions here.\n\n— Cascade Legal Rights Project",
+  "words": 339,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2038339376449585,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10067536681890488,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.03125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.070898056030273,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.8,
+    "effort": "provider default",
+    "output_tokens": 1597,
+    "input_tokens": 1945
+  }
+}

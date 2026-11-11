@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties,\n\nI figured I'd say this here so my mom doesn't have to keep answering for me: yes, I'm coming to Thanksgiving. Thursday the 26th at Aunt Denise's in Macon, eating around 3. I'm bringing mac and cheese and two sweet potato pies. Denise, tell me if you need anything else.\n\nFor the cousins who weren't there last year, the short version is that things got heated at the table over my job, and it got ugly. I own my part. I got sharp and made a snide crack about where somebody gets their news, and that wasn't okay. Grandma Pearl ended up on the porch for an hour, and I still feel bad about it. Grandma, I'm sorry. Your holiday table was not the place for me to talk like that.\n\nI'm not sorry for the work I do. I believe in it and I'm staying with it. But I am sorry for how I talked that day.\n\nOne more thing so nobody's guessing: I can't talk about open cases, period. So if you ask me about \"the lawsuit,\" it's a dead end and I'll change the subject. I'm not being cold, I just can't.\n\nHere's my ask, for everybody, me included. Let's call a truce on work and politics for one day. Nobody has to agree about anything, we just don't have to settle it over the turkey. Nobody at that table is a bad guy. We love each other, and we also know exactly how to push each other's buttons, so let's skip that for one afternoon.\n\nApproved topics are food, football, babies, and Tasha's new boyfriend. Tasha, sorry in advance, he's getting looked at.\n\nI want it to be a good day, and I miss y'all. See you on the 26th.",
+  "words": 298,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The post omits the relative’s affectionate August birthday thumbs-up."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4343589246273041,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10817760229110718,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.8046875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.846427917480469,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.2,
+    "effort": "high",
+    "output_tokens": 2057,
+    "input_tokens": 1432
+  }
+}

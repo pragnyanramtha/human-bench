@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: [p02]\nCc: none\nSubject: Re: Redshifts shifted after upgrade to lumenfit 2.5.0?\n\nPlease reopen this thread. The issue is real, it's in the library, and it is not my calibration or my config.\n\nI did read the changelog. The only relevant line is \"Refactor LineList and spectral frame handling (#812)\". Nothing in that tells a user that a default changed.\n\nI went through the PR 812 diff today. In LineList.__init__, the default went from wave_frame='air' to wave_frame='vacuum'. Rest wavelengths are now vacuum by default. My spectra are calibrated in air from arc lamps, so every line shifts by the air/vacuum ratio, about 1.00028 at H-alpha — roughly 83 km/s, which is exactly the offset I reported. There is no deprecation warning, and CHANGES.md does not mention it.\n\n\"Works fine for me\" is not a test. If your data are already in vacuum, or you're fitting radio lines, you would see no difference at all. m_okonkwo reports a small offset on independent long-slit data in this same thread, so this isn't just my setup.\n\nWhat it cost me: two days chasing a calibration problem that didn't exist, and I re-reduced arc lamps for 40 spectra for nothing.\n\nWorkaround for anyone else who lands here: pass wave_frame='air' explicitly, e.g. LineList(..., wave_frame='air'). That restores the 2.4.x behaviour. Worth pinning in configs until this is resolved.\n\nWhat I'd ask for: reopen the thread, add a line to CHANGES.md stating that the default frame changed in 2.5.0, and either emit a warning when wave_frame isn't set explicitly or keep the old default and make vacuum opt-in. A single sentence in the changelog would have saved me two days.",
+  "words": 261,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2130231112241745,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12119283527135849,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.47265625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.4488966464996338,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 6.1,
+    "effort": "provider default",
+    "output_tokens": 1214,
+    "input_tokens": 1666
+  }
+}

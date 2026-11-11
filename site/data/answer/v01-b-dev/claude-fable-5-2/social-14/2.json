@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey family. I hear a few of y'all have been asking my mom whether I'm coming to Thanksgiving, so let me answer it here: yes, I'll be there. Thursday the 26th at Aunt Denise's in Macon, eating around 3. I've got the mac and cheese and two sweet potato pies.\n\nFor the cousins who weren't there last year, the short version is that me and somebody at the table got into it about my job, and it got ugly. Nobody's really talked about it since, so I'll go first.\n\nHe was poking, which is what he does, and I came back with something smart-mouthed that I had no business saying at Grandma's holiday table. That part was me. Grandma Pearl ended up out on the porch for about an hour, and I still feel bad about it. Grandma, I'm sorry. You deserved better than that from me.\n\nI want to be clear about what I'm apologizing for, though. I'm not sorry for the work I do. I'm proud of it, and that's not changing. I'm sorry for how I talked and where I did it.\n\nAnd for the record, the other person is not a bad guy, and we're alright. I got a thumbs up text on my birthday in August, which if you know him is basically a hug.\n\nSo here's what I'm asking: one day, a truce on work and politics. All of it, mine included. I can't talk about open cases anyway because of confidentiality, so questions about \"the lawsuit\" are a dead end no matter how you ask them.\n\nLet's keep the table to food, football, babies, and Tasha's new boyfriend. (Sorry, Tasha. Somebody has to take the heat this year, and it's your turn.)\n\nI want it to be a good day. See y'all on the 26th. Come hungry.",
+  "words": 304,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36124753952026367,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17972590029239655,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.69921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.0915021896362305,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.2,
+    "effort": "high",
+    "output_tokens": 2001,
+    "input_tokens": 1427
+  }
+}

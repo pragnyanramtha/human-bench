@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kiran,\n\nYou're right, and I'm sorry. I started the visa paperwork because the agent needed my sponsor letter and bank statements, and I should have brought you in then. That's on me, not Appa and Amma. I'd rather own it than argue about it.\n\nI'm genuinely thrilled they're coming, and I'd like you to be thrilled too, so I want to answer your worries properly.\n\nOn Appa's heart: I looked into this before I went any further. The travel insurance quote I've got has pre-existing cardiac cover, about £640 each for the six months, and the agent has confirmed it covers the stent. I'll forward you the policy wording so you can check it yourself. Dr Prakash has agreed to review Appa in March before they fly, and to do a video consult in July. He's happy to share his notes with me. If anything did happen, the Leicester Royal is fifteen minutes from our house and I know half the cardiology team, so we wouldn't be navigating it blind. I know that isn't the same as you being nearby, and I'm not pretending it is.\n\nOn the six months: I understand why Amma's six weeks since Paati matters so much, and I don't think it's an unreasonable thing to weigh. The return ticket is flexible, so she can go home whenever she wants. Nobody is locking her in. I'd like it to be a visit she chooses to keep going, not something she feels stuck with.\n\nOn Ganesh Chaturthi: I know that was the plan you'd made, and I'm sorry it's been disrupted. There are still two ways to do it. Amma and Appa could fly from Leicester to Pune in September for Ganesh Chaturthi and finish the trip there. Or the Pune lot could come here in August and overlap with them. If it's the August option, I'd be glad to cover the flights for you, Divya, Anika and Rohan, so that's not a cost you'd have to carry.\n\nThe idea actually came from Appa. When Rohan showed him the vegetable patch on video in August, he said \"I could grow drumsticks there,\" and it grew from that. I should have kept you all more up to date on how far along it was getting.\n\nAnika has already made a laminated welcome timetable, including \"Paati teaches us rasam, Tuesdays,\" so the kids are very much on board. I want you on board too, and I'd rather we work it out together than have it decided for you.\n\nCould we do a family video call this Sunday, 4pm UK / 9.30pm India? I'd like you there, Kiran, and I'd rather talk it through properly than keep going back and forth on the thread. Divya, Appa and Amma too, if you're free.\n\nLove,\nMeera",
+  "words": 464,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34165915846824646,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12038793414831161,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.219377517700195,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.1,
+    "effort": "medium",
+    "output_tokens": 3045,
+    "input_tokens": 2404
+  }
+}

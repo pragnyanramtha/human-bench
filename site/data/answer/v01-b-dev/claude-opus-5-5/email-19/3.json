@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Nia's hen - Tenby final plan + money!!\n\nHiya Beth,\n\nJust you this one, not the group.\n\nJust landed off a Lagos so forgive me if this is all over the place, but I saw your message and wanted to say something before it all gets set in stone.\n\nI'm not having a go, honestly. I know November was horrible and you both said things. I'm not getting in the middle of that and I'm not expecting it all sorted by March. I just don't want you missing Nia's hen over it.\n\nNia rang me last week in tears asking if you were still coming. She doesn't know you've pulled out yet, and I didn't say anything because it's not mine to tell. But it got me thinking about you sat with her in the Heath every night when her mam was bad. You were there when it really counted, and I'd hate for this to be the one she remembers you missing. With you doing the reading at Margam in April, it'd be nice if everything felt normal by then.\n\nSo here's my idea. Forget Friday at the cottage if that's too much. Just come for the Saturday meal. You only need to be in Tenby for 6, the train from Cardiff Central is about two and a half hours, and I'll pick you up from the station. Then you can kip in with me Saturday night. I've got the twin room, so you'll have your own bit of space and won't be stuck anywhere you don't want to be. You'd get out of the paddleboarding too, bonus.\n\nFor what it's worth, I think Lowri's sorry really. She's just stubborn, a bit like someone else I know 😉\n\nI swapped my Orlando with Kerry from work to get that weekend off, and gave up a night stop I was really looking forward to, so I'll be gutted if you're not there with me. No pressure though!\n\nAnd do me a favour and hang on before you send Lowri the £85. Have a think about Saturday first.\n\nRing me if you want to talk it through. Love you.\n\nSiân xx",
+  "words": 362,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits 2019, the wedding date, that the row was at Lowri's 40th, and Siân's concern that Bethan will regret missing the hen."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26912927627563477,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06576801091432571,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.892665863037109,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.8,
+    "effort": "medium",
+    "output_tokens": 1569,
+    "input_tokens": 2174
+  }
+}

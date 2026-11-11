@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Here’s the full picture from the logger and the call with Munster Vet Supplies.\n\n**Logger readings:** The fridge went above 8°C at 22:50 on Saturday and was back under 8°C by 05:00 Sunday — about 6 hours 10 minutes out of range. The peak was 11.6°C at 02:15 Sunday. Friday night’s minimum was 4.1°C, which was normal.\n\nI found the alarm beeping at 07:55 this morning. It keeps beeping until someone resets it, but it’s the old ThermaTrak logger and only sounds locally — there are no text alerts. The door wasn’t fully clicked shut. A box of Hartmann’s bags from Saturday’s delivery was stacked against it. The seal is also cracked at the bottom left; I had to lean on the door with my hip this morning to get it to click. My best guess is that the box and the worn seal both contributed.\n\n**Stock and what’s usable:** The fridge had 14 DHPPi, 9 lepto L4, 6 intranasal kennel cough and 3 rabies vaccines, plus 4 vials of insulin and 2 cat flu/FeLV combos. That’s roughly €1,150 at cost. I rang Munster Vet Supplies’ tech line at 08:40 and spoke to Niamh, the pharmacist. She advised quarantining everything, not using it, and emailing them the logger CSV and batch numbers so they can check with the manufacturers and get back to us by Wednesday.\n\nNiamh checked the manufacturer’s storage sheet against the logger readings for the insulin product we stock and cleared those four vials for use. The vaccines are **not cleared yet**. I’ve sealed them in a bag labelled **DO NOT USE** and put it in the lab fridge. That fridge is at 5.2°C, and I’ve started a new temperature sheet for it. I wouldn’t bin anything until the supplier comes back, but it’s their call on whether the vaccines are still usable. For now, please keep the boosters on hold.\n\nAoife has already moved Bonnie’s appointment to Wednesday. She can rebook the other boosters for Thursday or Friday if the supplier clears the vaccines; otherwise, we could ask Carrigaline to lend us stock.\n\n**What I think happened and what to change:** Saturday’s clinic finished late with the RTA collie, and the delivery was put away in a rush at closing. The alarm can’t alert anyone once the clinic is empty, and the door wasn’t fully shut. The box against it may have stopped it closing properly, while the cracked seal makes it less forgiving.\n\nI suggest we add a fridge-door lock-up check to the closing checklist and replace the door seal. Could you also OK a new logger with SMS alerts? There’s one in the supplier catalogue for about €180. That would mean we’re notified if the temperature goes out of range, rather than relying on someone hearing a local alarm.",
+  "words": 465,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3719840943813324,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5955273509025574,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.46875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.997600555419922,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "medium",
+    "output_tokens": 622,
+    "input_tokens": 14491
+  }
+}

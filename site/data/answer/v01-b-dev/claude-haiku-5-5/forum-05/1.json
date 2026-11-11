@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: announcements/t-2270\nSubject: none\n\nReopening this, because I found the cause and it is in the library, not my config. Closing it as solved was premature.\n\nPR #812 (\"refactor spectral frame handling\", merged Oct 22) changed the default in `LineList.__init__` from `wave_frame='air'` to `wave_frame='vacuum'`. Rest wavelengths are now treated as vacuum unless you say otherwise. My data is calibrated in air, so every line is off by the air/vacuum ratio, about 1.00028 at 6563 Å. That is roughly 83 km/s, which matches the shift I see in every object. Downgrading to 2.4.3 restores the old values, which fits this explanation.\n\nm_okonkwo also reports a small offset on long-slit data after updating, so this is not only me.\n\nOn \"works for me\": a fit on vacuum-calibrated or radio data would show no difference, so identical results on your end don't rule this out.\n\nWorkaround for anyone with air-calibrated optical data: `LineList(..., wave_frame='air')`.\n\nI'd like two things:\n- An explicit line in CHANGES.md saying the default `wave_frame` changed to `'vacuum'` in 2.5.0. \"Refactor\" does not tell anyone that results can shift.\n- A warning (or an error) when `wave_frame` is not set explicitly, at least for one release cycle.\n\nI lost about two days re-checking my arc-lamp wavelength calibration across 40 spectra before finding this. I'd like the next person not to have to do that.",
+  "words": 220,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not explicitly request reopening or say that the dismissive calibration advice caused the wasted work."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14430062472820282,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16905826330184937,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.5217533111572266,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.8,
+    "effort": "medium",
+    "output_tokens": 2273,
+    "input_tokens": 3061
+  }
+}

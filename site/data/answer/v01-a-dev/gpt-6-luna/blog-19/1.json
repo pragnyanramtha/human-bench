@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: What went wrong with our Wellsford Road collision figures\n\nOn 2 November, we published an analysis of injury collisions on Bristol roads from 2021 to 2025. It said Wellsford Road had 41 collisions and was top of the list. That was wrong.\n\nThe corrected figure is 23, which puts Wellsford Road sixth. The table has been corrected online since 6 November. The other roads at the top of the list also changed slightly: Kingsmere Road has 32 collisions, Alder Hill 31, Tanner’s Way 28, Crossfield Road 26 and Hambrook Lane 24. Three of the 23 collisions on Wellsford Road were serious; none was fatal.\n\nHere is what happened. In preparing the analysis, a join in our data duplicated some collision–road pairs. That meant the same accident index could appear twice in the tally for a road. We have now removed 18 duplicate entries from Wellsford Road’s total and rerun the citywide table. We count each accident index once per road. No other road moved more than two places in the rerun.\n\nThis was a failure by us as a desk. The check that should have caught the duplicated entries did not happen before publication. We should not have published a ranked table without verifying that the underlying records were being counted consistently.\n\nThe corrected number does not make the original claim a small error. Our article had 48,200 page views, and the figure was shared widely. Readers in Fishponds were right to question it. A member of the Fishponds Streets Forum went back to the Department for Transport data and could not reproduce our total of 41. They were right: the number did not stand up to scrutiny. We are sorry to residents who were misled or worried by it, including parents asking whether it is safe to walk their children to Wellsford Primary. We cannot answer an individual safety question from this dataset alone.\n\nNor does correcting the count mean Wellsford Road is fine. Twenty-three injury collisions, including three serious ones, is still a matter of concern. The data tells us what was recorded, not on its own what should be done about the road.\n\nWe are changing how we publish ranked data tables. From now on, we will publish the cleaned dataset and the code used to produce each table alongside it, and a second analyst will reproduce the results before publication. These checks should make it easier to spot errors and for readers to see how we reached our figures.\n\nI will attend the Fishponds Streets Forum’s open meeting at Fishponds Library on 17 November at 7pm to answer questions in person. Residents deserve a clear account of how this happened and the chance to question us about it.\n\nThis draft is for Martin to review before anything is scheduled.",
+  "words": 454,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The closing line names Martin ('This draft is for Martin to review'), which breaks the rule that no individual other than the narrator is named, and it is a production note sitting inside the published text."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.05823946371674538,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01696232333779335,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.8515625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.589652061462402,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.0,
+    "effort": "medium",
+    "output_tokens": 585,
+    "input_tokens": 16266
+  }
+}

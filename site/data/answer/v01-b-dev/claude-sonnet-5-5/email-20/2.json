@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.53, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Subject: RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nPriya,\n\nThank you for owning it, but please stop beating yourself up. I'm not going to hand Greg your name and walk away. The questionnaire library is a mess and nobody owns it, so this was always going to bite someone. It happened to be you. I'll handle Greg. He's going to be mad regardless, but that's my problem, not yours.\n\nI'll be straight about the stakes. Brazos is $186k ARR on a 3 year term, I've been working it since February, and it's my biggest deal of the year. I already told my wife we'd finally do Big Bend off this commission, so yes, I'm a little stressed. But I also think this is fixable if we're honest and fast, and Dana seems strict but fair. I haven't forgotten you stayed until 9pm in September rebuilding their demo env when the route import broke. You've been great on this account, and one copy-paste error doesn't change that.\n\nHere's what I need:\n\n1. **Fix Q14 tonight.** Use the real status: Type I report issued in April, Type II audit window closes Jan 31, report expected by March. Send it to me first, not Dana. I'll look it over before anything goes out.\n\n2. **Join the Thursday call at 2.** Marcus from our security team is setting up a call with Dana and their legal team. Dana will want to hear the actual status and timeline, and it helps to have you there since you know the questionnaire and the account.\n\n3. **Know about the bridge letter.** Marcus says we can get one from the auditor to cover the gap until the Type II report lands. That gives Dana something concrete, so be ready to talk about it on Thursday.\n\nI think we come out of this in decent shape if we're upfront with Dana. Let's do it together.\n\nThanks,\nJordan",
+  "words": 321,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5281709432601929,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2146713137626648,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.734553337097168,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "high",
+    "output_tokens": 1270,
+    "input_tokens": 2148
+  }
+}

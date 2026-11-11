@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #jobs\nReplying to: none\nCc: none\nSubject: Desert Palms codes and tray\n\nMarco, I’m pissed. You told me Saturday Desert Palms was done, 14 units, all good, keys dropped with Yvette. This morning Lupe tells me Yvette needs three keys for 9B because the tenant lost hers. There is not one Desert Palms code in the sheet. Nothing for us to cut from.\n\nThat job was not all good, and it was not finished. Handing over keys is only part of a rekey. Recording the codes is part of the work, not something you get around to when somebody calls needing another key.\n\nWe already went through this on Kessler in September. I told you then to get the codes in. On August 4 I put it out to everybody: every rekey, every master job, address, unit and bitting code in the sheet SAME DAY, before you leave the van. That was not a suggestion, and it has not changed.\n\nYou are going back to Desert Palms today. Coordinate with Yvette and decode 9B first so we can get those three keys cut today. Get all 14 decoded and entered if access allows. If you cannot get into every unit, tell me exactly which ones are still missing and what the arrangement is to finish them. Don’t leave me finding out from another customer call.\n\nAnd pick up my black pinning tray, pins and all, from the leasing office counter. Bring it back to the shop.\n\nYou’re good with your hands, Marco. I want you here, and I’m not firing you. But I should not have to tell you a third time that the paperwork is part of the job. This cannot keep happening.\n\nReply here with your plan and when you’ll be there. Confirm when 9B is in the sheet and the tray is back.",
+  "words": 294,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2539352774620056,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.015656255185604095,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.90625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2160372734069824,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.2,
+    "effort": "low",
+    "output_tokens": 392,
+    "input_tokens": 19892
+  }
+}

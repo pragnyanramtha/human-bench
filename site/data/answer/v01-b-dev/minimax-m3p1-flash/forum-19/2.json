@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, congratulations on the wedding first — sorry man, this is a hell of a Friday night.\n\nStraight answer: leave the key OUT of that bakkie. Put it in your pocket, or on a windowsill 50 m away. Do not turn it one more time tonight.\n\nEvery time it cranks, the high pressure pump is running on petrol with zero lube in it. You already stalled and cranked it 5 or 6 times, so damage is possible. Don't top it up with diesel either — the petrol's still in the tank, mixing does nothing.\n\nKobus, with respect, that's old Land Rover advice. Modern common rail will not drink petrol and drive off into the sunset.\n\nTonight:\n1. Key stays out. That's it.\n2. Check your insurance policy for roadside/TOW before you pay any tow guy cash.\n3. Get it TOWED, don't drive it. Straight to a diesel shop, pump and injectors first.\n\nIf the pump and injectors are fine, then it's: drain tank, flush lines, new fuel filter, bleed the system. Usually R2 500 to R4 500 all in. Can't promise a total tonight, so don't sit and wait for a number.\n\nMy shop's in Umbilo, open Sat 7 till 12. Thabo, my guy, can start draining it first thing — ring me tonight and I'll have him there early.\n\nAnd ha, one customer did this to me TWICE in the same year, same garage. We ended up making him a sticker for the fuel flap. Also my first year as apprentice in 1995 I put diesel in the boss's Golf — he still tells that story at every braai. So you're in good company, you'll be telling this one for the next 20 years.\n\nOne more thing: borrow a bakkie for the sound system and the cake anyway. Don't plan the wedding around a drained tank, nobody wants a flatbed pulling up at the venue.\n\nLeave that key alone. Phone me.",
+  "words": 322,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22423438727855682,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0676853284239769,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.7990498542785645,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.7,
+    "effort": "provider default",
+    "output_tokens": 1245,
+    "input_tokens": 1142
+  }
+}

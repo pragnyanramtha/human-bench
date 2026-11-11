@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: none\n\n3 stars.\n\nOkay, this one's a mix, so bear with me.\n\nGlenn did good work on the build itself. The stainless tub and ramp are honestly the best thing about the van. My Bernese is 110 lb and walks right up the ramp and into the tub like it's nothing. The tether rail is handy, the cabinetry is solid, and the drain makes the floor easy to hose out.\n\nWhere it went sideways: on Oct 27 the fitting on the hot water line let go in the middle of a groom. Water all over the floor and down into the cabinet. Moose sat in the tub through the whole thing like a king. I was the one screaming. I had to send him home half done and cancel the rest of the day.\n\nWhen I emailed Glenn, his first reply was that it was user error (apparently heaters get run dry or people hang stuff off the pipe) and that it wasn't covered. He also wanted a $180 diagnostic fee just to look at it. I have never run the heater dry, and nothing hangs off that pipe. It's behind a cabinet door. The earliest he could fit me in was Nov 3, so the van was off the road from Oct 27 to Nov 6, and I lost six bookings in that stretch.\n\nStuff breaks. That part didn't make me mad. What made me mad was being told it was my fault before anyone had looked at it.\n\nTo be fair to Glenn, when the van came back he said the compression fitting on the outlet was a cheaper one his supplier had swapped in, that the mistake was on them, and that he'd replaced all of them on the hot side. He also took the $180 off as goodwill. I give him credit for owning it in the end. It just took a while to get there.\n\nMy takeaway for anyone else thinking about Harbourline, or any trade: get the warranty terms in writing, including what counts as \"user error\" and who decides. Ask what parts they're using too. My invoice only said the workmanship warranty excludes user error, and I didn't have anything more specific than that when it mattered.\n\nOverall: great tub, great ramp, slow to take responsibility, and the warranty situation was a headache. I'd consider them again for fitouts, but I'd get everything in writing first.\n\nJess Corkum, Fluff Bus Mobile Grooming",
+  "words": 408,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1828213930130005,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07734985649585724,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.2578125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.23569393157959,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.2,
+    "effort": "medium",
+    "output_tokens": 2562,
+    "input_tokens": 3692
+  }
+}

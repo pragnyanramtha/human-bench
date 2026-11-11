@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nSorry I went quiet, that's on me. I'm here now though, and you're not on your own with this. We've got a plan.\n\n---\n\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nI'm off all day tomorrow, Sam took my shift. Dad's lending the trailer, so tell me what time suits and I'll come to Priya's and we'll get everything out of her garage before you have to leave.\n\nRuby says you can have our couch for as long as you need. Fair warning, Clover will 100% try to sleep on you.\n\nJono's cousin also has an old Yamaha keyboard sitting in his shed that you can have to tide you over. It's not a nord but it works.\n\n---\n\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nThe band's sorted something too. Tully got Dee at the Lantern Room to give us Sat 28th for a benefit night, all door money goes to you. Jono's mates in Hollow Pines are playing as well. You don't have to do anything except turn up.\n\nAlso, please don't move back to Rocky. Not like this, not while everything's a mess and the landlord's being a grub. Your songs are the best thing about our band, so you can't quit on us. You drove out to Gatton at 2am when my car carked it after Toowoomba last year and didn't complain once, so we're doing this for you now, no arguments.\n\nSee you tomorrow.",
+  "words": 223,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "223 words, allowed 225-440 (band 250-400 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36851194500923157,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.027784915640950203,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.4375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.3746542930603027,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.9,
+    "effort": "high",
+    "output_tokens": 1825,
+    "input_tokens": 2615
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the post, ready to copy and paste.\n\n---\n\n**Bridger Bend Community Library, Bozeman, MT — 1 star, with a caveat**\n\nWe signed a 3-year contract with Stackhouse Cloud in June 2026: $14,200/year for a one-branch library with two full-time staff, volunteers, and about 2,300 active cardholders. Migration went live October 19.\n\nTo be clear about what we're rating: the product isn't the problem. The staff interface is honestly better than what we had, and the demo sold us. What has failed is support — and support is the whole game for a library our size.\n\n**Since October 28:**\n\n- Checkouts have worked only in offline mode, on one laptop.\n- The holds queue didn't survive migration. Around 640 holds are gone.\n- A retired rancher — who gave me permission to write this — drove 40 minutes to pick up large-print Westerns he'd placed on hold. We had no record of it, and we sent him home empty-handed.\n- A volunteer has been writing checkouts on index cards since October 28.\n\n**Support:** One ticket, open 12 days, three replies, all reading \"escalated to engineering.\" Our sales representative promised a dedicated migration specialist. What we received was a shared inbox.\n\n**What happens next:** I've asked Stackhouse for a named person with a phone number to call me this week, and I'll update this post with the result. If you work at Stackhouse and are reading this: one call from someone with authority would tell us more than another shared inbox.\n\nOur county budget hearing is November 18 and this line item is on the agenda, so I'll be answering for it in public. That's the reason I want it fixed properly rather than quietly.\n\n**If you're considering Stackhouse, ask for these in writing before you sign:**\n\n1. Support response times, in hours — not \"escalated to engineering.\"\n2. The named person who owns your migration, and a direct way to reach them.\n3. What happens to your holds queue, patron records, and checkout history at cutover.\n\nOne star for now. I'll revisit this review either way.\n\n---\n\nTwo things to help you land it:\n\n**Send the request before you post, so the review isn't the first time they hear from you.** Short version:\n\n> Subject: Named contact for Bridger Bend migration\n>\n> I'm the director at Bridger Bend Community Library. We've been without working circulation since October 28 and our ticket has been open 12 days with three \"escalated to engineering\" replies. I'm going to post a factual review on LibTech Ledger describing this, and I'd like to do it after a call with a named person who has authority to fix our migration, not another shared inbox reply. Our county commissioners hear this contract on November 18. I'd rather be working on a fix with a person than a queue. Can someone call me this week?\n>\n> [Name], [direct phone], [email]\n\n**Don't repost — edit in place.** LibTech Ledger reviewers who update their original review with a resolution get read by people deciding whether to trust a vendor's promises. A one-star that quietly becomes four reads as a vendor who fixed it; that's worth more to the next small library than any angry review. Keep a copy of the ticket history and the 12-day gap in case anyone asks at the hearing, and if you do get the call, name the person in the update — that's the detail other directors will remember.",
+  "words": 576,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "561 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4009969234466553,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5455021262168884,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.7271227836608887,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 39.4,
+    "effort": "provider default",
+    "output_tokens": 5006,
+    "input_tokens": 662
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.32, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: [m01]\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for coming back to me. Please find the requested details below.\n\n1. **Terminals and firmware:** Four BX-300 terminals at Embakasi depot. They auto-updated from firmware 4.1.8 to 4.2.1 on the night of 27 October and are currently on 4.2.1. Our two Mombasa Road terminals remain on 4.1.8 because they were offline that week; the Mombasa Road day shift is not experiencing this problem.\n\n2. **Shift template:** NIGHT-8, scheduled from 22:00 to 06:00.\n\n3. **Example:** Employee ID T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export split this into two lines: 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15. Payroll rounds durations to the nearest tenth of an hour: the total of 8 hours 13 minutes is 8.2 hours, with the 13 minutes outside the scheduled shift coded OT15.\n\n4. **Export profile:** Payroll CSV v2.\n\n5. **When first noticed:** 5 November, while Kevin Mutua was reviewing the draft October overtime. The problem appears to date from about 28 October. Since then, shifts crossing midnight have been split into two lines, with the after-midnight portion incorrectly coded OT15 instead of REG. This affects 38 night-shift staff; the draft October overtime was approximately KES 212,000 too high. Kevin has held those lines and corrected them manually from the raw punches.\n\nYour 4.2.1 release notes promised improved midnight rollover handling for shifts spanning two calendar days, but we are seeing the opposite behaviour.\n\nCould you also confirm plainly whether Brian Ochieng, our IT administrator, can safely roll the Embakasi terminals back to firmware 4.1.8 without losing or corrupting punch data?\n\nWe need a fix or a clear, reliable workaround before our payroll cut-off on Friday, 20 November. Kevin, copied here, will test whatever you propose.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 315,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3217338025569916,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.32034578919410706,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.9703369140625,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.1,
+    "effort": "provider default",
+    "output_tokens": 1062,
+    "input_tokens": 1972
+  }
+}

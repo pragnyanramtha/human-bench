@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - still essential, but 3.2 is broken; roll back to 3.1.4\n\nI've used Murmur since 2022, when it was v1.3 and cost me 19 USD. Lanternfolk would not exist without it. The first prototype of Lanternfolk was literally the ferryman scene, made in one weekend with Murmur. I quit my job at the mobile studio that weekend. So this is not a drive-by review: I owe this tool a lot, and I'm writing because the listing does not make the 3.2 situation clear enough for new buyers.\n\nThe good part is still good. Node-based branching dialogue, conditions and variables, barks, voice-line hooks, CSV localisation export. Lanternfolk has 412 dialogue nodes and nine languages running through Murmur's CSV export. It does all of that without getting in the way. For 19 USD, with an unlimited commercial licence, it has been one of the best tool purchases I've made.\n\nThe bad part: 3.2.0 is broken for existing saves. It changed the save key from node path to UID, and loading a 3.1.x save resets every Murmur variable to default. In our game the ferryman forgets that you already paid him. If you install 3.2 over an existing project, assume your dialogue state can break.\n\nThe fix is to roll back to 3.1.4. Replace the Murmur folder in your project's addons folder with the 3.1.4 release. Old saves load fine again. Keep a copy of 3.1.4 somewhere safe and do not update to 3.2. I've done this and it saved our build. New buyers should know this before spending money: there is no support now, 3.2 is the last version, and the current release has a serious save bug.\n\nThe source is MIT now on the public repo, so someone can fork it and fix it. Maybe even me, after Lanternfolk launches, but not before. That is the realistic future of the tool.\n\nI'm giving it 4 stars, not 5. The missing star is for the broken 3.2 release and the fact that there is no support anymore. It is not for the four years before that. Grimbyte's one-star review is just cruel. Ines gave us four years of updates for 19 dollars. You can be angry about 3.2 and still not pretend that is \"took the money and ran.\" I'm not recommending anyone buy blind in late 2026, but if you can pin 3.1.4 or fork it, the tool is still excellent.\n\nInes, if you read this: thank you. You made something that mattered to a lot of small games, mine included. One bad release does not erase four years of work.",
+  "words": 419,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.15638041496276855,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06205148622393608,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.248046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.7614867687225342,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.5,
+    "effort": "provider default",
+    "output_tokens": 3171,
+    "input_tokens": 1934
+  }
+}

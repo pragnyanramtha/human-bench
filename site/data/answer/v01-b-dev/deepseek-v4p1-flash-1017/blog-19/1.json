@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: What went wrong with our Wellsford Road figures, and what we are changing\n\nOn 2 November the Data Desk published an analysis of the Bristol roads with the most collisions. It said Wellsford Road had recorded 41 injury collisions between 2021 and 2025 and placed it top of the table. Both of those statements were wrong. The correct figure is 23, and it puts Wellsford Road sixth.\n\n**What went wrong**\n\nThe analysis matched each collision in the Department for Transport data to the road or roads it happened on. That match was imperfect, and it counted some collisions more than once against the same road. The duplication was not spread evenly: Wellsford Road was the worst affected, largely because of how many of its records sit at the junctions with Pell Street and Kingsmere Road. Eighteen duplicate entries were inflating its total.\n\nWe have changed the method so that each collision is counted once per road, and rerun the whole citywide table rather than just the one line. The corrected figures are: Wellsford Road 23 (sixth, down from first), Hambrook Lane 24 (fifth), Kingsmere Road 32, Alder Hill 31, Tanner's Way 28 and Crossfield Road 26. No other road moves by more than two places. Of Wellsford Road's 23 collisions, three involved serious injuries and none was fatal.\n\nThis was a desk error, not the mistake of a single person, and I am not going to pin it on one. The check that would have caught it did not exist, and that is our failure.\n\n**Why a line at the bottom was not enough**\n\nThe corrected table has been on the original article since 6 November, with a correction note. That was the right minimum and it was not sufficient. The original piece was read around 48,000 times, and the wrong number travelled much further than the correction has. Readers were told Wellsford Road was the most dangerous road in the city, and some of them had no reason to doubt it.\n\nA resident went back to the published department data herself and could not get anywhere near 41. She was right, and she should not have had to be. We should have found this before publication, and when readers told us the number did not match what they knew of the road, we should have treated that as a reason to check rather than to explain.\n\nI am sorry. Residents of Wellsford Road have spent a week answering questions about a figure we invented through a technical error, and they deserved better than that from us.\n\n**What this does and does not tell you**\n\nSome parents have asked whether it is safe to walk their children to Wellsford Primary. A count of injury collisions cannot answer that question, and I am not going to pretend it can. What I can say is that 23 collisions in five years, three of them serious, is not nothing, and nothing in this correction should be read as a claim that the road is fine. It is a correction to a number, not a verdict on the street.\n\n**What we are changing**\n\nFrom now on, any ranked table the Data Desk publishes will be reproduced independently by a second analyst before it goes out. We will also publish the cleaned dataset and the code behind our ranked tables alongside the articles that use them, so that anyone who wants to check our working can.\n\nThe Fishponds Streets Forum has invited us to its open meeting on Tuesday 17 November at Fishponds Library, 7pm. I will be there to answer questions about this in person, and I would rather hear them directly than by email.\n\nNell Garside, Data Desk",
+  "words": 602,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14324268698692322,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12069740146398544,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.522716045379639,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.2,
+    "effort": "provider default",
+    "output_tokens": 2038,
+    "input_tokens": 2832
+  }
+}

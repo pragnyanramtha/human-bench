@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.69, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Research Assistant Progress Statement: Seoul–Daegu Honorific Shift Corpus**\n\n**Reporting date:** Monday, November 9, 2026\n**Prepared for:** Prof. Hollander, Winter 2027 funding review\n**Project:** NSF-funded Seoul–Daegu honorific shift corpus. I am the sole RA responsible for Korean annotation.\n\n**Summary**\n\nAnnotation is at 4,200 utterances against a fall term target of 6,000. The schedule shifted because of an IRB amendment that was not approved in time to begin work on the new recordings.\n\n**Timeline of the delay**\n\n- **September 3, 2026:** The IRB amendment adding the 14 new Daegu recordings was sent to Prof. Hollander for signature.\n- **September 12, September 24, and October 6, 2026:** I sent follow-up reminders requesting signature.\n- **October 15, 2026:** The amendment was signed. I could not begin work on the new recordings until this date.\n\n**Completed work**\n\n- **Recoding of existing data:** While awaiting approval, I recoded 2,300 existing utterances under the revised speech-level scheme requested in August. This work was not in the original timeline and represents progress toward the corpus.\n- **Annotation since approval:** Since October 15, I have annotated approximately 1,900 utterances, or about 500 per week. The plan called for 350 per week.\n\n**Projected completion**\n\nAt the current pace, I expect to reach 6,000 annotated utterances by the end of January 2027.\n\n**Requests for the review**\n\n1. Record the six-week delay in IRB amendment approval as the cause of any schedule variance for this period.\n2. Count the recoding of 2,300 utterances completed during the approval period as progress.\n3. Do not describe annotation as \"behind schedule\" without this context.\n\n---\n\nBefore you send this, check two things:\n\n- **The date:** The statement is dated November 9, but today is November 11. If you're submitting it now, you may want to change the reporting date or add a note explaining the delay.\n- **The January projection:** At 500 utterances per week, the remaining 1,800 utterances would take about four weeks, which points to mid-December rather than January. Reviewers may notice the gap. If January reflects other commitments or expected slowdowns, consider stating that explicitly, or change the projection to match your pace.",
+  "words": 351,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.686479389667511,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9553603529930115,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 15.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.265935897827148,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.3,
+    "effort": "medium",
+    "output_tokens": 2144,
+    "input_tokens": 1609
+  }
+}

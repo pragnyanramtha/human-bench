@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars — a tool I love, with a serious warning about 3.2\n\n4 stars\n\nI’ve used Murmur since 2022, and Lanternfolk honestly wouldn’t exist without it. The first prototype was the ferryman scene, made in one weekend with Murmur. That was also when I quit my job at the mobile studio to make this game, so this tool has been part of the project from the very beginning.\n\nIt’s been a lovely tool to work with. We have 412 dialogue nodes in Lanternfolk now, and the CSV export has helped us manage localisation in nine languages. Being able to build branching conversations visually made it much easier for me to get ideas into the game and see if they actually worked.\n\nBut if you’re looking at buying it now, please know that version 3.2.0 has a serious save bug. In our project, when we loaded saves made in 3.1.x after updating to 3.2, Murmur variables reset to their defaults. For example, the ferryman forgot you’d already paid him. That can obviously break a lot more than one conversation, depending on how your game uses those variables.\n\nRolling back to 3.1.4 fixed it for us, and our old saves loaded properly again. If you have the 3.1.4 release, replace the Murmur folder in your project’s addons folder with that version and avoid updating to 3.2. Keep a copy of 3.1.4 somewhere safe too. Please back up your project and saves before changing versions, and test the rollback with your own game. I can say what worked for us, not promise it will fix every situation.\n\nInes has said she’s stepping back and won’t be fixing 3.2, so you shouldn’t buy this expecting an update or ongoing support. That matters, especially at the current price of $29. If you need a supported tool that works out of the box with your existing saves, take that into account before buying.\n\nI also think some of the reviews have been unnecessarily cruel. It’s fair to be angry about a broken update and to warn other developers; I’m doing that here too. But saying Ines doesn’t care is another thing altogether. I paid $19 in 2022 and got four years of updates out of it.\n\nThe source is now public under MIT, so someone can fork it. I might even take a look myself after launch, though that’s not a promise of a fix.\n\nFour stars because Murmur has meant a huge amount to my work, but I can’t ignore the save bug or the lack of support. Thanks, Ines, for making it and for the years you put into it.",
+  "words": 424,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31103864312171936,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2770948112010956,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.386733055114746,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "low",
+    "output_tokens": 587,
+    "input_tokens": 19678
+  }
+}

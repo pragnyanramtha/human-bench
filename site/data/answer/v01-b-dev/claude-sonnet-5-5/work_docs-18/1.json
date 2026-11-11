@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Fix-It Saturday at St. Ansgar**\n**Bring the broken toaster. Stay for coffee.**\n\nToo much gets thrown away that only needed a screw or a new cord. So on Saturday, December 5, we're opening our Fellowship Hall for the first Fix-It Saturday, and the whole neighborhood is welcome.\n\nThe idea was born in our church kitchen, when Marv Okafor fixed my 1970s Hamilton Beach mixer in about twenty minutes. I haven't stopped grinning about it since.\n\n**When:** Saturday, December 5, 2026, 9 a.m. to 1 p.m.\n**Where:** Fellowship Hall, St. Ansgar Lutheran Church, Minneapolis, MN. Please come in by the alley door. There's a ramp.\n**Cost:** Free. No membership, no sign-up. Donations to the food shelf are welcome but never expected.\n\n**What our volunteer fixers can handle so far**\n- Small appliances\n- Lamps\n- Bikes\n- Clothing mending\n- Knife sharpening\n- Laptops and phones (we have one retired tech guy, and he's ready)\n\nDoris Lindqvist, who is 84 and has been darning socks for this parish since the Carter years, asked to run the mending table herself. If you've got a favorite sweater with a hole in it, you'll be in very good hands.\n\nTo keep the line moving, we're asking for one item per person to start. Coffee and kringle are on us, so plan to stay a while.\n\nIf it goes well, and I think it will, we'll do it again the first Saturday of every month through spring.\n\nThis is good neighboring, plain and simple. No strings, and nobody will preach at you.\n\n**We could use more fixers.**\nIf you're handy, we'd love to have you, especially if you can do vacuums or zippers. Those two are at the top of our wish list.\n\n**Questions or want to volunteer?**\nCall the church office at 612-555-0148 or email office@stansgarlutheran.example.\n\nSee you on the 5th.",
+  "words": 307,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The piece makes subsequent events conditional on the first going well, rather than stating they will run monthly through spring."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3709770739078522,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4004518985748291,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.3700361251831055,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.0,
+    "effort": "high",
+    "output_tokens": 1759,
+    "input_tokens": 1469
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: Christmas breakfast Dec 19\n\nHi Rhonda its Gary from the bus garage again. Hope your doing well.\n\nWe want to do the drivers christmas breakfast at your place like always. Same as last year, back room, 7am, Saturday Dec 19. If the 19th is no good for the room then Saturday the 12th would work, whichever is easier on you.\n\nHead count right now is 24 and that is counting Earl and Carol. Dwayne has the sign up sheet off the board in the drivers room so the number may move a little one way or the other. I will get you the final count by the Wednesday before like you wanted it, same as last year.\n\nCoffee, I know we ran out about 8:15 last year when the urn quit on you. You dont need to feel bad about that, that wasnt anything you could help. Could we put a backup pot on the side just in case, maybe a regular percolator or a second urn, so nobody has to stand around waiting on coffee. Happy to pay for it or I can bring it if thats easier for you.\n\nThe $11 a head was fair last year. If its up a little to cover the extra that is fine, just let me know and we will go along with it. Separate checks again please, that worked out good for everybody. And if you could set the back room up family style like last year with the big pans of eggs and potatoes and biscuits and gravy and everybody orders their own meat off the menu, that would be great.\n\nCouple other things. Patsy cant do eggs anymore so we can do oatmeal or pancakes or whatever shes got that she can eat. Lonnie is on a walker since his hip so he needs to come in through the side door, the one with no steps.\n\nThe 19th is a good day for Earl, his last day on the bus is the 18th so the day after is a good one to get everybody together.\n\nLast thing, the cake. Could we bring one in from Sugarcreek? Half sheet was about $48 and with the little bus on top it was $56, they just need 5 days notice and its pickup only, they open at 6am on Saturdays. Or if thats a pain we could just do a big tray of your cinnamon rolls with a candle on it. Way I look at it your cinnamon rolls are better than any cake anybody could buy, Earl loves them. Let me know which you would rather do and I will make the arrangements.\n\nThanks Rhonda, the whole bunch of us appreciate it and the guys have been talking about it already.\n\nGary Hollins\nSchool Bus Driver\nMV Transport",
+  "words": 463,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Does not explain the retirement surprise: it never says Earl is retiring, never mentions his 31 years, and never asks Rhonda to keep it from him; it only says his last day on the bus is the 18th."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.01549143623560667,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.00974984560161829,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.96875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.6969414949417114,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.4,
+    "effort": "provider default",
+    "output_tokens": 3451,
+    "input_tokens": 2470
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties ❤️\n\nYes, I’m coming to Thanksgiving! I’ll see y’all Thursday, November 26, at Aunt Denise’s in Macon. We’re eating around 3, and I’m bringing the mac and cheese and two sweet potato pies.\n\nI know some of y’all have been asking Mom if I’d be there, and I figure last year might have something to do with that. For the cousins who weren’t there, things got heated at the table over my job. I made a crack about somebody getting their news from a gas station TV. That was me, and I’m sorry for how I talked at Grandma’s holiday. Grandma ended up sitting out on the porch for about an hour, and I still feel bad about that.\n\nI’m not sorry for the work I do, though. I’m proud of it. And just so we can save ourselves some time, I can’t talk about open cases because of confidentiality, so questions about “the lawsuit” are going to be a dead end anyway.\n\nThere’s no need for anybody to pick sides. The person I was arguing with isn’t a bad guy—he just likes to poke. He sent me a thumbs-up for my birthday in August, which for him is basically a hug, so I think we’re all right.\n\nCan we call a truce on work and politics for one day? Let’s keep the table conversation to food, football, babies, and Tasha’s new boyfriend. Tasha, tell him I’m sorry in advance 😂\n\nI really do want to be there, and I want it to be a good day for everybody, especially Grandma. Love y’all. See you in Macon!",
+  "words": 271,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3837448060512543,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3792712986469269,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.663572311401367,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.6,
+    "effort": "low",
+    "output_tokens": 350,
+    "input_tokens": 18997
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.80, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Dear Jonno: The Coolroom, Cup Day, and Your Narrow Escape**\n\nMate,\n\nYou keep asking what happened with the coolroom on Cup Day, so here it is. I was going to send you a voice note, but then I remembered you’re in London now and probably need subtitles for anything said in a Melbourne kitchen.\n\nThe compressor packed it in overnight, Monday into Tuesday. At 6.40 on Cup Day morning, I walked in, checked the thermometer and found it sitting at 11 degrees. Which is not a temperature. That’s a warning from the universe.\n\nWe had 140 covers booked for lunch. Three courses, set menu, the whole thing. Raff was away, so I was running the show, and our coolroom had apparently decided Cup Day was a good time to become a lukewarm cupboard.\n\nI rang Wally from Coldline. Wally couldn’t get to us till Wednesday, and the part had to come from Sydney. So, in practical terms, we were on our own. Phil’s contribution was, “Just make it work, mate,” which is less a plan and more something you say when you’ve run out of useful things to say.\n\nWe started shifting food wherever we could. Two undercounters, the bar fridge, and half of Marta’s walk-in next door. Marta agreed to help, on the strict and very fair condition that we paid her back in croissant credit. I now owe her about three weeks’ worth of staff meal, which is an invoice I’m prepared to settle in pastry.\n\nWe still lost about $1,800 of stock, mostly dairy and duck legs. A beautiful little pile of money, gone because a compressor woke up and chose violence. If you’d been there, you would’ve stood in front of the open coolroom doing that thing where you stare at a problem like it might get embarrassed and fix itself.\n\nYou’ve gone soft, Jonno. London’s done something to you. You’d have cried.\n\nThe rest of us got on with it. Me and Benny had to get 30 kilos of beef shin down the laneway on a milk-crate trolley. It was raining, obviously, because why have a difficult service when you can have a difficult service with wet socks? Halfway down, one of the trolley wheels fell off. Benny kept pushing, I kept pulling, and the beef made a break for freedom. It was all very professional.\n\nMeanwhile, dishy Kev went to the servo and came back with 14 bags of ice to fill the old esky. The servo guy asked if we were having a party. Kev said no, we were trying to keep lunch alive. I don’t know if that made it sound less suspicious.\n\nAt 12.15, we had to 86 the panna cotta. So dessert became “affogato with whatever,” which sounds like something you write on a menu after a long night and then regret in the morning. Except people loved it. They were asking for it like we’d planned it all along. We may have stumbled into a new signature dish, or people were just being kind because they’d watched us move food around all morning.\n\nBest moment was a lady at table 9, who’d seen us hauling the beef past the window, asking if it was “free range from the laneway.” I told her yes, raised on a diet of rainwater and panic. She seemed happy with that.\n\nAnd then there was my Cup sweep horse, Ice Cold Lad. With a name like that, I thought the universe was giving me a little wink. Instead, it came second last. The joke was apparently on me, which felt unnecessary given I’d already spent the day negotiating with a broken fridge and a milk crate.\n\nSomehow, we got through it. The food went out, the room stayed full, and the kitchen was completely locked in. Honestly, it was the best service we did all year. Not the calmest, most organised, or most hygienic-looking service, probably. But everyone pulled together and got it done. Bistro kitchens run on bar fridges and spite, and that day we had plenty of both.\n\nSo that’s the coolroom story. Compressor died, Wally was delayed, we borrowed space from Marta, Kev became an ice merchant, Benny and I took beef for a walk, and the panna cotta became an affogato. All while Phil offered his considered operational strategy.\n\nYou missed a good one, mate. Though I’m sure you’d have been a massive help, once you’d stopped crying and learned how to use a milk crate.\n\nCome home, ya flog.",
+  "words": 750,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.7993021011352539,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4539378583431244,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.207194805145264,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.9,
+    "effort": "medium",
+    "output_tokens": 949,
+    "input_tokens": 14153
+  }
+}

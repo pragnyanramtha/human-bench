@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-4471\nReplying to: p01\nCc: none\nSubject: none\n\nHello neighbors,\n\nCascade Legal Rights Project has read this thread and wants to respond directly. We understand why people are upset. Getting a letter from a landlord's law firm after asking for help is frightening, and we take that seriously.\n\nHere is how our clinic handles information:\n\n- Sign-in sheets collect a name and contact information. Those records are kept internally in locked storage.\n- Our policy prohibits sharing, selling, or disclosing attendee information. It specifically prohibits giving that information to landlords or their attorneys.\n\nOn the letters: magistrate-court eviction filings are public records, and some law firms use them to send mailings to tenants. That may explain why someone received a letter after an eviction case appeared on the public docket. We cannot speak to any individual's situation, but we wanted to share the general explanation.\n\nThe clinic is still happening this Saturday, November 14, from 10 a.m. to 1 p.m. The library meeting room is unavailable that day, so we have moved to:\n\nMt Zion Fellowship Hall\nSide entrance by the parking lot (accessible)\n\nVolunteer attorneys and staff can review eviction notices and court papers and explain your options. No appointment is needed. You are welcome whether or not you have contacted us before.\n\nQuestions can go to clinic@cascaderights.example, or you can call our office at 404-555-0187.\n\nThank you for keeping the conversation civil. We are glad to answer questions here or by phone.\n\nCascade Legal Rights Project",
+  "words": 240,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3486548662185669,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1599745899438858,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.418642997741699,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "medium",
+    "output_tokens": 2689,
+    "input_tokens": 3339
+  }
+}

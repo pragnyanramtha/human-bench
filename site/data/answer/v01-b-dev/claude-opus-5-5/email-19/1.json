@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Nia's hen\n\nHiya Beth,\n\nJust sending this to you, not the group, I'm staying well out of that one!\n\nI'm not going to give you a row, promise. I know November was horrible and I know you both said things. I'm not on anyone's side here, I love the pair of you, you're both as stubborn as each other and that's half the problem.\n\nBut I'd be gutted if you weren't there. I swapped my Orlando with Kerry from work to get that weekend off, gave up a night stop I was really looking forward to, and honestly it won't feel right without you.\n\nNia rang me last week in tears asking if you were still coming. She doesn't know you've pulled out yet. You're doing a reading for her at Margam in April, Beth. You sat with her in the Heath every night when her mam was bad. She's not going to want that weekend to have a gap where you should be.\n\nSo how about just the Saturday? Skip the cottage Friday, no pretending to be fine over Lowri's chilli. If you get the train from Cardiff Central it's about two and a half hours, you'd only need to be in Tenby for 6, and I'll come and pick you up from the station. Paddleboarding's in the morning anyway so you'd miss that, which I know you won't be crying about! Then you can kip in with me Saturday night, I've got the twin room, so you've got your own space and an escape route if you need one.\n\nFor what it's worth, I think Lowri's sorry really. She's just as bad as you for backing down first. I'm not saying you have to sort it all out that weekend, just come for Nia.\n\nAnd don't send Lowri the £85 yet, hang on to it for a bit. If you're coming it all gets sorted anyway.\n\nHave a think. No pressure, I just didn't want you to miss it and regret it after.\n\nLove you lots x\n\nSiân\n\n(Just landed off a Lagos so excuse me if this is a bit all over the place!)",
+  "words": 359,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits 2019, Saturday's meal, Lowri's 40th as the setting of the row, and the concern that Nia will remember Bethan's absence."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3337273895740509,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04737063869833946,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.6015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.864230632781982,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.0,
+    "effort": "medium",
+    "output_tokens": 851,
+    "input_tokens": 2170
+  }
+}

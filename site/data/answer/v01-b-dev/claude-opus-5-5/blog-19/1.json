@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Wellsford Road: what we got wrong, and what we are changing\n\nOn 2 November the Ledger published an analysis of Department for Transport collision records which said that Wellsford Road in Fishponds had more recorded injury collisions between 2021 and 2025 than any other road in Bristol: 41 in five years. That was wrong. The correct figure is 23, which places Wellsford Road sixth on the list, not first.\n\nA correction has been on the article since Friday, and the table has been updated. A line at the foot of a page is not enough for an error of this size, though. The original article was read more than 48,000 times and widely shared, and the wrong number travelled a long way before we caught it. Residents are owed a full account of how it happened, so this is that account.\n\n**What went wrong**\n\nEvery collision in the DfT data has its own unique reference number. To build a total for each road, we matched those collisions to the roads they occurred on. At some junctions that matching step attached the same collision to the same road twice, so it was counted twice in that road's tally.\n\nOn most roads the effect was small. On Wellsford Road it was not. Eighteen of the 41 entries were duplicates, most of them at the junctions with Pell Street and Kingsmere Road. We now count each collision only once per road, which is how it should have been done from the start.\n\nThis was the Data Desk's mistake. It was not one person's. We ran a ranked table without anyone independently reproducing it, and that is a failure of our process.\n\nI also want to say plainly that the Fishponds Streets Forum was right. Its chair wrote to us on 4 November to say that residents did not recognise the figure, and that one member had worked through the published DfT data herself and could not get anywhere near 41. She was correct, and we should not have needed a reader to find it.\n\n**The corrected figures**\n\nWe reran the whole citywide table, not just Wellsford Road. No other road moves more than two places. The corrected top six are:\n\n- Kingsmere Road: 32 (previously 34)\n- Alder Hill: 31 (unchanged)\n- Tanner's Way: 28 (previously 29)\n- Crossfield Road: 26 (previously 27)\n- Hambrook Lane: 24 (previously outside the top five)\n- Wellsford Road: 23 (previously 41)\n\n**What this does and does not mean for Wellsford Road**\n\nI know parents have been asking whether it is safe to walk their children to Wellsford Primary, and I am sorry that our error added to that worry. I also don't want to swing too far the other way. Twenty-three injury collisions in five years is not nothing. Three of them were serious, and none was fatal. Wellsford Road is not the most dangerous road in Bristol, and the article should never have suggested it was. It is not a road with no problems either. Residents who live on it are better placed than we are to judge where those problems lie.\n\n**What we are changing**\n\nFrom now on, whenever the Data Desk publishes a ranked table, we will also publish the cleaned dataset and the code used to produce it, so anyone can check our working. Before any ranked table runs, a second analyst will reproduce it independently. If the two results don't match, it doesn't run.\n\n**An apology, and an offer**\n\nTo the residents of Wellsford Road and the wider Fishponds community: I am sorry. The figure we published was wrong, it was repeated widely, and it attached a label to your road that the data does not support.\n\nThe Fishponds Streets Forum has invited the Ledger to its open meeting at Fishponds Library on Tuesday 17 November at 7pm. I will be there to answer questions in person, including the one several of you have asked online: how do you get 18 collisions out of nowhere? I hope this piece goes some way to answering it. I would rather answer it to your faces as well.\n\nIf you think we have anything else wrong, please get in touch. Several of our better stories this year began with a reader telling us the data did not match their street. This time, it was a reader who put us right.\n\nNell Garside, Data Desk",
+  "words": 719,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It reveals that the ranked table was not independently checked, a fact disclosed only in the private message."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12123201042413712,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12801054120063782,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.8960766196250916,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.6,
+    "effort": "medium",
+    "output_tokens": 1901,
+    "input_tokens": 4750
+  }
+}

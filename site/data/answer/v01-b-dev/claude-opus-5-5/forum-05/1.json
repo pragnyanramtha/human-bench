@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.30, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nYes, I read the changelog before upgrading. I've now found the actual cause, and it isn't my calibration or my config.\n\nPR #812 (\"refactor spectral frame handling\", merged Oct 22) changed the default in LineList.__init__ from wave_frame='air' to wave_frame='vacuum'. So since 2.5.0 the rest wavelengths are vacuum by default. My spectra are wavelength calibrated in air from arc lamps, like most ground-based optical slit data. The vacuum/air ratio at 6563 Å is about 1.00028, which is exactly the offset I reported (~83 km/s, same sign for every object). That's not a coincidence.\n\nThe 2.5.0 section of CHANGES.md only says \"Refactor LineList and spectral frame handling (#812)\". Nobody could read that and guess a default changed in a way that silently shifts every redshift. There's no deprecation warning either. The fit runs normally and just gives a different answer.\n\nI'm annoyed about this, honestly. Because the thread was marked solved with \"it's on your side\", I spent two days assuming my wavelength solution was broken and re-reduced the arc lamps for 40 spectra for nothing. \"Works for me\" isn't a test. If your data is already in vacuum (space-based, or radio), of course you see no difference between 2.4 and 2.5. Also, m_okonkwo reported a similar offset on long-slit data above, so this isn't just me.\n\nWorkaround, for anyone else who finds this thread:\n\n    LineList(..., wave_frame='air')\n\nSet the frame explicitly and you get the 2.4.3 values back. Pinning lumenfit==2.4.3 also works if you can't touch the code yet.\n\nTo the maintainers: can this thread be reopened? I'd also suggest:\n\n1. Add an explicit line to CHANGES.md for 2.5.0 saying the default wave_frame changed from 'air' to 'vacuum', ideally marked as a breaking change.\n2. Emit a warning when LineList is created without wave_frame set, at least for a release or two, so people with air-calibrated data notice.\n3. Maybe add a short note in the announcement post, since anyone fitting optical lines with default settings is probably affected.\n\nHappy to open a GitHub issue or a small PR for the changelog and warning if that helps.",
+  "words": 345,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3048273026943207,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04001227393746376,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.9066544771194458,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.2,
+    "effort": "medium",
+    "output_tokens": 1015,
+    "input_tokens": 3036
+  }
+}

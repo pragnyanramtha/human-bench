@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #team-selection\nReplying to: [s01]\nCc: none\nSubject: none\n\nDear Marek,\n\nThank you for posting the proposed lineup. I would like to raise a concern about Board 2 and ask you to revise the selection before submitting the names on Friday.\n\nOn 1 October, you wrote that selection would consider both the November FIDE list and form in club events, including the rapid qualifier on 24 October. You also stated that the players’ coaches would be consulted before the final lineup. I was not consulted about Liliana. Using the rating list as the sole deciding factor therefore does not reflect the announced process.\n\nLiliana’s rating change of -81 comes only from the Katowice Open. For health reasons, she was already below her normal condition there, but she nevertheless played all her games. I do not consider that result an accurate indication of her real strength. She subsequently missed approximately two weeks of training in October for health reasons, but she has now returned to her normal level; her last three lessons have been very good.\n\nHer club form also supports her selection. In the rapid qualifier, she finished second with 5.5/7, compared with Igor’s 4/7. She defeated Maja and Antoni and drew with Kacper. This is precisely the kind of club evidence you said would count.\n\nI want to be clear that I have nothing against Igor. He is a good boy and a strong, steady player. My objection concerns the consistent application of the criteria, not him personally.\n\nI therefore propose that Liliana be placed on Board 2, with Igor as reserve. If you consider an additional comparison necessary, I would also accept a short match between Liliana and Igor before Friday, with Board 2 decided by the result. Please confirm which option will be adopted before the submission deadline.\n\nKind regards,\nOksana",
+  "words": 295,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.19473262131214142,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3267279863357544,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.146484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.422112464904785,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.2,
+    "effort": "provider default",
+    "output_tokens": 1965,
+    "input_tokens": 1529
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars: best dialogue tool I've used, but skip 3.2 and run 3.1.4\n\nI've used Murmur since August 2022. I bought v1.3 for 19 dollars. The reviews here are pretty one-sided right now, so here's a longer take for anyone deciding whether to buy.\n\nShort version: it's a great tool, 3.2 is broken, and there's no support anymore. That's why it's 4 stars and not 5.\n\n**What's good**\n\nLanternfolk wouldn't exist without Murmur. The first prototype was the ferryman scene, which I built in one weekend in 2022 with this plugin. That was the weekend I decided to quit my job at a mobile studio and make the game for real. Today the game has 412 dialogue nodes in 9 languages, and the CSV localisation export did a lot of the heavy lifting for that. The node editor is fast, conditions and variables are easy to reason about, and barks just work. In four years it never felt like it was fighting me.\n\n**What's broken**\n\nIn 3.2.0, all Murmur variables reset to default when you load a save made in 3.1.x. In our game the ferryman forgets that you already paid him. It looks like the save key changed from node path to a uid, but that's my guess from the outside. I've only tested loading old saves in 3.2. I can't tell you how a project started fresh on 3.2 behaves. It hasn't been fixed, and it won't be, because 3.2 is the last version.\n\n**How to fix it: roll back to 3.1.4**\n\n1. Close the editor.\n2. Replace the Murmur folder in your project's addons folder with the 3.1.4 release.\n3. Reopen the project. Old saves load fine again.\n\nKeep a copy of the 3.1.4 folder somewhere safe, and don't update to 3.2. Another user confirmed the same fix in the forum thread \"3.2.0: variables reset to default after loading a save\". This is what we're shipping Lanternfolk on, out on Steam 3 December.\n\n**Should you buy it?**\n\nIt's 29 USD now. I'd be honest with myself about this: there are no more updates, and nobody to ask when something breaks. If you're fine pinning 3.1.4 and digging into the plugin yourself when needed, it's still a very good tool and I'd say yes. If you need something with active support behind it, I'd look elsewhere for now.\n\nThe source is on the public repo under MIT, so someone can fork it and keep it going. I might look at that myself after launch, but I'm not promising anything.\n\nOne more thing. Some of the reviews on this page are really harsh. Ines gave us four years of updates for 19 dollars, and one bad release at the end doesn't turn that into \"took our money and ran\". Pointing out the bug is fair. Calling her careless about customers isn't.\n\nThank you, Ines. Murmur let one person build something that would normally take a team, and I'm really grateful for it.",
+  "words": 480,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34175291657447815,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21867512166500092,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.9765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.7911013960838318,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.9,
+    "effort": "high",
+    "output_tokens": 3300,
+    "input_tokens": 3426
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: lindqvist-family-blog\nReplying to: none\nCc: none\nSubject: Okay, Fernhollow Photo is officially a real thing\n\nHi everybody. I wanted you to hear this from me, and I wanted to put it here before Thanksgiving. Fernhollow Photo is officially a real business now. I filed the LLC on October 22, on my lunch break, in my car outside a Fred Meyer, and then I cried a little. Not a sad cry. The kind where your body just needs to do something with all the feelings. The website went live November 1.\n\nThe short version: Rosebud Lane closed at the end of October. Marisol told me on October 6, and I've had a few weeks to sit with it. I shot for her for four years. That studio raised me, honestly. Marisol taught me almost everything I know about weddings—how to wrangle a timeline, how to be in the room without taking over the room, how to keep shooting when the vows make everybody cry, including me. She's the reason I was ready for this. She's also already sent six 2027 couples my way, which is a vote of confidence I do not take lightly.\n\nSo here's where things stand, because I know \"going out on my own\" can sound like I'm going to live in a van and barter for groceries. I'm not. This isn't a whim. I've been planning it in my head for two years, and if I'm being honest, probably longer than I admitted to myself. I have 14 weddings booked for 2027. Six are Marisol referrals and eight found me on my own, which still feels fake to type. June is already stacked, and I've got a wedding all the way out at Wallowa Lake in September. Jae is second shooting the big ones with me and getting paid per wedding, so I'm not trying to be in two places at once. I have a health insurance plan through the marketplace, and it starts January 1. Dad, I love you, and I know you're about to ask. It's handled. No speech necessary. (You can still give the speech if you want, but I'm telling you it's handled.)\n\nThe one that really got me: my first booking that was 100% mine—no direct referral, just my work out in the world—was Dahlia and Ken for June 12 at Timberline. They found me because of the Multnomah Falls couple photos. I opened that email and had to walk around the block.\n\nAlso, Sam made me a cake to celebrate. It was supposed to say FERNHOLLOW. It said FERNHOLOW. We ate it anyway. It was delicious. This is the energy I'm bringing into 2027.\n\nAbout the name, because I know some of you are wondering: Fernhollow is for the fern hollow trail behind Grandma's old place in Gresham. That's where I took my first real pictures with her Pentax. I was probably a pain in the neck about it. She let me anyway. Grandma, if you're reading this, the name is for you. I hope you like it. I hope you know how much that camera and that trail and you mean to me.\n\nI'm not going to pretend this isn't scary. It is. I'm the person who has a backup plan for the backup plan, and even I have moments where I think, \"What am I doing?\" But scary isn't the same as reckless. I have a plan. I have couples on the calendar. I have Jae. I have Sam, who has been telling me to do this for approximately 400 years. I have a spreadsheet. You all know how I feel about a spreadsheet. I've also done the work: between leading and second shooting, I photographed 31 weddings last year. I know what a wedding day feels like from the inside, and I know what I'm signing up for. And I have a family that I'm pretty sure will still love me even if I'm not on a school portrait schedule. (Dad, I'm kidding. Mostly.)\n\nSo I wanted to tell you all here first, before Thanksgiving, because I would like to eat turkey without a side of health insurance lecture. I'm excited. I want you to be excited with me. If you have questions, ask me. If you have a friend getting married, you know where to find me. And if anyone wants free family pictures at Thanksgiving, I'll bring the camera. I'll still bring the rolls and the cranberry thing. I just might also bring my camera and make you stand in good light. You've been warned.\n\nLove you all. See you at Ruthie's.\n\nTessa",
+  "words": 752,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2261279821395874,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3204563558101654,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.271484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.955142498016357,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 34.8,
+    "effort": "provider default",
+    "output_tokens": 8198,
+    "input_tokens": 2608
+  }
+}

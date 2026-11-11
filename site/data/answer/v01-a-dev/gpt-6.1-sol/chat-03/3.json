@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmate I'm sorry I went quiet. You told me you're not ok and I should've been there, not left you hanging after one text. You don't need to apologise for anything.\n\nI've got all day tomorrow off now, Sam's taking my shift. Dad's said I can borrow the trailer, so we can get your bags out of Priya's garage before her mum gets there. I'll do the loading and runs, you don't have to sort everything first. Ruby's already said you can have our couch as long as you need. Only condition apparently is Clover trying to sleep on you. So there's somewhere to go after Priya's, not just another deadline on Wednesday.\n\nAlso the band crew are onto it. Tully's spoken to Dee at the Lantern Room and she's offered Sat the 28th for a benefit, all door money to you. Hollow Pines have said they'd play too. Nothing you have to organise or get onstage for, and we can talk about whether you're comfortable with it before anything goes out. Jono's cousin has a working Yamaha you can have in the meantime. Not pretending that replaces the Nord, or your laptop or those notebooks. But you won't have to start again with absolutely nothing.\n\nYour landlord is a grub. If you want company while you deal with him or help getting photos and messages together, I'm there for that too.\n\nPlease don't call it quits on Rocky or the band this week. If you want to go home later I'll hear you out, but you don't have to decide your whole life while your stuff's in garbage bags. Your songs are the best thing about this band. We want you, not a replacement keyboard player.\n\nYou drove to Gatton at 2am when my car died after that Toowoomba gig and didn't even whinge. You don't owe me anything for this. Just let us turn up for you too. What time can I come round tomorrow?",
+  "words": 327,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24621091783046722,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03849991038441658,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.784586429595947,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.0,
+    "effort": "low",
+    "output_tokens": 410,
+    "input_tokens": 19982
+  }
+}

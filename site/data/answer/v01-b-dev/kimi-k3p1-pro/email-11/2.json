@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length, required or barred words, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none",
+  "words": 0,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: ['rhonda@lindenpikediner.example (as a new post) (>= 25 words)']"
+      },
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "0 words, allowed 360-880 (band 400-800 ±10%)"
+      },
+      {
+        "check": "must_include",
+        "kind": "required or barred words",
+        "detail": "missing: ['Earl', 'Dec 19 | December 19 | 19th | Dec. 19']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": null,
+      "cutoff": 0.16412107646465302,
+      "reads_human": null,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": null,
+      "cutoff": 0.16035056114196777,
+      "reads_human": null,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": null,
+      "cutoff": 0.55078125,
+      "reads_human": null,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": null,
+      "cutoff": 3.06278395652771,
+      "reads_human": null,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 49.2,
+    "effort": "provider default",
+    "output_tokens": 2670,
+    "input_tokens": 2328
+  }
+}

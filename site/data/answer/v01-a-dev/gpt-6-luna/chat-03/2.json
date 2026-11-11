@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nHey Mia. Sorry I went quiet after you told me what happened. You shouldn’t have had to sit with all of that and wonder if anyone was showing up. I’m here now, and we’ll work out the practical stuff together.\n\nI’m off tomorrow — Sam’s taken my shift — so I can come round and get your bags out of Priya’s garage before she needs the space. Mum’s lent me the trailer, so we can shift everything in one go. Ruby’s offered you their couch for as long as you need; Clover will apparently try to claim you as a bed, fair warning. We can take your stuff there, or wherever feels right to you. No need to decide everything tonight.\n\nAlso, you drove all the way out to Gatton at 2am when my car died after that Toowoomba gig. You didn’t make a fuss, you just came and got me. I haven’t forgotten that. Let me return the favour — tomorrow, and for as long as you need.\n\nTully’s lined up a benefit night at the Lantern Room on Sat 28th, with Hollow Pines playing too, and Jono’s got a working Yamaha keyboard you can borrow. We’ll sort the details with you, not make you manage it all. And for what it’s worth, your songs are the best thing about this band. I know losing your notebooks and the Nord is brutal, but you haven’t lost the songs or what makes them yours. Please don’t decide you have to give up on the band tonight.\n\nI get why Rocky’s on your mind, but please don’t make that call in the middle of this wreckage. You don’t have to sort your whole future now. Let’s get you somewhere safe tomorrow, then take it one step at a time. I’ve got you.",
+  "words": 301,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4459853172302246,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4136379063129425,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.393234252929688,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.0,
+    "effort": "medium",
+    "output_tokens": 395,
+    "input_tokens": 14883
+  }
+}

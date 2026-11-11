@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: l01\nCc: none\nSubject: Recurring E34 lockouts and scale from week one, warranty refused\n\nBought this CX-10 (s/n VT21-30877) for $14,800 and it was delivered and commissioned at our Fitzroy bistro on 14 September. The listing says the steam generator was descaled and pressure tested and the core probe calibrated. That's not what we got.\n\nTimeline:\n\n- 14/09: delivered. By the first service visit the error log showed E34 (steam generator low water level) 9 times since 14/09, so the faults started on the day it arrived.\n- 22/09: water level sensor replaced under warranty. Inlet pressure tested at 320 kPa, OK.\n- Week of 28/09: E34 came back 4 times. Core probe was also reading low. We tested it twice in a lamb shoulder against a Thermapen. The oven read 63°C and the Thermapen read 70°C both times.\n- 06/10: tech found the steam generator heavily scaled, then descaled, flushed and recalibrated the probe. We were told to install a softener because the scale \"indicates hard water supply\".\n- Sat 24/10: E34 locked us out at 6.10pm with a full book of 60. We finished the lamb on the stove and the deck oven, 86'd the pork belly and wore the cost.\n- 27/10: E34 again, more scale found. Kelsall called it a site water issue and invoiced the attendance at $280 + GST.\n\nOn the water: our supply averages about 15 mg/L as CaCO3, according to the water company. That's soft, some of the softest in the country. The unit had been on our water for about 3 weeks when heavy scale was found. A combi doesn't scale up like that in 3 weeks on soft water. The evidence says it was already scaled when it got to us, which doesn't match \"descaled and pressure tested\" in the listing.\n\nOn usage: the E34 faults are logged from delivery day, before we'd had any real time on it. Inlet pressure was checked and passed. This isn't an install or operator problem.\n\nTo be fair to the tech, Dion has been prompt and easy to deal with on every visit. Our issue is the condition the unit was sold in, and being charged a callout on a 6 week old unit under a 6 month parts and labour warranty for a fault that's been there since day one.\n\nIf you're looking at a refurbished combi from this seller, ask for the descale and pressure test records and an error log printout before you hand over 15 grand.",
+  "words": 403,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the callout was invoiced, but Brett said it would be invoiced."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0669189840555191,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.014689569361507893,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.086304187774658,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.6,
+    "effort": "medium",
+    "output_tokens": 1625,
+    "input_tokens": 3685
+  }
+}

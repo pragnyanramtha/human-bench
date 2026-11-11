@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why the pier logger reads warmer than the offshore buoy**\n\nTo the dive shops, docents, and club members who have written to me,\n\nSeveral of you have asked why my pier temperature logger runs warmer than the offshore buoy, and one of you suggested the logger might be broken. It's a fair question, so here's the full answer.\n\n**The numbers.** In October the logger's mean was 15.9 C and the buoy's was 14.1 C, a gap of about 1.8 C. In winter the gap shrinks to around 0.4 C.\n\n**Why I trust the instrument.** The logger is strapped to a piling at 3 m depth, about 150 m from shore. It records every 10 minutes. I pull it and download the data every 6 weeks and swap the battery once a year. I also check calibration against a lab reference thermometer using two points, an ice bath and a room-temperature bath. The last check, in September 2026, showed an offset of +0.12 C, well inside spec and only a small fraction of the 1.8 C gap. In August I pulled the unit up with a barnacle colony and a decorator crab living on the housing. I scraped it clean, and the readings didn't change.\n\n**What's actually going on.** The gap is real oceanography. The buoy sits about 25 km offshore in deep water with its sensor just under the surface. My logger sits in shallow, sheltered nearshore water that warms in the sun, and the bay is shielded from the upwelling that keeps offshore water cold. One reader sent me a screenshot overlaying the buoy data on mine, and it shows the gap tracking sunny afternoons. That fits the explanation, and it's why the gap is widest in autumn and narrows in winter, when there's less sun on shallow water.\n\n**Which number to use.** The buoy and the logger answer different questions. The buoy tells you about the open ocean. If you dive the breakwater, my number is the more relevant one for what you'll feel when you get in.\n\nIf you'd like the raw CSV to look at yourself, email me and I'll send it. I'd be glad to hear from anyone who wants to check my work.\n\n[Your name]\n\n---\n\nThat comes to roughly 330 words. I left the signature blank since I didn't have your name. If you want to add your field station affiliation, put it right under your name.",
+  "words": 405,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3635139465332031,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6302275061607361,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.336719512939453,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.5,
+    "effort": "high",
+    "output_tokens": 1210,
+    "input_tokens": 1496
+  }
+}

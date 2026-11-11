@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: christmas breakfast Dec 19\n\nHi Rhonda, its Gary from the bus garage. Were getting the drivers christmas breakfast set up again and want your place like always. Can you put us down for Saturday Dec 19 in the back room at 7am? If the 19th is no good, Saturday Dec 12 would work too.\n\nDwayne gave me the list off the board. Its 19 drivers and 3 from the shop, plus Earl and his wife Carol, so figure 24 counting them. Thats the number for now and I'll get you the final count by the Wednesday before like you asked last year. That would be Dec 16 for the 19th, or Dec 9 if we move to the 12th.\n\nCan we do it about the same as last year, with the big pans of eggs, home fries, and biscuits and gravy, and everybody orders their meat off the menu? The $11 a head was fair. If its up a little this year thats fine, just tell me what it is so I know. Separate checks again please if that still works for you.\n\nTwo of the folks need a little different setup. Lonnie is on a walker now since his hip, so he'll need to use your side door with no steps. Will that be open for us at 7, and can we leave him some room at the end of a table for the walker? Patsy cant do eggs anymore. Could she have oatmeal or pancakes, or whatever else is easiest for you? She don't need anything special, just something without eggs.\n\nAnd about the coffee, I'm not bringing this up to complain. I know you felt bad when the urn quit last year and we ran out about 8:15, but everybody still had a good breakfast. Since there will be 24 of us, can you have a backup pot or urn ready this time so we dont run dry again?\n\nThe other thing needs to stay quiet please. Earl is retiring and he doesn't know were planning anything. His last day driving is Friday Dec 18, after 31 years, so the breakfast is the next morning. Carol says a big speech would embarrass him, but we want to do a little something with the guys. Please dont say anything in front of him before we spring it.\n\nWould it be alright to bring a cake from Sugarcreek, or would you rather do a big tray of your cinnamon rolls with a candle? Your cinnamon rolls are better than any cake anyway and Earl loves them. If you can do the tray, let me know what it would cost and we can keep it out of sight til the right time. Sugarcreek told me a half sheet serves about 30 and is $48, or $56 with writing and a little bus on top, and they need 5 days notice. I havent ordered anything yet. Tell me which way is easier for you.\n\nLet me know on the date, price, and the food for Patsy when you get a chance. Looking forward to it same as every year.\n\nThanks,\nGary",
+  "words": 516,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14347726106643677,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.017234936356544495,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.46875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.556492328643799,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 44.5,
+    "effort": "provider default",
+    "output_tokens": 2986,
+    "input_tokens": 2328
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent for a sec, and this one's not about a subaru.\n\na friend sent me a listing tonight. there's a sticker shop called StickerBurrow Co selling something they're calling \"Knife Moth Vinyl Decal,\" $6.50 or 3 for $15. it's my switchblade moth. the one I drew for the september 13 flash day, on the sheet I posted august 30. the one that went in the first hour. same crack in the blade. same wing pattern. they didn't even flip it, that's how lazy this is. it's a scan of my linework with a barcode on it.\n\nso I messaged them. polite, sent them dates, told them I have the original drawing. their reply was \"love your work!\" followed by \"moths are a very common tattoo motif\" and if I have a registered copyright I'm welcome to send it through their support form. cool. so basically pound sand.\n\nhere's the part people keep not getting about flash. flash is sold ONE time to ONE person. that's the entire deal. you're not buying a print of it, you're buying the piece, and then it's done, nobody else gets that drawing on them. ever. the client who sat for this moth paid for that. she drove up from pueblo for it. and now she's messaging me tonight asking if I'm the one selling stickers of her tattoo. she's not wrong to be upset. that's her tattoo on somebody's water bottle.\n\nso, and I'm saying this carefully because she does not need to be dragged into this: it wasn't me. I don't sell stickers, I don't resell flash, I don't print client work for any reason. if you already bought one of these, it didn't come from me and it never will. that's the whole answer to that question, and I'm sorry she had to ask it.\n\nand before anyone says \"well maybe they were inspired\" — no. I know what inspired by looks like. inspired by is a moth with a different blade in a different pose by an artist who drew their own damn drawing. this is mine. they scanned it, traced it, cleaned it up in whatever program, and put it up for six fifty. there's no version of that where somebody sat down and drew this from scratch.\n\nthe other thing is, they know I can't do anything about it. small shops don't have lawyer money. I've got a december rent and a compressor bill, I'm not calling a copyright attorney over a six dollar sticker, and these sticker places know that. that's the business model. take somebody's work, wait for the takedown request, say \"common motif,\" keep the money. the only thing that actually costs them something is people reporting the listing and people not buying from them.\n\nso that's what I'm asking. go find Knife Moth Vinyl Decal on StickerBurrow Co and report the listing. don't message them, don't argue with them, just report it. and don't buy it. if you want a moth, come see me and I'll draw you your own, that's literally my job and I like doing it.\n\nrant over. going to go stare at the ceiling for a while.\n\n---\n\nTo: dm:carmen.ruiz.pueblo\nReplying to: [m10]\nCc: none\nSubject: none\n\nhey, no, that's absolutely not me. I found out about it tonight too, somebody sent me the same listing. I did not sell your tattoo to anybody and I would never, that piece was yours the second you sat down. I've already messaged the shop and I'm going to keep pushing on it. I'm sorry you had to see that and I'm sorry your first thought was that it came from me. I'll let you know the second it's down.",
+  "words": 610,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['dm:carmen.ruiz.pueblo']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1649579554796219,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10933691263198853,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.400390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.7000232338905334,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.5,
+    "effort": "provider default",
+    "output_tokens": 2860,
+    "input_tokens": 2177
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, congrats man, and first things first: leave that key out the ignition. Put it in your pocket if you have to.\n\nDon't do Kobus's diesel thing. He means well, but that's old Land Rover advice. Your D-Max is common rail and it can't take it. Topping up with diesel also does nothing, the petrol is still in there and mixing it doesn't fix anything.\n\nYou drove it, it stalled, and you cranked it 5 or 6 times, so some damage is possible. Every time it turns, the pump is running on petrol with no lube. That's why not once more.\n\n**Tonight:**\n- Don't start it, don't drive it. Tow it.\n- Check your insurance first, most policies have roadside tow. Don't pay a tow guy cash before you look.\n- Bring it to my shop in Umbilo. We're open Saturday 7 till 12 and Thabo can drain it first thing.\n\nThe pump and injectors get inspected for damage first. If they're fine, it's drain the tank, flush the lines, new fuel filter and bleed it. That's usually R2 500 to R4 500. I can't promise you a final number tonight until someone has actually looked at it, but R40k is the worst case, not where you start.\n\nBorrow a bakkie for the cake and the sound system anyway. Don't plan your wedding around a drained tank.\n\nNow breathe. In 1995, in my first year as an apprentice, I put diesel in my boss's Golf. He still tells it at every braai. I also had a customer do it twice in one year, same garage, so we made him a sticker for the fuel flap. You're in good company, and you're not the first oke to be distracted by a seating plan.\n\nKey in pocket, call the insurance, get some sleep. Go get married, bra.",
+  "words": 305,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3329795002937317,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0518474280834198,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.03535270690918,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.8,
+    "effort": "high",
+    "output_tokens": 1955,
+    "input_tokens": 2166
+  }
+}

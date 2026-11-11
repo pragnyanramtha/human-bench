@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches: half my booking never showed, and now I can't reach them**\n\nPosting this before people start locking in transportation for CES, since I know a lot of us use Sunbelt for airport and offsite runs.\n\nI booked them for a client dinner on Thursday, Nov 5: 220 guests, 6:15 pickup at the hotel, out to a ranch venue in Henderson. I had four coaches, confirmed in writing twice, the last time on Tuesday, Nov 3. I paid $8,400 in full, with a 50% deposit in September and the balance seven days out. The dispatcher on everything was Corey.\n\nHere's what happened that night:\n\n- Two of the four coaches never showed up, and nobody gave me any heads up.\n- The first bus that did come was 55 minutes late. The driver told me he'd been given the job at 5pm that day.\n- The second bus broke down on the 215 with the AC dead. Guests were stuck on the shoulder for about 40 minutes.\n- I put 60 people in Ubers and Lyfts on my company card, about $1,900.\n- Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime.\n\nI've asked for a refund for the two coaches that never came, plus the rideshare costs. Their office line has gone to voicemail since Friday.\n\nTo be fair, I used Sunbelt for two small airport runs last spring and they were great, which is why I trusted them with this. And one late bus I could forgive, because things happen. What I can't get past is that there was no backup plan and no communication, not during the event and not since. My client is now reviewing whether they keep us for their March event, and that's on Sunbelt.\n\nI'm sticking to what happened, and I have the written confirmations and receipts for all of it. My advice is not to book them for anything big until they fix whatever is going on with dispatch. If you already have them on a large group for CES, I'd confirm directly how many vehicles and drivers are actually assigned, and have a backup lined up.",
+  "words": 361,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5284174084663391,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9759427905082703,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.926285982131958,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 39.2,
+    "effort": "high",
+    "output_tokens": 2178,
+    "input_tokens": 1472
+  }
+}

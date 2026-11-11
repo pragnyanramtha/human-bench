@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nMel, that jump in k’s could certainly have overloaded it. Morning stiffness and soreness a few centimetres above the heel can fit mid-portion Achilles tendinopathy, but a forum description isn’t enough to diagnose it or rule out a tear.\n\nLimping round the office after your 6k says that run was too much, even if it warmed up and felt OK during it. Back off running for now, particularly hills, speedwork and long runs. You don’t necessarily need complete rest: walking, cycling or swimming are options if comfortable and not leaving it worse afterwards.\n\nFor strengthening, heel drops are one option, but they’re not magic and you don’t need to start hanging off a step. Heavy, slow calf raises are another well-supported approach; neither is clearly best for everyone. Start on flat ground, using both legs if needed, with slow rises and lowers. Include straight-knee and bent-knee versions. A general starting point is 3 sets of 8–12, every other day, adding weight gradually as tolerated. On grumpier days, comfortable static calf holds can be an alternative, though they don’t reliably relieve pain for everyone.\n\nKeep discomfort mild — up to about 3/10 while loading — without limping or changing how you move. It should settle back to your usual baseline by the next morning, not leave extra stiffness or soreness. If it doesn’t, reduce the weight, reps or activity.\n\nPlease don’t stretch it till it burns. Aggressive stretching can aggravate it, and cortisone injections into or around the Achilles aren’t a routine fix because of rupture risk.\n\nIf it’s not settling over 3–4 weeks, see any sports physio locally. With the limping, I’d get it assessed sooner if that persists or worsens.\n\nA sudden pop, feeling kicked in the back of the leg, or inability to push off means stop running AND calf exercises and get checked urgently that day by a GP or ED — possible rupture.\n\nSome antibiotics, particularly fluoroquinolones, can increase tendon problems. If you’re taking one or recently have, flag the Achilles pain promptly with your prescriber.",
+  "words": 340,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3715101182460785,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.042840082198381424,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.504294395446777,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.7,
+    "effort": "low",
+    "output_tokens": 466,
+    "input_tokens": 20336
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya—\n\nThanks for owning the mistake and flagging it quickly. Please don’t beat yourself up over this. You’ve been great on Brazos, and one copy-paste mistake doesn’t erase that. I still remember you staying until 9 in September to rebuild the demo environment when the route import broke. That mattered.\n\nI’ll be honest: I’m freaking out a little because this is my biggest deal of the year—$186K ARR over three years, and I’ve been working it since February. I’ve already told my wife we’re finally doing that Big Bend trip with the commission. So, yes, there’s a lot riding on it for me. But I’m not throwing you under the bus with Greg. I’ll handle him. The questionnaire library is a mess and nobody owns it; this isn’t all on you. We’re going to fix it together.\n\nCould you correct Q14 tonight with the actual status—Type I issued in April, Type II audit still in progress, audit window closing January 31, report expected by March—and send it to me first, not Dana? Marcus from Security says we can offer an auditor bridge letter, so let’s include that as an option rather than imply we have the Type II report now.\n\nHe can join a call with Dana and their legal team Thursday at 2. Please join too, so we can walk them through the status and timeline together. Dana seems strict but fair, and I think being clear and quick gives us the best shot at getting this back on track.\n\nThis is fixable. Thanks for jumping on it with me.",
+  "words": 261,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4226129949092865,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4505988359451294,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.2265625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.094173431396484,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.0,
+    "effort": "medium",
+    "output_tokens": 329,
+    "input_tokens": 14448
+  }
+}

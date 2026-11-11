@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nBy the time Denise reads this to you, it’s the night before Saturday the 21st, and you’re sitting in the kitchen on Kathleen Street one last time. I’m on call that whole week — primary — and I tried to swap with everyone I could think of and couldn’t make it work. I hate that I’m not there to carry boxes or tell people where to put things or stand around uselessly asking if anyone wants tea. I’ve been trying to write this for days and keep getting about four sentences in before I have to close the laptop. I write runbooks for a living. Apparently that does not help.\n\nI keep thinking about that kitchen. Fifty-one years. That’s not just a house, that’s a whole era. You raised half the family in that room, and fed the other half, and probably refereed a few arguments in there too. I know Grandpa Walt’s been gone since 2019, and I know he’d have something to say about the packing situation. Probably something about labeling boxes. I can hear him.\n\nWhen I was a kid, summers at the house meant I got to stay up and watch the Expos or the Jays on that little TV in the kitchen, but only if I dried the dishes. I want to be clear that I understood the deal and I still think it was a good deal. I’d stand there with a dish towel while you watched, and I probably missed half the game because I was talking, but you never told me to be quiet. Well, not much.\n\nThe back steps are going to stay with me. You’d sit out there with your tea at six in the morning, and I’d come out and sit down, and you wouldn’t say a word until the cup was done. I used to think that was just how mornings worked. Now I think it’s one of the nicest things anyone’s ever done for me. You didn’t need me to be interesting. You just let me sit there.\n\nYou taught me crib when I was about seven and you never once let me win. Not once. I know that was on purpose, and I respect it. The first time I skunked you I was fifteen, and you made me a whole pan of butter tarts. You didn’t even make a thing of it. You just did it, like that was the normal response to getting skunked. I’ve thought about that a lot, actually. It’s a good way to be.\n\nI know Denise is taking the cuckoo clock and the cedar chest. I asked for the crib board. I’m not going to pretend that’s a fair trade, but I did call dibs early, so I think that counts.\n\nI’m proud of you for doing this yourself. You picked Elmwood. Nobody made you. That matters. The room is on the second floor, and it looks out at the parking lot and that big maple, which honestly sounds like a pretty good setup. You can keep an eye on who’s coming and going, which I know is a hobby of yours. And they have a crib league. A crib league. You’re going to have a whole new group of people to skunk. I expect regular updates. I also expect you to tell me their weaknesses.\n\nI know you’re excited about it. I can hear it when you talk about the new place, and I’m glad. I am. I’m also going to miss the house, because that house is kind of you. But you’re not the house. You’re the person who made it that way. That’s the part that comes with you. The kitchen, the steps, the little TV, the crib board — all of that is just the stuff around the person. The person is still here, and she’s moving to Elmwood with a crib league, and she’s going to be fine.\n\nI feel guilty that I’m not there. Everyone keeps telling me it’s fine, and I know they’re right, but I don’t feel it yet. I know it’s a bit dumb to feel guilty about missing a move when you’ve got Denise and a whole crew, but there it is. It’s not that I think you can’t do it without me. You’re eighty-eight and you still play crib with the church ladies on Tuesdays and you’re moving yourself into a place with a crib league. You’re obviously fine. I just wanted to be there. I wanted to be in the kitchen with you and Denise and the boxes. I wanted to be useful. I wanted to be there.\n\nWhen I got the job in Toronto, you mailed me a card with a twenty-dollar bill taped inside and a note that said “for pizza, you look thin on the computer.” I still think about that. I don’t know how you knew I looked thin on the computer, but you were right. I probably was. And last Christmas my pager went off during dinner, and you asked if the internet was broken again and if I fixed it. Now every time we talk you ask, “did anything break?” I’ve started saying “not yet” before you get to it. It’s become a thing.\n\nI don’t want this to sound like a funeral. It isn’t. It’s a thank you, and a see you soon. The house on Kathleen Street was a good place to be a kid, and it was a good place to be your grandkid. I’m going to miss the back steps and the kitchen and the way the whole place smelled when you were cooking. But I’m not going to miss you, because you’re going to be at Elmwood, and I’m coming up the weekend of December 5. Once rotation’s done. I’ll bring the crib board. First game at the new place. I’m not expecting to win. I’m expecting to get skunked and then maybe get butter tarts, if the tradition holds.\n\nDenise, make sure she reads that last bit twice.\n\nOkay, Nana. Be nice to the movers. Don’t let Denise put the cuckoo clock in a box marked “kitchen.” And save me a seat by the maple.\n\nLove always,\n[Your name]",
+  "words": 1034,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32006776332855225,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10272359848022461,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.322265625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.8814263343811035,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 57.8,
+    "effort": "provider default",
+    "output_tokens": 6288,
+    "input_tokens": 688
+  }
+}

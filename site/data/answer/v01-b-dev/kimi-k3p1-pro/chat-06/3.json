@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: [i02]\nCc: none\nSubject: none\n\nMarco, I’m pissed about Desert Palms. You told me Saturday the job was done, 14 units, all good, and there isn’t one code in the sheet. Not one.\n\nYvette called Lupe at 7:50 this morning. The tenant in 9B lost her key and needs three copies today. I’ve got nothing to cut from because you finished a 14-unit rekey and didn’t leave us a single bitting code. That puts me in a damn bad spot with the customer.\n\nThis isn’t the first time. Kessler in September was the same thing, and I told you then. I also put it out to everybody in August: codes go in the sheet the same day, before you leave the van. Address, unit, bitting code. That wasn’t a suggestion. It’s part of the job, and it isn’t optional.\n\nAnd you left the black pinning tray, with pins still in it, sitting on the counter in their leasing office. Yvette had to tell me about my own equipment being left behind. Get that tray back today.\n\nYou’re going back to Desert Palms today. Decode 9B first and let me know as soon as you’ve got it so we can get her keys cut. Then decode the rest if you can—all 14 would be best. Every code you get goes in the sheet today. Don’t finish up and drive off again without logging anything.\n\nI’m not firing you over this. You’re good with your hands, and I know you can do the work. But this can’t keep happening. A rekey isn’t done just because the locks turn and the keys got dropped off. The paperwork and the equipment are part of finishing it too.",
+  "words": 278,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3978489637374878,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.33559927344322205,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.59765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.184639930725098,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 44.1,
+    "effort": "provider default",
+    "output_tokens": 2792,
+    "input_tokens": 1328
+  }
+}

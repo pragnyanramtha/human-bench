@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-4471\nReplying to: p01\nCc: none\nSubject: Re: PSA: think twice about that \"free\" eviction clinic\n\nThanks to the moderator for inviting us to respond, and thanks to the neighbors who raised this. We want to address it directly.\n\nThe clinic is still on. This Saturday, November 14, 10 a.m. to 1 p.m. The library meeting room is closed that day for HVAC repairs, so the clinic has moved to the fellowship hall at Mt Zion — there's an accessible side entrance by the parking lot. Same free walk-in format, no appointment needed, same hours. If you were planning to come, you're still welcome, and we hope you will.\n\nWe also want to say plainly: we understand why people are upset. Getting a lawyer's letter shortly after you ask for help is scary, and it's reasonable to want an explanation. Nobody is out of line for asking.\n\nHere is what we can tell you about our practices. Clinic policy prohibits landlords and their attorneys from receiving attendee information, and prohibits sharing, selling, or disclosing attendee information. Sign-in records stay with us, in locked storage.\n\nAs for how these letters may be happening: eviction filings in magistrate court are public records, and some law firms use them to send mailings to tenants. That's true whether or not someone ever attended a clinic. We won't discuss any individual's situation here — that wouldn't be fair to anyone — but if you got a letter and want to talk it through, please reach out and we'll talk privately.\n\nOur goal is simple: making sure tenants facing eviction know their options before a deadline passes.\n\nQuestions: clinic@cascaderights.example, or call the office at 404-555-0187. We'd rather hear from you than have anyone stay home over this.",
+  "words": 275,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2944546639919281,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.25501617789268494,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.7505879402160645,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "provider default",
+    "output_tokens": 3084,
+    "input_tokens": 1832
+  }
+}

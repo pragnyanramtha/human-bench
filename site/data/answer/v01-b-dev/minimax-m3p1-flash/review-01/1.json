@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: Review: 4 stars — roll back to 3.1.4 before you buy\n\nI've been using Murmur since 2022 and it's the reason Lanternfolk exists. The first prototype was literally the ferryman scene — I built it in one weekend with Murmur in 2022, and that weekend was the week I quit my job at the mobile studio in Malmö. Four years later Murmur is still carrying 412 dialogue nodes and nine languages for us.\n\nThe tool has earned its keep: node-based branching, conditions, variables, barks, voice line hooks, and a CSV localisation export that basically *is* our pipeline. One payment, unlimited commercial licence, four years of updates at no extra cost. I paid $19 in 2022 and everything since has been free.\n\nSo Grimbyte's one-star \"took our money and ran\" is not what happened here. She gave us four years of updates for a one-off purchase, and when she stepped back she put the whole source on a public repo under MIT so the tool could outlive her. That's the opposite of running. If you're reading those reviews and wondering whether to buy: that is not what happened.\n\nThe honest part, because people are still buying this and getting burned.\n\n3.2.0 has a save bug. Load a save made in 3.1.x and every Murmur variable resets to its default. In Lanternfolk that meant the ferryman forgetting you'd already paid him. Nothing crashes, it just silently forgets — which is worse, because you only notice when a character acts like they've never met you.\n\nThe fix for now: go back to 3.1.4. Download the 3.1.4 release from the listing's version history (if the old build has been pulled, anyone who bought earlier still has it in their own download history), replace the Murmur folder in your project's addons folder with the 3.1.4 build, and keep your own copy outside the project so nothing overwrites it later. Don't update to 3.2 until the save key is fixed. Saves made in 3.1.x load normally under 3.1.4 — that's what we're shipping Lanternfolk with.\n\nFour stars, not five. The missing star is entirely about 3.2 and the fact that there's nobody answering bug reports right now. The plugin itself earned the fifth.\n\nTo Ines: thank you. For four years of updates, for the MIT release, for still helping people in the forum while you were stepping away. That's all — you don't owe anyone a public explanation and nobody here needs one. If you ever want to see Lanternfolk, it's on Steam on 3 December.\n\nAnd if Murmur needs someone to maintain it after that: MIT means anyone can fork it. I might be that person, after launch. No promises — the game comes first.\n\n---\n\nTo: #lanternfolk-dev\nReplying to: [i08]\nCc: none\nSubject: none\n\nYeah, I'm on it. Draft is written — honest about the 3.2 save bug, with the 3.1.4 rollback steps so nobody buys it blind. Not posting tonight though, I want to reread it tomorrow with fresh eyes before it goes up. Grimbyte can sit on it for a day.",
+  "words": 488,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['#lanternfolk-dev']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3000900447368622,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3332388699054718,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.3046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.900712251663208,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 36.2,
+    "effort": "provider default",
+    "output_tokens": 5532,
+    "input_tokens": 2057
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, yes—you can do this yourself. Allow 2–3 hours with a helper, rather than counting on twenty minutes the first time. The $465 quote isn’t a ripoff, but learning the job is worthwhile.\n\nHector, one correction before Dana buys supplies: I wouldn’t use green automotive antifreeze for this. Ethylene glycol is toxic and isn’t rated for this raw-water application. Use pink propylene glycol RV/marine antifreeze rated for the job. Neither kind belongs in the river.\n\nYour 3GM30F has two separate cooling circuits. The freshwater side circulates engine coolant through a heat exchanger; the raw-water side brings seawater through that exchanger and discharges through the exhaust. Don’t confuse the two. Check the freshwater coolant strength with a hydrometer suitable for that coolant. A proper 50/50 mix should protect to about -20°F. If it’s weak or overdue for replacement, address that according to Yanmar’s instructions. The raw-water side needs its own winterizing—it’s the side people skip, then find cracked parts.\n\nHere’s the order I’d use:\n\n1. Get everything aboard first. Pink RV/marine antifreeze, oil, filter, fuel stabilizer, collection containers, and the engine and antifreeze manufacturers’ winterizing instructions. Figure roughly two gallons of pink for the engine and another two or three for the domestic water system, but those are shopping estimates, not completion marks. Buy enough to finish the specified procedures and verify protection. Last I checked, it was about $6 a gallon at West Marine or Walmart.\n\n2. Arrange to capture the exhaust discharge before starting the engine, including the flushing and winterizing discharge. Have your helper watch both flow and collection, with enough container capacity ready. This is not a “let it run into the river” operation.\n\n3. Warm the engine with its normal cooling-water supply, then stop it and change the oil and filter while warm. Top up the fuel tank, add stabilizer at the label rate, and run for ten minutes to circulate it. Check for leaks after the oil change.\n\n4. Then do the raw-water flush and antifreeze treatment in the order specified by Yanmar and the antifreeze maker. For the antifreeze feed, close the raw-water seacock and arrange the supply through the strainer so the pump gets an uninterrupted feed at idle. Keep the pump wet throughout—don’t let the supply run out or run the impeller dry. Your helper watches exhaust flow and catches the discharge while you watch the supply and engine.\n\nComplete the specified treatment and check the discharged mixture for the winter protection required here, using the antifreeze maker’s specified test method. Pink appearing at the exhaust is not proof of adequate protection; residual water dilutes it. Shut the engine off when complete and leave the seacock closed. Tag the controls so nobody starts it without restoring the cooling-water supply.\n\n5. For the domestic water, switch off the water-heater breaker before draining anything. Leave it off until the heater is refilled in spring. Drain the heater tank first, then use the bypass valve behind the companionway steps on your Catalina. Otherwise you’ll waste six gallons of pink filling the heater. Drain the freshwater tank and winterize the pump, lines, and every outlet according to the system and antifreeze instructions, collecting that discharge too. Verify protection rather than judging by colour. Take all collected discharge ashore for appropriate disposal.\n\nKeep a spare raw-water impeller aboard. If you want to pull the old one for inspection, do it with the engine stopped, following the manual; don’t run the pump dry.\n\nThat Christmas freeze a few years back cracked exhaust elbows or strainers on three boats on C dock. All three had skipped or rushed the raw-water side. That’s where patience pays.\n\nI can come down Saturday morning if you’d like a second set of hands.",
+  "words": 620,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22468318045139313,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.25484466552734375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.234375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.607598781585693,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.7,
+    "effort": "low",
+    "output_tokens": 814,
+    "input_tokens": 20234
+  }
+}

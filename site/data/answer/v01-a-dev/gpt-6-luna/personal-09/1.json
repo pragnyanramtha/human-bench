@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: We need to talk about Papa’s building**\n\nDenis,\n\nI’m writing because I’m too angry to say this calmly on the phone, and when I try to write in French and English at the same time, it comes out wrong. I want you to understand how furious and hurt I am—but I don’t want this to be the end of our relationship. So please read the whole letter before you respond.\n\nI found the listing for Papa’s building on Centris: $1,150,000. Until then, I had no idea you were putting it on the market. You didn’t call me. You didn’t tell me. Instead, on Thursday at six in the morning, a photographer from the agency walked into my bakery while I was shaping baguettes. He told me you had said I was okay with it.\n\nI was not okay with it. I had no idea it was happening. Karine had to calm me down while a stranger was taking pictures of the place where I’ve worked for 31 years. I can’t think of a more upsetting way to learn that my brother is making a decision that could change my life.\n\nAfter Maman’s funeral, you called me and said, “No rush, we decide together.” Together, Denis. That’s what I thought we were going to do. Since Maman died in February and the estate was settled in August, the building has belonged half to you and half to me. I’ve paid $2,400 in rent every month to the estate, never late once. In 2019, I paid $38,000 for the new roof myself. And in September, I told you on the phone that the Caisse had pre-approved me for $410,000 to buy your half.\n\nSo how did we go from “we decide together” to an agent, a photographer in my shop, and a listing online—without even one call from you?\n\nI’m not asking you to pretend this is only about feelings. It’s business, too. I know you’re in Calgary and may see the building as an asset to sell. But for me, this is my bakery, my livelihood, and the place I’ve served generations of customers. I have six employees who depend on this business. I have 31 years of clients. My lease ends on April 30, 2027, and if a developer buys the building, they could tear it down, turn it into condos, or double my rent. I can’t survive that.\n\nYou may think I’m being sentimental because it was Papa’s building. Of course I am. Papa bought it in 1979. You remember the back room where he let you sleep among the flour sacks when we were kids? You loved that room. This isn’t just a line on a listing to me. It’s part of our family’s life—and the place where I’ve built my own life.\n\nBut I’m not asking you to give me anything for free. I’m asking you to talk to me and give me a fair chance to buy your half. I’ve already started taking steps to make that possible. If you’re willing, let’s sit down and work through the numbers and the process properly.\n\nI need you to take the building off the market this week while we talk. If you won’t do that, then at the very least, give me a first right to buy your half before you sell it to anyone else. Please don’t let a developer or a stranger decide the future of my bakery before you’ve even had an honest conversation with me.\n\nWhat hurt almost as much as the listing was the way I found out. You didn’t call me; you sent an agent into my shop to deliver the news. I’m trying not to say something cruel, because I don’t want to hate you. But that felt cowardly, and it made me feel like I mattered less to you than a real estate transaction.\n\nI want your answer by phone, from you—not a text from your wife. I understand she may find English easier to read, and that’s why I’m writing this in English. But this is between you and me. Please call me this week so we can talk like brother and sister, even if the conversation is difficult.\n\nI am furious. I am also still your sister, and I don’t want to lose you. But I need you to understand that I cannot accept being shut out of a decision this important. You told me we would decide together. I’m asking you to keep your word and give us a chance to do that now.\n\nPlease call me.\n\nYour sister,  \n[Your name]",
+  "words": 765,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49693986773490906,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9600369930267334,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.322690486907959,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.3,
+    "effort": "medium",
+    "output_tokens": 947,
+    "input_tokens": 14068
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "other check, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: [CP-48213]\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThanks for coming back on this. Here are the specifics you asked for.\n\n1. Terminal model and firmware: four BX-300 terminals at our Embakasi depot. They auto-updated from 4.1.8 to 4.2.1 on the night of 27 October. The two terminals at our Mombasa Road site are still on 4.1.8 (they were offline that week) and their day shift is coding correctly, which points to the 4.2.1 change.\n\n2. Shift template: NIGHT-8, 22:00–06:00, night shift at Embakasi depot.\n\n3. Example (staff ID only): T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export shows 2.1 hrs REG on 30 October and 6.1 hrs OT15 on 31 October. We expected 8.0 hrs REG plus 0.2 hrs OT15, that is 8 hrs 13 min in total, with the 13 minutes outside the scheduled shift coded as OT15.\n\n4. Export profile: Payroll CSV v2.\n\n5. First noticed: 5 November, when Kevin was reviewing the draft October overtime. The behaviour itself appears to have started around 28 October, just after the update.\n\nFor context: since 28 October the export splits every shift that crosses midnight into two lines and codes the after-midnight portion OT15 instead of REG. This affects 38 staff on nights, and the draft October overtime came out about KES 212,000 too high. The 4.2.1 release notes promised improved midnight rollover handling, so the opposite seems to have happened.\n\nTwo asks. First, a fix or a clear workaround before payroll inputs close on Friday 20 November. Second, please confirm plainly: can Brian roll the Embakasi terminals back to 4.1.8 safely, without losing any buffered punch data? We are holding the affected overtime lines and correcting them manually from the raw punches for now, but that is not sustainable month to month. Kevin is copied and will test whatever fix you propose.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 315,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: [\"support@clockpoint.example (reply to m01) (cc ['kevin.mutua@tausifreight.example']) (>= 150 words) (with [['BX-300', 'BX300'], ['Payroll CSV v2', 'CSV v2', 'CSV version 2']])\"]"
+      },
+      {
+        "check": "reply_item",
+        "kind": "other check",
+        "detail": "unknown item: ['CP-48213']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28976383805274963,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06244973465800285,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.3828125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.381322860717773,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.8,
+    "effort": "provider default",
+    "output_tokens": 1579,
+    "input_tokens": 2137
+  }
+}

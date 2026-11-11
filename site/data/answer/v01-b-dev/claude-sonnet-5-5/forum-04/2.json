@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: none\n\nMick, please don't go into 43 at 9, and Priya, please hold on to your key for now.\n\nI'm a chartered structural engineer, but this isn't a commission and I'm only going on what I saw from the pavement at 7 this morning, so take it as a neighbour's view.\n\nThe stack on 41 is still about 1.2m high and leaning towards 43, with the mortar washed out at the base. It could go with the next bit of wind, and the forecast is gusts of 50mph again this afternoon. The front roof of 43 is holed. Putting props under the bay ceiling means standing right under that hole with a loose stack above you, which is the worst place to be. Nobody knows what debris is sitting on the floors up there or how the load is getting down now, so props could do harm as well as good. Looking at the loft from inside is a definite no.\n\nIt's kind of you to offer, truly. Please leave it to the council.\n\n---\n\nTo: ashbourne-terrace-chimney\nReplying to: p04\nCc: none\nSubject: none\n\nPriya, here are my answers to your two questions, again from what I could see from across the road.\n\nPavement: I wouldn't use it. There are loose slates on the gutter lines of 43 and 45 directly over the footway, and the council tape only covers your front garden, not the pavement. Please walk on the other side of the road until the council has been, especially on the school run to St Dunstan's. The council know about the chimney, but nobody has closed the footway. Out-of-hours dangerous structures goes through the council's main number, so if anyone can ring and say the pavement is still open, please do.\n\nMrs Doherty: that's her decision, not mine, and I can't tell you she's safe because I can't assess inside 45. The front of 45 looks undamaged from outside, but I couldn't see the party wall with 43. I wouldn't sleep in the front room tonight myself, and it would be better if she went to family until 45 has been checked.\n\nJoJo, your cousin is right that terraces are generally robust. But this one has been hit and damaged, and that's a different thing.",
+  "words": 366,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22735606133937836,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04933914914727211,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.83119010925293,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.8,
+    "effort": "high",
+    "output_tokens": 2525,
+    "input_tokens": 3426
+  }
+}

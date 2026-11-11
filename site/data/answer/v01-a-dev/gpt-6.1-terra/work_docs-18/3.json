@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Fix-It Saturday at St. Ansgar\n\n**Saturday, December 5, 2026 | 9 a.m.–1 p.m.**  \nFellowship Hall, St. Ansgar Lutheran Church, Minneapolis  \nEnter through the alley door; a ramp is available.\n\nGot a broken toaster? Bring it to our first Fix-It Saturday—and stay for coffee.\n\nThe idea was born in the church kitchen, when Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes. Too much gets thrown away that might just need a screw or a new cord. So we’re bringing together neighbors who like to fix things and neighbors who have things that need fixing.\n\nOur volunteer fixers can help with small appliances, lamps, bikes, clothing mending, and knife sharpening. We also have a retired tech guy who can take a look at laptops and phones. And I’m delighted that Doris Lindqvist, 84, who has darned socks for this parish since the Carter years, asked to run the mending table herself.\n\n**Everyone is welcome.** It’s free, with no membership or sign-up required. Donations to the food shelf are welcome but not expected. This is good neighboring, plain and simple: no strings, and nobody will preach at you.\n\nPlease bring **one item per person to start**, so we can keep the line moving. We’ll have coffee and kringle while you wait.\n\nAfter December 5, we plan to gather on the **first Saturday of every month through spring**.\n\nWe’d love to have more volunteer fixers, especially anyone who can work on vacuums or zippers. If you’d like to help—or have a question—contact the church office at **office@stansgarlutheran.example** or **612-555-0148**.\n\nI’m thrilled we’re finally doing this. Bring that broken toaster, and come meet a neighbor.",
+  "words": 274,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41617289185523987,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9967971444129944,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.774761199951172,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.8,
+    "effort": "low",
+    "output_tokens": 397,
+    "input_tokens": 18282
+  }
+}

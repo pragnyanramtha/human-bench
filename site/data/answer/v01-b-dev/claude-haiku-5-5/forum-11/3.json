@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "*Quick note: you gave the reopening as Tuesday January 19 and the invitation as Saturday January 23. I wrote it so the bakery reopens on the 19th and the open house is on the 23rd. Change that if you meant something else.*\n\n---\n\nHi everyone, Hélène from Le Pétrin Doré here. My nephew showed me this thread this morning. I laughed, then I got a bit emotional, so bear with me.\n\nFirst, the important part: we are not closing. We bought the building. I wanted to keep this as a surprise for the reopening, but after reading this I think I owe you the real story now.\n\nMarc-Antoine's cousin is half right. The building at that corner was sold this fall, yes. It was sold to me. The owner, M. Ferland, is 81 and he is retiring to Sherbrooke to be near his daughter. He has come into the bakery every morning for seventeen years for his baguette, *pas trop cuite*. When he decided to sell, he told me he wanted it to be me before anybody else. We signed at the notary on December 15. He cried a bit at the notary, and I did too, I won't pretend otherwise.\n\nAbout the sign. My nephew Thomas wrote it at 6 in the morning on the 28th, and \"Grande nouvelle\" was his idea. I said ok without thinking. Looking at it now, it was a bad sign. A vague sign with no explanation is exactly how rumours start, and that part is on me, not on Thomas.\n\nAbout the shelves on the 28th: they were half empty because we sold out for Christmas Eve. We made 400 bûches for the réveillon and that's where the flour and the hands went. Nothing to do with closing.\n\nNow, Mme Bergeron (I'm sorry if I got the name wrong, D. Bergeron), you asked me straight, so here is a straight answer about the carnets.\n\nWe sold 214 carnets in October. Each one is 12 loaves for $60. Carnets have no expiry date. Every carnet is still good, and every loaf on it will be honoured when we reopen. Nobody loses a loaf. Noodle_and_crumb, you have 7 left on yours, and you'll have them. Anyone holding a carnet also gets one free croissant in January, as a thank you for waiting.\n\nAnd if anyone really wants their money back for a carnet, come by the bakery after we reopen and I will give it back to you. No question, no form, no argument.\n\nNow the dates. We are closed from January 4 to January 18 for works. We reopen Tuesday, January 19 at 7 a.m. The works are for a new deck oven, four decks, coming from a supplier in Laval. Our old oven is from 1998 and it broke down three times this year already. That's the real reason for the closure: I want a bread oven that doesn't stop in the middle of a Saturday rush.\n\nWe are also taking over the space at the back, which used to be storage for the dépanneur. We're putting in six small tables. Many of you have asked for years where you can sit with a coffee and a croissant, and the honest answer was nowhere. Now there will be somewhere.\n\nTo the tenants upstairs and to the people who worry about what happens to the apartments: the three apartments stay rented. Same tenants, same rent. I promised them in writing. Their homes are not part of any plan to change this street. I understand that Mile End has lost a lot of small shops, and I understand why people are nervous when they see a sign and a rumour. I'd be nervous too. But calling it a scam after seventeen years on this street hurt, and I'm going to be honest about that.\n\nSo please come to the reopening. Saturday, January 23. We'll have coffee, and everyone gets a piece of the new bread for free. Come see the new oven, sit at one of the six tables if you can find one, and bring your carnet if you have one so I can stamp it properly.\n\nThank you to Priya, who has been defending us here when she didn't have to. She's right that I've known half this street by name since 2009. Her kid got a chocolatine every Saturday for a year, and I haven't forgotten that either. Thank you to everyone who wrote \"wait, let's ask before we judge.\" That is what I would want from a neighbour too.\n\nAnd D. Bergeron, thank you for asking me directly. You were right to ask. If you had written this as a complaint and not a question, I would have answered it just the same. I'd rather you ask me than guess.\n\nSee you on the 19th, and the 23rd, and any Saturday in between.\n\nHélène\nLe Pétrin Doré, 5 rue Fairmount, corner\nOpen since March 2009",
+  "words": 824,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3966701030731201,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05977940931916237,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.157982736825943,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.1,
+    "effort": "medium",
+    "output_tokens": 3650,
+    "input_tokens": 2408
+  }
+}

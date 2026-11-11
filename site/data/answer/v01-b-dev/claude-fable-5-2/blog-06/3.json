@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "blog-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Jonno, this is what happened to the coolroom\n\nJonno,\n\nYou keep messaging me about the coolroom and I cbf typing it all out with my thumbs after a double, so you're getting a blog post. Everyone else (hi Mum), this one's written to a bloke who used to work grill next to me and pissed off to London in February. Read along if you like.\n\nRight. Cup Day, Tuesday the 3rd. I get in at 6.40, open the coolroom door and the air doesn't hit me. You know the feeling. You'd know it in your sleep. I look at the thermometer and it says 11 degrees. The compressor had carked it sometime overnight and everything in there had just been sitting around getting comfortable.\n\nWe had 140 booked for lunch. Set menu, three courses. And Raff was off that day, so it was my kitchen.\n\nFirst call was to Wally from Coldline, who couldn't come till Wednesday because the part had to come down from Sydney. Second call was to Phil. Phil said, word for word, \"just make it work mate.\" That is not a plan, Phil. That's a thing you say to someone who already has a plan.\n\nSo I made one up. We went through the whole coolroom shelf by shelf, working out what was fine, what was borderline and what was gone. We lost about $1800 of stock, mostly dairy and the duck legs. The duck legs hurt. I had a quiet moment over the duck legs.\n\nEverything that survived had to go somewhere cold, and here's what we had: the two undercounters, the bar fridge, and Marta. Marta from the cafe next door, absolute legend, gave us half her walk-in without even making me beg properly. The bar fridge has never held that much food in its life and I don't think it'll ever be the same.\n\nGetting it all to Marta's was the bit you saw on my story. Me and Benny loaded 30 kilos of beef shin onto the milk crate trolley and took it down the laneway. In the rain, obviously, because it's Melbourne and it's Cup Day. Halfway down, a wheel fell off. So now it's two grown men in the rain dragging a three-wheeled trolley of beef shin down a laneway at seven in the morning, and I want you to picture it properly, because you would've been useless. You'd have stood there holding the wheel.\n\nMeanwhile Kev, our dishy, dug out the old esky and went to the servo for ice. He came back with 14 bags. The bloke at the servo asked him if we were having a party. Kev said \"sort of.\"\n\nThen service. I'm not going to pretend it was smooth. Every time someone needed something it was in a different fridge to where their hands went, and half of it was next door. But everyone just got on with it. Nobody sulked or had a moment, and I say that as someone who has watched you have a moment over a missing pair of tongs.\n\nAt 12.15 I had to 86 the panna cotta. It was a three course set menu with 140 people on it and suddenly there was no third course. So dessert became affogato with whatever. That's what I called it on the pass and that's pretty much what it was. And people loved it. They loved it more than the panna cotta! We had tables asking if it was staying on. I'm choosing not to think too hard about what that says about the panna cotta.\n\nBest moment of the day was a lady on table 9. Turns out she'd seen me and Benny out the window that morning doing the trolley thing. When her main went down she asked the floor staff if the beef was \"free range from the laneway.\" I've been thinking about it for a week. She gets it. She can come back whenever she likes.\n\nAnd honestly, mate, it was the best service we did all year. I mean that. Everyone was locked in, the food went out right, and 140 people ate lunch with no idea that the whole kitchen was running out of two undercounters, a bar fridge, an esky and a cafe. Which is how it always works, really. Bistro kitchens run on bar fridges and spite. The coolroom is a luxury.\n\nA few loose ends for you.\n\nMarta is making us pay her back in croissant credit. I don't fully understand the exchange rate, but I owe her about three weeks of staff meal, so if you're wondering what I'm doing with my life, I'm cooking lunch for a cafe.\n\nAnd the sweep. I drew a horse called Ice Cold Lad. On the day my coolroom died. He came second last. The universe is taking the piss and it isn't even being subtle about it.\n\nNow, you. I've thought about how you would've gone if you'd been there and I reckon you'd have cried. The old Jonno would've been alright. He'd have sworn for ten minutes straight and then carried the beef himself. But London's made you soft. I can tell from your messages. You asked me if everyone was \"okay.\" The Jonno I worked with would've asked how much we lost and whether the duck was salvageable. You'd have opened that coolroom door, felt the warm air and gone looking for someone to talk to about it.\n\nSo that's the story. Stop messaging me about it. Everyone's fine, the food was good, Phil still thinks \"just make it work\" was a contribution, and I'm up to my neck in croissant debt.\n\nWe could've used you on grill though. Even soft.\n\nCome home ya flog.",
+  "words": 953,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18401335179805756,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0688016414642334,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.34375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.9194778203964233,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 50.6,
+    "effort": "high",
+    "output_tokens": 3704,
+    "input_tokens": 1722
+  }
+}

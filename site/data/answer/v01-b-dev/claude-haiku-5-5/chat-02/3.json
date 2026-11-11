@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: #maintenance\nReplying to: s03\nCc: none\nSubject: none\n\nDana, you can do this yourself, and it's a good first job for learning the boat. Hector, no offense, but the green stuff is the wrong product for this boat. Green is ethylene glycol. It's toxic and isn't rated for the raw water side. Use pink propylene glycol RV/marine antifreeze for both the raw water and fresh water systems. Also, nothing from this job goes over the side. Whatever comes out of the engine and water system gets caught and disposed of properly, not dumped in the river.\n\nShopping list: about 2 gallons of pink for the engine and 2 to 3 gallons for the water system. Those are estimates, so buy enough to follow the Yanmar and water system procedures in full. It runs about $6/gal at West Marine or Walmart. You'll also need fuel stabilizer, oil and filter, a spare impeller, a hydrometer, containers to catch discharge, and a hose or fitting to set up exhaust collection.\n\nOrder of operations:\n\n1. **Coolant side.** The 3GM30F is freshwater cooled through a heat exchanger. Check the coolant with the hydrometer. If it's 50/50, it should be good to about -20°F. Top up if it isn't. The coolant side is not what freezes and cracks, so don't spend much time there.\n\n2. **Engine prep.** Warm the engine, then change the oil and filter while it's still warm. Top off the fuel tank and add stabilizer. Run the engine about 10 minutes so the stabilized fuel and fresh oil circulate.\n\n3. **Raw water side.** This is where the damage happens, so don't rush it. Set up exhaust collection before you start. Have a helper watch the flow and the collection container while you work.\n   - Close the raw water seacock.\n   - Disconnect the hose at the strainer and feed pink antifreeze into the strainer.\n   - Run the engine at idle until pink comes out the exhaust, then shut it down.\n   - Keep the pump wet the whole time. Never let the impeller run dry.\n   - Leave the seacock closed when you're done.\n\n   Pull the old impeller and inspect it if you want to. Keep a spare aboard regardless.\n\n4. **Fresh water side.** Drain the fresh water tank first. If you skip this, you'll waste about 6 gallons of pink filling it.\n   - Switch off the water heater breaker at the panel. Leave it off until you refill in spring.\n   - Drain the water heater. The bypass valve is behind the companionway steps, so set it per the manual.\n   - Pump pink through the lines until it shows at every faucet, including the shower and the galley.\n   - Capture all of this discharge too.\n\n5. **Verify.** Don't go by color. Test the discharged mixture for the protection rating the manufacturer requires. Pink only tells you the antifreeze is there, not that it's strong enough.\n\nWhere people get in trouble: a few years ago, three boats on C dock cracked exhaust elbows or strainers during the Christmas freeze. All three had skipped or rushed the raw water side. Don't be the fourth boat.\n\nOn the $465, it isn't a ripoff. If you do it yourself, expect two to three hours with a helper and about $60 to $80 in supplies. Where the yard charges for labor, you'd save the difference. If anything in the Yanmar manual disagrees with this, go with the manual.\n\nIf you want a second set of hands, I can come down to Sea Wren Saturday morning.",
+  "words": 576,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The draft attributes the six-gallon antifreeze waste to the fresh water tank rather than the water heater."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23284079134464264,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2122802734375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.2665209770202637,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.2,
+    "effort": "medium",
+    "output_tokens": 4034,
+    "input_tokens": 3152
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: Draft review — 3 stars\n\n3 stars — great tub and ramp, frustrating middle, fair ending\n\nHarbourline fitted out my 2021 Ford Transit as a mobile grooming van. I’ll start with the good part, because it’s genuinely good: the stainless tub and ramp are excellent and easily my favourite thing about the van. Dogs walk right in, the setup works well, and it makes my day much easier. I would absolutely praise that part without crossing my fingers behind my back.\n\nThen, on October 27, a fitting on the hot water line let go in the middle of a groom. I had Moose, a 110-pound Bernese, in the tub, with water going across the floor and down into the cabinet. Moose sat there through the whole thing like a furry king enjoying a surprise pool party. He was completely unbothered; I was the one screaming. I had to towel him off and send him home half done, then cancel the rest of the day.\n\nThe leak itself isn’t what made me angry. Stuff breaks, especially in a vehicle full of equipment that spends its life rattling around Halifax-area roads. What got me was the initial response. Before anyone had examined the van, Glenn told me these lines don’t just let go and suggested the heater had probably been run dry or someone had been hanging things off the pipe, which would make it user error and exclude it from the warranty.\n\nI’ve never run the heater dry, and the pipe is behind a cabinet door, so nobody is hanging anything off it. Being handed a theory that essentially blamed me before the van had even been looked at felt lousy.\n\nThe earliest appointment offered was November 3, with a $180 diagnostic fee. In the end, the van was off the road from October 27 to November 6. I lost six bookings, plus the remainder of the day the leak happened. When your business is a mobile one, the van isn’t just how you get to work. It is work.\n\nTo be fair, Glenn did own it once the van was inspected. The compression fitting on the outlet turned out to be a cheaper one his supplier had swapped in. He said it was on them, replaced all the fittings on the hot side, and knocked off the $180. That was the right resolution, and it deserves to be included here.\n\nMy advice to other groomers or trades considering a fitout: get all the warranty details in writing and make sure you understand them. Ask what’s covered, what counts as user error, how that gets determined, and whether diagnostic fees apply. My invoice did include a 12-month workmanship warranty excluding misuse or user error, so those details matter.\n\nThree stars because the equipment is good and Glenn eventually made it right, but the downtime and the initial assumption of user error made a bad week considerably worse. A good fitout, a very bad middle chapter, and a decent ending.",
+  "words": 493,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28382745385169983,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17978131771087646,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.55528450012207,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 58.1,
+    "effort": "provider default",
+    "output_tokens": 3111,
+    "input_tokens": 2000
+  }
+}

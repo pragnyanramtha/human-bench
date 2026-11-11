@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.16, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Some good news to start with. Priya Bhatia joins the practice on Monday 16 November. She's a chartered structural engineer (IStructE) and comes to us after nine years at a consultancy in Coventry. I'm very glad she said yes.\n\nI also owe some of you an apology. In September and October, beam calculations and drawings were taking five to six weeks to come back. That is far too long, and it was my fault. I said yes to too much work on my own. By October I was on site all day and doing calculations until midnight, and my wife had started calling the office \"the other house\".\n\nSeveral of you were left waiting, a few of you were quite unhappy, and one of you left a pretty sharp review. One couple in Harborne had their builder standing by with the steel already ordered. We got their calculations to them in three days, but only after they had chased us twice, and they shouldn't have had to.\n\nWith Priya here, our target for beam calculations and drawings is now 10 working days. If you're waiting on us at the moment, your job is moving. Message me directly and I'll tell you where it stands.\n\nThere is one other change. First site visits that take place from 1 January 2027 will cost £95. If you go ahead with us, that £95 comes off your fee, so it only costs you anything if you decide not to proceed. I liked offering the free visit, but about a third of them never turned into a job, and that is time I haven't had to spare.\n\nIf you already have a visit booked at the time of this post, it stays free, whatever date it's on, including dates in January or later. Anything booked from now on is free if the visit happens before 1 January and £95 if it happens on or after.\n\nYou'll start seeing Priya on site over the coming weeks. If she turns up at yours, please say hello and make her welcome. Thank you to everyone who stuck with us through a slow autumn.",
+  "words": 355,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16434817016124725,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03146684542298317,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.703125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.0343520641326904,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.0,
+    "effort": "high",
+    "output_tokens": 1894,
+    "input_tokens": 1428
+  }
+}

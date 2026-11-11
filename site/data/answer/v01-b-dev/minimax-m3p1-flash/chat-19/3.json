@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Mikaela, no rush at all, and thanks again for helping us out when Dave did his shoulder, that was a biggie for us.\n\nHere's the honest version, warts and all.\n\nWe started on 21 Sept, straight after mating finished. 290 cows, mostly 3-way crossbreds. We skip the Tuesday, Thursday and Saturday arvo milkings plus the Sunday arvo, so that's 4 once-a-days a week, and 5.15 in the shed every morning, every day, no exceptions.\n\n**Production** — milksolids down about 6% for the same weeks last year, off the Fonterra app. The rep had said expect 8-10% so we actually came out ahead of what he told us to expect. Some of that might be the cows not doing as much as last year, hard to separate the two, but 6% on 290 cows is 6%.\n\n**Cells** — this was the bit that worried me most. We went from about 110k to 180k in the first 3 weeks, exactly what everyone warned about. But they've come back to around 135k now. So yeah, they went mental for a bit, they settled.\n\n**The bad bit you need to know** — we've had a heifer go bad with mastitis on a skipped arvo, didn't spot her till the next morning and she lost a quarter. She's fine now but that's the sort of thing that happens. You have to be on your game with teat spraying and actually checking the cows on the skip days or it does bite you. It's not a small thing when nobody's walking the cows that afternoon.\n\n**What we didn't expect** — the cows came round quicker than I thought, about 4 days of bellowing at the gate and then they were fine. And lameness has dropped right off. We're down to 4 on the lame list vs 11 this time last year. Part of that's probably the 1.8km walk to the back paddocks not happening 4 days a week.\n\nKieran, our 2IC, said it's the first spring he hasn't wanted to quit by October. He used to be the first one saying he'd had enough by then. That told me more than any spreadsheet.\n\nAnd we skipped the first Sunday arvo, Dave and I drove up to Hamilton to see the grandkids. First Sunday off in spring in 20 odd years. Worth a bit on its own.\n\nStraight answer — no, I wouldn't go back. The hours alone are worth the 6%. If Tom's knees are stuffed, the arvos off will do more for him than anything else anyone can offer. For your young fella talking about leaving over the hours, I'd sort the arvos out first, because once those are gone the 5.15 starts are just part of the job.\n\nOn the vet vs the rep — our vet was right about the cells, and the rep wasn't wrong, he just quoted us the worst case for the drop and it came in better than that. Don't let the talk talk you out of it.\n\nIf you want real numbers, come and have a look at the shed rosters at the Kerrisons' field day on the 19th, 10am, bring your own lunch. Honestly though, easier for both of us if you just ring me, I can show you the rosters on the shed wall and the app figures without trying to read them off a phone. Ring any time.\n\nGrant, if you're still thinking about it after 2 yrs, come and have a look at our rosters and numbers on the 19th too, no point reinventing it.",
+  "words": 592,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says they started 21 Sept 'straight after mating finished', but the request says 'after mating started'."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3528890311717987,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21523058414459229,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.4896351397037506,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.7,
+    "effort": "provider default",
+    "output_tokens": 2298,
+    "input_tokens": 1024
+  }
+}

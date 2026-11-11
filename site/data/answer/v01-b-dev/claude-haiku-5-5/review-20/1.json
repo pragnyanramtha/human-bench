@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Sunbelt Charter Coaches: missed shuttles for a 220-person dinner (Thu, Nov 5)**\n\nI'm posting this so you have the facts before booking Sunbelt for anything time-sensitive. I used them for two small airport runs last spring with no problems, which is part of why I trusted them with this.\n\nI booked four coaches for a client dinner for 220 guests on Thursday, Nov 5. Pickup at the hotel was 6:15 p.m., with transport out to a ranch venue in Henderson. The booking was confirmed in writing twice, most recently on Tuesday, Nov 3. I paid $8,400 total: a 50% deposit in September and the balance seven days before the event.\n\nOnly two of the four coaches showed up. The first arrived about 55 minutes late. The driver said he had been given the job at 5 p.m. that day. The second coach broke down on the 215 with the AC out, and passengers sat on the shoulder for roughly 40 minutes.\n\nTo get guests to the venue, I put 60 people into Ubers and Lyfts on my company card, about $1,900 in rideshare costs. Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime.\n\nEvery booking went through dispatcher Corey. Since Friday, the office line has gone to voicemail. I have not received a response on my refund request for the two coaches that never arrived or on reimbursement for the rideshares.\n\nA late bus can happen. What I can't accept is no backup plan and no communication when things went wrong. This also puts our relationship with the client at risk. They are now reviewing whether they will keep us for their March event, and that outcome is a direct result of what happened here.\n\nI'm not posting this to vent. I'm posting it so other planners can make an informed decision. If you're considering Sunbelt for airport transfers, offsite events, or CES-season volume, I'd recommend two things before you sign:\n\n1. Ask them directly how they handle breakdowns and no-shows, and what their backup plan is.\n2. Confirm that a dispatch contact will answer the phone during your event, not just during business hours.\n\nI'm happy to share the written confirmations and payment records with anyone who wants to see them.",
+  "words": 377,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3758141100406647,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9990644454956055,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.000978469848633,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.5,
+    "effort": "medium",
+    "output_tokens": 1821,
+    "input_tokens": 1493
+  }
+}

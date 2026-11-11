@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "## A Thursday afternoon with the tea trolley\n\nThe bourbon biscuits always go first. This is one of the things I have learnt since joining the Thursday tea trolley at Wensum Vale Hospice. We now hide a packet for the late group, which may not sound entirely fair, but neither is arriving to find nothing left but the biscuits nobody else wanted.\n\nI started in March 2022, eighteen months after retiring from 41 years of bookkeeping, mostly for a builders’ merchant in Dereham. I had looked forward to retirement, and I don’t miss the ledgers. But without work I often had no regular reason to go out, and I drifted a bit. Thursdays gave me somewhere to be and something useful to do.\n\nI was nervous at first. If you hear “hospice” and imagine that volunteering must be terribly sad, or that you ought to know something about nursing, I understand. I wasn’t sure what to expect either.\n\nThen, in my first week, I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she had to be given a tissue. She told me it was the best afternoon she’d had in a month. I would have preferred to make myself useful without quite so much clearing up, but it did settle my nerves.\n\nOn a Thursday, about 14 to 18 patients come to the day therapy unit. Some come for the art group, some for a hand massage, some for company. Most go home afterwards. It is generally noisy and rather jolly, with plenty of conversation going on around the tea.\n\nMr Hollis, a retired signalman, takes two sugars and tells me about the 1953 floods each week, slightly differently each time. I have stopped correcting the dates. Remembering everyone’s tea order turns out to suit someone who spent 41 years keeping ledgers straight, although there is less scope for balancing anything when someone changes their mind halfway through pouring.\n\nThere are hard weeks. I wouldn’t want anyone to come thinking there weren’t. We get to know people, and sad days do happen. The staff look after us when they do. But sadness isn’t the whole of an ordinary Thursday afternoon, or even most of it.\n\nAt present there are four of us on a rota intended for six. We lost two volunteers over the summer: one moved to Sheffield to be nearer the grandchildren, and the other needed a knee operation. So we could do with a couple more pairs of hands.\n\nThe commitment is **one Thursday a fortnight, from 1.30 to 4pm**. You don’t need nursing skills. You need to be able to push a trolley, remember who takes what, and listen. Bridget, our volunteer coordinator, does the induction, which takes about two hours. There is also a short food hygiene course online, paid for by the hospice. You aren’t expected simply to arrive and know what to do.\n\nIf you think it might suit you, there is a **volunteer open afternoon on Tuesday 24 November at 2pm in the Willow Room**. There will be tea and biscuits, and no obligation to sign up. You can also ring Bridget on the volunteering line.\n\nI’d be very pleased if this persuaded at least two people to come along and find out a bit more. You needn’t be an unusually good person. I’m not. I like the company, I like having a regular afternoon out, and I like being useful. That has been quite enough reason to keep going.",
+  "words": 586,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16252650320529938,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.40601062774658203,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.5244415998458862,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.6,
+    "effort": "medium",
+    "output_tokens": 773,
+    "input_tokens": 14142
+  }
+}

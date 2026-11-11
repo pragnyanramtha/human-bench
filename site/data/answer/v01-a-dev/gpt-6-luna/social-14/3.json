@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey, Hollins Family Ties — I wanted to let everyone know I’m coming to Thanksgiving, and I’m looking forward to seeing you all. We’ll be at Aunt Denise’s in Macon on Thursday, November 26, eating around 3. I’ll bring mac and cheese and two sweet potato pies.\n\nI’ve also been thinking about last year. The conversation about my work got heated, and I said something rude about where someone gets their news. That was on me. I’m not sorry for the work I do, but I am sorry for how I spoke at Grandma’s holiday. I still feel bad that she ended up sitting out on the porch for an hour. She deserved a much better day than that.\n\nI know not everyone in this group was there, so I’m not trying to reopen the whole thing or put anyone on the spot. I just want to ask for a truce on work and politics for one day. I can’t discuss open cases anyway, so questions about “the lawsuit” won’t get us anywhere. Let’s keep the table to food, football, babies, and Tasha’s new boyfriend—and give Grandma a Thanksgiving where she can stay in the room.\n\nI know people can get under each other’s skin, but there’s a lot more to our family than one argument. I appreciated the birthday text in August, too. That thumbs-up was basically a hug, and I took it that way.\n\nI’m coming, I want it to be a good day, and I hope we can all help make it one.",
+  "words": 256,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The piece never conveys that the relative likes to poke but isn't a bad guy; 'people can get under each other's skin' is only a vague hint, so does_task fails."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49723145365715027,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4407518208026886,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.59375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.486785888671875,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.8,
+    "effort": "medium",
+    "output_tokens": 320,
+    "input_tokens": 13942
+  }
+}

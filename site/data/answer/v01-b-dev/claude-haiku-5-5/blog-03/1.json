@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# The Van, the Dryer, and a Cable I Should Have Asked About\n\nOn Wednesday, October 28, I was drying Moose, a very fluffy Bernese, in a client's driveway in Bedford. The dryer was on high, the way I run it all day, and I smelled hot plastic. My first thought was that the dryer motor was overheating. That's what I've been told to watch for, and it's what I assumed. Then I looked toward the back of the van and saw smoke coming out of the bench seat where the batteries sit.\n\nI killed the battery switch, grabbed Moose, and got him out the side door while he was still damp. He was thrilled about the whole thing, which I'm choosing to find funny now. I used the fire extinguisher, though looking back I'm not sure I needed to. When I opened the bench, the positive battery lug was black, and the cable jacket had melted back about 3 centimetres from the connection.\n\nEveryone is okay. Moose is okay. I'm okay, mostly. But I'm off the road for at least three weeks while parts are on order, and I've cancelled 31 appointments. I'm writing this up for two reasons. First, it's the most useful thing I can do with the experience. Second, a friend of mine is about to pay a deposit to the same person who built my van, and I want her to have the information before she signs anything.\n\nI'm not an electrician. I want to be clear about that from the start. What follows is what I've learned from my own situation, from talking with the electrician who inspected my van, and from the notes I took in the days after. If you run a mobile business on a battery system, please get a qualified person to look at yours. Don't take my word for it, and don't take anyone's blog post as a substitute for a real inspection.\n\n## What my setup looked like\n\nMy van was built in spring 2025 by Coastline Van Fitouts. The system was:\n\n- A 3000W inverter\n- Two 200Ah lithium batteries\n- A 12V system\n- A dryer that pulls roughly 1800 to 2000W, plus a water heater that sometimes runs at the same time\n\nFrom the outside, the build looked clean. The wiring was tucked away, the panels were neat, and everything had that finished look that makes you feel like someone knew what they were doing. I trusted it because it looked tidy.\n\nI've since come to believe that tidy and right are two different things. A van can look beautiful and still have a problem that no one sees until something goes wrong.\n\n## What went wrong\n\nI'm going to list what the electrician found, as plainly as I can, and I'll explain the numbers after.\n\n**The cable was too small.** The cable running from the battery to the inverter was 4 AWG. The electrician, Priya from Sackville Marine Electric, told me that for a 3000W inverter at 12V, the cable should be 2/0. That's a much thicker wire.\n\n**The lug was crimped badly.** The lug on the positive end of the cable was crimped with what looked like pliers or a hammer, not a proper crimping tool. A poor crimp creates a high-resistance connection, and high resistance makes heat. Heat-shrink tubing was covering the joint, which meant nobody could see what the connection looked like without taking it apart.\n\n**The fuse was too far from the battery.** The 300A ANL fuse was mounted about 90 centimetres from the battery. Priya said it should be within about 18 centimetres (7 inches) of the positive terminal. The purpose of a fuse close to the battery is to protect the entire length of cable between the battery and the fuse. When the fuse is far away, the cable in between has no protection if something goes wrong.\n\n**There was no smoke alarm in the back.** The only alarm was the one in the cab, which came with the van. Nothing was watching the battery area.\n\nAny one of these might not have caused a fire on its own. Together, they meant a heavy load was running through a cable that was too small, connected at a point that was poorly made and hidden, with nothing to cut the power quickly if the connection started to fail.\n\n## What the numbers actually mean\n\nI'm not going to pretend I understood electrical math before this happened. Here's what Priya walked me through, in plain terms.\n\nTo figure out the current (amps) a device pulls, you divide its power (watts) by the voltage. At 12V:\n\n- A 2000W dryer pulls about 167 amps at the inverter's output, before losses.\n- A 3000W inverter running at full load pulls about 250 amps through its input cable, before losses.\n\nInverters aren't perfectly efficient. Some of the power is lost as heat in the conversion, so the battery side draws a bit more than the output numbers suggest. That's why I've seen the range given as roughly 150 to 250 amps through the main cable during the dryer's cycle, with more possible at full inverter load. I'd rather give you the honest range than a single tidy number.\n\nNow the cable. Wire is rated by how many amps it can carry continuously before it heats up beyond a safe level. Thinner wire has a lower rating. For copper at this size, 4 AWG is generally rated for somewhere around 85 amps. That means my cable was being asked to carry two or three times what it was rated for, at the moment the dryer and the water heater were both running.\n\nPriya's recommendation was 2/0 wire for a system this size. The electrician who inspected my van said 2/0 is the minimum she'd put in, and that for a longer run or heavier load, a bigger cable might be wise. If you're sizing a system like this, ask your installer what cable size they're using and why, and ask them to show you the calculation or the spec sheet.\n\nThe fuse works on the same principle. It's sized to protect the cable, not the inverter. If the cable is too small for the load, the fuse rating and the cable rating need to be considered together. And the fuse has to be close enough to the battery that the cable is protected all the way back to it.\n\n## What Priya showed me\n\nPriya pulled up photos of my damage and set them next to thermal camera images from her own van, which runs the same kind of load on a properly sized system with proper connections. Her van barely gets warm. Mine had a lug that was black and a jacket that had melted.\n\nI'm not an engineer, so I won't pretend to know every detail of why the difference is so dramatic. But seeing the two images side by side made it clear to me that this wasn't bad luck. A correctly built system and mine were doing the same job, and one of them was getting hot enough to melt plastic.\n\n## What I wish I'd known\n\nWhen I bought the build, I didn't ask about cable sizes. I didn't ask what the fuse was rated for or where it was mounted. I didn't ask whether the connections were crimped with a proper tool. I didn't ask about smoke detection. I assumed that a professional builder would handle all of it correctly, and I had no way to check.\n\nHere's what I'd tell anyone thinking about buying a van build, or any mobile power system:\n\n- **Ask for every specification in writing.** That means cable gauge and length, fuse rating and location, inverter size, battery capacity, and the crimping tool used for lugs. If a builder won't put these in writing, that tells you something.\n- **Ask why.** Ask why the cable is that size, why the fuse is there, and what load the system was designed for. A good installer will be happy to explain.\n- **Ask about heat.** Ask how the builder has verified the system under real load, and whether they checked connection temperatures.\n- **Ask about detection.** Ask whether there's a smoke or heat alarm in the battery area, not just in the cab.\n- **Get a second opinion before you pay.** A qualified marine or RV electrician can review the build for a modest fee, and it's worth every dollar.\n\nIf you're a groomer, a contractor, or anyone else who runs equipment that draws serious power from a van, you're putting a lot of trust in the people who built it. You deserve to know what's inside.\n\n## A checklist you can do on your own van\n\nI want to give you something practical. These are things anyone can look at, but please do them with the power off, and please don't treat this as a replacement for a professional inspection.\n\n**Before you start:**\n- Turn off the battery switch or disconnect the batteries.\n- Wait a few minutes so anything that was warm can cool.\n- Have your phone light on, and keep your hands clear of any terminals.\n\n**Check the cables:**\n- Look for discoloration, bubbling, cracking, or melted jacket anywhere along the run, especially near the battery and inverter.\n- Check that the cable gauge is marked or documented, and compare it to what your installer or manual says. If you can't find the spec, ask.\n- Make sure cables aren't pinched, rubbing on sharp edges, or routed against heat sources.\n\n**Check the lugs and connections:**\n- Look at every lug on the positive and negative ends. Are they crimped with a proper hydraulic or ratcheting crimper, or do they look squashed or flattened?\n- Check if the heat-shrink is covering a crimp you can't inspect. If the connection is hidden, ask a professional to look at it.\n- Gently check that every bolt and terminal is tight. Don't overtighten, but don't leave anything loose.\n- Look for any green or white crust at terminals, which can indicate corrosion and resistance.\n\n**Check the fuse:**\n- Find the fuse on the positive side of the battery. Measure the distance from the battery positive terminal to the fuse. Ideally it's within about 18cm (7 inches).\n- Check the fuse rating against the cable and the inverter. Ask your installer or a pro if you're not sure.\n- Make sure the fuse holder is in good shape and not discoloured or warped.\n\n**Check the battery area:**\n- Look for any melting, soft spots, or staining on the bench, floor, or walls near the batteries.\n- Check whether the battery compartment has any ventilation, and make sure it isn't blocked.\n- Confirm you have a smoke or heat alarm in the battery area, not only in the cab.\n\n**Check your safety equipment:**\n- Confirm your fire extinguisher is rated for electrical fires (usually marked ABC or BC) and that it's charged and where you can reach it quickly.\n- Make sure you know how to shut off the battery switch in a hurry.\n\n**Do a warm-up check with a pro, or ask them to show you how:**\n- Run a known load for a while, then turn the system off and check temperatures with an infrared thermometer. Focus on the cables, lugs, fuse holder, and battery terminals.\n- Warm isn't always a problem, but a connection that's noticeably hotter than the others or hot to the touch is a warning sign.\n- Don't reach into an active system to check temperatures. Let it cool, then check.\n\n**Get a pro to look at it if:**\n- Any cable, lug, or fuse looks discoloured, melted, or hot\n- You can't confirm the cable size or fuse location\n- You smell anything burning or plastic-like\n- You've never seen the connections under load\n\n## The thermometer thing\n\nEveryone should own a cheap infrared thermometer. I bought mine for about $40 at Canadian Tire. It's not a substitute for a real inspection, but it's a quick way to spot a connection that's running hotter than it should. If you check after a load, you can compare the cable run to the inverter, the lugs, and the battery terminals, and look for anything standing out.\n\nI wish I'd had one before this happened. I would have been checking the connections regularly, and maybe I would have noticed something before the jacket started melting.\n\n## For my friend, and for anyone about to sign something\n\nTasha, if you're reading this: please ask any builder for cable sizes and fuse specs in writing before you pay a deposit. Ask for the crimping tool they use, where the fuse is mounted, and whether there's a smoke alarm in the battery area. Ask for a warm-up test on the system under a real load. If they get defensive about any of those questions, take that seriously.\n\nAnd if you can, pay for a second look from a qualified electrician before the build is finished. It'll cost less than a bad week.\n\n## Where I'm at\n\nI'm off the road for at least three weeks while the parts are on order. The repair quote is $4,200, which covers rewiring the main runs, installing a new fuse block, and adding a Class T fuse. My whole income runs through this van, and rent is due on the 1st, so I'm scared, and I'm trying not to spiral about it every hour.\n\nI've cancelled 31 appointments so far. Some of my clients have been incredibly kind about it, and others have rebooked for when I'm back, which means more than I can say. The insurance company says it may cover the repair. An adjuster is coming out Thursday, and I'll know more after that.\n\nI've sent Darren three texts and an email and haven't heard back. I'm not trying to trash him publicly. I'm just sharing the facts as I know them, and people can decide what to make of them. The cable size, the crimp, and the fuse location are the things I'd want to know if I were in his customers' shoes, and they're the things I'd ask about now.\n\nMoose's mom brought me a coffee and sat with me on her steps while I shook. I don't know how to thank her properly, so I'll say it here: thank you.\n\nI'll post again when the van's back on the road. Until then, check your connections, buy the thermometer, and ask the questions before you sign.",
+  "words": 2430,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36933889985084534,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9254710674285889,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.17436310648918152,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.1,
+    "effort": "medium",
+    "output_tokens": 7380,
+    "input_tokens": 1950
+  }
+}

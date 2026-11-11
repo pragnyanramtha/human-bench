@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Fix-It Saturday at St. Ansgar**\n**Bring the broken toaster. Stay for coffee.**\n\nNot long ago my 1970s Hamilton Beach mixer quit on me. Marv Okafor looked it over in the church kitchen and had it running again in twenty minutes. That's where this idea came from. Far too much gets thrown away that only needs a screw or a new cord, and we have people who know how to fix it.\n\nSo we're starting Fix-It Saturday, and the whole neighborhood is invited.\n\n**When:** Saturday, December 5, 2026, 9 a.m. to 1 p.m.\n**Where:** Fellowship Hall, St. Ansgar Lutheran Church, Minneapolis. Please use the alley door, which has a ramp.\n**Cost:** Free. You don't need to be a member, and you don't need to sign up. Just come. If you'd like to leave a donation for the food shelf, we'd be glad of it, but nobody expects one.\n\n**Who's fixing**\nOur volunteer fixers so far can handle small appliances, lamps, bikes, clothing mending, and knife sharpening. We also have one retired tech guy for laptops and phones. Doris Lindqvist, 84, has been darning socks for this parish since the Carter years, and she asked to run the mending table herself. I wouldn't argue with her.\n\n**How it works**\nPlease bring one item per person to start, so the line keeps moving. We'll have coffee and kringle for everyone while you wait. After December, Fix-It Saturday will happen the first Saturday of every month through spring.\n\nThis is good neighboring, plain and simple. No strings, and nobody is going to preach at you.\n\n**We need more fixers**\nIf you can fix things, we'd love your help. We're especially looking for anyone who can do vacuums or zippers, but if you have another skill, tell us. Volunteering is as casual as showing up with your toolbox.\n\n**Questions or want to volunteer?**\nCall the church office at 612-555-0148 or email office@stansgarlutheran.example.\n\nSee you on the 5th. Bring the toaster.\n\n---\n\nI left off a signature since I don't have your name. You may want to add \"Pastor [Your Name]\" under the last line. If this needs to fit a tighter space on a flyer, the \"How it works\" and \"We need more fixers\" sections are the easiest to trim.",
+  "words": 375,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39363643527030945,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3057616055011749,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.3184763193130493,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.4,
+    "effort": "high",
+    "output_tokens": 1640,
+    "input_tokens": 1467
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches: 2 of 4 booked coaches showed for a 220-person event, no backup and no communication since**\n\nI'm posting this because a lot of us use Sunbelt for airport and offsite runs, and CES booking is coming up.\n\nOn Thursday, Nov 5, I had a client dinner for 220 people. Pickup was at the hotel at 6:15, going to a ranch venue in Henderson. I booked 4 coaches and got confirmation in writing twice, most recently on Tuesday, Nov 3. I paid $8,400 total: a 50% deposit in September and the balance 7 days out. Corey was the dispatcher on every piece of correspondence.\n\nHere's what happened:\n\n- Only 2 of the 4 coaches showed up.\n- The first one arrived 55 minutes late. The driver told me he'd been assigned the job at 5pm that day.\n- The second bus broke down on the 215. The AC was dead, and guests were stuck on the shoulder for about 40 minutes.\n- I put 60 people in Ubers and Lyfts on my company card, which came to about $1,900.\n- Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime.\n\nNobody from Sunbelt called me at any point that night, and they had no backup plan. Since Friday, the office line has gone straight to voicemail. I've asked for a refund for the 2 coaches that never showed, plus the rideshare costs, and I haven't gotten a real answer.\n\nTo be fair, they did a great job on 2 small airport runs for me last spring, which is why I trusted them with something bigger. I could have handled one late bus. Losing half the fleet, a breakdown, and zero communication is a different situation.\n\nMy client is now reviewing whether to keep us for their March event. That's what this cost me.\n\nMy advice: don't book Sunbelt for anything large until they sort out their dispatch. If you do use them, get the driver assignments confirmed the day before, and have your own backup lined up.\n\nI'll update this post if they make it right on the refund.",
+  "words": 354,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6354995369911194,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9917485117912292,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.905663967132568,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.0,
+    "effort": "medium",
+    "output_tokens": 862,
+    "input_tokens": 1468
+  }
+}

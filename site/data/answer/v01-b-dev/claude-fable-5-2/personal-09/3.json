@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Papa's building. Call me.\n\nDenis,\n\nI'm writing this in English so nothing gets lost. I have started this email many times and thrown it away because I was too angry to write it properly. I am still angry. But I want you to read this to the end, so I am going to say it as calmly as I can.\n\nLast Thursday at 6 in the morning I was shaping the baguettes when a man walked into my shop with a camera. He was a photographer from a real estate agency. He said he was there to take pictures of the building, and that \"Mr. Denis\" had told him I was okay with it.\n\nI was not okay with it. I did not even know about it. Karine had to calm me down, in front of a stranger, in my own bakery. Afterwards I went online and found it myself on Centris. Papa's building, listed at $1,150,000.\n\nSo that is how I learned my brother is selling the building where I have worked every day for 31 years. A stranger with a camera told me. You did not call me. You let an agent do it for you. I can't find a nicer word for it, Denis, so I will use the real one: that was cowardly. And it is not like you, which is the part I cannot understand.\n\nAfter maman's funeral you called me and you said, \"No rush, we decide together.\" Together. That was your word, not mine. I believed you. I did not push you, I did not ask for anything in writing, because you are my brother and you said together.\n\nThen the estate was settled in August, and in September I called you. I told you I wanted to buy your half. I told you the caisse had pre-approved me for $410,000. You knew that. You had a real offer from me, by phone, in my own voice, and you still put the building on the market without one word to me.\n\nHalf of that building is mine. Nobody asked me anything.\n\nI want to remind you of a few things, because from Calgary maybe it is easy to forget them.\n\nPapa bought that building in 1979. The bakery has been downstairs for 31 years. I pay $2,400 rent every month to the estate and I have never been late, not once. In 2019 when the roof had to be replaced, I paid for it myself, $38,000. I have not treated that building like a tenant treats a building. I have treated it like it was ours.\n\nI know you think I am being sentimental. Maybe I am, a little. But this is also business, and I need you to look at it that way too. I have 6 employees. I have 31 years of clients, people who came in as children and now come in with their own children. My lease ends on April 30, 2027. Anybody who pays over a million dollars for that building is not buying it to keep a bakery on the ground floor at $2,400 a month. A developer will tear it down, or turn it into condos, or double my rent. I cannot survive any of those. If the building is sold this way, the bakery closes. Six people lose their jobs and I lose the only work I have done for my whole adult life.\n\nFor you this is a sale. For me it is everything I have. You are deciding it without me.\n\nAnd since you think I am sentimental, I will be sentimental for one minute. When we were kids, papa used to let you sleep in the back room with the flour sacks. You loved it. You asked him for it all the time. That is the building you are selling to a stranger, without telling me.\n\nHere is what I am asking you to do.\n\nTake the building off the market this week. Call the agent and tell him to remove the listing. Then you and I sit down, by phone or in person, I will even come to Calgary if I have to, and we do what you said we would do. We decide together.\n\nIf you will not take it off the market, then at the very least give me the first right to buy, before any other buyer. My offer to buy your half still stands and the caisse is ready. If you think my number is not enough, then say so to me directly and we will talk about it like two adults. But you don't get to go around me.\n\nAnd I want your answer by phone. I want to hear your voice. I do not want a text, and I do not want a message from your wife on your behalf. I have nothing against her, but this is between you and me, and after the way I found out, you owe me at least a phone call.\n\nI am going to finish with this, because I don't want you to read this email and think I have closed the door.\n\nI don't hate you. I am furious with you, more than I have ever been, and I am hurt, which is worse. But you are my brother. We already lost maman this year. I don't want to lose the bakery, and I don't want to lose you too. Right now you are the only one who can decide if I keep both.\n\nCall me this week, Denis.\n\n[your name]\n\n---\n\n- **Your name:** I didn't have it, so the sign-off is a placeholder to fill in.\n- **The price:** Half of the listing price is $575,000 and your pre-approval is $410,000. Denis will probably raise that, so I left the door open to talk about the number without committing you to anything.\n- **A notary:** Since you own half, see a notary this week if you haven't already. In Quebec a co-owner usually can't sell the whole building without the other's signature, so you may have more power here than the email assumes.",
+  "words": 1019,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37893879413604736,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10103243589401245,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.5571517944335938,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 60.8,
+    "effort": "high",
+    "output_tokens": 4446,
+    "input_tokens": 1526
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve never posted here before, but I came home today and couldn’t stop thinking about one of my patients. I’ll call her Mrs. H.\n\nShe came in every Thursday for her blister packs. She was in her eighties and walked with a cane. She lived alone after her husband died, and over the years I got to know her through those Thursday visits.\n\nShe rarely came empty-handed. Sometimes it was poppy seed cake. Once it was a jar of pickles, which I honestly didn’t know what to do with. During Ramadan, she brought me cake wrapped in foil with my name on it and reminded me not to eat it until sunset. I still think about how carefully she remembered.\n\nA few years ago, I caught an interaction between her warfarin and a new medication and called her doctor. After that, she told everyone I had saved her life. I always felt a little embarrassed because, to me, I was just doing my job.\n\nMrs. H passed away recently. Her daughter came in today to return her unused packs and glucometer. She also gave me a card. Inside was something her mother had written a long time ago but never given me: “for my Arabic daughter.”\n\nI went into the back room and cried. My tech covered the counter for me until I could come back out.\n\nMy father was a pharmacist in Egypt, and he knew all the families who came to him. When I came to Canada, I thought community pharmacy might be different. It turns out it isn’t so different after all. You see someone every week for years, and somewhere along the way they become part of your life too.\n\nSchool teaches us pharmacology and interactions, and those things matter so much. But nobody teaches you how to say goodbye to a patient, or what to do when their daughter brings back the medications you spent so many Thursdays preparing.\n\nI keep thinking about that card and wishing Mrs. H knew how much she meant to me too.\n\nHave any of you had a patient like this, someone you still think about long after they’re gone?",
+  "words": 360,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37409648299217224,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.41459718346595764,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1943359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.6194658279418945,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.6,
+    "effort": "low",
+    "output_tokens": 425,
+    "input_tokens": 18319
+  }
+}

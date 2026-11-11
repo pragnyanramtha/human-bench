@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, this is Thu, the owner of Lotus Garden Nails. I am sorry your toe hurt. I really mean that. You have been my customer for 2 years, and I do not want to fight with you here. I am upset, and when I am upset my English is worse, so please read my whole message.\n\nI want to tell the facts from my side.\n\nOn Saturday Oct 24 you had a deluxe pedicure, $45. The tech was my niece Vy. Vy is licensed 3 years. She speaks English okay, she is just shy. She was born in Houston. When you say she barely speaks English, that is not fair, and it hurt her. Vy read the forum and cried in the back room. She said she wants to quit doing nails.\n\nAt our salon, every tool comes from the autoclave in a sealed pouch, and we open the pouch in front of the customer. File and buffer are new for each person, and the customer takes them home. We put a plastic liner in the tub every time. Our state inspection was Aug 2026, we passed with no violation, and the paper is on the wall.\n\nI am not a doctor. I cannot say what happened after you left my salon. But I remember on Nov 2 you came back and showed me your red toe. I offered you the full $45 back, and I offered to pay your urgent care copay if you bring the receipt. That offer is still open. You asked for $300 cash and free pedicure for 1 year. I said no to that. I am sorry if that made you feel I did not care. I did care.\n\nI also want to say one thing about the pedicure, not to blame you, just what happened. During the service you told Vy to cut the cuticle more, more, you wanted it clean. Vy told you not too much. You said it was fine, you always do. I am not saying your toe is your fault. I am only saying what I remember.\n\nI have been in Houston 19 years. I opened in 2007 after working for my aunt. In all that time I never had one infection complaint. The comment that all these places are dirty, like we are all the same, hurt me the most. There are good salons and bad salons. I work very hard for mine.\n\nRenee, you are still my customer and I respect you. Please call me at the salon or come talk to me in person. I would rather talk face to face than do this on the forum. My phone is at the salon, ask for Thu.\n\nMarisol, thank you for saying your experience and for being fair. I appreciate it.",
+  "words": 463,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2369728684425354,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.031010949984192848,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.96875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.768850326538086,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.7,
+    "effort": "provider default",
+    "output_tokens": 1684,
+    "input_tokens": 980
+  }
+}

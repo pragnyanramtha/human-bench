@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Our Winter School on Elliptic Curves and Modular Forms ended on Saturday. On behalf of the organising team, thank you to everyone who made these three days possible.\n\nHeld from 5–7 November 2026 in Seminar Hall 2, Department of Mathematics, Sahyadri Institute of Science, Pune, the school brought together 41 MSc and early PhD students from 9 states. We received 112 applications, with selection based on a statement and one reference.\n\nI organised the school with Ketaki Joglekar and Faizan Mirza, under the guidance of our faculty mentor, Prof. Anuradha Venkatesan. Thank you, ma’am, for supporting a student-run school and helping us see it through.\n\nOur thanks to Dr. Nilesh Dharmadhikari (Hyderabad) for his lectures on Mordell–Weil, Dr. Sunanda Iyer (Chennai) for hers on modular forms, and Dr. Tomasz Wierzbicki, who joined online from Kraków for computations in Sage.\n\nTwo moments will stay with me. When an MSc student from Silchar spotted an error in a worked example in Sunanda ma’am’s notes, she corrected it live and thanked him. And when the power went out for nearly two hours on day two, with laptops running out of charge, we moved the afternoon problem session to the canteen with two rolling whiteboards. It turned out to be our best session of the three days.\n\nFor MSc students especially, I think small schools like this can offer more than a large conference: time to ask questions, work through mistakes and talk to speakers. The problem sessions led by our six PhD student volunteers worked very well, and that is a format we want to keep.\n\nThank you to those six volunteers for all the TA work, to every participant, and to our office staff. A special thank you to Mr. Prakash Salunke, who sorted out hostel rooms at 11 pm after a booking mix-up.\n\nThe institute’s student initiative grant of Rs 2.4 lakh supported the school, covering hostel stay and travel for 18 outstation students. We are grateful for that support.\n\nSlides and problem sheets will be on the department website within two weeks. We hope to run a second edition in late 2027, subject to grant funding. Thank you again, from all three of us.",
+  "words": 364,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16882656514644623,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11729928851127625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.7578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6852844953536987,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.4,
+    "effort": "medium",
+    "output_tokens": 1082,
+    "input_tokens": 43161
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Kelechi,\n\nYes, an actual letter. Paper, stamp, Royal Mail, the lot. You said put it in writing, so I'm putting it in writing. I hope you're sitting down on that train, because this is going to take more than one stop.\n\nI heard you at my birthday. Nine years, same spreadsheet, every day. You said it like a joke, but I've known you since Unilag and I know your joking voice, and that wasn't it. So I'm not going to pretend I just said \"teach maths\" because I'd had two glasses of wine. I meant it, and I've been thinking about it since.\n\nLet me tell you why I'm not letting this go.\n\nDo you remember Moremi before exams? You had an A in further maths, and half the hostel was queueing up at your door. Nobody asked you to do that. You just did it, because you liked it when people finally got it. And the thing about you is that you explain without making anyone feel stupid. That is rarer than you think. I work with people who have PhDs and can't do it.\n\nAt Christmas you sat my nephew down with a plate of jollof rice and cut it into portions to show him fractions. He is still talking about it. He told his teacher about it. Meanwhile, you spend your days checking other people's costings. Respectfully, my guy, you are wasting yourself.\n\nNow here's what I want you to picture. Last month I had a Year 11 boy, Damola, who had been stuck on simultaneous equations for three weeks. Three weeks of me coming at it from every angle, him looking at me like I was speaking Latin. Then one afternoon it clicked, and he shouted \"Is that all??\" in front of the whole class. And they clapped. Thirty teenagers clapped for simultaneous equations. I had to look at the whiteboard for a bit so nobody saw my face.\n\nThat's the job on its best day. It doesn't happen every day, which brings me to the part where I don't lie to you.\n\nTeaching is hard. The marking never ends. It follows you home, it sits on your sofa, it watches you eat. Some days the behaviour is proper wahala and you will question every decision you've ever made. When I started in 2019 I cried in the car park twice in my first term. Twice. I'm telling you because I'm not going to sell you a fantasy, and because you wouldn't believe me if I did. It gets better. It got a lot better. But the first year is rough and I won't dress it up.\n\nThe money, too. You'll take a pay drop in the first year, and I'm not going to hide that either. But the route I'm talking about is the salaried one, so you're paid while you train. It's one year, and it starts September 2027. After that there's the holidays (you will cry with happiness at the holidays), a proper pension, and the pay goes up. I can sit down with you and go through the real numbers, so you're not trusting my vibes.\n\nAnd here's why it matters to me. My school in Peckham has 1,100 kids, and since September we've had a supply teacher covering two Year 9 maths groups. Not because anyone's bad, but because there aren't enough maths teachers, full stop. Those kids are at the age where they decide whether maths is for them or not. A patient, funny person who doesn't make them feel stupid could change that for a lot of them. You're that person, and you're at a desk in Croydon.\n\nOn your last birthday you told me, \"I just want to do something that matters before 40.\" I haven't forgotten it. You're 34. That's not a lot of time to waste if you meant it.\n\nAnd before you say it: you're not too old. A woman in my department started at 41. She's one of the best teachers we have, and she still complains about the marking as much as the rest of us.\n\nSo here's all I'm asking. I'm not asking you to quit, or sign anything, or tell your boss. Applications for next September open soon, and there's an open evening on **Thursday 19 November, 6pm, at the training partnership in Lewisham**. Just go and listen. Ask whatever you like, including the awkward questions about money, because you will have them and you should. I'll come with you, so you won't be standing there alone looking like a quantity surveyor at a school event.\n\nIf you go and you hate it, fine. You'll have spent one evening and I'll buy you food after. I'll even stay quiet about it for a bit. Not forever, but a bit. If you go and some part of you lights up the way it did in Moremi, well. Then you'll have to deal with that, and I'll be right there saying I told you so.\n\nYou said you'd read this properly, so now it's your turn. Text me when you've finished. And yes, you can tell people I posted you a letter. I know you're going to find that funny.\n\nYour friend from Moremi days,\n\n[Your name]\n\nP.S. Eight days. Don't make me come to Croydon.\n\n---\n\nI left the name blank since I didn't want to guess, so add yours (or sign it by hand after printing, which would suit the posted-letter joke). The P.S. is based on today's date, 11 November, so adjust the number if it won't land until later in the week.",
+  "words": 933,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34690746665000916,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07541964203119278,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.8854241371154785,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.3,
+    "effort": "high",
+    "output_tokens": 3059,
+    "input_tokens": 1636
+  }
+}

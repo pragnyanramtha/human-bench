@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: [i02]\nCc: none\nSubject: Desert Palms — missing codes and my pinning tray\n\nMarco,\n\nI'm pissed and I'm not going to dress it up. Saturday you told me 14 units, all good, dropped the keys with Yvette. Well, it is not all good. Yvette called Lupe at 7:50 this morning — tenant in 9B lost her key and wants three copies cut today, and I got nothing to cut from, because not one bitting code for Desert Palms went into the sheet. Last entry in that book is 11/12. Nothing for Saturday. Nothing for Desert Palms. All 14 doors, gone.\n\nI put that rule out to everybody in August and I meant every word of it. Every rekey, every master job, the address and the code go in the sheet the same day, before you leave the van. Nine at night, ten at night, I don't care. Same thing happened on the Kessler job in September and I told you then. That's two for two. This is not optional and I don't want to be having this conversation a third time.\n\nStraight with you — I'm not firing you. You're good with your hands and that matters, and I'd rather keep you. But this can't keep happening, because when that sheet comes up empty, Yvette is standing there with a tenant who can't get into her apartment and it looks bad on the whole shop.\n\nSo here it is. You go back out to Desert Palms today. Decode 9B at minimum so Yvette can cut those three copies and hand them over today. If you can get into the rest of them, do all 14. Every code in the sheet, address, unit, code, your name, before you come back to the shop. Then send me a picture of the page so I can see it with my own eyes.\n\nAnd bring my black pinning tray back. You left it sitting on the counter in the leasing office with your pins still in it. Yvette's got her eye on that too.\n\nTalk to me before you head out.\n\nRay",
+  "words": 335,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2282135933637619,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08218275755643845,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.109375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.8316216468811035,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "provider default",
+    "output_tokens": 1971,
+    "input_tokens": 1479
+  }
+}

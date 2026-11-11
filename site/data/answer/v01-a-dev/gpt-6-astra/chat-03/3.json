@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmate you don't need to apologise for going quiet. I'm sorry I barely replied after sunday. work's been full on but I should've checked in properly. your ceiling fell on your bed and you've lost so much, of course you're not ok. and your landlord's a grub. a maintenance portal, get fucked.\n\nyou can come stay with us. Ruby's already said the couch is yours as long as you need it, although Clover apparently thinks that includes sharing with her. I'm off all day tomorrow now, Sam took my shift, and Dad's said I can borrow the trailer. we can get your bags out of Priya's garage before she needs the space, bring you here and sort through things when you're ready. doesn't all have to be unpacked or dealt with tomorrow.\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nalso there's band stuff happening if you're up for it. Tully spoke to Dee at the Lantern Room and she's offered us Sat 28th for a benefit night, all door money to you. Hollow Pines said they'd play too. you wouldn't have to organise it or get onstage. we can sort that, but wanted to check with you before anything gets announced.\n\nJono's cousin has a working Yamaha you can have for now. I know it's not your Nord, and none of this replaces your notebooks. when you feel like it we can go through whatever demos and rehearsal recordings we've got and see what songs we can piece back together. no rush. thursday rehearsal can wait.\n\nplease don't call it on Brisbane or the band this week. come here first and give yourself some time before deciding about Rocky. your songs are the best thing about this band, but you don't owe us a gig or anything right now.\n\nyou drove to bloody Gatton at 2am when my car died after that Toowoomba gig and didn't even complain. you're allowed to let us turn up for you too. what time tomorrow suits for me to come round?",
+  "words": 330,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17924517393112183,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026500189676880836,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.421875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.9516072273254395,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.3,
+    "effort": "medium",
+    "output_tokens": 431,
+    "input_tokens": 14878
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "# Kestrel Bastion 1500 Review — Solid Backup Power, With a Few Annoying Quirks\n\n**4 stars | $229 on Voltwise (Aug 2026) | 1500VA / 1000W, pure sine wave**\n\nBeen running this thing for about two months now, and I've put it through an actual outage test rather than just reading the box. Short version: it did its job when the power actually went out, and I'm still keeping it. But the runtime claim is optimistic, the fan is louder than it should be, and the app looks like it was designed in 2004.\n\n## What I'm Running On It\n\nMy setup is a trading PC, 3 monitors, a modem, and a router — around **410W** according to the Bastion's own display. For context on what 1500VA actually buys you: this is a desk backup, not a room backup. If your load were much over 1000W you'd be pushing the unit past its limit and the pure sine wave wouldn't save you.\n\n## Real Runtime Numbers (Box Says 14 Min at 500W — I Got Less)\n\nBox claims ~14 minutes at 500W. I got **11 minutes 40 seconds** at my 410W load before I shut down, and that was on purpose so I could actually measure it instead of guessing. So yeah, treat the sticker number as a ceiling, not a promise. My guess is the 500W rating assumes a different, more efficient load mix than three monitors plus a desktop.\n\nEleven and a half minutes sounds short until you use it correctly, which is what it was actually for: enough time to either flip your broker to a lower-risk mode or close out. See below.\n\n## Where It Actually Saved Me\n\n**Oct 14 storm, power dropped around 2:20pm.** I was **10x long on a SOL perp** at the time. Rig and wifi stayed up the entire time, I closed the position clean in about 4 minutes, and then shut the PC down properly before the battery ran out. No forced shutdown, no corrupted database, no scrambling to cancel an open position on my phone with a spotty cellular connection.\n\nThat alone is worth the $229 to me. The point isn't \"keep everything running for an hour,\" it's \"don't get liquidated because your broker's server and your router died while you were down.\" That happens.\n\n## The Annoying Stuff\n\n- **The fan.** First week, the cooling fan kicked on at 3am and woke me up. It's loud — like a hair dryer on low. If your rig is in a bedroom, this is a real issue. Mine lives in the closet now, which fixed it, but you should know going in.\n- **The desktop app looks like Windows XP.** It's not pretty. But the auto-shutdown function works, and that's the only thing I actually need from it, so I'm not going to complain too hard. Screenshot looked dated, menus are clunky.\n- **The outage beep is loud as hell.** You can mute it in the app, but the setting **resets after a firmware update**. I learned this the hard way.\n- **Replacement battery pack is $95.** On the plus side, the battery is user-swappable, so you're not paying $200 for a new unit when the cells die. On the minus side, add $95 to your cost per battery cycle.\n\n## Tip For Other Traders\n\n**Plug your modem and router into the battery-backed side.** There are 10 outlets but only **5 are battery backed** — the other 5 are surge-only. I see people make this exact mistake and then wonder why their internet dropped even though their PC is still on. The Bastion will keep your desktop alive while your connection is dead, which is the worst possible combination.\n\nThe **USB-C 60W port** is a nice bonus for charging a phone or a smaller device directly, though it won't run anything serious.\n\n## Who Should Buy This\n\nIf you run a trading setup on a desktop, a router, and a couple of monitors, and you want bridge power for a 10-15 minute outage so you can close positions or shut down clean — yes. It's not a solar generator, and it's not meant to run your house for a night.\n\nIf you're on a laptop with a hotspot, skip it. If you want to run a full server rack, look elsewhere.\n\n**Verdict:** Does one job well and does it reliably. Runtime is a bit under the claim, the fan is unnecessarily loud, and the app needs work — but when the lights went out, it kept my position from being liquidated. That's the whole reason I bought it, and it delivered. 4 stars.",
+  "words": 772,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: headings, bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.587810218334198,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9810419082641602,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 15.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.17593875527381897,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.6,
+    "effort": "provider default",
+    "output_tokens": 1619,
+    "input_tokens": 650
+  }
+}

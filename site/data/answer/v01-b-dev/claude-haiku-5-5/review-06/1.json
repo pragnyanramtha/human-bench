@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Vantorre CX-10 refurbished (KCK-4471): recurring E34 and probe drift\n\nWe bought this CX-10 refurbished unit (order CM-88213, delivered and commissioned 14 Sep 2026) for a busy bistro in Fitzroy. The listing says the steam generator was descaled and the core probe calibrated before sale. Three weeks after delivery, the steam generator was found heavily scaled.\n\nTimeline:\n\n- 14 Sep: Delivered and commissioned. Warranty registered to 14 Mar 2027.\n- 22 Sep (SR-1190): E34 (steam generator low water level) had appeared nine times in the error log since 14 Sep. Level sensor replaced. Covered under warranty.\n- 3 Oct: E34 returned four times that week. Core probe reading low: 63°C on the oven, 70°C on our Thermapen in a lamb shoulder. Same result on two tests. Reported to the seller.\n- 6 Oct (SR-1236): Steam generator found heavily scaled, descaled and flushed. Probe recalibrated and now within 1°C.\n- 24 Oct: E34 locked the unit out during service at 6.10pm with a full book of 60 covers. We finished the lamb on the stove and the deck oven and 86'd the pork belly.\n- 27 Oct: E34 again, with further scale found. We have been invoiced $308 inc GST for that attendance on a unit still inside its warranty period.\n\nOn water: our supply is soft. Verbal advice from the water retailer for Fitzroy is average hardness of about 15 mg/L as CaCO3. We do not believe a combi should build up this much scale in three weeks on that supply. Our view is the scale was present when the unit arrived. The seller has attributed the fault to hard water at our site, and the figures don't support that.\n\nInlet pressure was 320 kPa, which the technician recorded as OK.\n\nWhat we would tell other kitchens: before buying refurbished, ask for the descale and probe calibration records, ask what water hardness the unit is expected to run on, and get the answer in writing.",
+  "words": 315,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The review does not explicitly state that warranty coverage was refused, and says the callout was already invoiced when Brett said it would be invoiced."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.04110560566186905,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.019429340958595276,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.28125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.8334397077560425,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "medium",
+    "output_tokens": 3241,
+    "input_tokens": 3696
+  }
+}

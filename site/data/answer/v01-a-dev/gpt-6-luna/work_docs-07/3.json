@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "November 12, 2026\n\n**To: Mrs. Okafor**  \n**Re: October 27 transportation incident — Amara Okafor, Bus 41, Route 9**\n\nDear Mrs. Okafor,\n\nI’m writing to explain what happened during the afternoon run on Tuesday, October 27, and to respond to the concerns you raised. I understand how frightening and upsetting it must have been not to see Amara get off at her usual stop. I’m sorry she had a difficult afternoon and that the situation caused you worry. I want to explain the decision I made and make sure we have a clear plan for safe handoffs going forward.\n\nI arrived at the stop at Kessler Avenue and Brandt Street at approximately 3:52 p.m. The scheduled time was 3:50. Amara is a kindergarten student at Fairmont Elementary, and the green tag on her bag indicates that an adult must be present at the stop. I waited until about 3:55 p.m. and did not see an adult at the corner. A box truck was parked on the laundromat side of Brandt Street.\n\nUnder the district’s procedure for kindergarten students, when no adult is present at the designated stop, the student stays on the bus and is returned to school so the office can contact the parent. I followed that procedure. I could not leave the bus to look across the road or approach a parked car while 14 other students were on board. I understand that you were parked across Brandt Street and waved. I did not see you from the bus. I’m not saying you weren’t there; I’m explaining what I could see from my position at the stop.\n\nAt approximately 3:56 p.m., I radioed dispatch. Gloria at dispatch contacted the school. I completed the remaining three stops with the other students and returned Amara to Fairmont Elementary at approximately 4:31 p.m. I walked her into the office and left her with Mrs. Petrakis. Amara appeared to be doing well. She was coloring on her folder and asked if she could ride more. I told her we were taking a little extra trip.\n\nYou also reported that I drove away laughing. I was not laughing. As the bus pulled away, I was telling the fourth grader in seat 2 to sit back down. I regret that what you saw from across the street may have given a different impression, but I want to be clear about what I was doing.\n\nI understand why you were scared and upset. I have grandchildren, and I would be worried too if I did not know where a child was. My decision was not meant to frighten or disregard you; I made it because I believed I needed to follow the district’s procedure and keep all the students on the bus supervised. I have driven for the district for 28 years without a write-up, and I take my responsibility for the students in my care seriously.\n\nI respectfully ask that the district review the bus camera footage from the stop and the departure. The footage may help clarify what was visible from the bus and what happened as we pulled away. I also ask that the district review the dispatch and school-office records related to the radio call and Amara’s return to Fairmont.\n\nFor future afternoons, it would help if you could wait on the bus side of the street, or step out of your car where I can see you clearly. I recognize that you may have been in a position where you thought I could see you, but from the driver’s seat I did not. I hope we can agree on a clear way to make the handoff visible and safe for Amara.\n\nI’m glad to continue driving Amara, and I want us to resolve this in a way that helps her feel secure and gives you confidence in the afternoon pickup. I followed the procedure as I understood it, and I hope the camera review and this explanation help clarify why I returned her to school rather than letting her off without an adult present.\n\nRespectfully,\n\n[Your name]  \nBus 41, Route 9  \nFairmont Elementary afternoon route",
+  "words": 684,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "692 words, allowed 720-2200 (band 800-2000 ±10%)"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40362492203712463,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2876395583152771,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.458539962768555,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.8,
+    "effort": "medium",
+    "output_tokens": 839,
+    "input_tokens": 14232
+  }
+}

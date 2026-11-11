@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: the GST column in the takings template was wrong in v1.0 to v1.2\n\nLast week Ravi Subramaniam asked in the comments why column F showed $98.10 of GST on $1,090 of takings. He was right to ask. The formula was wrong, and it stayed wrong in every version until v1.3.\n\nWhat was wrong\n\nColumn F worked out GST by multiplying your takings by 9%. That only gives the right answer if the takings exclude GST. If your receipts include GST, which is the case for most hawkers and cafes, the GST is 9/109 of the total, not 9% of it.\n\nFor Ravi's $1,090 day:\n\nOld formula: $1,090 × 9% = $98.10\nCorrect formula: $1,090 × 9/109 = $90\nDifference: $8.10 overstated\n\nSo the old figure was about 9% too high on every day you entered GST-inclusive takings.\n\nHow I missed it\n\nWhen I built v1.0, I tested it against my own sample figures. Those were already GST-exclusive, so the formula looked fine. I never tested it with GST-inclusive takings, which is what most of you enter. I should have caught it before the template went out, and I didn't.\n\nWhich versions are affected\n\nv1.0 (12 Aug 2026), v1.1 (2 Sep) and v1.2 (1 Oct) all have the bug. v1.3, uploaded on 8 Nov, has the corrected formula. Please download it from the original post and stop using the older files. The template has been downloaded 412 times since 12 August, so this affects more people than I'd like.\n\nThe Box 1 sales total is calculated separately from column F and was correct in all versions. Only Box 6 (GST) was wrong.\n\nWho is affected\n\nOnly people who enter GST-inclusive takings. If you enter amounts that exclude GST, the old formula gave the right answer and nothing changes for you.\n\nv1.3 adds a setting in H2. Set it to match what you have entered:\n\n\"prices exclude GST\" only if the amounts you enter exclude GST.\nThe inclusive setting for receipts that include GST collected, even if your menu prices are shown without GST.\n\nThat second point catches people out, so check it.\n\nIf you have already filed\n\nIf you filed Q3 using the sheet, you may have declared more GST than you needed to. Melvin raised this in the comments, and he has every reason to be upset. People trusted this template partly because I am an accountant, and that trust was not deserved for this part of it. I'm sorry.\n\nBecause the error overstates GST, nobody has underpaid IRAS. But some people may have overpaid, and I can't tell you the right way to correct that. IRAS has an errors page that explains when a mistake can be corrected in a later F5 and when a GST F7 is needed. I won't try to summarise those rules here, because getting them wrong would be another mistake. Read the IRAS page, and talk to your filer about which route applies to you.\n\nStep by step, if you filed Q3 with the old sheet\n\n1. Download v1.3 and stop using v1.0, v1.1 and v1.2.\n2. Open your July to September takings in v1.3 and set H2 to match how you entered the amounts.\n3. Compare the Box 6 figure in the new sheet with the Box 6 figure on your filed F5.\n4. Check one day by hand. Take one day's GST-inclusive total, multiply by 9, then divide by 109. If that matches the new sheet, the new figure is right.\n5. If the figures differ, read the IRAS errors page before doing anything with IRAS. Then ask your filer whether the difference goes into a later F5 or needs a GST F7.\n6. Keep the old and new sheets together with a note of the difference, in case IRAS asks about it later.\n\nThank you\n\nThank you to Ravi Subramaniam and Shu Fen. Ravi noticed the numbers didn't add up and asked about it. Shu Fen confirmed the cause and pushed me to put up a proper correction instead of leaving it in the comments. You both saved people a lot of trouble.\n\nIf you have questions about your own figures, leave a comment below. I'll answer what I can, but for anything about your filing, your filer is the right person to ask.",
+  "words": 700,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not explicitly tell readers who have not filed to use the corrected version before filing."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12424716353416443,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.027987880632281303,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.333984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.8878695964813232,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.8,
+    "effort": "medium",
+    "output_tokens": 4613,
+    "input_tokens": 4484
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can paste in.\n\n---\n\n**RA Progress Statement: Korean Annotation, Seoul-Daegu Honorific Shift Corpus (NSF)**\nPrepared for the Winter 2027 funding review\nDate: November 9, 2026\n\n**Status.** The fall term target was 6,000 annotated utterances. As of today I have completed 4,200. The gap between those numbers has a specific cause, documented below.\n\n**Cause of the delay.** The 14 new Daegu recordings could not be annotated until the IRB amendment adding them was signed, and I was not permitted to work with them before then.\n\n- September 3: amendment sent to Prof. Hollander for signature\n- September 12, September 24, October 6: follow-up reminders sent (emails on file)\n- October 15: amendment signed, access to the new recordings began\n\nThe amendment was pending for six weeks. That is the same length as the shortfall that was raised at the November 6 lab meeting.\n\n**Work completed during the delay.** While the new recordings were unavailable, I recoded the existing 2,300 utterances using the revised speech-level scheme requested in August. This was not part of the original timeline and was necessary to keep the corpus consistent. It should be counted as project progress.\n\n**Current pace.** Since October 15 I have annotated about 1,900 utterances, over 500 per week against a planned rate of 350. I am the only RA doing Korean annotation on this project.\n\n**Timeline.** At the current pace I expect to reach 6,000 utterances by the end of January 2027.\n\n**Request for the review record.** I ask that the review reflect the signature delay as the reason for the shortfall, along with the recoding work and the current annotation rate. If the review notes the shortfall at all, it should not describe my annotation as \"behind\" without that context. Otherwise, I ask that the \"behind\" comment not be included.\n\n---\n\nTwo things to know. At 500+ per week, the remaining 1,800 utterances would take about four weeks, so end of January is a conservative estimate that leaves room for slower weeks. I wrote it as you asked, but you could say \"by early December at the current pace, and no later than end of January\" if you'd rather show the faster number. I also left out that the comment was made in front of the first-years, since that detail would read as a grievance in a funding file. The dates make the point on their own.",
+  "words": 399,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2567916214466095,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.31395241618156433,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.964645862579346,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "high",
+    "output_tokens": 1924,
+    "input_tokens": 1579
+  }
+}

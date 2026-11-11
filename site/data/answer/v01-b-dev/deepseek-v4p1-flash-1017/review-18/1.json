@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Kestrel Bastion 1500 — saved a live trade during a storm, but it's not perfect**\n\nI'm a day trader in Miami, mostly crypto perps, and I bought the Kestrel Bastion 1500 on Voltwise in August 2026 for $229. I got it because I was tired of watching storms roll through and wondering whether my router was going to outlive my position. Turns out that was money well spent, though there's stuff about it that annoys me.\n\n**What I'm running and what it actually does**\n\nMy setup is my PC, three monitors, modem, and router. The unit's own display reads about 410W while I'm trading with charts up. Kestrel rates the box at roughly 14 minutes at 500W, so I tested mine on purpose at my actual load: I got 11 minutes 40 seconds before I shut it down myself. That's less than the label math would suggest, so don't buy this expecting the box numbers to be exact. Still, ~11 minutes is enough to close a position, cancel orders, and get your head straight, which is the whole point.\n\nSpecs for reference: 1500VA / 1000W, pure sine wave, 10 outlets total with 5 on battery and 5 surge-only, plus a 60W USB-C port. It weighs about 30 lbs, which is fine on a desk but not something you want to lug around. Battery is swappable, and a replacement pack runs $95.\n\n**The storm**\n\nOctober 14th, power dropped around 2:20pm. I was 10x long on a SOL perp at the time, which is exactly the kind of moment you don't want to be dark. Rig stayed up, wifi stayed up, and I closed it clean in about 4 minutes. No drama, no reconnect, no scrambling for my phone. That alone paid for the thing as far as I'm concerned.\n\n**The stuff that bugs me**\n\nThe fan. First week I had it, it kicked on at 3am for no obvious reason and woke me up. It's loud — think hair dryer on low. It's settled down since, but if this is going in a bedroom, know what you're getting into.\n\nThe desktop app looks like Windows XP. Genuinely ugly. But the auto shutdown works, and that's the only feature I actually care about, so I'll live with it.\n\nThe outage beeping is loud. You can mute it in the app, which is good, except the mute reset after a firmware update, so I got treated to the full alarm at 7am one morning. Small thing, but annoying.\n\n**One tip for other traders**\n\nPlug your modem and router into the battery-backed outlets. I see people buy a UPS, plug in the tower, and then lose internet anyway because the router's on a surge-only port. Half the value of this thing for a trader is keeping the connection alive, not just the PC. Check which five outlets are which before you set it up.\n\n**Who it's for**\n\nIf you're running a trading rig and you need a few minutes of clean power to get out of a live position, this does the job and it does it well. Pure sine wave, enough runtime at realistic loads, and the auto shutdown gives you a backstop if you're not at the desk. If you need long runtime or something silent, look elsewhere — this is a \"get me through the next ten minutes\" device, not a generator.\n\nFour stars. Docked one for the fan noise and the runtime coming in under the rating, but I'd buy it again, and honestly I probably will get a second one for my backup setup.",
+  "words": 595,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5724000334739685,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9881588816642761,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 18.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.680623769760132,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.3,
+    "effort": "provider default",
+    "output_tokens": 1236,
+    "input_tokens": 494
+  }
+}

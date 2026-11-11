@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey everybody,\n\nI know a lot of you have been wondering, and Mom has been getting asked about it, so I'll just say it here: yes, I'm coming to Thanksgiving this year. I want to be at the table with all of you, and I'm looking forward to it.\n\nFor those who weren't there last year, things got heated over my job, and I said things I shouldn't have. I got snippy and made it personal, and I'm sorry for how I talked, especially at Grandma's holiday. Grandma, I hated that you ended up out on the porch. I still feel bad about it, and I'm sorry. I'm proud of the work I do, and I'm not going to pretend otherwise, but I could have said that without making the whole table feel like a battlefield.\n\nSo here's my ask: can we call a truce for one day? I can't talk about open cases because of confidentiality, so if questions about \"the lawsuit\" come up, I'm going to politely pass. I'd rather not spend the afternoon on it, and I don't think anybody else wants to either.\n\nLet's keep the table to food, football, babies, and Tasha's new boyfriend. (Tasha, we want the full report.)\n\nLogistics: Thursday, Nov 26, at Aunt Denise's in Macon, eating around 3. I'm bringing mac and cheese and two sweet potato pies, so plan accordingly. Nobody needs to be perfect. Just show up, eat too much, and let's have a good day.\n\nLove you all. See you there.",
+  "words": 253,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The post omits the politics truce, the relative’s provocative but good-natured character, and his August birthday thumbs-up."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6442672610282898,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.24919520318508148,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.423710346221924,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "medium",
+    "output_tokens": 1547,
+    "input_tokens": 1449
+  }
+}

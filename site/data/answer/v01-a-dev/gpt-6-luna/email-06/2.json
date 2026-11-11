@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "other check, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: CP-48213\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nHello Faith,\n\nHere are the details you requested for the Embakasi night-shift issue:\n\n1. The terminals are BX-300 models. Brian Ochieng in IT confirms the four Embakasi terminals updated from firmware 4.1.8 to 4.2.1 overnight on 27 October. The two Mombasa Road terminals remain on 4.1.8.\n2. The affected staff are on the NIGHT-8 template, scheduled 22:00–06:00.\n3. Example (staff ID only): T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The Payroll CSV v2 export split the shift into two lines: 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15, with durations rounded to the nearest tenth.\n4. We use the Payroll CSV v2 export profile to feed payroll.\n5. We first noticed the issue on 5 November while reviewing the draft October overtime. It appears to have affected shifts since about 28 October.\n\nThe issue affects 38 night-shift staff at Embakasi. The draft October overtime was approximately KES 212,000 too high. We have held the affected overtime lines and corrected them manually from raw punches, but that is not a sustainable monthly workaround. Mombasa Road day shifts are unaffected.\n\nThe release notes for firmware 4.2.1 promised improved midnight handling for shifts spanning two calendar days, but this update appears to have made the handling worse. Please advise on a fix or a clear workaround before the November payroll cut-off on 20 November. Kevin Mutua, copied here, is our payroll officer and will test any proposed fix.\n\nBrian manages the terminals and can roll the Embakasi units back if advised. Can he safely roll them back from 4.2.1 to 4.1.8 without losing or corrupting buffered punch data? Please give us clear steps or precautions if rollback is safe.\n\nWe can provide further technical details if needed. For privacy, please use staff IDs only; we cannot share employee names or other personal details.\n\nKind regards,\nNjeri Mwangi\nHR Manager\nTausi Freight",
+  "words": 330,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: [\"support@clockpoint.example (reply to m01) (cc ['kevin.mutua@tausifreight.example']) (>= 150 words) (with [['BX-300', 'BX300'], ['Payroll CSV v2', 'CSV v2', 'CSV version 2']])\"]"
+      },
+      {
+        "check": "reply_item",
+        "kind": "other check",
+        "detail": "unknown item: ['CP-48213']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3330194056034088,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19342827796936035,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.09375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.332504749298096,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "medium",
+    "output_tokens": 608,
+    "input_tokens": 15392
+  }
+}

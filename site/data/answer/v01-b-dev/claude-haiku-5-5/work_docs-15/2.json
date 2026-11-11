@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.53, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Tracked dumper: buying one instead of hiring**\n\nLee,\n\nI've put this down on paper so you can see the numbers properly.\n\n**What we're paying now**\nThis year we hired the tracked dumper for 14 days from the place in Sittingbourne. That's £85 a day plus £30 delivery each time, so roughly £1,600 all in.\n\nIn September they didn't have one free, so we barrowed 6 ton of muck at Hernhill. It took two extra days and your back was gone for a week. Another time the delivery driver turned up at 11 and we lost half the morning.\n\n**What's on the table**\nThere's a 2019 500kg tracked dumper for sale in Faversham at £1,650 ono. The seller says the tracks were replaced last spring. Split between us, that's £825 each.\n\nIt can live in my lean-to at the yard, which is covered.\n\n**The sums**\n- At this year's use (14 days, about £1,600 in hire), it pays for itself in about a year.\n- At half that use (around 7 days, about £800 in hire), it's about two years.\n- Those figures are before servicing and repairs, which we'd split as below.\n- If it doesn't work out, they hold their value, so we can sell it on without losing much.\n\nWe've already got three patio jobs and the Boughton drive booked in for spring, so the work's there.\n\n**Running costs**\n- Servicing: split 50/50.\n- Repairs: whoever breaks it pays.\n\n**Next step**\nCan you come and look at it with me this Saturday? I'd rather we get there before someone else does. Let me know what time suits.\n\nCheers",
+  "words": 270,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5315229892730713,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9000663757324219,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.71875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.693405628204346,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.1,
+    "effort": "medium",
+    "output_tokens": 1895,
+    "input_tokens": 1407
+  }
+}

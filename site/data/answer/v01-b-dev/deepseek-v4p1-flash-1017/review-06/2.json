@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: none\n\nVantorre CX-10, listing KCK-4471. Delivered and commissioned 14 September 2026, $14,800 inc GST, six-month warranty registered to 14 March 2027.\n\n22 September: E34 steam generator low water level, intermittent lockout in combi and steam modes. Error log showed nine E34 events since 14 September, the day it was commissioned. Water level sensor replaced, three steam cycles tested OK. Inlet pressure 320 kPa, within spec. Warranty, no charge.\n\n3 October: E34 recurred four times that week. Core probe read low — 63°C against 70°C on a Thermapen in a lamb shoulder, repeated twice with the same result.\n\n6 October: steam generator found heavily scaled, descaled and flushed; probe recalibrated to within 1°C. We were advised to fit a water softener on the basis of hard water.\n\n7 October: Fitzroy supply averages about 15 mg/L as CaCO3 — soft, among the softest in the country. The unit had been on our water three weeks when the scale was found, and at that hardness scale does not build to a heavily scaled condition in three weeks. The listing stated the generator had been descaled and pressure tested before sale, and it has not held steam reliably since commissioning.\n\n24 October: E34 locked the unit out at 6.10pm with a full book of 60 covers. Lamb finished on the stove and deck oven, pork belly 86'd, cost absorbed.\n\n27 October: E34 again, further scale. Attendance invoiced at $280 + GST ($308 inc GST) as a site water issue, on a unit about six weeks into its warranty.\n\nService reports SR-1190 and SR-1236 document the above. Dion's attendance and communication have been fine throughout; the issue is the unit and the warranty position, not the service.",
+  "words": 281,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08201315253973007,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.059726063162088394,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.28125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.988225936889648,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "provider default",
+    "output_tokens": 4042,
+    "input_tokens": 2088
+  }
+}

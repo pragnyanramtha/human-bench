@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**One star, for now: Stackhouse Cloud support has left our small library checking out books on index cards**\n\nI direct Bridger Bend Community Library, a single-branch library in Montana with two full-time staff, volunteers, and about 2,300 active cardholders. We signed a three-year contract with Stackhouse Cloud in June 2026 at $14,200 a year. Migration went live Oct. 19. Since Oct. 28, checkouts have worked only offline on one laptop. Our holds queue was wiped—about 640 holds gone. Our support ticket has been open 12 days. We have had three replies, all saying it was escalated to engineering.\n\nThe product idea is not the problem. The demo looked good, and our staff interface is honestly better than our old system. The problem is support. Sales promised a dedicated migration specialist; we got a shared inbox. A retired rancher drove 40 minutes for held large-print Westerns. We had no record of the hold and sent him home with nothing. Our volunteer has been writing checkouts on index cards.\n\nOur county budget hearing is Nov. 18, and our line item is on the agenda. I am not writing this to embarrass anyone. I am writing because a small library cannot absorb this kind of downtime, and because I still have not had a senior person at Stackhouse on the phone. I am told a named person will call this week. I will update this review if that happens and if the system is fixed; the one star is for now.\n\nTo other library directors, especially small ones: the software may be fine, but get support response times and escalation paths in writing before you sign. Ask who actually handles migration. Ask what happens when a ticket stalls. Do not let “escalated to engineering” be the only answer you can show your board.",
+  "words": 300,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40449199080467224,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9977830052375793,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.039847373962402,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.1,
+    "effort": "provider default",
+    "output_tokens": 2549,
+    "input_tokens": 507
+  }
+}

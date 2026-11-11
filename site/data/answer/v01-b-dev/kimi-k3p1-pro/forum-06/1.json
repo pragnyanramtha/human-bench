@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "forum-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-4471\nReplying to: p01\nCc: none\nSubject: Response from Cascade Legal Rights Project\n\nWe appreciate the opportunity to respond, and we understand why people are concerned. Receiving a letter from a lawyer shortly after asking for help can be frightening. Neighbors are right to take privacy seriously, and we do too. We know many people here are raising concerns because they want to protect their neighbors. We welcome questions and want to provide clear information about our practices and this Saturday’s clinic.\n\nCascade Legal Rights Project’s policy prohibits sharing, selling, or disclosing attendee information to landlords or their attorneys. Clinic sign-in records are retained internally and kept in locked storage. Out of respect for privacy, we will not discuss anyone’s individual situation publicly, even in response to a specific account.\n\nOne important piece of context: magistrate-court eviction filings are public records. Some law firms use those filings to send letters to tenants. Public court records are a likely explanation for the kind of letters described in this thread.\n\nThe clinic is still happening this Saturday, November 14, and tenants are still welcome. Because the East Atlanta Library’s community meeting room will be closed for HVAC repairs, the clinic has moved to Mt. Zion Fellowship Hall in East Atlanta. The time is unchanged: 10 a.m. to 1 p.m. It remains free and walk-in, with no appointment needed. Volunteer attorneys and staff can review eviction notices and court papers and explain your options. An accessible side entrance is available by the parking lot.\n\nIf you have questions about the clinic or our information practices, please contact us at clinic@cascaderights.example or call our office at 404-555-0187. We are glad to answer questions directly.\n\nCascade Legal Rights Project",
+  "words": 271,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.360949844121933,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.22689871490001678,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.70703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.234916687011719,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 45.7,
+    "effort": "provider default",
+    "output_tokens": 3072,
+    "input_tokens": 1801
+  }
+}

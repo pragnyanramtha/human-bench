@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Why my pier temperatures run warmer than the buoy**\n\nHi all,\n\nA few of you have asked why the water temperatures from my pier logger come in warmer than the offshore buoy, and one person wondered if the logger is broken. It isn't, and the reason is more interesting than a bad sensor, so here's the full explanation.\n\n**The numbers.** In October the pier logger averaged 15.9 °C and the buoy averaged 14.1 °C, a gap of about 1.8 °C. In winter that gap shrinks to around 0.4 °C.\n\n**Where they sit.** My logger is strapped to a piling at 3 m depth, about 150 m from shore, and records every 10 minutes. The buoy is roughly 25 km offshore in deep water, with its sensor just under the surface. They're measuring two different bodies of water.\n\n**Why they differ.** Shallow nearshore water heats up in the sun, and our bay is sheltered from the upwelling that keeps offshore water cold. Upwelling is strongest in the warmer months, which is why the gap is biggest then and nearly disappears in winter. One reader sent me a screenshot overlaying the buoy and my data, which was really helpful. It shows the gap tracking sunny afternoons, which is exactly what you'd expect if solar heating of shallow water is the cause.\n\n**How I check the instrument.** Every 6 weeks I pull the logger and download it, and I replace the battery once a year. I calibrate it with a two-point check, an ice bath and a room-temperature bath, against a lab reference thermometer. At the last check, in September 2026, the offset was +0.12 °C. That's well within spec and nowhere near large enough to explain a 1.8 °C difference. In August it came up covered in barnacles with a decorator crab living on the housing. I scraped it clean and the readings didn't change, so fouling isn't the explanation either.\n\n**Which number to use.** The two instruments answer different questions. The buoy tells you about open-ocean conditions. If you're diving the breakwater or working the nearshore reef, my logger is the more relevant number for what you'll actually feel.\n\nIf you want to look for yourself, email me and I'll send the raw CSV.\n\nThanks for paying attention to the data. I'd much rather get questions than have people quietly assume the numbers are wrong.\n\n[Your name]\nMarine Biologist, [Field Station Name], Monterey",
+  "words": 402,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38576459884643555,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.701784074306488,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.752696990966797,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.8,
+    "effort": "medium",
+    "output_tokens": 977,
+    "input_tokens": 1491
+  }
+}

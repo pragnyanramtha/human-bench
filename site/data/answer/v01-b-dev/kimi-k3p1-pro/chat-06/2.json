@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: none\nCc: none\nSubject: none\n\nMarco, I’m pissed about Desert Palms.\n\nYou finished 14 units Saturday, told me it was all good, and dropped the keys with Yvette, but not one bitting code made it into the code sheet. Now Yvette has a tenant in 9B who lost her key and needs three copies today, and I’ve got nothing to cut from. Lupe checked the sheet this morning. There’s no Desert Palms entry at all.\n\nAnd that’s not all. She says a black pinning tray with pins in it is sitting on the counter in their leasing office. That’s my tray. It doesn’t belong at a customer’s office, and it shouldn’t have been left behind.\n\nGo back out there today. Decode 9B first so we can get those keys cut. If you can decode all 14 units, do it. Bring my tray back with you. Every code you recover goes in the code sheet today, with the address and unit number, same as it should have Saturday. Don’t leave the codes sitting in your phone, your pocket, or the van.\n\nThis isn’t a new rule. I put it out to everybody on August 4: codes go in the sheet same day, before you leave the van, no exceptions. Then in September I had to chase you down over the Kessler job for the same thing. Now here we are again, with a customer waiting and Lupe and me cleaning up the loose end.\n\nYou’re good with your hands. That’s not the issue. Finishing a job means closing out the code sheet too. When we have to cut a key later, we shouldn’t have to start from zero because nothing got written down. This can’t keep happening.\n\nText me when 9B is decoded. Then let me know when the rest are entered and my tray is back at the shop.",
+  "words": 304,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.390148788690567,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.30148279666900635,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.3984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.533228397369385,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 51.5,
+    "effort": "provider default",
+    "output_tokens": 3235,
+    "input_tokens": 1328
+  }
+}

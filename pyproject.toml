@@ -1,0 +1,46 @@
+[project]
+name = "humanbench"
+version = "0.1.0"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE.md", "LICENSES/*"]
+description = "Benchmark: does AI writing read as written by a person?"
+authors = [
+    { name = "Pragnyan Ramtha", email = "pragnyanramtha@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.4",
+]
+
+[project.scripts]
+humanbench-matrix = "humanbench.matrix:main"
+humanbench-source = "humanbench.sourcing.cli:main"
+
+[project.optional-dependencies]
+sourcing = [
+    "huggingface-hub>=2.4.0",
+    "pyarrow>=26.0.1",
+]
+writer = [
+    "fastapi>=0.162.2",
+    "jinja2>=3.1.6",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "fastapi>=0.162.2",
+    "httpx2>=2.16.0",
+    "jinja2>=3.1.6",
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+# The writer app lives in apps/ (not an installed package); tests import it from the repo root.
+pythonpath = ["."]

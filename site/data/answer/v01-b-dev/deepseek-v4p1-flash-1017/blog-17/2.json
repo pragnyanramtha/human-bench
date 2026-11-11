@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: GST formula error in the takings template (v1.0–v1.2)\n\nI need to correct something in the GST template, and I want to do it properly rather than bury it in a comment.\n\nRavi and Shu Fen caught this, and I am grateful they did. Ravi was the first to query the figure; Shu Fen confirmed the correct formula. They were right.\n\nWhat was wrong: the old formula took your GST-inclusive takings and multiplied by 9%. That is the wrong starting point. When prices already include GST, the GST portion is 9/109 of the inclusive amount, not 9% of it. On Ravi’s $1,090 day, the old sheet showed $98.10. The correct GST is $90. The difference is $8.10.\n\nThe affected versions are v1.0, v1.1 and v1.2. v1.3, uploaded on 8 November, has the corrected formula. There have been 412 downloads since 12 August, so a fair number of you may still have an old copy.\n\nOnly people who entered GST-inclusive takings are affected. If you entered amounts that already exclude GST, the old formula gave the right answer and you do not need to change anything. Most hawkers enter the day’s takings as banked, which means the inclusive figure, so I expect this is the group that needs to act.\n\nThe quarterly sales total in Box 1 was calculated separately and was correct in the affected versions. The error is in the GST figure that feeds Box 6.\n\nWhy I missed it: I tested v1.0 against my own sample figures, but those figures were already GST-exclusive. The formula passed the only test I gave it. That is how it got through. It is not a good enough check for something other people were going to rely on, and the error is mine. No excuses.\n\nMelvin, you are right to be upset. People trusted the sheet because I am an accountant, and that trust is exactly what should have made me test it harder.\n\nWhat to do now. If you have not filed yet: download v1.3 from the original post, check the version number, and set H2 before you key anything in. H2 must match the amounts you actually enter. Choose “prices exclude GST” only if the amounts in columns B to D exclude GST. If the receipts you bank include GST, use the inclusive setting, even if your menu prices are displayed excluding GST. The setting is about the numbers entered, not the sign on the wall.\n\nIf you already filed Q3 using the sheet:\n\n1. Download v1.3 and keep your old file for now. Do not delete it.\n2. Check how you entered your takings. If they were GST-inclusive, you are affected. If they were GST-exclusive, the GST figure was right.\n3. Set H2 in v1.3 to match those entries, then compare the corrected GST figure with what your old sheet showed. The old figure is 9% higher than the correct GST figure, so you can see the size of the gap.\n4. If there is a difference and you have already filed, do not just amend or re-file without checking. IRAS has its own rules on whether an error goes into a later F5 or needs a GST F7. Please read the IRAS page on errors in GST returns (search “IRAS GST errors”) and speak to your filer, or to IRAS, about which route applies to you.\n5. Keep a note of the old and corrected figures with your Q3 records, in case IRAS or your filer asks.\n6. For Q4 and onwards, use v1.3 and check H2 before you start.\n\nTo be clear: this error overstates GST. It does not understate it. Nobody has underpaid IRAS because of this. Some of you may have overpaid, and that is the part that needs correcting. I cannot tell you from here which correction route applies to your case, which is why the IRAS page and your filer matter.\n\nI am sorry for the extra work this has caused. I would rather you check now than find out later.",
+  "words": 659,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08307560533285141,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02762012742459774,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.3828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.794267177581787,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.3,
+    "effort": "provider default",
+    "output_tokens": 6019,
+    "input_tokens": 2657
+  }
+}

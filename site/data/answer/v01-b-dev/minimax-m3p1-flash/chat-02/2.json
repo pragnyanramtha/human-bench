@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: #maintenance\nReplying to: [s03]\nCc: none\nSubject: Re: Winterizing the 3GM30F — and one correction on green antifreeze\n\nDana — happy to walk you through it. This is a very doable afternoon job, and you're not cheaping out by doing it yourself. Plan on two to three hours with a helper, not twenty minutes.\n\nOne correction to Hector's post before you do it this weekend: green automotive antifreeze (ethylene glycol) is the wrong product for this boat. It's toxic, and it isn't rated for the raw water system — which on a 3GM30F is exactly where the freezing does the damage. The engine coolant side is a separate, closed freshwater loop. The raw water side is what freezes and cracks things.\n\nOrder of operations:\n\n1. Warm engine, then change oil and filter while it's warm. Top off the fuel tank, add fuel stabilizer, and run the engine about ten minutes to get the treated fuel through the system.\n\n2. Set up collection before you start the raw water flush. That discharge comes out through the exhaust — container under the exhaust elbow, helper watching flow and collection the whole time. Same for draining the water system. Capture all of it for proper disposal; nothing goes in the river.\n\n3. Raw water side: seacock closed, and the raw water inlet disconnected and plugged so the strainer feeds antifreeze instead of dockside water. Hose from the strainer inlet into a container of antifreeze, engine at idle until the pump is pumping antifreeze and the discharge runs pink. Keep the pump wet the entire time — never let it run dry. Engine off when the procedure is complete, seacock stays closed.\n\nFollow the engine and antifreeze manufacturers' procedures for volume and timing. And don't take the pink color as proof: take a sample of the discharged mixture and check it for actual winter protection with a refractometer or glycol tester.\n\n4. Coolant side: check with a hydrometer. A 50/50 mix is good to about -20F. Top up as needed.\n\n5. Water heater: the bypass valve on that Catalina is behind the companionway steps. Switch off the water heater breaker before you drain, and leave it off until you refill in spring. Drain the tank first or you'll waste about six gallons of pink.\n\nMaterials: pink propylene glycol RV/marine antifreeze for both the raw water and the domestic water system. Roughly 2 gallons for the engine, 2–3 for the water system — those are estimates only, so buy enough to complete the manufacturer winterizing procedures and verify the protection. About $6 a gallon at West Marine or Walmart.\n\nAlso keep a spare impeller aboard. Pull the old one and inspect it while you're in there, and don't run the pump dry.\n\nOne more thing worth remembering: at Christmas a few years back, three boats on C dock cracked exhaust elbows or strainers. Every one of them had skipped or rushed the raw water side. That's the part that actually matters.\n\nIf you want a second set of hands, I can come down to the boat Saturday morning.",
+  "words": 495,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09874694794416428,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09160757064819336,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.3125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.902926921844482,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.5,
+    "effort": "provider default",
+    "output_tokens": 2432,
+    "input_tokens": 1824
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Larkspur Lofts Residents,\n\nI’m Jess Okafor in unit 5A, and I’ve lived here for three years. I’m writing to explain my drone flight from the roof deck on Saturday, October 31, and to apologize for the concern it caused.\n\nAt around 4 p.m. that afternoon, I flew a new Halvard Mini 4 drone for approximately 11 minutes. I’m a wedding photographer and was testing the equipment before a vineyard wedding in Dundee. Throughout the flight, the camera was pointed west toward the river and the Fremont Bridge, never at residents’ windows. I was not filming into anyone’s home or attempting to observe residents.\n\nI understand, though, that my purpose would not have been obvious to anyone who saw or heard the drone. A buzzing aircraft hovering over the courtyard can feel intrusive, especially when there has been no advance notice. I’m sorry that my flight worried people. I should have considered how it would look and feel to neighbors sharing this space.\n\nAnyone who would like to see the full, unedited footage is welcome to knock on my door at 5A or email me at jess.okafor@mailbox.example. I’m happy to show it and answer questions.\n\nI also want to address the lobby note that identified my unit and called me a “creep.” Raising a privacy concern is entirely reasonable. Publicly identifying a neighbor’s home alongside a personal insult is not an acceptable way to address that concern. It was hurtful and left me feeling singled out in my own building.\n\nOur current HOA rules do not address drones. I will ask the board to add the subject to the November 19 meeting agenda, at 7 p.m. in the community room. I will not fly from the roof again until the board decides on a rule.\n\nIn the future, please speak with me directly about concerns rather than posting notes. I want us all to feel comfortable here, and I’m willing to listen.\n\nSincerely,  \nJess Okafor  \nUnit 5A",
+  "words": 327,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3132365345954895,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.44557061791419983,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.515952110290527,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 416,
+    "input_tokens": 13992
+  }
+}

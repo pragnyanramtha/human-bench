@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent for a sec cause Im so pissed right now.\n\nsomebody sent me a sticker listing tonight and its my switchblade moth. not something that looks kinda like my moth. MY MOTH. StickerBurrow Co is selling it as “Knife Moth Vinyl Decal” for $6.50 or 3 for $15. same wing pattern. same little crack in the blade. they didnt even flip it. its a straight scan of my linework being sold like somebody over there drew it.\n\nI drew that for my sept 13 flash day. the sheet went up on here august 30. I spent like 3 weekends drawing that sheet at my kitchen table and the moth was my favorite thing on it. I still have the original drawing. this is not a situation where two people independently thought “what if a moth had a knife.” yes obviously more than one person can draw a moth with a knife. thats not what we're talking about and they know it.\n\nI messaged them, told them it was mine, told them where the dated post was, and asked them to take it down because I never gave anybody permission to print it.\n\ngot “Love your work” followed by “Moths are a very common tattoo motif” and instructions to send a registered copyright through their support form. have a great day!\n\ndude. you cannot “love your work” me while selling my actual work for water bottles. moths being common does not explain why yours has every single line of MINE.\n\nand I want to be really clear about something: I am NOT selling these stickers. I didnt license this drawing, I didnt approve this, Im not getting paid for it. if you have one of my one-off flash pieces, I have not quietly turned around and sold your tattoo as merch. that is not how I work.\n\nmy one-off flash is sold ONE time to ONE person. thats the whole deal. somebody paid for their own thing and trusted me to keep that promise. having to even clarify that because somebody else decided my drawing was free inventory makes me fucking furious.\n\nsmall shops dont have lawyer money sitting around for every listing somebody puts up. these sticker places know it. apparently the person who actually drew the thing is supposed to spend their time chasing support forms while the listing keeps making money.\n\nif you want to help, please report the “Knife Moth Vinyl Decal” listing from StickerBurrow Co for copying my artwork. dont buy it. please keep it to reporting the listing, not sending abuse or going after random people.\n\nand dont tag the studio page into this. Im posting here on my personal page because its my drawing and Im the one saying something.\n\ndraw your own shit. seriously.",
+  "words": 465,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "does_task fails: it never says the client got the moth tattooed in the first hour, and it never says she messaged Jo that night thinking Jo was selling the stickers. It only gives a general reassurance that Jo is not selling them."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.06334180384874344,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02862880565226078,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.41015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.47688111662864685,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 40.7,
+    "effort": "medium",
+    "output_tokens": 621,
+    "input_tokens": 15598
+  }
+}

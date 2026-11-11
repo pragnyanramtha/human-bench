@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject: Re: Saturday alarm**\n\nHi Kristen,\n\nStraight story, and I'll keep it short.\n\nSaturday I put my popcorn in the break room microwave, hit the popcorn button, and walked out front. A guy needed a shear pin for his snowblower and it took longer than I thought — maybe six, seven minutes. That's when the engine came from up on Hertel. No damage, just smoke and a stink, and we cleared the store in about 25 minutes. Everybody got out fine, and I'm sorry for the customers standing out there in the cold.\n\nIt was me. It was my popcorn, and the microwave was working fine, so I'm not going to stand there and point at the machine after 31 years on the job.\n\nOn the September alarm, that one wasn't me — that was the sensor in the paint aisle. I'd rather that not get on my record, since you said this is the second one.\n\nAnd I know who was on the engine. One of the guys was Mikey Szymanski, and I broke him in as a probie back in '03. He will never let me forget it, so I might as well tell you first. Thirty-one years and I get my first alarm as a civilian over a bag of butter popcorn. My wife says the van smelled like a burnt movie theater for two days.\n\nThe Hendersons will be back, they always are, but I feel bad about the cart they left sitting there. And I know Gary's not happy, so again, I'm sorry.\n\nThe $175 is on me. Take it out of my check or I'll bring you cash — your call, whichever is easier.\n\nI would like to keep my Saturday shifts if I can. I like the weekend crowd, and I need the hours for the heating oil. Whatever you decide on the schedule, I'll go along with it, and the popcorn's going home with me from now on.\n\nI'll buy Denise her coffee, and she should have had a coat out there.\n\nWalt Brzezinski",
+  "words": 342,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42877092957496643,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1831444650888443,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.7734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.635122299194336,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "provider default",
+    "output_tokens": 1141,
+    "input_tokens": 1015
+  }
+}

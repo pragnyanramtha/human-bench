@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties ❤️ Mom’s been getting asked whether I’m coming to Thanksgiving, so let me answer for myself: yes, I’m coming! Thursday, November 26, at Aunt Denise’s in Macon, eating around 3. I’m bringing mac and cheese and two sweet potato pies. That part is not up for debate.\n\nI also want to say something before we’re all together. Last Thanksgiving, I let a conversation about my job turn into an argument, and I got disrespectful. The comment about somebody getting their news from a gas station TV was mine, and I shouldn’t have said it. I’m not sorry for the work I do. I am sorry for how I talked at Grandma’s holiday, and especially that she ended up sitting out on the porch instead of enjoying everybody inside. That has stayed with me.\n\nI’m not posting this to restart the argument or have everybody pick a side, especially since some of y’all weren’t even there. I love our family. I know we can get under each other’s skin, and I’d rather we have a good day together than spend another holiday trying to get the last word.\n\nSo I’m asking for a one-day truce on work and politics. Also, questions about “the lawsuit” won’t get very far: I can’t discuss open cases because of confidentiality. That’s not me being difficult; it’s part of my job.\n\nCan we keep the table conversation to food, football, babies, and Tasha’s new boyfriend? Tasha, please let him know we’re mostly friendly.\n\nI’m coming, I’m looking forward to seeing everybody, and I want it to be a good day. Love y’all. Save me a seat.",
+  "words": 274,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The piece never says the relative likes to poke but isn't a bad guy, and never mentions his August thumbs-up birthday text."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5118327140808105,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23487071692943573,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.513710975646973,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.1,
+    "effort": "low",
+    "output_tokens": 380,
+    "input_tokens": 18999
+  }
+}

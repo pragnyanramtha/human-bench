@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p01\nCc: none\nSubject: none\n\nHey Mel, that jump in k’s, the morning stiffness and the sore spot a few centimetres above the heel can fit with mid-portion Achilles tendinopathy, but I can’t diagnose it without seeing you.\n\nYou don’t necessarily need to stop everything, but I’d pull running back for now. Limping after that 6k is a sign it was too much at the moment, even if it felt OK during the run. Try a shorter, easier run once you’re walking comfortably, and judge it by how it responds afterwards and the next morning. You can use other exercise that doesn’t flare it up to keep some fitness.\n\nThe tendon usually needs gradual loading rather than complete rest. Heel drops are one option, but slow, progressively heavier calf raises are well supported too. A starting point is 3 sets of 8–12 slow raises on flat ground, every second day, using both legs if needed. As that gets easier, progress towards single-leg raises and then add weight. On a sore day, holding a calf raise with both feet for 30–45 seconds, 4–5 times, may be more manageable. Start gently and build up; it doesn’t have to be perfect straight away.\n\nUp to 3/10 pain during the exercises is a reasonable guide, provided it settles and is back to its usual level by the next morning. If you’re more sore or stiff the next morning, ease back the load or reps. Don’t stretch it hard into a burn, and I’d avoid a cortisone injection near the Achilles because of the risk to the tendon.\n\nIf it’s not settling over the next 3–4 weeks, see any sports physio for a proper assessment and a plan. If you get a sudden pop, a feeling like you’ve been kicked in the back of the leg, or can’t push off, stop running and the calf work and get checked urgently that day by a GP or ED — it could be a rupture.\n\nAlso worth knowing: some antibiotics, including fluoroquinolones, can affect tendons. If you’re taking one and develop tendon pain, contact your prescriber promptly for advice.",
+  "words": 347,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3430747985839844,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06958451867103577,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.332546710968018,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.8,
+    "effort": "low",
+    "output_tokens": 465,
+    "input_tokens": 20336
+  }
+}

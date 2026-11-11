@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast and something for Earl\n\nHi Rhonda, its Gary from the bus garage. Time to get the christmas breakfast on your books again if you'll have us. We're hoping for Saturday Dec 19, back room, 7am same as always. If the 19th is no good then the 12th would work too.\n\nIts a bigger bunch this year, 24 of us. That's 19 drivers, 3 from the shop, and Earl and his wife Carol. Same setup as last year with the eggs and home fries and biscuits and gravy family style and everybody orders there own meat. Separate checks again please. $11 a head was fair last year and its fine if its gone up a little, just tell me what it is so I can tell the guys.\n\nNow the big thing. Earl is retiring. He drove 31 years and his last day is Friday the 18th, the day before, so we want to do something for him at the breakfast. He don't know nothing about it and Carol wants it kept that way, so if he comes in for coffee between now and then please don't say a word. He'd be embarrassed by a big speech so we're keeping it simple. What I wanted to ask is, would it be ok if we brought in a cake from Sugarcreek, or could you just do up a big tray of your cinnamon rolls and we stick a candle in one? Tell you the truth your cinnamon rolls are better than any cake and Earl loves them, so I'm leaning that way if you can do it. Let me know which you'd rather and what a tray for 24 would run.\n\nCouple other things.\n\nLonnie is on a walker now since his hip and he can't do the front steps. Can he come in the side door, the one with no steps? If its kept locked that early maybe somebody could open it for him a little before 7.\n\nPatsy can't do eggs anymore. Could she get oatmeal or pancakes or whatever you got that's easy instead? And would that be the same price or separate?\n\nAnd I'm not bringing this up to make you feel bad, because you already felt bad enough about it, but the coffee ran out about 8:15 last year when that urn quit. With 24 of us and half of them been getting up at 4 there whole life, could you have a backup pot going just in case? You said you'd have one this time so I figure you're already ahead of me.\n\nI'll get you the final count by the Wednesday before like you want, so the 16th if we're on the 19th.\n\nThanks Rhonda, we appreciate you putting up with us every year.\nGary",
+  "words": 456,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.07894229143857956,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.011421065777540207,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.545997142791748,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.1,
+    "effort": "high",
+    "output_tokens": 2925,
+    "input_tokens": 4016
+  }
+}

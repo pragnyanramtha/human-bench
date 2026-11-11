@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject: I'm safe, and an update from Thandi**\n\nHi everyone,\n\nI'm writing this once so I don't have to answer everyone separately. My phone has been going since Saturday night and I'm exhausted, so please forgive me if I'm slow to reply.\n\nFirst, I'm safe. I'm staying with my sister in Rondebosch, and Marmalade (yes, my cat) is here with me, a bit traumatised but fine.\n\nOn Saturday night, 7 November, a fire started in the ground-floor flat at Lindale Court on Station Road in Obs. It wasn't my flat. I'm on the second floor, flat 12. Uncle Faizel went along our floor banging on every door in his vest and slippers, and that's how I woke up. I grabbed my phone and Marmalade and nothing else. Everyone in the building got out. Two people were treated for smoke at Groote Schuur and sent home. The fire department thinks it was probably an electrical fault, but they're still investigating, so I'm not going to guess.\n\nMy flat has smoke and water damage everywhere, and the ceiling came down in the lounge. My landlord says nobody can go back in for at least six weeks. Most of my furniture is gone, and so is a lot of my teaching stuff, including the crowns and the kids' handprint banner I'd taken home to laminate for the end-of-year concert. Furniture can be replaced. Marmalade can't, and I'm just grateful we both got out.\n\nI'm going to be honest, because I know a lot of you are wondering: I really don't like asking for help. My friend Zinhle set up a BackaBuddy page without asking me first and then told me to stop being silly and accept it. So here it is:\n\n**backabuddy.example/thandi-lindale-court**\n\nThe target is R25 000, and it was at R11 400 this morning. I'm so, so grateful for every rand. If you can't give, sharing the link helps just as much.\n\nHere's what I actually need:\n\n- Help with the deposit for a new place. This is the biggest thing and the reason the fundraiser exists.\n- School shoes and work clothes, size 6 shoes and size 34 for clothes.\n- A laptop, if anyone has an old one that still works. All my lesson planning was on mine, so I'm starting from scratch.\n\nHere's what I don't need:\n\n- More clothes in general. Several people have already been incredibly generous, and I have more than enough for now. I'll pass the extras on to the other families in the building.\n- Food. My sister's freezer is full, and I'm being looked after properly.\n\nSomeone from one of the Ladybirds' families dropped a bag of clothes at my sister's gate at 7am on Sunday without even knocking, just so I'd have something. I cried about that for ages. Please know that every kind gesture has landed, even the ones I haven't answered yet.\n\nNow, something important. There is a fake fund going around under the name \"Thandi Fire Relief,\" on some other site, and there's also a WhatsApp message asking people to EFT money to a Capitec account. **That is not me, and I did not set it up.** I've reported it. Please don't send money to any account, and please don't forward that message. The only page connected to me is the BackaBuddy link above. If you're not sure, ask me or check with Zinhle before you pay anything.\n\nFor the parents at Little Acorns: the end-of-year concert on 27 November is still going ahead. Don't worry about the crowns. The Ladybirds will have crowns. I'm back at school on Wednesday, and I'd really appreciate it if nobody made a big thing of it in front of the kids. They're four and five, and it's a normal day for them. A hug from the little ones will do more for me than any speech.\n\nPlease don't be offended if I don't reply to your messages or DMs straight away. I'll get to them. Some of you I'll see soon, and some of you I'll message in a few days when I'm less tired.\n\nThank you for checking on me, for the calls and the voice notes, for the food you offered and the cars you offered to lend, and for the people who just showed up. Honestly, I didn't know this many people were paying attention. You've carried me through the worst weekend I've had, and I won't forget it.\n\nIf you'd like to forward this to someone who might want to help, please do. Just make sure they have the right link.\n\nWith love and a lot of gratitude,\n\nThandi\nFlat 12, Lindale Court (for now)\nTeacher, Ladybirds, Little Acorns Pre-Primary",
+  "words": 782,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not say replies to comments will be slow or that some DMs may go unanswered."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2957575023174286,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4169703423976898,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.2761734127998352,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.1,
+    "effort": "medium",
+    "output_tokens": 2079,
+    "input_tokens": 1971
+  }
+}

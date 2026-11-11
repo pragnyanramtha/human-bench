@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "Hi Mikaela, good on you for asking, and happy to give you the honest version. We started 10 in 7 on 21 Sept, just after mating started, so we're about seven weeks in. We're milking 290 cows, mostly 3-way crossbreds. We skip Tuesday, Thursday and Saturday arvo milkings plus Sunday arvo, so that's four once-a-days a week, with mornings still at 5.15 every day.\n\nMilksolids are down about 6% on the same weeks last year, going off the Fonterra app. The rep had told us to expect 8-10, so we've done better than that, but it's still a real hit and you'll want to price it in.\n\nThe cells were the bit I worried about. SCC jumped from about 110k to around 180k in the first three weeks. It's come back to about 135k now, which is still higher than I'd like. Get your vet across your bulk tank numbers before you start and keep a close eye on them.\n\nLameness has been good. We've got 4 on the lame list now against 11 this time last year. The back paddocks are 1.8km away and I didn't expect that, but it's been a clear win. The cows came round quicker than I thought too. About four days of bellowing at the gate and then they were fine.\n\nNow the bad bits, because you asked for them:\n\nA heifer got mastitis on a skipped arvo and I didn't spot it until the next morning. We lost a quarter. That was on me, not the system, but it's exactly how it bites you. You have to be on your game with teat spraying and checking cows on the skip days. If your crew gets slack about it, this will cost you.\n\nIt also means someone else has to be doing the checking, so you need a system that doesn't rely on the boss being there. Dave and I went to Hamilton to see the grandkids on the first Sunday arvo we'd ever had off in spring. Lovely, but it's a different way of running the farm, and everyone needs to buy in.\n\nKieran, our 2IC, said it's the first spring he hasn't wanted to quit by October. That tells you something.\n\nSo would I go back? Honestly, I wouldn't. The hours alone are worth the 6%. If Tom's knees are bad, the arvos off will help more than anything, and if your young fella's already talking about leaving over the hours, this might be what keeps him. That matters more than a few percent of milksolids.\n\nBut go in with your eyes open. Expect a production hit, watch the cells, and be strict on the skip days. If you do those things it's a good system. If you don't, it'll bite you.\n\nCome along to the Kerrisons' field day on the 19th at 10am. The shed rosters and numbers are worth having a look at. Or give me a ring if you want to chat it through. That's easier than typing with these thumbs.",
+  "words": 502,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says their first Sunday afternoon off in spring ever, rather than their first in over 20 years."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1571289598941803,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.031678032130002975,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.373046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.10980224609375,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.2,
+    "effort": "medium",
+    "output_tokens": 2675,
+    "input_tokens": 1979
+  }
+}

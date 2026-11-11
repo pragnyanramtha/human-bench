@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217 not received, request for resend or full refund by Fri 13 Nov**\n\nHi Tiny Hands team,\n\nI'm writing about order TH-48217, which I placed on 21 October and paid R1,640 for by card (including R95 delivery). It never arrived, and after two emails and a phone call I'm still no closer to getting either the goods or my money back. I'd really appreciate it if a real person could read this properly and reply to me directly.\n\n**What I ordered**\n\n- 6 tubs of finger paint\n- 4 bags of playdough\n- 200 paper plates\n- Googly eyes\n- Glitter glue\n- 2 rolls of brown paper\n\n**What happened**\n\nThe tracking says the parcel was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams.\" Nobody called Adams works at Bergview Pre-Primary in Plumstead.\n\nOur gate guard keeps a book of every single delivery that comes onto the property. There's nothing recorded for the 3rd. The delivery address on the order was correct, so this isn't a case of me giving you the wrong details. Wherever that parcel went, it wasn't to us.\n\n**What I've done since**\n\n- **4 and 6 November:** I emailed you. Both times I got the same copy-and-paste reply saying my query had been \"escalated to our courier partner.\"\n- **Friday 6 November:** I phoned and waited 38 minutes on hold. The lady I spoke to was friendly, but she told me nothing could be done until the courier finished their \"investigation,\" which could take up to 10 working days.\n\n**Why the courier isn't my problem**\n\nI'm going to be honest: I'm cross about this, and I don't think it's unreasonable to be. I paid Tiny Hands, not the courier. I didn't choose the courier, I don't have any agreement with them, and I paid you R95 specifically to get the order to my door.\n\nUntil the goods actually reach me, that's between you and your delivery partner. My understanding is that under the Consumer Protection Act the goods are the supplier's responsibility until they're delivered to the customer, and a signature from someone I've never heard of isn't delivery to me.\n\n**Why this matters**\n\nI'm a kindergarten teacher, and I bought these supplies with my own money for my class. On a teacher's salary, being R1,640 out of pocket for stuff for other people's kids isn't small.\n\nMy class already did the mask pattern last week and they've been waiting to paint them. I've been telling a room full of five-year-olds that the paint is \"coming soon\" for over a week now. We also have our end-of-year concert on 27 November, and these supplies are meant for the props. So waiting another 10 working days for an investigation just doesn't work.\n\nI've ordered from you three times before with no problems at all, which is honestly why this is so frustrating. I liked using you and I'd like to keep using you.\n\n**What I'm asking for**\n\nBy **Friday 13 November**, please do one of the following:\n\n1. **Resend the full order** at no extra cost, so it reaches me in time for the concert, or\n2. **Refund me in full**, R1,640 including the R95 delivery fee, to the card I paid with.\n\nYou're welcome to keep chasing the courier on your side. But that shouldn't hold up sorting this out for me, since I've already paid and received nothing.\n\nI'd also really appreciate a proper reply from someone who's actually looked at my case, not another template saying it's been escalated.\n\nIf I haven't heard back with a resolution by Friday 13 November, I'll go ahead with a chargeback through my bank and leave a review describing my experience. I'd honestly rather not do either, so I'm hoping we can just sort this out.\n\nThanks, and I look forward to hearing from you.\n\nKind regards,\n[Your name]\nGrade R / Kindergarten Teacher\nBergview Pre-Primary, Plumstead\n[Your phone number]",
+  "words": 659,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.457698255777359,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9648707509040833,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.968219757080078,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.7,
+    "effort": "medium",
+    "output_tokens": 1636,
+    "input_tokens": 1561
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: GST formula error in the takings template\n\nIf you downloaded my daily takings and GST template between 12 Aug and 8 Nov, please read this before you use it again.\n\nThe GST formula in v1.0, v1.1 and v1.2 was wrong. It multiplied GST-inclusive takings by 9%. The correct calculation is 9/109 of the inclusive takings, because the GST is already inside the amount. Ravi’s example makes it clear: a $1,090 day should show $90 GST, not $98.10. The difference is $8.10. The old figure overstates GST; it does not understate it.\n\nI have fixed it in v1.3, uploaded on 8 Nov. There have been 412 downloads since 12 Aug, so I am posting this rather than leaving it in the comments.\n\nThe error was mine. I built the formula and tested it against my own sample figures, which were already GST-exclusive. The check passed, and that is how I missed it. No excuses. Melvin, you are right to be upset. People trusted the template because I am an accountant, and that trust is the point. I am sorry for the worry and extra work. Thank you Ravi for flagging it with a real day’s takings, and Shu Fen for pinning down the formula.\n\nOnly people who keyed in GST-inclusive takings are affected, which will be most hawkers and small F&B owners. If your entries already excluded GST, the old formula gave the right result and you are not affected. In v1.3, the H2 toggle must match the amounts you enter. Choose “prices exclude GST” only when the figures you key in exclude GST. Use the inclusive setting for receipts that include GST, even if your menu prices exclude GST. The toggle is about your entries, not your menu.\n\nIf you downloaded v1.0–v1.2 but have not filed yet, download v1.3, check H2, and recalculate before you file. Please do not keep using the old file.\n\nIf you already filed your Q3 return using the old sheet, here is what I suggest:\n\n1. Check which version you used. If it was v1.3, no action is needed on the formula. If it was v1.0, v1.1 or v1.2 and you entered GST-inclusive takings, you are affected.\n\n2. Work out the correct GST for the period at 9/109 of those inclusive takings. The overstatement is the old column F figure minus the correct figure. Keep a simple record of the difference and the version you used.\n\n3. Check your filed Box 6 against column F. The Box 1 sales total was calculated separately and was correct in the old versions; only the GST portion was affected.\n\n4. Go to the IRAS page on errors in GST returns and speak to your tax filer or IRAS about whether a correction is needed and how to do it. I am not going to set out the rules here because they depend on your situation.\n\n5. If you overpaid, ask about the correction route. Nobody underpaid IRAS because of this error, but some people may have paid more than they should have, and it is worth checking rather than leaving it.\n\nI will keep the changelog with the download. If anything is unclear, comment below and I will answer.",
+  "words": 524,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11472204327583313,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.029261013492941856,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.440033435821533,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "provider default",
+    "output_tokens": 3477,
+    "input_tokens": 2657
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: WARNING: Brightline Pro 6% developer from the Kelvin Trade rep, batch LX2291 could be 12%\n\nRight everyone, please read this one properly before you mix anything today.\n\nSome of the Brightline Pro 6% (20 vol) Cream Developer 1L the Kelvin Trade rep has been selling is actually 12% (40 vol). Kelvin Trade emailed on Sunday to say there was a filling error at the manufacturer. It's happened to two of us in the building already and it wasn't nice, so if you've bought off him lately please check.\n\nWHICH BATCH\n\nBatch LX2291. It was supplied between 19 October and 5 November. Kelvin Trade say no other batches or strengths are affected.\n\nHOW TO CHECK\n\nThe batch code is printed on the BASE OF THE BOTTLE. It is NOT on the box, so don't go by the box. Lift every bottle out and turn it over.\n\nCheck all of these:\n- the open bottle on your trolley or station\n- any spare stock in the back or in your own cupboard\n- anything you've decanted. If you can't tell which bottle it came from, don't use it\n\nIf it says LX2291, stop using it. Put it aside with a note on it so nobody grabs it by mistake.\n\nWHAT IT DOES TO THE HAIR\n\nIt looks and smells exactly like the normal 6%, so you won't spot it in the bowl. The signs are in the processing:\n- it lifts way faster than you'd expect. One of us had a full head go near pale yellow in about 18 min when it normally takes 35-40\n- foils get really hot. If you think the heater's too close, check your developer\n- the client says it's burning earlier than normal, or it's sore rather than just tingly\n- patchy or brassy results that don't match your usual formula\n\nIf something's lifting faster than it should, don't wait to see. Take it off.\n\nIF SOMEONE REACTS IN THE CHAIR\n\n- Stop and rinse straight away with cool running water. Keep going for at least 20 minutes and don't rush it\n- No shampoo, no creams, no aloe or anything else on it while you're rinsing\n- Gloves on for you\n- If it's gone on their face or near their eyes, or there's blistering, a big area, or a lot of pain, they need to get it looked at. Send them to A&E or phone 999\n- If they've got any trouble breathing, swelling in the face or throat, or they feel faint, phone 999 right away\n- If it's milder, tell them to phone NHS 111 or see the pharmacist or their GP for advice. The NHS page on chemical burns is good: https://www.nhs.uk/conditions/acid-and-chemical-burns/\n- Write it in the incident book at the desk as per Gail's rules: time, product, what you did\n\nIF YOU'VE HAD A PROBLEM WITH IT\n\nKEEP A BOTTLE BACK. Don't bin it and don't hand every single one back. Hang on to the one you used (even if it's empty) with the batch code on it. You might need it for your insurance or the supplier. Also take dated photos and write down what happened while you still remember it.\n\nLet your insurer know as well if a client's been affected. Just tell them the facts and go by what they say.\n\nGETTING THEM BACK\n\nThe rep is in on Tuesday and you can hand bottles back to him. Or take them to the Kelvin Trade depot at Hillington. They say you get full credit. Get something in writing for whatever you hand back.\n\nI know their email says \"sorry for any inconvenience\". Folk have had sore heads off this, so please treat it seriously and check today even if you think yours are fine. Half the building buys off the same guy.\n\nAny questions, give me a shout.\nKirsty",
+  "words": 628,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The reaction advice contradicts the supplied guidance to call 999 immediately and rinse for about an hour."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23012672364711761,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13498321175575256,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.708326816558838,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.2,
+    "effort": "medium",
+    "output_tokens": 2168,
+    "input_tokens": 3577
+  }
+}

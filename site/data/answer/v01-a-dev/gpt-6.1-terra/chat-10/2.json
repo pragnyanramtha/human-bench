@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.49, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need to be honest with you because I’m really pissed about the Gary situation.\n\nYou told him I’d list his house for 1% as a “family rate” without ever asking me. My listing side is 2.5%, and I never told anyone I’d do it for 1%. I spent about six hours last Saturday pulling comps, walking through the house and putting together a full listing packet, plus the drive from north Phoenix. Gary choosing the flat-fee company is his decision, and I’m not mad at him. But when I called you and you said “that’s business, sis, can’t win ’em all,” it felt like you completely brushed off my time.\n\nAnd now you’ve already given Denise my number so she can pick my brain about her rental. I’m not calling Denise. Please let her know.\n\nThis happened with your softball friend a couple of years ago too, and I let it go then. But it feels like you get to look like the big shot offering my help while I’m the one doing the work for free.\n\nI’m always happy to help actual family—Mom, your kids, whoever—and I don’t charge for advice. But from now on, please don’t hand out my number or quote my commission to anyone. Ask me first, every single time, and let me decide what I can offer.\n\nI love you, and yes, I’m still coming to Thanksgiving. But I need you to take this seriously and respect my time and my business.",
+  "words": 249,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4932374954223633,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6667339205741882,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.447800159454346,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.1,
+    "effort": "low",
+    "output_tokens": 313,
+    "input_tokens": 18273
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: GST formula error in the daily takings template\n\nI will get straight to it. Ravi and Shu Fen were right: there was an error in the GST formula in my daily takings template. It has been corrected in v1.3, uploaded on 8 Nov. This post explains what went wrong, who is affected and what to do if you have already filed.\n\nWhat was wrong\n\nFor GST-inclusive takings, column F used this calculation:\n\nInclusive takings × 9%\n\nThat is wrong. When the amount collected already includes GST, the GST portion is:\n\nInclusive takings × 9/109\n\nRavi’s example makes the difference clear. For his $1,090 day of GST-inclusive takings, the template showed $98.10. The correct GST was $90. The template therefore overstated GST by $8.10.\n\nI tested v1.0 against my own sample figures, which were already GST-exclusive. The formula produced the expected answers for those figures, so the check passed. I did not test it properly with GST-inclusive receipts. I should have tested both. The mistake is mine, and there are no excuses for it.\n\nI am sorry for the trouble and worry this has caused. Melvin is right to be upset. People trusted the template partly because I said I was an accountant, and that means I should have held it to a higher standard.\n\nWho is affected\n\nThe error is present in v1.0, v1.1 and v1.2. It affects you only if you entered GST-inclusive takings. This includes most hawkers and others who key in the actual receipts collected, with GST already included.\n\nIf every amount you entered excluded GST, this particular error does not affect your figures.\n\nThere have been 412 downloads since 12 Aug. That is not the number of affected returns, but it is enough that a reply buried in the comments is not sufficient.\n\nPlease use v1.3 from now on. In cell H2, set the option to match the amounts you actually enter:\n\n– Select “prices exclude GST” only when the entries exclude GST.\n– Use the inclusive setting when the receipts entered include GST, even if your menu prices are shown excluding GST.\n\nIf you filed Q3 using the sheet\n\nFor a Jul–Sep return prepared with v1.0, v1.1 or v1.2, work through these steps:\n\n1. Keep the original workbook and a copy of the return you filed. Do not overwrite your filed workings.\n\n2. Check whether the takings you entered were GST-inclusive. If they were all GST-exclusive, you do not need to correct anything for this bug.\n\n3. If you entered inclusive takings, recalculate using v1.3 and the same underlying takings, with H2 set correctly. Compare the revised GST figure with the output tax declared in Box 6. The template’s quarterly Box 1 sales total was calculated separately and was not affected by this bug; Box 6 was.\n\n4. Check the correction route before changing any return. Go to IRAS’s “Correcting Errors in GST Return” page on iras.gov.sg, and speak to your tax agent or whoever filed the return for you. IRAS has its own rules on whether an error can be corrected in a later GST F5 or requires a GST F7. Follow the current IRAS guidance for your circumstances, rather than simply reducing a future payment or choosing a form based on this post.\n\n5. Keep the recalculation and any correction submission with your GST records.\n\nThis error overstated GST, so nobody underpaid IRAS because of it. The concern is the opposite: affected filers may have overpaid and should check the proper correction route with IRAS or their filer.\n\nThank you to Ravi for questioning the figure, and to Shu Fen for confirming the formula and asking me to put up a proper correction post. If anything above is unclear, please ask in the comments.",
+  "words": 613,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.07376068830490112,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.017591841518878937,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.333984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.246372222900391,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 53.4,
+    "effort": "provider default",
+    "output_tokens": 3993,
+    "input_tokens": 2621
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone — charity stream for the linden community pantry, sat nov 21, 10am to 10pm\n\nposting this early and pinning it. last year we raised $212 and half the server didnt even know it was happening bc i posted it the thursday before, so this year im putting it up now and the goal is $600.\n\ndonate here: lindenpantry.example/mrkz\nevery dollar goes straight to the pantry, nothing taken off, and through their wholesale partner every $1 is about 4 pounds of food. they serve around 340 families a week and the shelves are the lowest theyve been before thanksgiving. so even $3 helps, and if you cant give more thats genuinely fine, dont feel bad about it.\n\nrook is matching the first $100, so donate early and it counts double.\n\nincentives\n$100 — i play a full round with the controller upside down\n$250 — chat picks my hair dye color and i do it on stream\n$400 — one hour of chat-picked songs, no skipping\n$600 — i vlog a grocery pickup the pantry arranges\n\nits not begging if you get hair dye content out of it lol\n\nno card? you can still help. the pantry takes canned and boxed food at the blue bin by the side door, saturdays 9 to 1, and sharing the link counts too.\n\nfirst half is community lobbies, ill drop the code, then chat votes the game every 2 hrs. no repeat maps larry.\n\n---\n\nTo: #general\nReplying to: [c05]\nCc: none\nSubject: none\n\n@dev0n ur free to think its cringe lol, im not gonna argue with you about it. but its a food pantry doing 340 families a week on their shelves being the lowest before thanksgiving, and every dollar is about 4 pounds of food, so it feels like a bit more than begging. either way you can pop in and hang out, the lobby code drops in the first half.\n\nand @sk8rpaige — no card needed. you can bring canned or boxed food to the blue bin by the side door saturdays 9 to 1, or just share the link with people whove got a card. either way it helps.",
+  "words": 350,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.056496161967515945,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.036306872963905334,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.173828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.5202581882476807,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.8,
+    "effort": "provider default",
+    "output_tokens": 2909,
+    "input_tokens": 1707
+  }
+}

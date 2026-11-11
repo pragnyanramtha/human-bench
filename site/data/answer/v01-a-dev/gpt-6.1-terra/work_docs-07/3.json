@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "work_docs-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Statement Regarding October 27 Afternoon Bus Route**  \n**To:** Mrs. Okafor and the Transportation Office  \n**From:** [Driver’s name], Bus Driver  \n**Date:** [Date submitted]  \n**Re:** Amara Okafor, Bus 41, Route 9\n\nDear Mrs. Okafor,\n\nI am writing in response to your complaint dated October 29 concerning the afternoon bus run on Tuesday, October 27. Darlene gave me a copy of the complaint on November 3 and asked me to provide a formal statement.\n\nFirst, I want to say that I understand how frightening and upsetting it must have been not to see Amara get off the bus as expected. I have grandchildren, and I would have been worried too. I am sorry that this was such a difficult afternoon for you. I hope this statement explains what I saw and the steps I took.\n\nOn October 27, I was driving Bus 41 on the Route 9 elementary afternoon run. Amara is a kindergarten student at Fairmont Elementary and has a green tag on her bag, which indicates that an adult must be present at her stop before she can be released from the bus.\n\nI arrived at the stop at Kessler Avenue and Brandt Street at approximately 3:52 p.m. The scheduled arrival time was 3:50 p.m. I waited until about 3:55 p.m., but I did not see an adult at the corner. Under the district rule for kindergarten riders, when an adult is not present at the stop, the student stays on the bus and is returned to school, where the office contacts the parent. That is the procedure I followed.\n\nI understand from your complaint that you were parked across Brandt Street by the laundromat and waved to me. I did not see you or your wave. There was a box truck parked on that side of the street. I cannot say whether it blocked my view of you, but I did not see an adult at the stop before I pulled away.\n\nAt that point, I had three more stops to make and 14 other children still on the bus. I could not leave them on the bus to cross the road and look for an adult. My responsibility was to keep the students safely on board and follow the procedure for Amara.\n\nI also understand that you told the office I drove off laughing. I was not laughing. As I pulled away, I was telling a fourth-grade student in seat 2 to sit back down. I cannot speak to what it may have looked like from where you were parked, but I want to be clear about what I was doing.\n\nAt approximately 3:56 p.m., I radioed dispatch to report that I had not seen an adult at Amara’s stop. Gloria in dispatch called the school. After completing the remaining stops, I returned Amara to Fairmont Elementary at approximately 4:31 p.m. I walked her into the office myself and brought her to Mrs. Petrakis.\n\nWhile Amara was on the bus, she appeared fine. She was coloring on her folder and asked if she could ride some more. I told her we were going on a little extra trip. I stayed responsible for her until I brought her into the school office.\n\nI respectfully ask the Transportation Office to pull and review the bus camera footage from October 27, including the footage at the Kessler Avenue and Brandt Street stop and as the bus pulled away. I would appreciate having it reviewed as part of the record of this incident.\n\nMrs. Okafor, I did not intend to cause you worry or keep Amara from you. I followed the district’s procedure because I did not see an adult at her stop, and I believe it was important to keep her with me and return her safely to school. I have been a school bus driver for 28 years and have had no write-ups. I take the safety of the children on my bus seriously.\n\nFor future pickups, I ask that you please stand on the bus side of the street or step out of your car where I can see you. I hope that will help us avoid another situation like this.\n\nI am glad to continue driving Amara, and I want us to have a good understanding going forward. Thank you for taking the time to read my account.\n\nSincerely,\n\n[Driver’s name]  \nBus 41, Route 9  \n[Date]",
+  "words": 727,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4307475984096527,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5109331011772156,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.766502857208252,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.5,
+    "effort": "low",
+    "output_tokens": 902,
+    "input_tokens": 18559
+  }
+}

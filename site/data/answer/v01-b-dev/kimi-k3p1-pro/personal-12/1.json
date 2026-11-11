@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Mum, Kirsty and Linda,\n\nRight, this is strictly between us — Gran knows nothing about it yet, and I want to keep it that way!\n\nFor her 80th on Sunday 13 December, I’ve organised a wee surprise for the day before. Morag has said I can have Hair by Morag to myself on Saturday 12 December from 1pm. She closes at 12 on a Saturday, so we’ll have the salon on Dumbarton Road all to ourselves for the afternoon.\n\nI’m doing everyone’s hair for free before we go out for Gran’s dinner. That’s seven heads altogether: me, you three, Gran, and Ava and Ruby. Cuts and blow-dries are no bother for whoever wants one, and I can do colours as well, but I need to know exactly what you want by **Friday 27 November** so I can get everything ordered from the wholesaler. If you don’t tell me in time, it’ll be a cut and blow-dry only!\n\nRemember Gran saying at Easter that she’d “love to go silver properly”, but she won’t pay salon prices? That’s what set this whole idea off. I’d love to do it for her as part of her birthday surprise, so I’ll get her colour sorted.\n\nKirsty, Ava and Ruby can have wee braids and some glitter spray — I think they’ll love that. Mum, you’re probably my best bet for getting Gran to the salon for 1pm without giving the game away. I’ll leave the cover story to you!\n\nDinner’s booked for **8.30pm that Saturday** at the Italian place on Byres Road. It’s a table for nine, including Uncle Davie and Kirsty’s man, so we’ll all be ready for a proper night out by then.\n\nWe can bring a bottle of fizz too — Morag’s fine with that as long as we tidy up after ourselves. And Linda, before you say anything, your colour’s getting done in an actual salon this time, so your cooker and the dog are both perfectly safe.\n\nLet me know what you want done, especially colours, by Friday 27 November. Once I’ve heard from everyone, I’ll sort out timings for the afternoon.\n\nAnd not a word to Gran!\n\nLove,  \n[Your name] xxx",
+  "words": 363,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3322148621082306,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2747921645641327,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.322174072265625,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 74.6,
+    "effort": "provider default",
+    "output_tokens": 2995,
+    "input_tokens": 503
+  }
+}

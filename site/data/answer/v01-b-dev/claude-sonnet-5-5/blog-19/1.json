@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Wellsford Road: what went wrong with our collisions figures, and what we are changing\n\nOn 2 November we published an analysis of Department for Transport collision records headed \"Revealed: the Bristol roads with the most collisions\". It said Wellsford Road in Fishponds had 41 injury collisions between 2021 and 2025, more than any other road in the city. That figure was wrong. The correct number is 23, which puts Wellsford Road sixth, not first. A correction has been on the article since Friday 6 November, but a line at the foot of a page was not an adequate account of an error of this size. This is the fuller explanation.\n\n**What went wrong**\n\nThe DfT publishes collisions and the roads they happened on as separate records, and we joined the two to count collisions per road. In doing so, the join duplicated some collision-and-road pairs, so the same collision, identified by its accident index, was counted more than once in a road's total. Eighteen duplicate entries were removed from Wellsford Road's figure, mostly at the junctions with Pell Street and Kingsmere Road. No new crashes were invented. Real collisions were counted twice, and 41 minus 18 is 23.\n\nWe did not catch it before publication. That is a failure of the Data Desk's process, not of any one person, and it is ours to answer for. The article carried my byline and I am answering for it here.\n\n**The corrected figures**\n\nWe rebuilt the analysis from the raw data, counting each accident index once per road, and reran the whole citywide table. The top six now reads:\n\n- Kingsmere Road: 32 (previously 34)\n- Alder Hill: 31 (previously 31)\n- Tanner's Way: 28 (previously 29)\n- Crossfield Road: 26 (previously 27)\n- Hambrook Lane: 24 (not previously in the top five)\n- Wellsford Road: 23 (previously 41)\n\nNo other road moves more than two places. Wellsford Road is the only one where the error changed the story.\n\n**What the corrected figure does and does not mean**\n\nOf the 23 collisions on Wellsford Road, three were serious. None was fatal. The road is not the city's worst by this measure, and we should not have said or implied that it was. Equally, 23 injury collisions in five years is not nothing, and I do not want this correction read as a clean bill of health. It is simply the accurate number.\n\nI also know that parents have been asking whether it is safe to walk children to Wellsford Primary. A ranked count of collisions along a whole road cannot answer that. It does not tell you which stretch, which crossing, or how much traffic there is, and I would not want anyone to take a verdict on their child's route from a league table, least of all one we got wrong. The collision records themselves are public, and the council and the road safety team are better placed than we are to speak to specific crossings.\n\n**The effect on residents**\n\nThe original article was read about 48,000 times and shared widely, and the wrong number travelled with it. Residents of Wellsford Road were told, on our authority, that they lived on the most collision-prone road in Bristol. They did not recognise the figure, and they were right not to. A member of the Fishponds Streets Forum went through the published DfT data herself and could not get anywhere near 41. She was correct and we were wrong.\n\nI apologise to the people who live on and around Wellsford Road for the alarm and the damage to the area's reputation that this caused, and for the days it took us to put it right.\n\n**What we are changing**\n\nTwo things, starting now:\n\n1. Any ranked table we publish will be reproduced independently by a second analyst before it runs. If the two sets of figures do not match, the story waits.\n2. We will publish the cleaned dataset and the code alongside ranked tables, so that readers can check our work as the forum member did, without having to work it out from scratch.\n\nI would rather our figures were checked by readers before publication than after, but where that is not possible, I want them to be easy to check afterwards.\n\n**Questions in person**\n\nThe Fishponds Streets Forum has invited us to its open meeting at Fishponds Library on Tuesday 17 November at 7pm. I will be there to answer questions about the article, the error and the corrected analysis. If you cannot make it, you can write to me at the Data Desk and I will answer there.\n\nNell Garside\nData journalist, Western Ledger",
+  "words": 760,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10138728469610214,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12199751287698746,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.9385331869125366,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.2,
+    "effort": "high",
+    "output_tokens": 3343,
+    "input_tokens": 4750
+  }
+}

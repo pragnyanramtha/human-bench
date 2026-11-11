@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone — charity stream for the linden community pantry: sat nov 21, 10am to 10pm\n\nlast year we raised $212 and like half the server didn't even know it was happening because i posted it the thursday before. so we're posting early this time and i actually need people to show up.\n\ngoal is $600. rook is matching the first $100, so the first hundred counts double. donate at lindenpantry.example/mrkz — it goes straight to the pantry, they don't take anything off the top. every $1 gets them about 4 lbs of food through their wholesale partner, and they're serving around 340 families a week right now. shelves are the lowest they've been going into thanksgiving.\n\nit's not begging if you get hair dye content out of it lol. incentives:\n$100 = i play a full round with the controller upside down\n$250 = chat picks my hair dye color and i do it ON stream\n$400 = 1 hour of chat-picked songs, no skipping\n$600 = i vlog a grocery pickup the pantry arranges\n\neven $3 helps. if $3 is all you can do that's genuinely fine and i'm not gonna make you feel bad about it. can't donate at all? show up, hang in chat, that helps too.\n\nno card? you're still good — drop off canned or boxed food in the blue bin by their side door saturdays 9 to 1, or just be there.\n\ngame plan: first half community lobbies (i'll drop the code, anyone can join), second half chat votes on a new game every 2 hrs. no repeat maps larry i promise.\n\nnov 21. let's actually hit 600 this time.\n\n---\nTo: #general\nReplying to: [c05]\nCc: none\nSubject: none\n\nfair enough, i get why it looks like begging from the outside. but it doesn't go to me, it goes straight to the pantry and they buy the food with it, and it's for 340 families a week. if you still think it's cringe, come watch the 21st and judge me after — there's hair dye on the line so you'll at least be entertained. announcement's up in #announcements if you missed it.",
+  "words": 349,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16974829137325287,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20431679487228394,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.52734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2819554805755615,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "provider default",
+    "output_tokens": 2567,
+    "input_tokens": 1707
+  }
+}

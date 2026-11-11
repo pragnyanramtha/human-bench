@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán, full picture below.\n\n**What the logger says**\nIt went over 8°C at 22:50 on Saturday and came back under 8 at 05:00 on Sunday, so about 6 hrs 10 mins out of range. The peak was 11.6°C at 02:15 Sunday. Friday's overnight minimum was 4.1, so it was running normally before that.\n\n**What happened**\nI found it at 07:55 this morning. The alarm keeps beeping until someone resets it, which is what you heard coming in. The door wasn't fully clicked shut and a box of Hartmann's bags from Saturday's delivery was stacked against it. Saturday clinic ran late with the RTA collie and the delivery got put away in a rush at closing, which could have been any of us.\n\nThe seal is also cracked in the bottom left corner. I had to lean on the door with my hip to get it to click this morning, same as Marta said. I think it was the box and the seal together.\n\n**What was in it**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 2 cat flu/FeLV combos\n- 4 vials insulin\n\nThat's roughly €1,150 at cost for the lot.\n\n**What the supplier said**\nI rang the Munster Vet Supplies tech line at 08:40 and spoke to Niamh, the pharmacist. Her instruction was to quarantine everything, use nothing, and email her the logger CSV and the batch numbers. They'll check with the manufacturers and come back to us by Wednesday.\n\nThe one exception is the insulin. She checked the manufacturer's storage sheet for the product we stock against the logger readings and cleared the four vials for use.\n\n**Usable / not usable**\n- **Insulin:** fine to use.\n- **Vaccines:** none to be used until we hear back. They're in a sealed bag labelled DO NOT USE in the lab fridge. I checked that fridge is sitting at 5.2°C and started a new temp sheet for it.\n\nI wouldn't bin anything until the supplier comes back. Most of it is probably fine, but that's not my call. For your call at 2, the €1,150 is the worst case and it includes the insulin, which is cleared.\n\n**Appointments**\nAoife, keep holding this afternoon's boosters. If the supplier clears the stock they can be rebooked for Thursday or Friday, or we borrow stock from the Carrigaline branch. Bonnie is down for Wednesday, which might be before we have an answer, so she'd need Carrigaline stock or another move.\n\n**What we change**\n1. A fridge door check goes on the closing checklist at lock-up.\n2. A new door seal, which needs doing regardless.\n3. A logger with SMS alerts. The ThermaTrak only beeps locally, so nobody knew until this morning. There's one in the supplier catalogue for about €180.\n\nCan you OK the seal and the SMS logger?\n\n---\n\nTwo things to check before you post:\n- **CSV and batch numbers:** your notes don't say whether you've emailed them to Niamh yet. Ciarán will probably ask, so add a line either way.\n- **Bonnie:** I added that line because Aoife moved her to Wednesday, the same day the supplier is due back. Cut it if you'd rather sort that with Aoife directly.",
+  "words": 537,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3648252487182617,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2417265772819519,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.584074974060059,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 39.1,
+    "effort": "high",
+    "output_tokens": 3566,
+    "input_tokens": 2239
+  }
+}

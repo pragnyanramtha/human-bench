@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for picking this up. Here are the details you asked for.\n\n1. Terminal model and firmware: We have four BX-300 terminals at our Embakasi depot. They auto-updated from firmware 4.1.8 to 4.2.1 on the night of 27 October. Our two terminals at Mombasa Road are still on 4.1.8 because they were offline that week, and the day shift data from there is correct.\n\n2. Shift template: NIGHT-8 (22:00 to 06:00). 38 staff are affected.\n\n3. Example: Employee ID T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October.\n- The export showed 2.1 hrs REG on 30 October and 6.1 hrs OT15 on 31 October.\n- We expected 8.0 hrs REG and 0.2 hrs OT15. Payroll rounds to the nearest tenth of an hour, so the 8 h 13 min total is 8.2 hrs, and the 13 minutes outside the scheduled shift are the OT15.\n\nIn short, any shift crossing midnight is now split into two lines, and the after-midnight line is coded OT15 instead of REG. It started around 28 October.\n\n4. Export profile: Payroll CSV v2.\n\n5. When we noticed: Kevin Mutua, our payroll officer, spotted it on 5 November while reviewing the draft October overtime. That draft was overstated by about KES 212,000. He has corrected it by hand from the raw punches, but we can't keep doing that every month.\n\nThe 4.2.1 release notes promised improved midnight rollover handling for shifts spanning two days, and we are seeing the opposite.\n\nTwo things I need from you:\n\n- Can Brian Ochieng, who manages our terminals, safely roll the four Embakasi terminals back from 4.2.1 to 4.1.8? He is willing to do it, but he does not want to lose any punch data, so please tell us plainly whether that is safe and whether anything needs to be done first.\n- If a rollback is not advisable, we need a fix or a clear workaround before our payroll cut-off on 20 November.\n\nI have copied Kevin, who will test whatever you suggest. I have used employee IDs only, as we would rather not share staff names.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 365,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.27405351400375366,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10207613557577133,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.8364739418029785,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "high",
+    "output_tokens": 1718,
+    "input_tokens": 3598
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: Linden Pantry charity stream — Nov 21\n\n@everyone Quick heads up so nobody finds out the day of this time: I’m doing a 12-hour charity stream for Linden Community Pantry on Saturday, Nov 21, 10am–10pm. Goal is $600. Rook is matching the first $100, so early donations count double.\n\nDonate here: lindenpantry.example/mrkz — it goes straight to the pantry, nothing taken off. Through their wholesale partner, $1 gets them about 4 pounds of food. They’re serving around 340 families a week right now and the shelves are the lowest Denise has seen before Thanksgiving.\n\nIncentives:\n$100 — I play a full round with the controller upside down\n$250 — chat picks my hair dye color and I do it on stream\n$400 — one hour of chat-picked songs, no skipping\n$600 — I vlog a grocery pickup arranged by the pantry\n\nFirst half is community lobbies (I’ll drop the code), second half chat votes on the game every 2 hours. No repeat maps, Larry.\n\nEven $3 helps. If you can’t give, absolutely no pressure — watching, sharing the stream, or hanging out is genuinely useful. No card? Canned/boxed food can go in the blue bin by the pantry’s side door Saturdays 9–1, and sharing the link helps too.\n\nLet’s beat last year’s $212 by a lot.\n\n---\n\nTo: #general\nReplying to: c05\nCc: none\nSubject: none\n\nFair to be skeptical. It is a bit “begging with extra steps,” except the steps are Rook matching the first $100, donations going straight to the pantry with nothing taken off, and me letting chat pick my hair dye. If that’s still cringe, that’s honestly fine — no one has to donate. If you want to help without spending money, sharing the stream or just hopping in the lobbies actually helps too. And Paige, no card is fine — canned/boxed food can go in the blue bin by the pantry’s side door Saturdays 9–1.",
+  "words": 303,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3183921277523041,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.31683337688446045,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.7261528968811035,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.1,
+    "effort": "provider default",
+    "output_tokens": 3390,
+    "input_tokens": 1575
+  }
+}

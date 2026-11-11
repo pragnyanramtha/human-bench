@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Right Mum, Kirsty and Linda,\n\nI’ve got a wee surprise planned for Gran’s 80th and I’m absolutely buzzing to tell you!\n\nMorag’s said I can have Hair by Morag on Dumbarton Road all to ourselves on **Saturday 12 December from 1pm**. She shuts at 12 on a Saturday, so we’ll have the place to ourselves for a proper family pamper afternoon before Gran’s birthday dinner. Her birthday’s not till Sunday, but we might as well make a weekend of it!\n\nI want to do everybody’s hair **for free** — me, you three, Gran, Ava and Ruby. Cuts and blow-dries all round, and colours too, as long as I know beforehand so I can get everything ordered in. Ava and Ruby can have wee braids and glitter spray. I can already imagine the pair of them checking themselves in every mirror.\n\n**Let me know what you’d like done, especially any colour, by Friday 27 November**, so I can order from the wholesaler. Even if you’re just wanting a trim and a blow-dry, give me a shout so I can work out who’s getting what and when.\n\nGran said at Easter she’d “love to go silver properly” but wouldn’t pay salon prices, so I’m hoping we can treat her to that if she still fancies it. And Linda, we’ll be doing yours somewhere with no cooker or dog within splashing distance this time 😂\n\nMum, can you be in charge of getting Gran there for 1pm without telling her why? Make up whatever excuse you need, just don’t let her rumble us!\n\nDinner’s booked for **8.30pm that night at the Italian place on Byres Road**, table for nine with Uncle Davie and Kirsty’s man joining us, so we’ll have time to get ourselves sorted before heading out.\n\nBring a bottle of fizz along — Morag’s happy for us to have a wee drink as long as we tidy up afterwards.\n\nKeep it quiet round Gran. Can’t wait to spoil her rotten ❤️",
+  "words": 330,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3552984297275543,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21232330799102783,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.155738353729248,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.9,
+    "effort": "low",
+    "output_tokens": 430,
+    "input_tokens": 18245
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "Hey family — I wanted to put this in the group so it doesn’t turn into a game of telephone through Mom.\n\nYes, I’m coming to Thanksgiving. Thursday, Nov. 26, at Aunt Denise’s in Macon, eating around 3. I’m bringing mac and cheese and two sweet potato pies.\n\nI also want to clear the air a little before we get there. Last year at Grandma Pearl’s, I got into it at the table with an uncle about my job, and I said something smart about where he gets his news. That part was me. I’m not sorry for the work I do — I’m a paralegal at a civil-rights nonprofit and I believe in it — but I am sorry for how I talked at Grandma’s holiday. I still feel bad that she went and sat on the porch for about an hour.\n\nI’m not going to re-litigate any of that this year, and I’d ask for the same from everybody. I can’t talk about open cases anyway because of confidentiality, so questions about “the lawsuit” are a dead end. I’d just rather not spend the one day we all get together arguing about work or politics.\n\nSo here’s my ask: can we call a truce on that stuff for Thanksgiving? Keep the table to food, football, babies, and Tasha’s new boyfriend. I’m coming because I want to see everybody and I want it to be a good day. For what it’s worth, I got a birthday thumbs-up from a certain uncle in August — which for him is basically a hug — and I’m choosing to take that as a good sign. He’s not a bad guy; he just likes to poke, and I can give as good as I get.\n\nSee y’all at Denise’s.",
+  "words": 296,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1606670618057251,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16886986792087555,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.38671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.154515266418457,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.1,
+    "effort": "provider default",
+    "output_tokens": 2767,
+    "input_tokens": 480
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nHey Mel, I can't diagnose this over the internet and I haven't seen your leg, but what you're describing (morning stiffness, tenderness a few cm above the heel, settling once you're running, aching that night, all after a big jump in volume) sounds like a common mid-portion Achilles tendinopathy rather than a tear. It's very typical with the kind of ramp-up you did, and it's very manageable.\n\nLoading is the main treatment. You usually don't need to stop completely, but stretching it hard until it burns tends to irritate it more, so skip that. Cortisone injections are also generally avoided near the Achilles because they can weaken the tendon.\n\nFor calf work, heavy slow calf raises have the best evidence at the moment. Start on both legs, about 3 seconds up and 3 seconds down, and build to single leg as it allows. Heel drops are fine too, but heavier slow work tends to get better results. On bad days, isometric holds (pushing up onto your toes or into a wall and holding for 30-45 seconds) can keep the tendon working without much load.\n\nFor pain, up to about 3/10 during loading is acceptable as long as it's back to normal by the next morning. If it's worse the next day, or you're limping for hours afterwards, back off the calf work or the running a notch.\n\nOn the running side, going from 30 to 48km in three weeks is a big jump, so dropping back for a while as the calf work builds up makes sense.\n\nIf it's not settling within 3-4 weeks, see any sports physio. They can assess it properly and set up a progression.\n\nStop running and calf work and get it checked the same day (GP or ED) if you get a sudden pop, feel like you've been kicked in the back of the leg, or can't push off your toes. That can be a rupture.\n\nAlso worth knowing: some antibiotics, particularly the fluoroquinolone type (like ciprofloxacin), have been linked to tendon problems. If you're ever prescribed one and notice heel or calf pain, let your GP know straight away.\n\nHope it settles quickly.\nKaz",
+  "words": 360,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft does not address heel-drop repetitions or frequency, or defer individual dosage to assessment."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13924987614154816,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.112978495657444,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.14100593328475952,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.8,
+    "effort": "medium",
+    "output_tokens": 2534,
+    "input_tokens": 3196
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: DRAFT for Sal — Vantorre CX-10: repeated E34 lockouts and disputed callout\n\nWe paid $14,800 including GST for this refurbished CX-10, delivered and commissioned on 14 September, with a six-month parts and labour warranty. The listing said the steam generator had been descaled and pressure tested and the core probe calibrated.\n\nOn 22 September, service report SR-1190 recorded nine E34 errors since delivery. E34 was identified as steam generator low water level, causing intermittent lockouts in steam and combi modes. The technician replaced the level sensor, recorded inlet pressure at 320 kPa as OK, and completed three successful steam cycles.\n\nBy 3 October, I had reported another four E34 faults that week. I also checked the core probe against our Thermapen in a lamb shoulder: the oven read 63°C against 70°C, with the same result twice. On 6 October, the technician found heavy scale, descaled and flushed the generator, and recalibrated the probe to within one degree.\n\nOn Saturday 24 October at 6.10pm, E34 locked us out during a fully booked 60-cover service. We finished the lamb on the stove and in the deck oven, took pork belly off the menu and absorbed the cost.\n\nBrett’s 28 October email says E34 and further scale were found at the 27 October attendance. Kelsall attributes this to site water and says the callout is outside warranty: $280 plus GST, or $308.\n\nWe dispute that explanation and charge. On 7 October, the water company advised me that Fitzroy’s average supply hardness is about 15 mg/L as CaCO3, which is soft. That is supply information, not a test at the oven inlet, and does not prove when the scale formed. However, heavy scale after just over three weeks warrants an explanation against the advertised refurbishment.\n\nDion has been helpful. Our concern is repeated faults, disrupted service and the unresolved warranty position. Other kitchens considering this sort of spend should know our experience.",
+  "words": 306,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1441924124956131,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1704619973897934,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.578125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.470695495605469,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.3,
+    "effort": "medium",
+    "output_tokens": 542,
+    "input_tokens": 15511
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "invented amount",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays rewiring a buddy's shed, and I need to tell you all about what I found, because I've been doing this 26 years and I still wasn't ready.\n\nLet's start with the power. The shed was fed by THREE orange extension cords daisy chained together. Out a basement window, across the yard, and under the deck. Under the deck. Where nobody looks and everything is dry as a bone and made of wood.\n\nOne of the connections in that chain was a splice wrapped in duct tape. Not electrical tape. DUCT tape. I stood there for a minute just to give it the respect it deserved.\n\nIt gets better. Inside the panel there was a 30 amp breaker feeding 14 gauge wire. 14 gauge is rated for 15 amps. So the breaker was basically saying \"go ahead, take double, I'll wait.\" That wire was never going to trip anything. It was going to just get warm, then hot, then it was going to get creative.\n\nThe outlet in the shed was hooked up with speaker wire. Yes, the stuff you hook up to your stereo. I'm sure it sounded great.\n\nThe outlet said GFCI on it too, which I appreciated, except it was a regular outlet with a GFCI sticker stuck on the front. Somebody out there went to the store and bought a sticker. Think about that. That's a guy who knew what the real thing was supposed to do and decided a sticker would cover it.\n\nThe ceiling fan box was being held up by one drywall screw. One. Over somebody's head. Spinning.\n\nAnd in the junction box I found a mouse nest. The mice were fine. Totally unbothered. Honestly the most comfortable ones on the job site, and they were living in the one place with a live connection.\n\nThen the best part. When I opened the panel the homeowner's wife was standing right there, and inside the door, in Sharpie, it said \"SHED - DONT TOUCH - RON.\" She looks at me and goes \"who's Ron?\" Like I'd know! I just got here! I've never met Ron! But I'll tell you what, Ron had a system, and the system was fear.\n\nNow I want to be fair about this, because I don't think Ron was a bad guy. He was cheap and a little proud of it. That's most of these, honestly. Nobody sets out to build a fire hazard. They set out to save a couple hundred bucks and feel clever about it, and it works fine right up until it doesn't. And \"works fine\" is the scary part, because it did work. For years. The lights came on, the radio played. Nothing told anybody a thing was wrong.\n\nHere's what it is now. Trenched 18 inches down with 12/2 UF cable, a 20 amp GFCI breaker in the panel that actually does the thing the sticker claimed, a real box, real outlets, and the fan hanging off a proper brace. The owner says it's awesome, the fan's on, and nothing smells like burning, which is the only review I ever need. Payment was two pizzas and a case of Yuengling, which is a fair rate in Pittsburgh.\n\nSo here's the serious part, and I mean it. This stuff burns houses down. Not \"might someday in theory.\" It does. I've seen it. The wiring in your garage or your shed or your basement isn't a weekend project for your buddy who watched a few videos, or your nephew's friend, or the guy who'll do it for cash on Saturday. Videos show you how to put the wire in. They don't show you what's behind the wall, what size the wire really needs to be, or what happens when it's wrong and you're asleep.\n\nCall a licensed electrician. Get it pulled and inspected. Yes, it costs more than $150. It costs a lot less than a fire, and a lot less than redoing it twice. And if you already have something out there that looks like what I just described, don't wait on it. Shut it off and get somebody out.\n\nPics are below. Try not to cry at the duct tape.",
+  "words": 700,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "invented_amounts",
+        "kind": "invented amount",
+        "detail": "amounts not in the environment: ['100']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1902497410774231,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03968372568488121,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.6171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6563529968261719,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.6,
+    "effort": "high",
+    "output_tokens": 2209,
+    "input_tokens": 2863
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nHi kpd_wrangler,\n\nI did read the changelog before upgrading, and I did the basic checks. I spent two days thinking my wavelength calibration was broken and re-reduced the arc lamps for all 40 spectra. None of that was needed. I'm frustrated, because the thread was marked solved and told it was my own problem, and the problem is real and reproducible.\n\nThe cause is PR #812 (\"refactor spectral frame handling\", merged Oct 22). In LineList.__init__ the default changed from wave_frame='air' to wave_frame='vacuum'. The rest wavelengths are now vacuum by default, but my spectra are calibrated in air. The vacuum/air ratio at 6563 A is about 1.00028, which is exactly the offset I see (about 83 km/s, always in the same direction). Downgrading to 2.4.3 brings back the old values, as I wrote in my first post.\n\n\"Works for me\" doesn't tell us much here. If your data are already in vacuum wavelengths, or you work in radio, you would see no difference, and that is expected. m_okonkwo also reports an offset on long-slit data after updating, so I am not the only one.\n\nWorkaround for anyone who finds this thread: if your wavelengths are calibrated in air, set it explicitly:\n\nLineList(..., wave_frame='air')\n\nThen the 2.5.0 results match 2.4.x again.\n\nThe 2.5.0 entry in CHANGES.md only says \"Refactor LineList and spectral frame handling (#812)\". Nobody can tell from \"refactor\" that a default changed and that it shifts every redshift by about 0.00028 for air-calibrated data. @lumenfit_maint, could you please:\n\n1. Reopen this thread, since it is not a user-side problem.\n2. Add a line to CHANGES.md saying that the default wave_frame changed from 'air' to 'vacuum'.\n3. Consider a warning when LineList is created without wave_frame set, so people notice before they publish shifted redshifts.\n\nI'm happy to test a fix or help with the changelog wording.\n\nThanks,\nYxlin",
+  "words": 308,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12418761104345322,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.044569194316864014,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.357421875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.18515413999557495,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "high",
+    "output_tokens": 1292,
+    "input_tokens": 3043
+  }
+}

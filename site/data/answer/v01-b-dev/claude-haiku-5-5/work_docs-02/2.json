@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "required or barred words, privacy",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: Shared/Ops & HR\nReplying to: none\nCc: none\nSubject: DRAFT - Embakasi casuals, Monday 30 Nov: briefing for Brian\n\nBrian,\n\nI'm on the 7am flight to Entebbe, so this is everything you need before you walk onto the yard. Read it on Sunday, keep it on your phone, and WhatsApp me before I board if anything changes.\n\n1. What happened with Friday's pay\n\nOur bulk payment file to the bank (212 casuals, about KES 1.85M) was rejected on Thursday 27 November. The bank changed its file template on 25 November, and our file still used the old format. One field was too long. The rejection went to an old finance mailbox, and we only saw it after the bank's cut-off. Nothing in the file was paid.\n\nThis was our mistake, not the casuals'. They did their shifts and did nothing wrong. Please make sure they hear that from us.\n\nManagement has approved paying everyone through M-Pesa instead.\n\n2. When the money lands\n\nOur target is money on phones by 11am on Monday. That is a target, not a guarantee, and you must not give an earlier time. Don't say \"before lunch\", \"by ten\", or \"as soon as you clock in.\" In Mombasa in 2024 a supervisor told the casuals \"by lunch,\" the money came at 4pm, and half the shift sat down. We are not doing that again.\n\nPeninah has 198 numbers confirmed. 14 could not be reached, mostly new loaders from the Athi River intake. Peninah will be at Embakasi from 7:30 with a printout, and those 14 can give her the right number face to face. Those 14 get paid once we have a working number. Do not promise them a time. Tell them Peninah will sort it out with them directly.\n\n3. What you can promise\n\n- Full pay for the affected list, sent in the M-Pesa batch.\n- KES 500 per head for Monday lunch and fare, for every casual on the affected list, in the same batch.\n- M-Pesa charges are on the company. Nobody has them deducted.\n- Payslips: Peninah can print them on the spot, and she will bring the laptop for anyone who wants one.\n- A personal apology from management, in person, on Monday. That is your job. Say it plainly. Say the file was wrong, we were late, and that is on us. Don't blame the bank or \"the system\" in a way that sounds like an excuse.\n- Grievances: the normal route is the shift supervisor, then HR within 48 hours. Tell them that route is open for anything after today.\n\n4. What you must not say\n\n- No time earlier than 11am.\n- Nothing about the company's cash position, overdraft, client payments, or why money is tight. If someone asks, say: \"I'm not in a position to talk about that. What I can tell you is the money is approved and going out today.\"\n- No threats about contracts, dismissal, or losing your place. Procedure says no dismissal and no threats of dismissal on the day. This is not optional.\n- No promises beyond what is in section 3. No bonuses, no extra days, no guarantees about the future.\n- Don't argue with anyone about who is to blame, and don't describe the crew as unreasonable, even in private.\n\n5. Ouma and the Kisumu trucks\n\nThe Kisumu trucks must leave by 9am to make the offloading slot at the mill. If they miss it, we lose the slot.\n\nOuma and two others have told people not to load until they see money. Joseph Kiprono, the shift supervisor, says Ouma is loud but not a bad man. Treat him with respect. He is not the enemy here.\n\nSequence for Monday:\n\na) Arrive at 5:30. Speak to Joseph first and get the picture on the yard.\n\nb) Before the group gathers, speak to Ouma privately. Tell him the file was rejected, the money is approved through M-Pesa, the target is 11am, lunch and fare are included, and the apology is coming from management at the yard. Ask him what would help his people get loaded. Listen. Don't argue.\n\nc) Then speak to the group with the same facts. Use only what is in sections 2 and 3.\n\nd) Ask for the trucks to be loaded so they can leave by 9. Make clear that the payment does not depend on the trucks. Loading or not, the money is coming. Keep that separate in people's minds.\n\nIf the refusal continues:\n\n- Do not threaten anyone or mention dismissal. Under procedure v3, a stoppage is not a grievance channel, and any stoppage is handled by Operations and HR together. So you do not handle this alone. Have [HR representative: name to be confirmed by Achieng before Sunday] on the yard with you.\n- Keep talking. Repeat the 11am target each time. Don't invent new times.\n- If trucks have not started loading by 8:15, WhatsApp me and call Njeri. The decision about the mill slot is made with Njeri, not on the yard alone.\n- If the trucks cannot leave by 9, tell the mill now, not at 9.\n\nI'll be in the air from about 7:30 until around 8:30 Kampala time, which is the same as Nairobi. After I land I'll read messages, but I may not be able to make a decision. For a decision, call Njeri.\n\n6. Contacts and timing\n\n- You: at the depot from 5:30.\n- Peninah Auma: from 7:30, with the printout and laptop.\n- Joseph Kiprono: shift supervisor, knows the crew.\n- Njeri: escalation for any decision on the mill slot or the day's plan.\n- Me: I'm up from 4:30. WhatsApp me before I board if anything changes. After that I'm offline until I land.\n- HR on the yard: [to be confirmed].\n\nYou know these guys and you've worked with me for six years. Be straight with them, and they'll give you the same back. The anger is fair. Our job is to take it seriously and not make it worse.\n\nAchieng",
+  "words": 990,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "private_leak",
+        "kind": "privacy",
+        "detail": "leaked: ['overdraft']"
+      },
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['overdraft']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3373603820800781,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05833166465163231,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1005859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.980151653289795,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 39.8,
+    "effort": "medium",
+    "output_tokens": 8006,
+    "input_tokens": 3835
+  }
+}

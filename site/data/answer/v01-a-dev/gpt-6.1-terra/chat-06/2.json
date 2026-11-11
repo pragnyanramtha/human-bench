@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #jobs\nReplying to: none\nCc: none\nSubject: Desert Palms codes\n\n@marco, I’m pissed about Desert Palms. You finished the rekey Saturday and told me all 14 units were done, but there isn’t a single code in the sheet. Yvette called this morning because the tenant in 9B lost her key and needs three copies today. Now we’ve got nothing to cut them from.\n\nWe already went through this at Kessler in September. I told you then to get the codes in the sheet. And in August I told everybody: every rekey and master job, address, unit and bitting code go in the sheet the same day, before you leave the van. That wasn’t a suggestion, and it wasn’t optional.\n\nI need you back at Desert Palms today. Decode 9B first so we can get Yvette those three keys today. Then decode the rest of the 14 units if you can. Put the address, unit and code for each one in the sheet today. Let me know as soon as you have 9B, and tell me before you leave if there are any units you couldn’t get done.\n\nYvette also says there’s a black pinning tray with pins sitting on the leasing office counter. That’s my tray. Pick it up and bring it back to the shop today.\n\nYou’re good with your hands, Marco, and I’m not looking to fire you. But I’ve told you about this before, and it can’t keep happening. Finishing a rekey means the codes are documented too. Take care of it today, and from here on out, put them in before you leave the van.",
+  "words": 259,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3951134979724884,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.016979394480586052,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.66796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.054049015045166,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.6,
+    "effort": "low",
+    "output_tokens": 354,
+    "input_tokens": 19896
+  }
+}

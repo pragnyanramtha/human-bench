@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmia I'm sorry I went quiet, one text back was pretty weak with everything you've had going on. and don't you apologise for going quiet, your ceiling is on your bed. of course you're not ok.\n\nyou're not on your own with this though. I'm off all day tomorrow, Sam took my shift, and I've got dad's trailer. we'll get everything out of Priya's garage before her mum turns up. just tell me what time.\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\ncouch is sorted too. Ruby says you can crash at ours as long as you want, and she means it, there's no end date. only warning is Clover will 100% try to sleep on you.\n\nband's been busy as well. Jono's cousin has an old Yamaha keyboard sitting in his shed that's yours for now. it's not the nord but it works. and Tully's got us the Lantern Room for Sat 28th, a benefit night with all the door money going to you. Dee's given us the night and Hollow Pines said they'd play too.\n\nalso your landlord is a grub. \"lodge it via the portal\" when there's a hole in your roof, honestly.\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nabout Rocky. if you're back on your feet in a few months and still want to go home, fine, I'll drive the trailer up myself. but don't decide it this week, sitting in a garage full of garbage bags. nobody should make a call like that in the worst week of their year.\n\nand you can't quit. your songs are the best thing about this band and the three of us all know it. the notebooks are pulp but the songs aren't gone, they're in your head and a fair few are stuck in ours.\n\nyou drove out to Gatton at 2am to get me when my car carked it after the Toowoomba gig and didn't complain once. so you don't get to feel bad about any of this. call me tonight if you want, otherwise I'll see you in the morning.",
+  "words": 331,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21172361075878143,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.017203690484166145,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.9296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.124363660812378,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.3,
+    "effort": "high",
+    "output_tokens": 3332,
+    "input_tokens": 2611
+  }
+}

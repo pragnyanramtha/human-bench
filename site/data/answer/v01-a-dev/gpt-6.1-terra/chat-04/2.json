@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: s01\nCc: none\nSubject: Football rundown for the admin meeting\n\nHey Renee,\n\nHere’s the rundown for today’s meeting and Dr. Pruitt’s board report.\n\nWe beat Brookhollow 31-14 Friday and locked up second in the region. Tavion Hurst ran for 188 yards and two touchdowns, including a long one in the third quarter. Our line pushed them five yards back that whole drive. Best I’ve seen those boys block all year.\n\nDeshawn Pettaway had three sacks and seven tackles, and the defense held them to 46 rushing yards in the second half. The kids voted Deshawn defensive player of the week in the locker room before us coaches even met. That tells you what his teammates thought of his night.\n\nWe’ve got a HOME playoff game! We host Clanton Valley this Friday, November 13, at 7 p.m. at Ridge Field. Please let Dr. Pruitt know and tell folks to come on out and support these kids. Presale tickets start Tuesday. We still need to confirm the gate and chain crews by Wednesday, and the boosters are looking for six more people to help with concessions.\n\nOn the grade check, all 52 kids on the roster are eligible. Nobody’s on the list. Tonya deserves the credit there, not me. Her Tuesday and Thursday study halls have made the difference, and she’s keeping them going through the playoffs.\n\nThe Boston butt sale did great too. The boosters sold 208 and raised $6,240, well over the $4,500 goal. That money is going toward new sideline headsets. Please give Carla and the boosters a big thank-you, and Hargrove’s Meat Market too for smoking them at cost.\n\nIf we win and have to go on the road, I’ll get the bus information to you. I remember transportation needs those requests five days out.\n\nThanks, Renee.",
+  "words": 289,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3625391721725464,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3319225013256073,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.532803535461426,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.2,
+    "effort": "low",
+    "output_tokens": 408,
+    "input_tokens": 19291
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: @renee.whitlock\nReplying to: none\nCc: none\nSubject: Football rundown for admin meeting\n\nRenee,\n\nHere's the rundown for Monday. Pull whatever you need.\n\nGame: We beat Brookhollow 31-14 Friday and locked up 2nd in the region. Tavion Hurst had 188 yards rushing and 2 TDs, including a long one in the 3rd. Our line pushed them 5 yards back on that whole drive, the best I've seen them block all year. The defense held them to 46 yards rushing in the second half, and Deshawn Pettaway had 3 sacks and 7 tackles. The kids voted Deshawn defensive player of the week in the locker room before the coaches even met, which tells you what kind of group this is.\n\nPlayoffs: We're hosting Clanton Valley in the first round, Friday Nov 13 at 7pm at Ridge Field. Presale starts Tuesday. It would mean a lot if Dr. Pruitt knew we have a home playoff game, and I'd love to see folks come out and fill the place.\n\nAcademics: Grade check is in for the 9 weeks. All 52 kids on the roster are eligible, and nobody is on the list. Tonya Greer deserves the credit for that. Her study hall on Tuesdays and Thursdays is the reason the grades are clean, and she's going to keep it going through the playoffs.\n\nBoosters: Carla Mims ran the Boston butt sale. We sold 208 for $6,240, well over our $4,500 goal. The money goes toward new sideline headsets. Big thanks to Hargrove's Meat Market for smoking them at cost.\n\nTransportation: If we win and go on the road, I'll get you the bus requests. I know that's five days out, so I'll keep it in mind.\n\nThanks,\nCoach Tillman",
+  "words": 273,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10115942358970642,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15476636588573456,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.376953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.572597026824951,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "medium",
+    "output_tokens": 2213,
+    "input_tokens": 2883
+  }
+}

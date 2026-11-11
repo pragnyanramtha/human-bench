@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Northvale froze your money. Here is what happened, and what we are doing.\n\n**By Inês, Product Designer at Pinha**  \n**10 November 2026**\n\nI’m Inês. I design the Pinha app. I’m writing this because Rui is in calls with lawyers and Banco de Portugal all day, and because I’m one of the people who has been reading your emails. I’m not going to write this in a corporate voice. I hate that voice. I’m furious. Not at you. At Northvale. And partly at us.\n\nOn 4 November, Northvale Payments — the Vilnius-based e-money institution that holds customer money for Pinha — emailed us a “commercial termination” notice. Thirty days. The reason given was a “risk appetite review.” No real explanation.\n\nOn 6 November at 09:00, they blocked all outgoing transfers. No warning. They also stopped deposits and round-ups. That was four days ago. It feels much longer.\n\nNorthvale broke the notice they had just given us. I’m not a lawyer, but I can read a calendar. You don’t give 30 days and then cut people off after two. This is not “risk.” It is cowardice.\n\nHere is the important part: your money is not lost. It is held in a safeguarded account, separate from Northvale’s own money. It is not Northvale’s money to use. It is yours. Northvale cannot take it or use it to run their business.\n\nBut we cannot move it until they release it.\n\nThat is the sentence I wish I did not have to write. The money is safe. It is not available. Both things are true, and I’m not going to hide behind the first one. I know “safe” does not pay a rent cheque or a car deposit. I know that.\n\nWe have already signed a new payments partner: Ostra Bank in Lisbon. They are ready. The migration needs two things: Northvale has to send the balances file, and Banco de Portugal has to give the okay. We are pushing both.\n\nOur current estimate is 10 to 15 working days. That is an estimate, not a promise. I’m not going to give you a date I can’t keep. If it moves, I will tell you here.\n\nWe filed formal complaints with Banco de Portugal and the Lithuanian central bank on 7 November. Northvale’s account manager stopped answering calls on Friday. Their phone goes to a voicemail in Lithuanian. We are emailing, calling, and going through lawyers. I wish I had better news.\n\nSince Friday 6 November, we have had 1,900 support emails. Our team is three people. Reply time is around two days right now. If you wrote and haven’t heard back, it’s not because we’re ignoring you. It’s because three people are trying to answer 1,900 messages. We are reading them.\n\nIf your case is urgent — rent, medical, losing your job — email **urgent@pinha.example** with **URGENTE** in the subject line. We are trying to get individual releases for these cases from Northvale. I can’t promise each one will work. I can promise we are pushing them.\n\nWe have cancelled the monthly fee for November and December for everyone. You don’t need to ask.\n\nOne message I read on the metro was from a customer in Porto. She wrote in all capitals. She has been saving for three years for a car deposit. The stand gives her until Friday 13 November. I read it and nearly cried. I’m not putting this here to make you feel sorry for us. I’m putting it here because this is what a frozen account actually means. It’s not a status in an app. It’s someone’s Friday.\n\nWe got this wrong. We had one payments partner and no backup. That was naive. It was our mistake, and I’m saying it plainly. You trusted us with your money, and we trusted Northvale to be a normal, functioning company. They weren’t. We should have built a second path before we needed it. We didn’t.\n\nI’m not going to tell you to calm down. You have every right to be angry, including at us. Some of you have said so in your emails, and you’re not wrong. I’m angry at Northvale, and I’m angry at us for putting you in this position.\n\nI designed the screen in the app that says “your money is always yours, take it out anytime.” I’ve been looking at it this week and feeling sick. I still believe it. But I understand why it feels like a lie right now. We have to make it true again.\n\n**What happens now:**\n\n- We keep pushing Northvale and the regulators.\n- We prepare the migration to Ostra so that when the balances are released, we can move fast.\n- We publish an update every Monday and Thursday on this blog until this is solved.\n- Urgent cases: email **urgent@pinha.example** with **URGENTE** in the subject.\n\nAt the moment, there is nothing you need to do for the migration. We will tell you if that changes.\n\nI’m sorry. Not in a press-release way. In a “I read your emails on the metro and had to pull myself together” way. Your money is yours. We are not going to stop until you can get to it.\n\n**Inês**",
+  "words": 866,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39609432220458984,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.47131526470184326,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.0925307273864746,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.7,
+    "effort": "provider default",
+    "output_tokens": 6442,
+    "input_tokens": 793
+  }
+}

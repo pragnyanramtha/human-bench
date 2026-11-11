@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "@Rohan fair question da, and you and Divya deserve a straight answer, not a LinkedIn post. Ajay, noted, the cricket captain line was accurate and I hate it.\n\nSo, straight. Yes, I let 6 of 14 people go last Friday. Worst day of my life, and I'm including failing maths in 2nd sem. Everyone got 2 months pay, and 4 of them already have interviews lined up, which is the only reason I've been sleeping at all.\n\nWhy it happened: the bridge round from the Hyderabad fund fell through on 28 Oct. Term sheet was basically ready. The partner said \"we love the energy\" on the call and then went silent for 11 days. Turns out you cannot pay salaries in energy.\n\nWhere we are now: runway is about 5 months after the cuts. The app has around 41k monthly users. The plumber and electrician side is growing well. The AC servicing side is bleeding money, so we're shutting it. The plan is to go all in on housing society tie-ups, and 3 societies in HSR have already signed pilots. I genuinely think we have a real shot with this. But it's a shot, not a sure thing, and I'm not going to pretend otherwise.\n\nNow your 3 lakh. It's at risk, but it's not gone. Same terms as everyone else in the friends round. I won't tell you it's safe, because I don't know that, and if I said it you should worry more, not less. But I also won't tell you to write it off, because we're still fighting and there's real stuff working. That's the honest answer, I know it's not the satisfying one.\n\nYou trusted me with real money, so I'd rather you hear the ugly parts from me than from a LinkedIn post. Let me do this properly: I'll call you and Divya this week and show you the actual numbers. Runway, burn, what the society pilots look like, all of it. Ask me anything, including the uncomfortable stuff. Tell Divya she's allowed to ask the hard questions, she's not being dramatic, she's being sensible.\n\nAs for the sad face, I'd say keep it in the cupboard for now. Don't throw it out, but no need to practise yet.\n\nAbout me, since I know someone will ask: I'm fine. Tired, but fine. I've been eating Maggi at the office at 11pm so often that the security uncle now asks if I want masala or plain. That's the kind of relationship you build in a startup. Amma also asked last week if TCS is still hiring, so the family is fully supportive in their own way.\n\nAnyway, I'm coming Saturday. Pranav, I'm told you're buying, so I'm ordering the second dosa without guilt. Ask me whatever you want there too, but maybe after the first beer.\n\nCall this week, Rohan. I'll message you to fix a time.",
+  "words": 481,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40417781472206116,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04968680068850517,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8671875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.53164291381836,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.8,
+    "effort": "high",
+    "output_tokens": 2013,
+    "input_tokens": 1915
+  }
+}

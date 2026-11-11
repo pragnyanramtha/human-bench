@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hi D. Bergeron, and everyone,\n\nYou’re right to ask for a straight answer, so here it is: **Le Pétrin Doré is not closing for good or moving. I bought the building!**\n\nI was hoping to keep it a surprise until the reopening, but I can see now that the sign and the rumours gave people a good reason to worry. I’m sorry for that. We’ve lost so many small shops in Mile End, and I understand why people feared the worst.\n\nThe bakery will be **closed from January 4 to 18 for work, and we’ll reopen on Tuesday, January 19 at 7 a.m.** We’re staying right here at 5 rue Fairmount, on the corner, where we’ve been since March 2009.\n\nAnd about the carnets, because I know that’s the question for many of you: **every carnet is still good, and there is no expiry date.** We sold 214 of them in October, at $60 for 12 loaves. You can use the loaves you have left when we reopen, whether you have one left or seven or the whole carnet.\n\nI also want to give one free croissant in January to each carnet holder, as a thank-you for trusting and supporting us. And if anyone would really prefer their money back for their carnet, please come see me and I’ll give it back, no questions asked.\n\nI have to be honest, seeing the word “scam” hurt. I’ve been on this street for nearly 17 years, and I would never take your money and disappear. But I understand that people saw a vague sign, half-empty shelves and a rumour about the building, and put those things together. I should have explained sooner.\n\nMarc-Antoine, your cousin was half right: the building was sold. But it was sold to me!\n\nM. Ferland, who owned the building, is 81 and retiring to Sherbrooke to be with his daughter. Before offering it to anyone else, he offered to sell it to me. We signed at the notary on December 15. He has come in almost every morning for 17 years for his baguette *pas trop cuite*, and he cried a little at the notary. I did too. It means a lot to me that he trusted me with the building.\n\nAnd to reassure anyone worried about the people upstairs: **the three apartments are staying rented, with the same tenants and the same rent.** I’ve promised them that in writing.\n\nAs for the works, we’re getting a new four-deck oven from a supplier in Laval. The old oven is from 1998 and broke down three times this year, so it has earned its retirement. We’re also taking over the space at the back that was the dépanneur’s old storage. We’ll put in six small tables, so finally you’ll be able to sit down!\n\nJules, the half-empty shelves on the 28th had nothing to do with closing. We sold everything for Christmas Eve, including 400 bûches. It was a busy few days!\n\nAnd the sign? My nephew Thomas wrote it at six in the morning. “Grande nouvelle” was his idea, and I said OK without thinking about how it might sound. Sorry, Thomas, but I have to tell them it was you!\n\nPriya, thank you for your kind words, and thank you to everyone who stood up for us. And thank you to the people who asked questions, too. It means a lot that you care what happens to this little bakery.\n\nWe’ll be open again on January 19, and **everyone is invited to celebrate with us on Saturday, January 23**. Come have a coffee and a piece of the new bread, on us. I hope we can share the good news properly then, with less mystery this time.\n\nThank you for being with us all these years. I’m very happy we get to stay here together.\n\nHélène  \nBoulangerie Le Pétrin Doré",
+  "words": 644,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "645 words, allowed 720-2200 (band 800-2000 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29897481203079224,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21177077293395996,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.2060546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.2407877445220947,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.9,
+    "effort": "low",
+    "output_tokens": 835,
+    "input_tokens": 18914
+  }
+}

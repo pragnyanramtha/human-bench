@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars. Great tool for years, but read this before buying 3.2\n\nI've used Murmur since 2022, and Lanternfolk wouldn't exist without it. My first prototype was the ferryman scene, built in one weekend. I quit my job at a mobile studio soon after, and I don't think I'd have made that leap with a tool that felt clumsy. Node-based branching, conditions, variables, barks, voice line hooks, and the CSV export for localisation are all solid. For years it has been reliable on a large dialogue project.\n\nNow the honest part. Version 3.2.0 (released 14 October 2026) has a save bug. After updating, variables reset to their default values when you load a save made in 3.1.x. In our game the ferryman forgets you already paid him. It looks like the save key changed from node path to a UID, but that's a guess from the reports, not something confirmed.\n\nIf you're affected, or want to avoid it:\n\n1. Don't update to 3.2.0 if you have saves you need to keep.\n2. If you've already updated, replace the Murmur folder in your project's addons folder with the 3.1.4 release.\n3. Keep a copy of 3.1.4 somewhere safe.\n\nSeveral people have confirmed that 3.1.4 works and old saves load again.\n\nAlso, the developer, Ines, has stepped back from the plugin. 3.2 was the last version she planned to make, so there's no support and no fix coming from her. The source is now MIT on the public repo, so someone else can fork and maintain it. That's the best long-term hope, but right now this is a plugin with a known bug and no maintainer. I'd only buy it if you're comfortable pinning 3.1.4 and keeping your own copy.\n\nI understand the anger in some of the 1-star reviews. A broken update that wipes progress is painful, and I'm sorry to anyone who lost work. But four years of updates for a one-time price is a real thing too, and I'd rather people judge it with the full picture.\n\nInes, thank you. Murmur made a real difference for us, and I hope it finds a new home.",
+  "words": 344,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "359 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5172216296195984,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09010551124811172,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.3359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.690550804138184,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.1,
+    "effort": "medium",
+    "output_tokens": 2780,
+    "input_tokens": 3446
+  }
+}

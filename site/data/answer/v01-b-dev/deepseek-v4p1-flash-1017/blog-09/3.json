@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.58, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Your money is not lost. It is frozen. Here is what happened.\n\n**By Inês, Product Designer at Pinha**  \n**Tuesday 10 November 2026**\n\nA few days ago I read a message from a user in Porto written entirely in capitals. She had spent three years saving for a car deposit. The dealer has given her until Friday, 13 November. I read it on the metro and nearly cried.\n\nI’m Inês. I’m a product designer at Pinha. I write most of the words you see in the app. I also designed the screen that says: “Your money is always yours. Take it out anytime.” I believed that when I wrote it. I still believe the first part. The second part is broken right now, and looking at it makes me feel sick.\n\nThis is not a corporate apology. I’m not going to tell you to stay calm, or write that we “understand your frustration.” I’m furious. At Northvale, and partly at us. Not at you. You have every right to be furious too.\n\nHere is what happened, what we know, what we’re doing, and what you can do now.\n\n## What happened\n\nPinha is a round-up savings app. We have around 14,200 active users, most in Portugal, some in Spain. Until last week, customer money was held by our payments partner, Northvale Payments, an e-money institution in Vilnius. Your balance sits in a safeguarded account, separate from Northvale’s own money. That matters. The money is not lost. It is still there. Northvale cannot use it as its own money.\n\nOn 4 November, Northvale emailed us a “commercial termination” with 30 days’ notice. No real reason. Only a “risk appetite review.”\n\nOn 6 November at 09:00, they blocked all outgoing transfers without warning. That was two days into their own 30-day notice. They also stopped deposits and round-ups. No call. No explanation. Their account manager stopped answering our calls on Friday. The number now goes to a voicemail in Lithuanian.\n\nNorthvale broke their own notice. This is not “risk appetite.” It’s cowardice.\n\n## What this means for your money\n\nYour balance is still your balance. It is not gone. But it is frozen. Northvale will not release it to us, so we cannot release it to you. I’m not going to pretend otherwise.\n\nWe have already signed a new payments partner, Ostra Bank in Lisbon. To move everyone’s balances, Northvale has to send us the balances file and Banco de Portugal has to give its approval. Both are outside our direct control. We are pushing hard on both.\n\nOur current working estimate for the migration is 10 to 15 working days from the point when those pieces are in place. That is an estimate, not a promise. I could put a fixed date in this post and make us all feel better for an hour. I’m not going to do that. If the estimate changes, we will tell you.\n\n## What we’re doing\n\nOn 7 November we filed complaints with Banco de Portugal and the Lithuanian central bank. Rui, our CEO, is in calls with our lawyers and Banco de Portugal today. We are also trying to get individual releases for urgent cases. We cannot guarantee Northvale will agree, but we are pushing.\n\nWe have cancelled the monthly fee for November and December for everyone. You don’t need to ask. No one should be paying us while this is happening.\n\nSince Friday 6 November we have received about 1,900 support emails. Three people are answering them. The current reply time is around two days. I know that is not good enough. It is what we have, and we are trying to improve it.\n\n## What you can do now\n\nFirst: you do not need to do anything to protect your balance. It is safeguarded. It is frozen, not lost. There is no action you can take to unfreeze it faster, and I’m sorry about that.\n\nSecond: if you are in an urgent situation — rent, medical costs, or losing your job — email **urgent@pinha.example** with the subject line **URGENTE**. Tell us the amount you need, the deadline, and what it is for. Keep it short. We are trying to get individual releases for these cases. We cannot promise they will be approved, but we will try.\n\nThird: if your situation is not urgent, please wait for our updates. I know that is a lot to ask. Our support team is three people and 1,900 emails deep. Sending the same message again makes the queue longer for everyone, including you.\n\nFourth: if anyone contacts you saying they can unlock your balance for a fee, don’t pay. Pinha will never ask you to pay to get your own money back.\n\n## What we got wrong\n\nWe were naive. We built Pinha on one payments partner and no backup. That was our mistake, and I’m not going to hide behind Northvale for it. A product that tells people their money is always theirs should not depend on a single company that can switch it off in an email. We should have had a second partner and a contingency plan. We didn’t. We are fixing that now with Ostra, but that doesn’t help the person in Porto with a deadline on Friday.\n\nI’m not going to tell you to calm down. You have every right to be angry, including at us. Some of that anger belongs to Northvale. Some belongs to us. I would rather you be angry with us than think we are pretending everything is fine.\n\n## Updates\n\nWe will post an update on this blog every Monday and Thursday until this is resolved. The next one will be Thursday 12 November. If there is real news before then, we will post it. If there is nothing new, we will still post and say that.\n\nI’m sorry. Not in a customer-service way. I’m sorry that you trusted us with your savings and right now you can’t get them. I’m sorry that the screen I designed says “take it out anytime” and you can’t. We are going to fix this. I can’t tell you this second exactly when. I can tell you we are not going to stop until every balance is back with its owner.\n\n**Inês**",
+  "words": 1042,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5794899463653564,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9414185881614685,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.258265972137451,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 46.6,
+    "effort": "provider default",
+    "output_tokens": 11164,
+    "input_tokens": 793
+  }
+}

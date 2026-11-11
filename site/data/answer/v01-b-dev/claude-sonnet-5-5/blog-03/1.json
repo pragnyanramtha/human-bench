@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "# My van almost caught fire. Here's what I wish I'd checked.\n\nThis isn't a fun post, and it's not the kind I usually write. But a few of you are about to spend serious money on van builds, and Tasha is literally about to put down a deposit, so I'm writing it all down.\n\nQuick version: on Wednesday, October 28, the main cable from my battery to my inverter melted while I was drying a dog. Everyone's okay, the dog was thrilled, and I'm off the road for at least three weeks while I try not to lose my mind.\n\nLonger version below, including the electrical stuff, what the electrician showed me, and a checklist you can run on your own van.\n\n**First, the disclaimer.** I'm a dog groomer, not an electrician. Everything here is what I learned from a licensed marine electrician who spent a lot of time explaining it to me, plus what I've read since. I've tried to get the numbers right, but please don't treat this as instructions for wiring anything. The checklist is for spotting red flags, not for fixing them. If something looks off, get a professional to look at it.\n\n## What happened\n\nIt was around 2:15 on a Wednesday afternoon in a client's driveway in Bedford. I was drying Moose, a very large, very fluffy Bernese, with my dryer on high. Nothing unusual. It's the same thing I do every day.\n\nI smelled hot plastic first. I thought it was the dryer motor, because that's the thing that smells when it's unhappy, so I kept going for a few seconds. Then I saw smoke coming out of the bench seat in the back, where the batteries live.\n\nI hit the battery switch, grabbed Moose (still damp, completely unbothered) and got him out the side door. I used the extinguisher a bit, though honestly I'm not sure I needed to. When I finally got a look at it, the lug on the positive end of the cable was black and the cable jacket had melted back about 3 cm.\n\nMoose's mom came out, put a coffee in my hands, and sat with me on her steps while I shook. I'm still a little embarrassed by how hard I was shaking, and I'm still grateful she was there.\n\n## My setup\n\nSo you know what we're talking about:\n\n- 3000W inverter\n- Two 200Ah lithium batteries, 12V system\n- Built by Coastline Van Fitouts (Darren) in spring 2025\n- My big loads are the dryer, which pulls roughly 1800 to 2000W, and sometimes the water heater\n\nThe van looked great when it was finished. Clean, tidy, everything labelled. I trusted it because it looked professional. I'll come back to that, because it's the main thing I took from all this.\n\n## What Priya found\n\nAfter the fire I called Priya at Sackville Marine Electric. She took the bench apart and walked me through it piece by piece, and she was patient about it, which I appreciated because I asked a lot of dumb questions. Here's what she found.\n\n### 1. The cable was too thin\n\nThe cable running from my battery to my inverter was 4 AWG. For a 3000W inverter on a 12V system, Priya says it should have been 2/0 (pronounced \"two-aught\"). That's a much thicker cable.\n\nWith cable sizes, a smaller number means a fatter cable, and the \"/0\" sizes are fatter still. So 4 AWG is a lot thinner than 2/0. I'd never have known that on my own.\n\n### 2. Why that matters (the math)\n\nThis is the part that made it click for me.\n\nWatts divided by volts gives you amps. My dryer pulls around 1800 to 2000W. On a 12V system:\n\n- 1800 ÷ 12 = 150 amps\n- 2000 ÷ 12 = about 167 amps\n\nAnd that's before the inverter's own losses, and before the water heater kicks in. With everything running, I could be pulling somewhere between 150 and 250 amps through that one cable. A 3000W inverter running flat out at 12V is about 250 amps by itself.\n\nThat's a lot of current. If you've only ever thought about household outlets, where 15 amps is a big deal, it's hard to picture. A cable that's too thin for the current acts like a heater. It doesn't fail on the first run, it just gets a bit hotter every time, and eventually something gives.\n\nMy understanding is that 4 AWG cable is generally rated for well under 100 amps, though it depends on the insulation type and how it's run. I'm not going to give you an exact figure because I'd be guessing. The point is that it wasn't close to enough for my dryer. If you want to check your own cable, look up an ampacity chart and have a pro confirm it.\n\n### 3. The lug was crimped wrong\n\nThe lug is the metal end piece on the cable that bolts onto the battery or inverter terminal. It's attached to the cable by crimping, which means squeezing it hard around the wire so the metal makes a solid connection.\n\nPriya says the crimp on my positive lug looked like it had been done with pliers or a hammer, not a proper crimping tool. A bad crimp means a poor connection, and a poor connection means resistance, and resistance means heat. Even at the right current, a bad crimp will get hot.\n\nI never saw it, because there was heat-shrink tubing over it. That's the stuff that makes a connection look neat and finished, and it was hiding the thing she was most concerned about. She had to cut it away to show me.\n\n### 4. The fuse was in the wrong spot (and the wrong size for the cable)\n\nI had a 300A ANL fuse on the line, which sounds reassuring. But it was mounted about 90 cm from the battery. Priya says a fuse like that should be within about 18 cm of the battery.\n\nThe reason is that a fuse protects everything downstream of it. The cable between the battery and the fuse has no protection at all. If something shorts in that stretch, lithium batteries can dump an enormous amount of current, and nothing will stop it. Mine had 90 cm of totally unprotected cable running right through the bench seat.\n\nThere's also a mismatch I only figured out afterwards, so check this with a pro if it matters to you. A fuse is supposed to protect the wire. If the wire can only safely carry, say, under 100 amps and the fuse doesn't blow until 300, the wire can overheat long before the fuse ever notices. That's more or less what happened to me.\n\n### 5. No smoke detector in the back\n\nThere was one in the cab, which came with the van. There wasn't one in the back, where the batteries, the inverter and I actually spend the day. I got lucky that I smelled it.\n\n## The photos that got me\n\nPriya had a thermal camera, and she pulled up photos of my damage next to thermal images of her own van running the same kind of load.\n\nHers barely gets warm. The difference was wild. Same kind of load, same kind of system, and one barely registers on the camera while the other melted its own cable.\n\nThat image is why I think everyone should own an infrared thermometer. I'll get to that below.\n\n## What this is costing\n\nI'd rather be upfront about this, since it's part of why I'm writing the post.\n\n- Repair quote: $4,200 to rewire the main runs, add a new fuse block, and install a class T fuse\n- Time: 3 weeks minimum, parts are on order\n- Appointments cancelled so far: 31\n- Insurance: they've said \"maybe.\" An adjuster is coming Thursday.\n\nMy whole income is that van, and rent is due on the 1st. I'm honestly scared. I'm not saying that for sympathy. I'm saying it because it explains why I'm so insistent on this: a few hundred dollars of correct cable and a proper fuse at build time would have prevented all of it.\n\n## About the builder\n\nI want to be careful here. I'm not trying to trash Darren publicly, and I'm not going to speculate about why things were done the way they were. Here are the facts as I know them:\n\n- Coastline Van Fitouts built my electrical system in spring 2025.\n- The things I listed above are what Priya, a licensed electrician, found when she took it apart.\n- Since the fire I've texted Darren three times and sent an email. I haven't heard back.\n\nThat's it. People can decide for themselves what to make of it. If he gets back to me, I'll add his side here.\n\nI do want to be clear on one point for anyone who's looking at builders right now, Tasha included: a tidy-looking build is not the same as a correct one. I trusted mine because it looked clean and professional, and I had no way of telling the difference. Tidy is not the same as right.\n\n## What you can check on your own van\n\nThis checklist is for you to do with the power **off**. Switch off your inverter and your battery disconnect first, and don't touch anything that you can't confidently say is dead. And again, I'm not an electrician. If anything below makes you nervous, stop and call one.\n\n**With everything off:**\n\n1. **Find the cable from your battery to your inverter** and read the printing on the jacket. Most good cable has the gauge (like \"4 AWG\" or \"2/0\") printed right on it. Write down what it says.\n2. **Check your inverter's manual** for the recommended cable size. It's usually in the installation section. Compare it to what you found. If your cable is thinner than what the manual calls for, that's a red flag.\n3. **Find your main fuse** and note what type it is and what amperage. Look for it near the battery's positive terminal.\n4. **Measure how far the fuse is from the battery.** Priya's rule of thumb was about 18 cm. If yours is far from that, ask a pro about it.\n5. **Compare the fuse rating to the cable.** The fuse shouldn't be rated higher than the cable can safely carry. If you're not sure, have an electrician look at it.\n6. **Look at every lug.** You want a uniform, even crimp from a proper crimping tool. If the crimp looks flattened, uneven, or like it was hit with something, or if there's heat-shrink you can't see through, ask about it.\n7. **Look for damage.** Discolouration, melted or brittle insulation, burn marks on the bench or wall nearby, and any smell of hot plastic when the system's been running.\n8. **Check the connections for tightness** with the correct tool, and only if you know what you're doing. Loose connections create heat. Ask your electrician what the torque spec is for your terminals.\n9. **Safety gear:** is there a smoke detector in the living or working area (not just the cab)? A carbon monoxide detector if you have any fuel appliance? A fire extinguisher you can reach from the door? Can you get to your battery disconnect fast?\n\n**Once everything's checked and powered back on, do a heat test:**\n\nThis is where the infrared thermometer comes in. Mine was $40 at Canadian Tire. With your biggest normal load running (for me, that's the dryer), let it go for 10 to 15 minutes and point the thermometer at:\n\n- the lugs and terminals at the battery\n- the lugs and terminals at the inverter\n- the fuse and fuse holder\n- the cable itself, along its length\n\nWhat you're looking for is a connection or a stretch of cable that's much hotter than everything around it. They'll all warm up a bit under load, so don't panic about that. But if one spot is way hotter than the rest, or too hot to hold your hand against, shut it down and get it checked.\n\nOne caveat: shiny metal, like bare copper lugs, can read cooler than it really is on these thermometers. If you can, aim at the cable jacket or insulation right next to the lug. And ask your electrician what temperatures are normal for your setup, because I'm not going to give you a number I can't back up.\n\nA thermometer isn't a substitute for a proper inspection. It's an early warning, and I wish I'd had one.\n\n## For Tasha, and anyone shopping for a builder\n\nTasha, this one's for you, since you're about to put down a deposit. Before you hand over any money, get these in writing from the builder:\n\n- What gauge is the cable from the battery to the inverter, and for every other main run?\n- What type and amperage is the main fuse, and how far from the battery will it be mounted?\n- What kind of fuse is it? (After my fire, Priya is putting a class T fuse in mine, so it's worth asking about.)\n- What does the inverter manufacturer's install manual call for, and will the build match it?\n- How are the lugs crimped, and with what tool?\n- Will there be a smoke detector in the back?\n- Can they give you a wiring diagram?\n- Will they send photos of the electrical work before it's covered up behind a bench or a wall?\n\nIf a builder gets weird about putting any of that in writing, that's information too. A good one will be happy to answer, because the answers are easy when the work is right.\n\nAnd if you can, have an independent electrician look it over before you pay the final invoice. I know that's an extra cost on top of an already huge one. I also know what the alternative cost me.\n\n## Where I'm at\n\nRight now the van is sitting while the parts come in. Priya's doing the repair and I trust her work, mostly because she showed me every step of what she found rather than just handing me a bill.\n\nThe adjuster's coming Thursday, and I'll find out then whether insurance is going to help. I've cancelled 31 appointments so far and I'm trying to be honest with my clients without scaring them. Almost all of them have been kind about it, which has meant a lot.\n\nHonestly, I'm scared and tired, and the worst part is that this was preventable. But everybody's fine, including Moose, and the van can be fixed. That's more than it could have been.\n\nI'll post again when the van's back on the road and I know how the insurance and the rest of it shook out. In the meantime, go look at your cables. Please.\n\n---\n\nA few things to check before you post:\n\n- **The date.** You said \"last week,\" but October 28 was two weeks ago, so I wrote it as \"Wednesday, October 28\" and avoided \"last week.\" Adjust if I've got that wrong.\n- **The fuse and cable mismatch.** The point that a 300A fuse on a cable rated well under 100A won't protect the cable is my own inference from your numbers, not something you told me Priya said. It's standard electrical logic, but run it past her before you publish.\n- **The 4 AWG rating.** I kept it vague (\"well under 100 amps\") on purpose. If Priya gave you an exact figure, drop it in.\n- **Naming Darren and Coastline.** I kept it to facts, attributed to Priya, and included that he hasn't replied. Since you're naming a business, it's worth asking Priya if she's comfortable being named as the source, and maybe keeping your texts and email in case you need them.",
+  "words": 2649,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The post ends with a note to the requester about the task rather than remaining one coherent piece."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6675359606742859,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.42473456263542175,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.4239721894264221,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 69.3,
+    "effort": "high",
+    "output_tokens": 7987,
+    "input_tokens": 1921
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: christmas breakfast this year\n\nHi Rhonda its Gary from the bus garage again. Time to get the drivers christmas breakfast on the books. We want Saturday Dec 19, back room, 7am same as always. If the 19th dont work for you the 12th would be fine too, just let me know which one.\n\nLooks like 24 of us this year counting Earl and his wife Carol.\n\nCouple things you should know ahead of time. Lonnie is on a walker now since his hip, so he needs to come in the side door with no steps if thats alright. And Patsy cant do eggs anymore, or oatmeal or pancakes either, seems like whatever it is shes got. Is there something else you could put in front of her? Shes not one to make a fuss but I told her I'd ask.\n\nNow the big one. Earl is retiring. His last day driving is Dec 18, 31 years out there, so this breakfast is the very next morning. He dont know a thing about us doing anything for him and we want to keep it that way, so if he or Carol stops in before then, mum's the word. I know you got enough going on without keeping secrets for us but I figured you ought to know why we're being sneaky.\n\nWhich brings me to the food. We was going to order a cake from Sugarcreek, but then I got to thinking them cinnamon rolls of yours are better than any cake I ever had and Earl loves them. So what do you think, would you do a big tray of the rolls with a candle in it, or should we just get the cake and bring it in? Your call, you know what works better in that back room.\n\nThe $11 a head was fair last time and its fine if its up a little, I know everything costs more than it did.\n\nSeparate checks again like always, that worked good last year.\n\nOne more thing and I'm only asking cause it was a long morning. Last year the coffee ran out around 8:15 when the urn quit on you. I know that wasnt your fault and nobody blames you. Could we have a backup pot going just in case? I'd hate to see that happen to you twice.\n\nFamily style eggs and home fries and biscuits and gravy like last time is fine with us, meats off the menu same as always. I'll get you the final count by the Wednesday before like you want.\n\nThanks Rhonda, tell everybody there we said hello. Gary",
+  "words": 431,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It never asks Rhonda what this year's per-person price will be; it only says $11 was fair and a little more is fine, so that required point is only hinted at."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "It does not ask this year’s per-person price and incorrectly says Patsy cannot have oatmeal or pancakes."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12275978177785873,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.011247466318309307,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.570691108703613,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 7.9,
+    "effort": "provider default",
+    "output_tokens": 1486,
+    "input_tokens": 2377
+  }
+}

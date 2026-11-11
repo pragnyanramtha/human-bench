@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: Christmas breakfast at the diner\n\nHi Rhonda,\n\nIts Gary from the bus garage. We want to do our Christmas breakfast at your place again this year, Saturday December 19 in the back room at 7am same as always. Is the room open then? If the 19th is no good would the 12th work instead?\n\nDwayne has 24 of us on the list right now, that counts Earl and his wife Carol. I'll get you the final count by the Wednesday before like you wanted last year. Hopefully nobody waits til the last minute to tell me but you know how that goes.\n\nA couple things I wanted to ask you about. Lonnie is on a walker since his hip and can't do the steps too good. Can he still get in the side door without any steps? Just want to make sure its open that morning so he don't have to go around looking for a way in.\n\nPatsy can't do eggs anymore. Could she get oatmeal or pancakes or whatever else you've got instead? Everybody else was happy with the big pans of eggs and home fries and the biscuits and gravy last year, with folks ordering their own meat. Can we do it that way again? The $11 a head was fair and its fine if its gone up a little, just let me know what it would be this year. And separate checks again please, that worked out good last time.\n\nThis year is a little different because Earl is retiring. His last day driving is the 18th, the day before breakfast, after 31 years. We want to do a little something for him but he can't find out, so please keep it quiet. Carol says he'd be embarrassed by a big speech so nothing like that.\n\nCan we bring a cake from Sugarcreek or would it be better to do a big tray of your cinnamon rolls with a candle? Earl loves those rolls and honestly they're better than any cake anyway. Let me know what you think and what you'd charge for the rolls. We just want to have something for him without making too big a fuss.\n\nAnd one more thing, could you have a backup coffee pot ready if possible? I know the urn quit on you last year around 8:15 and you felt bad about it, but things break and nobody's holding it against you. Just figured I'd ask since this bunch does go through some coffee.\n\nThanks Rhonda. Let me know about the date and the rest when you get a chance. We always look forward to having breakfast at your place.\n\nGary",
+  "words": 437,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17840270698070526,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.011728049255907536,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.34375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.851015090942383,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.3,
+    "effort": "low",
+    "output_tokens": 537,
+    "input_tokens": 20883
+  }
+}

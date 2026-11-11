@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: How we got Wellsford Road wrong, and what we are changing\n\nOn 2 November we published an analysis of Department for Transport collision records which said that Wellsford Road in Fishponds had more recorded injury collisions between 2021 and 2025 than any other road in Bristol: 41 in five years. That was wrong. The correct figure is 23, which places Wellsford Road sixth, not first.\n\nA correction has been on the article since Friday 6 November, and the table has been updated. A line at the foot of a page is not an adequate answer to a figure that was read more than 48,000 times and shared widely. This post sets out what went wrong, what the corrected figures are, and what we are changing.\n\n**What went wrong**\n\nThe DfT data records each collision with a unique reference number and a location. To produce a total for each road, we matched every collision to the road or roads it happened on. Where a collision occurred at a junction, that matching step sometimes attached the same collision to the same road twice. Our count then added both entries to that road's total, so a single crash was counted as two.\n\nOn Wellsford Road this happened 18 times, mostly at the junctions with Pell Street and Kingsmere Road. Those 18 duplicate entries took the total from 23 to 41. We now count each collision once per road, however many times it appears in the matched data.\n\nMembers of the Fishponds Streets Forum told us the figure did not match their experience of the road. One of them went back to the published DfT data and could not get anywhere near 41. They were right, and we should have caught the error before they had to.\n\nThis was a failure of our process as a desk. The figure should not have reached publication without someone else on the team reproducing it independently. It did, and that is our responsibility.\n\n**The corrected figures**\n\nWe have rerun the full citywide table with the fix applied. The roads with the most recorded injury collisions in 2021 to 2025 are:\n\nKingsmere Road: 32 (previously 34)\nAlder Hill: 31 (unchanged)\nTanner's Way: 28 (previously 29)\nCrossfield Road: 26 (previously 27)\nHambrook Lane: 24 (previously outside the top five)\nWellsford Road: 23 (previously 41)\n\nWellsford Road is the only road whose position changed substantially. No other road in the city moved more than two places.\n\nOf the 23 collisions on Wellsford Road, three were classed as serious. None was fatal.\n\n**What this means for Wellsford Road**\n\nWe know the original story was read as saying that Wellsford Road is the most dangerous road in Bristol, and that parents have asked whether it is safe to walk their children to Wellsford Primary. We are sorry for the worry that caused, and for the harm done to the road's reputation among the people who live on it.\n\nWe are also not going to swing to the opposite claim. Twenty-three injury collisions in five years, three of them serious, is a real figure. It means people were hurt. Residents are best placed to judge what it means for their own street. Our job is to give them a number they can trust, and on 2 November we did not.\n\n**What we are changing**\n\nFrom now on, any ranked table the Data Desk publishes will be reproduced from scratch by a second analyst before it runs. If the two results do not match, it does not run.\n\nWe will also publish the cleaned dataset and the code behind every ranked table alongside the story. Anyone who wants to check our working, as one Fishponds resident did with the DfT data, will be able to do so directly.\n\n**Come and ask us**\n\nThe Fishponds Streets Forum has invited the Ledger to its open residents' meeting on Tuesday 17 November at 7pm at Fishponds Library. I will be there to explain what happened and to answer whatever questions people have.\n\nTo the residents of Wellsford Road and the wider Fishponds community: we got this wrong, it travelled a long way before we fixed it, and I am sorry.\n\nNell Garside, Data Desk",
+  "words": 686,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11241039633750916,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11994080990552902,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.6862634420394897,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.0,
+    "effort": "medium",
+    "output_tokens": 1992,
+    "input_tokens": 4755
+  }
+}

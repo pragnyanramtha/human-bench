@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "A bit of honest news from our practice—and some good news, too.\n\nFirst, I’m delighted to welcome Priya Bhatia, a chartered structural engineer (IStructE), to the team on Monday 16 November. Priya brings nine years’ experience at a consultancy in Coventry, and her arrival means we can give our clients the quicker turnaround they deserve.\n\nOver September and October, beam calculations and drawings were taking 5–6 weeks. Our new target is **10 working days**. If you’re waiting for your job now, please message me directly and I’ll let you know where things stand.\n\nI also owe some clients an apology. A few of you waited far too long, and I know some were understandably unhappy. One couple in Harborne had their builder waiting with the steel ordered. We got their calculations to them in three days, but only after they’d chased us twice. That’s not the service I want to provide.\n\nThe slow weeks were my responsibility. I said yes to too much work on my own. In October I was doing site visits by day and calculations until midnight—my wife started calling the office “the other house”. I’m genuinely glad that’s changing, and Priya joining is an important part of making it change for good.\n\nOne other change: first site visits taking place **from 1 January 2027 will cost £95**. If you go ahead with the work, we’ll deduct that charge from your fee. Any visit already booked when this post is published will remain free, whatever its date.\n\nThe free visit has been a nice way to meet people, but about a third never turn into a job. Charging for visits helps us make better use of our time and keep focused on the work clients have asked us to do.\n\nThank you to everyone who’s been patient with us. And when Priya comes out to site, do say hello and make her feel welcome!",
+  "words": 317,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3849065601825714,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.45082059502601624,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.048073768615723,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.2,
+    "effort": "medium",
+    "output_tokens": 395,
+    "input_tokens": 13957
+  }
+}

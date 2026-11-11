@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: help/t-2291\nReplying to: [p02]\nCc: none\nSubject: Re: Redshifts shifted after upgrade to lumenfit 2.5.0? — cause found (PR #812)\n\nI did read the changelog. It did not say what actually happened.\n\nThe cause is PR #812, \"Refactor LineList and spectral frame handling\", merged Oct 22. In `LineList.__init__`, the default for `wave_frame` changed from `'air'` to `'vacuum'`. Nothing else changed.\n\nThe air/vacuum ratio at 6563 A is about 1.00028, which is exactly the offset I reported (~83 km/s, same direction for every object). My spectra are calibrated in air from arc lamps, so every rest wavelength was being interpreted as vacuum. Downgrading to 2.4.3 restores the old values, which is consistent with this and with a calibration error on my side not being the explanation. I have written up the diff and the numbers in my notes in the docs.\n\nTo answer the \"basic checks\": the offset was constant and identical in sign and size across all 40 objects, which is what pointed me at a global default rather than at my calibration. But I did not know to check that default, because the changelog for this release only says \"Refactor\".\n\nAbout the time this cost: I spent two days convinced my wavelength calibration was broken and re-reduced arc lamps for 40 spectra for nothing. m_okonkwo posted here on Nov 7 that they also see a small offset on long-slit data after updating, so this is not specific to my setup or my config file.\n\nOn \"works for me\": that is not a test. If your data is already in vacuum wavelengths, or is radio, then of course there is no difference. My data is air-calibrated optical slit spectra.\n\nWhat I am asking for:\n\n1. Please reopen this thread. The original report was accurate and the diagnosis was wrong.\n2. Add an explicit line to CHANGES.md for 2.5.0 stating that the `wave_frame` default changed from `'air'` to `'vacuum'` in PR #812, and repeat it in the upgrade docs. \"Refactor\" is not something anyone would guess a default from.\n3. Ideally a deprecation warning on the old default, so people who miss the changelog still get told.\n\nWorkaround, so others can find it too:\n\n    LineList(..., wave_frame='air')\n\nor set `wave_frame` explicitly in your config. This is in my docs notes as well.",
+  "words": 360,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10360638052225113,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04852162301540375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.294921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.31735867261886597,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.6,
+    "effort": "provider default",
+    "output_tokens": 1542,
+    "input_tokens": 1798
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches: what happened on our Nov 5 client dinner**\n\nI'm posting this so other planners can make informed decisions. We booked Sunbelt for a client dinner on Thursday, Nov 5, and the service did not go as contracted.\n\nThe event was 220 guests, with hotel pickup at 6:15 pm and transport to a ranch venue in Henderson. We booked 4 coaches. Sunbelt confirmed in writing twice, most recently on Tuesday, Nov 3. The total was $8,400, with a 50% deposit in September and the balance paid 7 days out.\n\nHere's what happened:\n\n- Only 2 coaches showed up.\n- The first arrived 55 minutes late. The driver told us he had been given the job at 5:00 pm that day.\n- The second coach broke down on the 215 with the AC out. Guests waited on the shoulder for about 40 minutes.\n- To get the remaining guests there, I put about 60 people in Ubers and Lyfts on my company card, for roughly $1,900.\n- Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime.\n\nI tried to reach Sunbelt during and after the event. The dispatcher listed on our confirmations, Corey, has not responded, and the main office line has gone to voicemail since Friday.\n\nI want to be fair. Sunbelt did well on two small airport runs for us last spring, which is part of why we trusted them with this. A late bus happens. What I can't accept is no backup plan and no communication while 220 guests waited.\n\nWe have requested a refund for the two coaches that never arrived, plus the rideshare costs. Our client is now reviewing whether to keep us for their March event, and that consequence is on Sunbelt.\n\nIf you use Sunbelt for airport or offsite transport, especially for anything large, ask them in writing how they handle no-shows and breakdowns, and confirm who will answer the phone on event day. I wouldn't book them for anything significant until their dispatch is fixed.\n\nI'm happy to share the confirmation emails and payment records with anyone who wants them.",
+  "words": 353,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5365776419639587,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995274543762207,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.637782096862793,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.5,
+    "effort": "medium",
+    "output_tokens": 2035,
+    "input_tokens": 1492
+  }
+}

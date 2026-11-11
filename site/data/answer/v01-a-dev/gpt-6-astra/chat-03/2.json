@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmate I'm sorry I went quiet when you needed me. you don't need to apologise for not messaging. your ceiling fell on your bloody bed and now you're trying to work out where to sleep, it's fucked. and “lodge a maintenance request” after that? absolute grub.\n\nI've got all tomorrow off now, Sam's taken my shift. Dad's said we can borrow the trailer so I can come to Priya's, load up the bags with you and get everything out before her mum arrives. Ruby's already said you can have our couch for as long as you need. only catch is Clover will probably insist on sleeping on you. you don't have to sort somewhere else by tomorrow, we've got somewhere for you.\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nalso there's band stuff happening that you don't have to organise. Tully's spoken to Dee and we can have the Lantern Room on Sat 28th for a benefit, all the door money to you. Hollow Pines are up for playing too. if you're okay with it we'll sort it, you don't have to play or do a brave face at the door. Jono's cousin has a working Yamaha you can have for now. I know it's not your Nord, and none of this replaces those notebooks. but we can go through whatever demos and rehearsal recordings we've got together, see what songs we can get back.\n\nplease don't call it on the band or decide on Rocky while you're still living out of garbage bags. come here first, get some sleep, give yourself a bit of time. your songs are the best thing about this band. I don't want you quitting because a roof and a shit landlord have made everything feel impossible. no pressure about Thursday either.\n\nyou drove to Gatton at 2am when my car carked it after that Toowoomba gig, didn't even whinge. you're not on your own now. what time tomorrow works for me to come round?",
+  "words": 323,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23561561107635498,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02458409033715725,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.8346822261810303,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.2,
+    "effort": "medium",
+    "output_tokens": 424,
+    "input_tokens": 14885
+  }
+}

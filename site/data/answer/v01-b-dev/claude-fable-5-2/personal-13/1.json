@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Good day, Mr Ogunleye.\n\nMy name is [your name], the owner of the black Jansport bag you found in the bus from Oshodi last Friday evening. I am writing so that everything I want to say is clear in one place.\n\nFirst, thank you sir. Many people would have left the bag in that danfo or thrown it away, but you took the trouble to check the lab manual and call my number. On our first call you said God sent you, and I believed it. I am still grateful.\n\nSir, about the ₦40,000 you mentioned on the second call, I have to be honest with you. I am a 100 level student and I do not have that money. The bag and everything inside it, added together, does not reach that amount. What is inside is my lab manual, dissecting kit, student ID card, two textbooks, a calculator and my glasses. They are of no use to anybody outside school, but I cannot do without them.\n\nWhat I can give you is ₦10,000, for your transport and as my thank you for keeping the bag safe. That is my whole allowance, I am not pricing you. I will hand it to you myself when I collect the bag.\n\nMy problem is time. I have a BIO 101 practical on Wednesday 11 November at 10am, and the lab attendant will not let anybody in without a dissecting kit. So I am pleading that we meet before Wednesday. Please choose any day and time that suits you, as long as it is in the daytime. I will come with my roommate. Since you stay around Ikotun, we can meet at Ikotun roundabout or in front of the police division gate, because everybody knows those two places and they are easy to find.\n\nPlease sir, reply to this message and let me know the day and time that works for you. I will be there with the ₦10,000 complete.\n\nThank you once again, and God bless you.\n\nYours faithfully,\n[Your name]\n\nOne thing to check before you send: my date is showing today as Wednesday 11 Nov already. If that is correct, change \"we meet before Wednesday\" to \"we meet today or tomorrow\", and say the practical is today so you need the kit urgently.",
+  "words": 383,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40874409675598145,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.014056737534701824,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.85546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.705364227294922,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.3,
+    "effort": "high",
+    "output_tokens": 2596,
+    "input_tokens": 1444
+  }
+}

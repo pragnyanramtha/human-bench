@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.55, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays rewiring a buddy’s shed. I’m putting this up partly so I remember it, and partly so somebody reads it before they let their cousin’s neighbor “just hook it up” because he watched a video.\n\nThis was not a close call. This was a countdown.\n\nWhat I found, in no particular order:\n\n- Power was three orange extension cords daisy-chained out the basement window, across the yard, and under the deck. Three. Daisy-chained. Outside. In weather.\n- One splice was wrapped in duct tape. Not electrical tape. Duct tape. I want to be clear about that.\n- A 30 amp breaker feeding 14 gauge wire. That’s not a circuit, that’s a fire waiting for a calendar date.\n- The shed outlet was hooked up with speaker wire. Speaker wire. For a building. With a roof.\n- The “GFCI” was a regular outlet with a GFCI sticker stuck on it. The sticker was doing all the safety work.\n- The ceiling fan box was held up by one drywall screw. One. And not a good one.\n- Mouse nest in the junction box. Mice were fine. Unbothered. Probably had better wiring than the shed.\n- Inside the panel door, in Sharpie: “SHED - DONT TOUCH - RON.”\n\nSo I open the panel, and my wife is standing there, and she goes, “Who’s Ron?” Like I’m supposed to know. Like Ron is on my Christmas card list. I don’t know Ron. Ron is a ghost who does electrical work for pizza.\n\nAnd here’s the thing: I don’t think Ron was evil. Cheap and a little proud. That’s most of these. Somebody’s buddy did it for a case of beer, it worked for eight years, and now it’s everybody’s problem. I’ve seen it a hundred times. It’s always fine until it isn’t, and then it’s not a funny story anymore.\n\nThis is how houses burn down. Not usually from some big dramatic thing. From a splice in the wrong tape, a breaker that’s too big for the wire, a fan box hanging by one screw, and somebody saying, “It’s been fine.” Fine is not a rating.\n\nThe fix was not fancy: trenched 18 inches, 12/2 UF, 20 amp GFCI breaker, real boxes, real outlets, fan on a proper brace. Done. Safe. Boring. That’s what you want with electrical.\n\nIf your shed, garage, basement, or “man cave” has any of this going on, please stop using it and call a licensed electrician. Not your buddy with a YouTube video and a roll of duct tape. Not the guy who says he’s done it before. An actual licensed guy. Pull a permit, get it looked at. It’s cheaper than a new house and a lot cheaper than being the reason somebody gets hurt.\n\nI got paid in two pizzas and a case of Yuengling, which is honestly the best-paying job I’ve had in a while. The fan works. Nothing smells like burning. That’s the goal.\n\nAnd Ron, wherever you are: I hope your extension cords are at least indoors now.",
+  "words": 509,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The draft reveals the private message’s detail that nothing smells like burning."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5480133295059204,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3352998197078705,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.511794090270996,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "provider default",
+    "output_tokens": 1972,
+    "input_tokens": 1494
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: the GST formula in my daily takings template\n\nI got the GST formula in my daily takings template wrong. Thank you to Ravi Subramaniam for questioning the figure, and to Shu Fen of Numbers For Hawkers for confirming the error and asking me to post a proper correction.\n\nMelvin Ong is right to be upset. People trusted the sheet partly because I presented it as an accountant’s template. That makes it my responsibility to explain this clearly and help affected users check their figures.\n\nThe corrected version, v1.3, was uploaded on 8 Nov. If you used v1.0, v1.1 or v1.2, please read this before your next filing.\n\nWhat was wrong\n\nColumn F calculated GST as:\n\nGST-inclusive takings × 9%\n\nThat is wrong when the takings entered already include GST. The GST is already inside that figure, so applying 9% to the whole amount overstates the tax. The correct calculation is:\n\nGST-inclusive takings × 9/109\n\nRavi’s example shows the difference plainly. His takings for the day were $1,090, including GST. The old template showed GST of $98.10. The correct GST is $90, so the sheet overstated it by $8.10.\n\nThis error overstates GST; it does not cause an underpayment to IRAS through this formula. However, anyone who filed using the inflated figure may have paid more GST than necessary and should check the correction process.\n\nWho is affected\n\nYou are affected if both of these apply:\n\n- You used v1.0, v1.1 or v1.2.\n- You entered GST-inclusive takings into the daily cash, NETS and PayNow columns.\n\nThis will include many hawkers and other small F&B owners who enter the receipts actually collected. If the amounts you entered already excluded GST, this particular error does not apply to those entries.\n\nThe quarterly Box 1 sales total was calculated independently and was correct in v1.0–v1.2. It was column F, and therefore the Box 6 GST figure, that was affected.\n\nThere have been 412 downloads since 12 Aug. That does not tell me how many filings are affected, but it is why this needs to be a full correction post rather than a reply buried in the comments.\n\nIf you already filed Q3 using the sheet\n\n1. Keep your original Q3 worksheet, the return you filed and your payment records. Do not overwrite them while checking.\n\n2. Download v1.3 and save a separate copy for your review.\n\n3. Set H2 according to the amounts you actually enter. Select “prices exclude GST” only if the entries themselves exclude GST. For receipts that include GST, use the inclusive setting—even if your menu prices exclude GST. The setting must follow the figures keyed into the sheet, not simply the wording on your menu.\n\n4. Enter your Q3 daily figures in the new copy and compare its Box 6 figure with the figure in the return you filed. Box 1 should not change because of this correction. Check the difference against your underlying daily records rather than relying on the template alone.\n\n5. Go to IRAS’s “Correcting errors in GST returns” page on iras.gov.sg. IRAS has its own rules on whether an error is corrected through a later F5 or requires a GST F7. I am not going to paraphrase those rules here. Follow the current IRAS guidance and check with the person who filed for you, if you have one, before making any submission.\n\n6. Keep the corrected worksheet and a note of the IRAS route you followed with your GST records.\n\nHow I missed it\n\nWhen I tested v1.0, I checked it against my own sample figures, which were already exclusive of GST. Multiplying those figures by 9% produced the expected answer, so the test passed. The same formula was then carried into v1.1 and v1.2.\n\nThat was my mistake, and there is no excuse for it. I should have tested GST-inclusive receipts as well, especially since those are the figures many stall owners would naturally enter.\n\nI am sorry for the extra checking and filing work this has caused. Please switch to v1.3, check any return prepared with an earlier version, and leave a comment if you are unsure which H2 setting matches your entries.",
+  "words": 682,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09226632863283157,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.016406327486038208,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.7890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.795997619628906,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 40.4,
+    "effort": "provider default",
+    "output_tokens": 3614,
+    "input_tokens": 2621
+  }
+}

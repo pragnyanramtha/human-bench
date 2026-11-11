@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: Urgent: please do not enter no. 43\n\nMick, please don’t go into 43 at 9, and please don’t take your lad in or try to prop the bay or inspect the loft. Priya, please don’t arrange for a key to be handed over.\n\nI’m a chartered structural engineer with IStructE, but I’m speaking here as a neighbour who looked from the opposite pavement, nothing more. This isn’t a commission and I don’t have professional indemnity cover for free advice. I haven’t inspected inside and can’t assess the buildings’ safety from that look.\n\nAt about 7 this morning, roughly 1.2 metres of the stack at 41 was still standing and leaning towards 43. The front roof of 43 is holed, there’s a stepped crack above the bay, and the bay head looks as though it may have dropped. There are also loose slates at the gutter line above the footway.\n\nStanding under a holed roof with a loose stack above is a particularly dangerous place to be. The floors may be loaded with debris and we don’t know how the remaining structure is carrying its weight. Props put in without a proper assessment could put you in danger; a look in the loft from inside isn’t safe either.\n\nThe builder’s cousin isn’t wrong that these terraces are generally robust, but this one is damaged, which is a different matter.\n\nPriya, I can’t say whether Mrs Doherty is safe in 45 from what I could see. It’s her decision, but I wouldn’t sleep in the front room tonight; if she can stay with family until 45 has been checked, that would be better.\n\nThe council already knows, but its tape is across 43’s front garden, not the pavement. Please use the other side of the road until the council has been, especially on the school run. The council’s out-of-hours dangerous structures service is reached via the main council number; please report that the footway hasn’t been closed.",
+  "words": 318,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21065503358840942,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07834022492170334,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2088592052459717,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.0,
+    "effort": "low",
+    "output_tokens": 442,
+    "input_tokens": 19698
+  }
+}

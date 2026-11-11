@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline:rosario.bautista\nReplying to: none\nCc: none\nSubject: none\n\nSHE GOT HER PIN NUMBER!!! 🎉🎉🎉\n\n@Lorna Villaruz, my best friend, my sister from another mother, is officially a registered nurse in the UK!!! Thank you Lord!!! 🙏❤️ I am so happy I cannot even type properly haha. After all the papers and exams and waiting waiting waiting, you did it!!! I am so proud of you, my friend!!!\n\nWe trained together in nursing school in Iloilo, and look at us now. Our capping ceremony in 1996 feels like yesterday, with our white uniforms and those shoes we had to polish every night in the dorm. Lorna always borrowed MY shoe polish. Did you ever buy your own, ha??? 😂 Some things I will never forget!\n\nYou went on to work in Riyadh and then Dubai for almost 18 years, looking after so many patients along the way. And now you are coming to Liverpool!!! I have been telling you to come for 20 years, and finally you listened to me haha!\n\nWhen I left for the UK in 2004, you cried at the airport and said “susunod ako” — I will follow you. Well, only 22 years later! You took your time, my friend 😂 But here we are, and I cannot believe I will have you here with us soon.\n\nShe lands in Manchester from Dubai on 14 January, around 1pm, and starts on 25 January on Ward 7 medical at Mersey Bank Hospital!!! Induction first and then preceptorship. Ward 7, you are so lucky to have her. Lorna is the best nurse I know, always so calm, and her patients love her. I know you will do wonderful things here ❤️\n\nAnd yes Lorna, the spare room is yours for your first month! Ben says it is OK, especially now he knows about the dried mangoes and Bicol pili 😂 I just need to clear Andrea’s boxes and get you a thick duvet. You did your OSCE in Nottingham so you have had a little taste of England already. Remember I sent you that photo of the rain so you knew what you were getting into? That was your warning haha.\n\nPlease bring a proper coat!! Liverpool wind is no joke, and I don’t want you arriving in January thinking your Dubai jacket will do 😂 We will get you sorted.\n\nWelcome to our Filipino family here, Lorna!!! We have Christmas parties, plenty of food and plenty of people ready to welcome you. And next year you are coming to Simbang Gabi with us too 🙏 I cannot wait to have you here, catch up properly and make more memories together.\n\nCongratulations again my best friend!!! Liverpool, please help me welcome her!!! ❤️❤️❤️",
+  "words": 446,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23550377786159515,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20472298562526703,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.057373046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.7249767780303955,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.4,
+    "effort": "low",
+    "output_tokens": 583,
+    "input_tokens": 19899
+  }
+}

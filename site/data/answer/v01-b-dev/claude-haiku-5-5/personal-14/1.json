@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "Dear Larkspur Lofts neighbors,\n\nMy name is Jess Okafor, and I live in 5A. I want to address the note posted in the lobby and explain what happened on Saturday, October 31.\n\nAround 4:00 that afternoon, I flew a new drone from the roof deck for about eleven minutes. I'm a wedding photographer, and I was testing a Halvard Mini 4 ahead of a wedding I'm shooting at a vineyard in Dundee. The camera was pointed west, toward the river and the Fremont Bridge, for the entire flight. It was never aimed at windows, balconies, or anyone in the building. I understand that a buzzing drone over the courtyard looks alarming if you don't know what's going on. I'm sorry it worried people, especially those of you with children who were frightened by it. That was never my intention.\n\nI also want to say that the note hurt. Calling a neighbor a creep and posting their unit number in a shared space felt like being singled out in front of everyone. In the future, I'd ask that concerns come to me directly. I'm happy to talk through any question in person, or by email at jess.okafor@mailbox.example.\n\nIf you'd like to see the full, unedited video, I'm glad to show it to you. You can knock on 5A, or send me an email and we can arrange a time.\n\nFor my part, I won't fly from the roof deck again until the board has decided on a rule for drones. I plan to ask that the topic be added to the agenda for the board meeting on November 19 at 7:00 p.m. in the community room, and I'd welcome you to attend and share your views.\n\nThank you for reading, and I look forward to talking with you.\n\nJess Okafor\nUnit 5A",
+  "words": 301,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13627593219280243,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13564249873161316,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.63671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.31272029876709,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.4,
+    "effort": "medium",
+    "output_tokens": 1906,
+    "input_tokens": 1495
+  }
+}

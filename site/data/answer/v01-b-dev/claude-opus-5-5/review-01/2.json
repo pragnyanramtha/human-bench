@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - shipped my whole game with it, but read this before you buy in 2026\n\nI've used Murmur since August 2022 (bought v1.3 for 19 dollars back then) and I'm about to ship a commercial game built on it, so I want to give a longer review than the ones here right now. Some of this is praise and some of it is a warning. Both are true.\n\nThe good part first. Murmur is the reason my game exists. The first prototype of Lanternfolk was one scene, a ferryman you have to pay to cross a river, and I built it in a single weekend with Murmur in 2022. It worked so well and felt so good to write in that I quit my job at a mobile studio not long after. Four years later the game has 412 dialogue nodes and 9 languages, all through Murmur's CSV export, and it launches on Steam on 3 December. The node editor, conditions and variables, barks and voice line hooks are all still the nicest I've used in Godot. Localisation alone saved me weeks.\n\nNow what's broken, because please don't buy this blind.\n\n3.2.0 has a save bug. If you load a save that was made with 3.1.x, every Murmur variable resets to its default. In our game that means the ferryman forgets you already paid him, and any quest state that lives in Murmur variables is gone. My guess is the save key changed from node path to uid, but I haven't confirmed that. The dev has said 3.2 is the last version and she won't be fixing it, so you are on your own with support from here.\n\nHow to fix it (this worked for me and for others in the forum thread):\n1. Back up your project first.\n2. Get the 3.1.4 release.\n3. Replace the Murmur folder in your project's addons folder with the 3.1.4 version.\n4. Keep a copy of 3.1.4 somewhere safe and don't update to 3.2.\n\nAfter rolling back, our old saves load fine again. I'm staying on 3.1.4 for launch.\n\nIf you're starting a new project, 3.1.4 is still a really good dialogue system. Just go in knowing nobody is maintaining it, and you'll need to be comfortable reading the source if something goes wrong. If you need a tool with active support, that's a fair reason to look elsewhere.\n\nThe source is MIT now and on the public repo, so anyone can fork it and fix 3.2 properly. I'd love to see that happen. I might take a look myself after my launch, but I can't promise anything before then.\n\nWhy 4 stars and not 5: the 3.2 bug, and there's no support anymore. That's an honest minus and new buyers should weigh it.\n\nWhy not 1 star: honestly some of the reviews here are just cruel. One person made this tool and gave us four years of updates. I paid 19 dollars in 2022 and got all of them, including the ones that made my game possible. She shipped one bad update and then said openly that she's stepping back. That isn't \"took the money and ran\", that's a person who ran out of energy after carrying a tool a lot of us depend on. You can be annoyed about the bug (I was too, I lost an evening to it) without being nasty to someone who gave this much for so little.\n\nSo, Ines, if you ever read this: thank you. Lanternfolk wouldn't exist without Murmur, and I'll put it in the credits where it belongs. I hope you get some rest.\n\n- Jonna, Stugaspel",
+  "words": 589,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2037559598684311,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02542116679251194,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.1484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.176800489425659,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.1,
+    "effort": "medium",
+    "output_tokens": 1464,
+    "input_tokens": 3415
+  }
+}

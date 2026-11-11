@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "### One star, for now: good interface, unacceptable migration and support\n\nBridger Bend Community Library is a one-branch library serving about 2,300 active cardholders with two full-time staff and volunteers. We signed a three-year Stackhouse Cloud contract in June 2026 at $14,200 per year and went live October 19.\n\nTo be fair, the software looked good in the demo, and the staff interface is genuinely better than our old system. Our problem is not the basic product idea. It is the migration and the support we have received since things went wrong.\n\nSince October 28, checkouts have worked only offline on one laptop. Our holds queue was wiped, with roughly 640 holds lost. As of this writing, our support ticket has been open for 12 days. We have received three replies, each saying the issue was “escalated to engineering.” Our sales representative promised “a dedicated migration specialist”; what we got was a shared inbox.\n\nThese failures have real consequences for our patrons. A retired rancher drove 40 minutes to pick up his held large-print Westerns. We had no record of his hold and had to send him home with nothing. Meanwhile, one of our volunteers has been recording checkouts on index cards, like it’s 1975.\n\nOur county budget hearing is November 18, and this line item is on the agenda. I would much rather report a working service and a credible recovery plan than explain why our library still cannot circulate materials normally.\n\nI am giving Stackhouse Cloud one star for now and will revisit this review if the company fixes these problems. I am asking for a named senior Stackhouse representative to call me directly this week, take ownership, and provide a clear recovery plan, including what can be restored from our holds queue.\n\nTo other directors, especially at small libraries: ask for support response times in writing before signing. Get specific commitments about migration staffing, escalation procedures, and data recovery as well. A polished demo and a better staff interface matter, but they do not tell you who will answer when your library cannot check out books.",
+  "words": 349,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42784711718559265,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9989925026893616,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.98483657836914,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.5,
+    "effort": "provider default",
+    "output_tokens": 2068,
+    "input_tokens": 501
+  }
+}

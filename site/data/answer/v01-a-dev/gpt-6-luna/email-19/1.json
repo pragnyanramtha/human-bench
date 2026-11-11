@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hi Beth,\n\nI’m just off a Lagos, so forgive me if this comes out a bit muddled. I wanted to message you directly rather than get into the group thread.\n\nI’m sorry things have got so strained since Lowri’s birthday. I know you both said things, and I’m not trying to take sides or tell you how to feel. I do wonder if there’s a chance to let things cool down a bit, though. Lowri can be stubborn, but I suspect she may be sorry too.\n\nI swapped my Orlando trip with Kerry to get the hen weekend off. It cost me a night stop I’d really been looking forward to, so I’d love to have you there — but I’m not saying that to make you feel obliged. Nia rang me crying last week asking if you were still coming. She doesn’t know you’ve pulled out, and I know how much you’ve meant to each other. You were there with her at the Heath every night when her mam was ill in 2019. I’d hate for this row to be what keeps you away from celebrating her.\n\nYou don’t have to do the whole weekend or stay at the cottage on Friday. Could you just come for Saturday’s meal? You’d only need to be in Tenby for about 6. You could get the train from Cardiff Central — it’s roughly two and a half hours — and I’ll pick you up at the station. I’ve got a twin room, so you can kip with me Saturday night.\n\nAnd please, hang on before sending Lowri the £85. She’s said not to worry about it, and there’s no need to sort it just now.\n\nNo pressure, honestly. Nia’s wedding is on 17 April at Margam, and you’re doing a reading — this is all about finding a way for us to enjoy the weekend together, not adding more awkwardness. Think about Saturday, at least?\n\nSiân",
+  "words": 324,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Never conveys that Bethan will regret missing the hen or that Nia will remember who wasn't there; it only says Siân would 'hate' the row keeping her away."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.299079567193985,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35692068934440613,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.51953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.02640962600708,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "medium",
+    "output_tokens": 401,
+    "input_tokens": 14462
+  }
+}

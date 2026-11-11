@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent, and I need everybody to do one thing for me.\n\nOn Aug 30 I posted my flash sheet for the Sept 13 flash day. One of the designs was a moth with a switchblade, probably my favorite thing I drew all year. I drew the whole sheet at my kitchen table over three weekends. That moth went in the first hour. One design, one tattoo, one person. That's the whole deal with flash. It gets sold once and it belongs to that person.\n\nTonight a friend sent me a listing from a shop called StickerBurrow Co selling a \"Knife Moth Vinyl Decal\" for $6.50 or 3 for $15. It's my drawing. Same crack in the blade, same wing pattern. They didn't even flip it or change anything. It's a straight scan of my linework.\n\nSo I messaged them, politely. I told them it's my design from my Sept sheet, I have the original and the August post, and I asked them to take it down. Their reply was \"love your work!\" and then \"our artists create original designs inspired by trending styles, moths are a very common motif,\" and a suggestion that if I have a registered copyright I can send it through their support form.\n\nInspired by. No. I know what inspired by looks like. This is my drawing printed on vinyl.\n\nI'm not a big shop with a lawyer on call. I'm a tattoo artist, I co-own a small studio, and I think places like this are counting on people like me not having the money or time to fight. I'm not going to pretend I can afford that fight tonight. But I'm not going to sit quietly either.\n\nHere's what I need from you:\n\nIf you saw the listing, report it. Report it as copyright infringement through the platform, not just \"I don't like this.\"\n\nDon't buy from StickerBurrow Co. Not the moth, not anything else, until they take this down.\n\nIf you already bought one, I'm not mad at you. But please stop sharing it around like it's cool.\n\nAnd to anyone who has heard about this and thought I was the one selling stickers of their tattoo: it wasn't me. I would never sell a flash piece or a client's tattoo as a sticker. Every piece I do is one of one, and the people who sit for me trust that. If you're upset about this, you're right to be, and I'm right there with you.\n\nThat's it. Rant over. Pissed off, going to bed.",
+  "words": 425,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not say the client contacted Jo that night or that she paid for one-person exclusivity."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29414108395576477,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13249994814395905,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.0595703125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.7425979375839233,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.5,
+    "effort": "medium",
+    "output_tokens": 3769,
+    "input_tokens": 3763
+  }
+}

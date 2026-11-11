@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## RA Progress Statement — Winter 2027 Funding Review\n**Reporting date: November 9, 2026**  \n**Project: Seoul–Daegu Honorific Shift Corpus (NSF-funded)**\n\nAs the sole RA responsible for Korean annotation on this project, I have completed annotation of 4,200 utterances toward the fall-term target of 6,000. This statement documents the timing constraint affecting that target, the additional work completed during the waiting period, and my projected completion date.\n\n**Timeline and completed work**\n\n- **September 3, 2026:** The IRB amendment to add 14 new Daegu recordings was sent to Prof. Hollander for signature. I was not permitted to begin work on those recordings while the amendment remained pending.\n- **September 12, September 24, and October 6:** I sent follow-up reminders requesting the signature. The submission and reminders are documented in retained emails.\n- **October 15:** Prof. Hollander signed the amendment, six weeks after it was submitted.\n- **During the waiting period:** I recoded the existing 2,300 utterances using the revised speech-level scheme Prof. Hollander requested in August. This work was not included in the original project timeline. Although it did not increase the number of unique utterances annotated, it represents completed work required for the corpus.\n- **October 15–November 9:** I annotated approximately 1,900 additional utterances, averaging more than 500 per week, compared with the planned rate of 350 per week.\n\nAt the November 6 lab meeting, my annotation progress was described as “six weeks behind,” with an indication that this would be noted for the funding review. Without the accompanying timeline, that description could imply that the delay resulted from my annotation pace. The six-week wait for the required signature prevented work on the new recordings; my subsequent annotation rate has exceeded the planned rate.\n\nThere are 1,800 utterances remaining toward the 6,000-utterance target. At my current pace, I expect to meet that target by the end of January 2027.\n\nI request that the funding review record include the signature-related delay, the additional recoding completed during that period, and my annotation rate since October 15. If the “six weeks behind” characterization is retained, it should include this context; otherwise, I request that it be omitted.",
+  "words": 353,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3946961462497711,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.998412549495697,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.171985626220703,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.8,
+    "effort": "medium",
+    "output_tokens": 537,
+    "input_tokens": 14082
+  }
+}

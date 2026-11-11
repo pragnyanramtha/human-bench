@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: A little salon news (everybody's fine, I promise!) — Lotus Glow Nails**\n\nHello everybody — friends, neighbors, church family, and all my ladies who have been with me so long,\n\nI know my phone has been ringing nonstop and everybody is asking the same question, so let me just tell you everything here at once.\n\nSunday night, Nov 8, around 2 in the morning, a lady's car came through my salon front window on Bellaire Blvd. Yes, through it. Nobody was inside — thank God — and the driver is okay too. Police came, report was made, and her insurance is paying. So please don't worry about me.\n\nThe front glass is gone and one pedicure chair is smashed. The city inspector has to check the wall before we can open, and my contractor says we reopen **Monday, Nov 16**. That is the plan.\n\nNow the funny part, because I want you to laugh a little, not worry. My floor looks like a rainbow throw up. My husband came and said, \"Well, finally the shop is modern art.\" The car stopped exactly at the pedicure chair — like she came in for the spa, just a little too fast. And my daughter said the driver got the first drive-thru pedicure in Houston. (She did not tip.)\n\nI am okay. I cried a little in the morning, then I was fine. God was protecting us — nobody was in that shop at 2am, and that is the only thing that matters. Mrs. Dung brought me pho this morning, and so many of you sent texts and food. Thank you, truly, from my heart.\n\n**This week only:** me, Trang, and Kim are working at my cousin Hoa's salon, **Pearland Nail Bar** in Pearland. Come see us there for your nails. Call or text my cell any time: **832-555-0147**.\n\nYour gift cards are still good. Nobody loses any money, I promise.\n\nLotus Glow Nails has been on Bellaire for 11 years, and we will be here a lot longer. See you Nov 16 — or this week in Pearland!\n\nWith love and thanks,\n[Your name]\nLotus Glow Nails",
+  "words": 356,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44141626358032227,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.977709949016571,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.3359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.124800682067871,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 4.1,
+    "effort": "provider default",
+    "output_tokens": 791,
+    "input_tokens": 461
+  }
+}

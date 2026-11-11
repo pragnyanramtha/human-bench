@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**RA Progress Statement**  \n**Seoul–Daegu Honorific Shift Corpus**  \n**Reporting date: November 9, 2026**\n\nI am the sole RA responsible for Korean annotation on the NSF-funded Seoul–Daegu honorific shift corpus. The fall-term target is 6,000 annotated utterances; as of November 9, I have completed 4,200.\n\nThe timeline for adding the 14 new Daegu recordings is relevant to my progress:\n\n- **September 3:** I sent the IRB amendment to Prof. Hollander for signature.\n- **September 12, September 24 and October 6:** I sent reminders about the amendment. I have retained the email correspondence.\n- **October 15:** Prof. Hollander signed the amendment. I was not permitted to work with the new recordings before then.\n\nWhile awaiting the signature, I recoded 2,300 previously annotated utterances using the revised speech-level scheme Prof. Hollander requested in August. This work was not included in the original timeline and should be counted as progress on the project.\n\nSince October 15, I have annotated approximately 1,900 utterances, averaging more than 500 per week against the planned rate of 350 per week. At my current pace, I expect to reach 6,000 utterances by the end of January 2027.\n\nAt the November 6 lab meeting, Prof. Hollander described my annotation as “six weeks behind” and said she would note it for the funding review. I ask that the Winter 2027 review record reflect the time the IRB amendment awaited signature, the restriction on working with the new recordings during that period, and the recoding completed while I waited. Without that context, “behind” could suggest that the delay resulted from my annotation pace or carelessness. If that context is not included, I ask that the “behind” characterization not be included in the review.",
+  "words": 280,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3913106918334961,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9459913372993469,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.336124420166016,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.0,
+    "effort": "low",
+    "output_tokens": 397,
+    "input_tokens": 18405
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán, here’s the full picture. **The vaccines are quarantined and not for use pending confirmation from the manufacturers. The four insulin vials have been specifically cleared for use by the supplier’s pharmacist.**\n\n**Logger readings**\n- Went above 8°C at **22:50 Saturday**.\n- Came back below 8°C at **05:00 Sunday**.\n- Total time above range: **6 hours 10 minutes**.\n- Peak: **11.6°C at 02:15 Sunday**.\n- Friday’s overnight minimum was 4.1°C, within range.\n\nI found it at 07:55 this morning with the alarm still sounding. The alarm keeps beeping until it’s reset, so it being audible this morning doesn’t mean the temperature was above range continuously until then.\n\nThe door wasn’t fully clicked shut, and a box of Hartmann’s bags from Saturday’s delivery was stacked against it. I had to lean against the door with my hip to get it to click shut this morning. The seal is cracked at the bottom left corner too. From what I found, it looks like the box and the damaged seal together prevented it closing properly, though the logger can’t tell us the cause.\n\nSaturday’s clinic ran late with the RTA collie and the delivery was put away during a rushed close. This isn’t about blaming whoever put it away: we have a door that needs pressure to latch, a damaged seal, and an alarm nobody can hear when the building is empty.\n\n**Stock involved**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 2 cat flu/FeLV combos\n- 4 vials of insulin\n\nTotal stock involved was roughly **€1,150 at cost**, including the insulin. That’s the value exposed, not a confirmed loss.\n\n**What the supplier said**\n\nI rang Munster Vet Supplies’ tech line at **08:40** and spoke to **Niamh, the pharmacist**. Her initial instruction was to quarantine everything, not use it, and email the logger CSV and batch numbers. They’ll check with the manufacturers and come back to us **by Wednesday**.\n\nNiamh then checked the manufacturer’s storage sheet for the insulin product we stock against the actual logger readings and **cleared those four vials for use**. That clearance was specifically for the insulin, not the vaccines.\n\nThe vaccines are now in a sealed bag labelled **DO NOT USE** in the lab fridge. I checked that fridge at **5.2°C** and started a new temperature sheet for it. Nothing has been cleared for disposal either, so I wouldn’t bin any vaccines before we have the supplier’s answer. We don’t yet know what can be released or what will need replacing, and I wouldn’t assume they’re fine based on the peak temperature alone.\n\nAoife, please keep the boosters on hold unless we can arrange unaffected stock from Carrigaline. If the supplier clears our stock, we can offer Thursday/Friday appointments. Bonnie is currently moved to Wednesday, but as that’s the day we’re expecting an answer, we shouldn’t promise we’ll have cleared stock for her appointment.\n\n**What needs changing**\n\nThe door seal needs replacing, and we need to check that the door closes and latches properly afterwards. We also need to keep deliveries clear of it and add a physical fridge-door check to the closing checklist: actually check it has clicked shut, rather than just looks shut.\n\nThe current logger is the old ThermaTrak and only alarms locally; it has no text alerts. There’s an SMS-alert logger in the supplier catalogue for about **€180**. We’d need to agree who receives the alerts and who responds out of hours.\n\nCan you OK the replacement seal and the SMS logger? For your 2pm call, the vaccine loss and any credit are still unconfirmed pending the manufacturers’ advice; the insulin has been cleared.",
+  "words": 608,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3802705705165863,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4445846974849701,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.453125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.993367910385132,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.3,
+    "effort": "medium",
+    "output_tokens": 821,
+    "input_tokens": 14491
+  }
+}

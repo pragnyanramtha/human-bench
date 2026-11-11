@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need to be really clear, because I’m pissed.\n\nYou promised Gary Pruitt I’d list his four-bedroom house in Chandler off Ray for a **1%** “family rate” without asking me. My listing side is 2.5%, and I have never quoted 1% to anybody. Then I spent my Saturday, Nov. 7—about six hours, plus the drive from north Phoenix—pulling comps, doing the walkthrough, and putting together a full listing packet. Sunday night, Gary texted that he was going with ListLite’s $3,995 flat fee and “no hard feelings.” When I called you, all I got was, “That’s business, sis. Can’t win ’em all.”\n\nI’m not really mad at Gary. I’m mad at you. You volunteered my time, my work, and my commission, then acted like I should just shrug it off. And this morning I find out you’ve already given my cell to Denise so she can “pick my brain” about her rental. This is the same thing that happened with your softball guy two years ago. I let it go then. I’m not letting it go now.\n\nIt feels like you get to look like a big shot with your friends while I do the work for free. That stops today. Do not hand out my number, volunteer my time, or quote my commission again. Ask me first—every time—and let me decide. I’m not calling Denise. You gave her my number, so you can tell her yourself.\n\nI’m happy to help actual family—Mom, your kids, any of you—with advice, no charge. That is not the same as committing me to discounted listings and free work for your buddies.\n\nI love you, and I’m still coming to Thanksgiving at your place. I’m not trying to turn this into a family war. But I need you to understand how angry I am, and this cannot happen again.",
+  "words": 305,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42972245812416077,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5404124855995178,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.9934651851654053,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.4,
+    "effort": "provider default",
+    "output_tokens": 1925,
+    "input_tokens": 529
+  }
+}

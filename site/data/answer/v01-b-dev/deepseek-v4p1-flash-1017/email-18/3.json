@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.30, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kristen,\n\nHere's the straight story, and it doesn't make me look good.\n\nSaturday, Nov. 7, about 10:40, I put a bag of butter popcorn in the break room microwave and hit the popcorn button. Then I walked out front. A fella needed a shear pin for his snowblower, and it took me longer than I figured—six, seven minutes. By the time I looked up, the store was clearing out. About 25 minutes in, the engine from Hertel showed up. No damage, just smoke and stink.\n\nThe September alarm was not me. That was the sensor in the paint aisle.\n\nOne of the guys on the engine was Mikey Szymanski. I broke him in as a probie back in '03, and he will never let me forget this. Thirty-one years on the job, and I get my first alarm as a civilian over a bag of butter popcorn. My wife said the van smelled like a burnt movie theater.\n\nIt's on me, not the microwave. I feel bad about the Hendersons—they'll be back, they always are, but I still feel bad. I'll cover the $175. You can take it out of my check or I'll bring cash, your call. And tell Denise her coffee's on me.\n\nI'd like to keep my Saturday shifts. I like the weekend crowd, and I need the hours for heating oil. I know Gary's got a bug about the weekend schedule, and I'm not going to give you a hard time about it. I'm sorry for the mess.\n\nWalt",
+  "words": 253,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30488869547843933,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2968536913394928,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.2001953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.383138418197632,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "provider default",
+    "output_tokens": 2775,
+    "input_tokens": 873
+  }
+}

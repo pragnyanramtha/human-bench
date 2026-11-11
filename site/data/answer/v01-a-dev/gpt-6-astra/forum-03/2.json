@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nMel, the jump in k’s plus morning stiffness and soreness a few centimetres above the heel can fit mid-portion Achilles tendinopathy. Nothing sudden makes a tear less obvious, but I haven’t seen your leg, so can’t diagnose it or rule one out here.\n\nLimping after the 6k tells us that run was too much, even if it felt OK once warmed up. Back off running for now until walking is comfortable. You don’t necessarily need complete rest: easy cycling or swimming is fine if it doesn’t aggravate it. When you restart, keep runs short, easy and flat; leave hills and speedwork out initially.\n\nProgressive calf loading is usually the main rehab job:\n- Heel drops can help, but they’re not the only option. Heavy, slow calf raises have good evidence too, rather than being clearly better for everyone.\n- A general starting point is slow, controlled raises on flat ground, using both legs if needed, with straight-knee and bent-knee versions. Something like 2–3 sets of 8–12 every other day, building resistance gradually rather than forcing through.\n- On sore days, a comfortable calf-raise hold can be an alternative: try 3–5 holds of 20–30 seconds, supported as needed. These shouldn’t be a pain test.\n\nKeep discomfort mild, around 0–3/10 during loading, with no limp, and back to your usual baseline by the next morning. More morning pain or stiffness means reduce the load. That pain score is a guide, not a guarantee that an exercise is safe.\n\nI wouldn’t stretch it till it burns. Aggressive stretching can aggravate it, and cortisone around the Achilles isn’t a routine fix because of tendon weakening and rupture concerns.\n\nGiven you’re already limping, I’d get it assessed sooner if that persists. Otherwise, if it’s not clearly settling over 3–4 weeks, see any sports physio locally.\n\nA sudden pop, feeling like someone kicked the back of your leg, or being unable to push off means stop running AND calf exercises and get checked urgently that day by a GP or ED — possible rupture.\n\nOne general medication point: some antibiotics, particularly fluoroquinolones, increase tendon injury risk. If you’re taking one and develop tendon pain, stop exercise and contact the prescriber promptly.",
+  "words": 365,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41801682114601135,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13612137734889984,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.4778947830200195,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.3,
+    "effort": "medium",
+    "output_tokens": 507,
+    "input_tokens": 15237
+  }
+}

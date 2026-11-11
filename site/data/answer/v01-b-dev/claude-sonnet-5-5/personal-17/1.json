@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To whoever has been putting their rubbish in the grey bin at No. 14**\n\nI'm writing to every house on the terrace because I don't know which of you it is. I'm sure you know who you are.\n\nFor about a month now, full bags of household rubbish have been left in my bin. This isn't a few bits and pieces. It's three black bags at a time, every week. Last Tuesday I got home at 3am after work and the lid wouldn't close. Three bags in there weren't mine, and one had nappies in it. That's not what I want to be dealing with at that hour.\n\nMy bin is the grey one from Greenmount Bins, with a white 14 painted on the lid. We're charged by weight, at 41 cent a kilo. My bill is normally around €25 for two months. This time it was €63.20. That's nearly €40 I've paid for your rubbish, and I'm not paying it again.\n\nI know it goes out Tuesday night and that a car has been pulling up on Tuesday evenings. I also know one of the bags had post in it with this terrace on the envelope. I'm not naming anyone. I'm only saying it's not a mystery I can't solve if I have to.\n\nIf you don't know how to get rid of your own waste, or you're stuck, just ask me. I'll tell you who to ring. It isn't hard. But my bin is not the answer.\n\nI rent here, I work nights, and I have to live on this road like everyone else, so I'd much rather this be sorted quietly. Stop, and that's the end of it. If it keeps going, the bin gets a padlock and I'll take it further.\n\nThanks to everyone else on the terrace for reading, and sorry for the rant. You can see why I'm fed up.\n\n**No. 14**\n\n---\n\nI left the gas bill envelope in as a hint, since it stings without accusing anyone. I also kept the neighbour who saw the car out of it, so nobody can trace it back to him. If you'd rather not mention the envelope, just cut that one line.",
+  "words": 367,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3856527805328369,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16813009977340698,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.9239192008972168,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.7,
+    "effort": "high",
+    "output_tokens": 1303,
+    "input_tokens": 1320
+  }
+}

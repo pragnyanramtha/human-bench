@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: nov 21 charity stream for linden pantry\n\n@everyone charity stream is SATURDAY NOV 21, 10am–10pm for Linden Community Pantry. putting this up early so nobody finds out halfway through this time lol. last year we raised $212 and half the server didn’t know until the day of. this year the goal is $600.\n\ndonate here: lindenpantry.example/mrkz\nmoney goes straight to the pantry, not through me, and nothing gets taken off. rook is matching the first $100 people donate, so those first donations count double.\n\nDenise from the pantry said they’re serving around 340 families a week and the shelves are the lowest she’s seen before Thanksgiving. through their wholesale partner, $1 gets about 4 pounds of food. even $3 helps.\n\nand yes there will be consequences for me:\n$100 — full round with my controller upside down\n$250 — chat picks my hair dye color and i do it ON STREAM\n$400 — an hour of chat-picked songs, no skipping\n$600 — i vlog a grocery pickup arranged by the pantry. they buy the food with the donations; i’m just bringing the camera\n\nfirst half is community lobbies, anyone can join and i’ll drop the code. second half chat votes on a game every 2 hours. no repeat maps larry i heard you\n\ni know charity streams aren’t everybody’s thing. fair enough, but “begging with extra steps” feels less accurate when the extra steps involve letting this server choose my hair color\n\nno card? you can still help. share the link, remind a friend, or come hang out and keep chat alive. canned and boxed food can also go in the blue bin by the pantry’s side door on Saturdays, 9am–1pm.\n\nif you can’t donate, genuinely don’t stress. you don’t need to pay to join the lobbies or be part of this. save the date, come bully my controller skills, and let’s get more people there this year.",
+  "words": 311,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28848448395729065,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15968342125415802,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.288358688354492,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.7,
+    "effort": "low",
+    "output_tokens": 440,
+    "input_tokens": 19327
+  }
+}

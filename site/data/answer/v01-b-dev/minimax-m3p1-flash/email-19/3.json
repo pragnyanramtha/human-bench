@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Nia's hen - Tenby final plan + money!!\n\nHi Bethan,\n\nNo lecture coming, I promise — I'm just putting a couple of things in front of you and then I'll leave you to it. I've only just landed off Lagos so forgive the mush.\n\nFirst thing: I've already swapped my Orlando trip with Kerry for that weekend. That was a night stop in Orlando I'd been really looking forward to and it's gone, so I'm in it either way and I'd rather it was worth it.\n\nCould you do just Saturday, though? Honestly, just Saturday. You don't have to be at the cottage on Friday at all, skip the lot, come straight down for the meal at Caffi Harbwr at 7.30. Train from Cardiff Central gets you in about 2.5 hours and I'll come and pick you off the station. You can kip with me Saturday night regardless — I've got the twin room, so you don't need to be in the cottage if you'd rather not be.\n\nNia rang me last week, actually crying, asking whether you were still coming. She doesn't know you've pulled out yet. And you of all people know what Nia is like — remember sitting with her in the Heath every night when your mam was bad in 2019? That woman will remember exactly who turned up and who didn't. She's got the wedding on the 17th at Margam and you're doing the reading, so she's already counting on you for one thing — I'd hate her to be quietly disappointed about the other.\n\nAbout Lowri — you and I both know how that night at her 40th went. Both of you said things, and Lowri's stubborn as a mule, but so are you, and I genuinely do think she's sorry. Or she'd come round if she knew you were coming.\n\nOne more thing — hang on before you send Lowri the £85. Once you've handed it over it feels done, you know? I'd rather you waited until you know for definite.\n\nNo group email, no fuss, this is just me. But come Saturday. For Nia.\n\nSian x",
+  "words": 356,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The piece says 'your mam was bad' in 2019 when it was Nia's mam, which contradicts the request; it also never says Bethan only needs to be in Tenby by 6 pm, and the regret point is only weakly made."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22043251991271973,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2509258985519409,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.785773277282715,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.8,
+    "effort": "provider default",
+    "output_tokens": 1670,
+    "input_tokens": 1144
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr. Kerrigan,\n\nThank you for writing to Erindale Park Pharmacy, and for the detail about your mother's situation. I am sorry to hear about her fall, and I am glad she is coming home Thursday. We would be happy to look after Margaret, and I would like to help you get everything in place for her return. I will answer your questions in order.\n\n1. Blister packs and cost\nYes, we prepare weekly blister packs, with each day divided into four times (morning, noon, evening and bedtime). There is no charge for the packaging. Margaret will pay only her usual dispensing costs, and as she is 81, the Ontario Drug Benefit should cover most of that.\n\n2. Delivery or pickup\nWe can deliver to her building at no charge. Our regular delivery days are Tuesdays and Fridays between 2 and 6 pm. For the first packs, we can hold them for pickup, or one of our team can make a one-time delivery on Saturday before 1 pm. Whichever suits you better is fine.\n\n3. Moving her prescriptions\nWe will contact her current pharmacy on Dundas ourselves. All we need is the pharmacy's name and address and Margaret's OHIP number. There is no form for her to sign for the transfer. The hospital's discharge prescriptions are the important part. Please ask the discharge team to fax them to us early Thursday morning. If they need our fax number, please call me and I will give it to you. Packs take about 48 hours to prepare once we have all of her prescriptions, both the new discharge ones and the transferred ones. If the faxes arrive Thursday morning, the first packs should be ready Saturday.\n\n4. Speaking with you about her medications\nI would be glad to go over her new medication list with you. Before I can do that, I need Margaret's permission, because you are not currently on her file. We record this with a Family Communication Consent form that she signs. It protects her privacy, and it lets her decide who we may speak with about her health. Once it is signed, I can talk with you directly, which I know will be easier for her. The form is quick to complete. She can sign it when she picks up her packs, or we can send it with the driver on delivery.\n\nTwo things I would like to offer and ask of you:\n\nFirst, I would like to do a MedsCheck for Margaret at her home during her first week back. It is a 20-minute medication review, and it is a good chance to go through each new medication, check for anything that might be causing confusion, and answer her questions in person, which may be easier than the phone given her hearing. I can come Monday or Tuesday after 6 pm, which should also suit your work schedule if you would like to be there.\n\nSecond, because the first packs will not be ready when she leaves the hospital on Thursday, there will be a gap of a couple of days. Could you please confirm with the discharge team that Margaret will go home with an interim supply of all her medications, and work with them to make sure every dose is covered until the packs are picked up or delivered on Saturday? Since several of her medications are new, I would not want her to miss anything or double up. If the team has questions about the timing, they are welcome to call me.\n\nYou can reach me directly at 905-555-0148, extension 2. I am in the store Monday to Friday from 9 to 6. If I am with a patient, please leave a message and I will call you back, and I am happy to speak in the evening if that is easier for you.\n\nThank you again for choosing us. We will do our best to make this transition as smooth as possible for you and for Margaret.\n\nSincerely,\n\nRania Haddad\nPharmacist\nErindale Park Pharmacy\n905-555-0148, ext. 2",
+  "words": 674,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0869135633111,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.023490935564041138,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.4296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.882387161254883,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.1,
+    "effort": "high",
+    "output_tokens": 2515,
+    "input_tokens": 3533
+  }
+}

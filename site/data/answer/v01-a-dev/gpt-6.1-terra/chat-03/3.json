@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nMia, I’m so sorry I went quiet on you. You don’t need to apologise for going quiet either, you’ve had a ceiling fall on your bloody head. Your landlord’s a grub. “Lodge a maintenance request” my arse.\n\nYou’re not on your own in this, alright? Ruby says you can stay on our couch as long as you need. Only catch is Clover will absolutely try to sleep on you. No pressure if you’d rather be somewhere else, but it’s there.\n\nSam’s taken my shift so I’m off all day tomorrow. Dad’s said I can borrow the trailer, so I can come over and help get your stuff out of Priya’s garage before her mum arrives. We can bring it back here and sort through it whenever you’re ready. What time works for you? And is there anything you need tonight?\n\nAlso, you drove all the way to Gatton at 2am to get me when my car died after the Toowoomba gig, without even complaining. Let me show up for you too.\n\nTully’s been talking to Dee at the Lantern Room and we can have Sat 28th for a benefit night, with all the door money going to you. Hollow Pines are up for playing too. Only if you’re comfortable with it, obviously. And Jono’s cousin has an old Yamaha keyboard you can have to tide you over. It’s not a Nord, but it works.\n\nI know losing the notebooks is devastating, and I’m not going to pretend a keyboard fixes that. But your songs are the best thing about our band, mate. Please don’t quit on us. We can help piece things back together, and there’s no rush to decide anything now.\n\nSame goes for Rocky. If you decide you want to go home, I’ll back you, but please don’t feel like you have to make that call while everything’s such a mess. Come stay here, let us help, and take a breath first.",
+  "words": 324,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4021691381931305,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06619765609502792,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.220806121826172,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.5,
+    "effort": "low",
+    "output_tokens": 429,
+    "input_tokens": 19986
+  }
+}

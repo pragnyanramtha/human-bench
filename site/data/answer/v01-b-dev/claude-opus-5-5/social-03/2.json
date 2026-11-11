@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: group:levy-longsight-noticeboard\nReplying to: none\nCc: none\nSubject: Please read and share: fake blue pills, and what to do if someone goes down\n\nI know there's already a thread about Saturday. I'm not adding to the rumours, and I'm not going to talk about anyone involved. I just want something proper on here that people will actually read, because the police warning that Gaz shared on Thursday has barely been looked at.\n\nI'm a nurse, so this is the bit I need everyone to take in, parents and teenagers both.\n\nThere are blue tablets going round south Manchester being sold as diazepam or \"Xanax\". They aren't. Some of them contain nitazenes, which are synthetic opioids and can be far stronger than heroin. You can't tell by looking at them. Someone could think they're taking something to chill out and get a dose that stops their breathing.\n\nSigns to look out for:\n- really drowsy, can't be woken properly or keeps nodding off\n- pinpoint pupils (the black bit of the eye goes tiny, like a pin prick)\n- slow breathing, or noisy snoring/gurgling breathing\n- blue or grey lips\n\nIf you see any of that, ring 999 straight away. Don't wait to see if they come round. Don't ring their mum first. Don't google it.\n\nThis is a general point and not about anyone. It happens a lot. Someone's mates panic, they think the person's just had too much, so they put them to bed to sleep it off, and somebody rings hours later. By then the brain has gone too long without oxygen. Snoring isn't someone sleeping it off. It can mean their airway is struggling. Putting someone to bed can be the worst thing you do for them.\n\nAnd to the kids especially: don't worry about getting in trouble. The police have said it themselves, their priority is preserving life. Nobody turning up to help someone who's stopped breathing cares where the pills came from. Ring. Stay with them. Do what the call handler tells you.\n\nThere's also a nasal spray called naloxone that reverses opioids for a while, long enough to buy time until the ambulance gets there. You can get it free from Brightpath drug & alcohol service on Stockport Road, next to the launderette. Anyone can ask, you don't have to give your name, and the training takes about 10 minutes. They're open Mon to Fri 10 till 4, and till 7 on Thursdays. If you've got teenagers, or you go out yourself, it's worth having one in the house. It won't hurt someone who hasn't taken an opioid, so if you're not sure, use it anyway.\n\nI had this chat with my lad (14) last night over his tea. Plenty of eye rolls, but he listened, and he asked me what pinpoint pupils meant, so it went in. It took ten minutes. It doesn't have to be a big sit-down lecture. Just make sure they know: fake pills are going round, these are the signs, ring 999 straight away and don't put anyone to bed.\n\nPlease have that conversation THIS week. Not after half term, not when it comes up. This week.\n\nOne more thing, and I'll say it nicely. Slagging the kids off on here doesn't help anyone. Teenagers do daft things, they always have, and some of us did too. The real danger is a scared kid who thinks they'll get battered or grounded for life, so they don't ring for help when their mate's in trouble. That's the whole problem. If we want them to ring 999, they need to know the adults around them care more about them being alive than about telling them off.\n\nPlease share this, don't just like it. Share it to your own page, send it to your family group chat, show it to your kids. Some of the people who need to see it aren't on this group.\n\nBecky x",
+  "words": 632,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The police warning was shared on Friday, not Thursday."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14620594680309296,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09232479333877563,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.4067864418029785,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.6,
+    "effort": "medium",
+    "output_tokens": 1697,
+    "input_tokens": 3095
+  }
+}

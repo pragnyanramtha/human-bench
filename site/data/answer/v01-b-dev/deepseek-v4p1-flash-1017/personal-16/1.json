@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hello all,\n\nA few of you have written to ask why my pier logger runs warmer than the offshore buoy, and one of you suggested, politely, that the thing must be broken. It isn't. The gap is real, and it's oceanography.\n\nThe numbers, from October: my logger averaged 15.9 °C for the month, the buoy 14.1 °C, a gap of about 1.8 °C. In winter that same comparison closes to roughly 0.4 °C.\n\nHere's what's going on. My sensor is strapped to a piling in 3 m of water, about 150 m from shore, inside a sheltered bay. That's a thin, shallow layer of water that responds to sunlight within hours. The buoy sits roughly 25 km offshore, sensor just under the surface over deep water, exposed to the upwelling that keeps the surface cold much of the year. The bay is largely sheltered from that upwelling, so on a sunny afternoon the nearshore water warms and the offshore water doesn't. One of you sent a screenshot overlaying both records — thank you, it was genuinely useful — and the gap tracks sunny afternoons almost exactly. That's the signal, not a fault.\n\nOn the instrument itself: it logs every 10 minutes, I pull and download it every six weeks, and I swap the battery once a year. Every check is two-point, an ice bath and a room-temperature bath, against a lab reference thermometer. The last one, September 2026, gave an offset of +0.12 °C, well inside spec. In August I hauled it up with a barnacle colony and a decorator crab living on the housing, scraped it clean, and the readings didn't change.\n\nThe buoy and my logger answer different questions. If you dive the breakwater, mine is the more relevant number.\n\nEmail me if you'd like the raw CSV.\n\n— [Name]\nMarine biologist, [field station]",
+  "words": 306,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2640167474746704,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14575201272964478,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.140625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.594656944274902,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.7,
+    "effort": "provider default",
+    "output_tokens": 1463,
+    "input_tokens": 520
+  }
+}

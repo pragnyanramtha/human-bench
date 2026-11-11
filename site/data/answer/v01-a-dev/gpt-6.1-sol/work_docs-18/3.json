@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Bring the Broken Toaster. Stay for Coffee.\n## Fix-It Saturday at St. Ansgar — Everyone Welcome\n\n**Saturday, December 5, 2026 | 9 a.m.–1 p.m.**  \n**Fellowship Hall, St. Ansgar Lutheran Church**  \n**Minneapolis, MN | Enter through the alley door, where there’s a ramp**\n\nA few months ago, Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes in the church kitchen. That’s where this idea began. Too much gets thrown away that just needs a screw, a new cord, or somebody who knows what to look for.\n\nLast week, our church council approved Fix-It Saturday, and I confess I’m thrilled.\n\nOur first gathering is December 5, and it’s for the whole neighborhood. You don’t need to belong to St. Ansgar—or to any church. There’s no sign-up, and it’s free. Donations to the food shelf are welcome but certainly not expected.\n\nVolunteer fixers will be on hand to work on:\n\n- Small appliances and lamps\n- Bikes\n- Clothing that needs mending\n- Knives that need sharpening\n- Laptops and phones, with help from a retired tech fellow\n\nWe can’t promise every item can be repaired, but we’ll give it a look. Please bring **one item per person to start**, so we can keep the line moving.\n\nDoris Lindqvist, 84, who has darned socks for this parish since the Carter years, asked to run the mending table herself. I wasn’t about to argue.\n\nThere will be coffee and kringle. Please bring the broken toaster **and** stay for coffee. This is good neighboring, plain and simple: no strings, and nobody will preach at you.\n\nAfter December, we’ll gather on the **first Saturday of every month through spring**.\n\n**Can you help fix things?** We’d love a few more volunteer fixers, especially anyone comfortable repairing vacuums or replacing zippers. Contact the church office at **office@stansgarlutheran.example** or **612-555-0148**.\n\nCome meet a neighbor. Let’s see what we can keep out of the trash.",
+  "words": 318,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40719127655029297,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9961016774177551,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.898703098297119,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.4,
+    "effort": "low",
+    "output_tokens": 468,
+    "input_tokens": 18284
+  }
+}

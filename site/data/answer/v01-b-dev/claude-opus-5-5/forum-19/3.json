@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, breathe. First of all congrats on tomorrow!! Second, welcome to the club. My first year as an apprentice in 1995 I put diesel in my boss's Golf. He still tells that story at every braai, 30 years later. You'll be fine, and so will your marriage.\n\nRight, tonight:\n\n**DON'T crank it again.** Take the key out and put it in your pocket. Every time that engine turns, the diesel pump is running on petrol with no lubrication, and that's what kills it. You've already run it, stalled it and cranked it a few times, so I'm not going to lie, there might be some damage. But stopping now is the best thing you can do for it.\n\n**DON'T put diesel on top.** Kobus means well, but that's old Land Rover advice. Your 2019 D-Max is common rail and it can't take it. The petrol is still in there, and mixing it does nothing except put more fuel through a pump that's already struggling. Sorry Kobus 🙏\n\n**Tow it, don't drive it.** Check your insurance before you pay some tow guy cash. Most policies have roadside assist and they'll come out tonight.\n\nBring it to my shop in Umbilo. We're open Saturday 7 till 12 and Thabo can drain it first thing. We inspect the pump and injectors first. If there's no damage it's a drain, flush the lines, new fuel filter and bleed it, usually R2 500 to R4 500. I can't promise you a total until we've looked at it, but R40 000 is the bad-case story. It's not where we start.\n\n**Borrow a bakkie for tomorrow anyway.** Even if Thabo gets it sorted quickly, don't plan the cake and the sound system around a drained tank. Phone a cousin, a friend, anyone with a bakkie, and get that sorted tonight so you can stop thinking about this one.\n\nPS we had a customer do this twice in the same year at the same garage. We made him a sticker for his fuel flap. Happy to make you one too 😂\n\nGo home, get some sleep, and go get married. The bakkie will still be there on Monday.\n\nUmbiloSpanner",
+  "words": 361,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2774609327316284,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09271366149187088,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.1796875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.433342218399048,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.2,
+    "effort": "medium",
+    "output_tokens": 783,
+    "input_tokens": 2165
+  }
+}

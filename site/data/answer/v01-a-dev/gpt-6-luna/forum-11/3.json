@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "D. Bergeron, you’re right to ask for a straight answer, especially if you bought a carnet. I’m sorry the sign and the rumours left people wondering. I should have explained sooner.\n\nPétrin Doré is **not closing or moving**. We’re staying right here at 5 rue Fairmount, on the corner, where we’ve been since March 2009. The building did sell—but to me. M. Ferland, who has owned it for many years, offered it to me before putting it on the market. We signed at the notary on December 15. He’s retiring to Sherbrooke to be near his daughter. He came to the bakery every morning for 17 years for a baguette *pas trop cuite*. We both got a little emotional at the notary.\n\nThe three apartments upstairs will stay rented to the same tenants at the same rents. I’ve promised them that in writing. This is their home, and I want them to feel secure here.\n\nThe bakery will be closed from January 4 through January 18 for renovation work, and we’ll reopen **Tuesday, January 19, at 7 a.m.** We’re installing a new four-deck oven from a supplier in Laval. The old oven dates from 1998 and broke down three times this year, so it’s time. We’re also taking over the space at the back—the old dépanneur storage area—and adding six small tables. At last, you’ll be able to sit down and enjoy something here.\n\nAnd about the carnets: they are absolutely **not a scam**. We sold 214 in October. Each one is $60 for 12 loaves, and they’re all still valid—there is no expiry date. In January, every carnet holder will also get a free croissant. If you’d rather have your money back, come see me and I’ll refund it. No questions asked.\n\nThe half-empty shelves on December 28 were because we sold everything for Christmas Eve—400 bûches, in fact—not because we’re closing. And the sign? My nephew Thomas wrote it at 6 in the morning. “Grande nouvelle” was his idea. I said yes without thinking about how it might sound. That part is on me.\n\nI understand why people worry. We’ve lost too many small shops around Mile End, and a vague sign can leave room for the worst rumours. But after 17 years on this street, being called a scam really hurt. I’m glad you asked directly, and I hope this clears things up.\n\nThank you, Priya, for speaking up for us, and thank you to everyone who defended the bakery or reached out. You’ve kept us going through a lot of early mornings.\n\nPlease join us for the reopening on **Saturday, January 23**. We’ll have free coffee and a piece of the new bread for everyone. I hope to see you there—and I promise next time Thomas suggests a mysterious sign, I’ll ask a few more questions first.",
+  "words": 471,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "479 words, allowed 720-2200 (band 800-2000 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41891345381736755,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.34341397881507874,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.364225387573242,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.1,
+    "effort": "medium",
+    "output_tokens": 624,
+    "input_tokens": 14633
+  }
+}

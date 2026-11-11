@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Right, full picture below.\n\n**What the logger actually shows**\n- Friday overnight minimum was **4.1°C**, so that reading was normal.\n- It went above **8°C at 22:50 on Saturday**.\n- It was back under 8°C by **05:00 Sunday**, giving an excursion of **6 hours 10 minutes**.\n- Peak was **11.6°C at 02:15 Sunday**.\n\nThose times are from the logger download, not estimated from when the alarm was heard.\n\n**What I found this morning**\nI found it at **07:55**, with the alarm still beeping. The old ThermaTrak keeps beeping until somebody manually resets it, and it only alarms locally — there are no text alerts, so there was nobody here to hear it over the weekend.\n\nThe fridge door wasn’t fully clicked shut. A box of Hartmann’s bags from Saturday’s delivery was stacked against it. Saturday had finished late with the RTA collie and the delivery was being put away in a rush at closing. The immediate cause looks like the **box against the door together with the poor seal**, rather than the fridge temperature control failing.\n\nThe door itself definitely isn’t right. I had to lean on it with my hip this morning to get it to click, and the seal is cracked in the bottom left corner. It needs replacing regardless of anything else.\n\n**Stock involved**\nThe fridge contained:\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 2 cat flu/FeLV combinations\n- 4 vials of insulin\n\nThat was roughly **€1,150 worth of stock at cost in total**, but that is **not** a confirmed loss or a figure to write off.\n\n**What Munster Vet Supplies said**\nI rang their technical line at **08:40** and spoke to **Niamh, the pharmacist**. Her instruction was to **quarantine everything and not use it**. She wants the **logger CSV and batch numbers emailed over**, and they will check with the manufacturers and come back to us **by Wednesday**.\n\nNiamh also checked the manufacturer’s storage sheet for the particular insulin we stock against the actual logger readings. She **cleared those four insulin vials for use**. That is a specific clearance for the insulin only.\n\nSo, as it stands: **the insulin is cleared; none of the vaccines are to be used until we hear back.** All the vaccines are now quarantined together in a sealed bag clearly labelled **DO NOT USE** in the lab fridge. That fridge is sitting at **5.2°C**, and I’ve started a new temperature sheet for it.\n\nA lot of the stock may well be fine, but that isn’t my call to make from the logger alone. I wouldn’t bin anything before the supplier and manufacturers come back.\n\n**What I’d change**\n1. Replace the fridge door seal.\n2. Replace the logger with the supplier catalogue one that has SMS alerts, approximately **€180**. A local beep isn’t much use when the building is empty.\n3. Add an explicit fridge-door check to the closing/lock-up checklist: physically push it until it clicks, and make sure nothing is stacked against it.\n\nFor appointments, Aoife can rebook the boosters for Thursday/Friday if the supplier clears our stock. If not, we could look at borrowing stock from Carrigaline rather than pushing everything out.\n\nCiarán, can you OK the **SMS logger and replacement seal**, please?",
+  "words": 542,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31425097584724426,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.370617151260376,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.09375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.8059797286987305,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 74.8,
+    "effort": "provider default",
+    "output_tokens": 4379,
+    "input_tokens": 1036
+  }
+}

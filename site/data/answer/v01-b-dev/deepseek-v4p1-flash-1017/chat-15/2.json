@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán — full picture below, numbers first.\n\nLogger download: fridge went over 8°C at 22:50 on Saturday, back under 8°C at 05:00 Sunday. That’s 6 hrs 10 min out of range. Peak was 11.6°C at 02:15 Sunday. Friday overnight min was 4.1°C, so normal before that.\n\nI found the alarm going at 07:55 this morning. It keeps beeping until someone resets it. The door wasn’t fully clicked shut — there was a box of Hartmann’s bags from Saturday’s delivery stacked against it. I had to lean on the door with my hip to get it to click, and the seal is cracked at the bottom left corner. Marta’s right that the seal has been dodgy since summer and she flagged it in July. I’m not blaming anyone — Saturday clinic finished late with the RTA collie and the delivery got put away in a rush at closing. But it was the door, and the seal didn’t help.\n\nStock in the fridge: 14 DHPPi, 9 lepto L4, 6 intranasal kennel cough, 3 rabies, 4 vials insulin, 2 cat flu/FeLV combos. Roughly €1,150 worth at cost.\n\nRang Munster Vet Supplies tech line at 08:40 and spoke to Niamh, the pharmacist. She said quarantine everything and don’t use any of it. Email the logger CSV and batch numbers, they’ll check with the manufacturers and come back by Wednesday. She checked the manufacturer’s storage sheet for the insulin product we stock against the logger readings and cleared those four vials for use. Everything else stays quarantined for now.\n\nI’ve quarantined the vaccines in a sealed bag labelled DO NOT USE in the lab fridge. Checked it’s sitting at 5.2°C and started a new temp sheet for it. I wouldn’t bin anything until the supplier comes back — most of these are probably fine but that’s not my call.\n\nThe logger is the old ThermaTrak one. It only beeps locally, no text alerts, so nobody heard it on Sunday. The new one with SMS alerts is about €180 from the supplier catalogue. The door seal needs replacing anyway — I think it was the box and the seal together. Can you OK the SMS logger and a new seal?\n\nFor Aoife: hold the boosters today. If the supplier clears the stock she can rebook them for Thursday/Friday, or we can borrow stock from Carrigaline branch. I’ll update here as soon as I hear back Wednesday.\n\nAlso suggest we add a lock-up check on the fridge door to the closing checklist. That would have caught it.",
+  "words": 420,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16793985664844513,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13415049016475677,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.0625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.158025026321411,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.4,
+    "effort": "provider default",
+    "output_tokens": 2845,
+    "input_tokens": 1048
+  }
+}

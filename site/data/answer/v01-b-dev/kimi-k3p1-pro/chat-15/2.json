@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Ciarán — full picture below.\n\n**Logger readings**\n- Friday night was normal, minimum **4.1°C**.\n- It went above **8°C at 22:50 on Saturday** and was back under 8°C by **05:00 Sunday**, so it was out of range for **6 hours 10 minutes**.\n- Peak was **11.6°C at 02:15 Sunday**.\n\n**What happened**\nI found it at **07:55 this morning**, with the alarm still beeping — this logger keeps alarming until somebody manually resets it. The fridge door wasn’t fully clicked shut and there was a box of Hartmann’s bags from Saturday’s delivery stacked against it.\n\nSaturday finished late with the RTA collie, so the delivery was put away in a rush at closing. That’s the context, but the actual failure was the door. The seal is cracked at the bottom left, and I had to lean on the door with my hip this morning to get it to click. I think the box against the door and the condition of the seal together stopped it closing properly. The seal needs replacing regardless.\n\n**Stock involved**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 4 vials insulin\n- 2 cat flu/FeLV combos\n\nApproximately **€1,150 at cost** for the stock listed. For your 2pm call, that’s the value affected, **not a confirmed loss/write-off**.\n\n**What Munster Vet Supplies said**\nI rang their tech line at **08:40** and spoke to **Niamh, the pharmacist**. Her initial instruction was to **quarantine everything and don’t use it**, then email her the **logger CSV and batch numbers**. They’ll check with the manufacturers and come back to us **by Wednesday**.\n\nNiamh subsequently checked the manufacturer’s storage sheet for the insulin product we stock against our actual logger readings and **cleared those four insulin vials for use**. So that’s the only stock from the lot explicitly cleared at the moment. All the vaccines remain quarantined and unusable unless the supplier/manufacturers clear them.\n\nI’ve put the vaccines in a sealed bag clearly labelled **DO NOT USE** in the lab fridge. That fridge is sitting at **5.2°C**, and I’ve started a new temperature sheet for it. I wouldn’t bin anything yet — they may well be fine — but that’s the supplier/manufacturers’ call, not mine.\n\n**Appointments and what I change**\nToday’s boosters should stay held for now. Aoife can rebook them for **Thursday/Friday if the supplier clears the stock**. If not, we can ask Carrigaline about borrowing stock so we’re not delaying everybody further.\n\nTo stop a repeat, I’d do three things:\n1. **Replace the door seal.**\n2. Replace the old ThermaTrak logger. It only beeps locally, which is useless when nobody’s here on a Sunday. The supplier catalogue one with **SMS alerts is about €180**.\n3. Add a specific **fridge-door lock-up check to the closing checklist**: physically push it until it clicks, check it’s properly closed, and keep boxes clear of the door.\n\nCan you OK the SMS logger and getting the seal replaced?",
+  "words": 489,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3779647648334503,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.36278077960014343,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.09375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.883619785308838,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 48.1,
+    "effort": "provider default",
+    "output_tokens": 3151,
+    "input_tokens": 1036
+  }
+}

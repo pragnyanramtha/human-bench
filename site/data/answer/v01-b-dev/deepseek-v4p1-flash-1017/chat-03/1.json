@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nHey Mia. Sorry I went quiet — one text back was pretty pissweak and I'm sorry. You didn't need me to disappear when your roof fell in. You're not on your own with this, seriously. I'm off tomorrow now (Sam took my shift), so I can grab Dad's trailer and we'll get everything out of Priya's garage before her mum gets there. Bring the garbage bags — we'll work out what's salvageable and what's not. Mum and Dad said the trailer's yours whenever, and Mum's thinking of you.\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nAlso, don't go moving back to Rocky like this. If you actually want that one day, fine, but not because a storm and a grub landlord have backed you into a corner. Ruby says their couch is yours as long as you want it — Clover will 100% try to sleep on you, fair warning. So there's somewhere to land after Priya's, no deadline. And you drove out to Gatton at 2am for me after the Toowoomba gig without one complaint, so let us do this bit for you.\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nAnd the band stuff is already moving. Tully's sorted a benefit night at the Lantern Room, Sat 28th, door money to you, and Hollow Pines are in. Jono's cousin has an old Yamaha keyboard in his shed with your name on it — not a Nord, but it works. Your songs are the best thing about our band, so quitting isn't on the table. We'll sort the rest as it comes, and I'll help you deal with the landlord's portal rubbish if that's what it takes. Call me when you get this?",
+  "words": 269,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4323746860027313,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2778850197792053,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.345703125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.221018314361572,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.0,
+    "effort": "provider default",
+    "output_tokens": 5964,
+    "input_tokens": 1446
+  }
+}

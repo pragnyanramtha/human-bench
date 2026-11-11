@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: none\n\nMick, please don't go into 43 at 9. I know you mean well. I'm a structural engineer and I walked past at 7 this morning. This is a neighbour's view from the pavement, not an inspection or professional advice, but here's what I saw.\n\nAbout 1.2m of the stack on 41 is still standing, leaning towards 43, with the mortar washed out at the base. Gusts of up to 50mph are forecast again this afternoon. The front roof of 43 is holed, and there's a stepped crack from the bay up to the first floor window, with the bay head looking dropped.\n\nPropping under that bay means standing under a holed roof with a loose stack above you, which is the worst place to be. The floors may also be carrying debris, and nobody knows how the load is travelling now. A prop in the wrong place can do harm. Please don't go up to look at the loft from inside either.\n\nLeave it to the council's dangerous structures person, who is due this morning.\n\n---\n\nTo: ashbourne-terrace-chimney\nReplying to: p04\nCc: none\nSubject: none\n\nPriya, to your two questions. Same caveat as above: I'm a neighbour who looked from the pavement, not giving formal advice.\n\nPavement: no, I wouldn't use it. There are loose slates along the gutter lines of 43 and 45, right over the footway, and the council tape only covers your front garden, not the pavement. Please walk on the other side of the road until the council has been, especially on the school run to St Dunstan's. JoJo, your cousin is right that terraces are robust in general, but this is a damaged one, and that's a different thing.\n\nThe council knows, but nobody has closed the footway. If you can, ring the main council number (it works out of hours too), ask for dangerous structures and tell them the pavement is still open.\n\nMrs Doherty: it's not my decision, and she's entitled to make it. The front of 45 looks undamaged from the street, but I couldn't see the party wall with 43, and the stack that's leaning sits on the wall between 41 and 43. I wouldn't sleep in her front room tonight. It would be better if she stayed with family until 45 has been checked. If anyone can help her get there, that would be a kindness.",
+  "words": 386,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1467903107404709,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05445677042007446,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.08274507522583,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.2,
+    "effort": "high",
+    "output_tokens": 2582,
+    "input_tokens": 3429
+  }
+}

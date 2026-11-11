@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Move H-1B Cap Intake Deadline to January 15\n\nI’d like us to set an internal intake deadline of January 15 for cap-season H-1B registrations, instead of keeping intake open through February. The goal is better service and a cleaner process on our side.\n\nLast cap season (March 2026), we filed 14 registrations for six employer clients. Nine of the 14 came in during the final week of February, and Rosa logged roughly 11 hours of overtime the week the window opened. Most of that crunch was our process, not client delay: we currently email the questionnaire whenever an employer asks, so nobody has a date to work toward. One HR contact told me she’d have happily sent everything in January if we’d asked.\n\nWhat would change:\n- Week of Dec 7: engagement letters and the one-page questionnaire go out.\n- January 15: intake closes.\n- After January 15: requests handled case by case.\n\nRosa would own the tracker, which gives her a clean six weeks to chase gaps before the window. That matters. Brightwater Analytics sent a beneficiary’s passport scan two days before the window last season; it had expired in October, and we caught it only because Rosa checked the dates. The registration itself is simple, but errors are expensive—a wrong passport can invalidate a selection. An earlier internal date protects clients from that.\n\nJanuary 15 is realistic: HR teams are back from the holidays and have budgets set. The $215-per-beneficiary fee is already part of their Q1 planning. If Marcus is on board Thursday, we can send the December letters on schedule.",
+  "words": 266,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.371976763010025,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9975810050964355,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.156733512878418,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.0,
+    "effort": "provider default",
+    "output_tokens": 1703,
+    "input_tokens": 538
+  }
+}

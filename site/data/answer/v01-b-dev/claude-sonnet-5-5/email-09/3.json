@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Tuesday reading club: new numbers, and something I need to own up to\n\nDear Niamh,\n\nI hope you're keeping well. I'm writing about the Tuesday club at Knocknacarra. I have good news and a confession, so I'll start with the good news.\n\nI understand why you wrote on 30 October as you did, because the numbers were low then. But they've changed a great deal. We had 5 children most weeks in September, 9 by mid-October, and 14 last Tuesday, 3 November. Declan Moran of Salthill Book Nook has also donated 120 books, mostly for the 6 to 9 age group, and a good few of them as Gaeilge, so there's plenty to put into small hands.\n\nThe figures don't tell the whole story either. Two sisters from a Ukrainian family joined us in October, and the older one now reads to the younger in English at the end of each session. And one boy who wouldn't open a book in September asked me last week if he could take two home. After a lifetime in classrooms, I know how rare that is, and it would be a terrible pity to pause the club just as it has taken off.\n\nSo I'm asking if you would look at the new numbers before the review meeting on Wednesday 18 November, and reconsider the pause. I'm happy to send on attendance sheets or anything else that would help.\n\nNow the confession. I met Orla Keane from the Corrib Courier at the farmers' market, and I got carried away telling her about the club. I said she was welcome to come along any Tuesday. She'd like to come on 24 November with a photographer. I should have checked with you before saying a word, and I didn't. That was my mistake, plain and simple. I know the policy is no photographs of children without your sign-off and the parental consent forms, and I'd far rather you heard this from me than from anyone else.\n\nHere is what I'd suggest. I'll ring Orla and tell her the visit is on hold until you've decided, so nothing happens unless you're happy with it. If you do say yes, I'll collect the consent forms myself so it adds nothing to your workload. I do think the coverage could be wonderful for the club and for Corrib Reading Partners, but only if it's done properly, and that means going through you.\n\nI'm sorry for the muddle, and thank you for all you do for the volunteers. I'd be glad to talk it through by phone if that's easier.\n\nWarm regards,\n[Your name]\n\n---\n\nI left out the boy's name and any mention of his family, as you asked. You'll just need to add your name at the end.",
+  "words": 462,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26936307549476624,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1194382905960083,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.119026184082031,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.8,
+    "effort": "high",
+    "output_tokens": 2074,
+    "input_tokens": 1660
+  }
+}

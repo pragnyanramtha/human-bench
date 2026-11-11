@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast Dec 19\n\nHi Rhonda its Gary from the bus garage again. Hope you are doing good. Time to set up our christmas breakfast and I'm hoping the back room is open Saturday Dec 19 at 7am same as always. If the 19th is no good for you the 12th would work too.\n\nRight now the head count is 24. That's 19 drivers, 3 from the shop, and Earl and his wife Carol. I'll get you the final number by the Wednesday before like you asked last year so you're not wasting food.\n\nThis year is kind of a big one. Earl is retiring. He drove 31 years and his last day is Friday the 18th, so the breakfast is the day after. He doesn't know anything about it. Carol told me he'd be embarrassed by a big speech but he would love it if the guys did something. So if you could keep it quiet around the diner I'd really appreciate it, in case he stops in before then.\n\nWhich brings me to a question. I was going to ask if we could bring a cake in from Sugarcreek Bakery, but honestly your cinnamon rolls are better than any cake and Earl loves them. So would you rather we bring a cake, or could you do a big tray of your cinnamon rolls with a candle in the middle? Either one is fine with us, whatever is easier on you. If you do the rolls let me know what that would run.\n\nCouple other things so you know ahead of time.\n\nLonnie is on a walker now since his hip, so he needs to come in without any steps. Can we use the side door? If you could make sure its unlocked by 7 that would help a lot so he's not going around the front.\n\nPatsy can't do eggs anymore. Could you do something else for her, oatmeal or pancakes or whatever you have that works? She's not picky, she just can't have the eggs.\n\nSame setup as last year is good with us. Family style eggs, home fries, biscuits and gravy, and everybody ordering there own meat. $11 a head was fair so its fine if its up a little this year. Separate checks again please, that worked good last time.\n\nAnd I hate to bring it up because I know you felt bad, but last year the coffee ran out around 8:15 when the urn quit. We are a bunch of bus drivers so coffee is kind of a big deal lol. Would it be possible to have a backup pot or something ready just in case? I'm not trying to give you a hard time, we all had a great time anyway.\n\nLet me know if the 19th works. Thanks Rhonda, and tell everybody at the diner hello.\n\nGary",
+  "words": 471,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not ask this year’s per-person breakfast price."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11691068857908249,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.010756718926131725,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.028070449829102,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.4,
+    "effort": "high",
+    "output_tokens": 2695,
+    "input_tokens": 4023
+  }
+}

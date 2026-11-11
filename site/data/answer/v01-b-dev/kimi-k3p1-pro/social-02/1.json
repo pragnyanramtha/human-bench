@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: Draft — add shed photos before posting\n\nSpent the last two Saturdays redoing the electric in a buddy’s shed. He wanted power for a fan, TV, fridge, normal man-cave equipment. What he already had was an archaeological dig through every bad electrical idea since extension cords were invented.\n\nThe inventory:\n\n• Three orange extension cords daisy-chained out a basement window, across the yard, and under the deck. Apparently if you can’t see the wiring method anymore, it becomes code.\n\n• One splice wrapped in duct tape. Not electrical tape. Duct tape. I like duct tape as much as anybody, but it is not a wirenut with a silver jacket.\n\n• A 30-amp breaker feeding 14-gauge wire. For the non-electricians: the breaker is supposed to protect that wire. This arrangement basically told the wire, “You’re on your own until things get interesting.”\n\n• A shed outlet connected with speaker wire. Excellent choice if the receptacle was only expected to play Led Zeppelin.\n\n• A “GFCI” that was actually a regular outlet with a GFCI sticker stuck on it. Turns out the sticker does not provide ground-fault protection, same way putting a Steelers sticker on my truck doesn’t make it a Bentley.\n\n• A ceiling fan box held up by one drywall screw. One. Nothing says confidence like hanging a spinning appliance over your friends with hardware intended for half-inch Sheetrock.\n\n• A mouse nest inside a junction box. Mice were fine. Completely unbothered. Honestly they may have been the only part of the installation with adequate insulation.\n\n• And inside the panel door, written in Sharpie: “SHED — DON’T TOUCH — RON.”\n\nWhen I opened the panel, his wife was standing there and goes, “Who’s Ron?” Like I’d know. I’ve got enough mystery in a panel without Sharpie introducing characters.\n\nAnyway, I opened it. Sorry, Ron.\n\nHere’s the part that matters: it’s funny now because nothing burned down. Whoever wired it probably wasn’t evil or trying to hurt anybody. He was cheap, a little proud, and knew just enough to make things turn on. That describes a whole lot of dangerous electrical work.\n\nBut “it worked” is not the same as “it was safe.” Extension cords get damaged and wet. Bad splices heat up. The wrong breaker lets wiring carry more current than it should. A fake GFCI shuts off exactly nothing. And a fan hanging by one screw eventually gets introduced to gravity.\n\nLuck can run for years right up until it doesn’t, and then everybody stands outside watching the fire trucks talk about how it never caused a problem before.\n\nWe fixed it properly: trenched 18 inches, ran 12/2 UF cable, installed a 20-amp GFCI breaker, real boxes, real outlets, and put the fan on an actual brace. Now the fan’s on, the fridge is cold, and nothing smells like burning.\n\nBefore anybody asks, yes, I charged the full friends-and-family rate: two pizzas and a case of Yuengling.\n\nIf you’ve got mystery wiring in a shed, garage, or addition, don’t just keep plugging things in because it hasn’t caught fire yet. Call a licensed electrician. Not your buddy with a YouTube video, a roll of duct tape, and a strong belief in himself.\n\nAnd if your buddy is a licensed electrician, that’s different. You still owe him pizza.",
+  "words": 542,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It reveals private details about the shed’s TV, fridge, and lack of a burning smell."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3832952678203583,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4170033633708954,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.344928741455078,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 48.6,
+    "effort": "provider default",
+    "output_tokens": 2858,
+    "input_tokens": 1492
+  }
+}

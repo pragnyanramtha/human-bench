@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: 3 stars: great tub, rough ten days\n\nHarbourline did the grooming fitout on my Transit in August: stainless tub with a ramp, water tanks, on-demand water heater, cabinets, the works. I'm a mobile dog groomer, so the van is my whole business.\n\nGood stuff first, because it's really good. The tub and ramp are the best thing about my van. Dogs walk right in on their own, even the giant ones, and that matters a lot when your clients don't always feel like cooperating.\n\nThen October 27 happened. I was mid-groom in Bedford with Moose, a 110 lb Bernese, in the tub when a fitting on the hot water line let go. Water all over the floor and down into the cabinet. I'd love to say I handled it like a professional. I did not. I was screaming. Moose sat in the tub through the entire flood like a king on his throne, completely unbothered, watching me lose it. He went home towelled off and half groomed, one side fluffy and one side not, and I'm told he thought it was a pool party. I cancelled the rest of the day.\n\nHere's where the stars went. It wasn't the leak. Stuff breaks, I get that. It was the reply I got the next day: these lines don't just let go, it's usually because the heater's been run dry or someone's been hanging things off the pipe, and that would be user error, so not covered. I've never run it dry, and the pipe is behind a cabinet door where nobody can hang anything off it. This was also before anyone had looked at the van. The earliest they could see it was November 3, with a $180 diagnostic fee.\n\nSo the van was off the road from October 27 to November 6. That's six bookings cancelled, plus the rest of that first day. When you're a one-van business, that's the whole business sitting in a parking lot.\n\nNow the fair part, because it matters. Once they opened it up, it turned out to be a compression fitting on the heater outlet, a cheaper one their supplier had swapped in. Glenn told me straight that it was on them. He replaced every fitting on the hot side, not just the one that failed, and took the $180 off. He owned it, and I respect that. I just wish we'd started there instead of at \"user error.\"\n\nIf you're another groomer or a tradesperson looking at them for a work van, here's my advice. The warranty is one line on the invoice: 12 months on workmanship, excluding misuse or user error. Before you sign, get the rest in writing. What counts as user error and who decides? How fast will they get you in if something fails and the van is your income? Is there a diagnostic fee when the problem turns out to be theirs? None of that was spelled out for me, and that's where the stress came from.\n\nSo, three stars. The build is solid and the tub is fantastic, and the problem did get fixed properly in the end. But I lost ten days of work and was told it was probably my fault before anyone had looked.\n\nMoose would give it five.",
+  "words": 538,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33822640776634216,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08474543690681458,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.3379058837890625,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.8,
+    "effort": "high",
+    "output_tokens": 3716,
+    "input_tokens": 3666
+  }
+}

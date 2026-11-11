@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: board:vendor-reviews\nReplying to: none\nCc: none\nSubject: Harbor Point Steno Service (Towson MD): Stenvale Aria 3 recalibration\n\nDana, as promised on the Harbor Point thread, here is the write-up. I dropped my Aria 3 off on Monday 10/19 and picked it up Tuesday 10/27. I have now used it through eight days of trial, so I can report on more than the bench.\n\nEquipment: Stenvale Aria 3, my own machine.\n\nWork done (work order HP-4471): full keyboard recalibration, number bar depression sensor replaced, internal cleaning, and firmware updated from 4.0.7 to 4.2.1. The internal battery was also replaced. That was not in the original scope. Gloria emailed me that it was holding about 60% of rated capacity and asked for approval before doing anything. I said yes. The work carries a 90-day warranty.\n\nTurnaround: quoted 10 business days, returned after 6.\n\nCost: the estimate was $285 for the work. The final invoice was $310, which includes the $25 battery. I paid it personally by card at pickup, as I do for all my equipment. Nothing was reimbursed. In my view $310 is fair for what was done.\n\nLoaner: yes. They issued an Aria 2 for the duration. Its tilt arm would not hold position, and I had to prop it on a legal pad during a deposition. I told Gloria, and she said they would repair it.\n\nCommunication: I called on Wednesday 10/21 to ask about progress. The call rang out, and no voicemail box was set up at that point. Gloria emailed the following day. The phone line is staffed Tuesday through Thursday, 9 to 4 only. That is the real weakness. If you are working a Monday docket and something goes wrong, you will not reach anyone until Tuesday. Plan around that before you drop the machine off.\n\nGloria was courteous and specific throughout. She asked before adding the battery, which mattered to me. The machine came back with a printed one-page service sheet listing every adjustment, which I have never received from any other shop.\n\nResult: my first full day back was expert testimony from an engineer who speaks almost entirely in numbers. The number bar did not double a single stroke all day.\n\nPractical details: two-person shop off York Road in Towson. Parking in back is free.\n\nBottom line for Dana: yes, I would trust them with an Aria. Go in knowing the phone hours, and expect the turnaround to be a little longer than quoted, not shorter.",
+  "words": 395,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The advice to expect a longer-than-quoted turnaround contradicts the actual six-business-day turnaround against a ten-day quote."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.05359737202525139,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05673046410083771,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0703125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.76690673828125,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "medium",
+    "output_tokens": 3201,
+    "input_tokens": 3950
+  }
+}

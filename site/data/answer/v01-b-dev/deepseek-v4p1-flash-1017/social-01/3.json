@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: Corvane children's ibuprofen — the syringe is the problem, not the medicine. What to do.\n\nI'm Rania Haddad, the pharmacist at Cedarbrook Pharmacy on Erin Mills Pkwy. There's a lot of worry and some wrong information going around about the children's ibuprofen sold here, so I want to explain plainly what happened and what to do.\n\n**The medicine is fine.** Corvane has confirmed the suspension meets all specifications, it is not contaminated, and it is not the reason for the recall. The expiry date on the bottles is 08/2027.\n\n**The problem is the syringe in the box.** There's a printing error on the syringe barrel: the graduations are labelled at half their true volume. The mark printed as 2.5 mL actually measures 5 mL, and the mark printed as 5 mL actually measures 10 mL. So a parent measuring carefully, exactly as the label says, would give approximately double the intended dose. That's the whole issue — a mislabelled syringe.\n\n**Which lots:** CV6114A and CV6114B, Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry), 120 mL bottle. The lot number is printed on the bottom of the box. If your box shows a different lot, your syringe is not part of this recall — but if you're not sure, bring the box in and we'll check it for you.\n\n**What to do:**\n- Stop using the syringe that came in the box. Discard it or bring it in.\n- Keep the bottle if you still need it for fever. The medicine is safe to use with a correctly marked syringe.\n- **Free replacement syringes.** A shipment of correct 10 mL oral syringes arrives from our distributor before noon today, and we can order more. They're free, no receipt needed, whether or not you bought the product here.\n- **Extra hours:** we're open Saturday 10–4 for syringe exchanges. You can also come any time during regular hours.\n- **Refund:** if you'd rather not keep the bottle, you can return it for a full refund.\n\n**Dosing:** use the dose given by your doctor or the product labelling for your child's weight, measured with a correctly marked syringe. Please don't take a dose from a number in a Facebook comment. Dosing depends on the child's weight, how much was given, and how many doses were given.\n\n**If you think your child may have had a double dose:** call the Ontario Poison Centre at 1-800-268-9017. They are available around the clock and will assess your child and tell you what to watch for. Do not give another dose until the Poison Centre or your doctor says it's okay.\n\n**Call 911 or go to the nearest emergency department right away** if your child is very sleepy or hard to wake, vomiting blood, not peeing, or has a seizure.\n\n**Why we didn't call you:** most of this product was sold over the counter, so we don't have phone numbers on file for those purchases. We can't call people we can't identify. We were notified the evening of Nov 6 and had a notice on the front door and in the children's aisle the next morning, and the remaining stock came off the shelf then.\n\nI'm sorry so many families are frightened right now. If you have questions, call the pharmacy or come in and ask for me.\n\n— Rania Haddad, Pharmacist, Cedarbrook Pharmacy\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nHi everyone — Rania here, pharmacist at Cedarbrook. I've put a full explanation on the Cedarbrook Pharmacy page. The short version: the medicine itself is fine, the syringe in the box is misprinted so every mark measures double what it says, and the affected lots are CV6114A and CV6114B (lot number is on the bottom of the box).\n\nFree replacement syringes are arriving before noon today — no receipt needed — and we're open Saturday 10–4 for exchanges. If your child may have had a double dose, call the Ontario Poison Centre at 1-800-268-9017 and don't give another dose until they or a doctor say it's okay. Please don't guess the dose from the comments here; it depends on your child's weight, how much was given and how many doses. If anyone is very sleepy or hard to wake, vomiting blood, not peeing, or seizing, that's 911.",
+  "words": 688,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33628734946250916,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26485130190849304,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.2015470266342163,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.5,
+    "effort": "provider default",
+    "output_tokens": 2817,
+    "input_tokens": 2010
+  }
+}

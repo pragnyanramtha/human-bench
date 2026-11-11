@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: Re: Redshifts shifted after upgrade to lumenfit 2.5.0?\n\nI did read the changelog. The only 2.5.0 entry that touches this says \"Refactor LineList and spectral frame handling (#812)\". Nothing there says a default changed, so nobody could guess it from that. This is not solved, and I found the cause.\n\nPR #812 (merged Oct 22) changed the default in LineList.__init__ from wave_frame='air' to wave_frame='vacuum'. Rest wavelengths are now vacuum unless you say otherwise. My spectra are calibrated in air, so every line is compared against a vacuum rest wavelength. The vacuum/air ratio at H-alpha (6563 A) is about 1.00028, which is exactly the offset I reported: redshifts lower by ~0.00028 (about 83 km/s) for every object. There was no deprecation warning either.\n\nAbout \"works for me\": that is not a test of this. If your data are already in vacuum wavelengths, or are radio data, you would see no difference between 2.4 and 2.5, so identical fits are what I would expect. m_okonkwo also reports an offset on long-slit data in this thread, so it is not only me.\n\nThis cost me two days. I thought my wavelength calibration was broken and re-reduced the arc lamps for 40 spectra, all for nothing. Pointing at the right line of the diff would have been much more useful than marking the thread solved.\n\nWorkaround for anyone who finds this thread: if your wavelengths are in air, set the frame explicitly.\n\nLineList(..., wave_frame='air')\n\nWith this I get my 2.4.3 values back.\n\n@lumenfit_maint, could you please:\n1. Reopen this thread.\n2. Add a clear line in CHANGES.md for 2.5.0 saying the default wave_frame changed from 'air' to 'vacuum', listed as a behavior change and not just a refactor.\n3. Raise a warning when wave_frame is not set explicitly, at least for the next release or two.\n\nThat would save other people from the same two days.\n\nThanks.",
+  "words": 305,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13124920427799225,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05059577897191048,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.408203125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.3645553588867188,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.3,
+    "effort": "high",
+    "output_tokens": 2204,
+    "input_tokens": 3043
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: Charity stream Sat Nov 21 - Linden Community Pantry ($600 goal)\n\n@everyone once - that's the only ping, promise. last year i posted this the thursday before and half the server didn't even know it was happening, so we're doing it early. pin this.\n\nSATURDAY NOVEMBER 21, 10AM - 10PM\nLinden Community Pantry charity stream\nGoal: $600. Last year we raised $212 with the announcement up way too late. Rook is matching the first $100, so the first $100 counts double.\n\nDonate: lindenpantry.example/mrkz\nMoney goes straight to the pantry, nothing taken off, and through their wholesale partner every $1 gets them about 4 pounds of food. They're serving around 340 families a week and the shelves are the lowest they've been before Thanksgiving.\n\nIncentives:\n$100 - i play a full round with the controller upside down\n$250 - chat picks my hair dye color and i do it ON STREAM\n$400 - one hour of only chat-picked songs, no skipping\n$600 - i vlog a grocery pickup the pantry arranges\n\nSchedule: first half is community lobbies, drop the code any time you want in. second half chat votes the game every 2 hours. and larry, no repeat maps, i promise.\n\nCan't donate? You can still help. The pantry takes canned and boxed food in the blue bin by their side door on Saturdays 9 to 1. Or just show up, keep chat alive, share the link with someone who'd give.\n\nOn the \"charity streams are cringe\" thing - it's a food pantry in columbus and every dollar is about 4 pounds of food, so that word is doing a lot of heavy lifting. it's not a bit, it's a stream that does something useful. if you can't give, that's genuinely fine, nobody's gonna guilt you. even $3 helps.\n\n---\nTo: #general\nReplying to: [c05]\nCc: none\nSubject: none\n\n@dev0n fair, you're not wrong that it's still a stream with a donation goal lol. but it's a food pantry in columbus and every $1 buys about 4 lbs of food, so \"cringe\" is doing a lot of work there. no weird bit, i just didn't want to post it late again and end up at $212. if you don't wanna donate that's totally fine, link's pinned in #announcements either way.",
+  "words": 358,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.15424881875514984,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07448285073041916,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.59375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.1316413879394531,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "provider default",
+    "output_tokens": 2646,
+    "input_tokens": 1707
+  }
+}

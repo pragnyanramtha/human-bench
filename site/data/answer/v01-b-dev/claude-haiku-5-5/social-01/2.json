@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: Corvane children's ibuprofen: the syringe recall and what to do\n\nMany of you have seen the posts in the Erin Mills Parents Network about children's ibuprofen. We want to explain exactly what is happening and what to do, in plain terms.\n\nWhat is wrong: the medicine is fine. The suspension is not contaminated and is not part of this recall. The problem is the oral syringe packed in the box. Corvane Pharma has confirmed a printing error on the syringe markings. Every mark reads at half its true volume. The mark labelled 2.5 mL actually measures 5 mL, and the mark labelled 5 mL actually measures 10 mL. If you measure to the printed line, you give about double the intended dose.\n\nWhich product: Corvane Pediatric Ibuprofen Oral Suspension 100 mg/5 mL, berry, 120 mL bottle. The affected lots are CV6114A and CV6114B, expiry 08/2027. Check the lot number printed on the bottom of the box. If it is one of these two, the syringe in that box is the affected one. The manufacturer's notice reached us on the evening of November 6, and we put signs on our door and by the children's aisle the next morning, November 7. We know many families did not hear about this sooner, and we understand why people are upset.\n\nWhat to do now:\n\n1. Stop using the syringe that came in the box. Set it aside.\n2. Get a correctly marked oral syringe. We have replacement 10 mL oral syringes arriving today before noon, and they are free for anyone. You do not need a receipt.\n3. If you bought the product and want a full refund, you can return it. Staff at the counter can walk you through how that works.\n4. We are open an extra Saturday, 10 to 4, for syringe exchanges.\n\nAbout the dose: we cannot judge every child from a post. The right amount depends on the child's weight, how many doses have been given, and kidney function, among other things. If you are not sure what dose your child got, or whether it was too much, call the Ontario Poison Centre at 1-800-268-9017. They assess the child, not just the bottle. Do not give another dose until a poison centre or doctor tells you it is okay.\n\nBecause this is an over-the-counter product, we often do not have phone numbers for the families who bought it, so please check your own cabinet. If you have questions, come to the counter in person. We are very busy right now, so please be patient with us.\n\nCall 911 or go to the nearest emergency department right away if your child is very sleepy or hard to wake, is vomiting blood, is not peeing, or has a seizure.\n\n---\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nHi all. Cedarbrook has posted the full details of the Corvane ibuprofen syringe recall on our page: the lot numbers to check, the free replacement syringes available today before noon, and when to call the Ontario Poison Centre at 1-800-268-9017. If your child may have had more than the intended dose, call the poison centre before giving another one. For very sleepy, hard to wake, vomiting blood, not peeing, or seizures, call 911 or go to the ER.",
+  "words": 527,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The post tells parents to set affected syringes aside rather than discard them."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08668801188468933,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.039112597703933716,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.7277181148529053,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.2,
+    "effort": "medium",
+    "output_tokens": 4110,
+    "input_tokens": 3787
+  }
+}

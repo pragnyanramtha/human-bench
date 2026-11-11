@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Thanks Deirdre, and thank you for asking rather than just announcing it. That means a lot.\n\nI'll be honest, this one's hard for me. Noma has been in the Seahorses with me for three years, since my very first year teaching. She basically trained me that first year (sign-in sheets, the parent WhatsApp group, how to get through a day without losing my mind). The kids ask for \"Noma's song\" at morning ring every single day, and in Term 2 when Zayd was having his meltdowns she was the only one who could calm him, just sitting with him under the jungle gym until he was ready. So yes, it matters, and I'll miss working with her a lot.\n\nBut I do get it. It's a numbers thing, not personal, and Bronwyn needs the help more with 24. I'm not going to fight it. (Bronwyn, I know you'll look after her! ❤️) And at least she's just across the courtyard.\n\nWhat worries me is the start of the year. The first weeks of Grade R are the hardest, with new kids crying at the gate, and a new assistant AND new kids all at once is a lot for everyone, Charlene included. So two things I'd love you to put to SMT:\n\n1. **Can Charlene come in for a day or two in the last week of term (1–4 Dec)?** That way she can meet Noma, see the routine, and get a feel for the room before she officially starts on 11 Jan.\n\n2. **Can Noma pop in for morning ring the first week back, from 14 Jan?** Even just 15 minutes. Luthando and Mia already know her from aftercare, so a familiar face and her isiXhosa songs would really help settle the little ones, and give Charlene a chance to pick them up. I'd obviously work around whatever Bronwyn needs that week.\n\nI think those two things would make a big difference to how the year starts for the kids, and they'd help Charlene feel set up properly instead of thrown in the deep end.\n\nThanks again for checking in with me on this one.\n\nKayla",
+  "words": 357,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3654462397098541,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21423999965190887,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.4375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.9616491794586182,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.5,
+    "effort": "medium",
+    "output_tokens": 760,
+    "input_tokens": 2025
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Mr Kehinde Ogunleye,\n\nGood day, sir. Thank you very much for picking up my bag and taking the trouble to call the number on my lab manual. I really appreciate that you kept it safe instead of throwing it away. Many people might not have bothered, and I am grateful for your help.\n\nThe bag is my black Jansport bag, which I forgot on the Oshodi-to-Igando bus on Friday evening, 6 November, when I came down at Ikotun. It contains my lab manual, dissecting kit, student ID card, two textbooks, calculator and glasses.\n\nSir, I am a first-year biology student, and I have my BIO 101 practical on Wednesday, 11 November, at 10 a.m. My dissecting kit is compulsory, and the lab attendant is strict about not allowing students without one to enter. My ID card and the other things in the bag are also important to me, so I am hoping to get it back before then.\n\nI understand that returning the bag will take your time and transport. I can offer you ₦10,000 to cover your transport and say thank you. That is all I can manage from my allowance. I cannot afford the ₦40,000 you mentioned, especially as the bag and books together are not even worth that amount. I hope you will understand that I am making this offer sincerely.\n\nPlease, could you choose a day before Wednesday when we can meet during the daytime? My roommate Adaeze can come with me. We could meet somewhere public and easy for both of us, like Ikotun Roundabout or by the gate of Ikotun Police Division, whichever is more convenient for you.\n\nThank you again, sir. Please reply and let me know when and where we can meet so I can collect my bag and prepare for my practical.\n\nYours sincerely,  \n[Your name]",
+  "words": 306,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30885884165763855,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03567685931921005,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.121788024902344,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.6,
+    "effort": "low",
+    "output_tokens": 389,
+    "input_tokens": 18299
+  }
+}

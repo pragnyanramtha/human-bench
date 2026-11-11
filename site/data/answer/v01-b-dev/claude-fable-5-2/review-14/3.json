@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**One star for now: good software, support that went quiet when we needed it**\n\nI'm the director of Bridger Bend Community Library in Montana. We have one branch, two full-time staff, some dedicated volunteers, and about 2,300 active cardholders. In June 2026 we signed a three-year contract with Stackhouse Cloud at $14,200 a year. Our catalog and circulation went live on October 19.\n\nI'll start with what's fair. The software looked good in the demo, and the staff interface is honestly better than our old system. I still think the product idea is sound.\n\nThe support is the problem. Since October 28, checkouts have worked only in offline mode, on a single laptop. Our holds queue was wiped, and about 640 holds are gone. Our support ticket has been open for 12 days. We've had three replies, and each one said the issue was \"escalated to engineering.\" During the sales process our rep promised \"a dedicated migration specialist.\" What we got was a shared inbox.\n\nHere is what that looks like at the front desk. A retired rancher drove 40 minutes to pick up the large-print Westerns he had on hold. We had no record of the hold and had to send him home with nothing. One of our volunteers has been writing checkouts on index cards like it's 1975.\n\nOur line item is on the agenda at the county budget hearing on November 18. I would like to tell the commissioners that this is being fixed and who is fixing it. Today I can't tell them either one.\n\nTo Stackhouse: I'm asking for a named person to call me this week, someone who can tell me what happened to our holds and when circulation will be working again. If that happens and the problems get fixed, I'll come back and revise this review. I'd be glad to.\n\nTo other directors, especially at small libraries: before you sign, ask for support response times in writing. If a sales rep promises you a dedicated person, get that in the contract too. We took it on good faith, and I wish we hadn't.\n\nDirector, Bridger Bend Community Library\n\n---\n\nThat's about 330 words. I added one piece of advice you didn't list: getting the promise of a dedicated person into the contract. Cut that sentence if you'd rather stick to response times only. If you have the ticket number, adding it after \"support ticket\" makes it easier for someone at Stackhouse to find you.",
+  "words": 412,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3898965120315552,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4564119577407837,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.022076368331909,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.3,
+    "effort": "high",
+    "output_tokens": 2110,
+    "input_tokens": 1466
+  }
+}

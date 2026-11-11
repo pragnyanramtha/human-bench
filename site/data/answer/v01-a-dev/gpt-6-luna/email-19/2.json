@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**To:** Bethan  \n**Subject:** Nia’s hen\n\nHi Beth,\n\nJust messaging you one-to-one, not looking to get involved in the group chat or take sides. I’ve only just got off a flight, so forgive me if this comes out a bit muddled.\n\nI know things got heated at Lowri’s birthday, and you both said things. I can see why you wouldn’t fancy spending a whole weekend in a cottage feeling awkward. But would you consider coming just for Saturday? You could skip Friday and the paddleboarding, get the train from Cardiff Central (it’s about two and a half hours), and I’ll pick you up at the station. You can share my twin room that night, so you wouldn’t have to worry about that either.\n\nI swapped my Orlando trip with Kerry at work to get the weekend off. It meant giving up a night stop I’d really wanted, but I did it because I wanted to be there for Nia. I’m not saying that to make you feel bad — just that I’d really love you there too, even if it’s only for the meal.\n\nNia rang me in tears last week asking if you were still coming. She doesn’t know you’ve pulled out yet. I keep thinking of how you sat with her at the Heath every night when her mam was ill. You’ve been there for her in a huge way, and I know you care about her.\n\nI’m not asking you to pretend everything’s fine with Lowri. Maybe she’s sorry; she can be stubborn, same as you and me. You don’t have to sort any of that out before Saturday, and please don’t send Lowri the money just yet.\n\nNia’s wedding is on 17 April at Margam, and you’re doing a reading. I know you’ll be there for her then, but I’d hate for this row to mean you miss a lovely night with her now. No pressure — just have a think about Saturday, yeah?\n\nLove,  \nSiân",
+  "words": 329,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Omits that Bethan only needs to be in Tenby by 6 on Saturday, and never says Bethan will regret missing it or that Nia will remember who wasn't there."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4900573194026947,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.537723958492279,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.727959632873535,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.2,
+    "effort": "medium",
+    "output_tokens": 416,
+    "input_tokens": 14455
+  }
+}

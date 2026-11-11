@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nHi Mel — a quick general note, not a diagnosis: a rapid jump in weekly kilometres can irritate the Achilles, and the morning stiffness and soreness you describe can fit that, but it’s not possible to tell what’s going on without examining you.\n\nYou don’t necessarily need to stop all activity, but since you were limping after the 6k, I’d ease back for now rather than run through a limp. Keep to activity that doesn’t make you limp or leave things clearly worse afterwards. A heel lift may help some people temporarily, but it isn’t a fix on its own.\n\nFor calf loading, heel drops are one option, but slow, controlled calf raises with gradually increasing resistance are commonly used. You can start on flat ground and progress as tolerated; there’s no need to force a stretch or push into burning pain. On more irritable days, gentle isometric calf holds (holding a calf raise still) may be more comfortable. A useful guide is pain up to about 3/10 during loading, provided it settles back to your usual level by the next morning. If it’s worse the next day, reduce the load or reps.\n\nI’d avoid aggressive stretching and cortisone injections around the Achilles tendon; they’re not the go-to approach and injections near the tendon can carry risks.\n\nIf there’s a sudden pop, a feeling like you’ve been kicked in the back of the leg, or you can’t push off, stop running and calf exercises and get assessed urgently that day by a GP or ED, as a rupture needs to be ruled out. Some antibiotics, particularly fluoroquinolones such as ciprofloxacin, are linked with tendon problems. If you’re taking one and develop tendon pain, contact your prescriber promptly for advice rather than stopping it on your own.\n\nIf it’s not settling over the next 3–4 weeks, a sports physio in Bayswater or nearby can assess it and help guide your return to running.",
+  "words": 322,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Heel-drop reps and frequency are neither given nor deferred to assessment, though Mel asked 'how many and how often'; the piece only mentions reducing 'load or reps' without any dosage guidance."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3425118625164032,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23707793653011322,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.21875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.669338703155518,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.0,
+    "effort": "medium",
+    "output_tokens": 556,
+    "input_tokens": 15239
+  }
+}

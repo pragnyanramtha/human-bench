@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Some good news, and some honesty**\n\nI'll start with the good news, because I've been looking forward to sharing it. On Monday 16 November, Priya Bhatia joins the practice. Priya is a chartered structural engineer (IStructE) and spent the last nine years at a consultancy in Coventry. I'm genuinely delighted to have her on board. If she turns up on your site in the coming weeks, please do say hello and make her feel welcome.\n\nNow the honest bit. September and October weren't good enough. Beam calculations and drawings were taking five to six weeks, which is far too long when you've got a builder booked and a wall waiting to come out. One couple in Harborne had their builder standing by with the steel already ordered. We got their calcs to them in three days, but only after they'd had to chase us twice. They shouldn't have needed to. Some of you told me how you felt about the delays, one of you quite publicly, and you were right to.\n\nThat was my fault. I said yes to too much work on my own. By October I was doing site visits in the day and calculations until midnight, and my wife had started calling the office \"the other house\". It wasn't sustainable, and you were the ones paying for it.\n\nWith Priya here, our target for beam calcs and drawings is now **10 working days**. If you're waiting on us at the moment, your job is moving, and you can message me directly any time for an update.\n\nOne more change. Until now, the first site visit has been free. It's been a nice thing to offer, but about a third of those visits never turned into a job, and that time has to come from somewhere. So from 1 January 2027, first site visits will cost £95. If you go ahead with us, the £95 comes off your fee, so for anyone who uses us it still works out free.\n\n**If you've already booked a visit by the time you read this, it stays free, whatever date it's for.**\n\nThank you to everyone who stuck with us through a slow autumn, and for all the loft conversions and knock-throughs over the years. Things really are getting better, and I'm looking forward to showing you.",
+  "words": 386,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5259440541267395,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21538452804088593,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.262796878814697,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.0,
+    "effort": "medium",
+    "output_tokens": 918,
+    "input_tokens": 1427
+  }
+}

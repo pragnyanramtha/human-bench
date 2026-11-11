@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nSubject: Fast, careful, and they actually read the drawing (near-IR camera parts)\nCc: none\n\n5/5\n\nI'm a postdoc in the Ostrowski group (astrophysics) and we ordered two parts from Arroyo for our near-IR camera: a camera-to-dewar adapter plate and a light baffle tube with internal threads, both 6061-T6, black anodized. These had to be ready for our run on the Hale 200-inch at Palomar on November 18, so the schedule was tight and there was no room for a part that doesn't fit. I want to write a real review and not only \"great shop 5 stars\", because I think other labs and purchasing should know why they are good.\n\n**Speed.** One of the big vendors quoted us 6 weeks for the same parts, which would have missed the run. Arroyo quoted 21 days. They delivered in 9 days from PO to delivery, including the anodize. When they were done, Ruben drove the parts to the Robinson loading dock himself on his way to another supplier, no charge for the delivery. I was so happy I almost hugged him.\n\n**They read the drawing, and they caught my mistake.** This part is honestly my fault and I want to say it. On sheet 2 of the adapter plate drawing I wrote the bolt circle as 4.125, but every other dimension on the drawing was in mm. I had copied it from the old drawing for our previous camera, which was in inches. If they had cut it as 4.125 mm, the screw holes would land inside the bore and the plate would be scrap. With our timeline we could not have remade it before Palomar.\n\nTiff noticed it while setting up the job. Before cutting anything, Ruben emailed me to ask if it should be 104.8 mm (= 4.125 in). They didn't just machine what was on the paper. Someone actually looked at the part and thought about whether it made sense. For me this is the most important reason to use a shop. Every shop can hold tolerance, but not every shop will stop and ask you a question that saves your project.\n\n**Quality (from our fit test on 11/9).**\n- Adapter plate onto the dewar: all 8 screws went in with no forcing\n- Flatness across the face < 0.01 mm on the dial indicator\n- Baffle internal threads smooth\n- No light leak: we did a 300 s dark frame with the lab lights on, and it looked the same as the closed dewar\n- Anodize even, no bare spots\n\nThese parts are going on a working instrument at a big telescope, and everything worked the first time.\n\n**Communication.** Questions came by email quickly and clearly, they confirmed before cutting, and an inspection sheet came with the parts. I always knew where the job was.\n\n**For purchasing.** I know the department usually prefers the big vendor, and I understand why. But for prototype and short-run instrument parts, Arroyo was faster, very careful, and easy to work with. The price was fair, and the rush setup fee was small compared to missing a telescope run. I would really like to see them on the preferred vendor list next fiscal year, and our group will keep using them.\n\n**For other labs.** If you need aluminum, stainless, Invar, or PEEK parts for an instrument, especially with a deadline, I recommend Arroyo Precision Works. Send them a clean drawing (and check your units better than I did!), but it's good to know someone there is checking too.\n\nThank you Ruben, Tiff, and everyone at the shop.\n\nLin Wei, Ostrowski group, Astrophysics",
+  "words": 585,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29124823212623596,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21724116802215576,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.263824462890625,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.6,
+    "effort": "medium",
+    "output_tokens": 1439,
+    "input_tokens": 3497
+  }
+}

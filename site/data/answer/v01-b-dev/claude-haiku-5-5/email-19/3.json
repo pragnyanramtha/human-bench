@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task, tone",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject: Re: Nia's hen - Tenby final plan + money!!**\n\nHiya Bethan,\n\nGot your message. I'm not going to try and argue you round. I just wanted to write to you properly instead of on the group, and then it's your call.\n\nI know things have been messy with Lowri since her 40th, and I'm not going to pick a side on that. But Nia's the one I keep thinking about. She rang me in tears last week asking if you were still coming. She doesn't know you've pulled out, and I haven't said anything.\n\nYou sat with her every night in the Heath when her mam was bad in 2019. She hasn't forgotten that, and I don't think she'd forget you not being there either.\n\nI also don't think you realise how much I've given up for this. I swapped my Orlando trip with Kerry at work so I could get the weekend off, and that cost me a night I really wanted.\n\nYou don't need the whole weekend. Skip the cottage on Friday if you want. Just come down for the Saturday, for the paddleboarding and the meal. You could get the train from Cardiff Central, it's about two and a half hours, and I'll pick you up from the station. You can kip in mine that night, I've got the twin room, so you don't need to sort anywhere else.\n\nAnd you're doing a reading at Margam in April. It'd be nice to go into that having had a proper night out with everyone first.\n\nAlso, please hang on before sending Lowri the £85. It's not a dig at her. It just seems daft to pay for something you're not sure you're going to.\n\nI'm not trying to lecture you. I just didn't want you missing out because of a row that's gone on too long. Let me know either way, and if you want the lift on Saturday, just say.\n\nLove,\nSiân",
+  "words": 326,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "tone"
+    ],
+    "reasons": [
+      "It omits the 6 pm arrival, both sides' remarks, Lowri's presumed regret and mutual stubbornness, and Bethan's likely regret; the guilt-tinged account of Siân's sacrifice is lecturing."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32711514830589294,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06784708052873611,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.84765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.867710590362549,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.6,
+    "effort": "medium",
+    "output_tokens": 1969,
+    "input_tokens": 2201
+  }
+}

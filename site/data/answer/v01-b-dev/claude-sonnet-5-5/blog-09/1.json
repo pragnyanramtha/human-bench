@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "# Northvale froze your money. Here is everything we know.\n\n*By Inês · Tuesday 10 November 2026*\n\nSince Friday 6 November, you can't take your money out of Pinha. I'm sorry about that, and I'm also furious. This post explains both.\n\nRui, our CEO, is on calls with lawyers and Banco de Portugal all day, so he asked me to write this. I write most of the texts in the app anyway. This is the one I never wanted to write.\n\n## What happened\n\nOn Wednesday 4 November, Northvale Payments emailed us. They're the e-money institution in Vilnius that holds your money for us. The email said they were ending our contract: \"commercial termination\", with 30 days notice. The reason was a \"risk appetite review\". Nothing more.\n\nTwo days later, on Friday 6 November at 09:00, they blocked all outgoing transfers. No warning. Their own notice said 30 days, and they didn't wait 30 days or even three. Deposits and round-ups stopped too.\n\nTheir account manager stopped answering our calls on Friday. Now the phone goes to a voicemail in Lithuanian.\n\nI'm not going to call this \"risk management\". They broke their own notice and then went silent. That's cowardice, and it landed on you, not on us.\n\n## Is your money safe?\n\nYour money is not lost. Northvale keeps customer money in a safeguarded account, separate from their own money, and they cannot use it for their own purposes.\n\nBut we can't move it either, and neither can you. It stays where it is until Northvale releases it. Both things are true, and I'd rather tell you both than let you find out the second one the hard way.\n\n## What we're doing\n\n- **A new partner is already signed.** It's Ostra Bank, in Lisbon. To move your balances over we need two things: Northvale has to send us the file with all the balances, and Banco de Portugal has to give its OK. Neither is in our hands.\n- **We've filed complaints** with Banco de Portugal and the Lithuanian central bank, on 7 November.\n- **We're trying to get individual releases** for people in urgent situations (more on that below).\n- **We've cancelled the monthly fee** for November and December, for everyone. It's small, I know. It's still the least we should do.\n\n## How long will this take?\n\nOur estimate is 10 to 15 working days. That is an estimate and not a promise.\n\nIt depends on Northvale sending that file and on Banco de Portugal approving, and we don't control either one. I could give you a date that sounds good. I'd be inventing it, and you deserve better than that. When something changes, you'll read it here first.\n\n## Our part in this\n\nI designed the screen that says \"your money is always yours, take it out anytime.\" I looked at it again this week and felt sick.\n\nWe had one payments partner and no backup. We trusted them, and we were naive. That's our mistake, and we're saying it plainly. If you're angry at Northvale, good. If you're angry at us too, that's fair, and I'm not going to tell you to calm down.\n\n## The messages we're getting\n\nSince Friday 6 November we've received about 1,900 emails. There are three people on the support team, so replies are taking around two days right now. I know that's painful when you're waiting on your own money.\n\nOne of you wrote to us entirely in capital letters. She'd saved for three years for a car deposit, and the dealership gives her until Friday 13 November. I read it on the metro and nearly cried. She is completely right to shout. I can't promise her that this will be solved by Friday, and I won't pretend to. But cases like hers are exactly why we're pushing for individual releases.\n\n## What you can do now\n\n**If it's urgent**, meaning rent, medical costs, losing your job or something like that, write to **urgent@pinha.example** with the subject **URGENTE**. Tell us what it is and by when you need the money. We're trying to get Northvale to release money case by case for situations like these. I can't promise they'll agree, but we're pushing on it every day.\n\n**If it's not urgent,** we'll get to your email, but it will take a while. You may not need to write at all, because every update will go on this blog and will answer most of the usual questions.\n\n**Your balance** is still there. When the migration to Ostra happens, we'll tell you exactly what, if anything, changes for you.\n\n**Updates** go up on this blog every Monday and Thursday until this is solved. The next one is Thursday 12 November. If something big happens before then, we'll post it right away.\n\nThank you to everyone who has written to us, including the ones who wrote in capitals. We read all of it.\n\nInês\nPinha\n\n---\n\nA few things before you publish:\n\n- **Date:** my system clock says today is 11 November, but you asked for Tuesday 10 November, so I used that. If it goes out on the 11th, change the byline date. The first update is still Thursday 12 November.\n- **The car story:** she isn't named, but she may recognise herself. Ask her first, or cut that paragraph.\n- **Northvale wording:** Rui is already talking to lawyers, so ask him to read the \"cowardice\" line and the account manager paragraph before it goes out.\n- **The 10 to 15 days:** your notes didn't say what it's counted from, so the post doesn't either. If you know, add it.",
+  "words": 940,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The piece ends with publication notes addressed to the requester rather than the blog’s readers."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4448455274105072,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6195382475852966,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.9236822724342346,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 48.0,
+    "effort": "high",
+    "output_tokens": 5796,
+    "input_tokens": 1881
+  }
+}

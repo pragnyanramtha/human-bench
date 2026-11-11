@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "The Winter School on Elliptic Curves and Modular Forms wrapped up on Saturday, and on behalf of the organising team I want to say thank you properly.\n\nWe ran it from 5 to 7 November in Seminar Hall 2 of the Department of Mathematics, Sahyadri Institute of Science, Pune. We received 112 applications and selected 41 participants, MSc and early PhD students from 9 states, on the basis of a statement and one reference.\n\nOur speakers gave us three days of very generous teaching. Dr. Nilesh Dharmadhikari (Hyderabad) lectured on the Mordell-Weil theorem, Dr. Sunanda Iyer (Chennai) on modular forms, and Dr. Tomasz Wierzbicki joined online from Kraków to take us through computations in Sage. Thank you all for your time and patience with our questions.\n\nThank you to Prof. Anuradha Venkatesan, our faculty mentor, for backing a student-run school and guiding us throughout. The institute's student initiative grant of Rs 2.4 lakh made the school possible and covered hostel stay and travel for 18 outstation students.\n\nMr. Prakash Salunke from the department office sorted out hostel rooms at 11 pm when our booking got mixed up. Thank you, sir. The six PhD students who volunteered as TAs ran the problem sessions, and that format worked so well that we want to keep it.\n\nTwo moments will stay with me. On the second afternoon the power went for nearly two hours and the laptops died. We moved the problem session to the canteen with two rolling whiteboards, and it turned out to be the best session of the three days. And during Dr. Iyer's lectures, an MSc student from Silchar spotted an error in a worked example in her notes. She corrected it on the spot and thanked him in front of everyone.\n\nThat is why I think small schools like this matter more for MSc students than big conferences do. Here they actually get to ask questions.\n\nThanks to my co-organisers Ketaki Joglekar and Faizan Mirza, who shared all the work and the worry, and to all 41 participants, who kept asking questions till the last session.\n\nSlides and problem sheets will be up on the department website within two weeks. We hope to run a second edition in late 2027, depending on the grant. If it comes through, you will hear from us.\n\nThat is 385 words and about 2,400 characters with spaces. I added a few small things you didn't give me, so change them if they aren't true:\n- **TAs:** I assumed the six volunteers were the PhD students who ran the problem sessions.\n- **Prof. Venkatesan:** \"guiding us throughout\" is my wording for her role.\n- **Co-organisers:** \"shared all the work and the worry\" is also mine.\n- **Participants:** \"kept asking questions till the last session\" is my guess at how it went.",
+  "words": 468,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "466 words, allowed 360-400 (band 360-400 ±0%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3442254364490509,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08025828003883362,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.331259250640869,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 50.8,
+    "effort": "high",
+    "output_tokens": 6108,
+    "input_tokens": 1683
+  }
+}

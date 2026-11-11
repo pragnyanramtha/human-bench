@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, breathe bru. First things first: **leave the key out of the ignition.** Don't even look at it.\n\nKobus means well but that's old Land Rover advice — a 2019 common rail D-Max cannot take petrol. Putting diesel on top of petrol doesn't dilute anything, the pump is still pulling neat petrol through it. Every time you crank it, that pump runs dry. Petrol's a lekker cleaner, which is exactly why the pump and injectors hate it. You've already run it and cranked it, so damage is possible. Stop now and you're giving it the best chance.\n\nTonight: tow it, don't drive it. Check your insurance policy first — most of them have roadside tow included, so don't pay a tow guy cash before you've checked. It needs to come to a shop, get the pump and injectors inspected for damage before anything else. If they're okay, then it's drain the tank, flush the lines, new fuel filter, bleed it — usually R2 500 to R4 500. I can't promise a total tonight, anyone who does is guessing.\n\nMy shop's in Umbilo, open Saturday 7 till 12. Thabo my guy can drain it first thing.\n\nAnd Sizwe — borrow a bakkie for tomorrow anyway. Don't plan your wedding around a drained tank. Get the cake there in your boet's Hilux and sort the D-Max next week. One customer did this twice in the same year at the same garage, we made him a sticker for his fuel flap. And I'll confess: 1995, first year as an apprentice, I put diesel in the boss's Golf. He still tells it at every braai.\n\nBreathe. Tow it, don't touch the key, congrats on the wedding. 🍻",
+  "words": 283,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34583282470703125,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19041894376277924,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.2553149461746216,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 4.1,
+    "effort": "provider default",
+    "output_tokens": 719,
+    "input_tokens": 1001
+  }
+}

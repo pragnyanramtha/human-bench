@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217 never delivered: request for resend or full refund by Fri 13 Nov**\n\nHi there,\n\nI'm writing about order TH-48217, which I placed on 21 October and paid for by card (R1,640, including R95 delivery). This is my third email about it, and I need it resolved properly this time.\n\nThe order was:\n- 6 tubs of finger paint\n- 4 bags of playdough\n- 200 paper plates\n- Googly eyes\n- Glitter glue\n- 2 rolls of brown paper\n\nTracking says it was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams.\" The delivery address on the order was correct: Bergview Pre-Primary in Plumstead. Nobody at our school is called Adams, and nothing arrived. Our gate guard logs every single delivery that comes through, and there's nothing in his book for the 3rd. Wherever that parcel went, it wasn't to us.\n\nI emailed on 4 November and again on 6 November and got the same reply both times, word for word, saying my query had been escalated to your courier partner. On Friday I phoned and waited 38 minutes on hold. The lady I eventually spoke to was polite, but she told me nothing can happen until the courier finishes its investigation, which could take up to 10 working days.\n\nI understand that things go wrong with deliveries sometimes. What I don't accept is being told, more or less, to go and sort it out with the courier myself. I bought these items from Tiny Hands, I paid Tiny Hands, and I paid you for delivery. I didn't choose the courier and I have no agreement with them. My agreement is with you, and until the goods actually reach me, getting them here is your responsibility. As I understand it, that's also how the Consumer Protection Act works. If the courier lost the parcel or gave it to the wrong person, that's something for you to take up with them, not me.\n\nTo be honest, this has been really frustrating. I'm a kindergarten teacher and I paid for these supplies out of my own pocket for my class. Being R1,640 down on a teacher's salary, for something I never received, isn't small for me. My kids made their mask patterns last week and have been waiting on the paint ever since. I've been telling them \"it's coming soon\" for over a week now. We also have our end-of-year concert on 27 November and I need these supplies for the props, so waiting another 10 working days for an investigation and then possibly starting again from scratch just doesn't work.\n\nIt's also disappointing because I've ordered from you three times before with no problems at all, which is exactly why I came back. I'd honestly like to keep using you, but this experience has really put me off.\n\nSo here's what I'm asking for. By **Friday 13 November**, please either:\n\n1. **Resend the full order** to the same address, at no extra cost, with confirmation of when it will be dispatched, **or**\n2. **Refund the full R1,640**, including the R95 delivery fee, to the card I paid with.\n\nYou're welcome to carry on with the courier investigation on your side, but I shouldn't have to wait for it to finish before I either get my order or my money back.\n\nI'd also really appreciate a reply from an actual person who has read this email and can tell me what's going to happen, rather than another \"we have escalated your query\" message.\n\nIf I haven't heard back with a resolution by Friday 13 November, I'll be asking my bank to reverse the payment, and I'll leave an honest review of what happened. I'd much rather not have to do either, and I'm hoping we can just sort this out.\n\nThanks, and I look forward to hearing from you.\n\nKind regards,\n[Your name]\nBergview Pre-Primary, Plumstead\n[Your phone number]\nOrder no: TH-48217",
+  "words": 657,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4335196912288666,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7490939497947693,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.4375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.5548481941223145,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.9,
+    "effort": "medium",
+    "output_tokens": 1405,
+    "input_tokens": 1556
+  }
+}

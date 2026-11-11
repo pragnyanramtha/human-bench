@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4/5 stars: Kept my rig and wifi up with a 10x long open. Real numbers for trading setups**\n\nI day trade crypto out of Miami, so storm season outages are a real risk for me. I bought the Kestrel Bastion 1500 (1500VA / 1000W, pure sine wave) here on Voltwise in August 2026 for $229. This review is mostly for other people running trading setups, so here are actual numbers, not hype.\n\nMy load is a PC, 3 monitors, modem and router. The unit's own display reads around 410W while I'm trading.\n\nThe box says about 14 minutes at 500W. I ran a test on purpose and got 11 minutes 40 seconds at 410W before I shut down. So I came in under the box number even with a lighter load than they rate it at. If your setup looks like mine, plan on roughly 10 minutes. That's enough to close out and shut down properly, but it's not enough to keep trading through an outage.\n\nThe real test was the Oct 14 storm. Power dropped around 2:20pm while I was 10x long on a SOL perp. The rig and wifi stayed up like nothing happened, and I closed the position clean in about 4 minutes. At 10x I really don't want to find out what happens when I can't get to an open position, so that one afternoon made the $229 worth it for me.\n\nOne thing people get wrong: there are 10 outlets but only 5 are battery backed. The other 5 are surge only. Put your modem and router on the battery side. People forget that, the PC stays on, and they lose internet anyway, which defeats the whole point if you're trying to close a trade. There's also a 60W USB-C port on it.\n\nNow the stuff that bugs me.\n\nThe fan is loud. In the first week it kicked on randomly at 3am and woke me up. It sounds like a hair dryer on low. If your desk is in your bedroom like mine, know that going in.\n\nThe outage beeping is loud af. You can mute it in the app, but the mute resets after a firmware update, so you have to go back in and turn it off again.\n\nThe desktop app looks like it came off Windows XP. It's ugly, but the auto shutdown works, which is the part that matters.\n\nIt also weighs about 30 lbs, so pick a spot and leave it there. The battery is swappable, which is good, but the replacement pack is $95. That's a big chunk of what the whole unit cost.\n\nSo it gets 4 stars. It did the one job I bought it for when it counted. It loses a star for the runtime coming in under the box, the 3am fan and the mute that doesn't stick. If you're trading with leverage and your power isn't reliable, I'd buy it. Just test your own runtime before you need it and check which outlets your network gear is plugged into.",
+  "words": 506,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3750830590724945,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3173415958881378,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.8168741464614868,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 55.9,
+    "effort": "high",
+    "output_tokens": 2956,
+    "input_tokens": 1413
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: URGENT: Check Brightline Pro 6% developer — batch LX2291\n\nPlease check every Brightline Pro 6% (20 vol) Cream Developer 1L bottle before using it. Kelvin Trade has confirmed a filling error: batch **LX2291 may contain 12% (40 vol) developer**, not 6%. The affected batch was supplied between 19 October and 5 November 2026. Other batches and strengths are not affected.\n\n**Check the base of the bottle.** The batch code is printed there, not on the box, so don’t rely on the packaging. Check bottles already open in your trolley as well as unopened stock in the back. If the base says **LX2291, stop using that bottle immediately** and keep it separate from usable stock.\n\nThe stronger developer can make lightener lift much faster than expected and may cause excessive heat in foils, uneven or unexpectedly strong lift, and scalp irritation or chemical burns. We’ve had reports of unusually fast lift, hot foils and a sore, red scalp. Please take any unexpected heat, burning or pain seriously; don’t assume it’s just the heater or normal tingling.\n\n**If a client reacts in the chair:** stop the service and rinse the affected area with plenty of cool or lukewarm running water for about **one hour**. Don’t shampoo or apply creams or other chemicals. Wear gloves and carefully remove contaminated clothing if possible. Chemical burns need hospital assessment: call **999** for medical help immediately and follow the call handler’s instructions. Don’t wait for blistering or severe pain. Breathing difficulty, throat swelling or collapse also mean **999 immediately**. Record the incident in the book at the desk.\n\nIf you’ve had a problem with a bottle, keep it — **don’t bin it**. Keep it separate and contact Kelvin Trade about returning it. The rep is in on Tuesday and can take bottles back, or you can return them to the Hillington depot for a full credit.\n\nPlease check your bottles today and let the rest of the renters know if you find batch LX2291. The batch code is on the bottle base, not the box. \n",
+  "words": 330,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "329 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39322516322135925,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18316590785980225,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.245271682739258,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.1,
+    "effort": "medium",
+    "output_tokens": 467,
+    "input_tokens": 15410
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "social-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "@Kavya, I saw your post yesterday. With people tagging me, I want to own what I got wrong and clear up a few facts. I don’t want this to become a fight, or put two people who didn’t ask for this in the middle of one. I won’t name them here.\n\nWe’re both from Foundry91 cohort 4. There were 11 startups in our batch, and we had demo day in March 2026. You’re building SitterNest; I’m building DabbaDost. But to me, you’re also the friend who sat with me till 1am in our Koramangala office, fixing our Razorpay webhook mess before demo day. I haven’t forgotten that, or how much you’ve helped me.\n\nHere’s what happened with these hires.\n\nWe posted a backend dev role on our LinkedIn page and Instahyre on 14 September. It was open to anyone. The first person applied on 19 September, on his own. The second came through his referral two weeks later. Nobody from my side DMed either of them to recruit them.\n\nThe offers were 22% above their current CTC, not 40%. Both joined us on 3 November. I’m putting the number here because I don’t want 40% to keep being repeated as fact.\n\nOn ESOPs: we do have a pool. It is small, but it is real and has been on paper since January. The claim that we promised ESOPs we don’t have is not correct.\n\nNone of that changes my mistake. I knew where they worked from day one. I should have called you before making the offers, not told you after. That’s on me. I sent you a WhatsApp message after the second offer was accepted. That was too late for the conversation I owed you as a friend.\n\nFor our cohort, I’d suggest one simple rule: if we’re interviewing someone from another batch company, give that founder a heads-up before making an offer. Not to ask permission or limit anyone’s choice of where to work, but so they don’t hear about it only once it’s done.\n\nIn a batch of 11 startups hiring from the same small pool in HSR and Koramangala, this will come up again. We should be able to handle it with more care than I did.\n\nKavya, I respect you, and I’m sorry I didn’t call when I should have. Coffee or a call is open this week, whenever you’re okay with it. I’d rather talk to you than have us talk past each other here.",
+  "words": 411,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4071037471294403,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18819479644298553,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.0234375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.526891231536865,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 52.7,
+    "effort": "medium",
+    "output_tokens": 1767,
+    "input_tokens": 44368
+  }
+}

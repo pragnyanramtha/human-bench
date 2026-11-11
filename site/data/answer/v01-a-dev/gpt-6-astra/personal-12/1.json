@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Right Mum, Kirsty and Linda,\n\nI’ve got a wee surprise planned for Gran’s birthday and I’m absolutely buzzing to tell you!\n\nMorag’s letting me have Hair by Morag on Dumbarton Road all to ourselves on Saturday 12 December, the day before Gran turns 80. She closes at 12 and we’ve got the place from 1pm, so I thought we could make an afternoon of it and I’ll do everyone’s hair for free before we head out for her birthday dinner.\n\nThat’s all seven of us — me, you three, Gran, Ava and Ruby — getting done up together. Cuts and blow-dries are no bother, and if anybody fancies a colour, **I need to know what you want by Friday 27 November** so I can get everything ordered from the wholesaler. Give me a message even if you’re just wanting your usual, so I can work out who’s getting what and get a wee running order sorted.\n\nGran said at Easter she’d “love to go silver properly” but wouldn’t pay salon prices, so I’d love to see what we can do for her. We’ll need to find out if she’s still keen without giving the game away! Kirsty, tell Ava and Ruby they can have wee braids and glitter spray. They’ll be in their element.\n\nLinda, we’re in an actual salon this time, so your cooker and the dog are safe 😂\n\nMum, can you be in charge of getting Gran there for 1pm without telling her why? I’ll leave the cover story to you, but **keep the whole thing a surprise**.\n\nBring a bottle of fizz and we’ll make a proper wee celebration of it. Morag says that’s fine as long as we tidy everything up afterwards, so you’re all on sweeping duty!\n\nDinner’s booked for 8.30pm that night at the Italian on Byres Road, table for nine, with Uncle Davie and Kirsty’s man joining us there.\n\nCan’t wait to get us all together and spoil Gran rotten. Just get your hair requests back to me — especially colours by the 27th!\n\nLove yous xxx",
+  "words": 345,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.351347953081131,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05309368669986725,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.359375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2273128032684326,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.6,
+    "effort": "medium",
+    "output_tokens": 446,
+    "input_tokens": 13968
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hi Renee, I’m sorry your toe has been hurting and that you had to go to urgent care. I know that must have been painful, and I’m sorry you’ve been going through it. You’ve been coming to us for two years, and I don’t want us to end things arguing on a forum.\n\nI do want to share what happened from our side and explain what I offered when you came back on November 2.\n\nYou came in on October 24 for a $45 deluxe pedicure with my niece Vy. During the pedicure, you asked her to cut the cuticle more because you wanted it clean. Vy said she didn’t want to take off too much, and you told her it was fine and that you always did it that way. I’m not saying this to blame you or to dismiss what happened to your toe. I wasn’t there for the conversation, but this is what Vy told me.\n\nWhen you came back and showed me your toe, I offered to refund the full $45 and pay your urgent care copay if you brought the receipt. That offer is still open. You also asked for $300 cash and free pedicures for a year, and I said no to that. But I did not mean for you to feel that I was shrugging off your concern.\n\nI also want to address the comments about our salon being dirty. We sterilize our tools in an autoclave and open the sealed pouch in front of each customer. Every customer gets a new file and buffer, which they can take home, and we use a new plastic liner in the tub every time. We passed our state inspection in August with no violations, and the inspection paper is on our wall. I understand you’ve filed with the state, Renee, and we will cooperate.\n\nVy is licensed and has been working as a nail technician for three years. She speaks English, though she can be shy. I know you felt you couldn’t explain what you wanted, and I’m sorry the communication didn’t feel clear. But it hurt to see people make assumptions about her. She was born here in Houston and cares very much about her work.\n\nI opened Lotus Garden in 2007 after working for my aunt, and in 19 years I have never had an infection complaint before. That doesn’t mean I’m not taking yours seriously. It means I care deeply about the salon we’ve worked so hard to build, and it’s painful to see people say all nail salons are dirty as if we’re all the same.\n\nRenee, please call me at the salon or come in so we can talk. I’d like to listen and see how we can move forward. And Marisol, thank you for your kind words and for suggesting we talk again.",
+  "words": 474,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.33589935302734375,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2657161056995392,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.2421875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.823875427246094,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.3,
+    "effort": "low",
+    "output_tokens": 564,
+    "input_tokens": 18701
+  }
+}

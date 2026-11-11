@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Order TH-48217: not delivered, need a resend or full refund by Fri 13 Nov\n\nHi Tiny Hands team,\n\nI'm writing about order TH-48217, which I placed on 21 October and paid for by card (R1,640, including R95 delivery). It never arrived, and after two emails and a phone call I'm no closer to a solution. I'd really like someone to read this properly and respond personally.\n\n**What I ordered:**\n- 6 tubs of finger paint\n- 4 bags of playdough\n- 200 paper plates\n- Googly eyes\n- Glitter glue\n- 2 rolls of brown paper\n\n**What happened:**\n- The tracking says the order was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams\".\n- I teach at Bergview Pre-Primary in Plumstead, which is the delivery address on my order. There is no one called Adams at our school.\n- Our gate guard, Faizel, keeps a book of every delivery that comes through, and there is no entry for 3 November. Nothing came in that day.\n- I emailed on 4 November and again on 6 November. Both times I got the same copy-and-paste reply saying my query had been escalated to your courier partner.\n- I phoned on Friday and spent 38 minutes on hold. The lady I spoke to said she couldn't do anything until the courier finishes its investigation, which could take 10 working days.\n\nI understand that couriers sometimes make mistakes. But my purchase was with Tiny Hands, not the courier. I didn't choose them and have no relationship with them. I paid you, and the goods didn't reach me, so sorting this out is on you. I've ordered from you three times before without any problems, which is why this has been so disappointing.\n\nThis is also not a small inconvenience for me. I'm a kindergarten teacher and I bought these supplies with my own money for my class. The children have been asking where the paint is for over a week and I've run out of ways to say \"coming soon\". We also have our end-of-year concert on 27 November and I need the materials for the props, so waiting another two weeks for an investigation doesn't work.\n\n**What I'm asking for:**\nPlease do one of the following by **Friday 13 November**:\n1. Resend the full order, with confirmation that it's been dispatched and a tracking number I can follow, or\n2. Refund the full R1,640, including the R95 delivery fee, to my original card.\n\nYou can still pursue the courier on your side. I just can't be left out of pocket while that happens.\n\nIf I don't have a proper response by Friday, I'll dispute the payment with my bank and leave a review of my experience. I'd honestly rather not do either, since you've been great in the past, but I can't keep waiting on this.\n\nPlease reply to this email with a real answer from a real person rather than another template. If it's easier to talk, you can reach me on [phone number].\n\nThanks,\n[Your name]\nOrder TH-48217\n\n---\n\nI left out any legal references so nothing in the email could be wrong. If you'd like it a bit firmer, I can add a line citing the Consumer Protection Act, but it's worth double-checking the wording first. Also remember to fill in your name and phone number before sending.",
+  "words": 564,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46032416820526123,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7304266095161438,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.424771308898926,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.8,
+    "effort": "high",
+    "output_tokens": 1571,
+    "input_tokens": 1563
+  }
+}

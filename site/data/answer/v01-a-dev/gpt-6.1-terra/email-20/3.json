@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.45, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**To:** Priya Menon <priya.menon@routewell.example>  \n**Subject:** RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nHey Priya,\n\nFirst, please don’t beat yourself up. I appreciate you owning it, but I’m not going to throw you under the bus with Greg. The questionnaire library is a mess and nobody owns it, so this isn’t just on you. Greg’s going to be mad either way, and I’ll handle that conversation.\n\nYou’ve been great on this account. I still remember you staying on until 9 in September rebuilding the demo environment after the route import broke. One copy-paste mistake doesn’t erase any of that.\n\nI won’t pretend I’m not stressed. Brazos is $186K ARR on a three-year term, and I’ve been working it since February. I even told my wife we’d finally do the Big Bend trip off the commission, so I’m pretty invested, lol. But I really do think this is fixable if we’re honest and move fast. Dana seems strict but fair.\n\nI talked to Marcus on security, and here’s what we need to do:\n\n- Can you correct Q14 tonight to reflect the actual Type I status and the Jan 31 date when the Type II audit window closes? The report is expected by March. Please send the correction to me first, not Dana.\n- Marcus can join a call with Dana and their legal team Thursday at 2. Can you join too? We’ll coordinate with Greg before responding to Dana.\n- Marcus also said we can provide a bridge letter from the auditor. We should have that ready to discuss as part of the plan.\n\nWe’ll work through this together. Thanks for jumping on it, and again, please don’t spend tonight beating yourself up over it.\n\nJordan",
+  "words": 288,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4526740610599518,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3314490020275116,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.515625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.695847511291504,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.3,
+    "effort": "low",
+    "output_tokens": 378,
+    "input_tokens": 18771
+  }
+}

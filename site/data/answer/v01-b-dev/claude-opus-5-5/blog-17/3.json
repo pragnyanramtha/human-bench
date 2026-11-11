@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: the GST formula in my takings template was wrong (versions 1.0 to 1.2)\n\nIf you downloaded my daily takings and GST template at any point since 12 August, please read this before you file your next return.\n\nThe formula in column F was wrong. If you key in GST-inclusive takings, it worked out GST at 9% of the full amount. The correct GST is 9/109 of the inclusive amount. This was my error. I am an accountant, I put the template out, and many of you trusted it for exactly that reason. Melvin made this point in the comments and he is right.\n\n**What went wrong**\n\nRavi Subramaniam spotted it first. His takings on 3 November were $1,090, GST inclusive. The template showed GST of $98.10. The correct figure is $90. In his example, that is $8.10 too much.\n\nShu Fen of Numbers For Hawkers confirmed the cause the next day. Thank you both, Ravi and Shu Fen. You caught something I should have caught myself.\n\nHow I missed it: I tested v1.0 against my own sample figures, and those were already exclusive of GST. On those figures 9% is the correct sum, so the check passed. I never tested it the way most of you actually use it.\n\n**Who is affected**\n\n- Versions 1.0 (12 August), 1.1 (2 September) and 1.2 (1 October) all have the error. The sheet has been downloaded 412 times since it went up.\n- It only affects you if you keyed in GST-inclusive takings, meaning what customers actually paid you. That covers most hawkers.\n- The error overstates GST. Nobody underpaid IRAS because of this sheet. If you filed with it, you may have overpaid.\n- On the quarterly summary tab, only Box 6 (output tax) was affected. Box 1 (total sales) is calculated separately and was correct in all three versions.\n\n**The fix**\n\nVersion 1.3 went up on 8 November, and the download link on the original post now points to it. It has a new setting in cell H2. Please set it to match the amounts you are keying in:\n\n- Choose \"prices exclude GST\" only if the amounts you enter exclude GST.\n- Use the inclusive setting if you enter receipts that include the GST you collected. This applies even if your menu shows prices before GST. What matters is the amount you key in, not how your menu is printed.\n\n**If you have already filed Q3 using the old sheet**\n\n1. Download v1.3 from the original post.\n2. Set H2 as described above. Most of you will need the inclusive setting.\n3. Copy your July to September takings from the old sheet into v1.3, into the same columns B to D.\n4. Look at Box 6 on the quarterly tab. Compare it with the output tax you reported. Box 1 should not change.\n5. Keep both files. Do not overwrite the old one. You will want a record of what you filed and how you got the corrected figure.\n6. Read the IRAS page on correcting errors in GST returns, and speak to whoever handles your filing if you have someone. IRAS has its own rules on whether a correction goes into a later F5 or needs a GST F7. I am not going to set those out here, because the right route depends on your situation. Please check with IRAS or your filer instead.\n7. If you have not yet filed for any period you used the old sheet for, redo the figures in v1.3 before you file.\n\nIn my comment last week I asked you to hold off making changes to your records. You can go ahead now.\n\nIf you keyed in GST-exclusive amounts all along, your figures were correct. Still, please move to v1.3 and set H2 to \"prices exclude GST\" so you are on the current version.\n\n**Going forward**\n\nI have changed how I test anything I put up here. I now check it against figures entered the way real users enter them, not only my own tidy samples. The changelog sits next to the download link, so you can always see what changed and when.\n\nIf anything above is unclear, leave a comment and I will reply. Melvin, if you want to walk through your Q3 figures against v1.3, put your question in the comments without any amounts you'd rather not share. I'll go through the steps with you.\n\nJoanne",
+  "words": 722,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.14772309362888336,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0967152938246727,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.2293795943260193,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.5,
+    "effort": "medium",
+    "output_tokens": 2027,
+    "input_tokens": 4453
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: @marco\nReplying to: none\nCc: none\nSubject: none\n\nMarco. Desert Palms. You told me Saturday 14 units all good. Its not all good. There is not one code in the sheet for that job. Lupe checked this morning and the last thing in there is your Ortiz Tire entries from the 12th. So you know how to do it, you just didnt.\n\nYvette called at 7:50. Tenant in 9B lost her key and wants 3 copies today, and I got nothing to cut from. She also says somebody left a black pinning tray with pins in it on the counter in the leasing office. Thats my tray, sitting in a customers office since Saturday.\n\nIm pissed and I want you to know it. This is the second time. Kessler in September was the same thing and I told you then. And I put it out to everybody back in August, codes go in the sheet same day before you leave the van. That is not optional. A rekey with no codes on file is half a job, and now I look like I dont know what my own shop did out there.\n\n---\n\nTo: @marco\nReplying to: none\nCc: none\nSubject: none\n\nHeres what happens today. You go back out to Desert Palms. Decode 9B first so we can get Yvette her 3 keys today. Then do the rest of building B, all 14 if you can get to them. Every code goes in the sheet today, address, unit and code, before you go home. Pick up my tray while youre there.\n\nIm not firing you. Youre good with your hands and I want you here. But this cant keep happening. Tell me when youre headed out and text me the 9B code soon as you have it.",
+  "words": 280,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.07316675037145615,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.00917204562574625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -7.625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.9715471267700195,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.0,
+    "effort": "high",
+    "output_tokens": 2339,
+    "input_tokens": 2534
+  }
+}

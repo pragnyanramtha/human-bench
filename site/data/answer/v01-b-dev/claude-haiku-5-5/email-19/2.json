@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft to send to Bethan only:\n\n---\n\nSubject: Re: Nia's hen - Tenby final plan + money!!\n\nHiya Beth,\n\nJust landed and saw this, so forgive the rambling. I'm not having a go at you, honestly. I just don't want you missing Nia's weekend over something that's really between you and Lowri.\n\nNia rang me in a right state last week asking if you were still coming, and I didn't know what to say because I didn't know you'd pulled out. She's really looking forward to having you there, and you're doing the reading at Margam in April, which she's made a big deal of. You were the one sitting with her in the Heath every night when her mam was bad. She won't forget that, and I don't think you'd want to be the one who wasn't there for her hen.\n\nI'll also say that I swapped my Orlando trip with Kerry from work so I could have the weekend off, and it cost me a night stop I'd been wanting for ages. I'm not saying it to guilt you. I just want you to know how much I wanted you there too.\n\nSo here's what I'd suggest. You don't have to do the cottage on Friday if that's too much. Just come down for Saturday, for the meal at Caffi Harbwr at 7.30. I can pick you up from Cardiff Central, it's about two and a half hours, and you can have the bed in my room since I've got the twin. I'll drive you back whenever you want to go.\n\nOn the money, please don't send Lowri the £85 yet. Let me sort that out with her first.\n\nI think Lowri's sorry, really, even if she's not saying it. She's just as stubborn as you are. I'm not asking you to make up with her this weekend. I'm asking if you'll think about Saturday, even just for the meal?\n\nLove,\nSiân",
+  "words": 326,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17013441026210785,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06044080853462219,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.7890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.809848308563232,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.5,
+    "effort": "medium",
+    "output_tokens": 2668,
+    "input_tokens": 2203
+  }
+}

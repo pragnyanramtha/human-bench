@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kristen,\n\nStraight story. The alarm was my fault. Saturday around 10:40 I put a bag of butter popcorn in the break room microwave, hit the popcorn button, and walked out front. A guy needed a shear pin for his snowblower, and that took longer than I figured, maybe six or seven minutes. By the time I got back, the smoke was already going. I forgot I was standing there with a bag of popcorn in the microwave, and that's all there is to it.\n\nThe September alarm was not me, for what it's worth. That was the sensor in the paint aisle. I know that doesn't help with Gary.\n\nThirty-one years on the job and my first alarm as a civilian is over a bag of popcorn. Mikey Szymanski was on the engine that came from Hertel. I broke him in as a probie back in '03, so you can imagine how that's going. He's never going to let me forget it, and honestly he shouldn't. My wife says the van smelled like a burnt movie theater for two days.\n\nCustomers standing in the lot in 30 degrees, the Hendersons leaving their cart at the register: that's on me, not the microwave. I feel bad about all of it. I'm sorry to you, to Gary, and to Denise, who I left standing by the propane cage with no coat. I'm buying her a coffee, and I'll get one for you too if you'll let me.\n\nOn the $175, I'll pay it. You can take it out of my check, or I'll bring cash. Your call.\n\nOn the schedule, I'd like to keep my Saturday shifts. I like the weekend crowd, and I need the hours to get through the heating oil bills this winter. If Gary still wants to change things, I'll go along with whatever he decides, but I'd ask for the chance to show it won't happen again first. And no more popcorn. I promise.\n\nWalt",
+  "words": 328,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18279218673706055,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1027926430106163,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.376953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.775534629821777,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "medium",
+    "output_tokens": 2130,
+    "input_tokens": 1969
+  }
+}

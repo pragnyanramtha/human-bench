@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Morning Ciarán — here's the full picture, numbers first.\n\n**Logger (old ThermaTrak, downloaded this morning)**\n- Over 8°C from Sat 22:50, back under 8°C Sun 05:00 — so about 6 hrs 10 mins out of range.\n- Peak 11.6°C at 02:15 Sunday.\n- Lowest overnight Fri 4.1°C, normal.\n- The alarm beeps continuously until someone resets it, so it went off and stayed off... sorry, stayed on all night. I found it at 07:55 this morning.\n\n**What happened**\nThe door hadn't fully clicked shut — a box of Hartmann's bags from Saturday's delivery had been stacked up against it. The seal is cracked at the bottom left corner and it takes leaning on it with your hip to get it to latch, so it's the box and the seal together rather than either one on its own. Saturday clinic ran late with the RTA collie and the delivery got put away in a hurry at closing, so the box went in without checking the door was properly shut.\n\n**Stock affected**\n14 DHPPi, 9 lepto L4, 6 intranasal kennel cough, 3 rabies, 4 vials insulin, 2 cat flu/FeLV combos — roughly €1,150 at cost.\n\n**What the tech line said**\nRang Munster Vet Supplies 08:40, spoke to Niamh, the pharmacist. She said:\n- quarantine everything, don't use it\n- email her the logger CSV and the batch numbers\n- they'll check with the manufacturers and come back to me by Wednesday\n\nShe also pulled the manufacturer's storage sheet for the insulin product we stock and checked it against the logger readings, and cleared those 4 vials for use. So insulin is fine to give out.\n\nEverything else is in a sealed bag labelled DO NOT USE in the lab fridge, that fridge is sitting at 5.2°C, and I've started a fresh temp sheet for it. I'm not binning anything until the supplier comes back — most of it is probably fine but that's their call, not mine.\n\n**Aoife** — hold the three boosters this afternoon, and don't use anything out of the vaccine fridge until I give you the all-clear. Insulin only for now, and if anything comes up that can't wait, pull it from Carrigaline.\n\n**What I need you to OK this morning**\n1. The SMS-alert logger, about €180 from the supplier catalogue. The current one only beeps locally and nobody's here on a Sunday — that's how six hours went past unnoticed.\n2. A new door seal. It needs doing anyway.\n3. A door check/lock-up on the closing checklist so nothing gets stacked against it.\n\n**If the supplier clears it by Wednesday**\nAoife can rebook the boosters for Thursday/Friday, or we borrow stock from the Carrigaline branch.\n\nOn the credit — that's your conversation at 2. I'll send you the logger CSV and batch numbers now so you've got them for the call, and I can put a short written summary together for the supplier if it helps.\n\nAnything else you want from me before 2?",
+  "words": 496,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35847339034080505,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.28353559970855713,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2069649696350098,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.6,
+    "effort": "provider default",
+    "output_tokens": 2069,
+    "input_tokens": 1183
+  }
+}

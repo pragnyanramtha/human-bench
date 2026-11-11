@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "## Kestrel Bastion 1500 review: it kept my trading setup online when it mattered\n\n**4/5 stars**\n\nI paid $229 for the Kestrel Bastion 1500 on Voltwise in August 2026. I’m a crypto day-trader in Miami, and I bought it to keep my PC, three monitors, modem, and router running through an outage—not because I wanted another box with impressive numbers on the packaging.\n\nThe Bastion is rated at 1500VA / 1000W and uses a pure sine wave output. My setup draws around 410W while I’m trading, according to the UPS’s display. The box claims roughly 14 minutes at 500W. I tested the runtime deliberately: at my usual load, I got 11 minutes and 40 seconds before shutting down. That’s less time than the box’s estimate, but enough for a controlled exit—not enough to keep trading through a long outage.\n\nI got to find out what that time is worth during the October 14 storm. The power dropped around 2:20 p.m. I was 10x long on a SOL perpetual, and the Bastion kept my rig and Wi-Fi up long enough to close the position cleanly in about four minutes. That’s the reason I’m giving it four stars. It didn’t make the outage disappear, but it gave me time to act instead of leaving me staring at a dead setup mid-trade.\n\nA quick practical note for anyone copying my setup: plug **both your modem and router into battery-backed outlets**. The Bastion has 10 outlets total, but only five have battery backup; the other five are surge protection only. If your networking gear is on the wrong side, your screens might stay lit while your internet drops anyway.\n\nThere are some genuine annoyances. During the first week, the fan came on randomly at 3 a.m. and woke me up. It’s loud—think hair dryer on low. The outage beeper is loud too. You can mute it in the desktop app, but the setting reset after a firmware update, so I had to deal with it again. The app looks dated, like Windows XP, though the auto-shutdown feature works, which matters more to me than the design.\n\nIt weighs about 30 pounds, so it’s not something I’d want to move around often. The battery is swappable, which is a plus, but the replacement pack costs $95. There’s also a USB-C port rated for 60W, handy for charging a device, though that isn’t the feature that sold me.\n\nFor traders, the important question is whether the runtime matches your actual load and gives you enough time to close positions and shut down safely. At 410W, I got just under 12 minutes in my test. Your results will depend on your gear, so check the display with your own setup and test it before you’re relying on it during a storm.\n\nThe fan, beeper, and clunky app keep this from being an easy five stars. But the Bastion kept my trading setup and internet alive when I needed a few minutes to get out of a leveraged position. For me, that made it worth the $229—and the four stars.",
+  "words": 512,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: headings, bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48386988043785095,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9977807998657227,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 13.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.828738212585449,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.0,
+    "effort": "medium",
+    "output_tokens": 669,
+    "input_tokens": 13957
+  }
+}

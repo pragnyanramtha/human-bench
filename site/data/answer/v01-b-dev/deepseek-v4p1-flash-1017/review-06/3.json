@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: KCK-4471 Vantorre CX-10 — E34 faults and scale from delivery\n\nWe bought the Vantorre CX-10 (listing KCK-4471, order CM-88213) for $14,800 inc GST. Delivered and commissioned at our Fitzroy bistro on 14 September 2026, warranty registered to 14 March 2027.\n\nThe error log shows nine E34s (steam generator low water level) from 14 September, the delivery date, by the time Kelsall attended on 22 September (SR-1190). The water level sensor was replaced, three steam cycles tested OK, inlet pressure 320 kPa. Warranty, no charge.\n\nE34 came back four times in the week to 3 October. The core probe was also reading low — in a lamb shoulder the oven said 63°C and a Thermapen said 70°C, twice, same result. Kelsall attended 6 October (SR-1236), found the steam generator heavily scaled, descaled and flushed it, and recalibrated the probe to within 1°C. The report recommended a water softener because of hard water.\n\nThat doesn't match what we found. Our water supplier puts the Fitzroy supply at about 15 mg/L as CaCO3 — soft, some of the softest in the country. The unit had been on our water three weeks when the scale was found. A combi doesn't scale up in three weeks on 15 mg/L water, so the scale was there when it arrived, despite the listing saying the steam generator had been descaled and pressure tested.\n\nOn Saturday 24 October it locked out on E34 at 6.10pm with a full book of 60 covers. We finished the lamb on the stove and deck oven, 86'd the pork belly and ate the cost. E34 was back on 27 October with more scale, and we've been invoiced $308 inc GST for that callout on a unit delivered six weeks earlier.\n\nDion has been responsive and the repairs themselves were done properly — this isn't about him. It's about the refurbishment and where the warranty sits. If you're spending $15k on a refurbished combi, ask for the descale record and a water hardness reading before delivery.",
+  "words": 323,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The review never says Kelsall refused warranty cover on the 27 Oct callout by calling it a site water issue; it only mentions the $308 invoice and 'where the warranty sits', so the warranty refusal is only hinted at."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1166970357298851,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.059953078627586365,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.2111784219741821,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.7,
+    "effort": "provider default",
+    "output_tokens": 5438,
+    "input_tokens": 2088
+  }
+}

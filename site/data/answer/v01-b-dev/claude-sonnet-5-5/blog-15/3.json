@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: lindqvist-family-blog\nReplying to: none\nCc: none\nSubject: Big news (and yes, there's a cake)\n\nOk. I have rewritten this first line about nine times, so I'm just going to say it. I'm going out on my own. Fernhollow Photo is officially a real business!!\n\nI wanted you all to hear it here first, before Thanksgiving, so we can spend Ruthie's dinner on pie and not on me being nervous across the table from a plate of turkey. (Dad, I see you. More on that below.)\n\n**How we got here**\n\nRosebud Lane closed at the end of October. Marisol told me on Oct 6 that she was shutting the studio down, and I've been shooting for her for four years, so I won't pretend my stomach didn't drop. But she was so kind about it. She said she'd send me every 2027 couple she couldn't keep, and she already told six of them I'm the one. She also said I've been ready for two years, which is a very Marisol thing to say when I was still convinced I needed another year.\n\nHonestly, Marisol taught me almost everything I know. How to read a room, how to stay calm when the light is terrible and the timeline is falling apart, how to get a nervous groom to relax. Every good thing about the way I work started with her. Thank you, Marisol, I mean it.\n\n**The part where I cried in a Fred Meyer parking lot**\n\nI filed the LLC on Oct 22, on my lunch break, in my car outside a Fred Meyer. It took about ten minutes. Then I sat there and cried a little, in a parking lot, holding a sandwich. Very glamorous. Very professional. I got back to work like nothing happened.\n\nSam surprised me with a cake that said FERNHOLLOW, except the baker spelled it FERNHOLOW. We ate it anyway. It was delicious and I'm now emotionally attached to the typo.\n\n**Where the name comes from**\n\nGrandma, this one is for you. Fernhollow is named after the fern hollow trail behind your old place in Gresham. It's where I took my first real pictures, with your Pentax, when I was way too little to be trusted with it. I didn't know it then, but that's where all of this started. I wanted your trail on everything I make from here on out, so the name is yours.\n\n**The actual numbers**\n\nI know the first question anyone asks about this kind of leap is \"but how will you eat,\" so here's the plan.\n\n- I have 14 weddings booked for 2027 already. Six came from Marisol's referrals and eight found me on their own, which still feels unreal to type.\n- The busiest month is June, with four weddings, and the furthest out is a September wedding at Wallowa Lake. I'm already looking at maps.\n- Deposits are in for those bookings.\n- For the bigger weddings, Jae is going to second shoot with me. Jae is paid per wedding, so I'm not taking on a ton of fixed costs before the work shows up.\n\nMy very first booking that was 100% mine is Dahlia and Ken, at Timberline on June 12. They found me through the photos I took of a couple at Multnomah Falls, and they sent a deposit and a very sweet email. I read it at least six times. Dahlia and Ken, if you ever somehow see this, thank you for being first.\n\n**Dad, this part's for you**\n\nMy health insurance is sorted. I picked a marketplace plan on Nov 5 and it starts Jan 1. No gap, no \"we'll figure it out later.\" I know that's the thing you worry about most, and I want you to hear it from me before you hear it from your own imagination. I appreciate that you've been looking out for me. You've mentioned the school portrait job more than once, and I know it comes from love. But this is what I want to do, and I've got coverage, bookings, and a plan.\n\n**The scary part**\n\nYes, it's scary. I'd be lying if I said otherwise, and you'd all know I was lying because I'm a terrible liar. Leaving the safety of someone else's studio is a big deal, and there will be slow weeks and stressful ones.\n\nBut I'm not being reckless. I've been planning this in my head for two years, probably longer than I'd admit out loud. I've been quietly saving, quietly learning the business side, and quietly telling myself I wasn't ready yet. Turns out I was. I'm not jumping blind. I'm jumping with a camera bag, a calendar, and a very supportive person who bought me a misspelled cake.\n\n**What I'd love from you**\n\nMostly, be excited with me! That's the whole ask. And if you know anyone getting married in the next couple of years, you know where to find me.\n\nAlso, I'm bringing my camera to Thanksgiving at Ruthie's on the 26th, and I'd love to take free family pictures. Little groups, big groups, whoever's willing. Bree, I'm especially hoping to get some of Juniper. Just tell me in the comments if you want in, and I'll find a spot with good light. (Uncle Greg, I'll make it fast this time. No freezing.)\n\nThank you for always being the people who cheered the loudest, even when I was just taking 900 pictures of Pickle. I love you all. See you at Ruthie's!\n\nTessa",
+  "words": 901,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says a baker misspelled the cake, but the request says Sam made it."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5178015232086182,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3110274076461792,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.2337746620178223,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.4,
+    "effort": "high",
+    "output_tokens": 3270,
+    "input_tokens": 4516
+  }
+}

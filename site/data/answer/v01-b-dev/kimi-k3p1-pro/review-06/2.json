@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "invented amount",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Draft review – refurbished Vantorre CX-10, order CM-88213\n\nPurchased listing KCK-4471: a refurbished 2021 Vantorre CX-10, serial VT21-30877, for $14,800 inc GST. Kelsall delivered and commissioned it on 14 September 2026. The listing stated that the steam generator had been descaled and pressure tested, and the core probe calibrated, with a six-month parts-and-labour warranty.\n\n22 September (SR-1190): E34 steam-generator low-water-level fault, with intermittent lockout in combi and steam modes. The error log showed nine E34 events since 14 September. Dion replaced the water-level sensor, recorded inlet pressure at 320 kPa (OK), and completed three successful steam test cycles. Warranty, no charge.\n\nBy 3 October, E34 had returned four times that week. I also checked the core probe twice against our Thermapen in a lamb shoulder: the oven displayed 63°C while the Thermapen read 70°C both times.\n\n6 October (SR-1236): the steam generator was reported heavily scaled and was descaled and flushed. The probe was recalibrated to within 1°C. The report recommended a softener and attributed the scale to hard site water.\n\nOur Fitzroy supply averages approximately 15 mg/L hardness as CaCO3, which the water utility classifies as soft. The oven had been on our water for only three weeks when the heavy scale was found. Given the advertised pre-sale descale, the source of that scale remains unresolved; no measured hardness result showing hard site water has been provided to us.\n\nOn Saturday 24 October at 6.10 pm, E34 locked the oven out during a full 60-cover service. We finished the lamb on the stove and in the deck oven, removed pork belly from the menu and absorbed that cost. Kelsall’s 28 October email says Dion again found E34 and scale on 27 October. It classifies this as a non-warranty site-water issue and says the callout will be invoiced at $280 plus GST ($308 total), when the unit was six weeks old.\n\nDion’s attendances have been professional. Our issue is the repeated E34 fault, the unresolved scale evidence, and the warranty position. Other kitchens considering a nearly $15,000 refurbished combi should be aware of this service history.",
+  "words": 338,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "invented_amounts",
+        "kind": "invented amount",
+        "detail": "amounts not in the environment: ['15000']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.15604592859745026,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21977318823337555,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.99609375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.129170417785645,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 59.0,
+    "effort": "provider default",
+    "output_tokens": 4240,
+    "input_tokens": 2061
+  }
+}

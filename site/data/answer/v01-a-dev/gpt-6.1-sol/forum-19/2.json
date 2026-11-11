@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, breathe, boet. **Key out and DON'T crank it again.** Tonight your only job with that key is to keep it in your pocket.\n\nKobus means well, but that’s old Land Rover advice. Your D-Max’s common-rail system can’t take that chance. Don’t put diesel on top — the petrol is still in there, and diluting it won’t undo what’s happened. **Tow it, don’t drive it.**\n\nDiesel lubricates the high-pressure pump; petrol doesn’t give it the lubrication it needs. Every time you crank, that pump turns again. Because you drove it until it stalled and then tried starting repeatedly, pump and injector damage is possible. If the pump has shed metal into the system, that gets expensive. But nobody can diagnose R40 000 from a forum post, and it’s too early to declare the engine finished.\n\nWe need to inspect the pump and injectors for damage first. **If they’re OK**, draining the tank, flushing the lines, fitting a new fuel filter and bleeding it usually comes to **R2 500–R4 500**. That’s the no-damage scenario, not a promise of your total tonight.\n\nCheck your insurance policy before paying a tow guy cash — roadside towing is included on many policies. My shop’s in Umbilo, open Saturday 7–12. Thabo, my guy, can get onto draining it first thing, with the damage checks before anyone tries starting it.\n\nAnd organise a borrowed bakkie tonight for the sound system and cake. Don’t plan a 2pm wedding around a drained tank and crossed fingers.\n\nFor perspective: first year of my apprenticeship, 1995, I put diesel in the boss’s Golf. He still tells it at every braai. You’ve made a mistake, not invented a new one.\n\nCongrats for tomorrow, lad. Go phone someone for a bakkie — **not another turn of that key.**",
+  "words": 296,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.43388035893440247,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.29525768756866455,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.96875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.324718475341797,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.9,
+    "effort": "low",
+    "output_tokens": 407,
+    "input_tokens": 18773
+  }
+}

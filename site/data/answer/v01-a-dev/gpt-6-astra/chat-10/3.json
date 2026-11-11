@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I’m still pissed about what happened with Gary, and your “that’s business, sis, can’t win ’em all” response made it worse. I know I don’t get every listing. That’s not the issue.\n\nYou told him I’d list his house for 1% as a “family rate” without asking me. My listing commission is 2.5%. I never offered him 1%, and you don’t get to offer it for me.\n\nI spent about six hours Saturday pulling comps, doing the walkthrough, and putting together a full listing packet, plus the drive from north Phoenix. Gary decided to go with ListLite. That’s his choice, and I’m not really mad at him. I’m mad that you set expectations about my work and my pay without even having a conversation with me, then brushed me off when I told you what happened.\n\nNow you’ve already given Denise my cell so she can “pick my brain.” We just went through this. And it happened with your softball buddy two years ago, too. I let it go then, but I’m not letting it go again. You get to look generous and connected with your friends while I’m the one giving up my time and doing the work for free.\n\nI’m happy to help Mom, your kids, or actual family with advice at no charge. That doesn’t mean everyone you know gets my time or a rate you made up.\n\nFrom now on, ask me first, every time. No handing out my number, no quoting my commission, and no promising anyone I’ll help before I’ve agreed to it.\n\nI’m not calling Denise. You need to tell her you got ahead of yourself and hadn’t checked with me.\n\nI love you, and yes, I’m still coming to Thanksgiving. But I need you to take this seriously and respect that this is how I make my living. This stops now.",
+  "words": 310,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41922202706336975,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6403253674507141,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6622915267944336,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.8,
+    "effort": "medium",
+    "output_tokens": 391,
+    "input_tokens": 13994
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: s01\nCc: none\nSubject: Football rundown for Monday admin meeting — DRAFT\n\nRenee, here's our rundown for the noon meeting. Been a good week for these kids, and they've got a lot to be proud of.\n\nWe beat Brookhollow 31-14 Friday to finish second in the region. Deshawn Pettaway had 3 sacks and 7 tackles. The kids voted him defensive player of the week in the locker room before the coaches even met, which tells you what his teammates thought of his night. Defense held Brookhollow to 46 yards rushing in the second half.\n\nTavion Hurst ran for 188 yards and 2 touchdowns. His long touchdown in the third quarter was a big one, but I want to give that offensive line their credit too. They were pushing them five yards back that whole drive. Best I've seen them block all year.\n\nPlease make sure Dr. Pruitt knows we've got a HOME playoff game. We host Clanton Valley Friday, November 13, at 7 p.m. at Ridge Field. Presale tickets start Tuesday, and we'd love to get folks out there supporting these boys. Gate and chain crews need confirming by Wednesday. Boosters also need six more concession volunteers, with the signup sheet going out today.\n\nOn academics, all 52 players are eligible after the nine-week grade check. Nobody on the list. Tonya Greer deserves the credit for that, not me. Her Tuesday and Thursday study hall is paying off, and she's keeping it going through the playoffs.\n\nThe Boston butt sale brought in $6,240 on 208 sold, beating the $4,500 goal by $1,740. That money is going toward new sideline headsets. Thanks to Carla and the boosters for the work, and to Hargrove's Meat Market for smoking them at cost.\n\nIf we win and go on the road, I'll get the bus information to you in time for transportation's five-day advance requirement.",
+  "words": 299,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24316497147083282,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18878448009490967,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.84375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.500694274902344,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.6,
+    "effort": "medium",
+    "output_tokens": 422,
+    "input_tokens": 14968
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: The building, Denis. Call me.**\n\nDenis,\n\nI have tried to write this email five times since Thursday. Every time it came out half French, half insults, so I deleted it. This time I'm going to say it straight, in English, so there is no confusion about what I mean.\n\nI know you listed papa's building. I know it is on Centris for $1,150,000. I didn't learn it from you. I learned it at 6 o'clock in the morning last Thursday, when a photographer from your agency walked into my bakery while I was shaping the baguettes. He told me \"Mr. Denis said you were okay with it.\" Okay with it. I was standing there with dough on my hands and I didn't even understand what he was talking about. Karine had to take me to the back and make me sit down. In front of the customers. In front of my employees. Then I went home and looked it up online like a stranger and there it was, our building, with pictures.\n\nI want you to understand how that felt. You did not call me. You did not send me even one line. You let an agent do it for you, and the agent sent a man with a camera. Denis, that is not how you treat your sister. That is not how you treat anybody.\n\nAfter maman's funeral you called me. I remember exactly what you said because it helped me so much that week. You said \"no rush, we decide together.\" Together. I believed you. I've been waiting for us to sit down and talk, and all this time you were talking with an agent instead of with me.\n\nIn September I told you on the phone that I want to buy your half. I wasn't dreaming, I'd already gone to the caisse and they pre-approved me for $410,000. I told you this. You said you would think about it. I thought we were still in that conversation. I didn't know the conversation was finished and you'd decided without me.\n\nI know what you think. You think I'm sentimental, that it's because it's papa's building, because we grew up there, because of the memories. Yes, that's part of it, I won't lie. But it is also business, Denis, and I need you to look at it like business too, since that's what you're doing.\n\nThe bakery has been in that building for 31 years. I have 6 employees. Some of them have families, Karine has two kids. I have customers who came in with their parents and now they come in with their own kids. I pay $2,400 every month to the estate and I have never been late once, not one time in all those years. In 2019 when the roof had to be redone, I paid it myself, $38,000, out of my own pocket, because it had to be done and I didn't want to bother papa and maman with it. I'm not saying this so you'll feel sorry for me. I'm saying it because I've taken care of that building like it was mine, and half of it is mine.\n\nMy lease finishes on April 30, 2027. You know who buys a building like that on Saint-Hubert at that price. A developer. He'll tear it down for condos, or he'll keep it and double my rent the minute the lease is done. I can't survive that. Nobody can survive that selling bread. So when you sell to him you aren't just selling a building, you are closing my bakery. Thirty-one years, finished, because of a listing I found on the internet.\n\nI don't think you want that. I really don't. That's why I'm writing instead of getting in the car and driving to Calgary to scream at you, which believe me I thought about.\n\nDo you remember the flour sacks room in the back? When we were small, papa let you sleep in there on the sacks and you loved it, you begged him every Saturday. You used to say it smelled like bread even in your dreams. That room is still there. I still store the flour there. Every morning I walk past it. I don't say this to make you cry. I say it because I want you to remember that this building is not just a number on Centris to you either, even if you live far now.\n\nSo here is what I'm asking, clearly:\n\n1. Take the building off the market this week.\n2. If you really won't do that, then at least give me the first right to buy your half before anybody else. In writing.\n3. Let's sit down, the two of us, and talk about the price honestly. If we need an independent evaluation, fine, I'll pay for half. We can talk about the roof, about the rent I've paid, about everything. I'm not asking for a gift. I'm asking for a fair chance.\n\nI want to be fair with you. You're entitled to your half, I've never said otherwise. If you need the money, tell me, we'll find a way. Maybe I can't do $575,000 tomorrow morning, but with the caisse and some time, maybe we can arrange something. But you have to talk to me. Not the agent. Me.\n\nAnd one more thing. I want your answer by phone. Not by text, and not through your wife. I like her, she's always been kind to me, and I know she reads English better than you, that's why I wrote it this way. But this is between you and me. You're my brother. You call me and you tell me yourself.\n\nI'm very angry, Denis. I want you to know that. I haven't been this angry with you since we were kids. But I'm not writing because I hate you. I'm writing because I don't want to lose my brother on top of losing maman and papa's building in the same year. That would be too much.\n\nPapa bought that building in 1979 so his family would have a place. I don't think he'd want us to fight over it through agents and photographers. I think he'd want us to sit at the same table and figure it out like a family.\n\nCall me. This week please.\n\nYour sister,\n\n[name]\n\n---\n\nA couple of notes: I signed it \"your sister,\" so change that if it's wrong, and put your name at the bottom. I also kept your $410,000 pre-approval and mentioned that half of the listing price is $575,000, and that you're open to an evaluation, so he can't say you're asking for a discount. Take that part out if you'd rather not bring up numbers yet.",
+  "words": 1121,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22628097236156464,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08981426805257797,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.45274019241333,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 36.3,
+    "effort": "medium",
+    "output_tokens": 2388,
+    "input_tokens": 1527
+  }
+}

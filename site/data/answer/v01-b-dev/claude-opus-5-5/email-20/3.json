@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.44, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Subject: RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nPriya,\n\nFirst, take a breath. I'm not throwing you under the bus with Greg. I'll handle Greg, and he's going to be mad no matter what, so that's on me, not you. And honestly, this isn't just a you thing. The questionnaire library is a mess and nobody owns it. Old draft language sitting in there was going to bite somebody eventually.\n\nI won't pretend I'm not stressed. Brazos is 186k ARR on a 3-year term, I've been working it since February, and it's my biggest deal of the year. I already told my wife we'd finally do the Big Bend trip off this commission, so yeah, I'd like to save it lol. But I really do think this is fixable if we're honest fast. Dana's strict but she seems fair, and I'd rather walk in with the real story than try to spin it.\n\nI also haven't forgotten you staying until 9pm in September rebuilding their demo env when the route import broke. One copy paste mistake doesn't cancel that out. We're fixing this together.\n\nHere's the plan:\n\n1. **Q14 tonight.** Please update it with our actual status: Type I issued in April, Type II audit window closes Jan 31, report expected by March. Send it to me first, not Dana. I want to line it up with what we say on the call.\n\n2. **Thursday at 2.** I talked to Marcus on our security team and he can do a call with Dana and their legal team. I'd like you on it too. You know the questionnaire better than anyone and it'll help to have you there when we walk through what happened.\n\n3. **Bridge letter.** Marcus says we can get them a bridge letter from the auditor to cover the gap until the Type II report is out. That's probably our best shot at getting legal comfortable enough to release the order form, so we'll lead with it Thursday.\n\nAnd please don't beat yourself up over this. You owned it right away, which is more than most people would do. Let's get the corrected answer done, show up Thursday with a clear timeline, and go from there.\n\nThanks for jumping on this.\n\nJordan",
+  "words": 377,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4377402067184448,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1829807609319687,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.65625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.09400749206543,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "medium",
+    "output_tokens": 906,
+    "input_tokens": 2139
+  }
+}

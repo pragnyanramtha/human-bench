@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5 stars — careful work and a delivery that made our deadline\n\nArroyo Precision Works made a camera-to-dewar adapter plate and light baffle for our near-IR camera, which we need for an upcoming Palomar run. The fit test went very well: all eight screws went in without forcing, the plate was flat to under 0.01 mm on our dial indicator, the baffle threads were smooth, and our dark test showed no light leak. The anodizing was even, with no bare spots.\n\nWhat stood out most was how carefully they read the drawing. Arroyo caught an error in the bolt-circle dimension before cutting: I’d copied a value from an old camera drawing and failed to convert it correctly. They flagged the inconsistency and checked with me rather than guessing. That saved us from a serious fit problem, and I’m grateful to Ruben and Tiff for catching it. The mistake was mine, and their care turned it into a quick correction instead of a costly setback.\n\nWe had been quoted six weeks by a much larger vendor. Arroyo quoted 21 days and delivered in nine. Ruben even brought the finished parts to Robinson Lab himself at no extra charge. I was so relieved to see him arrive with them that I nearly hugged him.\n\nThe parts fit, performed as intended, and arrived in time for our preparations. I’d happily recommend Arroyo to other research groups, especially for prototype or short-run work where communication and attention to detail matter. Five stars, and I hope purchasing will consider adding them to the preferred vendor list.",
+  "words": 249,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "250 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4075402319431305,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5598679184913635,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.6258544921875,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.2,
+    "effort": "medium",
+    "output_tokens": 343,
+    "input_tokens": 15362
+  }
+}

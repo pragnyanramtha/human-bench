@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kristen,\n\nHere’s the straight story. Saturday, Nov. 7, at about 10:40 a.m., I put a bag of butter popcorn in the break room microwave, hit the popcorn button, and went back out front. A customer needed a shear pin for his snowblower, and helping him took longer than I expected, probably six or seven minutes. I lost track of the popcorn.\n\nIt was my popcorn and my mistake. The microwave isn’t to blame. We cleared the store for roughly 25 minutes. The engine from up on Hertel came, and thankfully there was no damage, just smoke and a terrible smell. I’m sorry about the customers standing outside in the cold and about the Hendersons leaving a full cart. They’ve always been good customers and I expect they’ll be back, but that doesn’t make it okay. I’ll also get Denise her coffee.\n\nOne correction for the file: the September alarm wasn’t me. That was the sensor in the paint aisle.\n\nI’ll cover the $175 Northpoint bill. You can take it out of my check or I can bring in cash, whichever you prefer. Just let me know.\n\nI’d really appreciate keeping my Saturday shifts. I like the weekend crowd, and I need the hours with heating oil season here. I understand why Gary is upset, and this won’t happen again.\n\nOne of the firefighters was Mikey Szymanski, whom I broke in as a probie back in ’03, so I’m never going to hear the end of this. After 31 years on the job, my first alarm as a civilian was over a bag of butter popcorn. My wife says the van smelled like a burnt movie theater.\n\nWalt",
+  "words": 277,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24738018214702606,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3079916536808014,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.4765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.949888706207275,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.3,
+    "effort": "provider default",
+    "output_tokens": 1359,
+    "input_tokens": 867
+  }
+}

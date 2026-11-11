@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Mikaela, sorry it’s taken me a bit to get back to you — and thanks again for all the help when Dave did his shoulder.\n\nWe’ve got 290 cows, mostly three-way crossbreds, and started 10 in 7 on 21 September, after mating had started. We skip Tuesday, Thursday and Saturday afternoon milkings, plus Sunday afternoon. Mornings are still 5.15 every day.\n\nHonestly, the production hit has been better than we expected. We’re about 6% down on the same weeks last year, going by the Fonterra app. Our rep had said to expect 8–10%, so it’s a hit, but not as much as we’d been bracing for. Cells did jump at first: from around 110,000 to 180,000 for the first three weeks. They’re back to about 135,000 now, so they haven’t stayed up, but it’s something to watch.\n\nThe downside that really got to me was a heifer with mastitis that went bad on a skipped afternoon. We didn’t spot it until the next morning, and she lost a quarter. You can’t let your guard down on the days you don’t milk. We’re being really deliberate about teat spraying and checking cows, because if you’re not on top of that, it can bite you.\n\nOn the plus side, the cows came round quicker than I expected — about four days of bellowing at the gate, then they were fine. Lameness is way down too: four on the lame list now, compared with 11 at this time last year. We’ve got a long walk to the back paddocks, about 1.8 km, so I reckon fewer trips are helping.\n\nAnd the time back has been huge. The first Sunday afternoon we skipped, Dave and I went to Hamilton to see the grandkids. It was the first Sunday off in spring in 20-odd years. Kieran, our 2IC, reckons it’s the first spring he hasn’t wanted to quit by October, which probably tells you something. If Tom’s knees are bad, I’d think those afternoons off could help him a lot.\n\nSo, yes, we’re down 6%, but honestly I wouldn’t go back. For us, the hours alone are worth that trade-off. That’s just our experience, though — I wouldn’t want to make it sound all upside, especially with that mastitis scare and the need to stay sharp on skip days.\n\nCome have a look at our shed rosters and numbers at the field day on the 19th if you like. And ring me if you want — easier than texting.",
+  "words": 415,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3351699113845825,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10078734159469604,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.140989303588867,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "medium",
+    "output_tokens": 556,
+    "input_tokens": 14332
+  }
+}

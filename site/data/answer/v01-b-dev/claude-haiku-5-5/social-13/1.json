@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Some good news, and some honesty about the last couple of months.\n\nPriya Bhatia joins us on Monday 16 November. She's chartered (IStructE) and spent nine years at a consultancy in Coventry, so she knows structural work inside out. Having her here gives us the capacity we've been missing, and I'm genuinely pleased to have her on the team. If you see her on site, please say hello. She should feel welcome from day one.\n\nNow the harder part. Over September and October, our turnaround on beam calculations and drawings stretched to five or six weeks. That wasn't good enough. Several of you waited far longer than you should have, and a few were understandably unhappy. One couple in Harborne had their builder standing by with the steel already ordered. We got it to them within three days, but only after they had to chase us twice. I'm sorry. The slow weeks were my fault. I said yes to too much work and tried to carry it alone, and that's on me, not on you.\n\nHere's where things stand. Our target is now 10 working days for beam calculations and drawings. Jobs already in the queue are moving. If you're waiting on yours, you haven't been forgotten. You can message me directly and I'll give you a straight answer on where it is.\n\nWe're also changing how the first site visit works. For a long time it's been free, but around a third of those visits never turned into a job, and that isn't sustainable for a practice our size. From 1 January 2027, first site visits will cost £95. If you go ahead with the work, that £95 comes off your fee.\n\nAnyone who already has a visit booked when this goes up keeps it free, whatever the date. Nothing changes for you.\n\nThank you for your patience through a difficult stretch, and for sticking with us. I'm happier than I've been in a while about where we're heading, and I'm grateful to everyone who has trusted us with their home.\n\n[Your name]\nStructural engineer, [Practice name]",
+  "words": 348,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3611530065536499,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12088913470506668,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8046875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.797567844390869,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.2,
+    "effort": "medium",
+    "output_tokens": 1638,
+    "input_tokens": 1452
+  }
+}

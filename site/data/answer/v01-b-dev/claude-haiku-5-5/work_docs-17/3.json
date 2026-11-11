@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Move the H-1B Registration Intake Deadline to January 15\n\n**Why this, and why now**\n\nLast season we filed 14 registrations for six employer clients, and 9 of them came in during the final week of February. That compression is the core problem. Rosa logged roughly 11 hours of overtime the week the window opened, and late volume leaves little room to catch errors. One beneficiary's passport scan arrived two days before the window, and it had expired in October. We caught it only because Rosa checked the dates. The registration itself is simple, but a wrong passport detail means an invalid selection, and problems found at the last minute are expensive for the client and for us.\n\nMost of the crunch comes from how our intake works, not from anything clients are doing wrong. We currently email the questionnaire whenever an employer asks, with no set date, so requests arrive whenever they arrive. Several HR contacts have said they would gladly have sent everything in January if we had given them a date. A fixed deadline gives them something to plan around.\n\n**What would change**\n\n- Engagement letters and a one-page questionnaire go out the week of December 7.\n- Intake closes January 15. Anything after that is handled case by case.\n- The $215 per-beneficiary registration fee is already in clients' Q1 budgets, so no new cost is introduced.\n- HR teams are back from the holidays and budgets are set by mid-January, so the date is realistic for them.\n- Rosa owns the tracker and gets a clear six weeks to chase missing documents, without last-week surprises.\n\n**Ask for Thursday**\n\nIf Marcus agrees on Thursday, we can send the December letters on schedule. I'd present this to clients as better service: a predictable timeline, earlier review of passports and dates, and fewer rushed corrections in February.\n\n---\n\nNote: December 7 to January 15 is about five and a half weeks, so if you want the full six weeks for Rosa, the chase period would run to about January 18. You could either say \"five and a half weeks\" in the doc or keep \"six weeks\" and let the closing date slide slightly.",
+  "words": 366,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37016287446022034,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9907514452934265,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 17.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.375411987304688,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.0,
+    "effort": "medium",
+    "output_tokens": 2102,
+    "input_tokens": 1551
+  }
+}

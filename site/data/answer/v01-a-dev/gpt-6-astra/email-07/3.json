@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217 not received — replacement or full refund required by 13 November**\n\nDear Tiny Hands Edu Supplies Customer Service,\n\nI’m writing again about order TH-48217, placed on 21 October, which I have paid for but have not received. I am very frustrated, both by the missing delivery and by the lack of a meaningful response to my attempts to resolve it.\n\nI paid R1,640 by card, including R95 for delivery, for supplies for my class at Bergview Pre-Primary in Plumstead. The order contained six tubs of finger paint, four bags of playdough, 200 paper plates, googly eyes, glitter glue and two rolls of brown paper. The school’s delivery address was correctly recorded on the order.\n\nThe tracking shows that the parcel was delivered on Tuesday, 3 November at 11:42 and signed for by “M. Adams”. Nobody at our school has that name. Our gate guard, Faizel, keeps a book recording every delivery, and there is no entry for this parcel on 3 November. Despite what the tracking says, the school has not received it.\n\nI emailed on 4 November and again on 6 November. Both times, I received the same response: “We have escalated your query to our courier partner.” I also phoned on Friday and spent 38 minutes on hold, only to be told that nothing could be done until the courier completed its investigation, which could take ten working days.\n\nI understand that you need to establish what happened with your courier. However, that investigation should not leave me indefinitely without either the goods I ordered or the money I paid. I bought these supplies from Tiny Hands Edu Supplies, not from the courier. I did not choose the courier, and I expect your team to take responsibility for resolving the missing delivery rather than asking me to sort it out with them.\n\nThese supplies were paid for out of my own pocket for my kindergarten class. R1,640 is a significant amount on a teacher’s salary, and I cannot simply pay for everything again while I wait. The children made their mask patterns last week, and I have already spent a week telling them the paint is “coming soon”. We also need these materials to make props for our end-of-year concert on 27 November.\n\nI have ordered from you three times before without any problems, which is why this experience has been especially disappointing. I trusted that I could rely on you, and I would much rather have this resolved properly than spend more time chasing updates.\n\nTo resolve this, please either:\n\n- **Resend the complete order, at no additional cost, to arrive by Friday, 13 November; or**\n- **Issue a full refund of R1,640, including the R95 delivery charge, to my original payment method by Friday, 13 November.**\n\nPlease send me a personal response confirming which option you will arrange, who is handling it and when I can expect the delivery or refund. Another template saying the query has been escalated will not answer those questions.\n\nIf I do not receive a substantive response and a resolution by 13 November, I will pursue a chargeback through my bank and leave an honest review of my experience.\n\nI would prefer not to have to take those steps. Please help me bring this to a straightforward conclusion: I need the supplies I paid for, or my money back.\n\nKind regards,  \n[Your name]  \nBergview Pre-Primary  \n[Contact number]",
+  "words": 569,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4652808606624603,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7995977401733398,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.063775062561035,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.1,
+    "effort": "medium",
+    "output_tokens": 714,
+    "input_tokens": 14038
+  }
+}

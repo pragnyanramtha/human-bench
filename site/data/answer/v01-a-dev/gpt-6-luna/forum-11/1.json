@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "D. Bergeron, you’re right to ask for a straight answer. I should have thought through how that sign would look. “Grande nouvelle” was my nephew Thomas’s idea—he wrote it at six in the morning, and I said yes without thinking about the worry it might cause. I’m sorry for that.\n\nHere’s the news: **we are not closing. We bought the building.** M. Ferland, who owned it, offered to sell it to me before anyone else. We signed at the notary on December 15. He’s 81 and retiring to Sherbrooke to be near his daughter. He came in for his baguette pas trop cuite every morning for 17 years, and there were a few tears at the notary. I’m grateful he trusted me with the place.\n\nThe three apartments upstairs will stay rented to the same tenants at the same rents. I’ve promised them that in writing. The building was sold, yes—but to me, not to a developer turning it into condos.\n\nWe’ll be closed January 4 through 18 for work, and we’ll reopen **Tuesday, January 19 at 7 a.m.** We’re putting in a new four-deck oven from a Laval supplier. The old one dates to 1998 and broke down three times this year, so it was time. We’re also taking over the space at the back—the old dépanneur storage—and turning it into a little seating area with six tables. At last, you’ll be able to sit and enjoy your bread here.\n\nAnd the half-empty shelves on December 28? We sold everything for Christmas Eve—including 400 bûches. It wasn’t a sign that we were winding down.\n\nAs for the carnets: **they are valid, with no expiry date.** In October, we sold 214 carnets for $60 each, and each one is good for 12 loaves. If you have one, you can keep using it as usual. As a thank-you, every carnet holder can also have one free croissant in January. And if you’d rather have your money back, come see me and I’ll refund it, no questions asked.\n\nI understand why people worry. Mile End has lost too many small shops, and a vague sign plus rumours about a building sale is a bad combination. But after 17 years on this street, hearing that the carnets might be a scam honestly hurts. I know people have questions, though, and you deserve clear answers.\n\nThank you, Priya, for standing up for us—and thank you to everyone who has supported the bakery and defended it here. Please come by for the reopening on **Saturday, January 23**. We’ll have free coffee and a piece of our new bread for everyone. I hope to see you there.",
+  "words": 441,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "448 words, allowed 720-2200 (band 800-2000 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3708636462688446,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.33174949884414673,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.9375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.9448139667510986,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.3,
+    "effort": "medium",
+    "output_tokens": 581,
+    "input_tokens": 14635
+  }
+}

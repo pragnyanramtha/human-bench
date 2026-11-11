@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**An open letter about the pier and buoy temperatures**\n\nHi everyone,\n\nA few people have asked why my pier logger reads warmer than the offshore buoy. One reader sent an overlay of the two records that was genuinely helpful: it showed that the gap tracks sunny afternoons. I thought it was worth explaining what the instruments are measuring—and how I check mine.\n\nIn October, the pier logger averaged **15.9°C**, while the buoy averaged **14.1°C**: a gap of about **1.8°C**. In winter, that gap shrinks to roughly **0.4°C**.\n\nThe instruments are in very different places. My logger is strapped to a piling at 3 meters’ depth, about 150 meters from shore. The buoy is about 25 kilometers offshore, with its sensor just below the surface in deep water. Shallow nearshore water can warm in the sun, while the bay is sheltered from some of the upwelling that keeps offshore water cold. The sunny-afternoon pattern fits that picture.\n\nThe instruments also answer different questions. The buoy gives us an offshore reading; the pier logger tells us what’s happening close to shore. If you’re diving the breakwater, the pier reading is the more relevant number.\n\nAs for the logger itself, I check it at two points—an ice bath and a room-temperature bath—against a lab reference thermometer. At its last check, in September 2026, it had a **+0.12°C offset**, well inside spec and much smaller than the October gap. It logs every 10 minutes; I pull and download it every six weeks and replace the battery once a year.\n\nIn August, I brought it up with a barnacle colony and a decorator crab living on the housing. I scraped it clean, and the readings didn’t change.\n\nThe difference is real oceanography, not a broken logger. If you’d like the raw CSV, email me and I’ll be happy to share it.",
+  "words": 306,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4621199667453766,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9747141003608704,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.878933906555176,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "low",
+    "output_tokens": 404,
+    "input_tokens": 19037
+  }
+}

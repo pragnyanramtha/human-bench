@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.44, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Priya Menon <priya.menon@routewell.example>\nSubject: RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nPriya,\n\nThank you for owning it. Please don’t beat yourself up. You missed the stale answer, but we also have a questionnaire library nobody owns, and that’s not all on you. I’m not going to throw you under the bus with Greg. I’ll handle that conversation and be straight about both what happened and how we’re fixing it.\n\nI’d be lying if I said I wasn’t stressed. This is $186k ARR on a three-year term, I’ve been working it since February, and it’s my biggest deal of the year. I already told my wife we’d finally do the Big Bend trip off this commission, lol. But that’s context, not something I’m putting on your shoulders. I also haven’t forgotten you staying on until 9pm in September rebuilding their demo environment when the route import broke. One copy-paste mistake doesn’t erase everything you’ve done for this account.\n\nHere’s what we need to do:\n\n- Please fix Q14 tonight with the actual status: Type I issued in April, Type II still in progress, audit window closing January 31, and report expected by March. Send it to me first, not Dana. We need to review it together and talk to Greg before anything goes out.\n- I talked to Marcus. He can join a call with Dana and their legal team Thursday at 2. Please keep that slot open and join us too. I want us going into that conversation together.\n- Marcus says we can provide a bridge letter from the auditor. We’ll have him explain exactly what it covers and ask whether that helps with their requirements, rather than assume it clears the hold.\n\nI think this is fixable if we’re honest and move fast. Dana seems strict but fair, and we need to give her facts she can trust.\n\nWe’re fixing this together. Let’s start with Q14 tonight.\n\nJordan",
+  "words": 320,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4401654899120331,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19434131681919098,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.9140625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.110574722290039,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.3,
+    "effort": "medium",
+    "output_tokens": 419,
+    "input_tokens": 14457
+  }
+}

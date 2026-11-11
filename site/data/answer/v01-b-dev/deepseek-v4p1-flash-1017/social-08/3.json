@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "That’s a wrap on the student-run Winter School on Elliptic Curves and Modular Forms, held 5–7 November 2026 at Seminar Hall 2, Department of Mathematics, Sahyadri Institute of Science, Pune.\n\nOn behalf of the organising team — Ketaki Joglekar, Faizan Mirza and me — thank you to everyone who made it possible.\n\nWe received 112 applications for 41 seats. The 41 participants came from 9 states, mostly MSc and early PhD students, selected on the basis of a statement and one reference. The institute’s student initiative grant of Rs 2.4 lakh covered hostel stay and travel for 18 outstation students, which made a real difference.\n\nThank you to our speakers: Dr Nilesh Dharmadhikari (Hyderabad), who introduced the Mordell–Weil theorem; Dr Sunanda Iyer (Chennai), who took us through modular forms; and Dr Tomasz Wierzbicki (Kraków), who joined online for computations in Sage. We are grateful to our faculty mentor, Prof. Anuradha Venkatesan, for guidance throughout.\n\nThank you also to Mr Prakash Salunke from the office, who sorted out hostel rooms at 11 pm when the booking got messed up, and to our six PhD student volunteers who did TA work and ran the problem sessions. That format — problem sessions led by PhD students — worked especially well, and we plan to keep it.\n\nThe three days were not without drama. On day 2, power went out for nearly two hours, laptops died, and we moved the problem session to the canteen with two rolling whiteboards. It ended up being the best session of the school. One MSc student from Silchar spotted an error in a worked example in Sunanda ma’am’s notes; she corrected it live and thanked him. These are the moments that make small schools worth it.\n\nFor MSc students especially, a school like this matters more than a big conference: there is room to actually ask questions, and the discussions continued over tea and in the corridors. The questions were sharp, and the room stayed full till the last session.\n\nSlides and problem sheets will be posted on the department website within two weeks. We hope to run a second edition in late 2027, subject to funding. Thank you again to all participants, speakers, staff and volunteers.",
+  "words": 369,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18154506385326385,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09322675317525864,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.2578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.531481742858887,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.2,
+    "effort": "provider default",
+    "output_tokens": 4805,
+    "input_tokens": 639
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.46, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Renee, I’m truly sorry your toe is hurting and that you had to go to urgent care. I understand why you’re upset, and I don’t want to argue with you or dismiss what happened.\n\nI do want to clarify a few things about your visit. You came in on Oct. 24 for a $45 deluxe pedicure with my niece Vy, who is licensed and has been doing nails for three years. She was born and raised in Houston. I’m sorry she came across as hard to understand; she can be shy, but she takes her work seriously.\n\nYou asked Vy to trim the cuticle more, and she cautioned you against going too far. You told her it was fine and that you always have it done that way. I’m not sharing that to blame you. I’m sharing what I understand happened during the service, while recognizing that you’re the one dealing with a painful toe now.\n\nWe take sanitation seriously. Our tools are sterilized in an autoclave, and we open each sealed pouch in front of the customer. Files and buffers are new for every client, and you can take yours home. We also use a fresh plastic liner in the tub each time. We passed our state inspection in August 2026 with no violations; the inspection paperwork is posted at the salon.\n\nWhen you came back on Nov. 2, I offered to refund the full $45 and to pay your urgent-care copay if you bring in the receipt. That offer is still open. I’m sorry if my response that day felt like I was shrugging you off. That wasn’t what I meant, and I’m sorry I didn’t make that clearer.\n\nWe’ve been in Houston for 19 years, since I opened the salon in 2007 after working for my aunt. We’ve never had an infection complaint before, but I know that doesn’t change what you’re experiencing. It also hurts to see people say all nail salons are dirty. We work hard to keep ours clean, and I don’t think it’s fair to judge every salon the same way.\n\nI’m grateful to Marisol for checking in and for speaking up about her own experience. Renee, if you’re willing, please call me at the salon or come by so we can talk privately. I’d like to hear you out and make sure you know the refund and copay offer remains available.",
+  "words": 399,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45905447006225586,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14345026016235352,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.953752517700195,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.9,
+    "effort": "medium",
+    "output_tokens": 489,
+    "input_tokens": 14405
+  }
+}

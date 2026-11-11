@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "# Northvale has frozen your withdrawals. Here is what we know.\n\n*By Inês, product designer at Pinha. Tuesday 10 November 2026.*\n\nSince Friday morning you have not been able to take your money out of Pinha. This affects all of you, about 14,200 people. It is not a problem with your account or something you did.\n\nI'm Inês. I design the app and I write most of the words in it. Rui, our CEO, is on calls with lawyers and with Banco de Portugal all day, so he asked me to write this. I'm going to tell you everything we know, including the parts that make us look bad.\n\nThe short version is that your money is not lost, but it is locked. It sits in a safeguarded account that our payments partner, Northvale, is not allowed to use. They have blocked all transfers out of it, and until they release it, neither you nor we can move it. We have signed with a new bank and we are working to move everything there. I can't give you a date and I'm not going to invent one.\n\n## What happened\n\nPinha is not a bank. The money you save with us is held by Northvale Payments, an e-money institution based in Vilnius.\n\nOn Wednesday 4 November, Northvale emailed us to say they were ending our contract, with 30 days' notice. The only reason they gave was a \"risk appetite review\". We still have no real explanation.\n\nThirty days would have been tight, but enough to move you to a new partner without you losing access. Then on Friday 6 November at 09:00, with no warning, Northvale blocked all outgoing transfers. That goes against their own notice. Deposits and round-ups stopped at the same moment.\n\nTheir account manager stopped answering our calls that same day. The number now goes to a voicemail in Lithuanian.\n\nThey call it risk appetite. I call it cowardice.\n\n## Where your money is\n\nYour money is in a safeguarded account, separate from Northvale's own money. Northvale cannot spend it or use it for anything of their own. It is still yours and it is still there.\n\nI know \"safe\" means very little when you can't reach it. Safe and available are two different things, and right now you only have the first one.\n\n## What we got wrong\n\nWe built Pinha on a single payments partner with no backup. We were naive. When Northvale pulled out, we had nothing to switch to, and that is why you are stuck today. They broke their notice, but we are the ones who put all of your money behind one door. That was our decision and our mistake.\n\nI designed the screen in the app that says \"Your money is always yours, take it out anytime\". I look at it now and I feel sick. I believed it when I wrote it. It turned out to depend on a company we don't control, and we never told you that clearly.\n\nOne of you wrote to us entirely in capital letters. Three years of saving for the deposit on a car, and the seller will only hold it until this Friday. I read it on the metro and nearly cried. There are hundreds of messages like that in our inbox.\n\nYou have every right to be angry, and that includes being angry at us. I'm not going to ask you to stay calm or be patient. I'm furious too.\n\n## What you can do now\n\n**If you need your money urgently.** Rent, a medical bill, you've lost your job, or you have a payment deadline you can't move: write to urgent@pinha.example with URGENTE in the subject line. Tell us how much you need and by when. We are pushing Northvale to release money individually for these cases. I can't promise it will work every time, but these messages are read first.\n\n**If it isn't urgent but you have questions.** Write to support as usual. We have received 1,900 emails since Friday and there are three of us answering them, so a reply takes about two days at the moment. If you have already written, you don't need to write again. We are going through all of them.\n\n**The monthly fee.** Nobody pays it for November or December. You don't need to do anything. It doesn't fix the problem, but we are not going to charge you for an app that can't give you your money.\n\n**Round-ups and deposits.** These are stopped too, so no new money is going into Pinha while this lasts.\n\n## What we are doing\n\nWe have already signed with a new partner, Ostra Bank, here in Lisbon. Your balances will move there.\n\nFor that to happen we need two things. Northvale has to send us the file with everyone's balances, and Banco de Portugal has to approve the migration. Our estimate for the whole process is 10 to 15 working days. That is an estimate and not a promise. Part of it depends on a company that is currently not picking up the phone, and I would rather tell you that than give you a date and miss it.\n\nOn Saturday 7 November we filed complaints against Northvale with Banco de Portugal and with the Lithuanian central bank. Rui and the lawyers are following up on both today.\n\n## When you will hear from us\n\nWe will post an update here on the blog every Monday and every Thursday until every one of you can withdraw again. The next one is this Thursday, 12 November. If there is nothing new, we will say that instead of going quiet.\n\nI'm sorry. We'll write again on Thursday.\n\nInês\n\n---\n\nBefore it goes live:\n\n- **Lawyers:** have Rui's lawyers read it first, especially the \"cowardice\" line and the wording that the money is safe, since complaints are open with two regulators.\n- **The car story:** I left out Porto and the exact date so she is harder to identify, but she will recognise herself. You may want to ask her first.\n- **The estimate:** I didn't say when the 10 to 15 working days start counting, because your notes don't say. If they only start once Northvale sends the file, add that.\n- **Urgent emails:** asking people to say how much they need and by when is my addition. Cut it if you'd rather they just write.",
+  "words": 1068,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The piece ends with a pre-publication note to the requester rather than remaining a single blog post."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46972885727882385,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4524470567703247,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2839205265045166,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 60.8,
+    "effort": "high",
+    "output_tokens": 5457,
+    "input_tokens": 1875
+  }
+}

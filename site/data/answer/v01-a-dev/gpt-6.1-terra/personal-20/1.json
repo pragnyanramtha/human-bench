@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.47, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Dear friends, neighbors, church family, and all my wonderful nail ladies,**\n\nBy now, some of you may have heard that a car came through the front window of Lotus Glow Nails on Bellaire Boulevard early Sunday morning, November 8, around 2 a.m.\n\nFirst, please don’t worry about me. I am OK! I cried a little when I saw the shop in the morning, but I’m feeling better now. Thank God nobody was inside, and the driver is OK too. The police came, and her insurance will pay for the damage.\n\nThe front glass is gone, and one pedicure chair was smashed. The car stopped right at the chair, like she came in for a spa day! My daughter said it was the first drive-thru pedicure in Houston. The floor looks like a rainbow threw up, and my husband said the shop is finally modern art.\n\n**For this week:** Trang, Kim, and I are working at my cousin Hoa’s salon, **Pearland Nail Bar**. Please call or text my cell at **832-555-0147** if you’d like to make an appointment or find out where to go.\n\n**Lotus Glow Nails is expected to reopen Monday, November 16.** The city inspector needs to check the wall first, so I’ll let everyone know if anything changes.\n\nAnd please don’t worry about your gift cards. **They are still good, and nobody will lose their money.**\n\nAfter 11 years on Bellaire Boulevard, I know how lucky I am to have all of you. Thank you for the messages, prayers, and food. Mrs. Dung even brought me pho this morning—it made my day.\n\nGod protected us because nobody was inside. We have some cleaning and fixing to do, but we’ll be back. In the meantime, come see us in Pearland, and please share this with anyone who is asking!\n\nWith love and gratitude,  \n**Your Lotus Glow Nails family**",
+  "words": 309,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.47360488772392273,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8141090273857117,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.21875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.6060847043991089,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.8,
+    "effort": "low",
+    "output_tokens": 406,
+    "input_tokens": 18247
+  }
+}

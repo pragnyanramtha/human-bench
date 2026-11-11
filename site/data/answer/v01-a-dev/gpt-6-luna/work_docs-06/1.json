@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: Urgent: check Brightline Pro 6% developer, batch LX2291\n\nPlease check your Brightline Pro 6% (20 vol) Cream Developer before using it. Kelvin Trade has confirmed a filling error: batch LX2291 may contain 12% (40 vol) developer. It was supplied between 19 October and 5 November 2026. Other batches and strengths are not affected.\n\n**Check the base of the bottle.** The batch code is printed there, not on the box. Please check every bottle, including open ones in your trolley as well as stock in the back. Don’t rely on the box or assume an open bottle is fine. If the base says LX2291, stop using it immediately. The Kelvin Trade rep is in on Tuesday; you can return bottles to him or take them to the Hillington depot for a full credit.\n\nWe’ve had two reports in the salon of unusually fast, hot processing with this batch. On Saturday, a bleach retouch lifted much faster than expected, and the client developed redness and soreness at the scalp. On Thursday, Aileen’s foils were roasting and lifted unusually quickly; she initially thought the heater was to blame. Please don’t use the affected developer, even if a client has had no reaction so far. A stronger developer can process hair much faster than expected, increasing the risk of scalp irritation or chemical burns and uneven, over-processed or patchy colour. A previous patch test doesn’t make a mislabelled product safe.\n\nIf anyone reacts during a service, stop and rinse the affected area straight away with plenty of cool or lukewarm running water for about an hour. Don’t shampoo, apply creams or add other chemicals. Protect yourself with gloves and carefully remove contaminated clothing if possible. Get medical help: chemical burns need hospital assessment. Call 999 immediately for medical help; don’t wait for blistering or severe pain. Breathing difficulty, throat swelling or collapse also need 999. Follow the call handler’s instructions.\n\nRecord the incident in the book at the desk. Keep the bottle if it was involved in a problem—please don’t bin it—and note its batch code. If you have an affected bottle, return it to the rep or Hillington. Kelvin Trade’s notice says, “We apologise for any inconvenience caused.” A scalp burn is more than an inconvenience, so please take this seriously and check your products before the next service.",
+  "words": 378,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3685121238231659,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23544828593730927,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.4375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.2250066995620728,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.5,
+    "effort": "medium",
+    "output_tokens": 517,
+    "input_tokens": 15412
+  }
+}

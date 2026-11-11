@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Mr Ogunleye,\n\nGood day, sir. Thank you for calling me about the bag. I know you did not have to do that, and I am truly grateful that you did not throw it away. Many people would have, so I appreciate your honesty.\n\nI am writing to settle how we can get the bag back. It is a black Jansport. Inside are my BIO 101 lab manual, my dissecting kit, my student ID card, two textbooks, a calculator, and my glasses. I lost it on Friday 6 November in the evening, on the Oshodi to Igando bus, and I got down at Ikotun.\n\nI am a first-year student, and my practical is on Wednesday 11 November at 10am. The lab attendant will not allow me in without my dissecting kit, so getting the bag back before then is urgent for me.\n\nI want to be honest with you about money. I cannot raise 40,000 naira. That is more than my whole allowance for this period, so it is not possible for me. What I can give is 10,000 naira. I would like to give it to you for your transport and as a sign of my thanks for keeping the bag safe. I hope you will accept it in good faith.\n\nIf this works for you, please choose a day before Wednesday that suits you. My roommate, Adaeze, will come with me. We can meet in the daytime at the Ikotun roundabout or at the gate of the Ikotun police division, whichever is more convenient for you. Both are public places, and we will be there at the time you choose.\n\nPlease reply to this message so I know whether this plan works. If you need a different time or place, tell me and I will try to make it work.\n\nThank you once again, sir. I look forward to hearing from you.\n\nRegards,\n[Your full name]\n[Your phone number]\n\n---\n\nTwo things to check before you send it:\n\n- My system clock shows today as Wednesday 11 November, which is the practical date. If that is correct, change the \"before Wednesday\" line to something like \"as soon as possible\" and speak to your lecturer or the lab attendant today about a temporary arrangement.\n- Only send the 10,000 naira if you are comfortable with it. The letter is firm about what you can pay, so be ready to stand by it if he pushes back.",
+  "words": 407,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bullets"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44486096501350403,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09057720750570297,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.007126808166504,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.0,
+    "effort": "medium",
+    "output_tokens": 2353,
+    "input_tokens": 1467
+  }
+}

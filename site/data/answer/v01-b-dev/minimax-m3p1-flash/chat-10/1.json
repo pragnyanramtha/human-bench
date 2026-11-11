@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Rick, need to talk to you about something, and I want it straight so nobody's guessing later.\n\nYou told Gary I'd list his house for 1%. You never asked me, and you never said 1% to him — my listing side is 2.5%. So there's two things here and I need both of them acknowledged.\n\nSaturday, Nov 7, I gave up my whole day on that house. Pulled comps, did the walkthrough, printed a full listing packet. About six hours, plus the drive up from north Phoenix. Then Sunday night Gary texts he's going with ListLite, flat fee, $3,995, \"no hard feelings.\" Fine. I get it. He picked what he picked. He's not the problem.\n\nThe problem is you. When I called you about it, all I got was \"that's business sis, can't win 'em all.\" That's not business, Rick. That's you handing out a number that isn't yours to hand out and a commission that isn't yours to quote, then acting like I lost a race I never even ran.\n\nAnd this morning you text that Denise wants to \"pick my brain,\" and you've already given her my cell. I'm not calling her. You tell her. If she actually wants to talk to me, you ask me first and I decide.\n\nThis happened before, with your softball guy two years ago. I let it go then. I'm not letting it go this time.\n\nHere's the deal, and this is the whole message. You don't quote my commission to anybody. You don't hand out my number to anybody. If somebody wants to use me, you ask me first, every time, and you tell them what I actually charge. No more \"family rate\" I never agreed to.\n\nI'm not mad at Gary. I'm mad at you. I'm still coming to Thanksgiving and I'm still your sister, but I'm not doing free work for your buddies so you can look like a big shot. If you want to help actual family — Mom, your kids, anybody — I'll talk to them for free, all day, and I'd rather.\n\nCall me tonight. I'd rather hear your voice than keep reading texts.",
+  "words": 358,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says 'you never said 1% to him', which contradicts the request: Rick did tell Gary 1%, and it was the narrator who never said 1% to anybody."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says Rick never quoted 1% to Gary, contradicting the stated offer."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41698357462882996,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3994821310043335,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.458984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.239553928375244,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.5,
+    "effort": "provider default",
+    "output_tokens": 1327,
+    "input_tokens": 688
+  }
+}

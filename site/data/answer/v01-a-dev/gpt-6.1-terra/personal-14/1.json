@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To all Larkspur Lofts residents,**\n\nI’m writing about the drone I flew from the roof deck on Saturday, October 31, at around 4:00 p.m. A note posted in the lobby identified my unit and accused me of spying. I want to explain what I was doing and address the concerns it raised.\n\nI’m a wedding photographer, and I was testing a new Halvard Mini 4 drone before a vineyard wedding in Dundee. The flight lasted about 11 minutes. Throughout the flight, the camera was pointed west toward the river and the Fremont Bridge, not at anyone’s windows.\n\nI understand why seeing and hearing a drone hover over the courtyard would be unsettling, especially without knowing why it was there. I’ve heard that it frightened some children, and I’m sorry that my flight worried them and others in the building. Privacy matters, and I should have considered how the flight might look and sound to my neighbors.\n\nAt the same time, being called a “creep” in the lobby, with my unit number included, was upsetting. I’ve lived at Larkspur Lofts for three years, and having that accusation posted publicly made me feel exposed. If anyone has a concern about something I’m doing in the future, I would appreciate the chance to talk about it directly rather than through a public note.\n\nI’m happy to show the full, unedited clip from the flight to anyone who would like to see it. Please knock on my door at **5A** or email me at **jess.okafor@mailbox.example**.\n\nAs far as I can tell, our current HOA rules do not address drones. I won’t fly from the roof again until the board decides on a rule, and I’ll ask that the issue be added to the agenda for the November 19 board meeting at 7:00 p.m. in the community room.\n\nThank you for reading and for giving me the opportunity to explain.\n\nSincerely,  \nJess Okafor  \nUnit 5A",
+  "words": 320,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48222628235816956,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9989416599273682,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 20.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.04701042175293,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.3,
+    "effort": "low",
+    "output_tokens": 414,
+    "input_tokens": 19049
+  }
+}

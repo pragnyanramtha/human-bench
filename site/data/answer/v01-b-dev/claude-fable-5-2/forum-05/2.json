@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nYes, I read the changelog before upgrading. The problem is that the changelog doesn't say what changed.\n\nI found the cause today. It is PR #812 (\"refactor spectral frame handling\", merged Oct 22). In LineList.__init__ the default went from wave_frame='air' to wave_frame='vacuum'. So rest wavelengths are now vacuum by default, while my spectra are calibrated in air from arc lamps. The vacuum/air ratio at 6563 Å is about 1.00028, which is exactly the offset I reported (about 83 km/s), in the same direction for every object.\n\nSo this is a changed default in the library, not a problem with my calibration or my config. The same spectra and the same config file give different redshifts in 2.4.3 and 2.5.0.\n\nAbout \"works for me\": that is not a test. If your data is already in vacuum wavelengths, or it is radio, of course you see no difference. Anyone with air-calibrated optical data who doesn't set wave_frame explicitly will get shifted redshifts. m_okonkwo also reported an offset on long-slit data above, so it is probably not only me.\n\nCHANGES.md for 2.5.0 says only \"Refactor LineList and spectral frame handling (#812)\". Nobody can guess from the word \"refactor\" that a default changed, and there is no deprecation warning. This thread was marked solved after I was told it was almost certainly my own calibration, so I spent two days re-reducing arc lamps for 40 spectra. The calibration was fine the whole time.\n\nWorkaround for anyone who finds this thread: set the frame explicitly when you build the line list.\n\nLineList(..., wave_frame='air')\n\nThat is what fixed it for me.\n\nTo the maintainers, three requests:\n\n1. Please reopen this thread. It is not solved, and it was not a user error.\n2. Add a line to CHANGES.md for 2.5.0 saying that the default wave_frame changed from 'air' to 'vacuum'.\n3. Emit a warning when wave_frame is not set, at least for a release or two, so people notice before they publish shifted redshifts.\n\nI can send a minimal example if that helps.",
+  "words": 337,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18423597514629364,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02895914576947689,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.66015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.837878227233887,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.0,
+    "effort": "high",
+    "output_tokens": 2391,
+    "input_tokens": 3033
+  }
+}

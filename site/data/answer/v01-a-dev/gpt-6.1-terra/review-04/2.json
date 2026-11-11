@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5 stars — careful work and fast delivery for our camera parts\n\n5/5 stars\n\nArroyo made a camera-to-dewar adapter plate and a light baffle tube for our near-IR camera. We needed the parts in time for our Palomar run on November 18, and I was honestly worried about the schedule. A larger vendor had quoted us six weeks. Arroyo quoted 21 days and delivered in nine days from the PO, including black anodizing.\n\nThe speed was great, but what impressed me most was that they actually read the drawing. While setting up the adapter plate, Tiff noticed that I had given the bolt circle as 4.125 without making it clear that this dimension was in inches. The other dimensions on the drawing were in mm. I had copied it from an old drawing of our previous camera, so that mistake was mine. Ruben checked with me before they cut anything, and he was right: using 4.125 mm would have put the screws inside the bore. That question saved us from a bad part and a lot of lost time.\n\nRuben also drove the finished parts to Robinson himself, at no charge. I was so happy to see him with the parts that I almost hugged him!\n\nWe did the fit test on Monday, and everything worked. All eight screws went into the plate on the dewar without forcing. The flatness across the face was less than 0.01 mm on the dial indicator. The baffle threads were smooth, and we saw no light leak in our dark test: with the lab lights on, the 300-second dark frame looked the same as with the dewar closed. The anodizing was even, with no bare spots.\n\nFor other labs and purchasing staff, I think the important thing is that this was not just a fast turnaround. They caught a problem in my drawing, asked before machining, and delivered parts that passed our fit and light-leak checks. The order did include a rush setup fee, so that is worth keeping in mind when comparing quotes, but for our schedule it was well worth it.\n\nI would definitely use Arroyo again for prototype and short-run work, and I hope purchasing will consider adding them to our preferred vendor list.",
+  "words": 361,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2871246933937073,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12782497704029083,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.1484375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.040416717529297,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.1,
+    "effort": "low",
+    "output_tokens": 480,
+    "input_tokens": 19682
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the letter — just drop your name in at the end and send it out with the invites.\n\n---\n\n**Sat 12 Dec — the hair thing before Gran's dinner**\n\nHiya all,\n\nRight, I've a plan and I'm proper buzzing about it.\n\nMorag has let me have Hair by Morag to myself on Saturday 12 Dec from 1pm — she closes at 12 on a Saturdays, so the place is ours, the whole lot of it. And here's the good bit: I'm doing every one of you for free. No salon prices, no money changing hands. Cuts and blow-dries for the lot of you, and my treat to my three favourite women and the two wee ones.\n\nWhat I need from you is this: if you want a colour, a gloss or anything on top, tell me by **Friday 27 Nov** so I can order it in from the wholesaler. I need to know in advance, otherwise it's me panicking over an empty shelf on the Friday night. So reply even if it's just \"leave it as it is\", and I'll have everything written down and ordered.\n\nGran — at Easter she said she'd love to go silver properly but wouldn't pay salon prices, so this is our gift to her. Mum, can you get her to the salon for 1pm without letting on why? Just say you're meeting us for a coffee. Keep the surprise in.\n\nAva and Ruby can have wee braids and a bit of glitter spray. They'll be the best-looking two there by a mile, so let them know to come ready for it.\n\nTwo other things. I'm bringing a bottle of fizz for afterwards — Morag says that's fine as long as we tidy up and leave the place looking like a salon, not a party. And Linda, the last time I did your colour in your kitchen the dog and the cooker both ended up with dye on them, so let's do it in the salon this time, it's a lot easier to clean up. (Joking. Mostly.)\n\nDinner's at 8.30 at the Italian place on Byres Rd, table for nine with Uncle Davie and Kirsty's man, so we're all together afterwards.\n\nLet me know your colour wishes and roughly when you can get down to me and I'll slot us all in. If anyone else wants to come along for a cut, they can just say.\n\nCan't wait, it's going to be brilliant.\n\nLove,\n[Your name]\n\nP.S. Don't. Tell. Gran.",
+  "words": 416,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4212498962879181,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17255564033985138,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.546875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.2762260437011719,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.9,
+    "effort": "provider default",
+    "output_tokens": 2083,
+    "input_tokens": 663
+  }
+}

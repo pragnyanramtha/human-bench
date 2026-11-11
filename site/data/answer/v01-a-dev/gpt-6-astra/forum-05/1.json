@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.34, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: Please reopen: PR #812 changed the default wavelength frame\n\nI did read the changelog. I have now traced the offset to PR #812, and the relevant entry says only “Refactor LineList and spectral frame handling.” That does not tell users that the default wavelength frame changed.\n\nIn PR #812, the default in LineList.__init__ changed from wave_frame='air' to wave_frame='vacuum'. My optical spectra are wavelength calibrated in air using arc lamps, as stated in the original post. With the same input spectra and config, 2.5.0 now uses vacuum rest wavelengths unless I explicitly specify otherwise.\n\nNear H-alpha, the vacuum/air wavelength ratio is approximately 1.00028, corresponding to about 83 km/s. That matches the scale and direction of the redshift shift I reported. Explicitly restoring the air setting fixes the offset for my data.\n\nFor anyone finding this thread with the same issue, the workaround for air-calibrated spectra is to set this explicitly when constructing the line list:\n\nLineList(..., wave_frame='air')\n\nUse the frame that matches your input wavelengths; this is not a recommendation to use 'air' for every dataset.\n\nI am frustrated that this was marked solved and attributed to my calibration or config without checking the reported behavior. I spent two days investigating my wavelength calibration and re-reducing arc lamps for 40 spectra unnecessarily. Being told to read a changelog I had already read did not help identify an undocumented default change.\n\n“Works fine for me” does not test this specific case unless the input wavelength frame and configuration are comparable. Data already in vacuum, or radio data, would not necessarily expose this optical air/vacuum mismatch. m_okonkwo also reported a possible offset here, which deserves follow-up rather than closure.\n\nPlease reopen this thread. Please also add an explicit line to CHANGES.md documenting the default change and the workaround, or add a warning when wave_frame is not set. A behavior-changing default needs more notice than “refactor.”",
+  "words": 303,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3364730179309845,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2880712151527405,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.92578125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.5241827964782715,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.1,
+    "effort": "medium",
+    "output_tokens": 438,
+    "input_tokens": 15118
+  }
+}

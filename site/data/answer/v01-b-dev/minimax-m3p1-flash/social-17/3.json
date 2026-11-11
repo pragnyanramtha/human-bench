@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: page:wensum-valley-hospice-bookshop\nReplying to: none\nCc: none\nSubject: none\n\n[Draft for Moira to look over before it goes up.]\n\nSeven years this month since Ray died at the hospice, and the Light Up a Life tree is coming back to our window.\n\nMemory tags are on the counter from Monday 16 November. £3 is the suggested donation, and that is a suggestion rather than a price — nobody is going to be turned away. If you would rather write your tag at home, there are envelopes on the counter to take and post back to us.\n\nThe tree goes into the window on Saturday 21 November, and we switch the lights on on Saturday 28 November at 4pm. Gildencroft Primary choir are coming back to sing us three or four carols, and Doreen is doing the mince pies again. Come early if you want a plate before they go.\n\nNow a word about who the tree is for, because I think it matters.\n\nIt is for anyone who is grieving. Not only families of hospice patients, and not only people who knew somebody cared for here. If you have lost someone — a husband, a mother, a friend, a brother, a cat — you are welcome to come and stand by the tree. You do not have to buy anything to do it. You do not even have to write a tag, if you would rather not. Just come and stand there for a few minutes. That is all the tree asks of you.\n\nI do that myself. The first year I hung Ray's tag I could hardly write it; I got as far as his name and had to put the pen down. Now I write it at the counter, in the shop, with the same pen, and hang it on the tree myself. Seven years this month. It turns out to be easier than I expected, and harder in a different way.\n\nEvery name on the tags will be read out at the hospice remembrance service on Sunday 13 December at 3pm, in the day centre. If you cannot come to the service, your name will still be read. You do not have to be in the room for it to count.\n\nAnd thank you to everyone who remembered with us last year. There were 412 names on the tree. I never met most of you, and I am glad you were there.\n\nSee you at the tree.\nJean\n\n---\n\nTo: page:wensum-valley-hospice-bookshop\nReplying to: [s05]\nCc: none\nSubject: none\n\n[Draft reply — for Moira's approval.]\n\nYes, Hilary, we are doing the tree again this year, and we would love to see you and your sister. Your mum's name will still be read out at the hospice service on Sunday 13 December, and if you would like to write another tag, for her or for anyone else, they are on the counter from Monday 16 November — £3 suggested, and there are envelopes if you would rather write at home. We light the tree on Saturday 28 November at 4pm, with the Gildencroft choir singing, and you are very welcome just to come and stand by it.\n\nHope to see you both.\nJean\n\n---\n\nTo: dm:moira.blyth\nReplying to: [s01]\nCc: none\nSubject: Light Up a Life draft for your look\n\nHere is the draft for the tree post. It is sitting on the page as a draft and nothing has gone up, so do have it in your own time.\n\nTwo things I would like you to check. I have taken it that the tree goes into the window on Saturday 21 November and the lights go on on the 28th, and that the service is Sunday 13 December at 3pm in the day centre. And I have left last year's takings out of it — I thought it read better to thank people for the 412 names instead — but I will put the figures back in if you would rather.\n\nI have also added a few lines of my own, about Ray and about the tree being for anyone who is grieving. Do tell me if you would rather it were cut back.\n\nNo rush at all.\nJean",
+  "words": 665,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "3 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09029418975114822,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08240332454442978,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.2105464935302734,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 43.9,
+    "effort": "provider default",
+    "output_tokens": 6113,
+    "input_tokens": 2428
+  }
+}

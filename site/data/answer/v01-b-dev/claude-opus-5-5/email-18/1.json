@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject: Re: Saturday alarm**\n\nKristen,\n\nHere's the straight story. It was my popcorn, no sense pretending otherwise.\n\nSaturday, Nov 7, around 10:40 I put a bag of butter popcorn in the break room microwave, hit the popcorn button and walked out front. A customer needed a shear pin for his snowblower and it took longer than I figured, maybe 6 or 7 minutes. By then it was burnt and the alarm was going. We had the store cleared about 25 minutes and the engine from up on Hertel came out. No damage, just a lot of smoke and stink.\n\nThat's on me, not the microwave. I walked away from it and I shouldn't have.\n\nSo Gary has it straight for the file, the September alarm wasn't me. That was the sensor in the paint aisle. I'm not saying that to get off the hook for this one.\n\nI'll cover the $175. You can take it out of my check or I'll bring in cash, whichever is easier for you.\n\nI feel bad about the Hendersons and everybody standing out in the lot in the cold. They'll probably be back, they always are, but that doesn't make it okay.\n\nI'd really like to keep my Saturdays. I like the weekend crowd, and honestly I need the hours for heating oil this winter. From here on, if something's in that microwave I'm standing right there watching it.\n\nAnd yes, I owe Denise a coffee. I'll take care of it.\n\nFor what it's worth, I've already paid for this some. 31 years on the job and my first alarm as a civilian is over a bag of butter popcorn. One of the guys on the engine was Mikey Szymanski, who I broke in as a probie back in '03. He's never going to let me forget it. My wife says the van smells like a burnt movie theater, so I'm getting it from all sides.\n\nSorry for the trouble, Kristen.\n\nWalt",
+  "words": 328,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30639925599098206,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.041241031140089035,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.4921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.2257513999938965,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.2,
+    "effort": "medium",
+    "output_tokens": 1479,
+    "input_tokens": 1948
+  }
+}

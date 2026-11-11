@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr Kerrigan,\n\nThank you for contacting Erindale Park Pharmacy. We would be pleased to help your mother settle into a manageable medication routine when she returns home. There is often a great deal to arrange after a hospital stay, and we can work with you and her discharge team on the transition.\n\nWe prepare weekly blister packs containing seven days of medication, with up to four dosing times each day. There is currently no charge for the packaging itself. Normal prescription charges apply; Ontario Drug Benefit covers most eligible prescription costs for seniors, although any applicable deductible, co-payments or items not covered would still be payable.\n\nWe offer free delivery within eight kilometres on Tuesdays and Fridays, between 2 and 6 p.m. Your mother’s building is within our delivery area. For her first packs, we can arrange either Saturday pickup or a one-off Saturday delivery before 1 p.m. Please let us know which you would prefer.\n\nTo transfer her prescriptions, please provide the name and address of her current pharmacy. We will also need her OHIP number, which you can provide by telephone rather than email. We will contact the pharmacy directly; there is no transfer form for your mother to sign.\n\nPlease ask the hospital discharge team to fax her discharge prescriptions to us early on Thursday. Preparing the first packs takes approximately 48 hours after we have received all the prescriptions, including those transferred from her current pharmacy. If everything is received Thursday morning, we would expect the packs to be ready Saturday, subject to completing our checks.\n\nThe first packs will therefore not be ready when she leaves hospital. Before discharge, please confirm with the discharge team that she will have an interim medication supply and that someone will help her with every dose until the packs are picked up or delivered on Saturday. Please make sure the team knows she has been mixing up her pills, so there is a clear, safe plan for those first two days.\n\nI would be happy to arrange an evening call to review her medication list with you. Before discussing her medications, however, we need Margaret’s permission. We record this using our Family Communication Consent form, signed by her. This protects her privacy and allows her to choose whom we can share her medication information with. She can sign at pickup, or we can send the form with the delivery driver. Please let us know a suitable evening to speak once her signed consent is in place.\n\nI would also like to offer a home MedsCheck during her first week back, particularly if getting to the pharmacy is difficult. This is an approximately 20-minute medication review. I can visit Monday or Tuesday after 6 p.m.; please let me know which would suit her.\n\nMy direct number is 905-555-0148, extension 2. I am in the store Monday to Friday, 9 a.m. to 6 p.m.\n\nKind regards,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy\n\n---\nTo: joel.santos@erindaleparkrx.example\nReplying to: m02\nCc: none\nSubject: Kerrigan onboarding notes - for review tomorrow morning\n\nHi Joel,\n\nThank you for gathering the details. The reply to Douglas is a draft for my review tomorrow morning; please do not send it yet.\n\nPlease keep these offers and requests in the onboarding notes:\n\n- Obtain Margaret’s signed Family Communication Consent before discussing her medications with Douglas. Offer signing at pickup or through the delivery driver.\n- Request the current pharmacy’s name/address and Margaret’s OHIP number by telephone.\n- Ask Douglas to have the hospital fax prescriptions early Thursday. Saturday readiness depends on receiving all discharge and transferred prescriptions and completing our checks.\n- Make clear that packs will not be ready at discharge. Ask Douglas to confirm an interim supply and help with every dose with the discharge team until Saturday pickup or delivery.\n- Offer Saturday pickup or your one-off delivery before 1 p.m.; confirm his preference.\n- Offer a home MedsCheck Monday or Tuesday after 6 p.m. and an evening call once consent is recorded.\n- Give my direct line: 905-555-0148 ext 2; store hours for reaching me are Monday–Friday, 9–6.\n\nThanks,\nRania",
+  "words": 671,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['joel.santos@erindaleparkrx.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12266600877046585,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1444852203130722,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.54296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.102754592895508,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.5,
+    "effort": "low",
+    "output_tokens": 1004,
+    "input_tokens": 19722
+  }
+}

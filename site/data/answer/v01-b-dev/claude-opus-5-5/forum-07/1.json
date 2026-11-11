@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "**Title: The cake with my name on the foil**\n\nI've been reading this board for a long time but this is my first post. Today something happened that I'm still thinking about since I got home, so I thought this monthly thread is the right place.\n\nI work in a small independent pharmacy, just me and my tech. One of our blister pack patients, I'll call her Mrs. H, passed away at the end of October. Today her daughter came in to return the unused packs and her glucometer.\n\nMrs. H came to us for seven years. Weekly blister pack, every Thursday, eleven medications. After her husband died she lived alone, and she walked with a cane with tennis balls on the bottom. You could hear her coming before the door opened.\n\nAnd every Thursday she brought me something. Usually poppy seed cake. Once a whole jar of pickles, and honestly I did not know what to do with them, but I said thank you like it was the best gift of my life. During Ramadan she remembered I was fasting. She wrapped the cake in foil, wrote my name on it, and told me very seriously not to eat it until sunset. I don't think I ever told her how much that meant to me.\n\nA few years ago a new doctor added a medication that interacted with her warfarin. I caught it, I called him, he changed it. That's it, that's the job. But after that she told everybody I saved her life. The other customers, her neighbours, probably her church. Every time she said it I told her no no, I just did my job, and every time she waved her hand at me like I was being silly.\n\nToday her daughter gave me a card. Inside, in her mother's handwriting, it said \"for my Arabic daughter.\" The daughter said she found it in a drawer. She wrote it a long time ago and never gave it to me.\n\nI went to the back room and cried. My tech covered the counter for ten minutes without asking me anything. I'm grateful for that.\n\nIn school they teach us pharmacology, interactions, dosing, counselling, all of it. Nobody teaches you how to say goodbye to a patient. Nobody tells you that one day a daughter will put a bag of untouched blister packs on your counter and you will look at the days she didn't get to.\n\nMy father was a pharmacist in Egypt. He knew every family in the neighbourhood: who was sick, who had a new baby, whose son was in trouble. When I came to Canada I thought it would be different here, more professional, more distance. It's not. People are people. If you see someone every week for seven years, you know them. We are told not to get attached, and I understand why, but I don't know how you do this job well and not get attached at least a little.\n\nI'm not really sure what I'm asking. I think I just wanted to say it somewhere where people understand.\n\nDo you have a patient like this? Someone who stayed with you after they were gone? How do you handle it when it happens? I'd really like to hear.\n\nThank you for reading.\n\n---\n\nA note on privacy: besides leaving out her name, I dropped a few things that could add up to identifying her when combined. Those were the exact date she passed, her exact age, your store's neighbourhood, and the daughter's and Priya's names. Anyone local who knows your pharmacy could put \"small independent, Dundas area, Thursday blister packs, Polish lady with a cane\" together pretty fast. You can add any of it back if you're comfortable with that.",
+  "words": 627,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['Dundas']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12210320681333542,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06607801467180252,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.851089596748352,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.0,
+    "effort": "medium",
+    "output_tokens": 1513,
+    "input_tokens": 1529
+  }
+}

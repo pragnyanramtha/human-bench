@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: Children's ibuprofen recall: it's the syringe, not the medicine\n\nImportant for parents: Corvane children's ibuprofen recall\n\nMany of you have seen posts about a children's ibuprofen recall and are worried. I want to explain exactly what is going on and what you need to do.\n\nWhat is recalled\nCorvane Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry), 120 mL bottle\nLot CV6114A and lot CV6114B (exp. 08/2027)\nThe lot number is printed on the bottom of the box. Please check the box before anything else.\n\nWhat the problem is\nThe problem is the plastic dosing syringe that comes in the box. The numbers were printed wrong. Every mark measures DOUBLE what it says:\n- the line marked 2.5 mL actually measures 5 mL\n- the line marked 5 mL actually measures 10 mL\nSo a parent who followed the directions exactly with this syringe gave about twice the dose.\n\nThe medicine itself is fine. The manufacturer confirmed the liquid meets all specifications. It is not contaminated, it is not expired, and it is not part of the recall. Only the syringe is.\n\nWhat to do if you have one of these lots at home\n1. Throw away the syringe that came in the box. Don't use it for this or any other medicine.\n2. Get a correctly marked oral syringe. We have free replacement syringes arriving this morning before noon. Anyone can come in for one. You don't need a receipt and you don't need to have bought it from us.\n3. If you'd rather not keep the product, bring it back and we will give you a full refund.\n4. Don't use a kitchen spoon to measure.\n\nIf your child already had medicine measured with this syringe\nI know everyone wants a quick answer, but I can't safely assess a child through Facebook. Whether a double dose is a problem depends on your child's weight, how many doses they had, how close together, and other health things like kidneys. The poison centre can do that assessment properly with you on the phone, and it's free, 24/7.\n\nIf you have ANY doubt about how much your child got, call the poison centre: 1-844-POISON-X (1-844-764-7669)\n\nDo not give another dose of ibuprofen until the poison centre or your doctor tells you it's okay.\n\nCall 911 or go to emergency right away if your child:\n- is very sleepy or hard to wake up\n- is vomiting blood\n- is not peeing\n- has a seizure\n\nWhen we found out, and why we didn't call you\nWe got the recall notice from Corvane on the evening of November 6. We took the remaining bottles off the shelf and put signs on our front door and in the kids aisle the next morning, November 7. This medicine is sold off the shelf, with no prescription. For most of these sales we have no name and no phone number, so we couldn't call people. That's why I'm posting here. Please share this with any parent who might have this medicine at home.\n\nExtra hours for exchanges\nWe are opening this Saturday 10 am to 4 pm just for syringe exchanges and returns, along with our regular hours.\n\nOur phones are very busy right now. We are returning every call, but if you're worried about your child, please don't wait for us. Call the poison centre first.\n\nRania Haddad, Pharmacist\nCedarbrook Pharmacy, Erin Mills Pkwy\n\n---\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nHi everyone, this is Rania, the pharmacist at Cedarbrook. I'm so sorry for the worry this has caused. I want to make sure everyone gets the right information.\n\nThis is the Corvane children's ibuprofen, lots CV6114A and CV6114B (look on the bottom of the box). The medicine itself is NOT contaminated or expired. The problem is the syringe in the box. It's printed wrong, and every mark gives double the amount it says.\n\nIf you have one of these lots: throw out that syringe and don't use it. We have free replacement syringes from today before noon, no receipt needed, or you can return the bottle for a full refund.\n\nIf your child had a dose measured with that syringe and you're not sure it was okay, call the poison centre at 1-844-764-7669. They'll assess your child. Don't give another dose until they or your doctor say it's fine. If your child is very sleepy or hard to wake, vomiting blood, not peeing, or has a seizure, call 911.\n\nI put all the details on our pharmacy page here: [link]. Please share it with anyone who might have this at home.",
+  "words": 752,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21128307282924652,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09754925966262817,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1123046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.53029203414917,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.1,
+    "effort": "medium",
+    "output_tokens": 2445,
+    "input_tokens": 3764
+  }
+}

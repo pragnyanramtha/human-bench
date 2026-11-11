@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Review: Sunbelt Charter Coaches. Would not book for anything large right now**\n\nI'm posting this so others can decide with the facts in front of them.\n\nI booked 4 coaches for a client dinner for 220 guests on Thursday, Nov 5. The pickup was at the hotel at 6:15, headed to a ranch venue in Henderson. Sunbelt confirmed in writing twice, most recently on Tuesday, Nov 3. I paid $8,400 total: 50% deposit in September and the balance 7 days out.\n\nHere's what happened:\n\n- Only 2 of the 4 coaches showed up.\n- The first arrived 55 minutes late. The driver told me he was given the job at 5pm that day.\n- The second broke down on the 215 with the AC out. Guests sat on the shoulder for about 40 minutes.\n- I put roughly 60 guests in Ubers and Lyfts on my company card to get them there. That came to about $1,900.\n- Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime.\n\nDelays and breakdowns happen, and I could have forgiven one late bus. What I can't get past is that there was no backup plan and no communication. Nobody called to say coaches were missing. My dispatcher contact on everything was Corey, and the office line has gone to voicemail since Friday. I've asked for a refund for the two coaches that never came plus the rideshare costs, and so far I've had no response.\n\nFor fairness, they handled two small airport runs for me last spring without a problem, which is why I trusted them with this. But that's a very different scale from a 220-person, 4-coach evening, and it looks like dispatch can't handle the bigger jobs.\n\nMy client is now reviewing whether to keep us for their March event, so this has real consequences beyond one bad night.\n\nIf you're booking for CES season, I'd hold off on using them for anything big until they sort out their dispatch. If you do use them, get a named backup plan in writing and confirm the day before and the morning of.\n\nIf anyone has dealt with Sunbelt recently, good or bad, I'd like to hear it.\n\n---\n\nI left out a refund dollar figure for the two missing coaches since I didn't know if the four were priced equally. If they were, you could add \"($4,200)\" after that line. I also kept the two-bus breakdown order as you gave it, so double-check that the broken-down bus was the second one that arrived.",
+  "words": 424,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35649076104164124,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.27227815985679626,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.921875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.9106757640838623,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.9,
+    "effort": "high",
+    "output_tokens": 1315,
+    "input_tokens": 1475
+  }
+}

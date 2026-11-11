@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Refurbished Vantorre CX-10: E34 lockouts from the first week, heavy scale in the generator 3 weeks in\n\nWe bought this refurbished CX-10 for $14,800 for a busy bistro in Fitzroy. It was delivered and commissioned on 14 September. The listing says the steam generator was descaled and pressure tested and the core probe calibrated. That hasn't matched what we got.\n\n22 Sept (service report SR-1190): intermittent E34 lockouts (steam generator low water level) in steam and combi modes. Kelsall's tech found 9 of them in the error log since delivery day, 8 days earlier. Level sensor replaced under warranty. He measured inlet pressure at 320 kPa and noted it as OK.\n\n3 Oct: E34 back, 4 times that week. The core probe was also reading low. We checked it twice against a Thermapen in a lamb shoulder: oven 63°C, Thermapen 70°C.\n\n6 Oct (SR-1236): steam generator found heavily scaled, descaled and flushed. Probe recalibrated to within 1 degree. The report recommends we fit a softener because the scale \"indicates hard water supply\".\n\nOur water supplier puts the Fitzroy supply at about 15 mg/L as CaCO3 on average, which is soft. The oven had been on that water for 22 days. A generator that was descaled before sale shouldn't be heavily scaled three weeks later on water like that. Our view is it wasn't properly descaled when it came to us.\n\nSat 24 Oct: E34 locked the oven out at 6.10pm with a full book of 60 covers. We finished the lamb on the stove and in the deck oven and pulled the pork belly for the night.\n\n27 Oct: tech attended, found E34 again and further scale, three weeks after their own descale and flush. Kelsall have told us this is a site water issue and not covered, and that the visit will be charged at $280 + GST ($308). The unit was six weeks old on a 6 month parts and labour warranty.\n\nTo be fair, their tech has been good to deal with and turned up each time. The problem is the unit and how the warranty has been handled.\n\nIf you're looking at a refurb from this seller, ask for the descale and probe calibration records in writing before you pay, and have the generator inspected at commissioning.",
+  "words": 364,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10534372925758362,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.014272618107497692,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.46875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.468712568283081,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 52.9,
+    "effort": "high",
+    "output_tokens": 4980,
+    "input_tokens": 3676
+  }
+}

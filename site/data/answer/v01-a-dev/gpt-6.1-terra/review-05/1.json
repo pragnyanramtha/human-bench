@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: 3 stars – great tub, frustrating warranty experience\n\n★★★☆☆\n\nI’m a mobile dog groomer, and Harbourline fitted out my van in August. There are things I genuinely love about it, and one experience I really wish had gone differently.\n\nFirst, the good: the tub and ramp are honestly great. Dogs walk right in, which makes my life so much easier, especially with the big ones. It’s easily my favourite part of the van.\n\nIn October, a fitting on the hot water line let go in the middle of a groom. Water went all over the floor and into a cabinet while Moose, a 110-pound Bernese, sat in the tub through the whole flood like a king. He did not care at all. I was the one screaming. He went home half groomed and apparently thought he’d had a lovely pool party, so at least one of us enjoyed the afternoon.\n\nI had to cancel the rest of that day, and the van was off the road from October 27 to November 6. I also lost six bookings. When your van is your workplace, that’s a pretty rough stretch.\n\nThe leak itself isn’t what made me angry. Stuff breaks. What bothered me was that, before seeing it, Glenn suggested the line had probably been run dry or had something hung on it, and said that would be user error and not covered. Neither had happened. The pipe was behind a cabinet door, and I’d never run the heater dry. I was also told there would be a $180 diagnostic fee, with the earliest appointment on November 3.\n\nOnce he looked at it, Glenn found that his supplier had swapped in a cheaper compression fitting. He acknowledged that was on Harbourline and replaced all the fittings on the hot side. He also refunded the $180, and I want to give him credit for owning it in the end.\n\nI’m giving three stars because I really do like parts of the fitout, and the problem was ultimately addressed. But being told it was likely user error before the van had even been inspected was frustrating, especially while I was cancelling clients and waiting to get back to work.\n\nIf you’re another groomer or a tradesperson considering a fitout, I’d recommend getting the warranty terms and the process for handling a problem in writing. Hopefully you won’t need them, but it’s good to know where you stand.",
+  "words": 395,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32623472809791565,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3061813414096832,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.375466346740723,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "low",
+    "output_tokens": 517,
+    "input_tokens": 19780
+  }
+}

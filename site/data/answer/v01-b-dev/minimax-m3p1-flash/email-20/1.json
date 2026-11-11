@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.57, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Subject:** RE: FW: Security questionnaire discrepancy - Brazos Freight / Routewell\n\nPriya,\n\nStop. Read this part first: do not beat yourself up over this.\n\nThat's one copy-paste slip in a questionnaire library nobody owns — where old draft answers sit with no owner and no review step. That's a process failure, not a Priya failure. You caught it fast, you told me straight, and you didn't make me play detective. That matters.\n\nI don't need you to take the fall with Greg. I already know what happened and I'll handle him. When I brief him, the questionnaire library comes up, because that's the actual root cause and it needs an owner. Your name isn't going in that paragraph.\n\nLet me tell you what this deal is to me, so you know what we're fighting for: $186k ARR, three-year term, and the biggest deal of my year. I already told my wife we're finally taking the Big Bend trip out of this commission. I'm not losing it over a stale answer in a shared doc — but we're also not losing it by being vague with a customer who's been reasonable. Dana seems strict, but fair. Honesty fast is the whole play.\n\nHere's the plan:\n\n1. **Q14 tonight.** The real answer: Type I issued in April, Type II audit window closes January 31, report expected by March. No \"in progress\" language, no overpromising. Send it to me first, not Dana — I'll review it before it goes anywhere.\n2. **Thursday, 2pm.** You're on that call with me, Marcus from our security team, Dana and their legal. Marcus has already lined up the agenda and can speak to actual status and timeline.\n3. **Bridge letter.** Marcus says we can get one from the auditor to cover the gap until the Type II report lands. Marcus drives that.\n\nWe're fixing this together.\n\nOne thing I want you to know: in September, when the route import blew up and you rebuilt their demo environment and stayed until 9pm — that's the reason Brazos is still a customer at all. I haven't forgotten it. Whatever you need from me to get this over the line, ask.\n\nAlso, when this closes, that questionnaire library needs an owner. I'd like it to be you, with my support.\n\nJordan",
+  "words": 381,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says Priya caught the error fast, but Dana identified the discrepancy and Priya said she had not caught it."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5661778450012207,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3843047618865967,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.078390121459961,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "provider default",
+    "output_tokens": 1395,
+    "input_tokens": 1139
+  }
+}

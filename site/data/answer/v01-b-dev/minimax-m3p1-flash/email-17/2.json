@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject:** Re: Our plan for next year\n\nDear all,\n\nKiran, thank you for writing it plainly. That's the right way to do it, and I'd rather have your worries out in the open now — with Appa and Amma reading — than have them sitting quietly under the surface. Three of your points are fair and I want to answer them properly.\n\nThe one about being asked first. You're right, and that's on me. The paperwork started because the agent needed my sponsor letter and my bank statements, and I should have brought you in at that point instead of handling it on my own. The visa is the UK long-term visitor one, maximum six months per visit, and the dates are the first week of April to end of September 2027. But you're right about the process, not just the plan, and I'm sorry.\n\nOn Appa's heart, which is the point I most wanted you to raise. Dr. Prakash has agreed to see him in March, before they fly, and to do a video consult in July, and he'll share the notes with me. His notes will also support the visa application. I've got travel insurance quotes with pre-existing cardiac cover, about £640 each for the six months, and the agent says the stent is covered — I'm having that confirmed in writing rather than taken on trust, and if the cover doesn't hold it, we change it before they fly rather than after. On NHS care: as visitors they'd have to pay for treatment, which is exactly why the insurance and the March review aren't extras, they're the plan. Leicester Royal is fifteen minutes from our house and I know half the cardiology team there, so if anything did come up I'd want him seen quickly, not weighed up by a system he isn't part of.\n\nSecond, Amma. Six months is a long stretch, and you've known her longer than I have. The return ticket is flexible, so she can go home whenever she wants, and I would genuinely rather she went home twice than stayed and counted the days. Her house stays hers — Lakshmi will keep cleaning it and Venkatesh will keep collecting the rent, so nothing changes for her there.\n\nThird, Ganesh Chaturthi. It isn't gone. Two ways it could work: Appa and Amma fly Leicester to Pune for the festival in September and finish the trip there, or the Pune lot come to Leicester in August. And Kiran, this is the part I want to be clear about — we would pay for your flights to come in August. All of you, for as long as you'd like.\n\nOne thing none of you could have known: the idea was Appa's, not mine. On a call in August, Rohan showed him the vegetable patch over video and he said he could grow drumsticks there. He wanted a garden and something useful to do. That's what we're trying to give him.\n\nThe annexe at the back is finished. Ground floor, no steps, own shower with a grab rail. Anika has made a laminated welcome timetable, and one line on it reads \"Paati teaches us rasam, Tuesdays.\"\n\nKiran, could we do a family video call this Sunday, 4pm UK / 9.30pm India? Nothing to decide, everyone in the same room. And if you'd like to speak to the agent yourself, or sit in on Dr. Prakash's March review, you're very welcome — I'd like you in that conversation, not managed out of it.\n\nLove,\nMeera",
+  "words": 588,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The piece apologises well but never says Meera is thrilled about Amma and Appa coming, which the request said must not get lost, so the excitement point is missing."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4084199368953705,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5453620553016663,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.546875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.381172180175781,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.9,
+    "effort": "provider default",
+    "output_tokens": 2687,
+    "input_tokens": 1309
+  }
+}

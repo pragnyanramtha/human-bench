@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction to the daily takings and GST template\n\nI need to correct a mistake in the daily takings and GST template I shared in August. If you have used it to prepare a GST return, please read this before your next filing.\n\nVersions 1.0, 1.1 and 1.2 calculated GST wrongly when the takings entered were GST-inclusive. The formula multiplied those takings by 9%. It should have taken 9/109 of the inclusive amount.\n\nRavi gave the example that helped bring this to light. His GST-inclusive takings of $1,090 showed GST of $98.10 in the template. The correct GST portion is $90, a difference of $8.10.\n\nThe mistake was mine. I tested v1.0 against my own sample figures, which were already excluding GST, so the check passed. I missed the inclusive-takings calculation. Melvin is right to be upset. People trusted the template in part because I am an accountant, and I should have checked it properly. I am sorry for the trouble this has caused.\n\nThank you to Ravi and Shu Fen for catching it and explaining what was wrong.\n\nWho is affected?\n\nThe error affects people who entered GST-inclusive takings in versions 1.0 to 1.2. I know this is how most hawkers record their receipts. It does not affect the GST calculation for takings entered excluding GST.\n\nThe template has been downloaded 412 times since 12 August, although not everyone who downloaded it will have used it or entered inclusive takings. The quarterly Box 1 sales total was calculated separately and was correct; the error affected Box 6.\n\nThe error overstated GST, so this formula would not have caused you to underpay IRAS. You may, however, have overpaid. Please check your own return and the appropriate correction route with IRAS or your filer.\n\nWhat to do if you already filed your July–September return\n\n1. Keep a copy of the sheet and return you used for filing. Do not overwrite your original records.\n2. Check which version of the template you used and whether the takings you entered included GST.\n3. If you used v1.0, v1.1 or v1.2 for GST-inclusive takings, recalculate the GST using the corrected template and compare the quarterly Box 6 figure with the return you filed.\n4. Take the original return, your records and the recalculation to your filer, or check with IRAS. IRAS has its own rules on whether an error can be corrected in a later F5 or requires a GST F7. Please refer to the IRAS page on correcting GST errors and check which route applies to you before making a correction.\n\nThe corrected v1.3 was uploaded on 8 November and is available from the original template post. When using it, check the setting in H2 against the amounts you actually enter. Select “prices exclude GST” only if those entries exclude GST. If your receipts include the GST collected, use the inclusive setting, even if your menu prices exclude GST.\n\nPlease download the corrected version before using the sheet again. If anything is unclear, leave a comment and I will do my best to explain.",
+  "words": 502,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08759547024965286,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.017083480954170227,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.271484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.455931186676025,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "low",
+    "output_tokens": 679,
+    "input_tokens": 20390
+  }
+}

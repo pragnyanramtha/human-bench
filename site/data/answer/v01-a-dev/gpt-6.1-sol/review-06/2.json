@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Draft for Sal — Vantorre CX-10 reliability and warranty\n\nWe paid $14,800 including GST for this refurbished Vantorre CX-10, delivered and commissioned on 14 September. The listing specified a descaled and pressure-tested steam generator, calibrated core probe and six-month parts and labour warranty.\n\nOn 22 September, Kelsall attended for intermittent E34 lockouts in steam and combi modes. Their report identifies E34 as steam generator low water level and records nine occurrences since delivery. Inlet pressure was measured at 320 kPa and marked OK. The technician replaced the level sensor and completed three successful steam cycles under warranty.\n\nBy 3 October, E34 had returned four times that week. We also reported the core probe reading 63°C against our Thermapen’s 70°C in a lamb shoulder, with the same result on two checks. On 6 October, the technician found heavy scale, descaled and flushed the generator, and recalibrated the probe to within one degree.\n\nAt 6.10pm on Saturday 24 October, E34 locked us out during a fully booked 60-cover service. We finished the lamb using the stove and deck oven, took pork belly off the menu and absorbed the cost.\n\nBrett’s 28 October email confirms another E34 attendance on 27 October and further scale. Kelsall attributes this to site water and says that visit will be charged at $280 plus GST, or $308, outside warranty.\n\nThat explanation remains unresolved. On 7 October, our water supplier advised average Fitzroy supply hardness of about 15 mg/L as CaCO3, which is soft. This is supply information, not a test at the oven inlet, and does not establish when the scale formed. However, heavy scale after only 22 days on site warrants more explanation given the advertised descaling.\n\nOur concern is repeated documented lockouts, a probe needing recalibration and a disputed callout charge roughly six weeks into ownership. Dion has been helpful; this is not a criticism of him. Other kitchens considering this purchase should know our experience.\n\nDraft only — Sal to review Wednesday morning. ChefMarket’s reminder says Thursday 12 November, but the listing’s delivery-inclusive 60-day rule calculates to Wednesday 11 November. Submit Wednesday to avoid risking the window.",
+  "words": 344,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The closing note says the 60-day window works out to Wednesday 11 November, but counting 14 September as day one makes day 60 Thursday 12 November, so that claim is wrong."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22935491800308228,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11884569376707077,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.46875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.828763008117676,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.8,
+    "effort": "low",
+    "output_tokens": 499,
+    "input_tokens": 19834
+  }
+}

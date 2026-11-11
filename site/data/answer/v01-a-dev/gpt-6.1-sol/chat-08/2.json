@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: nov 21 charity stream: $600 for linden pantry\n\n@everyone charity stream is SATURDAY NOV 21, 10am–10pm eastern for Linden Community Pantry. putting this out NOW because last year we raised $212 but half the server didn't know until the day of 😭 this time u get actual notice. put it in ur calendar, bring a friend, come hang out.\n\ngoal: $600. rook is matching the first $100 people donate, so those first donations count double.\n\ndonate here: lindenpantry.example/mrkz\nmoney goes straight to the pantry, nothing taken off. they buy the food through their wholesale partner, where every $1 gets about 4 pounds of food. even $3 helps. they're serving around 340 families a week and their shelves are really low heading into Thanksgiving, so let's get some food on them.\n\nhere is what i'm apparently agreeing to:\n$100 — full round with my controller upside down\n$250 — chat picks my hair dye color and i dye it ON STREAM\n$400 — an hour of chat-picked songs, no skipping. terrifying\n$600 — i vlog a grocery pickup arranged by the pantry\n\nyes it's a charity stream. yes there will probably be cringe. but u get to ruin my hair and the pantry gets food money so i think that's a decent trade lol\n\nfirst half is community lobbies, anyone can join and i'll drop the code. second half chat votes on a game every 2 hours. no repeat maps, larry i heard u.\n\nno card / can't donate? still come. hanging out, sharing this announcement, inviting someone or helping new people find the lobbies all count as helping. there's no donation required to play and nobody needs to explain why they can't give.\n\nif u want to help with actual food instead, canned and boxed food can go in the blue bin by the pantry's side door on Saturdays, 9am–1pm.\n\nsave the date: NOV 21. let's beat $212 and make me explain my hair at school.",
+  "words": 318,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2205289602279663,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.16460882127285004,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.96484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.986034631729126,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "low",
+    "output_tokens": 440,
+    "input_tokens": 19327
+  }
+}

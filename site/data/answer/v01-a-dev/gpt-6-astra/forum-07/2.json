@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve been reading these monthly threads for a while, but this is my first time posting. I’ve left out or kept some details vague for her privacy. I’ll call her Mrs. H.\n\nMrs. H. was one of my blister pack patients. She came in every week for years, and somewhere along the way, seeing her became part of my week that I counted on without really thinking about it.\n\nShe often brought me something to eat. Cake, usually. Once, a jar of pickles that I honestly did not know what to do with. She remembered when I was fasting and would remind me not to eat her cake until sunset. She would wrap it up for me to take home. I was there to look after her medications, but she had her own ideas about looking after me.\n\nOnce I caught an interaction after a new medication was prescribed. I called the prescriber and we sorted it out. After that, she told people I had saved her life. I always felt embarrassed when she said it. To me, it was just doing my job, something any of us would have checked. But she remembered it.\n\nShe passed away recently. Her daughter came in to return her unused medication, and I don’t think I was ready for how it would feel to see those packs come back.\n\nHer daughter also brought me a card. Mrs. H. had written it some time ago but never given it to me. In it, she called me a daughter.\n\nI managed to get through the conversation, then went to the back room and cried. My colleague covered the counter for a little while. Eventually I washed my face and went back out. There were still prescriptions to check and people waiting.\n\nI’ve been home for hours now and I’m still thinking about her.\n\nAt school we learned pharmacology, interactions, what to watch for and when to intervene. I don’t remember anyone teaching us how to say goodbye to a patient. Or what to do when there isn’t a goodbye, just someone coming in with the medication they won’t need anymore.\n\nMy father was a community pharmacist too. He knew whole families, and growing up I saw how much they meant to him. I thought practising in another country would somehow be different. It turns out this part isn’t.\n\nI know we need professional boundaries. But when you see someone every week for years, you get attached. You notice when they’re having a difficult day. You get used to their stories. You expect to see them again.\n\nI’ll miss her. Not just checking her packs or asking how she was feeling. I’ll miss her coming through the door.\n\nHave you had a patient like this? Someone you still think about, long after the last prescription?",
+  "words": 469,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22627407312393188,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23658569157123566,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.177734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.3470393419265747,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.5,
+    "effort": "medium",
+    "output_tokens": 601,
+    "input_tokens": 14036
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear friends, neighbors, church family, and my longtime customers,\n\nPlease feel free to pass this around in your group texts and emails. My phone has been ringing nonstop, and everybody is asking the same questions, so here is everything in one place!\n\nAround 2 a.m. on Sunday, November 8, a lady’s car went through the front window of my salon, Lotus Glow Nails on Bellaire Blvd. Thank God, nobody was inside and nobody was hurt. The driver is okay, the police came, and her insurance will pay for the damage.\n\nThe front glass is gone and one pedicure chair is smashed. The car stopped exactly at the pedicure chair, like she wanted a spa treatment! My daughter said the driver got the first drive-thru pedicure in Houston. The floor looks like a rainbow threw up, and my husband says the shop is finally modern art.\n\nAfter 11 years in business, this is definitely a new experience for me. I did cry a little that morning, but I am okay now. God protected us because nobody was inside. Please laugh a little with me, but don’t worry about me.\n\n**The shop is closed for now. I plan to reopen on Monday, November 16.** The city inspector has to check the wall before I can open, and that is the reopening date my contractor gave me. I will send an update if anything changes.\n\n**For this week, Trang, Kim, and I will be doing nails at my cousin Hoa’s salon, Pearland Nail Bar.** Please call or text my cell at **832-555-0147** to make an appointment and get directions. I would love to see you there!\n\nAlso, all Lotus Glow Nails gift cards are still good. Nobody will lose any money.\n\nThank you so much for all the calls, texts, prayers, and food. Mrs. Dung even brought me pho this morning—that is real love! I am very grateful to have so many good people around me.\n\nI will clean up the rainbow, fix the window, get a new pedicure chair, and see everybody again soon!\n\nWith love and thanks,  \n**Lotus Glow Nails**",
+  "words": 349,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3913513422012329,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3626917898654938,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.5300655364990234,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.4,
+    "effort": "provider default",
+    "output_tokens": 2346,
+    "input_tokens": 461
+  }
+}

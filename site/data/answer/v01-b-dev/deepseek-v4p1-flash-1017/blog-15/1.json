@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: lindqvist-family-blog\nReplying to: none\nCc: none\nSubject: Fernhollow Photo is officially a real thing (deep breath)\n\nOk. Deep breath. Big news, and I wanted you all to hear it from me and not in the middle of the turkey.\n\nFernhollow Photo is a real business. Like, a legal one. I filed the LLC on October 22, on my lunch break, in my car in the Fred Meyer parking lot, and then I sat there and cried a little bit. Happy crying. Mostly. The website went live November 1. There's a real logo and everything. Sam keeps saying \"my wife is a CEO\" and I keep telling him it's an LLC and he keeps saying it anyway.\n\nSome of you know that Rosebud Lane closed at the end of October. Marisol told me on October 6. I'm not going to get into her reasons here, because that's hers to tell and not mine. What I will say is that I shot for her for four years and she taught me basically everything I know about this job. How to shoot a reception in a room with no light. How to keep a timeline from falling apart. How to be a calm person in a room where somebody's mom is crying. She also referred six 2027 couples to me before she closed the doors. Six. I still can't quite believe that. So Marisol, if you're reading this (you're not, you don't read blogs, I know), thank you. I'll be thanking you for a long time.\n\nNow here's the part where I tell you I'm not being reckless, because I know at least one person reading this is already drafting a speech. (Dad, I love you. Keep reading. There's a paragraph in here for you specifically.)\n\nI've been planning this for two years. Not \"thinking about it\" — actually planning. I have 14 weddings booked for 2027. Six of those came from Marisol's referrals, and eight of them found me on my own, through my website and Instagram and one extremely lucky Google search, which means it's not just people doing Marisol a favor. Deposits are in. June is my busiest month with four weddings, and my furthest-out one is Wallowa Lake in September, which I'm already excited about because I've never shot there and the light is going to be ridiculous.\n\nAnd the first booking that was one hundred percent mine — no referral, no connection, they just found me — was Dahlia and Ken, June 12 at Timberline. They found me because of the photos I did for a couple at Multnomah Falls. I opened that email in a parking lot and did a weird little dance next to my car. Sam was with me. He can confirm the dance was bad.\n\nFor the big weddings, Jae second shoots with me. She's paid per wedding, she's calm in a crisis, and she's tall enough to get the shots over the crowd that I have to hold the camera over my head for. It's a good setup.\n\nDad — I know. Health insurance. I picked a marketplace plan on November 5 and it starts January 1. It's done. It's handled. You can ask me about the deductible at Thanksgiving and I'll even answer, but you don't have to give the speech. Save it for whoever's dating somebody new.\n\nNow the name, because I know Grandma is going to ask.\n\nWhen I was a kid there was a trail behind Grandma's old place in Gresham that we called the fern hollow. I took my first real pictures back there with her Pentax — the heavy one, the one that made a sound like a door closing. I was maybe eleven and I wasted an entire roll of film on ferns and one very blurry squirrel. Grandma, the name is for you. It's been your name in my head for two years and now it's on an LLC and a website and a cake.\n\nSpeaking of the cake. Sam made me a cake to celebrate and wrote FERNHOLLOW on it. Which is not how you spell it. One L in the hollow, buddy. We ate it anyway. It was a good cake. I have photographic evidence of the misspelling and I will be using it against him for the rest of our lives.\n\nAlso, Pickle is fine. Pickle is unaware that he is now the mascot of a small business. He remains scared of the lamp.\n\nOk, the honest part. It's scary. There are moments around eleven at night where I think, what did I do, and I stare at the ceiling. But scary and reckless aren't the same thing, and this isn't reckless. I have a plan, I have bookings, I have a second shooter, I have insurance, and I have a husband who believed in this before I did. And I have all of you, which honestly matters more than the rest of it.\n\nHere's my ask: I want to take family pictures at Thanksgiving. Free. All I need is for everyone to be in one place for fifteen minutes and for Uncle Greg to not say he's freezing (he's going to say he's freezing). I'll bring the camera and the good lens and set up by the window at Ruthie's around 2:15, before dinner, when the light is good. Wear whatever. Bring the kids. Bring the dogs if Ruthie says it's ok. I want a picture of all of us in the same frame, taken with my own business, in my own name, in the year this all happened.\n\nSee you at Thanksgiving. I'm bringing rolls and the cranberry thing, and Sam's driving, so I'll be the one in the passenger seat with the camera bag on my lap.\n\nI'm really happy. That's the whole post, honestly. I'm really, really happy.\n\n— Tessa (Fernhollow Photo, LLC, apparently)",
+  "words": 960,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The cake is said to read FERNHOLLOW, but it actually read FERNHOLOW."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3107015788555145,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.27218157052993774,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.328125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.9397895336151123,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.5,
+    "effort": "provider default",
+    "output_tokens": 3496,
+    "input_tokens": 2608
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**An open letter about the fire at Lindale Court**\n\nTo my friends, my neighbours, the Little Acorns families, and anyone else who gets this forwarded to them —\n\nI’m okay. I’m safe. I’m at my sister’s in Rondebosch, and Marmalade is here too, mostly under the bed and judging me. I’m writing one letter because my phone has been going mad since Saturday night and I can’t answer everyone one by one. I’m too tired, and I keep crying at messages, which makes typing hard. So please take this as me answering you. And please forward it to anyone who asks.\n\nI’m Thandi. I’m 26, I teach the Ladybirds — Grade 00, the 4–5 year olds — at Little Acorns Pre-Primary in Mowbray, and I live in flat 12 on the second floor at Lindale Court on Station Road in Obs, Cape Town.\n\n**The short version**\n\nThe fire started just before midnight on Saturday 7 November, around 11:40pm, in a ground-floor flat. Not mine. I’m on the second floor, flat 12. It’s Lindale Court on Station Road in Obs — 14 flats. Everyone got out. Two people were treated for smoke at Groote Schuur and sent home. The fire department says it was probably an electrical fault, and they’re still investigating. I’m not going to guess beyond that.\n\nI’m not going to go through the whole thing because I’ve told it enough times and I don’t want to relive it. The short version is: our neighbour Uncle Faizel banged on every door on our floor in his vest and slippers, and that’s how I woke up. I grabbed my phone and Marmalade and nothing else. Marmalade then hid under a car for two hours. She’s fine. I’m fine. I don’t think I’ll ever be able to thank Uncle Faizel properly.\n\nMy flat is smoke and water everywhere, and the ceiling came down in the lounge. The landlord says nobody can go back in for at least six weeks. So I’m not going home for a while. Furniture can be replaced. Marmalade can’t. I keep coming back to that.\n\n**The fundraiser**\n\nMy friend Zinhle set up a BackaBuddy page for me: **backabuddy.example/thandi-lindale-court**. The target is R25 000, and this morning it was at R11 400. I hate asking for help. I honestly feel weird about the whole thing. But Zinhle told me to shut up and accept it, so I’m doing that, badly.\n\nPlease be careful: there is another page called “Thandi Fire Relief” on some other site, and a WhatsApp going around asking people to EFT to a Capitec account. That is not me. It’s not Zinhle. It’s not anyone connected to us. I’ve reported it. The only fundraiser is the BackaBuddy link above. If someone sends you anything else, please don’t use it, and please tell them it’s not ours.\n\n**What I actually need**\n\n- Help towards the deposit for a new place. This is the big one. I’ll be renting again sooner than I thought, and the deposit is what’s keeping me awake. Contributions to the BackaBuddy will go towards this.\n- School shoes and work clothes. Size 6 shoes, size 34 clothes. I’m back at school on Wednesday and most of my work wardrobe is smoke.\n- A laptop, if anyone has an old one that works. All my lesson planning was on mine and it’s gone. Secondhand is completely fine. I’m not fussy — I just need to be able to open a document and pretend I’m organised.\n\n**What I don’t need**\n\n- More clothes in general. I have too many already, people have been so generous, and I’ll pass extras on to the other flats. If you’ve already got a bag together, please give it to one of the other families or a charity shop. I’m not being ungrateful. I’m being practical.\n- Food. My sister’s freezer is full. Please don’t bring food to the gate. If you’ve already made something, give it to a neighbour or freeze it for later.\n\n**For the Little Acorns parents**\n\nThe concert on 27 November is still happening. I’m serious. The Ladybirds will have crowns. I’d taken 22 crowns and the kids’ handprint banner home to laminate and those are gone, but we’ll remake them. The kids won’t know the difference. Please don’t worry about that.\n\nI’m back at school on Wednesday. Please don’t make a big thing of it in front of the kids — they’re four and five, they just need school to feel normal. A quiet “morning, Miss Thandi” is perfect. If you want to ask me something, please rather message me or catch me after drop-off, and I’ll answer as I can.\n\nOne of my kids’ moms dropped a bag of clothes at my sister’s gate at 7am on Sunday without even knocking. I don’t know who you are, but I cried. That’s been the whole week, honestly. People have been amazing. I’ve been crying at every message. I don’t know how to hold all of it.\n\nLast thing: I’m reading comments slowly. Please don’t be offended if I don’t answer DMs. I’m not ignoring you — I’m just tired, and I’m trying to keep my head above water. If you need to know something, it’s probably in this letter. If it’s not, ask Zinhle or my sister. And please share this instead of sending me a message asking how I am. I promise I’m okay. I’m just not okay enough to answer forty WhatsApps.\n\nThank you. Really. For the messages, the clothes, the offers, the shares, the crying emojis. I’m so grateful. I’ll be back on my feet. Right now I’m going to check that Marmalade hasn’t eaten my sister’s curtains.\n\nThandi  \nFlat 12, Lindale Court",
+  "words": 952,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3829523026943207,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9812527298927307,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.703125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.5390803813934326,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.6,
+    "effort": "provider default",
+    "output_tokens": 8751,
+    "input_tokens": 850
+  }
+}

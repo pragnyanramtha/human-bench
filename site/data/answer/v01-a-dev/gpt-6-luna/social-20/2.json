@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok, I need to vent for a sec because I am SO pissed.\n\nI drew a switchblade moth for my Sept 13 flash day. I posted the sheet Aug 30, and it was claimed in the first hour. Flash is sold ONE time to ONE person. That’s the deal, and the client paid for that. I did not sell her tattoo to anybody, and I did not give anybody permission to turn my drawing into merch.\n\nTonight I found out StickerBurrow Co is selling it as a “Knife Moth Vinyl Decal” for $6.50 or 3 for $15. It’s not “inspired by” my work. It’s a straight scan of my linework: same crack in the blade, same wing pattern, and they didn’t even flip it. I have the original drawing and the dated post. This is not a case of two people drawing a moth.\n\nI messaged them asking them to take it down. They hit me with “love your work!” and then “moths are a very common tattoo motif,” and told me to send a registered copyright through their support form. Cool, thanks. Super helpful.\n\nAnd I need to say this because the person who got the tattoo messaged me tonight thinking I was the one selling stickers of it. I wasn’t. I’m so sorry you had to see that and wonder if I’d gone back on what we agreed. You got the one-and-only flash piece. I didn’t sell your tattoo or authorize these stickers. I’m not naming you because your tattoo is yours and you don’t deserve to get dragged into my rant.\n\nThis is the part that makes me especially mad: small artists and small shops don’t have lawyer money sitting around. Sticker places know that. They can take somebody’s work, sell it, and act like the artist has to jump through hoops to prove what’s right there in front of everybody. It shouldn’t be on the person who drew it to spend their time and money chasing down a copy.\n\nIf you want to help, please report the Knife Moth Vinyl Decal listing through the platform. Don’t buy it. Please don’t go after anyone personally or turn this into a dogpile; I just want the listing reported and taken down. And please don’t tag Salt & Sparrow or send this to the shop page. This is my personal page and my personal work. I’m not making a shop announcement or asking anyone else to speak for me.\n\nAnyway. I’m mad, I’m tired, and I wish “don’t steal another artist’s drawing” was less of a wild ask. Thanks for looking out for artists.",
+  "words": 435,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24693334102630615,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2612837553024292,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.263671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.0470051765441895,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.9,
+    "effort": "medium",
+    "output_tokens": 567,
+    "input_tokens": 15594
+  }
+}

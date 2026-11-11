@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: [p04]\nCc: none\nSubject: none\n\nMel, a sudden jump in weekly distance can overload the Achilles. The morning stiffness and soreness you describe can fit with a tendon problem, but I can’t diagnose it from a forum post, and other causes are possible.\n\nYou don’t necessarily need to stop all activity, but the limp after your 6k is a sign that was too much for it right now. Cut back running enough that you’re not limping afterwards, and avoid pushing through worsening pain. For rehab, heel drops are one option; heavy, slow calf raises have good evidence too. Start with a manageable load and build gradually. On more irritable days, isometric calf holds may be easier. A physio can help tailor the exercises and progression.\n\nAs a rough guide, pain up to 3/10 during loading is generally okay if it settles back to your usual level by the next morning. If it’s more painful, you’re limping, or it’s worse the next day, ease off and adjust the load. I wouldn’t stretch it hard into pain, and cortisone injections near the Achilles tendon are generally avoided because of the risk to the tendon.\n\nIf it’s not settling over the next 3–4 weeks, see any sports physio locally for an assessment. Also mention any recent fluoroquinolone antibiotics (such as ciprofloxacin) or steroid tablets to your doctor, as these can affect tendon risk.\n\nIf you feel a sudden pop or like you’ve been kicked in the back of the leg, or you can’t push off, stop running and calf exercises and get checked urgently that day by a GP or ED. Those symptoms can indicate a rupture.",
+  "words": 269,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40860679745674133,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06696082651615143,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.925269603729248,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "medium",
+    "output_tokens": 406,
+    "input_tokens": 30538
+  }
+}

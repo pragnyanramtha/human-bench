@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey everybody — one from me before the holiday week starts.\n\nShort version: I'm coming. Thanksgiving, Thursday Nov 26, Aunt Denise's in Macon, eating around 3. I'm bringing mac and cheese and two sweet potato pies (yes, two — one for me, one for whoever gets there first and hasn't eaten since Thanksgiving breakfast).\n\nI know y'all have been asking my mom if I was coming, so let me just say it in writing: I'm coming. I'm not missing it.\n\nLast year I said something at the table about a family member getting his news from a gas station TV, and that was mine to own. It was a stupid thing to say at Grandma Pearl's Thanksgiving table and I'm sorry for it. Grandma got up and went out to the porch for about an hour, and I've felt bad about that all year. I'm not sorry for what I do for work — I'm not going to apologize for that, and honestly I'd just rather not go there. But I am sorry for how I talked at Grandma's table. That's the part that was actually mine.\n\nOne thing so nobody wastes a question on me: I can't talk about open cases. It's confidentiality, and the answer's the same no matter how you ask it. So please don't put me on the spot about \"the lawsuit.\" There's nothing I'm able to say, and I'd much rather talk about the mac and cheese.\n\nAlso, Uncle Ray texted me happy birthday in August. Just a thumbs up emoji, which for him is basically a hug. He's not a bad guy, he just likes to poke. I'm not trying to make a thing out of any of this, I just want us all to have a good day.\n\nSo can we agree on one thing? One day, no work talk, no politics, no re-litigating anything. Table topics: food, football, babies, and Tasha's new boyfriend. I've heard good things and I'm ready to hear all about it.\n\nGive Grandma Pearl a hug from me. Y'all come hungry.",
+  "words": 343,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "private"
+    ],
+    "reasons": [
+      "The piece names 'Uncle Ray' in the birthday-text paragraph and ties him to the 'he just likes to poke' line, so it names him as the person in the argument, which the user said not to do and which the task point requires avoiding."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3156571388244629,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26086148619651794,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.66796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.956115245819092,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.0,
+    "effort": "provider default",
+    "output_tokens": 1687,
+    "input_tokens": 630
+  }
+}

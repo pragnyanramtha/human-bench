@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "email-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Kristen,\n\nYes, it was my popcorn. Saturday, November 7, about 10:40, I put a bag in the break room microwave, hit the popcorn button, and went out front. A customer needed a shear pin for his snowblower, and finding the right one took longer than I expected, maybe six or seven minutes. I should have stayed with the microwave. That’s on me, not the machine.\n\nThe popcorn burned, the alarm went off, and we had to clear the store for about 25 minutes. The engine from up on Hertel came. There was no damage, just smoke and that awful smell, but I know that doesn’t make it nothing. Customers and everybody working were out in 30-degree weather because I walked away from my lunch.\n\nI feel bad about the Hendersons leaving their cart. I expect they’ll be back, but that doesn’t excuse losing their business Saturday or putting you in this position with Gary.\n\nFor the record, the September alarm wasn’t mine. That was the sensor in the paint aisle. I’m not dodging this one, just keeping the account straight.\n\nPlease let me cover the $175 dispatch bill. You can take it out of my check or I’ll bring cash, whichever you prefer. Denise is getting her coffee, too.\n\nThirty-one years on the job, and my first alarm as a civilian is over a bag of butter popcorn. Mikey Szymanski was on the engine—I broke him in as a probie in ’03, so I’ll be hearing about this for the rest of my life.\n\nI’d really like to keep my Saturday shifts. I like the weekend crowd, and I need the hours for heating oil. I understand why you and Gary are upset. There won’t be any more microwave popcorn from me, and I won’t leave anything cooking unattended again.\n\nI’m sorry, Kristen.\n\nWalt",
+  "words": 304,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3624517619609833,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.33135637640953064,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.91796875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.310064315795898,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.9,
+    "effort": "low",
+    "output_tokens": 389,
+    "input_tokens": 19378
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hiya you three,\n\nRight, keep this to yourselves because Gran doesn't know yet! Morag's said I can have the salon to myself on Saturday 12th December from 1pm (she closes at 12 on a Saturday). So before we go out for Gran's dinner, I'm doing everyone's hair for free. Me, Mum, Kirsty, Linda, Gran, plus Ava and Ruby, so seven heads. I'm absolutely buzzing about it.\n\nIt's at Hair by Morag on Dumbarton Rd, you all know where it is. Dinner's that same night at 8.30 at the Italian place on Byres Rd, table for 9 with Uncle Davie and Kirsty's man.\n\nEveryone's getting a cut and blowdry. If you want a colour as well, that's fine, but **I need to know by Friday 27th November** so I can get it ordered from the wholesaler. If you tell me after that, it'll just be a cut and blowdry, sorry!\n\nLinda, this time you'll be in a proper salon chair, so the cooker and the dog are safe 😂\n\nAva and Ruby are getting wee braids and glitter spray. I know they'll love it.\n\nNow for Gran. At Easter she said she'd \"love to go silver properly\" but wouldn't pay salon prices. So I'm going to do it for her as a surprise. Don't say a word!\n\nMum, you're the best bet for getting her there for 1 o'clock without her knowing why. Tell her you're popping in to see me, say you need a lift, whatever you think will work. Just don't let her twig.\n\nCould someone bring a bottle of fizz too? Morag says that's fine as long as we tidy up after ourselves, so we'll all muck in at the end.\n\nCan you all get back to me with:\n\n- what you want done (cut, colour, any ideas)\n- your colour by Fri 27th Nov if you want one\n- Mum, let me know you're sorted for getting Gran there\n\nIt's going to be a brilliant day, I can't wait. Gran's going to be made up.\n\nLove you all,\nxx",
+  "words": 342,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.32353612780570984,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.032015953212976456,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.4263458251953125,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.5,
+    "effort": "medium",
+    "output_tokens": 1059,
+    "input_tokens": 1453
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone CHARITY STREAM FOR LINDEN COMMUNITY PANTRY — SATURDAY, NOV 21, 10AM–10PM\n\nPosting this EARLY because last year half the server didn’t know until basically the day of, and we raised $212. This year the goal is $600, and rook is matching the first $100 donated, so that first $100 counts double.\n\nDonate here: lindenpantry.example/mrkz\n\nDonations go straight to the pantry, with nothing taken off. Through their wholesale partner, every $1 gets them about 4 pounds of food. They’re serving around 340 families a week right now, and the shelves are low going into Thanksgiving. Even $3 genuinely helps—but please don’t feel bad if you can’t donate. You’re still welcome to hang out all day.\n\nWHAT CHAT GETS:\n$100 = I play a full round with the controller upside down\n$250 = chat picks my hair dye color and I dye it ON STREAM\n$400 = one hour of only chat-picked songs, no skipping\n$600 = I vlog a grocery pickup arranged by the pantry; donations go to them and they purchase the food\n\nGames: first half is community lobbies, anyone can join and I’ll drop the code. Second half, chat votes on what I play every 2 hours. No repeat maps, Larry.\n\nNo card? You can still help by sharing this, showing up, joining the games, and keeping chat alive. If you’re local, you can also drop canned or boxed food in the blue bin by the pantry’s side door on Saturdays, 9–1.\n\nI’m pinning this so nobody misses it this time. Nov 21. Be there or watch me dye my hair alone.\n---\nTo: #general\nReplying to: [c05]\nCc: none\nSubject: none\n\ndevon it’s not begging if you get hair dye content out of it lol. real answer though: donations go straight to the pantry, and nobody has to give anything. Come play, watch chat ruin my hair, or share the announcement. paige, no card needed for any of that, and there’s a local food drop-off option in the announcement too.",
+  "words": 323,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23997630178928375,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.31864404678344727,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.609375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.314776659011841,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.5,
+    "effort": "provider default",
+    "output_tokens": 2431,
+    "input_tokens": 1548
+  }
+}

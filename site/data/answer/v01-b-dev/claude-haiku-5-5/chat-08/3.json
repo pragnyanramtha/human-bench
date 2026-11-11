@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-08",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #announcements\nReplying to: none\nCc: none\nSubject: none\n\n@everyone Charity stream for the Linden Community Pantry is Saturday, November 21, 10am to 10pm. I'm posting early this time so nobody gets surprised on the day like last year.\n\nThe pantry is serving about 340 families a week, and their shelves are the lowest they've been before Thanksgiving. Every dollar goes straight to them and they buy the food. Through their wholesale partner, $1 gets about 4 pounds of food.\n\nDonate here: lindenpantry.example/mrkz\n\nGoal is $600. TJ Rook is matching the first $100 donated, so the first $100 counts double.\n\nIncentives:\n- $100: full round with the controller upside down\n- $250: chat picks my hair dye color and I do it on stream\n- $400: one hour of only chat-picked songs, no skipping\n- $600: I vlog a grocery pickup the pantry sets up\n\nGame plan: first half is community lobbies, anyone can join and I'll drop the code in here. Second half chat votes on a game every 2 hours. No repeat maps, I promise Larry.\n\nSome of you think charity streams are just begging with extra steps. Fair. The hair dye is the price of admission, and the money goes to food, not to me.\n\nEven $3 helps. If that's all you've got, don't feel bad about it.\n\nNo card? You can still help. Bring canned or boxed food to the blue bin by the pantry's side door, Saturdays 9 to 1. Hanging out in chat and hyping it up counts too.\n\nSee you on the 21st.",
+  "words": 251,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18622933328151703,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09975744038820267,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.7281934022903442,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.8,
+    "effort": "medium",
+    "output_tokens": 2479,
+    "input_tokens": 2833
+  }
+}

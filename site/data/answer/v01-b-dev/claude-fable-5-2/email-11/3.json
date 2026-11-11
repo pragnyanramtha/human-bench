@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: drivers christmas breakfast this year\n\nHi Rhonda its Gary from the bus garage. Its that time again, we want to do the christmas breakfast at your place same as every year. We're hoping for Saturday Dec 19, back room, 7am like always. If the 19th is no good then the 12th would work too, just let me know which.\n\nIts a bigger bunch this year. Dwayne gave me the sign up sheet and it comes to 24, thats 19 drivers and 3 from the shop plus Earl and his wife Carol. I'll get you the final count by the Wednesday before like you want.\n\nThe reason its kind of a big one is Earl is retiring. He drove 31 years and his last day is the 18th, the day before. We want to do a little something for him at the breakfast but he don't know nothing about it and he cant find out, so if you see him between now and then please don't say a word. Carol is in on it. She says he'd be embarrassed by a big speech so we're keeping it simple.\n\nWhat I wanted to ask you is can we bring in a cake from Sugarcreek, or would you rather just do a big tray of your cinnamon rolls with a candle in it? To be honest your cinnamon rolls are better than any cake and Earl loves them, so I'd be happy either way. Whatever is easier on you. If we do the rolls tell me what a tray would run.\n\nCouple other things. Lonnie is on a walker now since his hip so he cant do steps. Can he come in the side door, the one with no steps? If it needs unlocked that morning can you have somebody get it for him. And Patsy cant do eggs anymore. Could she get oatmeal or pancakes or whatever you got instead?\n\nOn the food, same as last year is good, the big pans of eggs and home fries and biscuits and gravy and everybody orders there own meat. $11 a head was fair. If its gone up a little thats fine, just tell me what it is so I can let everybody know ahead of time. Separate checks again please, that worked good.\n\nLast thing and I'm not trying to bring up a sore subject. I know the urn quit on you last year and the coffee ran out around 8:15, and I know you felt bad about it. Nobody held it against you. But with 24 of us at 7 in the morning do you think you could have a backup pot ready just in case? You said you would and I figured it don't hurt to ask.\n\nLet me know about the date and the cake and I'll tell everybody. Thanks Rhonda, we look forward to it every year.\n\nGary",
+  "words": 474,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09157291799783707,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.010431031696498394,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.1854848861694336,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.6,
+    "effort": "high",
+    "output_tokens": 2471,
+    "input_tokens": 4017
+  }
+}

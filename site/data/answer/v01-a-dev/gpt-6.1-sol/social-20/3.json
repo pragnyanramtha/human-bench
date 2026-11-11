@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "social-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: timeline:jo.vasquez.ink\nReplying to: none\nCc: none\nSubject: none\n\nok I need to vent for a sec because apparently “dont trace somebody elses drawing and sell it” is too complicated now.\n\nStickerBurrow Co is selling a sticker called “Knife Moth Vinyl Decal.” $6.50 or 3 for $15. except its MY switchblade moth. the one I drew for the sept 13 flash day, on the sheet I posted august 30. the one I spent my own time drawing at my kitchen table. now its apparently available for your water bottle from people I have never worked with or given permission to print anything.\n\nsame wing pattern. same little crack in the blade. they didnt even flip it. like come ON.\n\nI messaged them and told them it was my drawing, that I have the original and the dated post, and asked them to take it down. their reply starts with “Love your work.” which is a pretty wild opening under the circumstances lol. then its “our artists create original designs inspired by trending styles” and “moths are a very common tattoo motif.” then told me to send a registered copyright through their support form. “Have a great day!”\n\ndude. I am aware that moths exist. I dont think I invented moths. I also dont think I invented knives or wings or putting two things together in a tattoo. that is not what we are talking about and you know it.\n\nwe are talking about the SAME drawing. its not “inspired by.” its a straight scan of my linework. putting a different name on the listing doesnt make it something your artists drew.\n\nand I need to be really clear about something else: I AM NOT SELLING THESE. I didnt license the design. I didnt approve stickers. I am not getting paid for them and I dont want to be. if you have this piece on you, please know I have not gone behind your back and started selling copies. I wouldnt do that to you.\n\nmy flash is sold ONE time to ONE person. thats the whole deal. somebody pays for that piece knowing I'm not gonna turn around and put the exact same thing on everybody else. that matters to me. its why I retire a design when it gets tattooed. somebody taking it off a sheet and selling multiples doesnt just screw me over, it screws with a promise I made to the person wearing it. I hate that part of this so much.\n\nsmall shops and independent artists dont have endless lawyer money sitting around for every website that decides our drawings are free inventory. these sticker places know it. telling somebody to go produce paperwork through a support form instead of actually dealing with the original drawing they already offered you is exhausting.\n\nif you want to help, please report the “Knife Moth Vinyl Decal” listing at StickerBurrow Co for copying my artwork. dont buy it. dont buy one to send me proof, I dont need to give them another $6.50 to know what my own lines look like. please keep it to the listing, no threats or messaging random people.\n\nand leave the studio page out of it please. dont tag it into this. I'm posting here because this is my drawing and I'm pissed.\n\ndraw your own damn moth.",
+  "words": 545,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "Fails does_task: it never says the client messaged Jo that night thinking Jo was selling stickers of her tattoo, and never says she got the moth tattooed in the first hour. The reassurance is only a generic 'if you have this piece on you'."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.057211533188819885,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.016023660078644753,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.6611268520355225,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.2,
+    "effort": "low",
+    "output_tokens": 673,
+    "input_tokens": 19919
+  }
+}

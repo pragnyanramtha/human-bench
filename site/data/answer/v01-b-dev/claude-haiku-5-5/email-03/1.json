@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.21, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for your mother\n\nDear Mr. Kerrigan,\n\nThank you for contacting Erindale Park Pharmacy about blister packs for your mother, Margaret. I am sorry to hear about her fall, and we are glad she will be home on Thursday. We would be pleased to look after her medications. I have answered your questions below and listed a few things we need from you.\n\n1. Blister packs and cost: Yes, we prepare weekly blister packs, with each day's morning, noon, evening and bedtime doses sealed separately. There is no charge for the packaging itself. She pays our normal dispensing fees, and since she is over 65, Ontario Drug Benefit coverage should cover most of the cost. We will confirm the exact amount with you once her prescriptions are transferred.\n\n2. Delivery: We deliver on Tuesdays and Fridays between 2 and 6 pm, free of charge within 8 km, so her condo on Mississauga Valley Boulevard is well within range. For Thursday and Saturday, you can pick up at the pharmacy, or I can arrange a one-time delivery on Saturday before 1 pm.\n\n3. Moving her prescriptions: Once you confirm you would like to move her to us, we phone her current pharmacy on Dundas and transfer her prescriptions directly. You do not need to sign anything for this. We will need the pharmacy's name and address and her OHIP number, which you can give me by phone.\n\nThe discharge prescriptions from Credit Valley Hospital should be faxed to us directly. Please ask the discharge team to fax them to [store fax number] early Thursday morning. Once we have all of her prescriptions, the first packs take about 48 hours. If we receive them Thursday morning, her first packs should be ready by Saturday.\n\nI want to be clear that the first packs will not be ready when she leaves the hospital on Thursday. Please ask the discharge team what interim supply she will go home with, and help make sure that each dose is given as scheduled until she collects or receives her first packs on Saturday. If anything is unclear on the discharge list, please let me know and I will speak with the team.\n\n4. Medication review: Yes, our pharmacist will go over her new medication list with you. We can also offer a MedsCheck, which takes about 20 minutes and can be done at her home. I can visit her during her first week at home on Monday or Tuesday after 6 pm, whichever suits her best. Because she is hard of hearing, I will also prepare a written copy of her medication list and packing schedule for her.\n\nBefore we can discuss Margaret's medications with you, we need her permission. Our pharmacy records this with a signed Family Communication Consent form. It protects her privacy and ensures that she decides who we speak with about her health. Once she signs it, we can speak with you freely, including on evening calls. Please ask her to sign it when she is home, or she can sign it when she collects her packs. We can also bring it on the delivery driver's route. I am happy to go through the form with her in person so she understands what she is agreeing to.\n\nIn summary, here is what would help us most:\n- Please ask the hospital to fax the discharge prescriptions to us early Thursday morning.\n- Please confirm the interim supply with the discharge team, and help ensure each dose is given until Saturday.\n- Please send us the name and address of her current pharmacy and her OHIP number.\n- Please help Margaret sign the Family Communication Consent form.\n\nYou can reach me directly at 905-555-0148 ext. 2. I am in the store Monday to Friday, 9 am to 6 pm.\n\nThank you for trusting us with your mother's care. We look forward to meeting you both.\n\nKind regards,\n\nRania Haddad\nPharmacist, Erindale Park Pharmacy\n905-555-0148 ext. 2",
+  "words": 658,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2126898169517517,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.021898940205574036,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.71875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.776535749435425,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.3,
+    "effort": "medium",
+    "output_tokens": 5433,
+    "input_tokens": 3557
+  }
+}

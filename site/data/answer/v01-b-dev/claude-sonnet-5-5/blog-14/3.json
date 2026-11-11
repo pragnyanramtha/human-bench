@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Two more for the Thursday tea trolley?**\n\nMost people I tell about volunteering at the hospice do one of two things. They go quiet and look at me as though I've said something brave, or they say they couldn't possibly, they wouldn't know what to do. I'd like to put both right, because I'm not brave and I didn't know what to do either.\n\nI spent 41 years as a bookkeeper, mostly for a builders' merchant in Dereham. My skills are in columns of figures and in noticing when something is a penny out. When I retired I assumed I'd find plenty to fill the days. In fact I drifted for about eighteen months, with no regular reason to leave the house on most weeks. In March 2022 I started on the tea trolley in the day therapy unit, and Thursdays have been fixed in the diary ever since.\n\nThe unit sees fourteen to eighteen patients on a Thursday. Some come for the art group or the hand massage, and some simply for company. Most go home afterwards. I push the trolley round between half past one and four and pour tea, and that is the job. It is a good deal noisier and jollier than people imagine. Sad days do happen, and I won't pretend otherwise. When they do, the staff look after us as well as the patients, and that's all I'll say on it.\n\nMy first week, I spilled a whole jug of milk across the trolley. A patient called Pat laughed so much she had to be handed a tissue, and she told me it was the best afternoon she'd had in a month. I have not tried to repeat the performance, but it did teach me that nobody expects polish.\n\nThen there's Mr Hollis, a retired signalman, who takes two sugars and tells me about the 1953 floods every week. The story is slightly different each time. I've stopped correcting the dates. It's his story, and I'd rather hear it than be right.\n\nYou don't need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. Forty-one years of keeping ledgers straight turns out to be excellent training for remembering who has the weak tea and who has the decaf. We also hide a packet of bourbons for the late group, because the first lot always go first. That is the sort of expertise required.\n\nHere is the practical part. We are a rota meant for six and currently four. Two left over the summer, one to Sheffield to be near the grandchildren and one for a knee operation, and neither can be blamed on the work. The commitment is one Thursday a fortnight, 1.30 to 4pm. Bridget, our volunteer coordinator, does the induction, which takes about two hours. There is also a short online food hygiene course, which the hospice pays for. You won't be thrown in at the deep end, and you won't be left to work it out alone.\n\nIf you're curious, come to the volunteer open afternoon on **Tuesday 24 November at 2pm in the Willow Room**. There will be tea and biscuits and no obligation whatever. You can look round, ask Bridget anything, and go home again if it isn't for you. If you'd rather talk first, ring Bridget on the volunteering line. Bring a friend if you like. I'd be glad to see two or three new faces, and I'll be the one by the biscuits.",
+  "words": 585,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2279844880104065,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09423884749412537,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.390625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.6350066661834717,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.8,
+    "effort": "high",
+    "output_tokens": 2012,
+    "input_tokens": 1763
+  }
+}

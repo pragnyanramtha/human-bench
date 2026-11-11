@@ -1,0 +1,87 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "Right folks, invites are in wi this — read the lot before ye start asking questions 😂\n\nGran's 80th is Sunday 13 December and we're out for her dinner that night. But here's the bit she disnae know yet: Morag's giving me the salon to myself the Saturday before, so I'm doing everybody's hair for free before we go. Saturday 12th, from 1pm — Morag shuts at 12 so we get the place to ourselves after that. Hair by Morag on Dumbarton Rd, yous aw know it.\n\nSeven heads: me, Mum, Kirsty, Linda, Gran, and the weans Ava and Ruby. Cut and blowdry for everyone, nae charge.\n\nColours — I need to know by Friday 27 November so I can get it ordered in from the wholesaler. If you've no told me by then it's a cut and blowdry, that's the rule.\n\nMum, you're on Gran duty. She needs to be at the salon for 1 and she cannae know why, so you're the best bet for getting her there. At Easter she said she'd love to go silver \"properly\" but she'll no pay salon prices, so I'm doing it for her. No breathing a word.\n\nLinda — you're getting a gown and a cape and I'm no taking my eyes off you. Last time I did your colour in your kitchen the cooker and the dog came out a different shade. We're in a professional establishment this time.\n\nAva and Ruby are getting wee braids and glitter spray. They'll be beside themselves.\n\nDinner's booked for 8.30 that night at the Italian place on Byres Rd, table for 9 — that's the seven of us plus Uncle Davie and Kirsty's man.\n\nBring a bottle of fizz if you fancy it, Morag says that's fine as long as we tidy up after ourselves.\n\nGet back to me wi what yous want done. Buzzing for this x",
+  "words": 315,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says the dinner is on Sunday, contradicting the Saturday booking."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12360159307718277,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.036899108439683914,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.7683968544006348,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 43.2,
+    "effort": "provider default",
+    "output_tokens": 1274,
+    "input_tokens": 508
+  }
+}

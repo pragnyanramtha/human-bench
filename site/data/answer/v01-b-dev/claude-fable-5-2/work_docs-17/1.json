@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: January 15 intake deadline for H-1B registrations\n\n**The ask**\n\nFor the coming cap season, I'd like us to give employers a date. Engagement letters and the one-page questionnaire would go out the week of December 7, and intake would close January 15. Anything after that we'd handle case by case.\n\n**Why**\n\nRight now we email the questionnaire whenever an employer asks, with no set date. Last season we filed 14 registrations for 6 employers, and 9 of the 14 came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened.\n\nI don't read that as clients being slow. Nobody gave them a date, so they worked to the only one they knew. One HR contact told me she'd have happily sent everything in January if we'd asked. Most of the crunch comes from our process, which means we can fix it.\n\nAn earlier date also protects us. The registration itself is simple, but errors are expensive: a wrong passport means an invalid selection. Last season a passport scan for a Brightwater Analytics beneficiary reached us two days before the window, and the passport had expired in October. We only caught it because Rosa checked the dates. With more lead time, that becomes a routine fix.\n\nJanuary 15 is realistic. HR teams are back from the holidays and have their budgets set, and they already budget the $215 per-beneficiary registration fee in Q1, so nothing changes on cost. To clients, this is better service: a clear date to plan around and time to sort out problems before they matter.\n\n**What would change**\n\n- **Week of December 7:** engagement letters and the one-page questionnaire go to every cap employer, with the January 15 date stated up front.\n- **January 15:** intake closes.\n- **After January 15:** late additions are handled case by case.\n- **January 15 to the window:** Rosa, who owns the tracker, gets a clean six weeks to chase gaps.\n\n**Decision needed Thursday**\n\nIf we agree on this Thursday, the December letters can go out on schedule.",
+  "words": 348,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4083235263824463,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9787018299102783,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 17.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.422358512878418,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.6,
+    "effort": "high",
+    "output_tokens": 1718,
+    "input_tokens": 1524
+  }
+}

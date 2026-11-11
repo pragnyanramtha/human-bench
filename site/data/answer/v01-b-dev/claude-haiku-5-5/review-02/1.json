@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: board:vendor-reviews\nReplying to: none\nCc: none\nSubject: Harbor Point Steno Service (Towson) - Aria 3 recalibration, 6 business days\n\nHarbor Point Steno Service, off York Road in Towson, did a full recalibration on my Stenvale Aria 3. I'm writing this up as promised to Dana in the Harbor Point thread, now that the machine has been through eight days of a civil trial.\n\nEquipment: Stenvale Aria 3 (serial ending 0388).\n\nWork done (work order HP-4471): full keyboard recalibration, number bar depression sensor replaced, internal cleaning, firmware updated from 4.0.7 to 4.2.1, and the internal battery replaced. The battery was holding about 60% of rated capacity. They emailed me first and did not touch it until I approved the $25 replacement.\n\nDates: dropped off Monday 10/19, picked up Tuesday 10/27. That's six business days against the ten they quoted.\n\nQuoted: $285 estimate for the work, with the battery added at $25 once they'd found it. Paid $310 total by card at pickup. I paid personally, as I do with my own equipment. I was not reimbursed.\n\nLoaner: yes. They gave me a Stenvale Aria 2 for the duration. Its tilt arm slipped during a deposition on the Tuesday afternoon, and I propped it on a legal pad for the rest of the day. I told Gloria Ruark, the technician, by email, and she said they'd repair the arm. I can't speak to whether that happened before the loaner went back out to anyone else.\n\nWhat I'd tell a colleague:\n\nThe work itself was good. The first full day back was expert testimony from an engineer who talks in numbers, and the number bar did not double a single stroke. The machine came back with a one-page service sheet listing every adjustment, which I have never received from any service shop before. It's the kind of record you can actually use. Gloria was also careful about money. She asked before adding the battery, and that mattered to me.\n\nThe weak point is phone access. The line is staffed Tuesday through Thursday, 9 to 4 only. When I called on Wednesday the 21st, it rang out with no voicemail set up, and Gloria emailed the next day. If you work Monday dockets or can't call during the week, plan around that. Email worked fine, and it's the way I'd recommend contacting them.\n\nTurnaround ran longer than quoted, and I'd like to see them tighten that up. The price was fair for what was done.\n\nParking in back is free. It's a two-person shop, which shows in the phone hours, but the work held up under a full week of testimony.\n\nWould I send my machine back? Yes, and I'd send it back knowing the phone hours. If you're deciding whether to trust them with your Aria, my answer is yes, with the caveat that you need to contact them by email or Tuesday through Thursday.\n\nMaureen Calloway",
+  "words": 465,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The draft says turnaround exceeded the quote and places the loaner incident on Tuesday, contrary to the stated six days versus ten and Wednesday deposition."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09765765070915222,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08283326029777527,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.7890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.969781875610352,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.6,
+    "effort": "medium",
+    "output_tokens": 962,
+    "input_tokens": 3947
+  }
+}

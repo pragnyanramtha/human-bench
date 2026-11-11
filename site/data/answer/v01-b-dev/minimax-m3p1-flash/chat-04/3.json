@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: [s01]\nCc: none\nSubject: DRAFT — Football rundown for Monday noon admin meeting (game, playoffs, grades, boosters)\n\nRenee — here's the full rundown for the noon admin meeting. Marking it as a draft; I want to go over it between 2nd and 3rd period before it goes anywhere. Flag anything you want added or trimmed.\n\nTHE GAME (Friday night)\nWe beat Vulcan Ridge 31-14. Deshawn Pettaway had 3 sacks and 7 tackles, and the kids voted him defensive player of the week in the locker room before the coaches even met. Tavion Hurst ran for 188 yards and 2 touchdowns, including the long TD in the 3rd quarter. Our line pushed them back 5 yards on that whole drive — best I've seen them block all year. We held them to 46 yards rushing in the second half. That locks up second in the region.\n\nPLAYOFFS\nAHSAA posted the brackets. We host Clanton Valley in the first round, Friday Nov 13, 7pm at Ridge Field. Presale tickets open Tuesday, and I need to confirm gate crew and chain crew by Wednesday. Dr. Pruitt — please make sure he knows we've got a HOME playoff game and that folks should come out and support the kids. If we win and go on the road, I'll get the bus and transportation details to you; requests for away games come in 5 days out.\n\nACADEMICS\nThe 9-week grade check is in and all 52 kids on the roster are eligible — nobody on the list. The credit for that belongs to Tonya Greer and her Tuesday/Thursday study hall, not to me. She's keeping it running through the playoffs.\n\nBOOSTERS\nBoston butt sale final count: 208 butts sold, $6,240 raised against a $4,500 goal. Money is going to the new sideline headsets. Big thanks to Carla Mims, and to Hargrove's Meat Market for doing the smoking at cost. Gene needs 6 more people for concessions on the playoff game — sign-up sheet goes out Sunday.\n\nONE MORE THING\nSince I also teach PE: the main gym floor gets refinished Nov 16-20, so PE classes will be outside or in the aux gym that week, with the cafeteria as the rain plan after 2nd lunch.",
+  "words": 353,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says the concessions sign-up sheet goes out Sunday, but Gene's Nov 8 (Sunday) post said it was going out 'tomorrow', which is Monday."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18017880618572235,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18845641613006592,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.09375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.828155755996704,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.8,
+    "effort": "provider default",
+    "output_tokens": 1862,
+    "input_tokens": 1665
+  }
+}

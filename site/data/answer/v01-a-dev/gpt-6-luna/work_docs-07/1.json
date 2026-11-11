@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Written Statement Regarding the October 27 Afternoon Route**  \n**To: Mrs. Okafor**  \n**Re: Amara Okafor, Fairmont Elementary — Bus 41, Route 9**\n\nDear Mrs. Okafor,\n\nI am writing in response to your October 29 complaint about the October 27 afternoon bus run. I understand how upsetting it must have been to expect Amara at her stop and then learn that she had been taken back to school. I am sorry she had a difficult and unexpected afternoon. I want to explain what happened from my perspective and help make sure we have a clear plan going forward.\n\nOn Tuesday, October 27, I was driving Bus 41 on Route 9 for Fairmont Elementary. Amara, a kindergarten student, rides with a green tag on her bag, which indicates that an adult must be present at the stop. I arrived at Kessler Avenue and Brandt Street at about 3:52 p.m.; the scheduled time was 3:50. I waited until approximately 3:55 and did not see an adult at the corner.\n\nThe district’s procedure for kindergarten students is that if no adult is present at the stop, the student remains on the bus and is returned to school, where the office contacts the parent. I followed that procedure. At 3:56, I radioed dispatch. Gloria at dispatch contacted the school. I still had three stops to complete and 14 other students on the bus, so I continued the route before returning Amara to Fairmont. At about 4:31, I walked her into the office and left her with Mrs. Petrakis.\n\nAmara appeared to be all right during the ride. She was coloring on her folder and asked whether she could ride more. I told her we were taking a little extra trip. I did not intend to make light of the situation or mislead her about what was happening; I was trying to keep her calm.\n\nI understand that you told the office you were parked across Brandt Street, near the laundromat, and waved to me. I did not see you. There was a box truck parked on that side of the street, and from the driver’s seat I did not have a clear view of you. I also want to address the report that I drove off laughing. I was not laughing. As the bus pulled away, I was telling a fourth-grade student in seat two to sit back down. I understand how the scene may have looked from across the street, but I want to be clear about what I was doing.\n\nI could not leave the bus to look across the road or search for an adult. There were 14 other students on board, and leaving them unattended was not an option. In this situation, I followed the district procedure, contacted dispatch, and returned Amara to the school office. I respectfully ask that the district review the bus camera footage from the stop and the remainder of the ride. The footage may help clarify what was visible from the bus and what occurred as we pulled away.\n\nFor future drop-offs, it would help if the adult meeting Amara could wait on the bus side of the street, where I can see them from the driver’s seat, or step out of the car and be visible at the stop. I know you may have had a reason to be across the street that day; I am not saying otherwise. I am asking for a practical arrangement that will help me identify the adult responsible for meeting Amara and avoid this happening again.\n\nI have driven school buses for 28 years and have not had a prior write-up. I take my responsibility for the children on my bus seriously. I also understand why this experience frightened you. I have grandchildren, and I would be worried too if I expected a child at a stop and then could not find them. I am not apologizing for following the district’s safety procedure, but I am sorry that you had a frightening and difficult afternoon.\n\nI am glad to continue driving Amara and hope we can resolve this respectfully, with a plan that gives you confidence she will be met and helps me do my job safely. Thank you for reading my account.\n\nSincerely,  \n**[Your Name]**  \nBus 41, Route 9  \n**[Date]**",
+  "words": 711,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "716 words, allowed 720-2200 (band 800-2000 ±10%)"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4499014914035797,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9358085989952087,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.500925064086914,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.4,
+    "effort": "medium",
+    "output_tokens": 877,
+    "input_tokens": 14232
+  }
+}

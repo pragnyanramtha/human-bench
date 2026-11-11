@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: none\n\nHi parents,\n\nWe know many of you are scared and angry right now, and that's fair. Here is what happened and what to do.\n\nThe medicine is fine. The problem is the plastic oral syringe packed in the box. Corvane found a printing error on the syringe markings. Each mark reads half of its true volume, so if you measured a dose to the printed line, you may have given about double the amount intended. The liquid itself is not contaminated and is not part of this recall.\n\nAffected product: Pediatric Ibuprofen Oral Suspension 100 mg/5 mL (berry), 120 mL bottle. Lots CV6114A and CV6114B, expiry 08/2027. The lot number is printed on the bottom of the box. Check it before you use anything else from that box.\n\nIf your lot is CV6114A or CV6114B:\n\n1. Stop using the syringe in the box. Use a correctly marked oral syringe instead. We have replacement syringes arriving from our distributor today before noon. They are free for anyone who bought this product, and you don't need a receipt.\n\n2. If you gave a dose and you're not sure it was right, don't give another dose until a poison centre or doctor tells you it's okay. We can't judge a child's dose from a post. It depends on weight, how many doses were given, and other factors. The Ontario Poison Centre (1-800-268-9017) will assess your child.\n\n3. Call 911 or go to the nearest ER right away if your child is very sleepy or hard to wake, vomiting blood, not peeing, or has a seizure.\n\n4. You can return the product for a full refund. Our staff will explain the process at the counter.\n\nWe have extra hours this Saturday, 10 to 4, for exchanges.\n\nFor timing: Corvane notified pharmacies of the recall on the evening of November 6. We posted notices in store on the morning of November 7 and removed the remaining bottles from the shelf that day. Most of these sales were over the counter, so we don't have phone numbers for most buyers. That's why we're asking you to check your bottle and read this post.\n\nIf you have questions, come to the counter at our Erin Mills Parkway location.\n\nCedarbrook Pharmacy\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nHi, this is Cedarbrook Pharmacy. We're sorry this happened to your family. The medicine itself is fine. The problem is the syringe markings, which read at double the true volume. Full details, lot numbers, and what to do are in our post on the Cedarbrook Pharmacy page. If you're unsure about a dose you gave, call the Ontario Poison Centre at 1-800-268-9017 before giving anything else.",
+  "words": 439,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "The page post does not tell parents to discard affected syringes, and the group reply incorrectly says the markings read double the true volume."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.250629186630249,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08385675400495529,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.25,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2971458435058594,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.5,
+    "effort": "medium",
+    "output_tokens": 3822,
+    "input_tokens": 3781
+  }
+}

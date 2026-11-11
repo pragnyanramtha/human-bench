@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: 3 stars — great tub, frustrating warranty experience\n\nI’m a mobile dog groomer, and Harbourline fitted out my 2021 Transit in August. There’s a lot I genuinely like about the van, but the way a plumbing issue was initially handled left me frustrated.\n\nFirst, the good: the stainless tub and ramp are honestly great. They’re the best part of the van, and the dogs walk right in. As someone who spends all day getting dogs in and out of a tub, I appreciate that more than I can say.\n\nOn October 27, a hot water line fitting let go mid-groom. Water went all over the floor and down into a cabinet, and I had to towel off my 110-pound Bernese client, Moose, and send him home half done. For the record, Moose sat in the tub through the whole flood like a king. He did not care at all. I was the one screaming.\n\nThings break. That’s not what made me mad. When I contacted Glenn, he said lines usually don’t just let go and suggested the heater might have been run dry or someone had been hanging things off the pipe. He said that would be user error and not covered, and that there would be a $180 diagnostic fee. I hadn’t run the heater dry or hung anything off the pipe, so it was frustrating to have those possibilities raised before the van had even been looked at.\n\nThe earliest appointment he could offer was November 3, and the van was ready November 6. It was off the road from October 27 to November 6. I lost six bookings, plus the rest of the day when the leak happened, which is a big deal when your van is your workplace.\n\nTo Glenn’s credit, he did own it in the end. He told me the compression fitting on the outlet was a cheaper one his supplier had swapped in, said that was on them, and replaced all the fittings on the hot side. He also refunded the $180 diagnostic fee. I appreciate that he corrected the problem and didn’t leave me paying for it.\n\nMy invoice included a 12-month workmanship warranty that excludes misuse or user error. If you’re another groomer or a tradesperson looking at a fitout, I’d recommend getting the warranty details in writing and making sure you understand how a claim and any diagnostic fees will be handled.\n\nThree stars because I really do like the setup, and the issue was put right, but the initial user-error conversation and the time off the road made this a rough experience. Moose, meanwhile, apparently thought he’d had a pool party.",
+  "words": 434,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.224375918507576,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3439300060272217,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.8125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.03319263458252,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.9,
+    "effort": "low",
+    "output_tokens": 561,
+    "input_tokens": 19782
+  }
+}

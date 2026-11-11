@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr Kerrigan,\n\nThank you for contacting Erindale Park Pharmacy. I am sorry to hear about your mother's fall, and I am glad you reached out before she comes home. We would be pleased to look after Margaret, and I will do my best to have everything in place for her.\n\nTo answer your questions:\n\n1. Blister packs and cost: Yes, we prepare weekly blister packs, covering seven days with up to four times a day. There is no charge for the packaging. Margaret would pay only the usual dispensing costs, and as she is 81, most of that should be covered by ODB.\n\n2. Delivery: Yes, we can deliver to her building. Our regular delivery days are Tuesdays and Fridays between 2 and 6 pm, with no delivery charge within 8 km, and her condo is well within that. Since Thursday and Saturday are not regular delivery days, her first packs can either be held for pickup or our pharmacy assistant, Joel, can do a one-off drop-off on Saturday before 1 pm.\n\n3. Moving her prescriptions: We will contact her current pharmacy on Dundas and handle the transfer ourselves. We only need the pharmacy's name and address and Margaret's OHIP number. She does not need to sign anything for the transfer.\n\n4. A call about her medication list: I would be happy to speak with you, but I must first have Margaret's permission. You are not yet on her file, and our pharmacy records that permission with a Family Communication Consent form, which she signs. It protects her privacy by making sure we share her health information only with the people she chooses. It is a simple form, and she can sign it at pickup or we can send it with our driver. Once it is on file, I can go over her full medication list with you. In the meantime, I am happy to answer general questions about our service.\n\nTiming, and two requests\n\nThe first packs take about 48 hours once we have all of her prescriptions, meaning both the new discharge prescriptions and the transfers. If the hospital faxes the discharge prescriptions to us early on Thursday morning, the packs should be ready on Saturday. Could you please ask the discharge team to send them to us first thing Thursday? If they need our details, they can reach us at the number below.\n\nBecause the packs will not be ready when Margaret leaves the hospital, she will need medication to get her through until Saturday. Could you please confirm with the discharge team that she will go home with an interim supply? I would also ask that you, or someone you trust, go over every dose with the discharge team before she leaves and help her with each dose until the packs arrive. With several new medications and the recent mix-ups, that will matter a great deal in those first days.\n\nAn offer for her first week home\n\nI would like to offer Margaret a MedsCheck at her home during her first week back. It is a 20-minute medication review where I go through each of her medications with her. I can come on Monday 16 or Tuesday 17 November after 6 pm, which should suit your work schedule. Since she is hard of hearing and can find phone calls stressful, a quiet visit at home may be easier for her, and you are welcome to be there if she would like that.\n\nYou can reach me directly at 905-555-0148, extension 2. I am in the store Monday to Friday, 9 am to 6 pm. Please feel free to call or reply with any questions, and thank you again for trusting us with your mother's care.\n\nKind regards,\n\nRania Haddad\nPharmacist\nErindale Park Pharmacy\n905-555-0148 ext 2",
+  "words": 631,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17374472320079803,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09851496666669846,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.518551349639893,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.8,
+    "effort": "high",
+    "output_tokens": 3360,
+    "input_tokens": 3535
+  }
+}

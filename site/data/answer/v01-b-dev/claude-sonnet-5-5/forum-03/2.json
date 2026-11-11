@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: t-achilles\nReplying to: p04\nCc: none\nSubject: none\n\nHi Mel, happy to chip in. I haven't seen your leg so this is general info only, not a diagnosis. What you describe (stiff in the morning, sore spot a few cm above the heel, eases once you warm up, after a quick jump in k's) is a really common pattern for an overloaded Achilles tendon. You don't need to stop completely, but it does need managing.\n\nA couple of things above need correcting. Please don't stretch it hard until it burns, that tends to irritate a sore tendon rather than help it. And I'd steer well clear of a cortisone shot near the Achilles, it can weaken the tendon, which is the last thing you want. Good that you're not keen on a needle anyway.\n\nWhat works better is loading it:\n\n- Slow heavy calf raises, about 3 sec up and 3 sec down, 3 sets of 8-12, every second day. Add weight (a backpack is fine) once they feel easy. Heel drops off a step are OK too, but heavy slow raises have better evidence these days.\n- On the bad days, isometric holds. Go up on your toes and hold for 30-45 sec, 4-5 times.\n- Running: keep it shorter, flatter and every second day for a bit rather than stopping. Limping around the office after the 6k tells me that was a touch too much.\n\nOn pain, up to about 3/10 while you're doing the calf work or running is OK, as long as it's settled by the next morning. If it's worse the next day, or you're limping afterwards, back it off a notch.\n\nIf it isn't settling in 3-4 weeks, see a sports physio. There are plenty around Bayswater and any good one will sort you out.\n\nOne important flag: if you ever get a sudden pop, a feeling like a kick in the back of the leg, or you can't push off, stop running and the calf work and get it checked that same day (GP or ED). That could be a rupture.\n\nAlso, some antibiotics (the fluoroquinolone family) are linked to tendon problems, so if you've had a course recently, mention it to your doctor.\n\nKaz",
+  "words": 364,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.06534425169229507,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.015423916280269623,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.095168113708496,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.8,
+    "effort": "high",
+    "output_tokens": 2703,
+    "input_tokens": 3170
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: Great tub, rough week — 3 stars\n\n3 stars for Harbourline Van Works.\n\nI’m a mobile dog groomer in Halifax, and my van is basically my whole business, so when the hot water line let go mid-groom on Oct 27, it was a day. I was in Bedford with a 110 lb Bernese named Moose in the tub. Water went all over the floor and down into the cabinet. I had to towel Moose off and send him home half done. I cancelled the rest of that day and, by the time the van was back on the road Nov 6, I’d lost six bookings. Not a small thing for a one-van operation.\n\nHere’s the ridiculous part: Moose did not care. He sat in that tub through the whole flood like a king. Like a big wet emperor. I was the one screaming. His owner was lovely about it and said he looked like a wet sheepdog and thought it was a pool party, so at least somebody had a nice time. I did not.\n\nThe leak itself didn’t make me mad. Stuff breaks. What got under my skin was being told, before anyone had looked at it, that it was probably user error — that I’d run the heater dry or hung something off the pipe. I hadn’t. The pipe is behind a cabinet door. Then there was a week’s wait and a $180 diagnostic fee, which stung when I was already cancelling a pile of grooms.\n\nTo be fair, Glenn did own it in the end. He found the compression fitting on the outlet was a cheaper one his supplier had swapped in, said that was on them, replaced all the fittings on the hot side, and knocked the $180 off. I appreciate that. It matters when someone says “that’s on us” instead of digging in. I don’t think he’s a bad guy, and I’m not trying to be personal about him. The workmanship on the rest of the van is solid.\n\nThe tub and ramp are honestly the best part of the setup. The dogs walk right in, no lifting, and the tether rail is handy. Moose approved, and he’s a tough critic. The floor drain has also earned its keep.\n\nMy advice to other groomers or trades looking at a fitout: get the warranty details and exclusions in writing before the work starts, and ask what the process is if something fails during a job. Not because I think they’re trying to get out of anything — just because “user error” is a lot easier to sort out when everyone knows the terms up front.\n\nSo: good hardware, a genuinely great tub, a bad week, and a fair ending. Three stars. I’d go back for the equipment, but I’d have a much clearer conversation first.",
+  "words": 462,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3767385184764862,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2584540843963623,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.472517013549805,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.3,
+    "effort": "provider default",
+    "output_tokens": 2783,
+    "input_tokens": 2053
+  }
+}

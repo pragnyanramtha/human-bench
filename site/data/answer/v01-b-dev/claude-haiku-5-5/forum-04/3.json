@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: none\n\nMick, I know you want to help, and I'm glad you're thinking of Priya and the Dohertys. But please don't go into 43 at 9 with the props. I'll explain why.\n\nFirst, a disclaimer. I'm a chartered structural engineer, but I'm not instructing or advising anyone here, I have no professional indemnity cover for this, and this is only what I saw as a neighbour from the pavement opposite at 7 this morning. Please get a proper inspection.\n\nWhat I saw: the stack on no.41 is still standing about 1.2m high and leaning towards 43, the pots are gone, and the mortar at the base looks washed out. The Met Office has gusts of 50mph again this afternoon, so it could come down at any point. On 43, the front roof slope is holed, maybe 2 to 3 square metres, and there's probably debris in the front bedroom. There's a stepped crack from the bay head up to the first floor window cill, 5 to 10mm wide, and the bay head looks dropped by around 20mm. I couldn't see the party wall between 43 and 45 from the front.\n\nWhy not prop it: standing under a holed roof with a loose stack above is the worst place to be. The floors may be loaded with debris, and nobody knows the load path any more, so a prop can end up doing the wrong thing. Going up into the loft from inside is also a no.\n\nPriya, on Mrs Doherty: I can't tell you from the pavement that 45 is safe. The front of 45 looks undamaged and the stack sits on the 41/43 wall, which is encouraging, but that isn't a check. I wouldn't sleep in the front room tonight. Please ask her to stay with family until someone has looked at 45 properly.\n\nOn the pavement: please don't walk on the footway outside 41, 43 or 45. The council tape is only across 43's front garden, not the pavement, and there are loose slates on the gutter line directly over the path. Use the other side of the road, especially for the school run to St Dunstan's. Ring the council's main number and ask for the dangerous structures team out of hours. I know they've been told, but nobody has closed the footway yet.\n\nUlrike",
+  "words": 386,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It advises using the opposite side of the road but does not say to continue until the council attends."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08898080140352249,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.016249312087893486,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.78125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.168881893157959,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.4,
+    "effort": "medium",
+    "output_tokens": 3010,
+    "input_tokens": 3452
+  }
+}

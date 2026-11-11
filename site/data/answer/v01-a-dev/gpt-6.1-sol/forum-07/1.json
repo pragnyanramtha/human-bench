@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve been reading these monthly threads for a while, but this is my first time posting. I came home today and kept thinking about a patient, and I thought people here might understand. I’ll call her Mrs. H. I’ve left out names and some details for privacy.\n\nMrs. H was one of my blister pack patients for years. She came in every week, and somewhere along the way, checking her medications became only one part of her visit. We would talk about how she was feeling, whether she was managing at home, what she had been cooking. Sometimes she brought food for me, even though I kept telling her she didn’t need to.\n\nOne Ramadan, she remembered I was fasting. She brought me cake, carefully wrapped, and reminded me not to eat it until sunset. She was very serious about making sure I understood this. I remember laughing and telling her yes, I knew the rules.\n\nShe died recently. Today her daughter came in with the unused medication packs and some supplies. I knew she had passed, but seeing those packs come back was different. All those little compartments we had filled and checked, and now she wasn’t there to take them.\n\nHer daughter also brought me a card her mother had written some time ago but never given me. In it, she called me her daughter. I don’t really have words for what it felt like to read that standing at work.\n\nOnce, I caught an interaction when a new medication was prescribed and called to have it sorted out. After that, Mrs. H would tell people I had saved her life. I always felt embarrassed and told her I was just doing my job. Now I’m thinking about how something routine to us can mean so much to the person on the other side of the counter.\n\nI went into the back room and cried. My coworker covered for me so I could have a few minutes. I was grateful I didn’t have to explain much.\n\nMy father is a pharmacist in Egypt. He knew whole families through his pharmacy, and growing up I saw how personal the work was for him. For some reason, I thought practising in Canada would feel different. Today I thought about calling him, because I think he would understand immediately.\n\nSchool taught us pharmacology, interactions, what to check and when to call. I don’t remember anyone teaching us what to do when a patient’s daughter hands you back the medications. How to say goodbye when you didn’t know the last visit was the last one.\n\nI know we need professional boundaries. But when you see someone every week for years, you get attached. I’m not sure I would want to be someone who didn’t.\n\nHave you had a patient like this? Someone you still think about long after you stopped filling their prescriptions?",
+  "words": 481,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39259302616119385,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07308047264814377,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.80078125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.578193187713623,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.3,
+    "effort": "low",
+    "output_tokens": 619,
+    "input_tokens": 18315
+  }
+}

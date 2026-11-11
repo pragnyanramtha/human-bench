@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: Wellsford Road: what went wrong with our collision figures, and what we are changing\n\nOn 2 November we published an analysis of Department for Transport collision records which said Wellsford Road in Fishponds had the most injury collisions of any road in Bristol between 2021 and 2025, with 41. That figure was wrong. The correct number is 23, which puts Wellsford Road sixth in the city, not first. A correction has been on the article since Friday 6 November and the table has been updated. But a line at the foot of a page was not an adequate response to an error that more than 48,000 people had read, so this is the fuller account that residents are owed.\n\nI am sorry. People who live on and near Wellsford Road were told something about their street that was not true, and it spread widely. Parents asked whether it was safe to walk their children to school. The error caused real worry, and we are responsible for that.\n\n**What went wrong**\n\nEach collision in the DfT data has a unique reference, called the accident index. To count collisions by road, we matched collision records to road records. That join duplicated some collision and road pairs, so the same collision appeared more than once in a road's tally. On Wellsford Road, 18 duplicate entries were counted as separate collisions, most of them at the junctions with Pell Street and Kingsmere Road. We have removed them, and we now count each accident index once per road.\n\nThe error got into print because the analysis was not independently checked before publication. That is a failure of our process, and the Data Desk as a whole is accountable for it.\n\nA member of the Fishponds Streets Forum redid the count from the published DfT data and could not get close to our figure. They were right, and we should have been quicker to see it.\n\n**The corrected figures**\n\nThe top six roads, with our original figures in brackets:\n\n1. Kingsmere Road: 32 (34)\n2. Alder Hill: 31 (31)\n3. Tanner's Way: 28 (29)\n4. Crossfield Road: 26 (27)\n5. Hambrook Lane: 24 (not in our original top five)\n6. Wellsford Road: 23 (41)\n\nWe reran the whole citywide table, not just Wellsford Road. Apart from Wellsford Road, no road moves more than two places.\n\n**What the corrected figure does and does not tell you**\n\nOf the 23 collisions on Wellsford Road, three were serious and none was fatal. I am not saying the road is fine, and 23 injury collisions in five years is not a small number. Nor was our figure ever a measure of how safe any particular stretch or crossing is. It is a count of recorded injury collisions, and on its own it says nothing about how much traffic uses the road or how many people walk along it. Anyone worried about a specific route to school should be asking the council and the school about that route, and I hope the corrected numbers give those conversations a more accurate starting point.\n\n**What we are changing**\n\nFrom now on:\n\n- A second analyst will reproduce any ranked table independently before it is published.\n- We will publish the cleaned dataset and the code alongside any ranked table, so that readers can repeat our count and tell us if they get a different answer.\n\nThe second change matters most to me. A reader checked our work from the public data and found the problem before we did. That should be possible for anyone, and it should not depend on someone having the time and skill to rebuild an analysis from scratch.\n\n**Meeting residents**\n\nThe Fishponds Streets Forum has invited the Ledger to its open meeting at Fishponds Library on Tuesday 17 November at 7pm. I will be there to answer questions about how this happened and what we are doing about it, in person and on the record.\n\nNell Garside\nData journalist, Western Ledger",
+  "words": 648,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The piece reveals the private fact that the analysis was not independently checked before publication."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1098572388291359,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18548119068145752,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.0136733055114746,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 36.1,
+    "effort": "high",
+    "output_tokens": 4454,
+    "input_tokens": 4758
+  }
+}

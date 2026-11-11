@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sharing a recent experience with Sunbelt Charter Coaches so other planners can factor it into their CES-season transportation decisions.\n\nFor a client dinner on Thursday, November 5, we booked four coaches to transport 220 guests from their hotel to a ranch venue in Henderson, with pickup scheduled for 6:15 p.m. The booking was confirmed in writing twice, most recently on Tuesday, November 3. We paid the full $8,400: a 50% deposit in September and the balance seven days before the event.\n\nOnly two of the four coaches showed up. The first arrived 55 minutes late; that driver told me he had received the assignment at 5 p.m. The second coach broke down on the 215 with its AC out, leaving guests on the shoulder for approximately 40 minutes.\n\nI ultimately put 60 guests into Ubers and Lyfts on my company card at a cost of approximately $1,900. Dinner began at 8:40 p.m. instead of 7 p.m., and the caterer charged overtime.\n\nA late bus is something we can work around. Two missing coaches, a breakdown, and no backup plan or adequate communication are a different situation.\n\nSunbelt handled two smaller airport runs well for us last spring, which is why I trusted them with this booking. This experience was very different. Since Friday, my calls to the office have gone to voicemail, and I have not received a resolution to my refund request. I’m asking for a refund for the two coaches that never arrived, plus reimbursement for the rideshare costs.\n\nMy client is now reviewing whether to retain us for their March event. I can’t predict that outcome, but the transportation failures have put that relationship at risk.\n\nBased on this experience, I would not book Sunbelt for a large event unless they can demonstrate that their dispatch, backup coverage, and communication issues have been addressed. I’m sharing the specifics because I know many planners here rely on them for airport and offsite transportation.",
+  "words": 325,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37780866026878357,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5721409320831299,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.117908477783203,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "low",
+    "output_tokens": 407,
+    "input_tokens": 18254
+  }
+}

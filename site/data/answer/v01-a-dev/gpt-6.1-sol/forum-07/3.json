@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.27, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’ve never posted in one of these monthly threads before, but I came home today still thinking about a patient, and I think people here will understand.\n\nI’ll call her Mrs. H. She passed away recently, and today her daughter came in to return her unused blister packs and a few other things. I’ve handed those packs across the counter so many times. Having them handed back felt very different.\n\nMrs. H came in every week for years. She often brought something for me to eat. Usually cake, but once a whole jar of pickles, which I accepted very gratefully and then stood there wondering what I was going to do with all of them.\n\nShe remembered that I fast during Ramadan. One time she brought cake wrapped in foil with my name on it and reminded me not to eat it until sunset. She was there to collect her medication, but she still wanted to make sure I had something for later.\n\nA few years ago, I caught an interaction after a new medication was prescribed. I called the prescriber and we sorted it out. After that, she told people I had saved her life. I was always a little embarrassed. I had checked her medications and made a phone call. It was my job. But she remembered it.\n\nToday her daughter also gave me a card. Her mother had written it some time ago and never given it to me. Inside, she had written, “For my Arabic daughter.”\n\nThat was when I needed to go into the back room.\n\nMy colleague covered the counter for a little while. I cried, washed my face, and went back out because there were still prescriptions to check and people waiting. I’m grateful I didn’t have to explain why I needed those few minutes.\n\nMy father was a pharmacist in Egypt. He knew whole families, and growing up, I thought that was just how things were there. I somehow imagined working in Canada would feel more separate. More professional, maybe, though I don’t think that is really the right word.\n\nIt hasn’t been separate. You see someone every week for years. You notice when they seem tired. You hear about the people they’ve lost. They learn things about you, too.\n\nSchool taught me pharmacology and how to catch that interaction. I’m grateful for all of it. But I don’t remember anyone teaching us what to say when a daughter brings back the medication her mother won’t need anymore.\n\nI don’t quite know what to do with that part yet. I just wanted to remember Mrs. H here, without sharing anything that would identify her.\n\nHave you had a patient like this? Someone you still think about long after their last visit?",
+  "words": 459,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2732923924922943,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2890530824661255,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.886837005615234,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.7,
+    "effort": "low",
+    "output_tokens": 583,
+    "input_tokens": 19097
+  }
+}

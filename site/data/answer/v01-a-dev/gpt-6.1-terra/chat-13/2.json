@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "chat-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rohan, fair question da. And Sneha, no, he doesn’t need to let me breathe 😄 He and Divya trusted me with real money, he has every right to ask.\n\nStraight answer: your ₹3 lakh is still a thing, but it’s at risk. It isn’t gone, and I also can’t honestly promise you’ll get it back. We’re in a difficult spot, not shutting down today, and the next few months matter a lot.\n\nThe Hyderabad fund we were counting on for a bridge round fell through on 28 Oct. The term sheet was basically ready, so that one hurt. Their partner said “we love the energy” on the call and then didn’t reply for 11 days. Apparently energy cannot be deposited in a bank account.\n\nLast Friday we had to let go of 6 of our 14 people. We gave everyone two months’ pay, and we’ve already helped four get interviews. Firing people was honestly the worst day of my life, and I include failing maths in second sem in that list. They deserved better news than I had for them.\n\nAfter the cuts, we have about five months of runway. The app has around 41,000 monthly users, and the plumbers and electricians side is growing. But AC servicing has been bleeding money, so we’re shutting that part and focusing on housing society tie-ups instead. Three societies in HSR have already signed pilots.\n\nI genuinely think the society model gives us a real shot, but pilots are pilots, not a guaranteed turnaround. You and Divya came in on the same terms as everyone else in the friends round last year, and I don’t want to dress up the risk for you.\n\nCan we get on a proper call with both of you this week? I’ll show you the numbers and answer whatever I can. Divya shouldn’t have to get her investment updates through our college group and your sad face.\n\nFor the rest of you, I’m fine da. The office security uncle has seen me eat Maggi at 11 pm so often he now asks “masala or plain?” And amma asked if TCS is still hiring, so the family board has also reviewed my performance.\n\nI’m coming Saturday. Pranav is buying. That part, at least, is guaranteed. 🍻",
+  "words": 377,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36281052231788635,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15434090793132782,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.860389709472656,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "low",
+    "output_tokens": 473,
+    "input_tokens": 18592
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: page:wensum-valley-hospice-bookshop\nReplying to: none\nCc: none\nSubject: Light Up a Life 2026\n\nOur Light Up a Life tree will be in the bookshop window again this year, for everyone who would like to remember someone they love.\n\nMemory tags will be in the shop from Monday 16 November, with a suggested donation of £3. There will be envelopes on the counter if you would rather take a tag home to write. Please don’t feel you have to write anything grand. A name is enough, or a few words, or whatever you would like to say.\n\nWe’ll switch on the lights on Saturday 28 November at 4pm. The children from Gildencroft Primary are coming back to sing a few carols, and Doreen is making her mince pies again. If last year is anything to go by, I shouldn’t leave it too long before getting one.\n\nEvery name on the tags will be read out at the hospice remembrance service on Sunday 13 December at 3pm, in the day centre. You don’t have to come to the service for your loved one’s name to be read.\n\nIt is seven years this month since my husband Ray died at the hospice. The first year I hung his tag on the tree I could hardly write it. Now I write it at the shop counter, with the same pen. I still take my time over it.\n\nThe tree is for anyone who is grieving, not only those whose families have been cared for by the hospice. And you are very welcome to come in and stand by it for a while. You don’t need to buy anything, and you don’t have to explain to anyone why you’re there.\n\nHilary asked on the page the other day whether the tree would be back, as her mum’s name was on it last year. It will indeed, Hilary, and you and your sister will be very welcome.\n\nThank you to everyone who shared a name with us last year, and to everyone who came to see the tree. It meant a great deal to have so many people remembering together. We look forward to welcoming you again.\n\nJean",
+  "words": 349,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "349 words, allowed 360-880 (band 400-800 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.033760808408260345,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.032581258565187454,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.276576042175293,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.9,
+    "effort": "low",
+    "output_tokens": 449,
+    "input_tokens": 20846
+  }
+}

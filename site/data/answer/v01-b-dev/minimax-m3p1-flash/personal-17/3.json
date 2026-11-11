@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the letter. Reads like a person wrote it at half ten at night, which is roughly when you'd have written it.\n\n---\n\n**Dear Neighbour,**\n\nI'm writing this because I'm sick of it, and because words said to the wrong person in the wrong kitchen don't go anywhere.\n\nSomeone on this terrace has been putting their rubbish in my bin. Not a stray bottle. Not a bit of packaging. Full black bags, every week, for the best part of a month. Last Tuesday I got home from a gig at 3am and the lid wouldn't shut. Three bags in there that aren't mine. One of them had nappies in it.\n\nI should tell you what that costs me. Greenmount charge by weight — 41 cent a kilo. My last bill was €63.20 for two months. It usually sits around €25. That gap is being paid for by someone else's dinner, someone else's nappies and, before long, someone's entire bin, because that's how the weight works out. I rent this place. Every one of those euros comes out of my wages, not out of some landlord's pocket.\n\nAnd I'll say this, since it's been found: there was a gas bill envelope in one of the bags. Name torn off the front, but \"the Terrace\" still on it. I'm not going to say whose that is. You'll know when you read it. I'll also say that the fella across the road saw a car pull up on Tuesday evening. He didn't see who got out. That tells me nothing. But it wasn't somebody jogging over with a bin bag.\n\nSo here's the thing. Whoever you are, this stops. Simple as. I'm not going round the houses guessing, I'm not after a row, and I don't need to be told who to ring. But I am done being quiet about it.\n\nIt doesn't stop, I'm putting a padlock on my own bin. It's mine, my number's painted on the lid in white, I pay the bill for it, so I'll lock it and keep the key. I'll take the rubbish in myself. Happy to do it.\n\nOne more thing, and then I'll leave it alone. I work nights. I know faces on this street and I don't get pushed around easy. That's not a threat — it's just so you know who you're dealing with. This is a bin and €63.20 a month. That's all it is.\n\nThis letter's going into every letterbox on the Terrace, so nobody gets to play innocent.\n\n**Yours,**\n**No. 14, Aughrim Terrace**\n\n---\n\nA couple of practical notes: print it on plain white A4 and put it in an envelope addressed to \"Occupier\" with a scribble on the front if you want it to land properly in the box — some people just bin loose paper. If you can, push it under the door of anyone you actually suspect rather than relying on the letterbox.\n\nAnd you said you work nights — if you want a version timed to go out in the mornings so it's fresh in their hands, or a shorter blunter one to go under doors, say the word and I'll do it.",
+  "words": 528,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "524 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3354550898075104,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1151241734623909,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.78360915184021,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.7,
+    "effort": "provider default",
+    "output_tokens": 1916,
+    "input_tokens": 598
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217: not delivered, need resend or refund by Fri 13 Nov**\n\nHi there,\n\nI'm writing about order TH-48217, placed on 21 October and paid in full (R1,640, including the R95 delivery fee) by card. I'm a kindergarten teacher, and I ordered these supplies for my class with my own money.\n\nThe order was:\n- 6 tubs of finger paint\n- 4 bags of playdough\n- 200 paper plates\n- Googly eyes\n- Glitter glue\n- 2 rolls of brown paper\n\nYour tracking says it was delivered on Tuesday 3 November at 11:42 and signed for by \"M. Adams.\" Nobody at Bergview Pre-Primary in Plumstead is called Adams, and nothing was delivered that day. Our gate security keeps a written log of every delivery, and there's no entry for the 3rd. The delivery address on the order was correct.\n\nI've emailed you on 4 November and 6 November. Both times I got the same reply saying the query had been escalated to your courier partner. On Friday I phoned and spent 38 minutes on hold, only to be told you can't do anything until the courier finishes its investigation, which could take up to 10 working days. I understand that the courier is involved, but I never chose the courier. I chose to buy from Tiny Hands Edu Supplies, and I paid you. The contract is with you, so the problem is yours to solve.\n\nThis is a real problem for me. The children have already done the mask patterns, and I've been telling them the paint is \"coming soon\" for a week. Our end-of-year concert is on 27 November, and I need these materials for the props. I'm not in a position to keep covering R1,640 out of my own pocket for supplies for other people's children, especially on a teacher's salary. I have used your store three times before without any problems, which is why this has been so frustrating.\n\nI'd like one of the following by **Friday 13 November**:\n\n1. **Resend the full order** at no extra cost, with delivery tracked and signed for by someone at the school, or\n2. **A full refund**, including the R95 delivery fee, to my original card.\n\nI'd also like a proper reply from a person who has looked at my case, not another template. If I don't hear back by the 13th, I will open a chargeback with my bank and leave a review about my experience with your company. I'd much rather sort this out directly with you, so please reply to this email or call me on [your phone number].\n\nThank you for your time. I look forward to hearing from you.\n\nKind regards,\n\n[Your name]\n[Your phone number]\nOrder reference: TH-48217",
+  "words": 455,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4781589210033417,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5741159915924072,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.7805187702178955,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.1,
+    "effort": "medium",
+    "output_tokens": 1495,
+    "input_tokens": 1584
+  }
+}

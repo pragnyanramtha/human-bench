@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmate you don't need to apologise for going quiet. I'm sorry I barely replied after the roof came down. You said you're not ok and I should've been there, not left you wondering.\n\nI'm off all day tomorrow now, Sam's taken my shift. Dad's said we can borrow the trailer, so I can come round and get your bags out of Priya's garage before she needs the space. Ruby's already said you can have our couch for as long as you need. Only catch is Clover reckons it's her bed so you'll have to negotiate. Want me there at 9, or is later better? We can move everything first and work out the rest after. You don't have to have a plan ready.\n\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nAlso there's band stuff happening that isn't another job for you. Tully's spoken to Dee at the Lantern Room and we can have Sat the 28th for a benefit, all door money to you. Hollow Pines are keen to play too. If you're up for it we'll sort the organising, and you don't have to play or stand around being thanked at. Jono's cousin has a working Yamaha you can have in the meantime. Not pretending that replaces your Nord, or the notebooks. That part is just fucking awful.\n\nYour landlord's a grub. Once we've got you and your stuff sorted, I can sit with you and help chase the roof/maintenance bullshit too.\n\nAnd please don't call the whole thing on Rocky tonight. If you still want to go once you've had somewhere to sleep and a bit of breathing room, we'll talk. But you don't have to leave Brisbane or quit the band because everything's gone to shit this week. Your songs are the best thing about us, but you don't owe us rehearsal or anything else right now.\n\nYou drove to Gatton at 2am when my car died after that Toowoomba gig, didn't even whinge. You can absolutely let me do a trailer run and make you some toast. You're not doing this on your own.",
+  "words": 341,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22008676826953888,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.029057947918772697,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.751136779785156,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.8,
+    "effort": "low",
+    "output_tokens": 446,
+    "input_tokens": 19984
+  }
+}

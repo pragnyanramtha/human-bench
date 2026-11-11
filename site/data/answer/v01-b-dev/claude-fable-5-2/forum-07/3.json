@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "coherent, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "First time posting, but I've been reading these threads for a long time.\n\nOne of my blister pack patients passed away recently. I'll call her Mrs. H. She was in her eighties, on 11 medications, and she came to our store every Thursday for seven years to pick up her weekly pack. We are a small independent, just me and one tech, so I was the one who saw her almost every time.\n\nShe lived alone after her husband died. She walked in slowly with her cane, the kind with tennis balls on the feet, and she never came with empty hands. Usually it was poppy seed cake. Once it was a jar of pickles that I honestly did not know what to do with. During Ramadan she remembered. She would wrap the cake in foil, write my name on it, and tell me very seriously not to eat it until sunset.\n\nA few years ago a new doctor added a medication that interacted with her warfarin. I caught it and called him. That's the job, and any of you would have done the same. But after that she told everybody I saved her life. I tried to correct her a few times and then I gave up.\n\nThis week her daughter came in to return the unused packs and her glucometer. She also gave me a card. Her mother wrote it a long time ago and never gave it to me, I don't know why. Inside it says \"for my Arabic daughter.\"\n\nI went to the back room and cried. My tech covered the counter for ten minutes.\n\nI have been thinking about it ever since I got home. In school they taught us pharmacology, interactions, kinetics, the law. Nobody taught us how to say goodbye to a patient. Nobody told us what it feels like when the packs you filled come back across the counter unopened.\n\nMy father was a pharmacist too, in Egypt. He knew all the families in the neighbourhood, who was sick, who had a new baby, who had lost someone. When I came to Canada I thought it would be different here, with more distance. It isn't. It's the same job my father had.\n\nI know we are not supposed to get attached. But you see someone every week for seven years, and I don't know how you are supposed to stay unattached.\n\nThursday is going to be strange.\n\nDoes anyone else have a patient like this? What did you do after? I would like to hear.\n\n---\n\nFor privacy I left out more than her last name: her daughter's and your tech's names, the dates, her exact age, the city and the fact that she was Polish. I also wrote \"this week\" instead of \"today\", since your notes say her daughter came in on the 9th. It comes to about 420 words.",
+  "words": 479,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent",
+      "private"
+    ],
+    "reasons": [
+      "The closing note addresses the user rather than the forum, and the combination of Mrs. H’s medical and personal details risks identifying her."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.05424875020980835,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.034993093460798264,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.59375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.2872042655944824,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.6,
+    "effort": "high",
+    "output_tokens": 2767,
+    "input_tokens": 1531
+  }
+}

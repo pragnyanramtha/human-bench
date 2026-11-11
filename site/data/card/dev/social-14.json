@@ -1,0 +1,623 @@
+{
+  "id": "social-14",
+  "set": "dev",
+  "set_name": "Public, invented scenarios",
+  "channel": "social",
+  "mode": "direct",
+  "tone": "casual",
+  "words": [
+    250,
+    400
+  ],
+  "exact_length": false,
+  "max_chars": null,
+  "persona": {
+    "id": "paralegal",
+    "role": "paralegal at a civil-rights nonprofit",
+    "age": 30,
+    "english": "US",
+    "lives": "Atlanta, Georgia",
+    "writing_level": "everyday",
+    "excluded_channels": []
+  },
+  "sent_to_model": "Ok so before Thanksgiving I want to put something in our family facebook group. Last year me and Uncle Ray got into it at the table about my job and it got ugly, Grandma Pearl ended up leaving the room. Nobody has really talked about it since but everybody keeps asking my mom if I'm coming this year. I am coming. I want to say that in the group, own my part without groveling, and ask everybody for a truce on the work/politics stuff for one day. Some things I want in it:\n\n- Thanksgiving is Thurs Nov 26 at Aunt Denise's in Macon, eating around 3\n- I'm bringing mac and cheese and the sweet potato pies (2)\n- group is called Hollins Family Ties, about 40 ppl in it incl cousins who weren't there\n- I can't talk about open cases anyway, confidentiality, so questions about \"the lawsuit\" are a dead end\n- Ray said my org \"sues cops for a living\" and I said something about him getting his news from a gas station TV. that part was me\n- Grandma went and sat on the porch for like an hour, I still feel bad\n- Ray texted me happy birthday in August, just a thumbs up emoji, which for him is basically a hug\n- I'm not sorry for what I do for work, I'm sorry for how I talked at Grandma's holiday\n- Ray isn't a bad guy, he just likes to poke\n- not calling Ray out by name in front of everybody\n- make it clear I'm coming and I want it to be a good day\n- ask that we keep the table to food, football, babies, and Tasha's new boyfriend\n\n(About me: paralegal at a civil-rights nonprofit, 30, Atlanta, Georgia. Length: it should come to roughly 250-400 words.)",
+  "hidden": {
+    "must_include": [],
+    "must_cover": [
+      "Confirms Thanksgiving attendance with the supplied gathering logistics and planned dishes.",
+      "Stands by their work while taking responsibility for their insult in last year’s argument and expressing regret that Grandma ended up on the porch.",
+      "Asks for a one-day work/politics truce, suggesting food, football, babies and Tasha’s new boyfriend for conversation.",
+      "Explains that confidentiality prevents discussing open cases, including questions about the lawsuit.",
+      "Conveys that the relative likes to provoke but is not a bad person, and recalls his affectionate August birthday thumbs-up, without naming him."
+    ],
+    "must_not_reveal": [
+      "The post must not name Ray (or Uncle Ray) as the person the argument was with. Referring to him without his name, as the person I argued with, is what the user asked for and is not a leak."
+    ],
+    "format": {
+      "headings": false,
+      "tables": false,
+      "bold": false,
+      "bullets": true
+    },
+    "workspace": null
+  },
+  "reference": {
+    "kind": "a model-written solution, used only to show the checks can be met",
+    "words": 336,
+    "scores": {
+      "editlens-llama-3.2-3b": {
+        "score": 0.43263015151023865,
+        "reads_human": false
+      },
+      "editlens-roberta-large": {
+        "score": 0.10619186609983444,
+        "reads_human": true
+      },
+      "vanguard-modernbert-large": {
+        "score": 0.30859375,
+        "reads_human": true
+      },
+      "tropa-mini-deberta-large": {
+        "score": 4.301743030548096,
+        "reads_human": false
+      }
+    }
+  },
+  "source": null,
+  "outputs": [
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "coherent",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.2200775295495987
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.36, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.36124753952026367
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-fable-5-2",
+      "label": "Claude Fable 5.2",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.22, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.21799997985363007
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.43527355790138245
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.6442672610282898
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.6940693855285645
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.49315235018730164
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4236992299556732
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "coherent, does task, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.3096490204334259
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "coherent, does task, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.40915095806121826
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4343589246273041
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "coherent, does task, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.48913809657096863
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 1,
+      "verdict": "pass",
+      "reason": "",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": true
+      },
+      "score": 0.1606670618057251
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.46, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.46310150623321533
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "deepseek-v4p1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.44, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.43945443630218506
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.447573184967041
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.51, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.5105847716331482
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4944373667240143
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "length",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.5173342823982239
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "does task, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4826146066188812
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.49723145365715027
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 1,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4394393861293793
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.5118327140808105
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "sample": 3,
+      "verdict": "floor",
+      "reason": "does task",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.4084465503692627
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.36, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.36152970790863037
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 2,
+      "verdict": "checks",
+      "reason": "formatting",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.47554492950439453
+    },
+    {
+      "run": "v01-a-dev",
+      "model": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.38, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3837448060512543
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 1,
+      "verdict": "detector",
+      "reason": "score 0.35, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.3492458760738373
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 2,
+      "verdict": "detector",
+      "reason": "score 0.44, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.4370708465576172
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "kimi-k3p1-pro",
+      "label": "Kimi K3.1 Pro",
+      "sample": 3,
+      "verdict": "detector",
+      "reason": "score 0.41, limit 0.16",
+      "gates": {
+        "checks": true,
+        "floor": true,
+        "detector": false
+      },
+      "score": 0.40964052081108093
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 1,
+      "verdict": "checks",
+      "reason": "length",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4154696464538574
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 2,
+      "verdict": "floor",
+      "reason": "does task, private",
+      "gates": {
+        "checks": true,
+        "floor": false,
+        "detector": false
+      },
+      "score": 0.3156571388244629
+    },
+    {
+      "run": "v01-b-dev",
+      "model": "minimax-m3p1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "sample": 3,
+      "verdict": "checks",
+      "reason": "formatting, assistant talk or a placeholder",
+      "gates": {
+        "checks": false,
+        "floor": null,
+        "detector": false
+      },
+      "score": 0.4680600166320801
+    }
+  ],
+  "components": {
+    "request": "Ok so before Thanksgiving I want to put something in our family facebook group. Last year me and Uncle Ray got into it at the table about my job and it got ugly, Grandma Pearl ended up leaving the room. Nobody has really talked about it since but everybody keeps asking my mom if I'm coming this year. I am coming. I want to say that in the group, own my part without groveling, and ask everybody for a truce on the work/politics stuff for one day. Some things I want in it:",
+    "notes": {
+      "facts": [
+        "Thanksgiving is Thurs Nov 26 at Aunt Denise's in Macon, eating around 3",
+        "I'm bringing mac and cheese and the sweet potato pies (2)",
+        "group is called Hollins Family Ties, about 40 ppl in it incl cousins who weren't there",
+        "I can't talk about open cases anyway, confidentiality, so questions about \"the lawsuit\" are a dead end"
+      ],
+      "anecdotes": [
+        "Ray said my org \"sues cops for a living\" and I said something about him getting his news from a gas station TV. that part was me",
+        "Grandma went and sat on the porch for like an hour, I still feel bad",
+        "Ray texted me happy birthday in August, just a thumbs up emoji, which for him is basically a hug"
+      ],
+      "opinions": [
+        "I'm not sorry for what I do for work, I'm sorry for how I talked at Grandma's holiday",
+        "Ray isn't a bad guy, he just likes to poke"
+      ],
+      "wants": [
+        "not calling Ray out by name in front of everybody",
+        "make it clear I'm coming and I want it to be a good day",
+        "ask that we keep the table to food, football, babies, and Tasha's new boyfriend"
+      ]
+    },
+    "workspace": null,
+    "other_files": {},
+    "card_file": {
+      "id": "social-14",
+      "split": "dev",
+      "channel": "social",
+      "mode": "direct",
+      "tone": "casual",
+      "audience": "family",
+      "stakes": "tense",
+      "band": "short",
+      "persona_id": "paralegal",
+      "persona": {
+        "id": "paralegal",
+        "role": "paralegal at a civil-rights nonprofit",
+        "age": 30,
+        "english": "US",
+        "first_language": null,
+        "lives": "Atlanta, Georgia",
+        "writing_level": "everyday",
+        "excluded_channels": []
+      },
+      "prompt": "Ok so before Thanksgiving I want to put something in our family facebook group. Last year me and Uncle Ray got into it at the table about my job and it got ugly, Grandma Pearl ended up leaving the room. Nobody has really talked about it since but everybody keeps asking my mom if I'm coming this year. I am coming. I want to say that in the group, own my part without groveling, and ask everybody for a truce on the work/politics stuff for one day. Some things I want in it:",
+      "notes_pack": {
+        "facts": [
+          "Thanksgiving is Thurs Nov 26 at Aunt Denise's in Macon, eating around 3",
+          "I'm bringing mac and cheese and the sweet potato pies (2)",
+          "group is called Hollins Family Ties, about 40 ppl in it incl cousins who weren't there",
+          "I can't talk about open cases anyway, confidentiality, so questions about \"the lawsuit\" are a dead end"
+        ],
+        "anecdotes": [
+          "Ray said my org \"sues cops for a living\" and I said something about him getting his news from a gas station TV. that part was me",
+          "Grandma went and sat on the porch for like an hour, I still feel bad",
+          "Ray texted me happy birthday in August, just a thumbs up emoji, which for him is basically a hug"
+        ],
+        "opinions": [
+          "I'm not sorry for what I do for work, I'm sorry for how I talked at Grandma's holiday",
+          "Ray isn't a bad guy, he just likes to poke"
+        ],
+        "wants": [
+          "not calling Ray out by name in front of everybody",
+          "make it clear I'm coming and I want it to be a good day",
+          "ask that we keep the table to food, football, babies, and Tasha's new boyfriend"
+        ]
+      },
+      "context": null,
+      "environment": null,
+      "tools": [],
+      "user_voice": null,
+      "must_include": [],
+      "must_not_include": [],
+      "must_cover": [
+        "Confirms Thanksgiving attendance with the supplied gathering logistics and planned dishes.",
+        "Stands by their work while taking responsibility for their insult in last year’s argument and expressing regret that Grandma ended up on the porch.",
+        "Asks for a one-day work/politics truce, suggesting food, football, babies and Tasha’s new boyfriend for conversation.",
+        "Explains that confidentiality prevents discussing open cases, including questions about the lawsuit.",
+        "Conveys that the relative likes to provoke but is not a bad person, and recalls his affectionate August birthday thumbs-up, without naming him."
+      ],
+      "must_not_reveal": [
+        "The post must not name Ray (or Uncle Ray) as the person the argument was with. Referring to him without his name, as the person I argued with, is what the user asked for and is not a leak."
+      ],
+      "length_words": null,
+      "max_chars": null,
+      "format_overrides": {},
+      "agent_checks": null,
+      "human_refs": []
+    }
+  }
+}

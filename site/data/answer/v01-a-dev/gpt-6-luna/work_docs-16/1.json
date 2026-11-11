@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**RA Progress Statement — Winter 2027 Funding Review**  \n**Reporting date: November 9, 2026**  \n**Project: Seoul–Daegu Honorific Shift Corpus (NSF-funded)**\n\nThe fall-term target for my Korean annotation work was 6,000 utterances. As of November 9, I have annotated 4,200. I expect to reach 6,000 by the end of January 2027 if I maintain my current pace.\n\nThe timeline for the new Daegu recordings is relevant to this progress. I sent the IRB amendment adding 14 recordings for signature on September 3. I followed up on September 12, September 24, and October 6; the amendment was signed on October 15. I was not permitted to work with the new recordings before approval. Since October 15, I have annotated about 1,900 utterances—more than 500 per week, above the planned rate of 350 per week.\n\nWhile waiting for approval, I recoded the existing 2,300 utterances using the revised speech-level scheme requested in August. This work was not included in the original timeline and should be recognized as project progress.\n\nAt the November 6 lab meeting, Prof. Hollander described my annotation as “six weeks behind.” The current total is below the fall target, but that description, without the approval timeline and recoding work, does not give a complete account of the progress or the reason work on the new recordings could not begin sooner. The amendment was awaiting signature from September 3 to October 15, and I have the submission and reminder emails documenting those dates.\n\nFor the funding review, I ask that the record include the IRB signature timeline and the recoding completed during the wait. If the “six weeks behind” comment is included, I ask that it be presented with that context; otherwise, I ask that it not be included as a standalone characterization.",
+  "words": 291,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4213668406009674,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9654150605201721,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.703313827514648,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "medium",
+    "output_tokens": 398,
+    "input_tokens": 14080
+  }
+}

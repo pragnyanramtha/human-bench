@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays redoing the electric in a buddy’s shed. I’ve seen some things in 26 years, but this one had a little bit of everything.\n\nThe power supply was three orange extension cords daisy chained out the basement window, across the yard and under the deck. Somewhere along the way there was a splice wrapped in duct tape. Not electrical tape. Duct tape. Apparently the thinking was if it can hold a bumper on a Buick, it can handle 120 volts.\n\nOpened the panel and the wife was standing there. Inside the door, written in Sharpie: “SHED - DONT TOUCH - RON.”\n\nShe looks at me and goes, “Who’s Ron?”\n\nLike I’d know. I’m still wondering myself.\n\nWe had a 30 amp breaker feeding 14 gauge wire, an outlet hooked up with speaker wire, and a regular outlet wearing a GFCI sticker like it had earned a certification. The ceiling fan box was hanging on by one drywall screw and what I can only assume was positive thinking.\n\nThere was also a mouse nest in a junction box. Mice were fine, by the way. Completely unbothered by any of it. Probably mad at me for renovating.\n\nNow, I’m laughing about it because nobody got hurt. But that’s the part I want people to hear: this kind of stuff burns houses down. A breaker that’s too big for the wire may not protect it from overheating. A sticker doesn’t make an outlet a GFCI. Duct tape doesn’t make a splice safe. And extension cords across the yard aren’t a permanent wiring system, no matter how long they’ve been there without a problem.\n\nThe guy who put it together wasn’t evil. He was cheap and a little proud, and honestly that’s most of these jobs. Somebody figures they can save a few bucks, gets it working, and says “see, it’s fine.” Working and safe are not the same thing.\n\nWe trenched a proper line, put in a 20 amp GFCI breaker, real boxes and outlets, and got the fan on a proper brace. Shed’s got power, the fan’s up, and nothing smells like burning. I got paid two pizzas and a case of Yuengling, which I believe puts me in a higher tax bracket.\n\nSeriously though, if you’ve got wiring you’re not sure about, call a licensed electrician. Not your buddy with a YouTube video and a roll of duct tape. It costs less to have it done right than to find out the hard way why it should have been.\n\nAnd if anybody knows Ron, tell him I touched it.",
+  "words": 432,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.24125544726848602,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14400649070739746,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.015625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.0810956954956055,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.0,
+    "effort": "low",
+    "output_tokens": 563,
+    "input_tokens": 19265
+  }
+}

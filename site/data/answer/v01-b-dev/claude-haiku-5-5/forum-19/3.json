@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task, facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Sizwe, breathe bru. Nobody's dying tonight, the bakkie's just sulking.\n\nListen carefully, then put the phone down for a second.\n\nTake the key OUT and leave it out. Every time it turns over, the pump is pushing petrol through a diesel pump with no lube, and that's what chews it. Five or six cranks is already five or six too many.\n\nDon't drive it, and don't put diesel on top. The petrol is still in the tank, and mixing doesn't dilute it, it just gives you worse fuel. Kobus means well, but that's old Land Rover advice. Modern common rail can't take it.\n\nTonight, check your insurance app or policy for roadside assistance. Most cover a tow, so use that before paying some guy cash on Jan Smuts. Get it towed to a workshop, not left in a side road.\n\nTomorrow, my shop is in Umbilo, open Saturday 7 till 12. Thabo, my guy, drains it first thing. Then we check the pump and injectors for damage. If nothing's cooked, it's drain, flush the lines, new fuel filter, and bleed it. Usually R2 500 to R4 500. R40 000 is what it costs if the pump's gone, so we need to look before anyone quotes you anything. I can't promise you a total tonight until we've had a proper look.\n\nBe realistic about 2pm too. You might not have it running by then, so borrow a bakkie for tomorrow anyway. Ask your brother-in-law, a mate, or a hire place. Don't plan the cake around a tank that's still drained.\n\nNow the funny bit. In 1995, my first year as an apprentice, I put diesel in my boss's Golf. He still tells it at every braai. We also made a customer a sticker for his fuel flap after he did it twice in one year at the same garage. Put a sticker on yours.\n\nCongrats on the wedding. Get some sleep, get the bakkie to Umbilo, and go and get married.",
+  "words": 330,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "facts"
+    ],
+    "reasons": [
+      "It says to drain the bakkie before inspecting the pump and injectors, contrary to the requested inspection-first procedure."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3611968755722046,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09180659055709839,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.338080883026123,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.7,
+    "effort": "medium",
+    "output_tokens": 2014,
+    "input_tokens": 2182
+  }
+}

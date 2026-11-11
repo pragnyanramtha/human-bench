@@ -1,0 +1,82 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: #team-selection\nReplying to: s01\nCc: none\nSubject: Ustroń lineup\n\nGood evening Marek,\n\nI’d like to ask you to reconsider the proposed lineup before it is submitted on Friday. In October, you said that selection would take account of both the November rating list and form in club events, and that coaches would be consulted before the final decision. I don’t believe we have yet applied both parts of that process to Liliana’s selection.\n\nLiliana missed around two weeks of training in October, but she is now back to her usual level. Her last three lessons have been very good. She also finished second in the rapid qualifier, scoring 5.5/7, ahead of Igor, Maja and Antoni. The rating list is relevant, but I don’t think it gives a fair picture on its own: Liliana’s rating change came from Katowice, where she was already ill and nevertheless played all her games. The -81 should not be treated as an accurate measure of her current strength.\n\nTo be clear, I have nothing against Igor; he is a good player. My concern is that the selection should follow the criteria we agreed, including recent form, and that the coaches should be consulted as promised.\n\nI recommend placing Liliana on board 2. If you are not comfortable making that change on the available evidence, I would support arranging a short match between Liliana and Igor before Friday and using that result to decide. Please let me know how you would like to proceed, and update the lineup before it is sent to the organisers.\n\nFor context, Liliana missed training for health reasons. I’m keeping the details private at her mother’s request.\n\nKind regards,\nOksana",
+  "words": 270,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The draft never plainly says Oksana was not consulted before the lineup was posted; it only hints that the process was not fully applied and that coaches 'should be consulted as promised'."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.349648118019104,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06395723670721054,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.65234375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.687751770019531,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "medium",
+    "output_tokens": 357,
+    "input_tokens": 14990
+  }
+}

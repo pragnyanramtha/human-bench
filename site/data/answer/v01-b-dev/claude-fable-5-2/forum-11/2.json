@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hello M. Bergeron, hello everybody,\n\nYou asked for a straight answer and you are right to ask, so here it is. We are not closing and we are not moving. It's the opposite. I bought the building.\n\nM. Ferland, the owner, is 81 years old and he is retiring to Sherbrooke with his daughter. He offered to sell to me before anybody else, and we signed at the notary on December 15. So Marc-Antoine, your cousin is half right. The building was sold. It was sold to me! No condos, no bank, no vape shop. Bread downstairs, like before.\n\nI wanted to keep this as a surprise for the reopening. I see now that a surprise is not a good idea when people have paid for their bread in advance and all they get is a paper taped on the door. I'm sorry for the worry.\n\nNow the carnets, because this is the important part. We sold 214 of them in October, $60 for 12 loaves, and every single one is still good. They have no expiry date and they never had one. You can use them from the first morning we reopen, the same as before. noodle_and_crumb, your 7 loaves are waiting for you.\n\nTo say thank you for your patience, each carnet holder also gets a free croissant in January. And if somebody really prefers to have the money back, come see me at the bakery and I will give it back, no questions. I mean it. I would be a little sad, but I will do it with a smile.\n\nI will say one thing about the word scam and then I leave it alone. I opened Le Pétrin Doré in March 2009. That is 17 years on this street, six days a week, and I know many of you by name and by what kind of bread you take. So yes, reading that hurt. But I understand where it comes from. Mile End has lost a lot of small shops, and when people see a sign in a window now, they expect the worst. If I didn't know the story, maybe I would think the same thing.\n\nAbout the sign. My nephew Thomas wrote it at 6 in the morning, and \"Grande nouvelle bientôt!\" was his idea. I said ok without thinking, because I had my hands in the dough. He meant well and so did I. Next time I will write the sign myself, and it will have more words on it.\n\nAbout the half-empty shelves on the 28th. That has nothing to do with closing. We sold everything for Christmas Eve, including 400 bûches. Empty shelves after Christmas is good news for a bakery, even if it didn't look like it from the sidewalk.\n\nSo why are we closed from January 4 to 18? For the works. Two things are happening.\n\nFirst, a new oven. It is a deck oven with 4 decks, coming from a supplier in Laval. The old one is from 1998 and it broke down three times this year, so it has earned its retirement too. Jules, your pain de campagne is safe, and I think it will be even better.\n\nSecond, we are taking the space at the back, the old storage room of the dépanneur. We are putting in six small tables. After 17 years of people eating their croissant standing up on the corner in February, finally you can sit down.\n\nFor the tenants in the three apartments upstairs, because I know some of you or your neighbours may be reading this: nothing changes for you. The apartments stay rented, same tenants, same rent. I promised it to them in writing. I did not buy this building to put anybody out. I bought it so that nobody else could.\n\nOne more thing about M. Ferland, because he deserves it. He came in every morning for 17 years for his baguette \"pas trop cuite\". He could have sold to anyone, and he came to me first. He cried a bit at the notary. If you see him before he leaves for Sherbrooke, say thank you to him. He is the reason the bakery is staying.\n\nHere are the dates:\n\nWe reopen Tuesday, January 19, at 7 a.m.\n\nOn Saturday, January 23, everybody is invited to celebrate with us. Coffee and a piece of the new bread, free, for anyone who comes. That includes the regulars, the neighbours, the people from this thread, and the ones who were worried. Especially the ones who were worried. Come see the new oven and try the tables.\n\nPriya, thank you. Thank you also to the others who defended us here and to the ones who came by to ask me directly. It meant a lot to read that. And M. Bergeron, thank you for asking the question politely and by name. It was the right question, and I should have answered it before anybody had to ask.\n\nSee you on the 19th, and I hope on the 23rd.\n\nHélène Gagnon\nBoulangerie Le Pétrin Doré",
+  "words": 842,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4236278533935547,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04332338646054268,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.4921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2093505859375,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 43.2,
+    "effort": "high",
+    "output_tokens": 3774,
+    "input_tokens": 2381
+  }
+}

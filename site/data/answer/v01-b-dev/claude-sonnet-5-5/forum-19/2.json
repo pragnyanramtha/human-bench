@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, congrats bru, and breathe. In 1995, my first year as an apprentice, I put diesel in the boss's Golf. He still tells it at every braai. You'll be telling this one at your anniversary.\n\nRight, here's what to do tonight:\n\n**Take the key out and put it in your pocket.** Don't crank it again. Every time it turns over, the pump is running on petrol with no lube, and that's what does the real damage. You already stalled it and cranked it a few times, so some damage is possible, but stopping now keeps it from getting worse.\n\nKobus, with respect, that's old Land Rover advice. A modern common rail can't take it. And don't put diesel on top either. The petrol is still in there, and mixing does nothing for you.\n\n**Tow it, don't drive it.** Check your insurance first. Most policies have roadside tow, so don't pay a tow guy cash before you've looked.\n\nThen get the pump and injectors inspected for damage. If they're fine, it's drain the tank, flush the lines, new fuel filter and bleed it. That's usually R2 500 to R4 500. Tash's R40 000 is what it costs when the pump and injectors are cooked. That's the worst case, not where you're automatically headed.\n\nI'm in Umbilo, open Saturday 7 till 12, and Thabo my guy can drain it first thing. I can't promise it's all sorted tonight or in time for 2pm, so borrow a bakkie for the sound system and the cake anyway. Don't plan your wedding around a drained tank.\n\nI once had a customer do this twice in the same year, same garage. We made him a sticker for the fuel flap. You're only on strike one, so you're doing fine.\n\nGo home, get some sleep, and sort the bakkie in the morning. Message me here if you want Thabo to look at it.",
+  "words": 316,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4038771688938141,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13194455206394196,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.640625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.859753131866455,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.8,
+    "effort": "high",
+    "output_tokens": 1943,
+    "input_tokens": 2168
+  }
+}

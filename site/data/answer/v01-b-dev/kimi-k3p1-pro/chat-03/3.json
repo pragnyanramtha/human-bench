@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.32, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nmia, i'm so sorry i've barely replied since sunday. that's not on you, and don't apologise for going quiet yesterday either. your room literally fell in, you don't owe anyone tidy replies. i'm here now. you're not doing this on your own, and you don't have to work out the whole rest of your life today.\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nright, practical stuff: sam's taken my shift so i'm off all day tomorrow. dad's trailer is available, so i'll come to priya's and help get all your stuff out of her garage before you have to leave. just tell me when to be there.\n\nand you've got somewhere to go after that. ruby says her couch is yours for as long as you want, properly, not just for a night or two. only warning is clover will 100% try to sleep on you. we can get you and the bags there, then work out the next step once you've had some sleep and aren't staring at a pile of soggy garbage bags.\n---\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nalso, rocky can wait. if you end up wanting to go back one day, that's one thing, but don't decide to give up on everything because the ceiling caved in and your landlord's a useless grub. you drove all the way to gatton at 2am when my car died after toowoomba and never even made it a big deal. let us show up for you now.\n\nthe band is already on it. tully's got us the lantern room on sat 28th, all the door money goes to you, and hollow pines are playing too. jono's cousin also has a yamaha keyboard you can have to tide you over. not a nord, i know, but it works.\n\nand you're not quitting the band. your songs are the best thing about it. cleanup first, then we make a ridiculous amount of noise about this gig.",
+  "words": 311,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.319100946187973,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06663130968809128,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.25,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.276180744171143,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 48.5,
+    "effort": "provider default",
+    "output_tokens": 2855,
+    "input_tokens": 1436
+  }
+}

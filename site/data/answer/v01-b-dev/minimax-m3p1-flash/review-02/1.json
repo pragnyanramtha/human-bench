@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: board:vendor-reviews\nReplying to: none\nCc: none\nSubject: Harbor Point Steno Service (Towson) - Stenvale Aria 3 recalibration, 10/19 to 10/27\n\nI've had this promised since October. On the general board I told Dana I would post a review of Harbor Point once my own machine had been through a real trial. It has now survived eight days of a civil trial, so here it is, written with use on the clock rather than first impressions.\n\nEquipment: Stenvale Aria 3, serial ending 0388. I brought it in for a full recalibration after trouble on the number bar.\n\nDates: dropped off Monday, October 19; picked up Tuesday, October 27. Six business days against the ten-business-day turnaround quoted on the work order (HP-4471).\n\nWork done: full keyboard recalibration, number bar depression sensor replaced, internal cleaning, firmware updated from 4.0.7 to 4.2.1, internal battery replaced.\n\nCost: estimated $285 on the work order; final invoice $310, which is that $285 plus $25 for the battery. Paid by card at pickup, and paid personally. I buy my own equipment; the court does not reimburse vendor bills.\n\nLoaner: yes, a Stenvale Aria 2, to be returned at pickup. Having a machine in hand mattered.\n\nTwo things worth singling out as good work. The battery was a question, not a decision Gloria made for me: she wrote on the 22nd that it was holding about 60 percent of rated capacity, that replacement was $25 parts and labor, and that she would not proceed without my approval. I have had vendors bill me for things they decided I needed. She asked first, I said yes. And the machine came back with a printed one-page service sheet listing every adjustment she had made. I have never had that from anyone, and it is the reason I can say what I paid for. There is a 90-day warranty on the work as well. For the work that was done, $310 is fair, and I would not have quibbled over the number if the sheet had not been there to read.\n\nNow the criticism, which is limited to two things.\n\nThe phone. The line is staffed Tuesday through Thursday, 9 to 4, and there is no voicemail box set up. I called Wednesday the 21st to ask where the job stood and it rang out; Gloria emailed me the next day. If you need to reach the shop on a Monday or a Friday, plan to wait until Tuesday. For anyone whose heaviest reporting day is Monday, that is the wrong window. I would rather see a voicemail box than a shorter staffed message. She did not drop the ball on the work; she simply was not there to pick up the phone.\n\nThe loaner. The tilt arm would not hold its position. It slipped mid-afternoon during a deposition and I wedged a legal pad under it to finish the day. I sent her a note about it that evening, and her reply says they will repair the arm before the unit goes out again. Worth knowing if you are the loaner's next user, and a fair complaint about the loaner rather than about her own work on my Aria.\n\nThe result I can report: my first full day back was an afternoon of expert testimony from a witness who does not round off decimals. The number bar did not double a single stroke.\n\nBottom line for Dana, and for anyone else with an Aria 3 that is double-striking on the number bar: yes, I would trust them with it, and I would rather drive it up than mail it to Virginia. Two-person shop off York Road in Towson; parking in back is free.\n\n[Kept as a draft, not posted, so I can read it over first.]",
+  "words": 605,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says the tilt-arm note went to Gloria 'that evening', but the email shows the deposition was 10/21 and the note was sent the evening of 10/22."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The loaner problem was reported the evening after the deposition, not that evening."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.03170314058661461,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05419229343533516,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.532524108886719,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.2,
+    "effort": "provider default",
+    "output_tokens": 5078,
+    "input_tokens": 2353
+  }
+}

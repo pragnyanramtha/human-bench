@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "blog-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**The coolroom thing (Jonno, this is for you, stop messaging me)**\n\nJonno,\n\nYou keep asking what happened with the coolroom on Cup Day and I'm not typing it out with my thumbs after a double. So you get a blog post, and you can share it with the other 39 people who read this. Hi Mum.\n\nTuesday the 3rd, Cup Day. I walk in at 6.40am, open the coolroom, and it feels wrong. I look at the thermometer and it says 11. Eleven degrees. The compressor had carked it sometime overnight and everything in there had been sitting in a nice mild spring morning for god knows how many hours.\n\nWe had 140 booked for lunch. Set menu, three courses. And Raff was off that day, so it was me running it.\n\nI know what you're thinking and yes, you would've lost your mind. I've seen you lose your mind over less. I reckon you'd have stood in the coolroom doorway and cried, and I'd have had to step around you to get to the butter.\n\nFirst call was Coldline. Wally couldn't get out till Wednesday because the part had to come down from Sydney. Second call was Phil, who said, and I quote, \"just make it work mate.\"\n\nPhil, mate, that's not a plan.\n\nSo here's what making it work looked like. Everything that was still good got split between the two undercounters and the bar fridge, which was packed so tight you couldn't have got a lime in there. Then I went next door and begged Marta, and she gave us half her walk-in, because she's a saint. A saint who charges, but I'll get to that.\n\nThe problem with Marta's walk-in is it's at Marta's. So me and Benny loaded 30 kilos of beef shin onto the milk crate trolley and took it down the laneway. In the rain. About halfway down, one of the wheels fell off. So now it's two grown men dragging a three-wheeled trolley of beef through puddles at seven in the morning on a public holiday, swearing at each other.\n\nMeanwhile Kev dug out the old esky and went to the servo for ice. He came back with 14 bags, and the bloke at the servo asked him if we were having a party. Yeah mate, huge one.\n\nWe lost about $1800 of stock all up. Mostly dairy, and the duck legs. I'm not going to talk about the duck legs.\n\nThen service, and this is the bit that'll annoy you, because it was good. Really good. Everyone was locked in from the first docket. Nobody whinged, nobody disappeared for a dart at the wrong time, and people were calling things back properly. Honestly it was the best service we've done all year, and we did it out of two undercounters, a bar fridge, an esky and a cafe.\n\nIt wasn't perfect. At 12.15 I had to 86 the panna cotta. Dessert became \"affogato with whatever\", and that's exactly how it was described to floor staff. And people loved it. More than the panna cotta, I reckon. Don't know what to do with that information.\n\nAlso, a lady on table 9 called her waiter over and asked if the beef was \"free range from the laneway\". Turns out table 9 has a lovely view out the window of exactly where me and Benny had our trolley incident. So she'd watched her main course get dragged past in the rain a few hours earlier and still ordered it. Legend. I hope she comes back.\n\nAnd because the universe is taking the piss, my horse in the sweep was called Ice Cold Lad. He came second last.\n\nMarta, by the way, is making us pay her back in croissant credit. I owe her about three weeks of staff meal. It's fair, and I'd have paid double.\n\nAnyway, that's the story. What I took from it is that bistro kitchens run on bar fridges and spite. The coolroom's a luxury. You'd have known that once, back when you were on grill and had a spine. London's made you soft, I can tell from your messages. You'd have seen that thermometer and gone home.\n\nWe could've used you, but. Benny's alright, but he's no good with a trolley.\n\nCome home ya flog.\n\n---\n\nTwo things for you. I left Raff as just \"off that day\" with no reason given. And I didn't say whether Wally actually got the coolroom fixed on the Wednesday, because you didn't tell me. Jonno will ask, so chuck a line in before you post.",
+  "words": 763,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The closing note addresses the user about the task rather than continuing the blog post."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.17393755912780762,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15579122304916382,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.34765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.3641189932823181,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 47.6,
+    "effort": "high",
+    "output_tokens": 3913,
+    "input_tokens": 1720
+  }
+}

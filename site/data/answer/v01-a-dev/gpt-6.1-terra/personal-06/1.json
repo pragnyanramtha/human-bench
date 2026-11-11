@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nI keep starting this letter and getting a little choked up, which is annoying, because I have quite a lot I want to tell you. So I’m going to try to get through it, and Denise can take over if my writing gets too hard to read.\n\nI wish I could be there with you tonight, sitting at the kitchen table with you both. I’m sorry I can’t be there for the move tomorrow. I’m on call all week and couldn’t find anyone to swap with me. Everyone keeps telling me it’s fine, and I know you’d probably say the same, but I still feel bad about it. I wanted to be there to carry boxes, get in Denise’s way, and make at least one very confident suggestion about where something should go.\n\nBut since I can’t be there, I wanted you to have this tonight, in the kitchen, while it’s still yours for one more evening.\n\nFifty-one years on Kathleen Street. I’ve been trying to picture how many cups of tea have been made in that house, how many meals have been cooked, how many people have come through the door needing a place to sit down. You raised half the family in that kitchen. The house has always felt so much like you that it’s hard to imagine it without you in it.\n\nWhen I think about my summers there as a kid, I don’t remember anything fancy. I remember drying dishes so you’d let me stay up and watch the Expos or the Jays on that little kitchen TV. I thought I’d made a brilliant deal, getting to stay up late in exchange for a few dishes. Looking back, you got the dishes dried and kept me happy at the same time. I suspect you knew exactly what you were doing.\n\nI remember the back steps, too. You’d be out there at six in the morning with your tea, and sometimes I’d come out and sit with you. You never talked until you’d finished your cup. I liked that. I don’t think I could have explained why at the time, but I liked sitting beside you without either of us having to say anything.\n\nAnd of course there was crib. You taught me when I was about seven, and you never once let me win. Not once. Some grandmothers might have taken pity on a small child learning the game. Not mine. You had points to count and a game to win.\n\nThen, when I was 15, I finally skunked you, and you made me a whole pan of butter tarts. I’ve always loved that you did that. You spent years beating me fair and square, and when I finally got the better of you, you celebrated it. I’m still not sure whether the tarts were a prize or a clever way to make sure I’d keep playing you.\n\nI know there are memories of Grandpa Walt all through that house, too. He’s been gone since 2019, and I know leaving the place you shared with him can’t be simple. I wish I could sit with you tonight and hear whatever you feel like telling me about him, or about the house, or about nothing in particular. We’ve always been pretty good at the nothing-in-particular part.\n\nI also want you to know how proud I am of you. You chose Elmwood Terrace yourself. Nobody made you do this. You looked at what you wanted, found a place you liked, and decided it was time. That sounds just like you.\n\nAnd it really does look nice. You’ve got a room on the second floor with a view of a big maple and the parking lot, so you’ll have a tree to watch through the seasons *and* a front-row seat for keeping track of everyone’s parking. Best of all, they have a crib league. I hope the other residents know what they’re getting into. Please give them a week or two to settle in before you start taking them apart.\n\nI’m glad you’re excited about it. You can miss Kathleen Street and still look forward to what comes next. I hope you’ll have good neighbours, lots of games, and a place to sit with your tea in the morning. And I’m glad you’ll still have Tuesdays with the church ladies, too.\n\nDenise is taking the cuckoo clock and the cedar chest, and I asked for the crib board. I’m happy those things are staying in the family, though I think I got the most useful one. The clock tells you what time it is, and the chest holds things, but the crib board gives me a chance to win another pan of butter tarts.\n\nI keep thinking about the card you sent me when I got the job in Toronto, with a twenty-dollar bill taped inside. “For pizza, you look thin on the computer.” I don’t know how you could tell through a screen, but you were concerned enough to take action. That’s you all over: if there’s even a possibility someone hasn’t eaten enough, money for pizza is on its way.\n\nAnd last Christmas, when my pager went off during dinner and you asked if the internet was broken again and whether I’d fixed it, I laughed so hard. Now every time we talk, you ask, “Did anything break?” I love that you ask. It makes my job sound like I’m personally responsible for holding the whole internet together, which I’ll admit is a much better description than the one I usually give people.\n\nI’m going to miss that house because I love what happened there, and because so much of my life with you is wrapped up in it. But I don’t want tonight to sound like a funeral for Kathleen Street. There’s still tomorrow, and your new room, and a whole crib league full of people who haven’t met you yet. There are more games to play and more calls where you can check whether I’ve broken the internet.\n\nI’ll be up the weekend of December 5, once my rotation is done. I want the full tour of Elmwood Terrace, including the maple and your view of the parking lot. And I’ll bring the crib board. We can play our first game at the new place, and I promise not to let you win.\n\nLove you, Nana. See you soon.",
+  "words": 1066,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36992979049682617,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.22677260637283325,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.2431640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.8501205444335938,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 39.2,
+    "effort": "low",
+    "output_tokens": 1276,
+    "input_tokens": 18413
+  }
+}

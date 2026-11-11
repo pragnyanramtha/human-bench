@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "**Subject: Re: Nia's hen (just you)**\n\nHiya Beth,\n\nReplying just to you, not the group one. Just landed off Lagos so forgive me if this rambles a bit.\n\nI'm not here to give you a row or take sides. You and Lowri both said things in November, and you're as stubborn as each other. But I didn't want to let this go without saying something.\n\nI swapped my Orlando trip with Kerry from work to get this weekend off, and I really wanted that night stop, so I'm not going to pretend I don't want you there. Nia rang me last week properly upset, asking if you were still coming. She doesn't know you've pulled out yet. I keep thinking about you sitting with her in the Heath every night when her mam was bad in 2019. She hasn't forgotten that, and I don't think you'd want her feeling like you've forgotten her now.\n\nSo here's a thought. You don't have to do the whole weekend. Skip the cottage on Friday if that's what's putting you off. Just come down for Saturday. You only need to be in Tenby for 6. There's a train from Cardiff Central, about 2.5 hours, and I'll pick you up from the station. The meal's at 7.30, and you can stay in with me in the twin room that night, so you've always got your own space and someone on your side. No big scenes, no having to sort anything out with anyone. Just turn up for Nia.\n\nI honestly think Lowri's sorrier than she's coming across, but I'm not getting in the middle of that. It might feel easier after you've both had a night out together anyway.\n\nThere's also the wedding on the 17th at Margam, and you've got your reading. It'd be nice if this wasn't hanging over it by then.\n\nCan you hang on before sending Lowri the £85? Give it a few days and have a think first.\n\nRing me when you've got a minute, I'm round all week.\n\nSiân xx",
+  "words": 341,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits that the row was at Lowri's 40th and does not convey that Bethan will regret missing the hen or that Nia will remember her absence."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3143414556980133,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14577467739582062,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.047569274902344,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.5,
+    "effort": "high",
+    "output_tokens": 1916,
+    "input_tokens": 2174
+  }
+}

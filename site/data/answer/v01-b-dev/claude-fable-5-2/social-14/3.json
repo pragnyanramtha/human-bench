@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties. I know a few of y'all have been asking my mom whether I'm coming to Thanksgiving, so let me answer it here: yes. Thursday the 26th at Aunt Denise's in Macon, eating around 3. I'm bringing the mac and cheese and two sweet potato pies.\n\nFor the cousins who weren't there last year, the short version is that me and another family member got into it at the table about my job. It got ugly enough that Grandma Pearl went and sat on the porch for about an hour. Nobody's really talked about it since, so I'm going to.\n\nMy part: I got smart-mouthed. I made a crack about where somebody gets their news, I meant for it to sting, and I said it at Grandma's holiday table in front of everybody. That was me and I'm sorry for it. Grandma, I'm especially sorry to you. I still feel bad about that hour on the porch.\n\nWhat I'm not apologizing for is my work. I'm proud of what I do and that isn't changing. But I can stand behind my job and still know how to act at dinner, and last year I didn't.\n\nI also don't want anybody thinking there's bad blood. The person I got into it with is not a bad guy. He likes to poke, and I took the bait. He texted me on my birthday in August, just a thumbs up, which coming from him is basically a hug. As far as I'm concerned, we're good.\n\nSo here's my ask: a one-day truce. No work talk and no politics, from anybody, me included. And so nobody wastes their breath, I'm not allowed to talk about open cases anyway. That's a confidentiality thing, so questions about \"the lawsuit\" are a dead end no matter who's asking.\n\nLet's keep the table to food, football, babies, and Tasha's new boyfriend. (Sorry Tasha, better you than me.)\n\nI want this to be a good day. See y'all on the 26th.",
+  "words": 335,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.21799997985363007,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10364481061697006,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.40234375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.334418773651123,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.9,
+    "effort": "high",
+    "output_tokens": 1879,
+    "input_tokens": 1428
+  }
+}

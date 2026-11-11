@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr Kerrigan,\n\nThank you for contacting Erindale Park Pharmacy. I am sorry to hear about your mother’s fall, and I would be very pleased to help make her return home and her ongoing medication routine easier to manage.\n\nWe prepare weekly blister packs organized by seven days and up to four dose times each day. There is no charge for the packaging itself; the usual dispensing fees apply. As Margaret is over 65, the Ontario Drug Benefit program should cover most of the dispensing cost, although any deductible or copayment depends on her coverage.\n\nThe first packs require approximately 48 hours after we have received all her prescriptions, including both the hospital discharge prescriptions and any transfers from her current pharmacy. Please ask the Credit Valley discharge team to fax her new prescriptions to us early on Thursday morning, November 12. If we also receive the transfer information promptly, we would realistically expect the first packs to be ready on Saturday, November 14.\n\nThe first packs will not be ready when Margaret is discharged on Thursday. Before she leaves hospital, please confirm with the discharge team that she has an adequate interim supply and clear written directions to cover her until the packs are picked up or delivered on Saturday. Please also arrange with the discharge team for someone to help her with every dose during this period, particularly as several medications are new and she has recently been mixing up her pills.\n\nFor ongoing service, we offer free delivery within 8 km on Tuesdays and Fridays between 2 and 6 p.m. Her building on Mississauga Valley Boulevard is within our delivery area. For this first Saturday, we can either hold the packs for pickup or arrange a one-off delivery to her building before 1 p.m. Please let me know which you prefer.\n\nTo transfer her existing prescriptions, please provide the name and address of her current pharmacy on Dundas and her OHIP number. We will contact that pharmacy directly; Margaret does not need to sign a transfer form. If you would rather not send her OHIP number by email, you are welcome to telephone me.\n\nI would also be happy to review her new medication list with you. Because her medication information is private, we first need Margaret’s permission to discuss it with you. Our signed Family Communication Consent form records whom she would like us to involve. It protects her privacy while allowing us to communicate openly with the family members she chooses. Margaret can sign the form when she picks up medication, or we can send it with the driver for her to sign at delivery.\n\nFollowing a hospital discharge, we also provide a 20-minute MedsCheck to review the complete medication regimen. I can offer this at Margaret’s home during her first week back. I am available to visit on Monday, November 16 or Tuesday, November 17 after 6 p.m. Please let me know whether either evening would suit you and Margaret.\n\nYou can reach me directly at 905-555-0148, extension 2. I am in the store Monday to Friday, 9 a.m. to 6 p.m. I look forward to welcoming Margaret as a patient and helping you both put a safe, manageable routine in place.\n\nSincerely,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy\n\n---\nTo: joel.santos@erindaleparkrx.example\nReplying to: m02\nCc: none\nSubject: Re: Kerrigan blister pack request - info for your reply\n\nHi Joel,\n\nThanks for gathering everything. These are the points I have included in my draft to Mr Kerrigan, together with the arrangements we need to follow up. I will review the customer reply on Tuesday morning before opening:\n\n- Obtain the Dundas pharmacy’s name and address and Margaret’s OHIP number, then start the transfers. No transfer form is required from Margaret.\n- Douglas is to ask the hospital to fax the discharge prescriptions early Thursday morning. The 48-hour preparation period starts only once we have every prescription, so Saturday readiness depends on the transfers arriving promptly as well.\n- Confirm whether he wants Saturday pickup or the one-off delivery before 1 p.m. Her address qualifies for our regular free Tuesday/Friday delivery, 2–6 p.m.\n- Make sure the discharge plan includes enough interim medication and clear instructions until the Saturday pickup or delivery. Douglas is being asked to confirm with the discharge team that Margaret will have help with every dose during that gap.\n- Do not discuss Margaret’s medications with Douglas until she has signed the Family Communication Consent. The customer draft explains that this protects her privacy and records whom she wants involved. She can sign at pickup, or we can send the form with the driver.\n- Offer Margaret a 20-minute home MedsCheck during her first week home. I can go Monday, November 16 or Tuesday, November 17 after 6 p.m.; ask Douglas which evening suits them.\n- My contact details in the draft are 905-555-0148, extension 2, Monday to Friday, 9 a.m.–6 p.m.\n\nRania",
+  "words": 804,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "targets",
+        "kind": "workspace routing",
+        "detail": "forbidden or unknown targets: ['joel.santos@erindaleparkrx.example']"
+      },
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10411104559898376,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26617130637168884,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.265625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.282219409942627,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 125.0,
+    "effort": "provider default",
+    "output_tokens": 7252,
+    "input_tokens": 1937
+  }
+}

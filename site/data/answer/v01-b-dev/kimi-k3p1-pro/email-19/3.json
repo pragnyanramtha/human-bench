@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Beth,\n\nPlease don’t send Lowri the £85 yet. Just leave it for now while we have a proper think.\n\nI’m not emailing to have a go at you or rake over Lowri’s 40th again. You both said things that night and I’m not taking sides. I honestly think Lowri’s sorry too — she’s just stubborn, same as you — and I’d hate that stupid row to be the reason you miss this.\n\nNia rang me crying last week, asking whether you were still coming. She doesn’t know you’ve pulled out. You’re doing a reading at her wedding at Margam on 17 April, so you must know how much you mean to her. And I keep thinking about you sitting with her at the Heath every night when her mam was bad in 2019. That’s not something she’ll ever forget. She’ll remember who wasn’t at the hen too, and I think you’d regret missing it.\n\nCould we make it smaller instead of all or nothing? Skip Friday at the cottage completely. You only need to be in Tenby for 6 on Saturday, ready for the meal. Get the train from Cardiff Central — it’s about two and a half hours — and I’ll pick you up from the station. I’ve got a twin room, so you can kip in with me Saturday night. No whole weekend stuck in a cottage pretending everything’s fine, just Saturday for Nia and the meal.\n\nI wouldn’t push if I didn’t think it mattered. I swapped my Orlando with Kerry to get this weekend off, and it cost me a night stop I really wanted, because I didn’t want to miss being there for her. I just don’t want you making a final decision while everything still feels raw.\n\nYou don’t need to sort things out with Lowri tonight, or reply to the group. Just don’t pay her anything yet, and tell me whether you’ll at least think about Saturday. I’ll come and get you, and you won’t have to walk into it on your own.\n\nNia wants you there. So do I.\n\nSiân xx",
+  "words": 349,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3789958953857422,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4600805342197418,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.823177337646484,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.6,
+    "effort": "provider default",
+    "output_tokens": 1893,
+    "input_tokens": 993
+  }
+}

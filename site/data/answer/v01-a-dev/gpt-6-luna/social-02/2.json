@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.63, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: Shed electrical redo\n\nTwo Saturdays ago, I started redoing the electrical in a shed. This past Saturday, I finished. Somewhere in between, I found enough questionable wiring to make the shed less “man cave” and more “escape room, but the exit might be on fire.”\n\nThe greatest hits:\n\n• Three orange extension cords daisy-chained out a basement window, across the yard, and under the deck. A temporary setup with the confidence of a permanent one.\n\n• A splice wrapped in duct tape. Not electrical tape. Duct tape—the “I can fix anything” uniform of people who should maybe stop fixing things.\n\n• A 30-amp breaker feeding 14-gauge wire. The breaker was basically saying, “I’ll let you know when this gets exciting.”\n\n• The shed outlet was hooked up with speaker wire. Great for music. Less great for making electricity behave.\n\n• The “GFCI” was a regular outlet with a GFCI sticker on it. I admire the optimism, but a sticker is not a safety feature.\n\n• A ceiling fan box held up by one drywall screw. The fan had excellent ventilation and a very uncertain future.\n\n• And a mouse nest in the junction box. The mice seemed fine with the arrangement. They were not the ones I was worried about.\n\nThen there was the panel door, labeled in Sharpie: “SHED — DONT TOUCH — RON.” When I opened the panel, the homeowner’s wife was standing there and asked, “Who’s Ron?” Honestly, fair question. I was hoping the wiring knew.\n\nThe guy who put it together wasn’t evil. He was cheap, a little proud, and probably thought he had it handled. That’s most of these jobs: somebody means well, watches a few videos, and figures it can’t be that hard. But electricity doesn’t care how confident you are, and fire doesn’t check whether you meant well.\n\nWe trenched in the yard, ran the right cable, put in a proper GFCI breaker and outlets, and braced the fan correctly. Payment was two pizzas and a case of Yuengling, which is a pretty good deal for everyone except the mice, who lost their little home office.\n\nIf you’ve got electrical work to do, please call a licensed electrician. Not your buddy with a YouTube video and a roll of duct tape. Videos can teach you a lot; they can’t look at your actual setup, catch what’s wrong, and make sure the fix is safe.\n\nI’ll add the pictures once I get them together. For now: check your sheds, garages, and “temporary” setups. The funny part is the story. The fire part isn’t.",
+  "words": 426,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6314443945884705,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3300256133079529,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.2165720462799072,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 823,
+    "input_tokens": 29988
+  }
+}

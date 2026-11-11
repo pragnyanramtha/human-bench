@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4 out of 5 stars: good camera, worth it for us, with a few things to know first**\n\nWe're a Lutheran congregation in Minneapolis. Since 2020 we'd been livestreaming worship with a webcam, and last winter we bought the Lindqvist Optics PT-20 to replace it. We paid $2,140 through Chancel AV in February 2026, plus $95 for the wall mount. We get 30 to 60 viewers on most Sundays, so this is a small operation with a small budget. I'm a pastor, not an engineer, and this review is written from that side of things.\n\n**Setup**\nThe camera is mounted on the balcony rail at the back of the nave, which is 92 feet from the chancel. It has 20x optical zoom, 1080p60, and both NDI HX and plain HDMI output. It runs on PoE, so we only needed one cable up to the balcony, which mattered a great deal to us. The feed goes into OBS on our old office PC and out to our YouTube channel.\n\nThe manual is thin and badly translated, and I wouldn't count on it. Marcy at Chancel AV tech support was excellent. She got on the phone with me and walked me through what the manual couldn't. If you buy from them, that's worth something.\n\n**What works well**\nWe have nine presets stored: altar, pulpit, lectern, font, choir loft, piano, a wide shot, and two for the chancel steps. Our acolyte Erik, who is 16, runs the camera from the free web app on a tablet. He learned it in one afternoon. If a teenager can pick it up that fast, your volunteers can too.\n\nThe picture is a real step up from the webcam. Delores, who is 82 and homebound, called after one service to tell me she could finally read the hymn numbers on the board. That phone call told me more than any spec sheet could.\n\nOur Easter Vigil in April was the real test. We sang \"Christ the Lord Is Risen Today\" for the first time by candlelight only. The picture got grainy, but you could still see what was happening and follow the service. The old webcam would have shown nothing but dots.\n\n**What didn't work so well**\nOn the first Sunday, the presets drifted a few degrees off by the time of the sermon, so the pulpit shot wasn't quite on the pulpit. Firmware update 2.4 came out in March and fixed it, and we haven't had the problem since. If you buy one, update the firmware right away.\n\nThe autofocus also hunts when someone walks between the camera and the pulpit, which happens in a real church. Our fix is to lock the focus on each preset, and that has worked fine. You do have to know to do it.\n\n**What it doesn't do**\nThe camera doesn't fix audio, and it was never meant to. We had a sound problem before we bought it, and we still have it. A better picture does nothing for how the service sounds. If your viewers are struggling to hear, put some of your money there first, or at least set some aside.\n\n**Is it worth it?**\nFor us, yes. I'd buy it again. It did what we bought it for, which was to let people at home see the service clearly, including in low light and from the back of a long nave.\n\nThat said, it is a lot of money for a small congregation, and I'd be honest with anyone who asked. Our room is long and our lighting is dim, and that's where the zoom and low-light performance earned their keep. If your congregation is under 100 and your space is smaller or brighter, a cheaper camera might serve you just as well. Look at your own room before you decide.\n\n**Bottom line:** 4 stars. Solid camera, easy for volunteers to run, and good support from the supplier. I'm taking one star off for the early preset drift, the autofocus, and the manual. Plan for a lock-focus workaround, update the firmware, and don't expect it to help with sound.",
+  "words": 682,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4662369191646576,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26456645131111145,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 13.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.032556533813477,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.3,
+    "effort": "high",
+    "output_tokens": 1702,
+    "input_tokens": 1638
+  }
+}

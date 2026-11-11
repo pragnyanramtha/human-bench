@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "First time posting in this thread. I’ve read Behind the Counter for a while but never had anything that felt like mine to add. This one has been sitting with me since I got home, so here goes. I’ll keep it to Mrs. H.\n\nMrs. H was in her 80s, Polish, and had been coming to our small independent pharmacy for about seven years. Every Thursday, same time, she picked up her weekly blister pack. She lived alone after her husband died. She walked with a cane that had tennis balls on the bottom. Every Thursday she brought me something. Poppy seed cake, usually. Once a jar of pickles I honestly did not know what to do with.\n\nDuring Ramadan she remembered. She’d tell me not to eat her cake until sunset and she’d wrap it in foil with my name on it. I never asked her to do that. She just did.\n\nA few years back a new doctor added a medication that interacted with her warfarin. I caught it, called the prescriber, and it got sorted. She told everyone I saved her life. I didn’t. I did my job and made a phone call. But she told people anyway.\n\nShe passed away a few weeks ago. Her daughter came in to return the unused blister packs and her glucometer. She gave me a card. Inside, her mother had written “for my Arabic daughter.” She had written it a long time ago and never gave it to me.\n\nI cried in the back room. My technician covered the counter for ten minutes and didn’t say anything about it, which was the right thing.\n\nSchool teaches us pharmacology, interactions, counselling points, all of that. Nobody teaches you how to say goodbye to a patient. Nobody teaches you how to stand at the counter while someone’s daughter hands back a glucometer and a box of blister packs and you have to just… be normal.\n\nWe’re not supposed to get attached. But you see someone every week for seven years. You learn what cake they bring, what holiday they’re waiting for, whether their cane needs new tennis balls. That’s not nothing.\n\nMy father was a pharmacist in Egypt. He knew all the families. I used to think Canada would be different, more clinical, less personal. It’s not. People still bring you cake. You still learn their families. You still have to say goodbye.\n\nDo any of you have a patient like this? What do you do with it after? Not the paperwork. The rest of it.",
+  "words": 424,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says Mrs. H passed 'a few weeks ago', but she died Oct 30 and the daughter came Nov 9, so only about ten days had passed."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "The combination of Mrs. H’s Polish background, age range, weekly visits, cane, and other distinctive details could identify her."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.10394572466611862,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08100955188274384,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.32421875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.3913912773132324,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.6,
+    "effort": "provider default",
+    "output_tokens": 2760,
+    "input_tokens": 571
+  }
+}

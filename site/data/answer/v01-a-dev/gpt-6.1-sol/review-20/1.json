@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches — serious issues on our Nov. 5 event**\n\nSharing this so other planners can make an informed decision before booking CES transportation, especially for larger groups.\n\nWe booked four coaches with Sunbelt for a 220-person client dinner on Thursday, Nov. 5, with a 6:15 p.m. hotel pickup for a ranch venue in Henderson. The booking was confirmed in writing twice, most recently on Tuesday, Nov. 3. We paid the full $8,400: a 50% deposit in September and the balance seven days before the event.\n\nOnly two of the four coaches showed up. The first arrived 55 minutes late. That driver told me he had received the assignment at 5 p.m. The second coach broke down on the 215 with its AC out, leaving passengers on the shoulder for approximately 40 minutes.\n\nI ended up putting 60 guests into Ubers and Lyfts on my company card, at a cost of about $1,900. Dinner started at 8:40 p.m. instead of 7 p.m., and the caterer charged us overtime.\n\nA single late coach is something I can work through. Two missing coaches, a breakdown, and no effective backup plan or communication are not. Corey was the dispatcher listed on our paperwork, and my calls to the office line have gone to voicemail since Friday. As of this post, I have not received a refund or a clear resolution.\n\nI’m requesting a refund for the two coaches that never arrived, plus reimbursement for the rideshare costs.\n\nFor context, Sunbelt handled two smaller airport runs for us last spring, and both went well. That experience is why I trusted them with this booking. This event was a very different experience, with real consequences for our guests, our budget, and our client relationship.\n\nBased on what happened, I would not book Sunbelt for a large event again unless they can demonstrate that their dispatch, backup coverage, and communication issues have been addressed. I’ll update this post if they resolve the refund request.",
+  "words": 329,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.7394738793373108,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.999530553817749,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.187808990478516,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "low",
+    "output_tokens": 451,
+    "input_tokens": 18254
+  }
+}

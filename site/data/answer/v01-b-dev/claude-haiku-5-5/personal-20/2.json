@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Hi everyone,\n\nI know many of you have been calling and texting, and I'm sorry my phone won't stop ringing! So here is the whole story in one place.\n\nAround 2 a.m. on Sunday, November 8, a car drove through the front window of Lotus Glow Nails on Bellaire Blvd. Yes, through the window! Nobody was inside, and the driver is okay. The police came, and her insurance will pay for the damage. God protected us. I cried a little that morning, but now I am okay, I promise.\n\nThe car stopped exactly at my pedicure chair, like she wanted a spa day. My daughter says she got the first drive-thru pedicure in Houston. My husband says the floor now looks like a rainbow threw up, so the shop is finally modern art. I am trying to see the funny side!\n\nThe front glass and one pedicure chair are gone. The city inspector must check the wall before we open. The contractor says we can reopen Monday, November 16.\n\nYour gift cards are still good, and nobody lost any money.\n\nThis week, Trang, Kim, and I are working at my cousin Hoa's salon, Pearland Nail Bar. If you need nails, call or text my cell at 832-555-0147, and I will tell you when and where to come.\n\nThank you so much for all the texts, calls, and food. Mrs. Dung brought pho this morning, and it was so good I almost cried again, this time from happy! Thank you for loving me and my shop.\n\nSee you soon,\n\n[Your name]\nLotus Glow Nails",
+  "words": 263,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46550264954566956,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3056885004043579,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.599409580230713,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 7.2,
+    "effort": "medium",
+    "output_tokens": 1381,
+    "input_tokens": 1405
+  }
+}

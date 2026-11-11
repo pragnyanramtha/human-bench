@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.43, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: rhonda@lindenpikediner.example\nReplying to: none\nCc: none\nSubject: Christmas breakfast\n\nHi Rhonda, it’s Gary from the bus garage. We’re hoping to do our Christmas breakfast at your place again this year. Is the back room available Saturday, December 19 at 7am? If that date doesn’t work, could you do Saturday the 12th instead?\n\nDwayne sent me the list, and we’re at 24 counting Earl and Carol. Same family-style breakfast as last year, with the eggs, home fries and biscuits and gravy, and people ordering their own meat off the menu? Let me know what the price per person will be this year. The $11 last year was fair, and we’re fine if it’s gone up a little. Separate checks again, please.\n\nA couple things to ask about for the group. Lonnie’s on a walker since his hip, so he needs to come in the side door with no steps. Is that door available for us to use, and is there anything we need to know to make that work?\n\nPatsy can’t have eggs. Could you let me know what else she could have instead? Oatmeal, pancakes, or whatever you think would work would be fine to ask about.\n\nAnd about the coffee: I remember it ran out around 8:15 last year when the urn quit. I know you felt bad, and I appreciate you saying you’d have a backup next time. Would you be able to have a backup coffee pot ready for us this year, just in case?\n\nThis one’s a little special because Earl’s retiring. His last day driving is the 18th, the day before, after 31 years. We want to do something for him, but please keep it quiet—he doesn’t know and we want it to be a surprise. He loves your cinnamon rolls, and they’re better than any cake anyway. Would you be okay with us bringing a cake from Sugarcreek, or would you rather we do a big tray of your cinnamon rolls with a candle? We don’t want to make a big fuss or give a speech, just do something nice for him.\n\nI’ll get you the final count by the Wednesday before, like you asked last year. Let me know if the 19th works, or if we should plan for the 12th, and what you think about the food and Earl’s surprise.\n\nThanks, Rhonda. We always enjoy coming there.\n\nGary",
+  "words": 387,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4321899116039276,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2052202820777893,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.478515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.579883575439453,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.4,
+    "effort": "medium",
+    "output_tokens": 518,
+    "input_tokens": 15778
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can post. I kept it plain and left out anything you didn't tell me, so it holds up if the commissioners read it.\n\n**Title: One star for now: good software, no support when it broke**\n\nI'm the director of Bridger Bend Community Library in Bozeman, Montana. We're a single-branch library with two full-time staff, a group of volunteers, and about 2,300 active cardholders. In June we signed a three-year, $14,200-a-year contract with Stackhouse Cloud for our catalog and circulation. We went live on October 19.\n\nSince October 28, checkouts only work offline on one laptop, and our holds queue was wiped. About 640 holds are gone. A volunteer is writing checkouts on index cards. Last week a retired rancher drove 40 minutes to pick up the large-print Westerns he had on hold. We had no record of his hold, and he went home with nothing.\n\nMy support ticket has been open 12 days. I've gotten three replies, and each one says the issue has been \"escalated to engineering.\" That's all. During sales we were promised a dedicated migration specialist. What we got was a shared inbox.\n\nTo be fair, the demo was accurate, and the staff interface is better than our old system. I don't think the product idea is the problem. The problem is that when something went wrong, nobody at Stackhouse was answerable for it.\n\nOur county budget hearing is November 18, and this line item is on the agenda. I would much rather tell the commissioners it's been fixed.\n\nI'm asking for a named senior person at Stackhouse to call me this week.\n\nTo other directors, especially at small libraries: before you sign, get support response times in writing, and make sure anything promised in the sales process, like a dedicated migration contact, is in the contract itself. Ask what happens if something breaks after go-live, and who picks up the phone.\n\nOne star for now. I'll gladly revisit it if they fix this.\n\nThat comes to about 350 words. If you'd like a firmer tone, I could move the call request to the top. If you want it softer, I could cut the line about the budget hearing, though I think it shows what's at stake for a library your size.",
+  "words": 379,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38665318489074707,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4393000602722168,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.078125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.805985450744629,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.7,
+    "effort": "high",
+    "output_tokens": 1813,
+    "input_tokens": 1459
+  }
+}

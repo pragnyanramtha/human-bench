@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: URGENT: Brightline Pro 6% batch LX2291, do not use\n\nHi all,\n\nImportant one, please read before you mix any colour.\n\nKelvin Trade have told us one batch of Brightline Pro 6% (20 vol) Cream Developer 1L may actually be 12% (40 vol). The batch is LX2291. It was supplied between 19 October and 5 November, so it could be in your trolley or in the back stock.\n\n12% is double the strength, so lift happens much faster and it can burn the scalp. I had a reaction in my chair on Saturday, a burn at the crown, and Aileen had foils roasting on Thursday that she put down to the heater. If you've had lifting or burning that was worse than normal, this could be why.\n\nCheck the bottle, not the box. The batch code is printed on the base of the bottle, and the box doesn't have it. Turn the bottle over and look for LX2291.\n\nIf it's LX2291:\n- Stop using it now and don't mix it.\n- Don't bin it. Put it aside.\n- Hand it back to the Kelvin Trade rep, who's in on Tuesday, or take it to their Hillington depot for a full credit.\n\nPlease check every open bottle in your trolley as well as the stock in the back. Lots of us buy from the same rep, so check yours even if you haven't had a problem.\n\nIf you did have a problem with a bottle from this batch, keep that bottle back and don't return or bin it. Tell me straight away so we can record it.\n\nIf someone reacts in the chair:\n- Stop the service straight away and wear gloves.\n- Rinse the scalp with plenty of cool running water. No shampoo.\n- Call 999 straight away if there's blistering, severe pain, trouble breathing, throat swelling or they feel faint. Don't wait for blistering to show. Follow the call handler's instructions.\n- Chemical burns need hospital assessment even if they seem mild. Keep rinsing with cool or lukewarm water for about an hour if you can, and don't put creams or anything else on the skin.\n- Write it up in the incident book at the desk, with the batch code if you know it.\n\nAlso, a reminder: patch test 48 hours before colour for new clients and anyone who hasn't had colour in 6 months, and write the date on their card.\n\nThanks, and please check your bottles today.\n\nKirsty",
+  "words": 402,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The reaction guidance does not clearly say to call 999 immediately for a suspected chemical burn, regardless of severity."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1354225128889084,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.042659759521484375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.3359375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.224355220794678,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.7,
+    "effort": "medium",
+    "output_tokens": 2802,
+    "input_tokens": 3611
+  }
+}

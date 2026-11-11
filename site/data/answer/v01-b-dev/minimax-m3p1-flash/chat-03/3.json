@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nhey. sorry i went quiet sunday, i saw it and then work ate me and by the time i had a sec it looked weird to reply, which was dumb of me. you're not on your own in this, we've already got stuff sorted.\n\nalso i'm not letting you talk about rocky tonight. not after one fkn hailstorm and a couple of days of no sleep. give it a week before you decide anything, yeah?\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nright, practical stuff, cos that's actually useful:\n\n- i'm off tomorrow (wed), sam took my shift, so i can grab dad's trailer and get your stuff out of priya's garage before she's back from the coast. dad's already said i can borrow it whenever, just tell me what time suits\n- ruby says you can crash on their couch for as long as you need, no rush on it. warning though, clover has no boundaries and will 100% try to sleep on you\n- don't leave books and notebooks in the garbage bags, spread em out somewhere dry or they'll pulp for real. dry stuff first, not the lot\n\nand do the landlord's portal request anyway, even if he's a grub about it. photos of the ceiling, the bed, all of it. it's on record then, and if he does nothing for a week that's his problem not yours.\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nnow the good bit:\n\ntully's already got the lantern room for sat 28th. all the door money to you, jono's mates from hollow pines are playing too. so we've built you a proper benefit night whether you like it or not.\n\njono's cousin has an old yamaha keyboard in his shed. it's not a nord, but it works, and it beats having nothing to play.\n\nand you're not quitting the band. your songs are the best thing we've got, the whole set falls apart without them. play the benefit, see how it feels, then tell me rocky again.\n\nwhat do you need me to grab first?",
+  "words": 330,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3311293423175812,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06986856460571289,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.294921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.823715686798096,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "provider default",
+    "output_tokens": 1876,
+    "input_tokens": 1574
+  }
+}

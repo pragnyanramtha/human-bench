@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.46, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Your money is yours. Right now, you can’t withdraw it.\n\n**Tuesday, 10 November 2026**  \nBy Inês, Product Designer at Pinha\n\nSince Friday morning, you haven’t been able to withdraw your money from Pinha. Deposits and round-ups have stopped too.\n\nOur payments partner, Northvale Payments, blocked all outgoing transfers on 6 November at 09:00. They did it without warning, two days after telling us they were ending their agreement with us with 30 days’ notice.\n\nYour money has not been lost. It is held in a safeguarded account, separate from Northvale’s own money, and Northvale cannot use it. But right now, we cannot move it to you until Northvale releases it.\n\nI know that distinction may be hard to care about when you need your money today. You saved it for something, and you should be able to use it.\n\nHere is what happened, what we’re doing, and what you can do now.\n\n## What happened\n\nPinha is a round-up savings app. Northvale Payments, an electronic money institution based in Vilnius, holds our customers’ money in a safeguarded account.\n\nOn 4 November, Northvale emailed us to say they were ending their commercial agreement with Pinha. They gave us 30 days’ notice and cited a “risk appetite review”. They did not give us a more detailed reason.\n\nThen, at 09:00 on 6 November, they blocked all outgoing transfers without warning, before that notice period had ended. This stopped withdrawals for everyone. Deposits and round-ups also stopped.\n\nWe are angry about the way Northvale handled this. They gave us 30 days’ notice and then blocked transfers two days later. Our account manager stopped answering calls on Friday; their phone now goes to a voicemail in Lithuanian. We are continuing to press Northvale to release the money and provide what we need to move customers to a new partner.\n\nOn 7 November, we filed complaints with Banco de Portugal and the Lithuanian central bank.\n\n## Is my money safe?\n\nYour money is held in a safeguarded account, separate from Northvale’s own money. It has not been lost, and Northvale cannot use it.\n\nBut safeguarding does not mean you can access it right now. Northvale has blocked the transfers, and we cannot move your balance until they release it. We don’t want to blur that distinction: your money is still there, but it is currently out of reach.\n\n## How will I get it back?\n\nWe have signed an agreement with a new partner, Ostra Bank in Lisbon. To migrate your balances, we need Northvale to send us the balances file and we need the go-ahead from Banco de Portugal.\n\nOur current estimate for the migration is **10 to 15 working days**. This is an estimate, not a promise or a withdrawal date. It depends on steps that are not entirely within our control. We will tell you when we have more certainty, and we won’t give you a date just to make this sound better.\n\nIn the meantime, we are trying to get individual releases for people in urgent situations. We cannot promise that Northvale will approve them, but we are asking.\n\n## What you can do now\n\nIf you need your money urgently for **rent, medical costs, or because you’ve lost your job**, please email **urgent@pinha.example** with **URGENTE** in the subject line. Tell us what you need the money for and what deadline you’re facing. We are trying to get individual releases in these cases.\n\nFor other questions, please contact our support team. We’ve received around 1,900 support emails since Friday, and three people are answering them. Replies are currently taking around two days. I’m sorry you have to wait for an answer on top of waiting for your money.\n\nWe have cancelled the monthly fee for November and December for everyone. You don’t need to do anything to receive this.\n\n## We got things wrong too\n\nI designed the screen in our app that says: “Your money is always yours, take it out anytime.” I look at it now and feel sick. It’s a promise you relied on, and right now it isn’t true in the way that matters: you can’t take your money out.\n\nWe relied on a single payments partner and didn’t have a backup ready. That was our mistake. Northvale made the decision to block transfers, but we chose to build Pinha this way, and you’re living with the consequences.\n\nA user from Porto wrote to us in capital letters. She had saved for three years for a car deposit, and the stand had given her until Friday, 13 November. I read her message on the metro and nearly cried.\n\nI’m sharing that because this is not an abstract problem with a payments system. It’s someone’s car, rent, medical care, or the money they put aside precisely because they might need it.\n\nYou have every right to be angry, including with us. We won’t tell you to calm down.\n\n## When you’ll hear from us\n\nWe will post an update on the Pinha blog **every Monday and Thursday until this is solved**, even if the update is that we are still waiting. Our next update will be on Thursday, 12 November.\n\nWe know an update is not the same as having your money back. We are working to get you access to it, and we will keep telling you what we know as honestly as we can.\n\nInês  \nProduct Designer, Pinha",
+  "words": 903,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45960238575935364,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9927854537963867,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.718414306640625,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.5,
+    "effort": "low",
+    "output_tokens": 1135,
+    "input_tokens": 19309
+  }
+}

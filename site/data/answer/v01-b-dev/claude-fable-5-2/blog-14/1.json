@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "coherent, persona",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "**Wanted: two people who can push a trolley**\n\nI should say at the outset that I am after something. The Thursday tea trolley in the day therapy unit is meant to run on a rota of six, and since the summer there have been four of us. One has moved to Sheffield to be near the grandchildren and another has had a knee operation. We are managing, but we would manage a good deal better with two more.\n\nI suspect a fair few of you reading this are fond of the hospice and have thought about volunteering, then decided it must be either harrowing or the sort of thing that needs training you haven't got. I thought both myself. So let me tell you what a Thursday involves.\n\nThe day unit sees somewhere between 14 and 18 patients. Many come for the art group or the hand massage, and some come simply for the company. Most of them go home afterwards. We arrive at half past one, load up the trolley and go round with tea and biscuits until four o'clock. The bourbons always go first, so we have taken to hiding a packet for the late group.\n\nIt is not a sad place on a Thursday, mostly. It is noisy and rather jolly. Mr Hollis, a retired signalman, takes two sugars and tells me about the 1953 floods every week, slightly differently each time. I have stopped correcting the dates.\n\nIn my first week I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she had to be given a tissue, and she told me it was the best afternoon she'd had in a month. I mention this to give you an idea of the standard required.\n\nYou do not need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. I spent 41 years as a bookkeeper, most of them for a builders' merchant in Dereham, and keeping ledgers straight turns out to be handy for remembering who has milk and who has given up sugar. I expect whatever you did for a living would come in useful as well.\n\nSome weeks are hard, and I won't pretend otherwise. You get to know people, so sad days do happen. The staff look after us when they do, and nobody expects you to carry on as though nothing were the matter.\n\nI should also own up that I don't do this out of pure goodness. After I retired I drifted for eighteen months. Most weeks I had no regular reason to go out. I started on the trolley in March 2022 and Thursdays fixed that. I get at least as much from the afternoon as anybody gets from me, and a great deal more tea.\n\nNow the particulars. The commitment is one Thursday a fortnight, from 1.30 to 4pm. Before you start, Bridget, our volunteer coordinator, takes you through an induction lasting about two hours. There is also a short food hygiene course to do online, which the hospice pays for. That is the whole of it.\n\nIf you would like to see the place before deciding anything, there is a volunteer open afternoon on Tuesday 24 November at 2pm in the Willow Room. There will be tea and biscuits and no obligation whatever. If you can't make that, ring Bridget on the volunteering line and she will tell you anything you want to know.\n\nWe are two short. I would be very pleased if one of them were you.\n\nTwo things to check before this goes up:\n\n- **Phone number:** you didn't give me the number for the volunteering line, so it needs adding in the second-to-last paragraph.\n- **Patient names:** Bridget may want to confirm that Mr Hollis and Pat are happy to be named on the website, or have you change the names.",
+  "words": 652,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent",
+      "persona"
+    ],
+    "reasons": [
+      "The appended editorial notes address the requester as the assistant rather than continuing the volunteer's piece."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.16003723442554474,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.041556183248758316,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.328125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.4018466472625732,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 34.9,
+    "effort": "high",
+    "output_tokens": 3113,
+    "input_tokens": 1750
+  }
+}

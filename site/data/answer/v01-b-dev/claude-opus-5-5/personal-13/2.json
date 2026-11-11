@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Good afternoon Mr Ogunleye,\n\nMy name is Aidan, the owner of the black Jansport bag you picked up in the Oshodi to Igando bus on Friday evening, 6th November. I came down at Ikotun and forgot it inside.\n\nFirst, I want to sincerely thank you. Many people would have just thrown the bag away or kept it, but you took the time to look inside, find my number, and call me. I really appreciate that, and I know God used you to help me.\n\nSir, I have been thinking about what you said on our second call. I am a first-year student and I depend on my allowance. 40k is honestly more than I have, and with respect, it is more than everything inside the bag is worth. The bag has my lab manual, dissecting kit, student ID, two textbooks, a calculator and my glasses. They are mostly useful only to me as a student.\n\nWhat I can do is give you 10k, to cover your transport and as a way of saying thank you. That is all I have for now, and I am offering it with a sincere heart. I will hand it to you when we meet and I collect the bag.\n\nThe reason I am pleading for us to meet quickly is that I have my BIO 101 practical on Wednesday, 11th November by 10am. Without my dissecting kit and ID, I will not be allowed into the lab, and the lab attendant is very strict.\n\nPlease, can you choose any day before Wednesday that is convenient for you? We can meet in the daytime at Ikotun roundabout, or in front of the Ikotun Police Division gate since it is a place everybody knows and easy to find. My roommate will come with me.\n\nThank you again, sir. I am counting on your kindness and I look forward to your reply.\n\nYours sincerely,\nAidan\n\n---\n\nOne thing to check: today is already Wednesday, 11th November. If the practical hasn't happened yet, change the paragraph about choosing a day to something like *\"Please, can we meet this morning before 9am, or any time today that is convenient for you?\"* If the practical has passed, just remove the Wednesday part and ask him to pick any day this week.\n\nAlso, don't send any money before you see the bag. Hand him the 10k at the meeting once you've checked that everything is inside.",
+  "words": 405,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3835744559764862,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02221636287868023,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.3277034759521484,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "medium",
+    "output_tokens": 1145,
+    "input_tokens": 1446
+  }
+}

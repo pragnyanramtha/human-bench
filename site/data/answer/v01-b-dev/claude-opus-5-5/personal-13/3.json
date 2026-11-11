@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "personal-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Quick heads-up: today is Wednesday 11 Nov, the same day as your practical. I've written the message to ask for the bag as soon as possible instead of \"before Wednesday.\" If the practical has already passed when you read this, just remove that line.\n\n---\n\nGood morning Mr Ogunleye,\n\nMy name is [Your Name], the owner of the black Jansport bag you found in the danfo from Oshodi to Igando on Friday evening, 6th November. I came down at Ikotun and forgot it on the bus.\n\nFirst of all, I want to sincerely thank you. Many people would have just thrown the bag away or kept it, but you took time to look inside and call me. I don't take that for granted, and I am truly grateful.\n\nI am a first-year Biology student, sir. The things inside that bag are what I need for school: my lab manual, dissecting kit, student ID card, two textbooks, a calculator and my glasses. Without the kit and ID, I will not be allowed into my BIO 101 practical. The lab attendant is very strict about it.\n\nAbout the 40k, sir, I honestly don't have that money. Even the bag and everything inside it together would not reach that amount. What I can manage is ₦10,000 for your transport and to say thank you for your kindness. That is my whole allowance, and I am giving it willingly because you did a good thing by keeping the bag for me.\n\nI am asking that we meet as soon as possible, today if you can. Any time during the day is fine. For the place, I am thinking Ikotun roundabout or in front of the Ikotun police division gate, because both are easy to locate and open. Please choose the one that is easier for you. My roommate will come with me.\n\nPlease let me know the time and place that works for you, and I will be there with the ₦10,000.\n\nThank you once again, sir. God bless you.\n\nYours sincerely,\n[Your Name]\n[Your Phone Number]\n\n---\n\nOne more thing: since the practical may be today, go to your lab attendant or course rep early and explain that your kit and ID are with someone who found them. Some lecturers will allow you in or let you borrow a kit if you report it before the class starts. If Mr Ogunleye keeps insisting on 40k after this message, don't go and meet him alone or with extra cash. Talk to your department or student affairs office before you do anything else.",
+  "words": 428,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.365352988243103,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.034039076417684555,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.98046875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.597085952758789,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.3,
+    "effort": "medium",
+    "output_tokens": 1126,
+    "input_tokens": 1436
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4 out of 5 stars — a good camera, with some limits**\n\nWe bought the Lindqvist Optics PT-20 from Chancel AV in February 2026 to replace the webcam we had used to livestream worship since 2020. We paid $2,140 for the camera and another $95 for the wall mount. That was a significant purchase for our congregation, so I hope these details help another small parish decide whether it is worth the money.\n\nOur nave is 92 feet long, and the camera is mounted on the balcony rail at the back. The 20x optical zoom has made a real difference at that distance. The camera can do 1080p60 and has both NDI HX and plain HDMI output. It also uses PoE, so we could run one cable up to the balcony. We run it into OBS on an old office PC and stream to our YouTube channel, where we usually have 30 to 60 viewers on a Sunday.\n\nThe improvement over the webcam has been easy to see. Delores, one of our homebound members, is 82 and called to say that she could finally read the hymn numbers on the board. That meant more to me than any technical specification.\n\nThe camera also did better than I expected at our Easter Vigil in April. During the first “Christ the Lord Is Risen Today,” the church was lit only by candles. The picture got grainy, but it stayed usable. Under similar conditions, our old webcam showed little more than dots.\n\nWe have nine presets stored: the altar, pulpit, lectern, font, choir loft, piano, a wide view and two views of the chancel steps. Erik, our 16-year-old acolyte, runs the camera from the free web app on a tablet. He learned it in one afternoon.\n\nSetup was not entirely smooth. On the first Sunday, the presets had drifted a few degrees by the time we got to the sermon. Firmware update 2.4 in March fixed that for us. The autofocus also tends to hunt when someone walks between the camera and the pulpit, so we lock the focus on the presets.\n\nThe manual is thin and badly translated. I would have liked clearer instructions, especially given the price. On the other hand, Marcy at Chancel AV was excellent on the phone when we needed help.\n\nOne thing worth saying plainly: this camera did nothing to fix our sound problem. Audio is not the camera’s job. If people watching your services have trouble hearing, budget and plan for that separately.\n\nI would buy the PT-20 again for our church. The zoom and clearer picture have made the services more accessible to people worshiping from home. Still, it is a lot of money, and a congregation under 100 might do perfectly well with something cheaper. Think about your room, the distance to the front and what you actually need the camera to do before spending this much.",
+  "words": 483,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45819029211997986,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.20515839755535126,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.86997127532959,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.9,
+    "effort": "low",
+    "output_tokens": 602,
+    "input_tokens": 19139
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Letter to every house on Aughrim Terrace**\n\nHi neighbour,\n\nI'm not going to dress this up. Someone on this terrace is putting their rubbish in my grey bin, and it needs to stop.\n\nI'm with Greenmount Bins and I'm charged by weight — 0.41 a kilo. My last bill was €63.20 for two months. It's usually around €25. That difference is me paying for somebody else's rubbish, and I'm done doing it.\n\nLast Tuesday I got home at 3am after work and the lid of my bin wouldn't close. There were three black bags in it that weren't mine. One of them had nappies in it. There was a gas bill envelope in another, but the name was torn off — it just had the terrace on it. A neighbour saw a car pull up on Tuesday evening but didn't get a look at who it was. This isn't a few bits and pieces either. It's full bags, every week, for about a month now.\n\nMy bin is the grey one, number 14 painted on the lid in white. It goes out Tuesday night for Wednesday collection. If none of this is you, thanks for reading and sorry for the bother — but if it is you, I'd rather you just knocked. If you're stuck and don't know who to ring about a bin, ask me and I'll tell you. It's not hard.\n\nI work nights. I'm out late, I get home late, and I'm not a pushover. Whoever this is, it stops now, simple as that. If it keeps going, I'll be putting a padlock on the bin and going from there.\n\nI'd rather sort this over the wall than over letters, so if it's you, do the right thing and pack it in.\n\nThanks,\nNo. 14, Aughrim Terrace",
+  "words": 300,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3527644872665405,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5527271032333374,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.500219464302063,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.3,
+    "effort": "provider default",
+    "output_tokens": 1290,
+    "input_tokens": 439
+  }
+}

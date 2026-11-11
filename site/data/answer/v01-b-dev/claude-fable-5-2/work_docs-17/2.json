@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Close H-1B registration intake on January 15\n\nLast season we filed 14 registrations for 6 employer clients, and 9 of the 14 came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened. I'd like us to set an internal intake deadline of January 15 for the coming season.\n\n### Why the crunch happens\n\nMost of it is our process. We email the questionnaire whenever an employer asks for it, and we've never given anyone a date. Without one, late February is a perfectly reasonable time for them to get in touch. One HR contact told me she'd have happily sent everything in January if we'd asked.\n\n### Why an earlier date protects everyone\n\nThe registration itself is simple, but errors are expensive: a wrong passport means an invalid selection. Last season a passport scan for a Brightwater Analytics beneficiary reached us two days before the window opened, and the passport had expired in October. We caught it only because Rosa checked the dates. With a few weeks in hand that's a routine fix, but with two days it's a scramble.\n\n### What would change\n\n- Engagement letters and the one-page questionnaire go out the week of December 7.\n- Intake closes January 15.\n- Anything that arrives later is handled case by case.\n- Rosa, who owns the tracker, gets a clean six weeks to chase gaps before the window opens.\n\n### Why January 15 is realistic\n\nBy mid-January, HR teams are back from the holidays and have their budgets set. The registration fee is $215 per beneficiary and employers already budget for it in Q1, so we aren't asking anyone to commit money sooner than planned.\n\n### How we present it to clients\n\nWe present it as better service. Clients get a clear date, a short form, and time for us to catch problems while they're still easy to fix. Nothing in the letter needs to mention last season's timing.\n\n### Decision for Thursday\n\nIf we agree on January 15 on Thursday, the December letters can go out on schedule.",
+  "words": 353,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28041142225265503,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9739602208137512,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.004420280456543,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.9,
+    "effort": "high",
+    "output_tokens": 1626,
+    "input_tokens": 1525
+  }
+}

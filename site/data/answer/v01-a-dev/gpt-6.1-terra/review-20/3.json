@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Sunbelt Charter Coaches — large group shuttle experience**\n\nI’m sharing this for anyone considering Sunbelt for a larger event, especially with CES season coming up. They handled two small airport runs for us last spring, and both went well, which is why I trusted them with this booking.\n\nFor a client dinner on Thursday, November 5, we booked four coaches to take 220 guests from their hotel to a ranch venue in Henderson. Pickup was scheduled for 6:15 p.m. The four coaches were confirmed in writing twice, most recently on Tuesday, November 3. We paid $8,400 total, with a 50% deposit in September and the balance seven days before the event.\n\nOnly two coaches showed up. The first arrived 55 minutes late, and the driver told me he had received the job at 5 p.m. The second broke down on the 215 with no working AC, leaving guests on the shoulder for approximately 40 minutes.\n\nI ended up putting 60 guests in Ubers and Lyfts on my company card at a cost of about $1,900. Dinner started at 8:40 instead of 7:00, and the caterer charged us overtime. The client is now reviewing whether to retain us for their March event.\n\nI could forgive one late bus. What I can’t accept is having two of four confirmed coaches never arrive, with no backup plan or communication that resolved the situation. Corey was listed as the dispatcher on our paperwork, and calls to the office line have gone to voicemail since Friday. I’m seeking a refund for the two coaches that never arrived, plus the rideshare costs.\n\nBased on this experience, I wouldn’t book Sunbelt for a large event until they’ve addressed their dispatch and backup plans. I wanted other planners to have the details before booking airport or offsite transportation for the season.",
+  "words": 303,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.431049108505249,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995458126068115,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.824824333190918,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.9,
+    "effort": "low",
+    "output_tokens": 382,
+    "input_tokens": 18252
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nmia I'm sorry I've been so slack getting back to you. and don't you say sorry for going quiet, your ceiling fell on your bed. of course you're not ok. you're not doing this on your own though, so here's what's sorted.\n\nSam's taken my shift tomorrow so I'm off all day. dad's lending us the trailer, so I'll come to Priya's and we'll get everything out of her garage before her mum turns up. just tell me what time. and Ruby says the couch is yours for as long as you want, not just a couple of nights. only warning is Clover will 100% try to sleep on you.\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nband stuff. Tully talked to Dee at the Lantern Room and we've got Sat 28th for a benefit night, all the door money goes to you. Jono's mates in Hollow Pines are playing too. and Jono's cousin has an old Yamaha keyboard sitting in his shed that's yours til the nord's sorted. it's not a nord but it works.\n\nthe notebooks are gutting, I know. but we've played those songs that many times that between the four of us we can piece most of them back together, and the rest will come back to you once you're playing again.\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nand Rocky. if you want to move home in six months because you actually want to, fine, I'll help you pack. but don't decide it this week, living out of garbage bags with a grub of a landlord telling you to use the portal. that's not a decision, that's a shit week talking. and you can't give up on the band. your songs are the best thing about it and we all know it.\n\nalso you drove out to Gatton at 2am to get me when my car carked it after the Toowoomba gig and didn't even complain. a trailer and a couch doesn't come close to square, so don't go feeling weird about any of this.\n\nmum and dad say they're thinking of you too. call me tonight if you want, I'll pick up this time.",
+  "words": 346,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2273661494255066,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.020056774839758873,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.0326001644134521,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.1,
+    "effort": "high",
+    "output_tokens": 2999,
+    "input_tokens": 2611
+  }
+}

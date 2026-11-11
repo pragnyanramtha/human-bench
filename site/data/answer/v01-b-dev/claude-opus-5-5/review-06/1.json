@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: Repeated E34 lockouts and scaled steam generator on a 6-week-old refurb\n\nWe bought this CX-10 (s/n VT21-30877) for $14,800 inc GST. It was delivered and commissioned at our Fitzroy bistro on 14 September. The listing says the steam generator was descaled and pressure tested and the core probe calibrated. Our experience in the first six weeks didn't match that.\n\nE34 (steam generator low water level) started on day one. When the tech came out on 22/09, the error log showed 9 E34 lockouts since 14/09. He replaced the water level sensor and inlet pressure tested fine at 320 kPa.\n\nE34 came back 4 times the week after. The core probe was also reading low. We checked it twice against a Thermapen in a lamb shoulder, and both times the oven said 63°C while the Thermapen said 70°C. That is a real food safety problem on slow-cooked proteins. On 06/10 the steam generator was found heavily scaled, so it was descaled and the probe recalibrated to within 1 degree. Kelsall put the scale down to hard water and told us to install a softener.\n\nAt that point the oven had been running on our water for about three weeks. Our supplier puts Fitzroy's average hardness at around 15 mg/L as CaCO3, which is soft water and some of the softest in the country. We don't see how a unit gets heavily scaled in three weeks on that supply. We think the scale was already there when it arrived, even though the listing says it was descaled.\n\nOn Saturday 24 October, E34 locked us out at 6.10pm with 60 covers booked. We finished the lamb on the stove and the deck oven and took the pork belly off the menu. We wore that cost.\n\nKelsall attended again on 27/10, found more scale, and invoiced us a $280 + GST callout because they consider it a site water issue rather than a warranty fault. We don't agree with that. The unit was six weeks old and under a 6 month parts and labour warranty.\n\nTo be fair, the technician has been prompt and helpful every time he's come out. Our issue is with the condition of the unit when it was supplied and with how Kelsall has handled the warranty.\n\nIf you're looking at this unit, ask for evidence that the steam generator was actually descaled. Check the probe against your own thermometer when it's commissioned, and get written confirmation of what the warranty covers before you spend nearly $15k.\n\nLittle Gertrude, Fitzroy",
+  "words": 409,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "It says Kelsall invoiced the callout, but Brett said it would be invoiced."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.037642356008291245,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026679249480366707,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.1171875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.576561212539673,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.8,
+    "effort": "medium",
+    "output_tokens": 1477,
+    "input_tokens": 3675
+  }
+}

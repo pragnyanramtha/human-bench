@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays redoing the electric in a buddy's shed. Not saying who, he knows who he is. I kept a list of what we found because nobody was gonna believe me. Pics below.\n\n1. The \"power.\" Three orange extension cords plugged into each other, out the basement window, across the yard, under the deck. That was it. That was the whole setup.\n\n2. One of the splices was wrapped in duct tape. Not electrical tape. DUCT tape. Guy had the right idea and the wrong drawer.\n\n3. 30 amp breaker on 14 gauge wire. For the non electricians, that wire is good for 15 amps. The breaker is the thing that's supposed to shut off before the wire gets hot. This one would've sat there happy as a clam while the wire cooked.\n\n4. The shed outlet was hooked up with speaker wire. Speaker wire. Like for a stereo.\n\n5. The \"GFCI\" outlet was a regular outlet with a GFCI sticker stuck on it. I laughed and then I quit laughing. A GFCI is the thing that keeps you from getting killed when you're standing on a damp floor with a drill in your hand, and this one was a sticker.\n\n6. Ceiling fan box held up by one drywall screw. One. Spinning over people's heads.\n\n7. Mouse nest in the junction box. Mice were fine. Unbothered. Honestly the only ones in there not doing anything wrong.\n\n8. My favorite. Open up the panel in the house and on the inside of the door in Sharpie it says SHED - DONT TOUCH - RON. My buddy's wife is standing right there and goes \"who's Ron?\" Like I'd know. Ma'am, I just got here.\n\nNow about Ron. I never met Ron but I've met a hundred Rons. Ron's not a bad guy. Ron's cheap and a little proud. He didn't want to pay somebody, so he figured it out himself, the lights came on, nothing bad happened, and he decided that meant he did it right. That's most of these jobs. Nobody's out there trying to burn a house down.\n\nBut here's the serious part. I'm joking around because it honestly was funny, but just about everything on that list is how a fire starts or how somebody gets hurt. \"It works\" and \"it's safe\" are two different things. Electric doesn't give you a warning. It works fine for years and then one night it doesn't, and you're asleep.\n\nWhat it's got now: trenched 18 inches down, real underground cable (12/2 UF), 20 amp GFCI breaker, a real box, real outlets, and the fan's on a brace. I got paid in 2 pizzas and a case of Yuengling, which is my rate for people I like. Don't get ideas.\n\nSo if you got a shed, a workshop, a basement somebody \"finished,\" whatever, and you're not sure who wired it, get a licensed electrician to look at it. Not your buddy who watched a YouTube video. And yeah, I know, I'm somebody's buddy. I'm a buddy with a license and 26 years in. The video guy doesn't know what he doesn't know, and neither did Ron. It costs more than doing it yourself. It costs a whole lot less than a house.\n\nRon, wherever you are, no hard feelings. I touched it.",
+  "words": 553,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2435491532087326,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.05532020330429077,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.5390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.338963747024536,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 46.8,
+    "effort": "high",
+    "output_tokens": 4206,
+    "input_tokens": 2867
+  }
+}

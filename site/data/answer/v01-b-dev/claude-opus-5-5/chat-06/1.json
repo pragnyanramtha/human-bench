@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: i02\nCc: none\nSubject: none\n\nMarco. Desert Palms.\n\nYou told me Saturday \"14 units all good.\" I just looked at the code sheet and there's nothing in it for Desert Palms. Not one unit. The last thing you logged was Ortiz Tire on the 12th.\n\nYvette called Lupe at 7:50 this morning. The tenant in 9B lost her key and wants 3 copies TODAY. I have nothing to cut from. So now the shop looks like we don't know what we put in our own customer's doors, and I'm supposed to call her back and tell her what exactly?\n\nOn top of that you left a pinning tray sitting on the counter in the leasing office with pins still in it. That's my tray and it's in a customer's office. That's sloppy.\n\nThis is the second time. I told you on the Kessler job in September, and before that I put it out to everybody in August. Codes go in the sheet the same day, before you leave the van. Address, unit, code. It is NOT optional. I don't care if it's 9 at night and I don't care how tired you are. You leave without logging and the job isn't done, no matter what the doors look like.\n\nHere's what's happening today:\n\n1. Go back out to Desert Palms this morning. Decode 9B first so we can get that tenant her keys. Then do all 14 if you can. Bring the codes straight back to me or put them in the sheet from the van, unit by unit.\n2. Get my tray off Yvette's counter and bring it back to the shop.\n3. Be decent with Yvette. Apologize for the trouble. She's a good account and I want to keep her.\n\nLet me be straight with you. You're good with your hands and I want you on this crew. I'm not looking to get rid of you. But I can't run a shop where I find out a job wasn't finished when a customer calls. Those codes are the whole job. Without them we lose everything we did out there the minute somebody loses a key.\n\nIt can't happen a third time. Text me when you're on your way out there.\n\nRay",
+  "words": 368,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1676052212715149,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.034931913018226624,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.9027438163757324,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.5,
+    "effort": "medium",
+    "output_tokens": 883,
+    "input_tokens": 2537
+  }
+}

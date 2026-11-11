@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Peter, your payroll years count for a lot here, and the \"one month behind\" problem is real. I've seen it up close. Finance isn't wrong to worry. My disagreement is with the jump from \"this needs limits\" to \"close the window,\" because we made that jump and I'd rather Brenda didn't repeat it.\n\nBrenda, since you're going into the 18th with numbers, here's our history. Early last year we did roughly what Peter is suggesting: two months' notice, a pointer to the SACCO, one financial literacy session, and then the window closed. Finance was relieved for about a quarter. Then:\n\n- In the six months after we closed it, reception logged 61 calls from debt collectors and loan apps. Some of the apps had started listing our supervisors as referees, so a driver's loan became a phone call on a supervisor's desk.\n- Absence on the two days after month-end went up. Our fleet manager linked at least three missed runs to drivers sorting out loans.\n- One loader had six apps running at once by the time he came to me, borrowing from one to pay another. It took us four months with payroll to unwind it.\n\nClosing the window didn't remove the need. It moved the borrowing to places we couldn't see or control.\n\nTo be fair to Peter's side, this is one company, these are our own observations, and I can't prove the closure caused every one of those things. But the pattern was consistent, and the reason makes sense to me. On around KES 28,000 a month there isn't much room for an emergency. When a child gets sent home over school fees on a Tuesday, a SACCO loan that takes two to three weeks and needs guarantors doesn't help. People went to whatever was fastest, and that was usually the apps.\n\nWe reopened in September 2025 as a written policy:\n\n- Maximum 40% of net pay per advance.\n- Once per pay cycle.\n- Repaid in full at the next payroll.\n- No fee.\n- Requested through the payroll portal, not through HR's office.\n- Before approval, we check that total deductions stay within two-thirds of wages, the Employment Act limit, so nobody ends up with nothing at month end.\n\nSince reopening we've averaged about 55 to 70 requests a month, at around KES 9,000 each. That's roughly KES 500,000 to 630,000 moving through payroll each month and coming back the following payroll. We've recovered all of it except two leavers, and the total written off for the year is about KES 14,000. Our Finance Manager now defends the scheme himself, and I think that's the most telling part. The forecast impact is known in advance because it's a fixed ceiling, not a surprise.\n\nSo the comparison I'd put to Finance isn't \"advances versus no cost.\" It's a known ceiling with about KES 14,000 in write-offs, versus no advances, where the cost shows up as write-offs, absence, missed runs and staff time spread across every department. The second cost never appeared on the Finance sheet, which is why it was easy to ignore. Some of it landed on operations, and some of it landed on HR. Every hour spent untangling six loan apps is an hour not spent on HR work, and I suspect you've felt that more than most.\n\nFinancial literacy stays, by the way. We kept it, and I think it helps. It just doesn't pay a school fee on a Tuesday.\n\nBrenda, for the meeting I'd take a proposal rather than a defence of the status quo. Something like:\n\n- A written policy approved by the MD, not an informal supervisor sign-off.\n- A cap as a percentage of net pay, with the two-thirds deduction check built in.\n- One request per pay cycle, repaid in full at the next payroll, no fees.\n- Requests through payroll, with a clear approval route and a short turnaround.\n- Monthly reporting to Finance: request count, total value, recoveries, write-offs. That gives your FM the visibility he needs to say yes.\n- A six-month review with a stop rule if write-offs pass an agreed level.\n\nThat gives Finance the ceiling it wants and gives you the figures to show what happens without one. If your own data is thin, start tracking now: requests per month, average value, recovery rate, and whatever you can see on absence and loan-app contacts. A few months of your own numbers will persuade them more than any of ours.\n\nPeter, I think we agree on more than it looks like. Nobody should be running a lending business, and an HR team shouldn't become a bank. The real question is whether a company that already has the payroll rails can make borrowing less harmful than the alternatives staff will use anyway. Our experience is that a capped, written scheme did that, and closing the window didn't. Your worry about HR becoming the lender of first resort is exactly why the cap and the portal route matter so much.",
+  "words": 837,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38571909070014954,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10622632503509521,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.46875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.797961711883545,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.1,
+    "effort": "medium",
+    "output_tokens": 4755,
+    "input_tokens": 2815
+  }
+}

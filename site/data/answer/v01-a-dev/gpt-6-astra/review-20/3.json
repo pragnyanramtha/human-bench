@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sharing this for anyone considering Sunbelt Charter Coaches for CES airport transfers or offsite transportation. I had two good experiences with them on smaller airport runs last spring, which is why I trusted them with a larger booking. What happened last Thursday was very different.\n\nFor a client dinner on Thursday, November 5, we booked four coaches to transport 220 guests from our hotel to a ranch venue in Henderson, with pickup scheduled for 6:15 p.m. The booking was confirmed in writing twice, most recently on Tuesday, November 3. We paid the full $8,400: a 50% deposit in September and the balance seven days before the event.\n\nOnly two of the four coaches showed up. The first arrived 55 minutes late. That driver told me he had received the assignment at 5 p.m. The second coach broke down on the 215 with the AC out, leaving guests on the shoulder for approximately 40 minutes.\n\nWith no backup transportation provided, I put 60 guests into Ubers and Lyfts on my company card at a cost of approximately $1,900. Dinner started at 8:40 p.m. rather than 7 p.m., and our caterer charged overtime. My client is now reviewing whether to retain us for their March event.\n\nI understand that vehicles can break down and delays happen. What I cannot accept is two missing coaches, no backup plan, and no communication when we needed help.\n\nCorey was the dispatcher listed on our booking communications. Since Friday, calls to the office line have gone to voicemail. I’m seeking a refund for the two coaches that never arrived, plus reimbursement for the rideshare costs. That remains unresolved.\n\nBased on this experience, I would not book Sunbelt for a large event unless they can demonstrate that their dispatch, backup coverage, and day-of communication have been fixed. Smaller runs went well for us, but this booking did not. I’ll update this post if they respond and resolve the refund request.",
+  "words": 323,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3979276120662689,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3982783257961273,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.289987564086914,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.9,
+    "effort": "medium",
+    "output_tokens": 406,
+    "input_tokens": 13966
+  }
+}

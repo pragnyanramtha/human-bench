@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "⭐⭐⭐⭐☆ **4 stars**\n\nUsed Kilbarrack Van Co for a move from Phibsborough to Drumcondra on Saturday 17 October. It was a two-bed flat, mostly my own stuff, and the new place is a fourth-floor walk-up with no lift, so not exactly an easy one.\n\nI booked through the website and paid a €50 deposit by Revolut. The quote was €340 for two lads and the van for up to four hours, and the move took about three and a half. It was the best value I found, with the other quotes I got coming in at €450 or more.\n\nThey were meant to arrive at 9 but got there at half 10. Dessie did text at 8.40 to say the previous job had overrun, so I wasn’t left completely in the dark, but I did spend a while sitting on boxes with a cold coffee! It wasn’t the end of the world for me, though it’s worth bearing in mind if you’re working around a tight handover with a landlord. To be fair, Dessie knocked €40 off afterwards because of the delay, without me even asking.\n\nOnce they got going, the lads were great. The couch wouldn’t go around the turn on the third floor and I thought we were in trouble, but one of the lads — I think his name was Kev — had an Allen key in his pocket, took the legs off and got it straight in. They also put the bed back together without being asked and took away a flat-pack shelf I didn’t want, which was a big help after all those stairs.\n\nThe one other thing is that the base of a brass floor lamp got chipped. They’d wrapped everything else in blankets but not the lamp. It was my nanny’s, so I was a bit gutted about that. Wrap the lamps, lads!\n\nOverall, I’d use them again. The price was good, the lads worked hard and Dessie handled the lateness fairly. Four stars rather than five because of the delay and the lamp, but a good service overall.",
+  "words": 346,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "344 words, allowed 360-880 (band 400-800 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36162474751472473,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11555147171020508,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.24949157238006592,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.4,
+    "effort": "low",
+    "output_tokens": 430,
+    "input_tokens": 19062
+  }
+}

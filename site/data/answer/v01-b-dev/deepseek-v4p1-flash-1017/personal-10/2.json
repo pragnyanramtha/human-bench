@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-10",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "An open letter about the fire at Lindale Court\n\nHello everyone,\n\nPlease forward this to anyone who might be asking. I’m writing one letter because my phone has been going mad since Saturday and I can’t answer everyone one by one. I’m okay. I’m staying at my sister’s in Rondebosch. Marmalade is okay too — she hid under a car for two hours after the fire, but she’s fine now and has barely left my side.\n\nWhat happened, short version:\n\nThe fire started around 11:40pm on Saturday 7 November, in a ground-floor flat at Lindale Court on Station Road in Obs. It wasn’t my flat. I’m on the second floor, flat 12. Our neighbour Uncle Faizel banged on every door on our floor in his vest and slippers, and that’s how I woke up. I grabbed my phone and Marmalade and nothing else. There are 14 flats in the block and everyone got out. Two people were treated for smoke at Groote Schuur and sent home. The fire department says it was probably an electrical fault, but they’re still investigating, so I’m not going to guess beyond that.\n\nMy flat has smoke and water everywhere and the ceiling came down in the lounge. The landlord says nobody can go back in for at least six weeks.\n\nI teach the Ladybirds at Little Acorns Pre-Primary in Mowbray — Grade 00, the 4-5 year olds. All the stuff I took home to laminate for the end-of-year concert is gone: 22 crowns and the kids’ handprint banner. The concert on 27 November is still happening, don’t worry. The Ladybirds will have crowns. I’m back at school on Wednesday, and please don’t make a big thing of it in front of the kids. I don’t want them to feel worried or strange about it.\n\nNow the part I’m bad at. What I actually need.\n\nMy friend Zinhle set up a BackaBuddy page for me. The link is backabuddy.example/thandi-lindale-court. The target is R25 000 and this morning it was at R11 400. I hate asking for help and I feel very weird about the fundraiser, but Zinhle told me to shut up and accept it, and a few other people have said the same, so I’m trying.\n\nThe main thing is help with the deposit for a new place. I also need school shoes and work clothes — I’m a size 6 in shoes and a size 34 in clothes. And if anyone has an old laptop that still works, that would honestly be huge. All my lesson planning was on mine. I’m not being fussy; anything that opens a document and connects to the internet is better than what I have now, which is nothing.\n\nWhat I don’t need, please: more clothes in general. I’ve already been given so many, and a mom from school left a bag at my sister’s gate at 7am on Sunday without even knocking. It was so kind and I cried, but I genuinely have too many clothes now, and I’ll pass the extras on to the other flats. Please also don’t bring food — my sister’s freezer is full. I don’t want anyone to feel rejected. If you want to help, the fundraiser, the deposit, the shoes, the work clothes or a laptop are the things that will actually make a difference.\n\nVery important: there is a fake fund going around. It’s called “Thandi Fire Relief” on some site, and there’s also a WhatsApp message asking people to EFT to a Capitec account. That is not me. It is not Zinhle. It is not connected to us in any way. I’ve reported it. Please do not send money to it. The only fundraiser that is mine is the BackaBuddy page Zinhle set up: backabuddy.example/thandi-lindale-court. If someone forwards you something else, please check before you send anything. If you’re not sure, don’t send. I’d rather people give nothing than give to someone using this.\n\nI know this is a lot. I’m sending this to friends, neighbours and school families, and you’re welcome to forward it to anyone who asks. I’m replying to comments slowly and I’m not going to get to every DM, so please don’t be offended if you don’t hear from me. I’m not ignoring you, I’m just tired and my phone has been going mad since Saturday.\n\nThank you to everyone. Honestly. Uncle Faizel in his vest and slippers. The mom who left the bag at 7am. Everyone who has messaged, dropped something off, offered a spare room, or just said they’re glad I’m okay. I’ve been crying at every message. People have been amazing. Furniture can be replaced. Marmalade can’t. I keep thinking about that.\n\nI’ll be back at school on Wednesday. Please be gentle with me and with the kids. And please forward this letter rather than asking me to tell the story again.\n\nLots of love,\nThandi",
+  "words": 814,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1655896157026291,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3359909951686859,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.9921875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.182798385620117,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 22.6,
+    "effort": "provider default",
+    "output_tokens": 4963,
+    "input_tokens": 850
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-10",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Rick, I need to be straight with you because I’m really angry, and I don’t want to let it build into something bigger.\n\nYou told Gary I’d list his house for 1% as a “family rate.” My listing side is 2.5%, and I never agreed to 1% or told you that you could offer it for me. On Saturday, Nov. 7, I spent about six hours pulling comps, walking through his four-bedroom in Chandler, putting together a full listing packet, and driving over from north Phoenix. Then Gary texted Sunday that he’d chosen ListLite for $3,995. I’m not mad at Gary for making the choice that worked for him. I’m mad that you volunteered my time and my commission without even asking.\n\nWhen I called you, you said, “That’s business, sis, can’t win ’em all.” That really didn’t sit right. This isn’t about winning a client. It’s about you making promises on my behalf and leaving me to do the work.\n\nAnd now you’ve given Denise my number and told her she can “pick my brain” about selling her rental. I’m not calling her. Please tell her that was premature and that she should find her own agent if she wants real-estate help.\n\nThis has happened before with your softball friend. I let it go then, but I’m not going to keep doing this. You get to look helpful to your friends, and I’m left doing unpaid work and explaining a commission I never offered.\n\nI’m happy to help actual family—Mom, your kids, you—with advice, no charge. But that’s not the same as being assigned clients or having my 1% rate thrown around. From now on, don’t give anyone my number or quote my commission. Ask me first, every time. If I say yes, I’ll take it from there. If I say no, that’s the answer.\n\nI love you, and I still plan to be at Thanksgiving. But I need you to understand that this stops here.",
+  "words": 327,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39252814650535583,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.6394341588020325,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.578125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.792286396026611,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.4,
+    "effort": "medium",
+    "output_tokens": 425,
+    "input_tokens": 13987
+  }
+}

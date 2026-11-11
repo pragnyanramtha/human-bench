@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the post — I kept it to roughly 600 words, left out her last name, and also dropped the specific intersection (just \"Mississauga\") since a small independent shop plus a Thursday routine plus the date is more than enough to narrow things down in a smaller town. Add your own handle at the end.\n\n---\n\n**First time posting here. Be gentle with me.**\n\nThe monthly thread — the moments from work that stay with you — I usually just read it and think \"not me, nothing that interesting.\" Then this month decided otherwise.\n\n**Mrs. H.**\n\nShe was 84, Polish, one of our regular blister pack patients since 2019. Every Thursday, same time, eleven medications, same spot at the counter. For seven years.\n\nWhen her husband passed in 2021 she was on her own, so she came in by herself with her cane — the kind with the tennis balls on the bottom so it doesn't slip on the sidewalk. I used to hear it before I saw her. That little thump, thump, thump at the front door, and then she'd be at the counter.\n\nBut she never came empty-handed. Every single Thursday she brought something. Poppy seed cake, mostly. Once a jar of pickles that I honestly had no idea what to do with. I still have it in my fridge at home. I think. Nobody has told me what I'm supposed to do with it.\n\nOne year during Ramadan she remembered. She knew I fast, and she told me not to eat her cake until sunset. She wrapped it in foil and wrote my name on it. There I was, standing in my own pharmacy holding a piece of someone's cake and trying to explain to her that no, it was my fault, I forgot. She laughed at me. Every year after that the cake was for after sunset. She never missed.\n\nIn 2023 her new doctor added a medication without telling us. I caught the interaction with her warfarin, called him, we sorted it out, she stayed on the right dose. And then she went home and told everybody — the whole bingo hall, her family, her friends — that I saved her life. I just did my job. That's all I did. But you know what she actually said? \"She called the doctor. She didn't wait.\" I don't think anyone has ever told me that part before. That was the part she remembered.\n\nShe passed away on October 30th. Last month. Her daughter Basia came in on November 9th to bring back the unused blister packs and her glucometer, and she gave me a card.\n\nInside the card, in her mother's handwriting, written a long time ago and never handed over: *for my Arabic daughter.*\n\nI don't know when she wrote it. I don't know why she kept it. Maybe she was saving it for something. Maybe she was waiting for a Thursday.\n\nI cried in the back room. Priya covered the counter for about ten minutes. She didn't say anything, she just stayed out front and gave me my minute. Then I wiped my face, came back out, and rang up the returns. That's the job too.\n\nMy father was a pharmacist in Egypt. He knew the families — all of them. He knew their fathers before him, watched their children grow up. When I came to Canada I thought it would be different here. I thought we would be professionals, keep it clean, hand over the prescription and that would be it. It is not different. It's the same thing. Maybe the buildings are nicer.\n\nThey tell you not to get attached. They teach you pharmacology, interactions, calculations, insurance billing, and then they put you behind the counter and nobody hands you the script for this part. Nobody teaches you how to say goodbye to a patient. But you see someone every week for seven years, you know the order she takes her pills in (the foil ones last, one at a time, always the same order), you know what she brings you, and then one Thursday she's not there.\n\nSo for the people here who have been doing this a while — have you had a patient like this? One you're still thinking about after? And how did you learn to let them go?\n\nThanks for reading.\n\n— *your name / handle here*",
+  "words": 730,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['Basia']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37291598320007324,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.38000038266181946,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.0478515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.3594807982444763,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.3,
+    "effort": "provider default",
+    "output_tokens": 2925,
+    "input_tokens": 727
+  }
+}

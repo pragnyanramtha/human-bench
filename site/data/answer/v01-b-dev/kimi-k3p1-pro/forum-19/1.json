@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.55, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, congratulations on the wedding, china. Now breathe — and **leave that key out**. Don’t crank it again, not even “just to check”. Every turn runs the pump on petrol with no lubrication.\n\nKobus means well, but that’s old Land Rover advice. Your 2019 D-Max is common rail; it can’t take that. Don’t add diesel either — topping up doesn’t remove the 45 litres of petrol or make it safe.\n\nBecause you drove it, stalled and cranked it repeatedly, damage **is possible**, but the engine isn’t automatically finished. The high-pressure pump and injectors need inspecting first. If they’re damaged, Tash’s R40 000 story is the ugly possibility. If they’re OK, draining the tank, flushing the lines, fitting a new fuel filter and bleeding it usually runs **R2 500–R4 500**. Nobody honest can promise the total from a forum tonight.\n\nTonight’s plan:\n\n- Key out. No more starting.\n- Check your insurance for roadside towing before paying a tow oke cash.\n- **Tow it, don’t drive it.**\n- Borrow a bakkie for tomorrow anyway — cake, sound system, the lot.\n\nMy shop is in **Umbilo**, open Saturday **7 till 12**. Thabo, my guy, can get onto it first thing. Send me a message.\n\nAnd you’re not alone: one customer did this twice in the same year, at the same garage. We made him a sticker for his fuel flap. In 1995, my first year as an apprentice, I put diesel in the boss’s Golf. He still tells that story at every braai.\n\nSo sort the tow, sort the borrowed bakkie, then put the phone down and go be the groom. Don’t plan your wedding around a drained tank — and whatever Kobus says, **don’t touch that key**.",
+  "words": 286,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5547838807106018,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3563385009765625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.37904679775238037,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.8,
+    "effort": "provider default",
+    "output_tokens": 1416,
+    "input_tokens": 989
+  }
+}

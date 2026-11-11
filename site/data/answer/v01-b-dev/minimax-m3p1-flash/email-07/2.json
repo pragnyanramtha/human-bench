@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.63, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Here's the email — firm, factual and chronological, so it reads like a teacher keeping a record rather than someone venting. It stays polite throughout but makes the deadline and the consequences very clear.\n\n---\n\n**Subject:** Order TH-48217 — delivery not received (proof of delivery doesn't match) — resend or full refund needed by 13 Nov\n\nDear Tiny Hands Edu Supplies Customer Service,\n\nI'm writing about order **TH-48217**, placed on **21 October**, for **R1,640 including R95 delivery**, paid by card.\n\nYour tracking tells me it was delivered on **Tuesday 3 November at 11:42**, signed for by **\"M. Adams\"**. Nothing arrived.\n\nI'm writing to you and not to the courier because my contract is with Tiny Hands. I never chose who delivers my orders, and being passed between you and a courier partner isn't going to get my finger paint back in time for my class.\n\n**What the delivery claim doesn't match up**\n\n- There is no staff member called Adams at Bergview Pre-Primary in Plumstead. The address on my order is correct.\n- Our gate guard, Uncle Faizel, signs for and records every delivery in a book. There is no entry for 3 November.\n- The items in the order are: 6 tubs of finger paint, 4 bags of playdough, 200 paper plates, googly eyes, glitter glue and 2 rolls of brown paper. None of it came.\n\n**What I've already done**\n\n- Emailed on **4 November** and **6 November**. Both times I received the same copy-and-paste reply saying you \"have escalated my query to our courier partner\".\n- Phoned on **Friday**: 38 minutes on hold, and I was told nothing can be done until the courier's investigation is finished, which could take **10 working days**.\n\n**Why the timing matters**\n\nMy class made their masks last week, and I've spent a week telling them the paint is \"coming soon\". The end-of-year concert is on **27 November** and I need these supplies for the props. Every working day I wait is another day of making promises to five-year-olds that I can't keep.\n\n**What I'm asking for — by Friday 13 November, one of the following:**\n\n1. **A re-send** of order TH-48217 to the same Bergview Pre-Primary address, with the tracking reference sent to me directly; or\n2. **A full refund of R1,640, including the R95 delivery fee**, back to the card I paid with.\n\nI'd also like someone to **reply to me directly** rather than send another template. A named contact and a direct email or phone number would help — but what I really want is a clear human answer to two questions: *was this delivered or not, and what happens next?* I've now had the same escalation sentence three times without a single concrete update.\n\nFor the record, I have ordered from Tiny Hands three times before with no issues at all, which is exactly why this one is so frustrating. I'm a kindergarten teacher on a teacher's salary, and this is money I paid myself for materials for other people's children. I can't absorb R1,640 out of my own pocket and I can't keep chasing this in my spare time.\n\nIf I don't receive a resolution by **Friday 13 November**, I will dispute the payment with my bank and leave an honest review. I'd much rather carry on using you — but I need this closed out one way or the other.\n\nKind regards,\n[Your full name]\nKindergarten Teacher\nBergview Pre-Primary, Plumstead, Cape Town\n[Your phone number]\n[Your email address]\n\n---\n\n**Two practical tips before you send it:**\n- Attach your card payment confirmation and the screenshots of both template replies — it removes any argument about whether the order was paid for or how many times you've contacted them.\n- If you do get a call back, ask for the name of the person handling it and note the date and time. If they say \"escalated\" again, ask what the *actual next step* is and by when — that's usually where it unravels.",
+  "words": 665,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6309139132499695,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4019891321659088,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.258961200714111,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.6,
+    "effort": "provider default",
+    "output_tokens": 1841,
+    "input_tokens": 731
+  }
+}

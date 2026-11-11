@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey everybody,\n\nA lot of you have been asking Mom if I'm coming to Thanksgiving this year. I am. I want to be there, and I want it to be a good day.\n\nLast year I got into it at the table about my job, and I said things I shouldn't have. I'm sorry for how I talked, especially to people I love. Grandma, I know you ended up out on the porch because of that, and I'm sorry. I'd like to make it up to you with a good plate and a better afternoon.\n\nI'm not going to apologize for the work I do. I'm a paralegal at a civil-rights nonprofit, and I'm proud of it. I also can't talk about open cases, so if the questions are about \"the lawsuit,\" I'll have to change the subject. It's not because I'm hiding anything. It's confidentiality, and I hope nobody takes it personally.\n\nSo here's what I'm asking: for one day, can we call a truce on the work and politics stuff? Let's keep the table to food, football, babies, and Tasha's new boyfriend. (We can interrogate him together, I promise.) That's plenty to talk about.\n\nThe details: Thanksgiving is Thursday, November 26, at Aunt Denise's in Macon. We'll be eating around 3. I'm bringing mac and cheese and two sweet potato pies, so nobody needs to worry about dessert.\n\nI'm not looking for an apology from anybody. I'm just looking forward to the day. Cousins who weren't there last year, Grandma, all of you: come hungry, and let's have a good one.\n\nLove you all.",
+  "words": 266,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits the relative’s provocative but good-natured character and his affectionate August birthday thumbs-up."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6940693855285645,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13205654919147491,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.124953746795654,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.5,
+    "effort": "medium",
+    "output_tokens": 1977,
+    "input_tokens": 1454
+  }
+}

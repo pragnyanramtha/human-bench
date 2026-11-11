@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.48, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## H-1B Cap Season: Proposed January 15 Intake Deadline\n\nI propose setting January 15 as our internal deadline for H-1B registration intake, with later requests handled case by case. This would give employers a clear timeline and us a more manageable review period before the registration window opens. The goal is better service and less last-minute risk—not a stricter approach to clients.\n\nLast season, we filed 14 registrations for six employer clients, and nine of those registrations came in during the final week of February. Rosa logged roughly 11 hours of overtime the week the window opened. Much of that crunch reflects our current process: we send the questionnaire whenever an employer asks, without giving anyone a set intake date. One HR contact said she would happily have sent everything in January if we had asked. January 15 seems realistic: HR teams are back from the holidays, budgets are set, and employers already budget for the $215-per-beneficiary registration fee in Q1.\n\nAn earlier deadline would also protect the quality of our work. The registration itself is straightforward, but errors can be expensive—a wrong passport can invalidate a selection. Last season, Brightwater Analytics sent a beneficiary’s passport scan two days before the window opened; it had expired in October. We caught that only because Rosa checked the dates. Building in review time makes those checks part of a predictable workflow rather than a last-minute safeguard.\n\nThe practical changes would be:\n\n- Send engagement letters and a one-page questionnaire to employers the week of December 7, with January 15 clearly identified as our internal intake deadline.\n- Have Rosa own the tracker, recording responses, missing information, and follow-up needs.\n- Give Rosa a clean six weeks after January 15 to chase gaps and flag issues before the window opens.\n- Review requests received after January 15 case by case, based on capacity and whether we can complete the necessary checks.\n\nIf Marcus and I agree on this approach Thursday, we can finalize the timeline and send the December letters with a clear, consistent message: earlier intake gives us more time to review each registration carefully and resolve questions with employers.",
+  "words": 358,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.47688785195350647,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9995436668395996,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 17.375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.4376220703125,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 17.6,
+    "effort": "low",
+    "output_tokens": 431,
+    "input_tokens": 18285
+  }
+}

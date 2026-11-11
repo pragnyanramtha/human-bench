@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "blog-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: posts/new\nReplying to: none\nCc: none\nSubject: Correction: the GST template overstated GST in v1.0 to v1.2\n\nThe GST template I posted in August had a mistake in its main formula. It overstated GST for anyone keying in GST-inclusive takings. It is fixed in v1.3, uploaded on 8 Nov. Below is what went wrong, who is affected and what to do.\n\nWhat was wrong\n\nColumn F worked out GST as inclusive takings x 9%. It should be 9/109 of inclusive takings, because the GST is already sitting inside the amount you collected.\n\nRavi's takings for one day were $1,090, GST inclusive. The template showed GST of $98.10. The correct figure is $90. The template was $8.10 too high, which is 9% more than the right answer. Every day's GST was overstated by the same proportion.\n\nWho is affected\n\nYou are affected if you downloaded v1.0, v1.1 or v1.2 and keyed in GST-inclusive takings. That covers most hawkers, since most of you display or collect prices with GST included. The counter shows 412 downloads since 12 Aug, so this may reach quite a few people.\n\nIf you keyed in amounts that already excluded GST, the old formula gave the right answer. Please still read the note on H2 below before you switch to v1.3.\n\nThe Box 1 sales total on the quarterly tab was calculated separately from column F and was correct in all versions. Only the GST figure, which feeds Box 6, was wrong.\n\nHow I missed it\n\nI tested v1.0 against my own sample figures, and those figures were already ex-GST. The check passed, and I never tried inclusive amounts, which is how most of you would actually use the sheet. That was my error, and the testing was my job.\n\nNobody has underpaid IRAS because of this, since the mistake overstates GST. But some of you may have paid more than you should have.\n\nWhat to do now\n\nIf you have not filed yet, download v1.3 from the original post and use that.\n\nIf you already filed Q3 with the old sheet:\n\n1. Download v1.3 and keep your old file as well. Don't delete anything.\n2. In v1.3, set cell H2 to match what you key in. Choose \"prices exclude GST\" only for entries that exclude GST. For receipts that include the GST you collected, use the inclusive setting, even if your menu prices exclude GST.\n3. Put your Q3 daily takings into v1.3 and look at the quarterly tab. Box 1 should match what you filed. Box 6 should be lower than what you filed if you keyed in inclusive amounts. The gap is the overstatement.\n4. Before you change anything with IRAS, read the errors page on the IRAS website. IRAS has its own rules on whether an error is dealt with in a later F5 or needs a separate form. I am not going to paraphrase those rules, because it is easy to get the detail wrong.\n5. Speak to your tax agent or whoever files for you about the correction route, and bring both versions of the sheet. If you file on your own, the IRAS page is the place to start.\n6. Write down what you found and what you decided, with the date. It will help if anyone asks later.\n\nThe changelog beside the download has the full version history.\n\nTo Melvin\n\nYou were right to be upset. People trusted this template because I am an accountant, and that is exactly why I should have tested it properly. I hope the steps above show you where to go from here.\n\nThank you\n\nThank you to Ravi Subramaniam for spotting the $98.10 against $90 and asking the question, and to Shu Fen of Numbers For Hawkers for confirming the cause and telling me to put up a proper post instead of a comment. I would rather hear about a mistake early than late.\n\nIf something in v1.3 still looks off, please tell me in the comments. I will check it and answer there.",
+  "words": 653,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.027880938723683357,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.022901548072695732,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.8125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.1560113430023193,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.5,
+    "effort": "high",
+    "output_tokens": 3039,
+    "input_tokens": 4460
+  }
+}

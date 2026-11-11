@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Subject: Re: Our plan for next year\n\nKiran,\n\nThanks for putting it plainly. I’ve just come off a run of nights, so forgive me if this is a bit direct — but I’d much rather have this conversation than have you sitting on it. And before anything else: I’m genuinely thrilled Amma and Appa want to come. That hasn’t got lost on me, and I don’t want it lost in the rest of this.\n\nYou’re right that I should have told you earlier. Not just before the email — before the paperwork. I started the visa application because the agent needed my sponsor letter and bank statements, and I should have looped you in then, before it became a Saturday morning email. That’s on me. I’m not going to argue the point. I’m also not trying to manage you into being fine with it. You raised fair things, and I want to answer them properly rather than talk you out of them.\n\nThe idea actually came from Appa, not me. In August I was on the phone with him and Rohan was showing him the vegetable patch on video, and Appa said, “I could grow drumsticks there.” That’s where it started. But I know that doesn’t change the fact that you should have heard it from me first.\n\nOn Appa’s heart — I don’t want to brush past that, because it’s the thing I’d be worried about too. It’s the UK long-term visitor visa, six months maximum per visit, and the plan is first week of April to end of September 2027. I’ve got a travel insurance quote with pre-existing cardiac cover, about £640 each for the six months; the agent says it covers the stent. Dr Prakash has agreed to do Appa’s review in March before they fly and a video consult in July, and he’s happy to share notes with me. The annexe at the back is finished — ground floor, no steps, own shower with a grab rail. Leicester Royal is 15 minutes from our house and I know half the cardiology team. None of that means nothing can happen, but it means we’re not starting from zero if it does.\n\nOn Amma — you’re right that six weeks has been her limit since Paati died. I don’t want to pretend that’s nothing. The return ticket is flexible, and she can go home any time; this isn’t a locked six-month sentence. If she wants to come back in June, we’ll change the dates. I’d rather plan for six months and have her decide she wants less than pretend we know exactly how she’ll feel.\n\nGanesh Chaturthi isn’t gone either, as far as I can see. They could fly Leicester to Pune for it in September and finish the trip there, or the Pune lot could come here in August. I’m happy to cover the Pune family’s flights for an August visit — genuinely, that’s not a polite offer.\n\nAnika has already made a laminated welcome timetable. It includes “Paati teaches us rasam, Tuesdays.” So you can see the level of negotiation we’re dealing with.\n\nCan we do a family video call this Sunday, 4pm UK / 9.30pm India? I’ll send a link. I’d rather we talk properly, with Appa and Amma there, than keep going over email.\n\nLove,\nMeera",
+  "words": 552,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.29085394740104675,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1734336018562317,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.4609375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.93791675567627,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.6,
+    "effort": "provider default",
+    "output_tokens": 4630,
+    "input_tokens": 1168
+  }
+}

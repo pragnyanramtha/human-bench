@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "does task, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: WARNING: Brightline Pro 6% developer from the Kelvin Trade rep, batch LX2291 may be 12%\n\nHi all,\n\nPlease read this before you mix anything today, especially if you've bought developer off the Kelvin Trade rep recently. I know a lot of us do.\n\n**What's happened**\n\nKelvin Trade have emailed to say a filling error at the manufacturer has hit one batch of Brightline Pro 6% (20 vol) Cream Developer 1L. Some bottles in batch **LX2291** have **12% (40 vol)** in them, even though they're labelled 6%. That batch was sold between **19 October and 5 November**.\n\nTheir email says sorry \"for any inconvenience.\" It's a lot more than that. We've had two in this building already. One client got a burn on her scalp during a bleach retouch on Saturday, and another got a hot, patchy, brassy result from foils on Thursday.\n\n**How to check your bottles**\n\n- The batch code is printed on the **base of the bottle**. It is NOT on the box, so don't check the box and assume you're fine. Turn every bottle upside down and look.\n- Check the **open bottles in your trolley** as well as the stock in the back. The open one is the one you're most likely to grab.\n- Anything that says LX2291 needs to come out of use right now. Don't use it \"just for toner\" or for anything else.\n- Other batches and other strengths aren't affected, according to Kelvin Trade.\n\n**Getting rid of them**\n\nYou can hand them back to the Kelvin rep when he's next in (he does Tuesdays) or take them to the Hillington depot. Either way you get full credit.\n\n**If you've already had a problem with it**\n\n**Keep at least one bottle back. Don't bin it and don't hand them all back.** If anything comes of it with a client or your insurance, you'll need the actual bottle. Keep your notes and dated photos too, and the Kelvin Trade email.\n\n**What it does on the head**\n\nFrom what we've seen, this is what to watch for if you think you've got a dodgy bottle:\n\n- Lift is far too fast. Saturday's retouch hit pale yellow at 18 minutes when it normally takes 35 to 40.\n- Foils or the scalp feel properly hot, not just warm. Thursday's foils were roasting, and it got put down to the heater being too close.\n- The client goes from the usual tingle to burning, usually at the crown or wherever it's sitting on the skin.\n- You get patchy, brassy, overprocessed results, and possibly red patches or spots on the scalp and nape afterwards.\n\nIf a mix is behaving like that, don't wait to see. Get it off.\n\n**If someone reacts in the chair**\n\n1. Get it off straight away. Gloves on, take it to the basin.\n2. Rinse with cool or lukewarm running water, no shampoo. Keep going for a long time. The NHS guidance in our How We Do Things folder says about an hour for chemical burns. 15 minutes isn't enough.\n3. If you can, carefully take off anything with product on it, like a cape, towel or collar.\n4. Don't put any creams, aloe or anything else on it.\n5. Chemical burns need to be looked at by a medical professional, so get them seen. Phone **999** right away if it's bad, or if they're struggling to breathe, have any swelling in their throat, or feel faint. Don't wait for it to blister. Do whatever the call handler tells you.\n6. Write it up in the incident book at the desk, with the time, what you used and the batch number off the bottle.\n7. Take dated photos if the client is OK with that, and keep the bottle.\n\nThe full NHS link is in Gail's patch test notice in How We Do Things.\n\n**Pass it on**\n\nHalf the building buys from this rep, so please tell anyone you know who's renting elsewhere or has bought off him. Lorna, I think you got a box off him too, so check yours.\n\nIf you're not sure about a bottle, give me a shout and we can look at it together. I'd rather we check a hundred bottles than have it happen to anyone else.\n\nKirsty (chair 2)",
+  "words": 699,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task",
+      "private"
+    ],
+    "reasons": [
+      "The first-aid advice limits calling 999 to severe cases, contrary to the supplied guidance, and the notice reveals private insurance advice to keep dated photos and notes."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3283329904079437,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2984631359577179,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.83203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.450199127197266,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.9,
+    "effort": "medium",
+    "output_tokens": 2271,
+    "input_tokens": 3584
+  }
+}

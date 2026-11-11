@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4 stars. Kept my rig and wifi up with a 10x long open, real numbers below**\n\nI day trade crypto out of my apartment in Miami, so storm season is a real problem for me. I bought the Kestrel Bastion 1500 (1500VA / 1000W, pure sine wave) here on Voltwise in August 2026 for $229. I'm writing this mostly for other people running trading setups, because when I was shopping every review was \"works great!\" with zero numbers.\n\nMy load is a PC, 3 monitors, modem and router. The unit's own display reads around 410W while I'm trading.\n\n**Runtime**\n\nThe box says about 14 minutes at 500W. I tested it on purpose: pulled the plug at my normal load and got 11 minutes 40 seconds before I shut down. So I didn't hit the box number even though I'm pulling less than 500W. That's not a dealbreaker, but if you're around 400W, plan on 11 or 12 minutes, not 14. This thing is not for trading through an outage. It's for closing your positions and shutting down clean.\n\n**The actual outage**\n\nOn Oct 14 a storm knocked the power out around 2:20pm. I was 10x long on a SOL perp. The rig stayed up, the wifi stayed up, and I closed the position clean in about 4 minutes with time to spare. That's the whole reason I bought it and it did the job.\n\n**Tip that matters more than anything else here**\n\nThere are 10 outlets but only 5 are battery backed. The other 5 are surge only. Put your modem AND router on the battery side. People forget this, the PC stays on, and they lose internet anyway, which makes the whole thing pointless if you're trying to close a trade. Monitors you don't need can go on the surge side to stretch your runtime.\n\nThere's also a 60W USB-C port on it.\n\n**Stuff that bugs me**\n\n- The fan. In the first week it kicked on at 3am for no reason and woke me up. It's loud, like a hair dryer on low. If your desk is in your bedroom, know that going in.\n- The outage beep is loud af. You can mute it in the app, but the setting resets after a firmware update, so you get to find that out again the hard way.\n- The desktop app looks like it was made for Windows XP. To be fair, auto shutdown works, and that's the only part I care about.\n- It weighs around 30 lbs, so figure out where it's going before you unbox it.\n- The battery is swappable, which is good, but the replacement pack is $95. That's a lot next to a $229 unit, so count it as part of the cost.\n\n**Bottom line**\n\nIt did exactly what I needed at the one moment I needed it, and the pure sine wave output at this price is solid. It loses a star for the runtime coming in under the box claim, the 3am fan, and the mute setting that won't stay muted. If you trade with leverage and your power is sketchy, I'd buy it again. Just test your own runtime before you trust it, and plug your modem and router into the right side.",
+  "words": 544,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4898386001586914,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4791150987148285,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.130985975265503,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 35.5,
+    "effort": "high",
+    "output_tokens": 2592,
+    "input_tokens": 1412
+  }
+}

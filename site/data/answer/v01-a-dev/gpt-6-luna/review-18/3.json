@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "# Kestrel Bastion 1500 review: worth it for a trading setup?\n\n**Rating: 4/5**\n\nI bought the Kestrel Bastion 1500 from Voltwise in August 2026 for $229. I’m a crypto day-trader in Miami, and after the October 14 storm knocked out my power mid-trade, I’m very glad I had it. It kept my PC, three monitors, modem, and router running long enough to close my position cleanly.\n\nThat’s the most important thing a UPS can do for a trading setup: buy you time to manage the outage, not pretend you can trade through it all day.\n\nMy setup draws around **410W** while trading, according to the unit’s display. Kestrel’s box estimates about **14 minutes at 500W**. I tested the runtime on purpose and got **11 minutes and 40 seconds** at my load before I shut down. That’s useful breathing room, but don’t treat the box estimate as a promise—or wait until the battery is nearly dead to start closing positions.\n\nI got to see that in a real outage. At about 2:20 p.m. on October 14, the power dropped while I was **10x long on a SOL perpetual**. The Bastion kept my rig and Wi-Fi up, and I closed the trade in around four minutes. I can’t tell you what would have happened to that position otherwise, and I’m not claiming this thing saved me money. It did keep my equipment and internet online long enough for me to make my own decision. For me, that made the $229 worthwhile.\n\nThe Bastion is rated at **1500VA / 1000W** and uses a pure sine wave. It has 10 outlets, but only five are battery-backed; the other five provide surge protection only. Check which outlets you’re using before an outage. More importantly, put your modem and router on the battery-backed side too. If your screens stay on but your internet goes down, the UPS hasn’t done much for your trading setup.\n\nThere’s a USB-C port rated at 60W, and the battery is replaceable. That’s a plus for long-term use, though the replacement pack costs $95. The downside is the unit weighs about 30 pounds, so it’s not something I’d want to move around often.\n\nThe annoyances are real. During the first week, the fan suddenly kicked on at 3 a.m. and woke me up. It’s loud—like a hair dryer on low—and I wish it were less intrusive. The outage alarm is also loud. You can mute it in the desktop app, but that setting reset after a firmware update, which is not the kind of surprise I want at night. The app itself looks dated, almost Windows XP-era, though its automatic shutdown feature works. I care more about that than how polished the interface looks.\n\nOverall, the Bastion 1500 gives my trading setup a tested runtime, enough capacity for my gear, and a way to keep internet access long enough to handle a power cut. Just be realistic about the runtime, verify which outlets are battery-backed, and expect some noisy, clunky software quirks. **Four stars:** a genuinely useful bit of backup, held back by the fan, alarm, and dated app.",
+  "words": 517,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: headings, bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42686304450035095,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9447410702705383,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 20.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.8688268661499023,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.2,
+    "effort": "medium",
+    "output_tokens": 690,
+    "input_tokens": 13959
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties —\n\nYes, I’m coming this year, and I’m really looking forward to seeing everybody. Thanksgiving is Thursday, November 26 at Aunt Denise’s in Macon, eating around 3. I’m bringing mac and cheese and two sweet potato pies, so that part is handled. 😄\n\nI also wanted to say something before we all get in the same room. For the cousins who weren’t there last year, a conversation about my job turned into a pretty ugly argument at the table. For those who were there, you know Grandma Pearl ended up going out to the porch for about an hour manually. I still hate that. It was her holiday, and the last thing she needed was everybody getting loud over dinner.\n\nI want to own my part without making this a whole big thing: the comment about somebody getting his news from a gas station TV was mine, and it was out of line. I’m not sorry for the work I do or for believing in it. I am sorry for how I talked at Grandma’s holiday and for letting myself get pulled into that kind of fight.\n\nAnd I don’t want this to sound like I’m putting everything on the other person. He isn’t a bad guy; he likes to poke, and last year I took the bait and poked back harder. He sent me a 👍 on my birthday in August, which for him is basically a hug, and I appreciated it.\n\nSo, can we call a truce on the work/politics stuff for one day? Not forever, not a decision about who’s right—just Thursday. One practical note too: open cases are confidential, so asking me about “the lawsuit” is going to be a dead end anyway.\n\nI’ll do my part. I’m happy to keep the table conversation to food, football, the babies, and getting the full story on Tasha’s new boyfriend. I just want Thursday to be a good day, especially for Grandma.\n\nSee y’all in Macon. Save me a plate if I’m late, but do not touch my pies. ❤️",
+  "words": 346,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.40964052081108093,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3840593099594116,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.393518447875977,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 38.6,
+    "effort": "provider default",
+    "output_tokens": 2312,
+    "input_tokens": 473
+  }
+}

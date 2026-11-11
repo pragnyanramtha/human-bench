@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr. Kerrigan,\n\nThank you for contacting Erindale Park Pharmacy and for explaining Margaret’s situation. I am sorry to hear about her fall. We would be very pleased to help with her medications and make her return home as smooth and safe as possible.\n\n1. Weekly blister packs and cost\n\nWe prepare seven-day blister packs, organized by day and up to four dosing times each day. There is no additional charge for the packaging itself; the usual dispensing and medication charges apply. As Margaret is 81, the Ontario Drug Benefit program generally covers most eligible prescription costs.\n\n2. Pickup and delivery\n\nMargaret’s building is within our free delivery area, which covers addresses within 8 km. Our regular delivery days are Tuesdays and Fridays, between 2 and 6 p.m.\n\nFor her first packs, we can either hold them for pickup on Saturday or arrange a one-time delivery to her condo on Saturday before 1 p.m. Please let me know which option you prefer.\n\n3. Transferring her prescriptions\n\nWe can contact her present pharmacy directly to arrange the transfers. Please provide the name and address of the pharmacy on Dundas, along with Margaret’s OHIP number. She does not need to sign a separate form for the prescription transfer. It would be helpful to begin this as soon as possible.\n\nPlease also ask the hospital discharge team to fax all her new discharge prescriptions to us early Thursday morning. The first packs take approximately 48 hours to prepare after we have received everything, including both the hospital prescriptions and the transferred prescriptions. If the hospital sends its prescriptions early Thursday and the transfers are completed promptly, we should have the first packs ready on Saturday.\n\nThe packs will not be ready when Margaret leaves hospital on Thursday. Please confirm with the discharge team that she will have enough interim medication until Saturday, together with clear written instructions. Since she has been mixing up her pills, please also work with the discharge team to ensure someone can help her with every dose until the packs are picked up or delivered. If that support is not already arranged, please raise it with the team before she goes home so that no doses are missed or duplicated.\n\n4. Reviewing her medications with you\n\nOnce we have her complete medication list, I would be happy to call you and go through it with you. Before I can discuss Margaret’s medications with you, however, I need her permission. Our signed Family Communication Consent form records whom she authorizes us to speak with and protects her privacy. Margaret can sign the form at the pharmacy, or we can send it with our delivery driver for her to sign and return.\n\nI also recommend a post-discharge MedsCheck, particularly as she will have several new medications. This is a pharmacist-led review of approximately 20 minutes and can be provided at her home if travelling is difficult. I can visit during her first week home, either Monday, November 16 or Tuesday, November 17, after 6 p.m. With her consent, you are welcome to be present. Please let me know which evening would suit you both.\n\nYou can reach me directly at 905-555-0148, extension 2. I am in the store Monday to Friday, 9 a.m. to 6 p.m. You may also reply with the transfer details, your preferred Saturday arrangement, and your choice of MedsCheck evening.\n\nWe look forward to helping Margaret settle safely back at home.\n\nSincerely,\n\nRania Haddad\nCommunity Pharmacist\nErindale Park Pharmacy\n905-555-0148, ext. 2",
+  "words": 585,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.13091661036014557,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2561773359775543,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.087890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.29737663269043,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 83.6,
+    "effort": "provider default",
+    "output_tokens": 5172,
+    "input_tokens": 1937
+  }
+}

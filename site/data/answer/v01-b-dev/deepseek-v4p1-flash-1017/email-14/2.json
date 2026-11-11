@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: jan.thornton@mailbox.example, pete.thornton@mailbox.example, carol.rigby@mailbox.example\nReplying to: none\nCc: none\nSubject: Caravan 2027 costs and weeks\n\nDear Jan, Pete and Carol,\n\nThe park bill for 2027 is in. It has gone up again, near £350 on last year, and there is nothing I can do about it as the park sets the fees. Total is £5,087 all in, split four ways same as always, so £1,271.75 each.\n\nPlease can you pay me by 31 January into the same account as before. The park wants the lot by then.\n\nIf anyone would rather do it in two lots that is fine — £635.87 in December and £635.88 in January. Just say.\n\nWeeks for next year, and there are no clashes this time:\n\nMe and Bev: 5-12 June, handover 5 June\nPete and Linda: 29 May-5 June\nJan: 7-14 August\nCarol: Easter week and a week in September\n\nPete, I went up on 26 October and put a new shower tray in. It was £140 in parts but I am not putting it on the bill, it is done.\n\nTwo reminders. Please make sure the stop tap is turned off when you leave — the park has moaned again. And the park has said caravans over 15 year old need a condition survey before the 2028 season. Ours is 16 now so it will apply to us. Nothing to do yet, just so nobody is surprised when it comes round.\n\nAny problems give me a ring.\n\nRegards\nMick",
+  "words": 230,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22417055070400238,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.024059781804680824,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2276206016540527,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 4.6,
+    "effort": "provider default",
+    "output_tokens": 1055,
+    "input_tokens": 2443
+  }
+}

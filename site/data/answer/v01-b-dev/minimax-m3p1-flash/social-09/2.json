@@ -1,0 +1,89 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "social-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can post as-is. ~437 words, ~2,830 characters including spaces.\n\n---\n\nA few people from the batch sent me a post by Kavya yesterday. She's a friend and she's helped me a lot, so this isn't a fight. But some of the facts in it are wrong, and I'd rather correct them than let them circulate for another week.\n\nFirst, the number everybody is repeating: the offers were **22% over current CTC**, not 40%. Both hires joined DabbaDost on 3 Nov. If 40% is going to travel through this cohort, I want the 22 out there instead.\n\nSecond, how it actually happened. I put a backend dev opening on our LinkedIn page and on Instahyre on 14 Sept, open to anyone. The first person applied on his own on 19 Sept. The second came through as his referral about two weeks later. Nobody from my side DMed anybody. If anyone in the batch got a DM from \"me\" offering 40%, it wasn't me — please check the number before acting on it.\n\nThird, on ESOPs. We do have a pool. It's small, but it's real, and it's on paper since January. What I said to the team was that joining meant participation in that pool. I should have been clearer about that, and I accept that.\n\nNow, the part that is my mistake. I knew where they were working from day one, and I should have called Kavya before I made the offers, not after. I told myself it was an open role on a public job board, and technically it was. But two founders in a batch of 11 startups hire from the same small pool in HSR and Koramangala. A heads up costs one phone call. I didn't make it. That's on me.\n\nKavya also sat with me till 1am in our Koramangala office the night before demo day, fixing our Razorpay webhook mess. I haven't forgotten that, and it isn't why I'm writing this.\n\nAfter the second offer got accepted, I WhatsApped her. It stayed on blue tick. Then the post came. I'm not going to argue about intent in public comments. I'd rather talk.\n\nSo here's what I'd like to propose for the cohort — one rule:\n\n> If you are interviewing someone from another batch company, give that founder a heads up before you make the offer. A call, a message, anything.\n\nThat's it. In a batch of eleven startups this will keep happening. This one rule would have prevented the entire situation.\n\nKavya, coffee or a call this week, whenever you're ok? My number's in your DMs. I'd genuinely rather talk than type.\n\n---\n\nTwo small things: I left the two engineers completely unnamed (their referral link is described but no names), and I added the \"if anyone got a DM offering 40%, check the number\" line so nobody else gets caught in a bad DM — say the word if you'd rather drop it, it costs ~180 characters.",
+  "words": 498,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "493 words, allowed 400-450 (band 400-450 ±0%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in social: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.31076768040657043,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18063169717788696,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.1259765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.1397881507873535,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.4,
+    "effort": "provider default",
+    "output_tokens": 1501,
+    "input_tokens": 824
+  }
+}

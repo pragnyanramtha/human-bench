@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: i02\nCc: none\nSubject: none\n\nMarco, Yvette called Lupe at 7:50 this morning about 9B. Tenant lost her key and wants three copies today, and I've got nothing to cut from. Desert Palms is 14 units and there's not one code in the sheet. Not one.\n\nYou know the rule. I put it out to everybody in August. Every rekey, every master, the codes go in the sheet the same day before you leave the van. Address, unit, code. I said I don't care if it's 9 at night. That was never optional.\n\nAnd this isn't the first time. Kessler in September, same thing. I told you then. I'm not going to keep having this conversation every few months.\n\nI'm not firing you. You're good with your hands and I know it. But this can't keep happening.\n\nHere's what I need. Go back out to Desert Palms today. Decode 9B at least, and all 14 if you can get to them. Get every code in the sheet before you leave the building, with the address and unit next to it. Then bring my pinning tray back. It's sitting on the counter in the leasing office and I want it in my van.\n\nCall me when you're headed out so I know you're on your way.\n\nRay",
+  "words": 211,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "212 words, allowed 225-440 (band 250-400 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2558997571468353,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03872331604361534,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.953125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.9932637214660645,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.8,
+    "effort": "medium",
+    "output_tokens": 1474,
+    "input_tokens": 2558
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To the residents of Larkspur Lofts**\n\nI’m Jess Okafor in 5A, and I’ve lived here for three years. I’m writing to clarify a drone flight from the roof deck on Saturday, October 31, and to apologize for the concern it caused.\n\nI was testing a new Halvard Mini 4 before a wedding I’m photographing in Dundee. The flight lasted about 11 minutes, starting around 4 p.m. The camera was pointed west toward the river and the Fremont Bridge throughout; I did not point it at anyone’s windows or try to record residents. I understand that a buzzing drone hovering over the courtyard can feel unsettling when you don’t know what it’s doing. I’m sorry that my flight worried anyone, especially children who saw it.\n\nI also want to say that the note posted in the lobby, which named my unit and called me a “creep,” was upsetting and not an appropriate way to raise a concern. I understand why the drone may have looked bad, but identifying and insulting a neighbor publicly can feel exposing. I hope that if anyone has a concern in the future, they’ll speak with me directly.\n\nI’m happy to show the full, unedited footage to anyone who would like to see it. You can knock on my door at 5A or email me at jess.okafor@mailbox.example.\n\nThe HOA rules don’t currently address drones. I won’t fly from the roof again until the board has decided on a rule, and I’ll ask that the topic be added to the agenda for the November 19 board meeting at 7 p.m. in the community room.\n\nThank you for taking the time to read this.\n\nJess Okafor  \nUnit 5A",
+  "words": 279,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.48063960671424866,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9994750022888184,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.895346641540527,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.6,
+    "effort": "medium",
+    "output_tokens": 359,
+    "input_tokens": 13981
+  }
+}

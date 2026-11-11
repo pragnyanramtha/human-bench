@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.19, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hi everyone. I’ve been reading Behind the Counter for a while but this is my first time posting.\n\nOne of my blister pack patients passed away recently. Her daughter came in today to return her unused packs and glucometer, and I’ve been thinking about her ever since I got home.\n\nI’ll call her Mrs. H. She came in every week for her blister packs, and over the years we got to know each other. She almost always brought me something. Sometimes it was poppy seed cake. Once it was a jar of pickles, which I honestly didn’t know what to do with.\n\nOne Ramadan, she brought me cake wrapped in foil with my name on it. She remembered I was fasting and told me not to eat it until sunset. I still remember how pleased she looked when she said it.\n\nA few years ago, I caught an interaction between a new medication and her warfarin. I called the doctor and we got it sorted. After that, Mrs. H told everyone I had saved her life. I always felt a little embarrassed when she said that. I was doing my job, but it clearly meant a lot to her.\n\nToday her daughter gave me a card. Inside, her mother had written “for my Arabic daughter” a long time ago, but had never given it to me.\n\nI went into the back room and cried. My technician covered the counter for me for a few minutes. I’m grateful she did, because I couldn’t have gone straight back out there.\n\nIn pharmacy school we learn pharmacology, interactions, what to look for and when to make a call. Nobody teaches you how to say goodbye to a patient. We talk about keeping professional boundaries, but when you see someone every week for years, they become part of your life too.\n\nMy father was a pharmacist in Egypt, and he knew all the families who came to him. When I came to Canada, I thought community pharmacy would be different. In some ways it is, but in the ways that matter, maybe it isn’t.\n\nHas anyone else had a patient who stayed with them like this? How do you say goodbye when they’ve been part of your week for so long?",
+  "words": 377,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1886872500181198,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1062581017613411,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.59375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.4503178298473358,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.3,
+    "effort": "low",
+    "output_tokens": 448,
+    "input_tokens": 19097
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Honest four stars from a small Lutheran congregation**\n\nI’m a Lutheran pastor in Minneapolis, and our congregation bought the Lindqvist Optics PT-20 last winter—February 2026—from Chancel AV for $2,140. The wall mount was another $95. We’d been livestreaming worship with a webcam since 2020, and I’m writing this because other small churches read these reviews before spending money they don’t have. My rating is four out of five stars.\n\nThe camera is mounted on the balcony rail at the back of our 92-foot nave. We use the 20x optical zoom, 1080p60, NDI HX and the plain HDMI out. PoE means one cable up to the balcony, which mattered for us. It runs into OBS on the old office PC and streams to our YouTube channel, where we usually have 30–60 viewers on a Sunday. We have nine presets stored: altar, pulpit, lectern, font, choir loft, piano, wide, and two for the chancel steps.\n\nWhat it fixed was reach and clarity. A member named Delores, who is 82 and homebound, called to say she could finally read the hymn numbers on the board. At our Easter Vigil in April, during the first “Christ the Lord Is Risen Today” with only candles, the picture got grainy but stayed usable. Our old webcam showed nothing but dots. That candlelight service alone justified the purchase for us.\n\nIt is also manageable for volunteers. Erik, our 16-year-old acolyte, runs it from the free web app on a tablet. He learned it in one afternoon. The first Sunday, the presets drifted a few degrees by the sermon, but firmware update 2.4 in March fixed that. Autofocus hunts when someone walks between the camera and the pulpit, so we lock focus on the presets. The manual is thin and badly translated. Chancel AV’s tech support—Marcy, on the phone—was excellent.\n\nOne thing people should know: audio is not the camera’s job, and it did nothing for our sound problem. We still needed separate audio work. If you’re buying this hoping it will fix your stream’s sound, it won’t.\n\nWould I buy it again? Yes, for our situation. But a congregation under 100 might do fine with something cheaper. The PT-20 made our stream watchable and let volunteers run it, but it didn’t turn us into a broadcast studio. Four stars, with the limits stated plainly.",
+  "words": 387,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38815438747406006,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5403327941894531,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.90625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.584535121917725,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 34.4,
+    "effort": "provider default",
+    "output_tokens": 2596,
+    "input_tokens": 628
+  }
+}

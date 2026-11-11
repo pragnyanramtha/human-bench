@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft — just swap in your name and institution where the brackets are.\n\n---\n\n**Open letter: why the pier logger reads warmer than the offshore buoy**\n\n*From the [University] Field Station, Monterey — for the dive shops, tidepool docent list, and club newsletters*\n\nSeveral of you have emailed to ask why the water at the pier runs warmer than the offshore buoy, and one of you suggested my logger is broken. It isn't. Here's the reasoning and the numbers, so nobody has to guess.\n\n**The numbers.** October means: pier logger 15.9 °C, buoy 14.1 °C — a gap of about 1.8 °C. In winter the gap shrinks to roughly 0.4 °C. One of you sent a screenshot with both datasets overlaid, which was genuinely useful: the gap widens through sunny afternoons and collapses overnight. That's the signature of sun heating shallow water, not of a drifting sensor.\n\n**Why they disagree.** They aren't measuring the same water. The buoy floats about 25 km offshore in deep water, sensor just under the surface, in the cold water that coastal upwelling keeps delivering. My logger hangs from a piling at 3 m, about 150 m from shore. The bay is sheltered from that upwelling, and shallow nearshore water heats in the afternoon sun. So the two instruments answer different questions: if you're diving the breakwater or working a tidepool at low tide, my number is the more relevant one; if you want the offshore picture, the buoy is. Neither is wrong.\n\n**How I check the instrument.** Every six weeks I pull the logger, download the 10-minute records, and run a two-point calibration against our lab reference thermometer — ice bath, then room-temperature bath. The last check, September 2026, gave an offset of +0.12 °C, comfortably inside the manufacturer's tolerance. Note the direction: my logger reads a fraction high, so correcting for it makes the October gap slightly larger, about 1.9 °C, not smaller. I scrape the housing before reinstalling; in August a barnacle colony and a decorator crab had moved in, and the readings didn't change once they were gone. Battery swap is annual.\n\n**The raw data.** If you want to plot the buoy and pier records yourself — or check my arithmetic, which is welcome — email me and I'll send the CSV.\n\n— [Name], Marine Biologist, [University] Field Station, Monterey\n\n---\n\nOne thing I deliberately did not do: quote a numeric spec tolerance, since you only said \"well inside spec.\" Add the figure if you'd rather make the check more concrete.",
+  "words": 422,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft; [Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4201105535030365,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.8969006538391113,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 8.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.002786636352539,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 43.6,
+    "effort": "provider default",
+    "output_tokens": 2892,
+    "input_tokens": 672
+  }
+}

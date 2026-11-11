@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**To whoever is putting rubbish in my grey bin,**\n\nI’m writing to everyone on the terrace because I don’t know who’s doing this, and I’m sick of paying for it.\n\nI rent No. 14, Aughrim Terrace. My grey bin has **14** painted in white on the lid, and it’s collected by Greenmount Bins on Wednesday mornings. They charge by weight: 41 cent a kilo. My last bill was €63.20 for two months, when it would usually be around €25.\n\nFor about a month now, someone has been putting full bags in my bin. Last Tuesday night, when I got home around 3am, the lid wouldn’t close because there were three black bags inside that weren’t mine. One had nappies in it. I found a gas bill envelope in one of the bags, but the name had been torn off; it only had the terrace on it. I also heard that a car pulled up on Tuesday evening, though no one saw who it was.\n\nThis isn’t a few bits of rubbish by mistake. It’s full bags, week after week, and the extra weight is landing on my bill. I work nights, but that doesn’t mean I won’t notice what’s happening or do anything about it. I’m not a pushover, and I’m not paying for someone else’s rubbish anymore.\n\nIf you’re stuck and need to know who to contact about your own bin, just ask. I’ll point you in the right direction. But stop using mine. Simple as that.\n\nIf it keeps happening, I’ll start securing the bin with a padlock. I’d much rather not have to do that, and I’m not looking for a row with anyone. I just want my bin left alone and my bill to reflect my own rubbish.\n\n**Please take this as a clear request: don’t put your rubbish in my bin again.**",
+  "words": 307,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.45526742935180664,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9845309853553772,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.018204212188721,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.0,
+    "effort": "medium",
+    "output_tokens": 396,
+    "input_tokens": 13891
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: @renee.whitlock\nReplying to: none\nCc: none\nSubject: Week rundown for Monday admin meeting\n\nHi Renee,\n\nHere's the rundown for the admin meeting.\n\nFriday we beat Brookhollow 31-14 and locked up 2nd in the region. Tavion Hurst had 188 yards rushing and 2 TDs, including a long one in the 3rd. Our line moved their front back 5 yards on that whole drive, best I've seen them block all year. Defensively, Deshawn Pettaway had 3 sacks and 7 tackles, and the kids voted him defensive player of the week in the locker room before the coaches even met. We also held them to 46 yards rushing in the second half.\n\nPlayoffs: we host Clanton Valley in the first round, Friday Nov 13 at 7pm at Ridge Field. Presale starts Tuesday. Dr. Pruitt, we'd love to see a full house, so please help us get folks out. Gate and chain crews need to be confirmed by Wednesday.\n\nAcademics: the 9-week grade check is in and all 52 kids on the roster are eligible. Nobody on the list. Tonya Greer's study hall on Tuesdays and Thursdays is the reason. She deserves the credit, not me, and she's keeping it going through the playoffs.\n\nBoosters: the Boston butt sale finished with 208 sold and $6,240 raised against a $4,500 goal. The money goes toward new sideline headsets. Big thanks to Hargrove's Meat Market for smoking at cost. Gene is putting out a concessions sign-up for the playoff game this week.\n\nOn transportation, if we win and go on the road, I'll get you the bus requests right away so you have them five days out.\n\nThanks,\nCoach Tillman",
+  "words": 261,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It addresses Dr. Pruitt directly rather than asking Renee to tell him about the home game and encourage attendance."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0629185140132904,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08319125324487686,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.69140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.081676006317139,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.3,
+    "effort": "medium",
+    "output_tokens": 2379,
+    "input_tokens": 2886
+  }
+}

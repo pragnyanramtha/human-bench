@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-13",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.31, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Some good news first: Priya Bhatia joins the practice on Monday 16 November. Priya is a chartered structural engineer (IStructE) and has spent nine years at a consultancy in Coventry. She’s exactly the extra experienced pair of hands I’ve needed, and she finally solves our turnaround problem.\n\nI also need to be straight with you about the last two months. Several clients waited far too long for their beam calculations and drawings — 5 to 6 weeks in September and October. A few of you were rightly unhappy, and one left a sharp review. That’s on me. I said yes to too much work on my own. In October I was doing site visits during the day and calculations until midnight; my wife started calling the office “the other house.” That isn’t a sustainable way to run a practice, and it wasn’t fair to the people waiting.\n\nThe target now is 10 working days for beam calculations and drawings. That’s the standard Priya and I will be working to. If you’re waiting at the moment, your job is moving — please message me directly if you want an update.\n\nThe free first site visit is also changing. From 1 January 2027, first site visits will cost £95, which is deducted from the fee if you go ahead. Any visit already booked when this post is published remains free, whatever its date. The free visit was a nice idea, but about a third never turned into a job, so I’d rather be clear about the charge than build it into everyone’s quote.\n\nOne example of how things have been: a couple in Harborne had their builder waiting and steel ordered. We got the calculations to them in three days, but only after they’d chased twice. They shouldn’t have had to.\n\nPriya, welcome. And when she turns up on site, please say hello — she’s joining a good bunch of clients and I’m genuinely glad she’s here.",
+  "words": 325,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3093213737010956,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3662860691547394,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.09375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.885234832763672,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.4,
+    "effort": "provider default",
+    "output_tokens": 1842,
+    "input_tokens": 489
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5/5 — Careful drawing review, fast delivery, and parts that fit first time\n\n5 stars. We used Arroyo Precision Works for a camera-to-dewar adapter plate and a light baffle tube for our near-IR camera, and I would happily use them again. We needed these parts for a Palomar observing run starting November 18, so the schedule mattered a lot. But what really earned this review was their care with the drawings and how well the finished parts worked.\n\nThe biggest save happened before they cut anything. Tiff noticed that I had put a 4.125 bolt circle on a sheet where the other dimensions were in millimeters. That dimension was actually in inches, copied by me from an older camera drawing. This was my mistake, not theirs. Ruben emailed to check, explained why the dimension did not make sense, and waited for confirmation before machining. They caught exactly the kind of error that could have left us with a beautifully made but unusable part. I really appreciate a shop that reads the drawing critically rather than just making what it says.\n\nThey also finished much sooner than promised. A larger vendor had quoted us six weeks; Arroyo quoted 21 days, and we had the finished, black-anodized parts nine days after the PO. Our order did include a $300 rush setup fee, so I want to be clear about that when comparing schedules. Even with that understood, getting the parts so far ahead of the quoted date made a real difference: we had time to check everything before the run instead of doing the first assembly at the last possible moment.\n\nRuben brought the parts to Robinson himself, with no delivery charge. After worrying about whether we would have this camera ready in time, I was ridiculously happy to see him arrive.\n\nMonday’s fit test backed up that first impression. All eight adapter-plate screws went in without forcing anything. We measured less than 0.01 mm flatness variation across the face with a dial indicator. The baffle threads were smooth, and our 300-second dark-frame test with the lab lights on showed no light leak compared with the closed dewar. The anodizing was even, with no bare spots. Everything worked on the first fit.\n\nFor other labs considering Arroyo, this is why I recommend them: they caught a consequential drawing error, delivered well ahead of their commitment, and supplied parts that passed our actual assembly and dark tests. This is one prototype order, not a claim about every job they take on, but it was an excellent experience. I would strongly support purchasing adding them to the preferred vendor list, and I would go back to them for our next instrument parts.",
+  "words": 435,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22637194395065308,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3477492034435272,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.21875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.080182075500488,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.6,
+    "effort": "low",
+    "output_tokens": 616,
+    "input_tokens": 20467
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "social-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: page:wensum-valley-hospice-bookshop\nReplying to: none\nCc: none\nSubject: Light Up a Life 2026\n\nHilary asked on here a little while ago whether we're doing the tree again this year. We are, Hilary, and please do bring your sister.\n\nFor anyone who hasn't seen it before, every winter we put a tree in the shop window on Magdalen Street and hang it with tags, each one carrying the name of somebody who is missed. Last year there were 412 of them. Thank you to every one of you who wrote one. Between you, you also kept the hospice's night sitter service going for most of a month, which is no small thing.\n\nI'll say a little about my own tag, and then I'll stop. My husband Ray died at the hospice in November 2019, so it is seven years this month. The first year I hung his tag I could hardly write it. Now I write it at the counter, with the same pen, and then I get on with the day. I only mention it because some of you will be where I was that first year, and I'd like you to know the tree is for you as well.\n\nIt is for anyone who is grieving. Ray was cared for at the hospice, but you don't need any connection to it at all. If there's someone you miss, their name is welcome.\n\nThe practical bits:\n\nTags will be in the shop from Monday 16 November. The suggested donation is £3. If you'd rather write yours quietly at home, there are envelopes on the counter to take away.\n\nWe switch the lights on on Saturday 28 November at 4pm. The tree will be in the window in good time. The Gildencroft Primary choir are coming back to sing three or four carols, and Doreen is doing her mince pies again. Going by last year, I would not arrive late for those.\n\nEvery name on the tree will be read out at the hospice remembrance service on Sunday 13 December at 3pm, in the day centre. You are very welcome to come, but you don't have to be there for your person's name to be read.\n\nOne last thing. You don't need to buy a tag, or a book, or anything else. If you would simply like to come in and stand by the tree for a few minutes, please do. Nobody will mind, and nobody will hurry you.\n\nJean\n\n---\n\nTo: dm:moira.blyth\nReplying to: s01\nCc: none\nSubject: Light Up a Life post, draft for you\n\nMoira, the tree post is saved as a draft on the page for you to look over. Nothing has gone up.\n\nThree things to check when you read it:\n\n1. You said the tree goes in the window \"on the Saturday\" and I wasn't sure whether you meant the 21st or the 28th. For now I've only said it will be in the window in good time for the switch-on. Tell me which and I'll put the date in.\n\n2. I've thanked people for the 412 tags and for keeping the night sitters going for most of a month, but I've left the £1,870 out. I didn't want the thank you to read as being about money. If Sandra would rather the figure was in, I can add it.\n\n3. I've answered Hilary Gotts by name at the top, as she asked on the page and had already mentioned her mum there herself. Say if you'd rather I replied to her separately instead.\n\nThere's a paragraph about Ray in the middle. I've tried to keep it short. If it reads as too much about me, be honest and I'll trim it.\n\nJean",
+  "words": 588,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.06212614104151726,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03520835563540459,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.21875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.5033695697784424,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 55.4,
+    "effort": "high",
+    "output_tokens": 5115,
+    "input_tokens": 3916
+  }
+}

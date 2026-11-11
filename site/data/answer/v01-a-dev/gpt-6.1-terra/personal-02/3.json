@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "personal-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Kelechi,\n\nYes, I actually posted it. A proper letter, as requested. Please take a moment on your train to appreciate the stamp and the effort it took me to find a postbox. If anybody asks, tell them it’s important correspondence about your future.\n\nYou laughed at me at my birthday when I said you should come and teach maths. I know you thought I was just trying to recruit you because you’d spent half the evening complaining about work. And to be fair, after nine years as a quantity surveyor, you have become very skilled at complaining about spreadsheets. I’m surprised your firm hasn’t put it in your job description.\n\nBut I was serious. Not in a “quit tomorrow and buy a lanyard” way. I just think you should come with me to the teacher training open evening on **Thursday 19 November at 6pm, in Lewisham**. Listen to what they say, ask all your difficult questions, and then decide whether it’s worth looking into. You don’t have to sign anything. I’ll even come with you, so you can complain to a familiar face if it’s rubbish.\n\nBefore you start, I know there’s a difference between being good at maths and being able to teach it. You got an A in Further Maths, which is annoying enough on its own, but that isn’t the main reason I’m writing. I remember you in Moremi before exams, with half the hostel coming to you for help. You somehow explained the same thing five different ways without making anybody feel like an idiot. You’d crack a joke, they’d relax, and then you’d try again.\n\nYou’re still like that. At Christmas, when my nephew was struggling with fractions, you used jollof rice portions on plates to explain them. He still talks about it. Though I notice your own portion was suspiciously generous, Professor Obi. That was not a fair demonstration of equal parts.\n\nI’m not saying helping one child over Christmas is the same as standing in front of thirty teenagers on a wet Tuesday afternoon. It absolutely isn’t. But the patience you showed him, and the way you found something he understood and built from there, is a good place to start. You’re funny too, and I think the kids would warm to you. Even the ones who act like they’re doing you a favour by picking up a pen.\n\nAt my school in Peckham, we’ve had a supply teacher covering two Year 9 maths groups since September. We’ve got 1,100 kids, and there’s always someone who needs a bit more time, or a different explanation, or just one adult who doesn’t give up on them. I’m not telling you this to make you feel guilty or suggest you can solve every problem in a school. I’m telling you because I see how much a good maths teacher can do.\n\nLast month, one of my Year 11s, Damola, finally got simultaneous equations after we’d been working on them for three weeks. You should have seen his face. He shouted, “Is that all??” and the whole class clapped. Three weeks of me going over it, trying different examples, wondering if anything was landing, and then suddenly it clicked. I went home smiling about that boy.\n\nOf course, I’ve also gone home thinking about the pile of marking in my bag and the lesson that went completely sideways. The marking can feel endless. Behaviour is wahala some days. You can plan a beautiful lesson and still spend the first ten minutes trying to get everyone settled. And some days, even when you’ve given it everything, you wonder whether you’ve done enough.\n\nYou know I started in 2019. What I may not have mentioned is that I cried in the car park twice in my first term. Twice! I was tired, overwhelmed and convinced everyone else knew what they were doing. It did get better as I found my feet and learned when to ask for help, but I won’t pretend it became easy. I know you well enough to know you’d see straight through me if I tried to sell you some shiny version of it.\n\nThe route I mentioned is the salaried training route: you get paid while you train, over one year, starting in September 2027. Yes, there would be a pay drop in that first year, and that’s something you’d need to look at properly, not wave away because I’ve written you a moving letter. There’s a pension, school holidays and the chance for pay to go up, but ask them for the actual figures and what the training year involves. Take your spreadsheet with you if you must. Finally, it might be used for good.\n\nAnd before you tell me you’re too old to start again, you’re 34, not 94. A woman in my department started teaching at 41. She had a whole career before this one and brought plenty from it into the classroom. Your nine years of work wouldn’t disappear either. You know how to deal with people, solve problems and stick with something difficult, even if that something has lately been yet another spreadsheet.\n\nI keep thinking about what you said on your last birthday: “I just want to do something that matters before 40.” I haven’t forgotten it. I’m not going to tell you your work now doesn’t matter, or that teaching is the only way to make a difference. But you’ve told me often enough that you’re bored and that every day feels the same. I think it’s worth giving yourself permission to be curious about something else.\n\nMaybe you’ll go to the evening and decide teaching isn’t for you. That’s fine. I’ll still expect a full report, and I reserve the right to remind you of the jollof-rice lesson for the rest of your life. But maybe you’ll hear something that makes you want to find out more. Applications for next September open soon, so this feels like a good time to look.\n\nSo, Thursday 19 November, 6pm, Lewisham. Come with me. No applications, no promises, just an evening of listening and asking questions. You can even bring a pen and pretend you’re checking their costings.\n\nLet me know before I have to send a second letter. Postage is not cheap.\n\nYour friend since Unilag,\n\n[Your name]",
+  "words": 1052,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.455490380525589,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.23299407958984375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.902024269104004,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.4,
+    "effort": "low",
+    "output_tokens": 1299,
+    "input_tokens": 18412
+  }
+}

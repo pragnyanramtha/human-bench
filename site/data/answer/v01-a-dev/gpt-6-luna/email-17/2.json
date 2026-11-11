@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Subject: Re: Our plan for next year\n\nKiran, Appa, Amma, everyone,\n\nI’ve just finished a run of nights and read the thread. First, I want to say plainly how thrilled I am that Amma and Appa are coming. Anika and Rohan are already imagining all the things they’ll do with you, and I can’t wait to have you here.\n\nKiran, you’re right that I should have told you earlier. I started the visa paperwork because the agent needed my sponsor letter and bank statements, but I should have looped you in then, before it was under way. I’m sorry. You deserved a chance to talk about the plan, and I don’t want to argue you out of feeling caught off guard. I do want everyone to feel heard as we work through the details.\n\nOn Appa’s heart: the visa is the UK long-term visitor visa, which allows up to six months per visit. I’ve got a quote for travel insurance with pre-existing cardiac cover at about £640 each for the six months; the agent says it covers the stent. Dr. Prakash has agreed to review Appa in March before the flight and do a video consultation in July, and he’s happy to share his notes with me. Leicester Royal is about 15 minutes from our house, and I know half the cardiology team. That isn’t a reason to take the risk lightly, but we can make a proper plan together and check the insurance details and medical arrangements before anything is final.\n\nAmma, six weeks is a fair concern. I know you haven’t been away from home this long since Paati died. The return ticket will be flexible, and you can go home sooner if you want to. There’s no expectation that you stay the whole time just because that was the original plan.\n\nAnd Ganesh Chaturthi doesn’t have to be lost. We could fly from Leicester to Pune in September and finish the trip there, or the Pune family could come to us in August. I’d be very happy to cover your flights for an August visit.\n\nFor staying here, the annexe at the back is finished: it’s on the ground floor, with no steps, and has its own shower with a grab rail. Anika has even made a laminated welcome timetable, including “Paati teaches us rasam, Tuesdays.” I should also say the idea came from Appa, not me—when Rohan showed him the vegetable patch on video in August, Appa said, “I could grow drumsticks there.” I’ve been carrying that sentence around with me ever since.\n\nCould we have a family video call this Sunday at 4pm UK time / 9:30pm India time? We can talk through the arrangements and make sure everyone, especially you, Kiran, has space to raise questions. No decisions need to be forced on the call.\n\nLove,\nMeera",
+  "words": 473,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35069766640663147,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12509432435035706,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.9765625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.249602317810059,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.1,
+    "effort": "medium",
+    "output_tokens": 597,
+    "input_tokens": 14597
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "blog-08",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# The other side of morning\n\nOn Saturday, I worked my last ever night shift.\n\nIt was in majors, from nine in the evening until half past seven on Sunday morning. I’ve been working nights for fourteen years, since my first one as an SHO in 2012. From Monday, I’m on the days-only rota.\n\nI thought I would feel straightforwardly pleased. My knees have made their views known for a while, my sleep isn’t what it was, and my GP has been clear that my blood pressure is not a joke anymore. These are good reasons. I know that. I’m relieved, and I also feel a bit like a traitor for being relieved.\n\nThis isn’t going to be a complaint about staffing. I’ve written enough of those, and this is about something else.\n\nPeople tend to imagine that nights in emergency medicine are all adrenaline. There is some of that, certainly. But mostly I think nights are about staying kind at five in the morning when you are empty. When you’ve answered the same question three times and your feet hurt and you’re trying to remember when you last had a drink of water. When the person in front of you has been awake just as long, is frightened, and has no reason to care that you’re tired.\n\nIt isn’t always a grand act of kindness, either. Sometimes it’s finding another blanket. Sometimes it’s explaining something again without letting your voice betray the fact that you’ve already explained it. Sometimes it’s sitting still for a minute when everything in you is trying to move on to the next thing.\n\nLast winter, an old gentleman held my hand at around three in the morning and told me I had his daughter’s hands. He went home three days later. I’ve thought about that small exchange often. I don’t know quite what he saw in my hands, but I was glad to be there when he reached for them.\n\nNights have a way of making a department feel both smaller and more itself. There are fewer managers around, which may or may not be connected to there being more honesty. There is kindness too, often of the practical sort: someone noticing you haven’t sat down; someone quietly taking a job off your hands; someone knowing when to leave you alone for five minutes and when not to.\n\nAnd there is the toast. At four in the morning, somebody always makes toast in the staff room. Nobody admits to starting it. You can walk in feeling that the night has been going on for about six days and there it is, as if the toaster has taken matters into its own hands.\n\nFolasade, our charge nurse on nights, has been doing them for twenty-two years. She still beats me up the stairs. I would like to say this is because she has some unfair advantage, but I have had plenty of time to investigate and can find none.\n\nI remember my first winter of nights with less affection than I feel for it now. I cried in the car park at the Infirmary because I couldn’t remember whether I’d given a second dose. I had. But I can still remember the frost on the windscreen and the feeling that I could no longer trust my own memory. I was frightened of getting something wrong, and frightened by how tired I was.\n\nFourteen years later, I know more and I’m better at recognising when I need to stop and check. But I haven’t forgotten that car park, or how alone I felt sitting in it.\n\nNights have taken things too. I missed both my nieces’ naming ceremonies, even over video, because of work. My sister in Bangalore never once complained. I’m grateful to her for that, though I sometimes think her not complaining made it easier for me not to dwell on what I was missing. There are parts of family life that happen at a particular time, and you can’t quite catch up with them afterwards.\n\nThen there is the smaller arithmetic of it: days spent asleep, meals at odd hours, the peculiar feeling of arriving home when everybody else is setting off. The sleep and the knees and the blood pressure have all added themselves to the calculation. Moving to days is the sensible thing to do. It can be sensible and still feel like a loss.\n\nAfter the shift on Sunday, I drove home down the London Road with the sun coming up and the Radio 4 shipping forecast on catch-up. I realised I wouldn’t see that light from this side again: not coming off a night shift, anyway, with the department behind me and the day just beginning for everyone else. I’ve seen it so many times that I hadn’t thought of it as something I might miss.\n\nI expect I’ll get used to being on the other side of it. There will be things I can do now that have been difficult to arrange for years, and perhaps sleep will become less of a negotiation. I’m looking forward to that, even if saying so still feels slightly disloyal to the people heading in at nine.\n\nBut the night shift doesn’t belong to me, and it isn’t ending because I’ve left it. Folasade will still be there, probably getting up the stairs ahead of everyone else. And at four in the morning, someone will put the toast on. Nobody will own up to it.",
+  "words": 913,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.365090936422348,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.37363266944885254,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.7734375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.25301238894462585,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.4,
+    "effort": "low",
+    "output_tokens": 1074,
+    "input_tokens": 19135
+  }
+}

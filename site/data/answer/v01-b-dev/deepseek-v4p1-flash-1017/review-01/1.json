@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - still the best dialogue tool I've used, but read this before you buy\n\nI've used Murmur since 2022, and I'm going to be honest about both halves of that, because people are going to buy this in the next few weeks and they deserve to know what they're getting.\n\nThe short version: the tool is good, the current version is broken, there is a fix, and there is no support any more.\n\nI make Lanternfolk. The first prototype of that game was literally the ferryman scene, built in one weekend in 2022 with Murmur. That weekend is why I quit my job at the mobile studio. I'm not claiming that's a normal experience, but it tells you what the tool did for me: I had an idea on Friday and a playable branching scene by Sunday, having never built one before. Since then it's carried 412 dialogue nodes and nine languages through the CSV export, and the barks system has been in every build since.\n\nNow the part that matters if you're buying today. 3.2.0 has a save bug: variables reset to default when you load a save made in 3.1.x. The save key changed from node path to a uid. In my game the ferryman forgets you already paid him, which is funny right up until it's your game. If you're on 3.2, roll back to 3.1.4 — replace the Murmur folder in your project's addons folder with the 3.1.4 release, keep a copy of it, and don't update again. More people than just me have confirmed this; my original forum post is still up if you want the details. Old saves load fine on 3.1.4.\n\nWhat you should not expect is a fix for 3.2.0, or an answer if something else breaks. Ines has stepped back and said so herself, she isn't hiding it. Price a purchase accordingly. If you want a tool you can lean on for support, this isn't it right now and I'd wait. If you want a very good node-based dialogue system at 3.1.4 and you're comfortable owning the code, it's still worth it. It's 29 dollars now, and that's cheap for something you keep.\n\nI also want to say something about the one-star review calling this abandonware and saying she took the money and ran. I paid 19 dollars for this in 2022, with an unlimited commercial licence, and got four years of updates for it. Four years. You can be angry that 3.2 broke your saves, I was, without deciding that the person who shipped those four years doesn't care about customers. That review is cruel and it's wrong on the facts. \"Refund or GTFO\" is not a thing you say to someone who has been quietly maintaining your dialogue system since 2022.\n\nThe good news is the source is MIT now. Someone can fork it, fix the save key, and put the thing back on its feet. It might even be me, once Lanternfolk is out in December and I've slept. Honestly I'd rather it was someone with more free time than me, but the licence means it's possible, and that's more than most abandoned tools give you.\n\nThank you, Ines, for four years of updates and for the weekend that changed my career. No weirdness intended, I just think it should be said somewhere in this comment section. I hope you get to play Lanternfolk when it's done.\n\nFour stars. Five for 3.1.4, one for the current state, four because what's actually there is still very good, and now it's ours.",
+  "words": 578,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20429928600788116,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12271765619516373,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.208984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.648869514465332,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "provider default",
+    "output_tokens": 3194,
+    "input_tokens": 1934
+  }
+}

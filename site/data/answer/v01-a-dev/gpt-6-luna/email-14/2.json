@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: jan.thornton@mailbox.example, pete.thornton@mailbox.example, carol.rigby@mailbox.example\nReplying to: none\nCc: none\nSubject: Caravan 2027 costs and weeks\n\nDear Jan, Pete and Carol,\n\nThe park bill for next year has come in at £5,087, which is nearly £350 up on last year. Split four ways as usual (me, Jan, Pete and Carol), that works out at £1,271.75 each. I know it’s another rise, but the park sets the fees, so there’s not much I can do about it.\n\nPlease get your share to me by 31 January, into the same account as before. The park wants the full amount by then. If it’s easier, you can pay in two instalments: £635.87 in December and £635.88 in January. That’s fine for everyone.\n\nThe weeks are:\n- Pete and Linda: 29 May–5 June (May half term)\n- Me and Bev: 5–12 June, with handover on 5 June\n- Carol: Easter week and a week in September\n- Jan: 7–14 August\n\nI’ve checked everyone’s requests against the weeks and there are no clashes this year.\n\nPete, I went up on 26 October and fitted a new shower tray. The parts came to £140, but I’m not putting that on the bill.\n\nA couple of reminders: please turn the stop tap off when you leave, as the park has moaned about it again. Also, the park says vans over 15 years old need a condition survey before the 2028 season. Ours is 16 years old, so we’ll need to get that sorted.\n\nAny problems, let me know.\n\nRegards,\nMick",
+  "words": 237,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3529040515422821,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.021344929933547974,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6796875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.478086471557617,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.7,
+    "effort": "medium",
+    "output_tokens": 378,
+    "input_tokens": 15873
+  }
+}

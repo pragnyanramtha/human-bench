@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.47, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Sizwe, first things first: **leave the key out and don’t crank it again.** Petrol doesn’t lubricate the diesel pump properly, and every crank can make things worse.\n\nKobus means well, but that’s old Land Rover advice. Don’t add diesel and don’t drive it: the petrol will still be in there, and a modern common-rail system is a different animal.\n\nBecause it ran, stalled and was cranked again, the pump and injectors **could** be damaged. That doesn’t mean the engine is finished or that you’re definitely in for R40 000. It needs to be towed and checked first. If the pump and injectors are OK, a tank drain, line flush, new fuel filter and bleed usually runs **R2 500–R4 500**. I can’t promise your total tonight before we inspect it.\n\nCheck your insurance policy for roadside towing before paying a tow guy cash. My shop’s in Umbilo, open Saturday 7 to 12, and Thabo, my guy, can drain it first thing after we’ve checked it.\n\nAnd please borrow a bakkie for tomorrow’s sound system and cake anyway. Don’t plan your wedding around a drained tank!\n\nIf it helps, in my first year as an apprentice in 1995, I put diesel in the boss’s Golf. He still tells that story at every braai. You’re in good company, laaitie.\n\nCongrats on the wedding, Sizwe. Now leave that key alone and go get some sleep.",
+  "words": 231,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46662649512290955,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13384567201137543,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.609375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.003175735473633,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.2,
+    "effort": "low",
+    "output_tokens": 321,
+    "input_tokens": 18773
+  }
+}

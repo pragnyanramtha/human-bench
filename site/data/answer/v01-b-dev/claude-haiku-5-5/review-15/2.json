@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "review-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's a draft you can post as-is or tweak:\n\n**Good value and mostly solid work, but they ran late and chipped a lamp**\n\nMoved from Phibsborough to Drumcondra on Saturday 17 October. It was a 2-bed flat but mostly my stuff, and the new place was a 4th floor walk-up with no lift. Booked through their website, paid the €50 deposit by Revolut, and went with the €340 quote for up to 4 hours with two lads and the van. It took about three and a half hours. Overall it was good value, with a few things worth knowing before you book.\n\nThe good bits first. It was the best price I found. The other quotes I got were €450 and up for something similar. Dessie knocked €40 off after the late start without me asking, which I didn't expect and appreciated. The lads were careful with most of the stuff, and everything else was wrapped in blankets. They also put the bed back together without being asked and took away a flat-pack shelf I'd been meaning to get rid of. When the couch wouldn't make the turn on the third-floor landing, one of the young lads took the legs off with an Allen key from his pocket and got it through. Good problem-solving on the day.\n\nThe downside is the timing. We were booked for 9am and they didn't arrive until about 10:30. They did text at 8:40 to say the previous job had overrun, which was decent of them, but it still meant sitting on boxes with a cold coffee for over an hour. For a relaxed move that's an annoyance. If you have a tight handover with a landlord or a set key pickup, build in a buffer and ask them to confirm the start time the day before. Don't assume the morning slot will hold.\n\nThe other thing is that the brass base of my nan's floor lamp got chipped. They wrapped everything else carefully but missed that piece, and it's the one I'd have wanted looked after most. I don't think it was careless, but if you have anything fragile or sentimental, flag it when you book and check that it's properly wrapped before the van leaves.\n\nWould I use them again? Probably, mainly for the price and because the actual work was solid. I'd just go in knowing they can run late and that fragile items need to be specifically mentioned. That's why it's four stars rather than five.\n\nIf you're moving, take photos of anything valuable before loading, confirm the start time the day before, and tell them about any fragile items at the time of booking.",
+  "words": 444,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "Here's a draft"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6394922733306885,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.39100027084350586,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 11.3125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.434595584869385,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 44.5,
+    "effort": "medium",
+    "output_tokens": 2258,
+    "input_tokens": 1498
+  }
+}

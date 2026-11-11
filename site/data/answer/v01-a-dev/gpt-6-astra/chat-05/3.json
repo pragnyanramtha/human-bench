@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "chat-05",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.23, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: #team-selection\nReplying to: s01\nCc: none\nSubject: Ustroń lineup — request for review before Friday\n\nMarek, I am asking you to reconsider the proposed lineup before the names are submitted on Friday, 13 November. I do not agree with placing Liliana in reserve on the basis of the November rating list alone.\n\nIn your message of 1 October, you stated that selection would take account of both the November FIDE list and form in club events, including the rapid qualifier on 24 October. You also said that the players’ coaches would be consulted before the final lineup. I have not been consulted about Liliana, and I would like my assessment and her qualifier result to be considered before the decision is finalised.\n\nLiliana finished second in the qualifier with 5.5/7, ahead of Maja on 4.5/7 and Igor and Antoni on 4/7. She beat Maja and Antoni and drew with Kacper. While a rapid qualifier is not the same as a classical event, it was explicitly included in the announced selection criteria and should carry weight.\n\nThe November list puts Igor at 1874 and Liliana at 1851. However, as noted in the rating announcement, her 81-point loss came entirely from Katowice. For health reasons, her performance there was not representative of her usual strength, although she completed all her games. She also missed approximately two weeks of training in October. My assessment from her last three lessons, all of which were very good, is that she is now back to her normal level.\n\nThis is not a criticism of Igor, whose ability and steady performances I respect. My concern is that the announced criteria and consultation process should be applied consistently.\n\nI therefore ask that Liliana be moved to board 2. Alternatively, I would support a short match between Liliana and Igor before Friday, with the format and selection implications agreed in advance. Please confirm that the lineup will be reviewed with the relevant coaches before submission and which of these options we can arrange.",
+  "words": 319,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23088540136814117,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.32891735434532166,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.234375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.76619815826416,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.2,
+    "effort": "medium",
+    "output_tokens": 426,
+    "input_tokens": 14986
+  }
+}

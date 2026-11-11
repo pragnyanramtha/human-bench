@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nright, first up — sorry i went quiet sunday, that was me being useless not you. you said you're not ok and i should've picked up. you're not on your own here. i've been on the phone all day and stuff is already sorted. not a \"we're thinking of you\" text, actual plans.\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nwed's the big one. sam took my shift so i'm off all day, and dad's letting me borrow the trailer (fuel back in the car this time, promise). i'll drive it up to priya's before her mum's down from the coast and we'll get your stuff out of the garage and into mine so it stops sitting in garbage bags. ruby's put the couch on for as long as you need it — heads up, clover will 100% try to sleep on you and she does not care.\n\nalso if you haven't started the insurance claim yet, do that this week. i'll come over and help with the photos and the form, landlord's not getting paid for being useless.\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nband stuff too — tully's got the lantern room on sat 28th, all the door money to you, and jono's mates out of hollow pines are playing. jono's cousin has an old yamaha keyboard sitting in a shed, not a nord but it'll do you till you're sorted. and we're rebuilding the setlist, if the notebooks are pulp half of us have your songs in our heads anyway.\n\nand you're not quitting soft servo, and you're not bolting back to rocky in the middle of a hailstorm because a landlord can't be bothered logging a maintenance request. that conversation happens next week when you've got a roof over your head. you dragged yourself out to gatton at 2am for me when the car died, least i can do is haul your stuff out of a garage.",
+  "words": 308,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39038893580436707,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1333986520767212,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.736431837081909,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.9,
+    "effort": "provider default",
+    "output_tokens": 2769,
+    "input_tokens": 1574
+  }
+}

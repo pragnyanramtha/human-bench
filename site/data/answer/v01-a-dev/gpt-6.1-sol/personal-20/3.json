@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear friends, neighbors, church family, and all my longtime ladies,\n\nFirst, I am OK! Thank you for all the calls and messages. My phone has been ringing nonstop, so please help me pass this around. After 11 years on Bellaire Blvd, Lotus Glow Nails has had a surprise I never wanted!\n\nOn Sunday, November 8, around 2 a.m., a car came through our front window. Nobody was inside, thank God, and the driver is OK too. The police came, and her insurance will cover the damage.\n\nOur front glass is gone, and one pedicure chair is smashed. The car stopped exactly at that chair, like she came in wanting a spa day. My daughter says we had the first drive-thru pedicure in Houston. I told her, please, we are not adding that service!\n\nThe floor looks like a rainbow threw up. My husband says finally the shop is modern art. After 11 years, this is not the remodeling I had in mind.\n\n**We are closed right now. Our contractor expects us to reopen Monday, November 16, but the city inspector must check the wall and approve it before we can open.** I will let everyone know when it is confirmed.\n\n**This week, Trang, Kim, and I are working at my cousin Hoa’s salon, Pearland Nail Bar. For nails or appointment questions, please call or text my cell: 832-555-0147.**\n\nYour Lotus Glow Nails gift cards are still good. Nobody will lose their money, so please do not worry about that.\n\nI cried a little in the morning, but now I am OK. Glass and chairs can be replaced. I thank God nobody was inside.\n\nThank you for checking on us, for your prayers, and for bringing food. Mrs. Dung brought pho this morning, and that helped my heart a lot.\n\nPlease pass this along, have a little laugh with me, and don’t worry too much. We will see you soon!\n\nWith love,  \nYour friend at Lotus Glow Nails",
+  "words": 327,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3592865765094757,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18088006973266602,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.83984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.9100183844566345,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.0,
+    "effort": "low",
+    "output_tokens": 420,
+    "input_tokens": 18245
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars — four years of use, but read this before buying 3.2\n\nFour stars. Murmur has been essential to my game, but I would not recommend buying the current version without understanding the save bug and the fact that there is no ongoing support from Ines.\n\nThe practical bit first: in 3.2.0, loading a save made in 3.1.x resets Murmur variables to their defaults in our project. In Lanternfolk, that means the ferryman forgets you've already paid him, along with other dialogue state that needs to persist. That is a serious bug, not a small inconvenience, and it's why we're staying on 3.1.4 for launch.\n\nRolling back to 3.1.4 fixed it for us: our old saves load correctly again. Another user confirmed the same result in my bug thread. To roll back, replace the Murmur folder inside your project's addons folder with the folder from the 3.1.4 release. Back up your project and saves before changing versions, keep a local copy of 3.1.4, and don't update it to 3.2. Test your own saves afterwards; I can say this works for our project, not promise it fixes every possible setup. My forum thread is titled “3.2.0: variables reset to default after loading a save” if you want the reports.\n\nI also don't know whether starting a completely new project on 3.2 avoids every save-related problem. What we reproduced is the problem loading older saves. I wouldn't turn that into a claim that everything else is safe.\n\nWith that warning out of the way: I've used Murmur since August 2022. I paid $19 then; the listing is $29 now. The first Lanternfolk prototype was literally just the ferryman scene, built in one weekend with Murmur. That was the weekend that convinced me to quit my job at a mobile studio and try making this game. Honestly, Lanternfolk would not exist without it.\n\nWe're now using it for 412 dialogue nodes and nine languages through the CSV export. That's the less romantic part of why I'm giving it four stars: it has done a lot of actual work for us over four years, and on 3.1.4 it is still doing that work.\n\nI understand the negative reviews. Broken saves are awful, and people buying today deserve a clear warning, not just fond memories from those of us who bought years ago. But I think grimbyte's “took our money and ran” review is unfair, and the personal attack is cruel. I got four years of updates for $19. That doesn't make the broken release okay, but it isn't the same thing as taking the money and disappearing without delivering anything.\n\nThe source is now public under MIT, so someone can fork it and continue maintaining it. That is a possibility, not a support plan anyone should pay for on faith. I might look at it myself after Lanternfolk launches, but I'm not promising a fix or taking over maintenance.\n\nSo: four stars for the tool I've used, not five because 3.2 has a serious bug and there is no ongoing support from its original developer. If you need something maintained and supported right now, I'd look elsewhere.\n\nThank you, Ines. Murmur helped me make a game I wasn't sure I could make. I'm very glad you made it.",
+  "words": 532,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28519073128700256,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.21416932344436646,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.6953125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.68814754486084,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.3,
+    "effort": "low",
+    "output_tokens": 721,
+    "input_tokens": 20463
+  }
+}

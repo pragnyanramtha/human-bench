@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: DRAFT — Wellsford Road collisions: what we got wrong and what is changing\n\nDraft for standards review only. Not for publication or scheduling.\n\nWellsford Road collisions: what we got wrong and what is changing\n\nBy Nell Garside\n\nOn 2 November, we reported that Wellsford Road had recorded 41 injury collisions between 2021 and 2025, placing it first in our table of Bristol roads. That was wrong. The correct number is 23, placing it sixth. Three of those collisions were recorded as serious; none was fatal.\n\nThe corrected table has been online since Friday, 6 November, with a correction on the article. But changing the table does not, by itself, give residents the explanation they are owed. The original story received more than 48,000 page views. The wrong number travelled, and a correction cannot be assumed to have reached everyone who saw it.\n\nA member of the Fishponds Streets Forum checked the Department for Transport data herself and could not reproduce our figure of 41. She was right to challenge it. We are sorry to residents for publishing an incorrect figure and for the concern it caused, particularly among parents asking whether it was safe to walk their children to Wellsford Primary. Those are not abstract consequences of a spreadsheet error.\n\nWhat went wrong\n\nOur analysis involved joining collision records to roads. That join duplicated some collision–road pairs: the same collision appeared twice in a road’s tally and was counted twice when it should have been counted once.\n\nFor Wellsford Road, removing those duplicate entries reduced the total by 18, from 41 to 23. Those 18 entries were not additional collisions. They were repeat entries for collisions already included.\n\nThe counting rule is now explicit: each unique accident index, the identifier attached to a collision record, is counted once per road. Our original checks failed to catch the duplication. Responsibility for that failure rests with the Data Desk as a whole.\n\nWhat the corrected figures show\n\nWe reran the whole citywide table, rather than checking Wellsford Road alone. The corrected leading six roads are:\n\nKingsmere Road: 32 injury collisions\nAlder Hill: 31\nTanner’s Way: 28\nCrossfield Road: 26\nHambrook Lane: 24\nWellsford Road: 23\n\nThe analysis covers roads within the city council boundary and collisions in which at least one person was injured. These are counts of collisions, not counts of people injured.\n\nIt is also important not to replace one misleading impression with another. Twenty-three injury collisions, including three serious collisions, remain a matter of concern. Correcting our error does not establish that Wellsford Road is safe, or settle parents’ questions about a particular walking route. Nor does a ranked count alone measure the risk of making an individual journey.\n\nWhat we are changing\n\nFrom now on, we will publish the cleaned data and analysis code alongside our ranked tables, so readers can examine how the figures were produced. Before any ranked table is published, a second analyst will independently reproduce it. That is a check our process should have required before this story ran.\n\nWe would also welcome the opportunity to attend the Fishponds Streets Forum meeting at Fishponds Library on 17 November, at 7pm, to explain the error and answer questions in person.\n\nReaders should not have to reconstruct our analysis to discover that a headline figure is wrong. In this case, a reader did that work. We owe residents both the correction and a clear account of how we will prevent a repeat.",
+  "words": 563,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.054755181074142456,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03489965945482254,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.625109672546387,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.0,
+    "effort": "low",
+    "output_tokens": 793,
+    "input_tokens": 21365
+  }
+}

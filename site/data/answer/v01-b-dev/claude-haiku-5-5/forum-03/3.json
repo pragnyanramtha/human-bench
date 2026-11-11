@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-03",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: t-achilles\nReplying to: p01\nCc: none\nSubject: none\n\nHi Mel, that sounds like a classic mid-portion Achilles tendon overload, which is really common after a fast jump in mileage. I can't say more without seeing it, so take this as general info, and get it checked if you're unsure.\n\nMorning stiffness, a lump, and pain that eases with warm-up but comes back after running is more typical of tendon overload than a tear. It's usually very manageable with the right load.\n\nI'd back off the volume for a bit rather than stopping completely. Keep runs easy and short, and see how it responds.\n\nHeel drops are fine, but the better evidence now is for slow, heavy calf raises, starting on both legs and moving to single leg when you can. Something like 3 sets of 15 with a 3 second lower. On bad days, isometric holds in the calf raise position can help settle things.\n\nFor pain, up to about 3/10 while you're doing the work is okay, as long as it's settled by the next morning. If it's worse than that, or still sore the next day, cut back the load.\n\nPlease avoid hard stretching until it burns, as that tends to irritate it more. Steroid injections into or around the tendon are also generally avoided because of tendon risk, so ask about other options first.\n\nOn the antibiotics point, some antibiotics, particularly fluoroquinolones like ciprofloxacin, carry a known risk to tendons, and the risk goes up with age and steroid use. If you've been prescribed one and notice tendon pain, tell your doctor straight away.\n\nIf it isn't settling within 3 to 4 weeks, see any sports physio. There are plenty in Bayswater who can sort this out.\n\nThe urgent one: if you feel a sudden pop or a kick in the back of the leg, or you can't push off on that foot, stop running and calf work and get it checked that day at a GP or ED. That could be a rupture and needs seeing quickly.",
+  "words": 333,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It does not address heel-drop frequency or the need to modify running in light of Mel's post-run limping."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18581126630306244,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13174854218959808,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.618375778198242,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.6,
+    "effort": "medium",
+    "output_tokens": 2354,
+    "input_tokens": 3193
+  }
+}

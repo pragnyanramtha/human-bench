@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To whoever is putting their rubbish in my bin,\n\nI'm sure you know who you are, so I won't waste much time on it. The grey bin outside No. 14, with the number painted on the lid in white, is mine. It's not a free skip for the road.\n\nLast Tuesday I got home from a gig around 3am and the lid wouldn't close. There were three black bags stuffed in there that aren't mine. One of them had nappies in it. Greenmount Bins charge by weight, 41 cent a kilo, and my last bill came to €63.20 for two months. It's usually around €25. So every kilo you put in there is coming out of my pocket, and I'm not paying for it anymore.\n\nThis isn't a few bits in a bag. It's full bags, most weeks, for about a month. The bin goes out Tuesday night and gets collected Wednesday morning, so whoever is doing this is counting on nobody noticing. A neighbour saw a car pull up on Tuesday evening, and I found a gas bill envelope in one of the bags. The name's been torn off, but the terrace is still on it. I'm not going to point fingers, but if you're the one who pulled up that night, you know it was you.\n\nI work nights and I'm not a pushover. If this keeps going, I'll be putting a padlock on the lid, and then nobody's getting a free ride. If you're not sure how the bin charges work, ask me and I'll tell you who to ring. It's not hard. Just stop.\n\nNo. 14",
+  "words": 270,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1440574675798416,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13815777003765106,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.2177734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.3622589111328125,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.3,
+    "effort": "medium",
+    "output_tokens": 1717,
+    "input_tokens": 1341
+  }
+}

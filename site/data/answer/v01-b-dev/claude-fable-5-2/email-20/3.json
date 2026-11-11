@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.50, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Priya,\n\nFirst thing: I'm not hanging this on you with Greg. The questionnaire library had old draft language sitting in it and nobody owns that thing. Any of us could have pulled that answer, and that's what I'm telling him. He's going to be mad no matter what, and that's mine to deal with, not yours.\n\nI won't pretend I'm calm about it. Brazos is 186k a year on a three year term, I've been on it since February, and I already told my wife we'd finally do the Big Bend trip off this commission. So yeah, I'm sweating a little. But you're also the person who stayed on until 9 in September rebuilding their demo environment when the route import broke, and that's a big part of why this deal got as far as it did. One bad copy paste doesn't change that for me.\n\nI also think this is fixable if we're honest and fast. Dana seems strict but fair. Here's where things stand:\n\nI talked to Marcus on security. He can do a call with Dana and their legal team Thursday at 2, and I'd like you on it too.\n\nThe Type II audit window closes Jan 31 and the report is expected by March. Marcus says we can get them a bridge letter from the auditor to cover the gap, so we're not showing up with only an apology.\n\nWhat I need from you tonight is a corrected Q14 that says what's true: Type I issued in April, Type II in progress, audit window closing Jan 31. Send it to me first, not Dana. I want to read it next to what Marcus plans to say so it all lines up before anything goes out.\n\nAnd please don't beat yourself up over this. We'll fix it together.\n\nJordan",
+  "words": 302,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49948573112487793,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09066913276910782,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.3515625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.501376152038574,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.2,
+    "effort": "high",
+    "output_tokens": 1969,
+    "input_tokens": 2142
+  }
+}

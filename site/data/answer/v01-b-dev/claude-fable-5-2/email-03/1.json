@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: d.kerrigan@northmail.example\nReplying to: m01\nCc: none\nSubject: Re: Blister packs for my mother - new patient\n\nDear Mr. Kerrigan,\n\nThank you for your email. I am sorry to hear about your mother's fall, and I am glad she is coming home. I am the pharmacist at Erindale Park Pharmacy and we would be happy to look after her. Here are the answers to your questions.\n\n1. Blister packs and cost\nYes, we prepare weekly blister packs, with each day divided into four dosing times. There is no charge for the packaging. Your mother pays only the normal dispensing fees, and at 81 the Ontario Drug Benefit covers most of that.\n\n2. Delivery or pickup\nWe deliver on Tuesdays and Fridays between 2 and 6 pm, free of charge within 8 km, and her building is in our delivery area. You are also welcome to pick up at the store if that suits you better.\n\n3. Moving her prescriptions\nWe do this for you. We call her current pharmacy and transfer everything, and there is nothing for her to sign for the transfer. I only need the name and address of the pharmacy on Dundas and her OHIP number. Please phone me with the health card number instead of emailing it.\n\n4. Going over her medication list with you\nI would be glad to. There is one step first. Because you are not yet listed on your mother's file, we need her permission before we can discuss her medications with you. We record this on a short Family Communication Consent form that she signs. We ask this of every family, and it is there to protect her privacy. She can sign it when the first packs are picked up, or we can send it with our driver. Once we have it, I can go through everything with you.\n\nI would also like to offer her a MedsCheck, which is a 20-minute review of all her medications that we do after a hospital stay. I can come to her home for this in her first week, on Monday the 16th or Tuesday the 17th, after 6 pm. If you can be there, we can go through the new list together in person, which may be easier for her than the phone.\n\nTiming for Thursday\n\nThe first packs take about 48 hours to prepare once we have all of her prescriptions, both the new ones from the hospital and the transfers. This means they will not be ready on the day she is discharged, so I have two requests.\n\n- Please ask the discharge team to fax her prescriptions to us early on Thursday morning. If they do, the packs will be ready on Saturday. We can hold them for pickup, or make a special delivery on Saturday before 1 pm. Please let me know which you prefer.\n\n- Please confirm with the discharge team that she will go home with a supply of her medications to last until Saturday, and that someone will be with her to help with every dose until the packs arrive. Since she has been mixing up her pills, I would not want her managing the new ones alone for those first days.\n\nIf you can send me the details of her current pharmacy as soon as possible, we will have the transfer done before Thursday.\n\nYou can reach me directly at 905-555-0148, ext. 2. I am in the store Monday to Friday, 9 am to 6 pm. The hospital can call the same number if they need our fax number.\n\nWe look forward to helping your mother settle back in at home.\n\nKind regards,\n\nRania Haddad\nPharmacist\nErindale Park Pharmacy",
+  "words": 597,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11659567803144455,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04277019575238228,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.7578125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6761093139648438,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 42.4,
+    "effort": "high",
+    "output_tokens": 3980,
+    "input_tokens": 3533
+  }
+}

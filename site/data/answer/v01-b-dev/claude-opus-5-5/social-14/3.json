@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "coherent, does task, private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Hey y'all. Thanksgiving is coming up, so I figured I'd say this here instead of everybody having to keep asking Mama.\n\nYes, I'm coming. Thursday Nov 26 at Aunt Denise's in Macon, eating around 3. I'm bringing the mac and cheese and two sweet potato pies, so plan accordingly.\n\nFor the folks who weren't there last year: things got heated at the table over my job and I said some things I shouldn't have. Somebody took a shot at the work I do, and instead of letting it roll off, I came back with a smart remark that was disrespectful. That part was on me. Grandma ended up sitting out on the porch for about an hour, and I still feel bad about that. Grandma, I'm sorry. That was your table and your holiday, and I didn't act right.\n\nI want to be clear about one thing though. I'm not sorry for the work I do. I'm proud of it. What I'm sorry about is how I talked. Those are two different things.\n\nAlso, so nobody wastes their breath: I can't talk about open cases. It's a confidentiality thing, not me being difficult. Any questions about \"the lawsuit\" are going to get you a whole lot of nothing from me.\n\nNobody at that table is a bad person. Some of us just like to poke, and some of us (me) poke back. I'd rather we both skip it this year.\n\nSo here's my ask. For one day, can we keep the table to food, football, babies, and Tasha's new boyfriend? Tasha, I'm sorry in advance lol. Work and politics will still be right there waiting for us on Friday.\n\nI really want this to be a good day. I miss us all being together without anybody tiptoeing around. See y'all on the 26th, and somebody save me a corner piece of the dressing.\n\nLove y'all ❤️\n\n---\n\nThat's about 330 words. I left out the birthday thumbs-up because anyone who knows Ray would instantly know who you meant, and you didn't want to call him out. That detail might be better as a private text to him, something like \"saw your thumbs up, appreciate it, looking forward to seeing you.\" Also, I added the dressing line just for flavor. Cut it if that's not your thing.",
+  "words": 386,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent",
+      "does_task",
+      "private"
+    ],
+    "reasons": [
+      "The closing task note names Ray, and the post omits his August birthday thumbs-up."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3096490204334259,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10221117734909058,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.5,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.284120559692383,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.0,
+    "effort": "medium",
+    "output_tokens": 1523,
+    "input_tokens": 1427
+  }
+}

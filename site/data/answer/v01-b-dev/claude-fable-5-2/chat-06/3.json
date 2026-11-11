@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: @marco\nReplying to: none\nCc: none\nSubject: none\n\nMarco. Desert Palms. You told me Saturday 14 units all good. Its not all good. There is not one code in the sheet for that job. Last thing you logged was Ortiz Tire on the 12th.\n\nYvette called Lupe at 7:50 this morning. Tenant in 9B lost her key and wants 3 copies today. I got nothing to cut from. Not a thing. So now we look like we dont know what we did out there two days ago.\n\nAnd you left my pinning tray sitting on the counter in their leasing office with pins still in it. We had to hear that from Yvette too.\n\nThis is the second time. Kessler job in September, same thing, and I told you then. I put it out to everybody in August, codes go in the sheet same day, before you leave the van. Thats not a suggestion and its not optional. I dont care how late it is or how tired you are.\n\nHeres what happens today. You go back out to Desert Palms. Decode 9B first and get me that code right away so those 3 keys get cut and over to Yvette today. Then decode the rest of building B while youre there, all 14 if you can get to them. Whatever you dont get, you tell me which units and we figure out when. Every one goes in the sheet before you pull out of that parking lot. Address, unit, code.\n\nGet my tray back from the leasing office while youre there.\n\nIm not letting you go over this. Youre good with your hands and I want you here. But Im pissed, and this cant keep happening. I shouldnt have to chase codes on a job you told me was done. A rekey isnt done till the codes are in the sheet.\n\nLet me know when youre headed out there.",
+  "words": 312,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.12370987981557846,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.011065063066780567,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.09375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.53508996963501,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.1,
+    "effort": "high",
+    "output_tokens": 2398,
+    "input_tokens": 2535
+  }
+}

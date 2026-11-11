@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.18, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: Review: Arroyo Precision Works - adapter plate and baffle (PO 26-41187)\n\nI'm a postdoc in the Ostrowski group, and we ordered a camera-to-dewar adapter plate and a light baffle tube from Arroyo for our near-IR camera (PO 26-41187). Both parts were 6061-T6, black anodized. We needed them for a Palomar run on Nov. 18, so the schedule mattered for real.\n\nThey were excellent on the technical side, and I want to be specific because that's the part that matters. Their machinist caught a bolt-circle callout on my drawing before cutting: sheet 2 said 4.125 while the rest of the drawing was in millimeters. It should have been 4.125 in (104.8 mm), not 4.125 mm. That was my mistake. I copied the dimension from an old drawing of the previous camera and didn't convert it. If they had just cut to the drawing, the screws would have landed inside the bore. Instead they stopped and emailed me, I confirmed, and they made the part right. That is exactly what I want from a shop. They actually read the drawing instead of assuming the customer got everything right.\n\nDelivery was also much better than promised. Purchasing's PO quoted 21 days; the parts were at Robinson Lab 9 days after the PO. Ruben drove them over himself on his way to another supplier, at no charge. I was happy enough that I almost hugged him. We had a big vendor quote six weeks for the same parts. Arroyo was faster and, based on this, more careful.\n\nFit test was Monday, Nov. 9, and everything worked. All eight screws went into the dewar without forcing. Flatness across the face was under 0.01 mm on the dial indicator. The baffle threads were smooth, and the dark test showed no light leak: 300 s dark frame with the lab lights on, same as a closed dewar. The anodize was even with no bare spots. The inspection sheet came with the parts. We're good for Palomar.\n\nI know reviews often turn into \"great shop, five stars,\" so to be clear: the reason I'd use them again is that they caught a drawing error that could have cost us the run, they hit a schedule that mattered, and the parts fit the first time. Five stars. I'd recommend them to other labs doing one-off instrument parts, and I'd support adding Arroyo to the department's preferred vendor list.",
+  "words": 388,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.18497012555599213,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14946921169757843,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.046875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.412510395050049,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.3,
+    "effort": "provider default",
+    "output_tokens": 4493,
+    "input_tokens": 1907
+  }
+}

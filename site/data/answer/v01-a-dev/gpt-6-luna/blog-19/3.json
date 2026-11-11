@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: What went wrong with our Wellsford Road figures\n\nOn 2 November, we published an analysis of injury collisions on Bristol roads which said Wellsford Road had the highest total in the city: 41 between 2021 and 2025. That figure was wrong. The corrected total is 23, placing Wellsford Road sixth in the ranking.\n\nThe error came from the way we combined the collision records with road data. Some collision–road pairs were duplicated in that join, so the same accident index was counted more than once on a road. We have removed 18 duplicate entries from Wellsford Road’s total. We now count each accident index once per road.\n\nThe rest of the corrected table is: Kingsmere Road, 32; Alder Hill, 31; Tanner’s Way, 28; Crossfield Road, 26; and Hambrook Lane, 24. We reran the citywide table. No other road changed by more than two places. Of the 23 recorded injury collisions on Wellsford Road, three were classed as serious and none as fatal.\n\nWe updated the table and added a correction to the original article on 6 November. That correction did not give readers the full explanation they were owed. The original article has had more than 48,000 views, and the wrong figure was shared widely. A line at the bottom of the page was not enough to account for what happened or the impact the number had.\n\nResidents were right to question the figure. A Fishponds Streets Forum member checked the published Department for Transport data and could not reproduce our total. They were right: the number did not hold up. We have also heard that parents were asking whether it was safe to walk their children to Wellsford Primary. We understand why an alarming figure presented as a ranking would prompt those questions.\n\nWe are sorry to residents for publishing a figure that was inaccurate and for the concern and confusion it caused. The mistake was ours as a desk. We should have checked the way the records were joined and counted before publishing a ranked table, and we should have explained the correction more fully and prominently.\n\nThe corrected figure does not mean Wellsford Road is fine, or that the collisions recorded there do not matter. Twenty-three injury collisions in five years is still a substantial number, including three serious injuries. Our figures describe recorded collisions; on their own, they cannot answer every question about how safe a particular journey or crossing feels.\n\nWe are changing how we publish ranked data. From now on, we will publish the underlying cleaned dataset and the code used to produce ranked tables, so readers can see how the figures were calculated. A second analyst will independently reproduce each ranked table before it runs. These steps will not make errors impossible, but they should make them easier to catch before publication and easier to check afterwards.\n\nI will attend the Fishponds Streets Forum’s open meeting at Fishponds Library on 17 November at 7pm to answer questions in person. We will bring the corrected figures and explain how we reached them. We owe residents a clear account, and the chance to ask us directly.",
+  "words": 513,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08077502250671387,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.02147211693227291,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.4140625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.969205856323242,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.1,
+    "effort": "medium",
+    "output_tokens": 691,
+    "input_tokens": 32575
+  }
+}

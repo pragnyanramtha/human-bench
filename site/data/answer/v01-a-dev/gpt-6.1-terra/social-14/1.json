@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Hey Hollins Family Ties,\n\nFor everybody who’s been asking my mom: yes, I’m coming to Thanksgiving! I’ll see y’all Thursday, November 26, at Aunt Denise’s in Macon. We’re eating around 3, and I’m bringing the mac and cheese and two sweet potato pies.\n\nI also want to say something about last year. Some of y’all weren’t there, but things got heated at the table, and I played my part in that. I made a crack about somebody getting their news from a gas station TV, and I shouldn’t have talked like that. Grandma ended up sitting out on the porch for about an hour, and I still feel bad that our argument spoiled part of her holiday.\n\nI’m not sorry for the work I do. I am sorry for how I talked at Grandma’s holiday, and I’m going to do better this year. Nobody involved is a bad person, even if some people in this family do enjoy poking a little. And I got a happy birthday text with a thumbs-up in August, which in this family is basically a hug. I’m taking it as one.\n\nSo can we call a truce on work and politics for one day? And just so everybody knows, I can’t talk about open cases anyway because of confidentiality, so questions about “the lawsuit” are a dead end.\n\nI’m looking forward to seeing everybody, and I really want it to be a good day. Let’s keep the table talk to food, football, babies, and Tasha’s new boyfriend. Tasha, you’ve been warned. ❤️",
+  "words": 257,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36152970790863037,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.27861085534095764,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.078125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.390537261962891,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "low",
+    "output_tokens": 329,
+    "input_tokens": 18221
+  }
+}

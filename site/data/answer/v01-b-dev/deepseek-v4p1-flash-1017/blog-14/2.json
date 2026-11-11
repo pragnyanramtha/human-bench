@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "blog-14",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Two more pairs of hands on a Thursday**\n\nI’m not writing this because I’m a saint. I’m nothing of the sort. I’m writing it because the Thursday tea trolley in the day therapy unit is two volunteers short, and Bridget has asked me to say so in public.\n\nI started in March 2022, about eighteen months after I retired from forty-one years of bookkeeping, mostly for a builders’ merchant in Dereham. For the first year and a half of retirement I had no regular reason to go out most weeks. I drifted a bit, to be honest. Thursdays fixed that.\n\nThe trolley runs from 1.30 to 4pm, and the commitment is one Thursday a fortnight. We are four on a rota meant for six. One of us moved to Sheffield to be near grandchildren, and another had a knee operation. So we could do with a couple more.\n\nYou do not need any nursing skill. You need to be able to push a trolley, remember who takes what, and listen. Forty-one years of keeping ledgers straight turns out to be surprisingly handy for the remembering-who-takes-what part.\n\nThe day unit sees about fourteen to eighteen patients on a Thursday. Many come for the art group, the hand massage, or simply company. Most go home afterwards. It is not a sad place on a Thursday, mostly. It is noisy and rather jolly. Sad days do happen, and the staff look after us when they do. I won’t pretend every week is easy, but I’m not going to dwell on that either.\n\nThere is Mr Hollis, a retired signalman, who takes two sugars and insists on telling me about the 1953 floods each week, slightly differently each time. I have stopped correcting the dates. The bourbon biscuits always go first, so we now hide a packet for the late group. And in my first week I spilled an entire jug of milk over the trolley. A patient called Pat laughed so much she had to be given a tissue. She said it was the best afternoon she’d had in a month. I have improved since then, marginally.\n\nBridget does the induction, about two hours, plus a short online food hygiene course which the hospice pays for. That’s it. You are not being asked to retrain as a nurse or to sign your life away.\n\nIf you’d like to know more, there is a volunteer open afternoon on Tuesday 24 November at 2pm in the Willow Room. Tea and biscuits, no obligation. Or ring the volunteering line and ask for Bridget. I’m under instructions to get at least two people to the open afternoon, so consider this me doing my bit.\n\nI’m not doing this because I’m noble. I’m doing it because it gets me out on a Thursday, because the tea is hot, and because most weeks it’s good fun. If you can spare one Thursday a fortnight, come and have a look. We’ll save you a bourbon.",
+  "words": 495,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2373799830675125,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.26512983441352844,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.8203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.1118288040161133,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.3,
+    "effort": "provider default",
+    "output_tokens": 3376,
+    "input_tokens": 684
+  }
+}

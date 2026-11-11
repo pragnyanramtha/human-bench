@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.40, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I’m posting for the first time. There’s a patient I’ve been thinking about since I got home today.\n\nI’ll call her Mrs. H. She came to our pharmacy for weekly blister packs for several years. Every Thursday, she’d bring me something: poppy seed cake, usually, or once a jar of pickles I had no idea what to do with. During Ramadan, she remembered I was fasting and would tell me not to eat the cake until sunset. She’d wrap it in foil with my name on it.\n\nShe walked with a cane, and the rubber tips had little tennis balls on them. After her husband died, she lived on her own. I got used to seeing her come in each week, and I didn’t realize how much that routine had become part of mine.\n\nA few years ago, a new medication was prescribed that could interact with her warfarin. I called the doctor to check. Afterward, she told everyone I’d saved her life. I hadn’t. I’d just done my job. But she remembered it, and so did I.\n\nHer daughter came in today to return her unused packs and glucometer. Mrs. H had passed away recently. Her daughter also gave me a card. Inside, in her mother’s handwriting, was a note she’d written long ago: “For my Arabic daughter.” She had never given it to me.\n\nI cried in the back room. My coworker Priya covered the counter for ten minutes while I pulled myself together.\n\nI’m a pharmacist, and my father was one too, back in Egypt. He knew all the families. I thought working in Canada would feel different, but it doesn’t. You still see the same people week after week, year after year. We’re told not to get attached, but it’s hard not to when someone becomes part of your Thursdays for so long.\n\nSchool taught me pharmacology, interactions, and how to do the work safely. Nobody taught me how to say goodbye to a patient, or what to do with the sadness when their family brings their things back.\n\nHave any of you had a patient like this—someone who became part of your routine, and stayed with you after they were gone?",
+  "words": 366,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3967687785625458,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.41178908944129944,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.7890625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.6883084774017334,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.4,
+    "effort": "medium",
+    "output_tokens": 455,
+    "input_tokens": 14040
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-05",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.22, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: localrate.example/biz/harbourline-van-works\nReplying to: none\nCc: none\nSubject: 3 stars — the tub is fantastic, the week was not\n\nI'm a mobile dog groomer in Halifax and I had Glenn fit out my 2021 Transit high roof back in August. Invoice HVW-0388. This is a fair review, so I'll do the good and the bad in the order they actually matter.\n\nThe good first, because it's genuinely good. The stainless tub with the ramp is the best money I've spent on this business. Dogs walk right in, no lifting, no wrestling a 110 lb Bernese up a step. If you're a groomer and you're on the fence about a ramp, get the ramp. The rest of the fitout has held up fine too — tanks, floor, cabinetry, no complaints. Price was fair for what I got.\n\nNow the week of October 27th.\n\nI was mid-groom in Bedford when the fitting on the hot water line let go. Water all over the floor, down into the cabinet, and a very large Bernese named Moose sitting in the tub through the entire flood like a king. Honestly, Moose did not care. Not one bit. He sat there like this was a spa day he'd booked himself. I was the one screaming. I toweled him off and sent him home half done, which his owner was lovely about — apparently he looked like a wet sheepdog with one fluffy half and had the time of his life. I cancelled the rest of that day, and then six more bookings while the van was off the road from Oct 27 to Nov 6.\n\nHere's the part that actually made me mad: it wasn't the leak. Stuff breaks, that's life, I'm not going to pretend otherwise. It was being told on the first email that these lines don't \"just let go\" and it was probably user error — that I'd run the heater dry or been hanging things off the pipe — so it wouldn't be covered, plus a $180 diagnostic fee, and the earliest appointment was a week out. I've never run it dry and nothing hangs off that pipe; it's behind a cabinet door. That email cost him two stars. The leak cost him nothing.\n\nTo Glenn's credit, and I mean this, he owned it in the end. Turned out the compression fitting on the outlet was a cheaper one his supplier had swapped in, he replaced all of them on the hot side, and he knocked the $180 off. That's the right outcome and I'm happy to say so.\n\nMy advice to other groomers or trades looking at Harbourline: get the warranty conversation in writing before the work starts. What counts as workmanship, what counts as user error, and what diagnostic fees apply. Not a Glenn-specific thing — do it with every trade — but do it.\n\nThree stars. Great tub, great ramp, solid build, and a guy who did the right thing eventually. The tub is a five, the week was a one, and the first email is why it isn't four.",
+  "words": 492,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.22248415648937225,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11538877338171005,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.13671875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.4423078298568726,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 7.2,
+    "effort": "provider default",
+    "output_tokens": 1385,
+    "input_tokens": 2053
+  }
+}

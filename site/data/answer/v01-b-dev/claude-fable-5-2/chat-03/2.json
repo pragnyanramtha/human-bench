@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.17, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nmia I'm so sorry I went quiet on you, work's been cooked but that's no excuse. I've read everything. of course you're not ok, your ceiling's in your bed and your landlord's a grub\n\nso here's what's happening. Sam's taken my shift so I'm off all day tomorrow. dad's lending us the trailer, so I'll come to Priya's and we get everything out of her garage before her mum turns up. Ruby says our couch is yours for as long as you want it. only catch is Clover will 100% try to sleep on you\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nband stuff. Tully's teed up a benefit night for you, Sat 28th at the Lantern Room. Dee's given us the night, all the door money goes to you, and Jono's mates in Hollow Pines said they'd play too. Jono's cousin also has an old Yamaha keyboard sitting in his shed that's yours to tide you over. it's not the nord but it works\n\nnobody had to be asked btw. people just started sorting stuff\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nand about Rocky. if in a few months you're dry and sleeping properly and you still want to go home, fair enough, I'll help you pack. but don't decide it this week sitting next to garbage bags in someone's garage. that's the hail talking\n\nand you can't quit. your songs are the best thing about this band and everyone knows it. the notebooks are pulp but the songs are still in your head, we'll get them down again\n\nyou drove out to Gatton at 2am to get me after the Toowoomba gig and didn't even complain. so this is just me finally paying that back, you don't owe anyone anything. what time do you want me at Priya's tomorrow?",
+  "words": 288,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1702864021062851,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.023337652906775475,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.09375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.1411951780319214,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.3,
+    "effort": "high",
+    "output_tokens": 2402,
+    "input_tokens": 2611
+  }
+}

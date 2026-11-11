@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To my neighbors at Larkspur Lofts,\n\nMany of you have seen the note posted in the lobby this week. I want to give you the full picture, and I'm sorry it worried some of you.\n\nOn Saturday, October 31, around 4:00 p.m., I flew a new drone from the roof deck for about eleven minutes. I'm a wedding photographer, and I was testing the equipment for a wedding I'm shooting at a vineyard in Dundee. The camera was pointed west, toward the river and the Fremont Bridge, for the entire flight. It was never aimed at windows, balconies, or the courtyard. I understand that a drone hovering overhead can look alarming if you don't know what it's doing, and I'm sorry that some of you, including children, were startled by it.\n\nThe note called me a creep and included my unit number. That felt hurtful, and it isn't how I think we should treat each other. If you have a concern, please come talk to me directly. I'd much rather hear it from you in person than through a note on the wall.\n\nI have the full, unedited clip from that flight, and I'm glad to show it to anyone who would like to see it. You can knock on 5A or email me at jess.okafor@mailbox.example.\n\nI also want to be clear about next steps. Our HOA rules don't currently address drones. I won't fly from the roof again until the board has had a chance to set a policy, and I'll ask that drone use be added to the agenda for the board meeting on Thursday, November 19, at 7:00 p.m. in the community room. If you have thoughts on the issue, I hope you'll attend or reach out. I'd welcome your input either way.\n\nThank you for reading this, and I'm sorry again for the worry this caused.\n\nSincerely,\n[Your name]\nUnit 5A\n\n---\n\nI left \"[Your name]\" as a placeholder since I don't have the name you want to sign with. Fill that in before you print the copies.",
+  "words": 342,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3700697422027588,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.14236418902873993,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.0,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.402504920959473,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.4,
+    "effort": "medium",
+    "output_tokens": 1863,
+    "input_tokens": 1490
+  }
+}

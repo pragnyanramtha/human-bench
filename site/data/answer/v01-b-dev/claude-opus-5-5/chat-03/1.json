@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nmia I'm so sorry I went quiet, work's been flat out but that's no excuse. I'm here now and I'm not going anywhere\n\nfirst thing, you're not on your own with any of this. here's what's already sorted:\n\n- I'm off all day tomorrow, Sam took my shift. dad's lending me the trailer so we can get everything out of Priya's garage before her mum turns up\n- Ruby says you can have her couch for as long as you need. her words. fair warning, Clover will 100% try to sleep on you\n- Jono's cousin has an old Yamaha keyboard in his shed and it's yours. it's not the nord but it works, so you've got something to play on\n- Tully's organised a benefit night at the Lantern Room on Sat 28th. Dee's giving us the night and all the door money goes to you. Hollow Pines are playing too\n\nand mum says they're thinking of you xx\n\n---\n\nTo: @mia\nReplying to: none\nCc: none\nSubject: none\n\nre Rocky. I get it, I really do. but please don't decide anything this week while you're sleeping on couches and your stuff's in garbage bags. that's the hail and a grub of a landlord talking, not you. \"lodge a maintenance request via the portal\" while your ceiling's on your bed, honestly\n\nyour songs are the best thing about this band and everyone knows it. the notebooks are gone and that's awful, but the songs are still in your head and your hands, and we'll help you get them back down. no pressure about thursday rehearsal either, come if you want or don't, we'll work around you\n\nyou drove to Gatton at 2am to get me when my car died and didn't complain once. so let me do this one. what time works tomorrow? I can be at Priya's whenever",
+  "words": 300,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4153614938259125,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03947973623871803,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.1015625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.240400791168213,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.4,
+    "effort": "medium",
+    "output_tokens": 1086,
+    "input_tokens": 2614
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "pass",
+  "reason": "",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": true
+  },
+  "output": "Hiya,\n\nRight, got some buzzin news for yous. Morag's letting me have the whole salon to myself on Saturday 12th December from 1pm (she shuts at 12 on a Sat) so I can do all your hair for free before we go out for Gran's 80th the next day. Gran doesn't know anything about this yet so keep it under your hat!\n\nSo the plan is - we all meet at Hair by Morag on Dumbarton Rd at 1pm, I'll get through everyone's hair, then we head to the Italian place on Byres Rd for 8.30. Table's booked for 9 of us (that's me, you Mum, Kirsty, Linda, Gran, Ava, Ruby, Uncle Davie and Kirsty's man).\n\nCut and blowdry for everyone is fine, no problem at all. But if yous want colour done I need to know by Friday 27th November at the latest so I can get the stuff ordered in from the wholesaler. Just let me know what you're after.\n\nMum - I need you to get Gran to the salon for 1pm without telling her why. That's your mission. And you know she said at Easter she'd love to go silver properly but won't pay salon prices, so I'm thinking that's what we do for her. She'll be made up.\n\nAva and Ruby are getting wee braids and glitter spray, they'll be in their element.\n\nBring a bottle of fizz if yous want, Morag says that's fine as long as we tidy up after ourselves.\n\nCan yous get back to me with what you want done so I can get sorted? And Linda - you're no getting near my kitchen this time, you can do your colouring in the salon where the dye belongs!\n\nLet me know, cheers x",
+  "words": 292,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.07440197467803955,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03287641704082489,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.7734375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.6982226371765137,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 4.3,
+    "effort": "provider default",
+    "output_tokens": 705,
+    "input_tokens": 508
+  }
+}

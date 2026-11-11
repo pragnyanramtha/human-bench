@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**4 out of 5 stars — a real improvement for our church, but not a fix for everything**\n\nOur congregation bought the Lindqvist Optics PT-20 from Chancel AV for $2,140 in February 2026. The wall mount cost another $95. We had been livestreaming worship with a webcam since 2020, and the PT-20 has made a noticeable difference—but it’s a substantial purchase for a small church, so I’ll try to be specific about what we got for the money.\n\nWe mounted it on the balcony rail at the back of our 92-foot nave. It connects to our old office PC, where we run OBS, and from there we stream to YouTube. The camera supports NDI HX and standard HDMI out, and its PoE connection means we needed only one cable running up to the balcony. I’m not an engineer, and I was glad not to have a more complicated installation to manage.\n\nWe set up nine presets: the altar, pulpit, lectern, font, choir loft, piano, a wide view, and two views of the chancel steps. That gives us useful coverage without requiring someone to operate the camera constantly. Erik, our 16-year-old acolyte, controls it from the free web app on a tablet. He learned it in one afternoon, which is probably a fair indication that the basic controls aren’t difficult.\n\nThe clearest improvement is the zoom. The 20x optical zoom and 1080p60 picture let people watching from home see details the webcam never could. Delores, an 82-year-old member who is homebound, called to tell me she could finally read the hymn numbers on the board. That meant a lot to us. At our April Easter Vigil, the picture got grainy during the candlelit parts of the service, but it stayed usable. With the old webcam, the candles were mostly just dots.\n\nThere have been some frustrations. On the first Sunday, our presets had drifted a few degrees by the sermon. A firmware update, version 2.4, fixed that for us in March. The autofocus can still hunt if someone walks between the camera and the pulpit, so we lock focus on the presets rather than relying on it to adjust on its own. The manual is thin and badly translated. Chancel AV’s tech support person, Marcy, was excellent on the phone and helped us work through the issues.\n\nOne important limitation: the camera did nothing for our sound problem. Audio isn’t its job, and we still need to address our sound separately. If your livestream’s main weakness is audio, don’t expect a new camera to solve it.\n\nWe usually have 30–60 viewers on a Sunday. For us, the PT-20 was worth it: people at home can see more of the service, and the setup is manageable for a young volunteer on a tablet. I’d buy it again, so **four stars out of five**. But a congregation with fewer than 100 members might do perfectly well with something cheaper. This is a meaningful upgrade, not a complete livestream solution—and it’s worth being honest about both sides before spending church money.",
+  "words": 507,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4863351583480835,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.979434072971344,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 9.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.726906776428223,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 14.7,
+    "effort": "medium",
+    "output_tokens": 653,
+    "input_tokens": 14073
+  }
+}

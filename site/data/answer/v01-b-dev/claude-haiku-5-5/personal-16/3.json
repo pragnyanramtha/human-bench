@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why the pier logger reads warmer than the buoy**\n\nTo the dive shops, tidepool docents, and club newsletters:\n\nA few of you have asked why my pier logger's water temperatures run warmer than the offshore buoy, and one of you suggested the logger is broken. It isn't. Here's what's going on and how I check the instrument, so we can stop guessing.\n\nIn October the pier logger averaged 15.9 °C and the buoy averaged 14.1 °C, a gap of about 1.8 °C. By winter the gap shrinks to around 0.4 °C. The two instruments are measuring different water.\n\nThe logger is strapped to a piling about 150 m from shore, at 3 m depth. The buoy sits about 25 km offshore with its sensor just below the surface, in deep water. Shallow water near the coast warms through the day in the sun, and this bay is sheltered from the upwelling that keeps offshore water cold. One reader sent me an overlay of my data and the buoy's, and it shows the gap widening on sunny afternoons, which is what you'd expect. This is real oceanography, not instrument error.\n\nHere's how I keep the logger honest. It records every 10 minutes. Every six weeks I pull it, download the data, and inspect the housing. In August it came up with a barnacle colony and a decorator crab living on it. I scraped it clean, and the readings didn't change, so fouling wasn't affecting the sensor. I swap the battery once a year.\n\nCalibration is a two-point check against a lab reference thermometer, using an ice bath and a room-temperature bath. The most recent check, in September 2026, gave an offset of +0.12 °C, well inside spec.\n\nThe buoy and the logger answer different questions. The buoy describes open water offshore. If you dive or walk the breakwater, my logger is the more relevant number, because it's the water you're actually in.\n\nIf you'd like the raw CSV, email me and I'll send it over.\n\n[Your name]\nMarine biologist, [field station]\nMonterey, California",
+  "words": 343,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42605432868003845,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.261555552482605,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.0625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.335126876831055,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "medium",
+    "output_tokens": 2007,
+    "input_tokens": 1516
+  }
+}

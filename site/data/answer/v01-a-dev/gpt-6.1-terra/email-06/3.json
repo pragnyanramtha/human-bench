@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for coming back to me. Please find the details below.\n\nThe affected terminals are the four BX-300 units at our Embakasi depot. They auto-updated from firmware 4.1.8 to 4.2.1 on the night of 27 October. The affected staff are on the NIGHT-8 template, scheduled from 22:00 to 06:00.\n\nOne example is staff ID T-0417, who clocked in at 21:54 on 30 October and clocked out at 06:07 on 31 October. The Payroll CSV v2 export split the shift across two lines: 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15. Payroll rounds to the nearest tenth of an hour; the total was 8 hours 13 minutes, with the 13 minutes outside the scheduled shift coded as overtime.\n\nKevin first noticed the problem on 5 November while reviewing draft October overtime. It appears to affect shifts crossing midnight from around 28 October. All 38 staff on the Embakasi night shift are affected, and the draft October overtime was approximately KES 212,000 too high. Kevin held the overtime lines and corrected them manually from the raw punches. Our Mombasa Road day shift is unaffected; those terminals are still on 4.1.8.\n\nThe 4.2.1 release notes promised improved midnight rollover handling, but the update appears to have had the opposite effect. We need a fix or a clear workaround before the payroll cut-off on 20 November. Please let us know what you recommend.\n\nCould you also confirm plainly whether Brian, our IT officer, can safely roll the Embakasi terminals back to 4.1.8 without losing punch data? If so, please share the steps and any precautions.\n\nI have copied Kevin Mutua, our payroll officer, who will test the proposed fix or workaround.\n\nKind regards,\nNjeri Mwangi\nHR Manager\nTausi Freight",
+  "words": 302,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3261958658695221,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.18604831397533417,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.984375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.516995429992676,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.7,
+    "effort": "low",
+    "output_tokens": 482,
+    "input_tokens": 19719
+  }
+}

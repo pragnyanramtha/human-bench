@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "social-17",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "To: page:wensum-valley-hospice-bookshop\nReplying to: none\nCc: none\nSubject: none\n\nLight Up a Life 2026\n\nOur tree will be in the window again this year, and the memory tags will be on the counter from Monday 16 November. There is a suggested donation of £3, and envelopes on the counter too, if you would rather take a tag home and write it at your own kitchen table, in your own time.\n\nThe tree goes into the window on Saturday 21 November, and we switch the lights on at 4pm on Saturday 28 November. The Gildencroft Primary choir are coming back to sing three or four carols, and Doreen is doing mince pies again. Do come, even if it's only for five minutes.\n\nEvery name on every tag is read out at the hospice remembrance service, Sunday 13 December at 3pm in the day centre. You don't have to be there for your name to be read. Some people come, some people would rather not, and both are quite alright.\n\nThis is the seventh November since Ray died at the hospice. The first year I hung his tag I could hardly write it — my hand wouldn't do it. Now I write it at the counter, with the same pen, and it takes me a minute. I mention it only because there will be people reading this and wondering whether they could manage it. You can. And if you can't, come and find me and I'll write it for you.\n\nThe tree isn't only for hospice families. It's for anyone grieving anyone — a mum, a dad, a friend, a neighbour, someone whose name you never quite knew but whose absence you still feel. Nobody will ask you to explain yourself.\n\nAnd you don't need to buy anything. Not a book, not a tag, nothing at all. You can just come in and stand by the tree for as long as you like. I do.\n\nThank you to everyone who remembered with us last year — who wrote a tag, who brought someone along with them, who stood in the cold for the singing. More than four hundred names went on that tree. That is a great many people being missed, and I think there is something good in all of us missing them together.\n\nWith love,\nJean\n\n---\n\nTo: page:wensum-valley-hospice-bookshop\nReplying to: s05\nCc: none\nSubject: none\n\nHilary, yes — we're doing the tree again, and thank you for asking. Tags will be on the counter from Monday 16 November. Bring your sister, and stay by the tree as long as you both want; nobody will hurry you. It will be good to see your mum's name there again. Jean",
+  "words": 430,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "write_count",
+        "kind": "workspace routing",
+        "detail": "2 writes, allowed 1-1"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.09711986780166626,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.09998462349176407,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.21875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.2674176692962646,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.0,
+    "effort": "provider default",
+    "output_tokens": 2774,
+    "input_tokens": 2320
+  }
+}

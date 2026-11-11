@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "## Proposal: Set a January 15 H-1B Registration Intake Deadline\n\nI propose that we set January 15 as our internal deadline for H-1B registration intake, rather than continuing to accept materials without a set date. This is a change to how we organize the work—not a judgment about clients. We have not been giving employers a deadline, and one HR contact said she would have been happy to send everything in January if we had asked.\n\nLast season, we filed 14 registrations for six employer clients, with nine arriving in the final week of February. Rosa logged roughly 11 hours of overtime the week the registration window opened. The registration itself is simple, but mistakes can be costly: a wrong passport can invalidate a selection. Brightwater Analytics sent a beneficiary’s passport scan two days before the window; it had expired in October, and Rosa caught the issue by checking the dates. An earlier intake deadline gives us more time to spot and resolve gaps before the window opens.\n\nJanuary 15 is realistic: HR teams are back from the holidays, and employers have their Q1 budgets set. The $215 registration fee per beneficiary is already budgeted in Q1. A clear deadline lets us offer more predictable service and gives employers time to prepare, while reducing last-minute pressure on the team.\n\n**What would change**\n- The week of December 7, send engagement letters and a one-page questionnaire to employers.\n- Set January 15 as the intake deadline.\n- Have Rosa own the tracker, with a clean six weeks to follow up on missing information.\n- Handle requests received after January 15 case by case.\n\nIf Marcus agrees when we meet Thursday, we can prepare and send the December letters.",
+  "words": 287,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4122283160686493,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9989504814147949,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.640047550201416,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.3,
+    "effort": "medium",
+    "output_tokens": 348,
+    "input_tokens": 14006
+  }
+}

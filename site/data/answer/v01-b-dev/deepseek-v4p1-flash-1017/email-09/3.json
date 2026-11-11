@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Subject: Knocknacarra reading club — new numbers, and a photographer\n\nDear Niamh,\n\nI’m writing ahead of the review meeting on Wednesday 18 November because I want you to have the latest numbers before then — and because I need to tell you something I should have told you first.\n\nYou emailed on 30 October to say the Tuesday club at Knocknacarra library would be paused from January, given the low attendance and the hall insurance going up. I understood the decision, even if I was sorry about it. But the attendance has changed, and I don’t think the picture we were looking at in October is the picture now. We meet Tuesdays, 3.30 to 4.45, in the meeting room upstairs, and have done since September 2025. In September we had five most weeks. By mid-October it was nine. Last Tuesday, 3 November, we had fourteen children. Fourteen. I’m thrilled, and I’d be very sorry to see the club paused just as it has taken off.\n\nIt isn’t only numbers. Salthill Book Nook — Declan Moran — has donated 120 books, mostly for the 6–9 age group, and a good few as Gaeilge. The children are getting their hands on real books, not just the ones I’ve been lugging in. And there are small things that mean a lot. The two sisters from the Ukrainian family who started in October — the older one now reads to the younger one in English at the end of each session. One young lad who wouldn’t open a book in September asked me last week if he could take two home. That’s the sort of thing I’d hoped for when we started.\n\nI’m not brushing aside the insurance. I know that’s a real pressure and not something I can wave away with a good attendance figure. But I would be grateful if you could look at the new numbers before the 18th and reconsider the pause.\n\nNow the part I’m not proud of. I met Orla Keane from the Corrib Courier at the farmers’ market. She’s the reporter who covers community bits, and I got carried away telling her about the club. I said she could come along any Tuesday. She’s keen to come on Tuesday 24 November with a photographer. I know the policy: no photographs of children without your sign-off and the parental consent forms. I was wrong not to check with you first, plain and simple. I’d rather you heard it from me than from her, and I don’t want you thinking I was trying to go over your head — I wasn’t.\n\nThe coverage could be wonderful for us, but only if it’s done properly. So I’m quite happy to ring Orla and put the visit on hold until you’ve decided. If you’d rather I left it to you, just say so. And if you do say yes, I’ll collect the consent forms myself and make sure they’re all in order before anyone takes a photograph.\n\nI hope you’ll take this in the spirit it’s meant. I’m not writing to pressure you, only to make sure you have everything before the review meeting.\n\nBest wishes,\n[Your name]",
+  "words": 527,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2656696140766144,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08668377995491028,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.3828125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.42514181137085,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.8,
+    "effort": "provider default",
+    "output_tokens": 2892,
+    "input_tokens": 652
+  }
+}

@@ -1,0 +1,17 @@
+{"type":"object","additionalProperties":false,
+ "required":["usable","reason","prompt","notes","persona","tone","audience","stakes","must_cover","must_include"],
+ "properties":{
+  "usable":{"type":"boolean"},"reason":{"type":"string"},"prompt":{"type":"string"},
+  "notes":{"type":"object","additionalProperties":false,"required":["facts","anecdotes","opinions","wants"],
+    "properties":{"facts":{"type":"array","items":{"type":"string"}},"anecdotes":{"type":"array","items":{"type":"string"}},
+                  "opinions":{"type":"array","items":{"type":"string"}},"wants":{"type":"array","items":{"type":"string"}}}},
+  "persona":{"type":"object","additionalProperties":false,"required":["role","age","english","first_language","lives","writing_level"],
+    "properties":{"role":{"type":"string"},"age":{"type":"integer"},"english":{"type":"string"},
+                  "first_language":{"type":["string","null"]},"lives":{"type":"string"},
+                  "writing_level":{"type":"string","enum":["polished","everyday","rough"]}}},
+  "tone":{"type":"string","enum":["casual","emotional","angry","funny","excited","persuasive","formal","technical"]},
+  "audience":{"type":"string","enum":["friend","family","boss","colleague","stranger","customer","community","public","business"]},
+  "stakes":{"type":"string","enum":["routine","tense","crisis"]},
+  "must_cover":{"type":"array","items":{"type":"string"}},
+  "must_include":{"type":"array","items":{"type":"array","items":{"type":"string"}}}
+ }}

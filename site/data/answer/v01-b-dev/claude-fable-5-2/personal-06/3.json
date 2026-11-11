@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Dear Nana,\n\nDenise is reading this to you, so if any of it sounds bossy, that's her delivery and not my writing.\n\nI'm sorry I'm not at the table with you tonight. I'm on call all week, which means if something breaks at work I'm the one who has to fix it, and I asked everybody and nobody could trade with me. So for once, when you ask \"did anything break,\" the answer might actually be yes. I'll keep you posted.\n\nI've been trying to write this for a week. Every time I started, I'd get about three lines in and have to close the laptop. So if it wanders around a bit, that's why.\n\nI keep thinking about summers at your house. Mostly the kitchen. You had a deal with me: I could stay up and watch the ball game on the little TV as long as I dried the dishes. I thought I was getting away with something. It took me an embarrassingly long time to figure out that you got your dishes dried every night for a whole summer and all it cost you was a later bedtime for a kid who was going to fight you on bedtime anyway.\n\nThat kitchen table is also where you taught me crib. I think I was seven. And you never let me win. Not once, not even when I was seven and counting on my fingers. Other kids' grandmothers let them win at things. I asked around. But then when I was fifteen I finally skunked you, fair and square, and you got up from the table and made me a whole pan of butter tarts. I've thought about that a lot since. Because you never gave me one, I knew that one was real, and you knew I knew. Those butter tarts are still the best thing I've ever won.\n\nAnd the back steps. You'd be out there at six in the morning with your tea, and I'd come out and sit down beside you, and you wouldn't say a single word until the cup was empty. I learned pretty quick not to try. I didn't know back then that it was one of my favourite parts of the day, just sitting there with you while the street woke up. I know now. I'm no good to anyone before my first coffee either, and I know exactly where I got that from.\n\nWhen I got the job in Toronto you mailed me a card with a twenty-dollar bill taped inside, and you wrote, \"For pizza, you look thin on the computer.\" It's still the best card anybody's ever sent me. And then last Christmas my pager went off in the middle of dinner and you asked if the internet was broken again and whether I'd fixed it. Nana, that is a better explanation of my job than the one I give people. I might start using it.\n\nFifty-one years on Kathleen Street. You raised half this family in that kitchen. I know it's a lot to walk out of, and I know Grandpa is in every room of it too. I'm not going to pretend that part is small. I think he'd be proud of you.\n\nBut I want to tell you what that house was to me, because I've been thinking about it all week. It was you. The house felt the way it did because of who was standing at the stove. It was a place where there were rules and they were fair, and somebody was always glad I'd shown up, and there was usually something in the oven. None of that is staying behind with the house. It's going to Elmwood Terrace with you tomorrow, second floor.\n\nAnd I'm proud of you. I mean that. Nobody talked you into this. You went and looked, you made up your mind, and then you told the rest of us how it was going to be. At eighty-eight. I hope I'm half that sure about anything when I'm your age. I'm not that sure about most things now.\n\nI looked the place up and it looks really nice. I hear your window looks out at the parking lot and a big maple. I know a parking lot doesn't sound like much of a view, but you're going to know who's visiting who before anyone else in the building does, and I think you'll enjoy that more than you'll admit. And the maple will be something to see next fall.\n\nThey also have a crib league. Those poor people have no idea. Go easy on them the first couple of weeks so they keep inviting you back. Between that and Tuesdays with the church ladies, you're going to have a busier schedule than I do.\n\nI do feel bad that I'm not there to carry boxes. Everyone keeps telling me it's fine, and I know you'll tell me the same, probably before Denise even finishes this sentence. I still wish I was there tonight.\n\nSo do one thing for me. Tomorrow morning, before the truck and the boxes and everybody telling you where to stand, take your tea out to the back steps one more time. Wear your coat. If it's icy, the kitchen window will do. And don't talk to anybody until the cup is done. I'll be having my coffee at the same time and not talking to anybody either.\n\nNow, the important business. Denise is getting the cuckoo clock and the cedar chest, and I asked for the crib board, and I meant it. But don't let her pack it up for me yet. Keep it with you and take it to the new place. I'm coming up the weekend of December 5th, as soon as this rotation is over, and the first game at Elmwood Terrace is you and me. I don't expect you to let me win. I'd be insulted if you did.\n\nI'll bring the pizza. You look thin on the phone.\n\nLove you, Nana. See you on the 5th.\n\n[your name]\n\n---\n\nIt comes to about 1,050 words, which is five or six minutes read aloud. Three lines are my guesses rather than things from your notes, so change or cut them if they're off:\n\n- **The card:** I called it the best card anybody's ever sent you.\n- **Grandpa Walt:** I had you say he'd be proud of her.\n- **The coffee:** you say you're no good before your first coffee, and that you'll be having one while she has her tea.\n\nSign it with whatever she calls you.",
+  "words": 1099,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30478331446647644,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.12848632037639618,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.1328125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 3.4021239280700684,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 68.6,
+    "effort": "high",
+    "output_tokens": 5554,
+    "input_tokens": 1672
+  }
+}

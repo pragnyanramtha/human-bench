@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars - my game exists because of Murmur, but stay on 3.1.4\n\nI have used Murmur since August 2022 (bought at v1.3) and our game Lanternfolk is built on it, so this is not a neutral review. I will try to be fair in both directions anyway.\n\nFirst the warning, because it matters most if you are thinking about buying today.\n\n3.2.0 has a save bug. When you load a save that was made in 3.1.x, every Murmur variable is back to its default. In our game the ferryman forgets you already paid him, that kind of thing. I have only tested this with saves from 3.1.x, so I can't tell you whether a brand new project started on 3.2 is safe. Other reviews here describe the same problem.\n\nThe fix that works for us, and for at least one other dev in the forum:\n\n1. Get the 3.1.4 release.\n2. In your project, replace the Murmur folder inside addons with the 3.1.4 one.\n3. Keep a copy of 3.1.4 somewhere safe and do not update to 3.2.\n\nAfter that our old saves loaded fine again. There is more detail in my forum thread here, \"3.2.0: variables reset to default after loading a save\".\n\nThe second thing you should know is that Ines has stepped back, and 3.2 is the last version from her (see the pinned update on the listing). So there is no support and no official fix coming. If you need a tool with an active developer behind it, this is not that tool right now. The bug and the lack of support are why I give 4 stars and not 5.\n\nNow the other side.\n\nThe first prototype of Lanternfolk was one scene, the ferryman, and I made it in one weekend with Murmur in 2022. That weekend is the reason I quit my job at a mobile studio. Four years later the game has 412 dialogue nodes in 9 languages, all through Murmur's CSV export, and we launch on Steam in December. We are shipping on 3.1.4, and I would not do that with a tool I didn't trust.\n\nI paid 19 dollars and got four years of updates. So when I read here that she \"took our money and ran\", I don't recognise that at all. A broken release is a real problem and it is fair to be angry about lost saves, I was too. But one bad update at the end of four years is not a developer who doesn't care about customers.\n\nThe source is also on the public repo under MIT now, which means anyone can fork it and fix 3.2. Maybe someone will. Maybe it will be me once Lanternfolk is out, no promises.\n\nSo my advice to someone new is this. If you are fine with a tool that is finished and unsupported, and you stay on 3.1.4, it is still very good. If you need updates and someone to answer bug reports, wait and see if a fork appears.\n\nInes, thank you. For the tool, and for four years of work on it. Lanternfolk would not exist without it.",
+  "words": 510,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.20402753353118896,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.01934743858873844,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.43867751955986023,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 40.4,
+    "effort": "high",
+    "output_tokens": 3717,
+    "input_tokens": 3420
+  }
+}

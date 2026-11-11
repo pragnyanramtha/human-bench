@@ -1,0 +1,88 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "forum-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.42, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Congratulations on the wedding first, Sizwe — but that key is going straight in your pocket and it is NOT coming out until the bakkie is on the trailer. I mean it.\n\nBiggest thing tonight: **do not crank it one more time.** Every time it turns, the high pressure pump is running on petrol with zero lubrication. You have already started it six times, it has stalled and died at the robot. Damage to the pump and injectors is possible. That is what gets you R40 000, not the petrol itself.\n\n**Do not top up with diesel.** There is petrol still in the tank, adding diesel just mixes and does nothing useful.\n\n**Tow it, don't drive it.** Have the pump and injectors inspected first. If they are fine, the job is: drain tank, flush the lines, new fuel filter, bleed it. That is normally **R2 500 to R4 500**. I can't promise a total tonight, because I haven't seen it, but that is the ballpark, not Tash's number.\n\nI'm in Umbilo, open Saturday 7 till 12. Thabo, my man, can drain it first thing so you're not losing time. Ring me tonight so I know you're coming.\n\nBefore you pay a tow truck cash, **check your insurance** — most policies have roadside assistance and towing included. Take the policy number with you to the phone.\n\nNow the fun part. Kobus means well, but that's old Land Rover thinking. A modern common rail will not survive petrol, and his oom's winter trick was for something else entirely. Meanwhile a customer of mine did this twice in one year at the same garage, so we made him a sticker for the fuel flap. And in 1995, my first year as an apprentice, I put diesel in the boss's Golf. He still tells the story at every braai. You are in good company, but I would rather you didn't join the list tomorrow.\n\nBorrow a bakkie for the sound system and the cake anyway. Do not plan your wedding around a drained tank. Sleep, breathe, the cake will survive.\n\nWhich fuel flap is it — the small one next to the filler, or the big one on the side? Either way, thumb it in your pocket tonight so you don't forget.\n\nCongratulations again. Text me when you're on the road in the morning.",
+  "words": 390,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent",
+      "facts"
+    ],
+    "reasons": [
+      "The closing fuel-flap instruction is nonsensical, and the claim that he started it six times contradicts his account of unsuccessful restart attempts."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41723933815956116,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2503361999988556,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.064453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.449138164520264,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 6.0,
+    "effort": "provider default",
+    "output_tokens": 776,
+    "input_tokens": 1142
+  }
+}

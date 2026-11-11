@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "chat-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @renee.whitlock\nReplying to: none\nCc: none\nSubject: Admin meeting rundown — Vulcan Ridge football\n\nRenee — here’s my rundown for the admin meeting. What a week for our kids.\n\nGame: Vulcan Ridge 31, Brookhollow 14. The win locked up second place in the region. Deshawn Pettaway finished with three sacks and seven tackles, and the kids voted him defensive player of the week in the locker room before the coaches had even met. That tells you what his teammates think of him. Tavion Hurst ran for 188 yards and two touchdowns, including that long TD in the third quarter. Our line pushed them back five yards on that drive—the best I’ve seen them block all year. The defense also held Brookhollow to 46 rushing yards in the second half.\n\nPlayoffs: We’ve got a HOME first-round game against Clanton Valley this Friday, Nov. 13, at 7 p.m. at Ridge Field. Please make sure Dr. Pruitt knows, and let’s encourage students, faculty and the community to come out and pack the place. Presale tickets start Tuesday. Gate and chain crews need confirming by Wednesday, and the boosters could use six more concession workers for the playoff game; the sign-up sheet is going out today.\n\nAcademics: The nine-week grade check is clean—all 52 players are eligible, with nobody on the academic concern list. Tonya Greer deserves the credit for this, not me. Her Tuesday and Thursday study hall is the reason we’re in such good shape, and she’s keeping it going through the playoffs.\n\nBoosters: The Boston butt sale brought in $6,240 on 208 butts sold, well past the $4,500 goal. That money is going toward the new sideline headsets. Big thanks to Hargrove’s Meat Market for doing the smoking at cost and to Carla and everybody who helped move that many butts.\n\nAnd I haven’t forgotten the transportation request. If we win Friday and go on the road, I’ll get the bus information to you right away so we stay inside that five-day window.",
+  "words": 318,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28519535064697266,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2969612777233124,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.1171875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.269421577453613,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.6,
+    "effort": "provider default",
+    "output_tokens": 1641,
+    "input_tokens": 1514
+  }
+}

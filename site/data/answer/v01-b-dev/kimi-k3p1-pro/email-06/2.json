@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: [m01]\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for coming back to me. Please find the requested details below.\n\n1. Terminal model and firmware\nWe have four BX-300 terminals at Embakasi depot. They auto-updated from firmware 4.1.8 to 4.2.1 on the night of 27 October. Our two Mombasa Road terminals remained on 4.1.8 because they were offline that week, and the day-shift export there is working correctly.\n\nYour 4.2.1 release notes promised improved midnight rollover handling for shifts spanning two calendar days. Unfortunately, the behaviour at Embakasi since the update has been the exact opposite.\n\n2. Shift template\nThe affected staff are on the NIGHT-8 template at Embakasi: 22:00–06:00.\n\n3. Example\nEmployee ID: T-0417\nClock-in: 21:54 on 30 October\nClock-out: 06:07 on 31 October\n\nThe export showed:\n- 2.1 hours REG on 30 October\n- 6.1 hours OT15 on 31 October\n\nWe expected 8.0 hours REG plus 0.2 hours OT15. The total shift was 8 hours 13 minutes, which payroll rounds to 8.2 hours. The 13 minutes outside the scheduled shift should be coded OT15.\n\n4. Export profile\nPayroll CSV v2. Since approximately 28 October, it has split shifts crossing midnight into two lines, with the after-midnight portion coded OT15 instead of REG.\n\n5. When first noticed\nKevin first noticed the issue on 5 November while reviewing the draft October overtime. It affects 38 night-shift staff, and the draft overtime was approximately KES 212,000 too high. He has held the overtime lines and corrected them manually from the raw punches, but this is not sustainable.\n\nPlease also confirm plainly whether Brian Ochieng, who manages the terminals in IT, can safely roll the four Embakasi terminals back to firmware 4.1.8 without losing or corrupting punch data. If so, please provide the rollback procedure and any precautions required.\n\nWe need a fix or a clear, reliable workaround before payroll inputs close on Friday 20 November. Kevin Mutua, our payroll officer, is copied and will test any fix you propose.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 331,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2471156269311905,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.128256157040596,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.89453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.89122200012207,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.2,
+    "effort": "provider default",
+    "output_tokens": 1600,
+    "input_tokens": 1972
+  }
+}

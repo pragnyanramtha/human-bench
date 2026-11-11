@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.41, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Dear Appa, Amma, Kiran, Divya,\n\nFirst, I'm so happy about this. Having you both here for the whole summer is something I've wanted for years and never dared ask for, so I'm thrilled. Rohan has already asked whether the drumstick tree will be tall enough by April (it won't, Appa, but we'll start you off with something).\n\nKiran, thank you for writing it all down plainly. You're right that you should have been asked, and that one is on me. The idea came from Appa on the phone in August, when Rohan was showing him the vegetable patch on video and he said he could grow drumsticks there. When the agent needed my sponsor letter and bank statements, I started the paperwork, and that was the moment I should have picked up the phone to you. I didn't, and I'm sorry. Your concerns are fair ones, so let me answer them properly.\n\n**Appa's heart.** I'd be worried too, and you're right that visitors don't get free NHS treatment. So here is what's in place. I've got a travel insurance quote with pre-existing cardiac cover, about £640 each for the six months, and the agent says it covers the stent. Dr. Prakash has agreed to do Appa's review in March before they fly, and a video consult in July while they're here, and he's happy to share his notes with me. The annexe at the back is finished: ground floor, no steps, its own shower with a grab rail. And Leicester Royal is 15 minutes from our house, where I know half the cardiology team. Appa, I hope you don't mind us talking about your heart so openly. I'd just rather everything was sorted out in advance than hoped for.\n\n**Amma's six months.** This is a fair point, and I don't want it to get lost. Six weeks is very different from six months, and being away from her own house and her own people is a real thing. Her return ticket will be flexible, so she can go home any time she wants, no questions asked. And Amma, it's your call, not ours. Anika has also made a laminated welcome timetable for you, which includes \"Paati teaches us rasam, Tuesdays\". I think you'll find it hard to say no to her.\n\n**Ganesh Chaturthi.** I don't want that to disappear either. There are two ways I can see to keep it. Amma and Appa could fly from Leicester to Pune in September and finish the trip there, or Divya, Kiran and the children could come here in August, and I'd be glad to cover the flights for that. Either way, or both, it doesn't have to be one or the other.\n\nI'd love to talk it all through properly rather than trade emails, so could we do a family video call this Sunday, 4pm UK / 9.30pm India? Appa and Amma, if that time doesn't suit you, tell me and we'll move it. Kiran, if there's anything else on your mind, bring it. I'd much rather hear it than have you sit on it.\n\nWith lots of love,\nMeera",
+  "words": 518,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4096754491329193,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13981829583644867,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.798258781433105,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.4,
+    "effort": "high",
+    "output_tokens": 2202,
+    "input_tokens": 2383
+  }
+}

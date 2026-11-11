@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Why the pier logger reads warmer than the offshore buoy**\n\nRather than answer this one email at a time: a few people have asked why my pier logger runs warmer than the offshore buoy, and one suggested the instrument might be broken. It isn’t. The two sensors are in different oceanographic settings, and the gap is real.\n\nIn October the pier logger averaged 15.9 °C and the buoy averaged 14.1 °C—a 1.8 °C difference. In winter the gap shrinks to about 0.4 °C. The logger is strapped to a piling at 3 m depth, about 150 m from shore. The buoy is roughly 25 km offshore, with its sensor just below the surface over deep water. Shallow nearshore water in a sheltered bay absorbs sunlight and warms; offshore water is exposed to the upwelling that keeps it cold. The gap tracks sunny afternoons, which is what you’d expect from local solar heating rather than a drifting sensor. More sun, more heating; less sun and more winter mixing, smaller gap.\n\nOn the instrument side: it logs every 10 minutes, I pull and download every six weeks, and swap the battery once a year. I do a two-point calibration check—ice bath and room-temperature bath—against a lab reference thermometer. My last check, in September 2026, showed an offset of +0.12 °C, well inside spec. In August I pulled it up with a barnacle colony and a decorator crab living on the housing. I scraped it clean; the readings didn’t change. Biofouling is a maintenance issue, not the explanation here.\n\nA reader sent me a screenshot with both datasets overlaid, which was genuinely helpful—it makes the sunny-afternoon pattern obvious. The buoy and the pier logger answer different questions. If you’re diving the breakwater, mine is the more relevant number.\n\nIf you want the raw CSV, email me and I’ll send it.\n\n— [Your name], marine biologist, university field station, Monterey",
+  "words": 316,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3832140266895294,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.7279245257377625,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 10.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.21971321105957,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.4,
+    "effort": "provider default",
+    "output_tokens": 2488,
+    "input_tokens": 520
+  }
+}

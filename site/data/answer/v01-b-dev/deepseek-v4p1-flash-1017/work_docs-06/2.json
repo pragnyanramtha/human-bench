@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.33, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: URGENT — Brightline Pro 6% developer batch LX2291 may be 12%\n\nHi everyone,\n\nImportant one — please read before your next colour.\n\nThe Brightline Pro 6% (20 vol) Cream Developer 1L from the Kelvin Trade rep is affected by a filling error. Batch LX2291 may actually contain 12% (40 vol) developer. That batch was supplied between 19 October and 5 November 2026. It’s not every bottle and not every strength, but it’s the batch we need to check.\n\nThe batch code is on the base of the bottle — not on the box. The box doesn’t carry it, so don’t just look at the box and think you’re fine. Check the bottle base. And check the open ones in your trolley as well as the stock in the back. If you buy off the same rep, check everything you’ve got from him.\n\nWhat it does: 12% instead of 6% lifts much faster and much harder. That means it can burn the scalp, cause redness or blistering, and overcook the hair — fast lift, patchy or brassy result, breakage. It’s not just a stronger developer; it’s the wrong product in the bottle. I had a client on Saturday for a full head bleach retouch and she was near pale yellow at 18 minutes when she’d normally take 35–40. She had a red patch at the crown and sore spots at the nape. Aileen had foils on Thursday that were roasting and thought it was the heater — same batch. The supplier’s email says “sorry for any inconvenience”. It’s not an inconvenience. It’s a burned head.\n\nWhat to do now:\n- Stop using any bottle from batch LX2291.\n- Check the base of every Brightline Pro 6% bottle, including open ones in your trolley and back stock.\n- Keep any bottle you’ve had a problem with — don’t bin it, even if it’s empty. Keep your notes and take dated photos if there’s been a reaction.\n- The Kelvin rep is in Tuesday. You can hand bottles back to him or take them to the Hillington depot for a full credit.\n- I think Lorna in chair 4 got a box off him too — Lorna, check yours.\n\nIf someone reacts in the chair:\n- Stop the service straight away. Put gloves on.\n- Rinse with plenty of cool or lukewarm running water. For a suspected chemical burn, rinse for about an hour. No shampoo, no creams, no other chemicals.\n- Chemical burns need hospital assessment. Call 999 for medical help immediately — don’t wait for blistering or severe pain. Call 999 straight away if there’s breathing difficulty, throat swelling or collapse.\n- Write it in the incident book at the desk. Keep the bottle, keep your notes, and take dated photos.\n\nIf you’ve used this batch and had a problem — client reaction, weirdly fast lift, hot foils, patchy result — let me know and keep the bottle back. I’ve written up what happened on Saturday and I’ve got the Kelvin Trade email if anyone needs to see it. This is a supplier batch problem, but we need to make sure nobody else gets caught.\n\nPlease don’t put this off until Tuesday. Check your bottles today.\n\n— Kirsty",
+  "words": 526,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3279874622821808,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1980201154947281,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.4140625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.2204461097717285,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 28.2,
+    "effort": "provider default",
+    "output_tokens": 6505,
+    "input_tokens": 1968
+  }
+}

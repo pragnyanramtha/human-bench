@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-04",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: ashbourne-terrace-chimney\nReplying to: p05\nCc: none\nSubject: none\n\nI'm a structural engineer and chartered with IStructE, but I want to be clear I'm not posting in that capacity. This isn't a commission, I have no professional indemnity cover for advice given free, and I haven't been inside anything. This is one neighbour's read of what's visible from the pavement opposite, nothing more.\n\nMick, please don't go into 43 at nine with the props. I know it comes from a good place, but propping under a holed roof with a loose stack still above you is about the worst place to be standing. The floors may already be carrying debris from the roof, and nobody knows the load path in there now. Please don't do the loft from inside either — that's the one place I'd refuse to go.\n\nI was past at about seven and wrote down what I saw. Around 1.2m of 41's stack is still standing and leaning towards 43, pots gone, mortar visibly washed out at the base. Gusts of 50mph are forecast again this afternoon. 43's front roof slope has a hole about 2–3m², so there'll be debris in the front bedroom, and there's a stepped crack in the brickwork from the bay head up to the first-floor cill, 5–10mm, with the bay head looking dropped by around 20mm. Loose slates over the footway at 43 and 45. The council tape only covers 43's front garden, not the pavement.\n\nJoJo — your cousin isn't wrong that Victorian terraces are generally robust. But this is a damaged one, and that's a different question.\n\nPriya — the council's dangerous structures team is reachable out of hours on the main council number. They already know, but nobody has closed the footway, so it's worth chasing. Everyone should walk on the other side of the road until they've been, especially on the school run.\n\nMrs Doherty — not my decision, and I don't envy anyone having that conversation. But I wouldn't sleep in the front room of 45 tonight, and I'd rather she went to family until 45 has been looked at. The stack sits on the 41/43 party wall rather than 45's, and 45's front looks undamaged from the street, but I couldn't see the 43/45 party wall from the front and none of that is a proper check.",
+  "words": 382,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26025423407554626,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08712663501501083,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -4.6875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.4340386390686035,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 9.7,
+    "effort": "provider default",
+    "output_tokens": 2270,
+    "input_tokens": 1943
+  }
+}

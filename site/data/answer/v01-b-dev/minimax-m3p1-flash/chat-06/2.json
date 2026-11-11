@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: none\nCc: none\nSubject: Desert Palms — codes and my tray\n\nMarco, Lupe called me at 7:50 this morning. Yvette's sitting in the leasing office with a tenant in 9B who lost her key and wants three copies cut today, and I got nothing to cut from, because you never wrote down a single code for that job. Fourteen units, Saturday, and the sheet's empty. That one is on you, brother.\n\nI'm pissed, Marco. And I'm not surprised, which is the part I don't like.\n\nI put it out to everybody back in August. Every rekey, every master job — bitting codes go in the sheet the same day, address and the code, before you leave the van. Not optional. Not \"I'll get to it Monday.\" Not nine o'clock at night. Kessler in September was the same thing and I told you then, and look where we are.\n\nTwo things today, and I want both done before you're back:\n\n1. Go back out to Desert Palms. Decode 9B at minimum — pin it, read the bitting, cut those three keys, and get the code written in the sheet before you pull out of that parking lot. If you can get into the other thirteen, do all fourteen while you're standing there. Don't tell me you'd have to come back out.\n\n2. Bring my pinning tray back. You left it on Yvette's counter with your pins scattered in it. My tools do not live in a leasing office. Yvette's already had to ask about it, and that's not how I want our name showing up in her office.\n\nNow hear me on this: I'm not firing you. You're good with your hands, you're quick, and I'd rather have you on my truck than have you walking. But this keeps happening and it's going to cost me cuts, cost me keys, cost me customers, and one of these days it's going to cost somebody their deposit. So codes in the sheet, same day, every job. Every job, Marco.\n\n9B in the sheet, my tray in my hand, and you and me are going to have a conversation when you're back.\n\nRay",
+  "words": 348,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "Says 'Lupe called me at 7:50', but Yvette called Lupe at 7:50 and Lupe sent Ray a text at 8:05; it also adds that Yvette is sitting in the office with the tenant and that Marco's pins were 'scattered'."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.27816957235336304,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.15749235451221466,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.396484375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.2885470390319824,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.5,
+    "effort": "provider default",
+    "output_tokens": 2170,
+    "input_tokens": 1479
+  }
+}

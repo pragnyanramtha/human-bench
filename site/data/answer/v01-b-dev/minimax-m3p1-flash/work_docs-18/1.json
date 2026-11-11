@@ -1,0 +1,91 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Here's your announcement, ready to paste into the website and print:\n\n---\n\n# Fix-It Saturday at St. Ansgar\n\n**Saturday, December 5, 2026 — 9 a.m. to 1 p.m.**\nFellowship Hall, St. Ansgar Lutheran Church, Minneapolis, MN\n*Enter by the alley door — the ramp is easiest.*\n\n**It's free. No membership, no sign-up. Just come.**\n\nBring the thing that's broken. Small appliances, lamps, bikes, clothing to mend, and knives to sharpen — fixers will be at tables for all of it. We've also got one retired tech volunteer who can look at laptops and phones.\n\n**One item per person to start,** so the line keeps moving. Coffee and kringle are provided.\n\n### Why we're doing this\n\nToo much gets thrown away that just needs a screw or a new cord. The idea was born the day Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes in the church kitchen. Now we're doing it on purpose, once a month.\n\nThe mending table is run by Doris Lindqvist, who is 84 and has darned socks for this parish since the Carter years. She asked to run it herself, and she is.\n\nThis is good neighboring, plain and simple. No strings, and nobody will preach at you.\n\n### Can you fix? We want you.\n\nWe're still looking for volunteer fixers — **especially anyone who can do vacuums or zippers,** and more hands for everything else. If you can tighten a handle, splice a cord, or sew a seam, please come. First-timers are welcome; we'll show you the tables.\n\n### And then?\n\nFix-It Saturday will happen the **first Saturday of every month through spring.** Come December 5. Bring the broken toaster — and stay for coffee.\n\nQuestions, or to volunteer:\nChurch office — office@stansgarlutheran.example · 612-555-0148\n\n---\n\nWord count sits at roughly 330. One small suggestion: since Doris and Marv are named in print, it may be worth asking them first — especially Doris, who's clearly the sort of person who'd want to know how her name reads.",
+  "words": 335,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The piece never says that food-shelf donations are welcome but not expected, which the request requires; everything else is covered."
+    ]
+  },
+  "second_judge": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The announcement omits that food-shelf donations are welcome but not expected."
+    ]
+  },
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3681158721446991,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5269129872322083,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.40625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.146395742893219,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 10.4,
+    "effort": "provider default",
+    "output_tokens": 1549,
+    "input_tokens": 650
+  }
+}

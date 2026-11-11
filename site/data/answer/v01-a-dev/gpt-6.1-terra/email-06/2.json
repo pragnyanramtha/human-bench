@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.29, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: m01\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nDear Faith,\n\nThank you for getting back to me. Here are the details you requested for ticket CP-48213:\n\n- Terminal and firmware: Four BX-300 terminals at our Embakasi depot updated automatically from firmware 4.1.8 to 4.2.1 on the night of 27 October.\n- Shift template: NIGHT-8, scheduled from 22:00 to 06:00.\n- Example: Staff ID T-0417 clocked in at 21:54 on 30 October and out at 06:07 on 31 October. The export split the shift into two lines: 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15. Payroll rounds durations to the nearest tenth of an hour; the 8 hours 13 minutes total is 8.2 hours, with the 13 minutes outside the scheduled shift coded OT15.\n- Payroll export profile: Payroll CSV v2.\n- When noticed: Kevin first noticed the issue on 5 November while reviewing draft October overtime. The incorrect splitting appears to have occurred since around 28 October.\n\nThe issue affects 38 night-shift staff at Embakasi. The draft October overtime was approximately KES 212,000 too high. Kevin has held those overtime lines and corrected them manually against the raw punches, but this is not a sustainable monthly solution. The Mombasa Road day shift is unaffected; its two terminals remain on firmware 4.1.8.\n\nThe 4.2.1 release notes promised improved midnight rollover handling, but we appear to be seeing the opposite. Could you please investigate and provide a fix or clear workaround before our payroll cut-off on 20 November?\n\nAlso, can Brian, who manages our terminals, safely roll the Embakasi terminals back to 4.1.8 without losing punch data? Please let us know any precautions or steps required.\n\nI have copied Kevin, our payroll officer, who will test the fix or workaround you recommend.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 304,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2939791977405548,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.25146907567977905,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.578968524932861,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "low",
+    "output_tokens": 492,
+    "input_tokens": 19715
+  }
+}

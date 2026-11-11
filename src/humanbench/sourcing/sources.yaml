@@ -1,0 +1,214 @@
+# Lane 1 source registry: pre-LLM human text on Hugging Face.
+#
+# Uses: judge_train (any judge use: checking the existing judge on human text,
+# or training data if a judge is fine-tuned) and dev_ref (public dev-split
+# material). Sources with restrictive or questionable licences are used only
+# privately, for research evaluation, under each source's own terms (some permit
+# academic use only); none of their text is redistributed. The corpus stays private. Archival text is NEVER a test reference; the
+# schema rejects "test_ref". dev_ref needs licence_status: clear, because the
+# dev split is published.
+#
+# Every repo id and revision below was checked against the Hugging Face API on
+# the "verified.checked" date (dataset info at the pinned sha, file listing, first
+# rows via datasets-server). Re-check with:  uv run humanbench-source verify
+#
+# Dates: text must be dated strictly before `cutoff` (default 2022-11-30). A
+# record with no usable date is rejected unless the whole source is pre-cutoff
+# by construction (construction_note says why).
+
+default_quotas:      # per source, per band; bands the channel never uses get 0
+  short: 4000
+  medium: 3500
+  long: 1750
+  extended: 750
+
+no_source:
+  chat: >-
+    No honest source. Public chat corpora (Ubuntu IRC, Discord dumps, DailyDialog)
+    are multi-author logs of short lines, annotator-written, or scraped without
+    consent; a single chat message of 250+ words is rare. Commission chat pieces
+    for the judge's training pool instead.
+  social: >-
+    No honest source. Tweet corpora are under 280 characters, and long
+    LinkedIn/Facebook posts are only available as scraped dumps with no licence
+    and unclear dates. Commission social posts instead.
+
+rejected_candidates:
+  - {repo: fancyzhx/amazon_polarity, reason: "reviews truncated to ~1,000 characters and paragraph breaks removed; almost nothing reaches 250 words"}
+  - {repo: Yale-LILY/aeslc, reason: "duplicates the Enron source (same emails, fewer of them)"}
+  - {repo: barilan/blog_authorship_corpus, reason: "loading-script dataset; tasksource copy has the same data as parquet"}
+  - {repo: common-pile/stackexchange, reason: "each document is a question plus all its answers, so it is multi-author"}
+  - {repo: common-pile/python_enhancement_proposals, reason: "under 1,000 docs, reST markup, many authors, and PEPs are edited after creation"}
+  - {repo: McAuley-Lab/Amazon-Reviews-2023, reason: "no licence on the card, tens of GB, and dated mostly after 2018; IMDb and Yelp already cover reviews"}
+  - {repo: euclaise/WritingPromptsX, reason: "no date field and no documented collection window, so it can't be shown to be pre-cutoff"}
+
+sources:
+  # --- email ------------------------------------------------------------------
+  - id: enron
+    channel: email
+    repo: corbt/enron-emails
+    revision: cfc06c758093d90993abce1a43668fb7357258a6
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: main}
+    data_files: ["data/train-*.parquet"]
+    split: train
+    text_field: body
+    id_field: message_id
+    date_field: date
+    date_format: iso
+    filters:
+      - {field: file_name, op: contains_any, value: ["/_sent_mail/", "/sent_items/", "/sent/"], why: "sent folders only: mail the mailbox owner wrote, not newsletters or spam"}
+    cleaners: [enron_cut_quoted, join_broken_lines]
+    licence: "none on the card; the corpus entered the public record via FERC (2003)"
+    licence_status: questionable
+    licence_notes: >-
+      Real employees' mail, released by a regulator, not by the authors. Widely
+      used for research, but full of names and PII. Judge training only; never
+      publish excerpts.
+    allowed_uses: [judge_train]
+
+  # --- forum ------------------------------------------------------------------
+  - id: tldr17
+    channel: forum
+    repo: webis/tldr-17
+    revision: ac45afb94e889860c62cf865ddab3abd0c8cb66e
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: refs/convert/parquet}
+    data_files: ["default/partial-train/*.parquet"]
+    split: train
+    text_field: body
+    id_field: id
+    pre_cutoff_by_construction: true
+    construction_note: "Reddit posts and comments 2006-2016, published by Webis in 2017 (Völske et al.)."
+    cleaners: [strip_tldr]
+    meta_fields: {subreddit: subreddit}
+    licence: cc-by-4.0
+    licence_status: questionable
+    licence_notes: >-
+      CC-BY-4.0 is the dataset licence; the underlying text belongs to Reddit
+      users under Reddit's terms. Every post was selected for having a TL;DR,
+      which strip_tldr removes so the judge can't learn it as a human tell.
+      The parquet branch is the first ~5 GB of the dataset (partial-train).
+    allowed_uses: [judge_train]
+
+  - id: stackexchange
+    channel: forum
+    repo: HuggingFaceH4/stack-exchange-preferences
+    revision: c7bda74048748f55749cd663c3d8d1025a841fd9
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: main}
+    data_files: ["data/*.stackexchange.com/train-*.parquet"]
+    exclude_files: ["data/*.meta.stackexchange.com/*"]
+    split: train
+    text_field: question
+    id_field: metadata.0
+    date_field: date
+    date_format: "%Y/%m/%d"
+    cleaners: [html_to_text]
+    meta_fields: {url: metadata.0}
+    licence: cc-by-sa-4.0
+    licence_status: clear
+    licence_notes: >-
+      Stack Exchange content is CC-BY-SA; keep the question URL for attribution
+      and share alike if anything is published. Only the question body is used
+      (single author); answers in this dataset carry no dates. The date is the
+      question's creation date; later edits are possible.
+    allowed_uses: [judge_train, dev_ref]
+
+  # --- review -----------------------------------------------------------------
+  - id: imdb
+    channel: review
+    repo: stanfordnlp/imdb
+    revision: e6281661ce1c48d982bc483cf8a173c1bbeb5d31
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: main}
+    data_files: ["plain_text/*.parquet"]
+    split: train+test+unsupervised
+    text_field: text
+    pre_cutoff_by_construction: true
+    construction_note: "Large Movie Review Dataset, Maas et al., ACL 2011."
+    cleaners: [html_to_text]
+    meta_fields: {label: label}
+    licence: "other (no explicit licence; IMDb user reviews)"
+    licence_status: questionable
+    licence_notes: "Research use is standard practice, but there is no licence grant from IMDb or the reviewers."
+    allowed_uses: [judge_train]
+
+  - id: yelp
+    channel: review
+    repo: Yelp/yelp_review_full
+    revision: c1f9ee939b7d05667af864ee1cb066393154bf85
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: main}
+    data_files: ["yelp_review_full/*.parquet"]
+    split: train+test
+    text_field: text
+    pre_cutoff_by_construction: true
+    construction_note: "Yelp Dataset Challenge 2015 release, packaged by Zhang et al. 2015."
+    cleaners: [unescape_newlines]
+    meta_fields: {label: label}
+    licence: "other (Yelp Dataset Terms of Use)"
+    licence_status: restrictive
+    licence_notes: >-
+      Yelp's terms allow non-commercial academic use only and forbid
+      redistribution. Use for judge training only if the project stays
+      non-commercial research; otherwise drop this source.
+    allowed_uses: [judge_train]
+
+  # --- blog -------------------------------------------------------------------
+  - id: blog_authorship
+    channel: blog
+    repo: tasksource/blog_authorship_corpus
+    revision: 689fcafb8e93edb6f2340edf7197a8ae3cf6aa3d
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: refs/convert/parquet}
+    data_files: ["default/train/*.parquet"]
+    split: train
+    text_field: text
+    date_field: date
+    date_format: "%d,%B,%Y"
+    pre_cutoff_by_construction: true
+    construction_note: "Blogger.com posts collected in August 2004 (Schler et al. 2006). Some dates use non-English month names."
+    meta_fields: {blogger_id: id, topic: topic}
+    licence: "apache-2.0 on the card; the original corpus is 'free for non-commercial research'"
+    licence_status: questionable
+    licence_notes: "The re-uploader's Apache licence can't override the original terms. Judge training only."
+    allowed_uses: [judge_train]
+
+  # --- work_docs ----------------------------------------------------------------
+  - id: github_threads
+    channel: work_docs
+    repo: common-pile/github_archive
+    revision: 9e27cfce4ffd682bce4a7485b3129ed74f725657
+    verified: {checked: 2026-11-09, method: "HF API dataset info + parquet row-group read", revision_ref: refs/convert/parquet}
+    data_files: ["default/partial-train/*.parquet"]
+    split: train
+    text_field: text
+    id_field: metadata.url
+    date_field: created
+    date_format: iso
+    filters:
+      - {field: metadata.authors, op: len_max, value: 1, why: "single-author threads only, so the text is one person's writing"}
+    meta_fields: {url: metadata.url, kind: source, repo_licence: metadata.license}
+    licence: "per-repository open licence (MIT, Apache-2.0, ...), as vetted by Common Pile"
+    licence_status: questionable
+    licence_notes: >-
+      Common Pile applies the repository's licence to issue and PR text, which
+      is arguable. Many threads are code or logs; the English-prose gate drops
+      most of those. Dates span 2011-2024, so the date gate matters here.
+    allowed_uses: [judge_train]
+
+  # --- personal ---------------------------------------------------------------
+  - id: writingprompts
+    channel: personal
+    repo: euclaise/writingprompts
+    revision: 35f0aa359452ba8147b34d925684fccee26679cc
+    verified: {checked: 2026-11-09, method: "HF API dataset info + datasets-server first-rows", revision_ref: main}
+    data_files: ["data/*.parquet"]
+    split: train+validation+test
+    text_field: story
+    pre_cutoff_by_construction: true
+    construction_note: "r/WritingPrompts stories collected for Fan et al., ACL 2018."
+    cleaners: [wp_detokenize]
+    meta_fields: {prompt: prompt}
+    licence: "mit on the card; stories are Reddit user content"
+    licence_status: questionable
+    licence_notes: >-
+      Text was tokenized by the original authors; wp_detokenize undoes most of
+      it, but quote style is lost. Fiction, so it stands in for the 'story'
+      part of Personal only (no letters, toasts or eulogies exist publicly).
+    allowed_uses: [judge_train]

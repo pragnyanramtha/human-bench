@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "work_docs-07",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the statement. Three things to fill in or check: your name (two spots), Darlene's last name and title, and the date at the top, which I set to today.\n\n---\n\nNovember 11, 2026\n\nTo: Mrs. Okafor\nCopy to: Darlene [last name], Transportation Supervisor, for my file\nFrom: [Your full name], Driver, Bus 41, Route 9\n\nRe: Written statement in response to the complaint dated October 29, 2026, about the afternoon run on Tuesday, October 27, 2026\n\nDear Mrs. Okafor,\n\nMy supervisor gave me a copy of your complaint on November 3 and asked me to put my account of that afternoon in writing. This statement will go in my file with the Transportation Office, and a copy is being sent to you. I am addressing it to you because I drive Amara every day and I would rather you hear this from me directly.\n\nBefore anything else, I understand that you were scared. I have grandchildren, and if I watched a bus pull away with one of them on it, I would be upset too. I am sorry you had that kind of afternoon.\n\nThis is what happened from the driver's seat.\n\nOn Tuesday, October 27, I was driving Bus 41 on the Route 9 elementary afternoon run. Amara's stop is Kessler Avenue and Brandt Street. The schedule has me there at 3:50, and I arrived at 3:52. Amara is a kindergartner at Fairmont Elementary and has a green tag on her bag. That tag tells the driver that an adult has to be at the stop before she can get off the bus.\n\nWhen I pulled up, I did not see an adult at the corner. I waited until about 3:55 and kept looking. I still did not see anyone at the stop or walking toward it.\n\nThe district rule for kindergarten riders is that if no adult is at the stop, the student stays on the bus and goes back to school, and the office calls the parent. That is not left up to the driver. It is the same for every kindergartner on every route.\n\nAt 3:56 I radioed dispatch and reported that there was no adult at the stop for Amara and that I would be bringing her back to Fairmont. Gloria at dispatch took the call and phoned the school. I had 14 students on the bus and three more stops to make. I finished those stops and drove back to the school. We got to Fairmont at 4:31. I walked Amara into the building myself and left her with Mrs. Petrakis in the office.\n\nAmara was fine the whole ride. I told her we were going on a little extra trip. She colored on her folder, and at one point she asked me if she could ride more. I did not see her cry or act frightened at any time.\n\nI also want to answer the three things in your complaint.\n\nYou wrote that you were parked across Brandt Street by the laundromat and that you waved. I am not saying you were not there. I am saying I did not see you. There was a box truck parked on that side of the street. If I had seen you wave, I would have waited for you to cross, the same as I do for any parent. I did not ignore you.\n\nYou wrote that I \"took\" your daughter. I can understand why it felt that way from where you were sitting. What I did was keep her on the bus and return her to her school, where the office staff could reach you and she would be with adults she knows. That is what the district requires of me when I cannot see an adult at the stop.\n\nYou told the office that I drove off laughing. I was not laughing. As we were pulling out, a fourth grader in seat 2 was out of the seat, and I was telling that student to sit back down. I can see how that might have looked like something else from across the street, but nothing about that stop was funny to me.\n\nYou may also wonder why I did not get off and look around. I cannot do that. I am the only adult on the bus, and I had 14 children on board. I will not leave them to go look across the road.\n\nBus 41 has a camera, and it will show the stop. I am asking the Transportation Office to pull the footage from the afternoon of October 27, from the time I arrived at Kessler and Brandt until I pulled away, and to keep it with this statement. You should be able to rely on the footage and not only on my word.\n\nIn 28 years of driving, I have had to take a kindergartner back to school one other time, years ago, with a different family on my route. That family thanked me afterward. I am not telling you that to say how you ought to feel. I am telling you because the rule exists so that a kindergartner is never left standing alone on a corner, and I would do the same for any child on my bus.\n\nI am not going to apologize for following the rule, because I believe it protects Amara. I am sorry that it caused you a bad afternoon, and I mean that.\n\nGoing forward, I would ask one thing. Please wait on the bus side of the street at the corner. If you are in your car, please step out so that I can see you. If I can see you, Amara gets off the bus and there is no question about it.\n\nI have been driving a school bus for 28 years and have never had a write-up. I take the children on my route seriously, and that includes your daughter. I am glad to keep driving Amara, and I would like this settled so that the afternoon stop goes smoothly for both of us from here on.\n\nRespectfully,\n\n[Your full name]\nDriver, Bus 41, Route 9",
+  "words": 1017,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[last name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.49776795506477356,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04139285162091255,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.004608154296875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.800141334533691,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 58.3,
+    "effort": "high",
+    "output_tokens": 5469,
+    "input_tokens": 1762
+  }
+}

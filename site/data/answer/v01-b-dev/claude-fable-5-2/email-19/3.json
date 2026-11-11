@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "Hiya Beth,\n\nJust you on this, I've left the others off. Only landed from Lagos this morning so forgive me if it rambles.\n\nI'm not getting into November. I wasn't in the middle of it then and I'm not starting now. You both said things, and that's between you and Lowri. For what it's worth I think she's sorry and too stubborn to say so, which might sound familiar. That's all I'm saying on it.\n\nIt's Nia I keep thinking about. She rang me last week in tears asking if you were still coming. She doesn't know you've pulled out and I haven't said a word. You're the one who sat with her in the Heath every night when her mam was bad, Beth. You're doing a reading at Margam on the 17th of April. I just don't want you looking back on her hen and wishing you'd been there, because I think you would, and I think she'd feel it too.\n\nSo here's my idea. Skip the Friday altogether. No chilli, no paddleboarding, none of it. Just come Saturday for the meal. The train from Cardiff Central is about two and a half hours, and if you can be in Tenby for 6 I'll pick you up from the station. The meal's not till 7.30 so there's plenty of time to get changed. Then kip in with me, I've got the twin room so there's a bed going spare. You'd be sat by me all night and home Sunday.\n\nAlso, purely selfishly, I swapped my Orlando with Kerry from work to get that weekend off, and it cost me a night stop I really wanted. I didn't do that to sit through a set menu without you.\n\nOne more thing, hang on before you send Lowri any money. Leave it till you've decided and we'll sort it out then.\n\nHave a think, no need to answer straight away. Ring me tomorrow if you'd rather talk, I'll be human again by then.\n\nLove you loads,\nSiân xx",
+  "words": 337,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits 2019 and does not identify the row as occurring at Lowri’s 40th."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.11256483197212219,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.03014407493174076,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -2.1875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.581439018249512,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 27.3,
+    "effort": "high",
+    "output_tokens": 2317,
+    "input_tokens": 2179
+  }
+}

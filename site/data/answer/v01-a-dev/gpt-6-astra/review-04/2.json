@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-04",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.28, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: reviews/arroyo-precision-works\nReplying to: none\nCc: none\nSubject: 5/5 — Careful drawing review, early delivery, and parts that fit first time\n\n5 stars. Arroyo made a camera-to-dewar adapter plate and a threaded light baffle tube for our near-IR camera, and I’m very happy with both the parts and how they handled the job. We need this hardware for our Palomar observing run starting November 18, so getting it on time—and having it actually fit—was a big deal.\n\nThe larger vendor we approached quoted six weeks. Arroyo quoted 21 days and delivered in nine days from the PO, including black anodizing. That left us time to do a proper fit test before the run instead of finding out at the last minute whether anything needed rework. Our order did include a $300 rush setup fee, so this isn’t a claim about their standard turnaround, but they still finished well ahead of the schedule they gave us.\n\nThe thing I most want other labs to know is that they actually read the drawing and asked the right question before cutting metal. Tiff noticed that I had labeled a bolt circle as 4.125 on a drawing where the other dimensions were in millimeters. It should have been 4.125 inches, or about 104.8 mm. I had copied it from an old camera drawing, and the mistake was entirely mine. Taken literally, it would have put the screws inside the bore. Ruben emailed to check, explained what they thought the dimension should be, and waited for my confirmation. That catch saved us from a very bad outcome on a time-sensitive part. I really appreciate Tiff paying attention rather than just machining what was on the page.\n\nBoth parts passed our fit test on Monday, November 9. All eight screws in the adapter plate went in without forcing anything. We checked flatness across the face with a dial indicator and measured less than 0.01 mm. The baffle threads were smooth, and the anodizing was even with no bare spots. We also checked for light leaks with the lab lights on and a 300-second dark frame; the result was the same as with the dewar closed. No light leak showed up in that test.\n\nRuben delivered the finished parts to Robinson himself, at no charge for delivery. After worrying about the schedule, I was honestly so relieved to see them that I nearly hugged him. Having everything go together properly at the fit test made it even better.\n\nThis is one order, and we haven’t taken the camera through the observing run yet, but everything we can check in the lab has gone well. Based on this experience, I would absolutely use Arroyo again, and I’d like purchasing to add them to the preferred vendor list. For our group, the reason is not just that they were fast: they caught my drawing error, checked before proceeding, and delivered well-made parts that fit the first time. That’s the kind of care I want when choosing a shop for research hardware.",
+  "words": 481,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2800895571708679,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.33081239461898804,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.46875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.249528408050537,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 33.2,
+    "effort": "medium",
+    "output_tokens": 627,
+    "input_tokens": 15364
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "review-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Kestrel Bastion 1500: saved a 10x position during a storm, but it's got quirks (4/5)**\n\nI bought this in August 2026 for $229 here on Voltwise. I day-trade crypto out of Miami, so the power going out in the middle of a position is a real problem for me. I wanted something with actual numbers behind it, so here's how it's gone so far, including the stuff that annoys me.\n\n**My setup / load**\n\nPC, 3 monitors, modem, and router. While I'm trading, the unit's own display shows about 410W. The specs are 1500VA / 1000W, and it's pure sine wave, which you want with a gaming/trading PC that has an active PFC power supply.\n\n**Runtime (I tested it on purpose)**\n\nThe box says roughly 14 minutes at 500W. I unplugged it from the wall at my normal 410W load and got **11 min 40 sec** before I shut down. So at a lighter load than the box rating, I still got less time than it advertises. Plan for the real number, not the one on the box. Around 11 minutes is plenty to close out positions and shut down properly. It is not enough to keep trading through a long outage.\n\n**The day it paid for itself**\n\nOct 14, during the storm, the power dropped around 2:20pm. I was 10x long on a SOL perp. The rig and the wifi both stayed up, and I closed the position cleanly in about 4 minutes. If I'd lost connection there I would have had no control over a leveraged position during a volatile storm afternoon. Honestly, that one moment covered the $229.\n\n**Most important tip: put your modem and router on the battery side**\n\nThere are 10 outlets. **Only 5 are battery backed.** The other 5 are surge-only. A lot of people plug the PC into battery and leave the modem/router on the surge side, then when the power cuts the PC stays on but the internet drops. For trading that makes the UPS pointless. Put the modem and router on the battery side. With my setup I still have battery outlets left over.\n\n**Other specs**\n\n- USB-C port, 60W, good for charging a phone or keeping a laptop topped up\n- About 30 lbs, so it's heavy. Pick a spot for it and leave it there\n- The battery is swappable, which is great, but the replacement pack is **$95**. Count that in the long-term cost\n\n**What bugs me**\n\n- **Fan noise.** The first week, the fan randomly kicked on at 3am and woke me up. It's loud, like a hair dryer on low. If it's in your bedroom you'll notice. It hasn't happened as much since, but keep it in mind.\n- **The outage beeping is LOUD.** You can mute it in the app, but **the mute resets after a firmware update**. So after updating you'll get blasted the next time the power flickers. Check that setting every time you update.\n- **The desktop app looks like Windows XP.** It's ugly and dated. Auto shutdown does work, though, and that's the feature that matters, so I can live with how it looks.\n\n**Who it's for**\n\nIf you trade on a desktop with multiple monitors and your load is in the 400-500W range, this gets you enough runtime to close positions and shut down safely without rushing. If you need to keep trading for 30+ minutes through an outage, you'll want something bigger or a different setup.\n\n**Why 4 stars and not 5**\n\nIt did the one thing I bought it for, when it mattered, with real money on the line. I took a star off because the runtime came in under the box claim, the fan is loud, the mute resets after updates, the app is rough, and the replacement battery is $95. None of those are dealbreakers, but you should know about them before you buy.\n\nWould buy again. Just plug your internet into the battery side.",
+  "words": 659,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5052638649940491,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.42111876606941223,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.53125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.195668935775757,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 37.8,
+    "effort": "medium",
+    "output_tokens": 1265,
+    "input_tokens": 1413
+  }
+}

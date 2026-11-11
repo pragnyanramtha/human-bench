@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-14",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "coherent",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Peter, I'll take the other side here, but a lot of what you wrote is right. Advances left open-ended do teach people to live on next month's money, and HR does end up as the lender of first resort. You've seen the back end of this more than most of us, and you're right that the company shouldn't be a bank.\n\nWhere I'd push back is on \"close the window and they adjust.\" We closed ours in February 2025, almost exactly the way you describe: two months' notice, a SACCO referral, one financial literacy session. We reopened it in September the same year. Brenda, since this is going in front of your MD on the 18th, here's what happened in between, with numbers you can check.\n\nSome context: we have about 340 staff, mostly drivers, loaders, turn-boys and warehouse clerks across two depots. A lot of them take home around KES 28,000 a month, so there's very little room for an emergency.\n\nIn the six months after we closed:\n\n- Debt collectors and loan-app staff started phoning the office. Reception logged 61 calls. Some of the apps were calling supervisors listed as referees, which put those supervisors in an awkward spot at work.\n- Unplanned absence rose in the two days after month-end. Our fleet manager linked at least three missed runs on the coast to drivers sorting out loans. That's his read of the rota, not a formal study, but it's the kind of cost Finance doesn't see on a spreadsheet.\n- One loader at a depot had six apps out at once by the time he came to HR, borrowing from one to pay the next. It took us four months with payroll to unwind it. That's staff time spread across HR, payroll and his supervisor, none of which was in any forecast.\n\nHere's the scheme since reopening:\n\n- Maximum 40% of net pay, once per pay cycle, repaid in full at the next payroll, no fee.\n- Requested through the payroll portal, not HR's office.\n- Before approval we check that total deductions stay within two-thirds of wages, which is the Employment Act limit. Nobody reaches month-end with nothing.\n\nSince September we've averaged 55–70 requests a month, with an average of around KES 9,000. We've recovered everything except two leavers, and the total written off for the year is roughly KES 14,000. Our Finance Manager now defends the scheme himself, and his reason is that the impact is known in advance. It's a fixed ceiling, not a surprise.\n\nI'm not saying it's free. KES 14,000 written off plus the admin is a real cost, and nobody should pretend admin is zero. But compare that with the alternative we actually lived through: the calls, the absence and the missed runs. Those were bigger costs, and they were harder to see.\n\nOn SACCOs, I agree they're good, and we still point people to them. The problem is timing. SACCO loans take two to three weeks and need guarantors. That doesn't help with a child sent home from school over fees on a Tuesday. People who can't get that money elsewhere go to the apps, and the apps charge what they charge.\n\nThe point I think you're most right about is that the risk is open-endedness. A written cap, a fixed frequency and a set repayment date address that directly. Your three-months'-notice approach would work fine for people with savings. It didn't work for people without them.\n\nBrenda, if it helps going in on the 18th, here's the shape I'd propose and what I'd measure:\n\n- Written policy: cap at 40% of net, once per cycle, full repayment at next payroll, no fee.\n- Approval: through payroll, with an automatic check against the two-thirds wage limit.\n- Finance ceiling: maximum exposure per cycle is the number of staff using the scheme times the cap. That's the figure Finance can plan around.\n- Trial: three months, with monthly reporting on requests, write-offs and admin hours. Before you start, pull a baseline from reception call logs and from absence in the two days after month-end. Without a baseline you can't prove anything either way, and that's the real trap in this debate.\n\nPeter, you know payroll better than I do, so tell me where these rules would leak. I'd genuinely like to hear it.\n\n---\n\nA few things to check before you post:\n\n- I read \"KES 28,000/month\" as a typical take-home. If you meant something else, such as a threshold or a median salary, change that line.\n- I left out the depot towns and the company name. I'd also keep \"a depot on the coast\" as is, since the town plus the staff numbers could identify the firm.\n- Present the 61 calls and the absence link as they were recorded. Reception's count and the fleet manager's read of the rota are not controlled studies, and Finance will likely push on that. The post already says so for the absence point.",
+  "words": 831,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "coherent"
+    ],
+    "reasons": [
+      "The appended pre-posting notes break the piece’s coherence as a forum reply."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44934090971946716,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026756249368190765,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.71875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.961595058441162,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.4,
+    "effort": "medium",
+    "output_tokens": 4869,
+    "input_tokens": 2808
+  }
+}

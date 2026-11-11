@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "social-02",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.25, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: timeline\nReplying to: none\nCc: none\nSubject: none\n\nSpent the last two Saturdays redoing a buddy's shed, and I need to tell someone what we found. I took notes the whole time because I didn't believe it while I was looking at it.\n\nPower to the shed was three orange extension cords daisy-chained out a basement window, across the yard, and under the deck. One of the splices was wrapped in duct tape. Not electrical tape. Duct tape. The breaker was a 30 amp feeding 14 gauge wire, which means the wire was doing its best and nobody was going to thank it for that.\n\nThe outlet in the shed had speaker wire hooked up to it. Somebody had also stuck a GFCI sticker on a regular outlet. A sticker. I've seen a lot of things in 26 years, but I didn't know a sticker could be a safety device.\n\nThe ceiling fan was held up by one drywall screw. A fan with one screw is a fan with a plan to fall on somebody. In the junction box there was a mouse nest. The mice were fine. Nobody had bothered them. That was the only part of the job where everybody involved was happy.\n\nThe best one was inside the panel door, written in Sharpie: SHED - DON'T TOUCH - RON. We don't know who Ron is. Nobody in the house knew who Ron is. When I opened the panel, his wife was standing right behind me, and she asked, \"Who's Ron?\" Like I'd know. I didn't know. I still don't know. Ron may be a legend at this point.\n\nHere's what the fix looked like: we trenched 18 inches down, ran 12/2 UF cable, put in a 20 amp GFCI breaker, a real box, real outlets, and put the fan on a proper brace. It took two Saturdays. The payment was two pizzas and a case of Yuengling, which, honestly, was a fair deal.\n\nThe guy who did the original work wasn't evil. He was cheap and a little proud of it, and that's most of the bad wiring I see. Somebody watches a few videos, figures it's just plugs and wire, and decides a licensed electrician is a waste of money. Then the shed is on fire, or worse, the house is.\n\nSo here's the actual message, and I'm not going to soften it. Electrical work is not a weekend project unless you're licensed and it's permitted and inspected. Extension cords are not wiring. Duct tape is not insulation. A GFCI sticker does nothing. If the breaker is hot, if the outlet is warm, if you hear buzzing or smell something like burnt plastic, shut it off and call a licensed electrician. Don't call your buddy with a YouTube video. He means well, and so did the guy with the Sharpie.\n\nIt's a little funny now. It wasn't funny when the shed was one bad splice away from a fire, and it's still one bad splice away from being a story in somebody else's newspaper. Get it checked by someone with a license, and if you're not sure whether your setup is safe, ask one before you ask a friend.\n\nAnyway, the shed looks great. Fan's on, nothing smells like burning, and the mice have been relocated with a stern talking-to.",
+  "words": 546,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.25480034947395325,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07718200236558914,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.436849594116211,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "medium",
+    "output_tokens": 1877,
+    "input_tokens": 2892
+  }
+}

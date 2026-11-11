@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "email-20",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Priya,\n\nThanks for owning it, but please stop apologizing. This came out of a questionnaire library that nobody owns, and I'm not going to pin it on one person. That's on all of us, and I should have built a check into the process a long time ago.\n\nI'm not throwing you under the bus with Greg. I'll talk to him myself before his 4pm, and I'll make sure he hears it as a team fix. You don't need to tell him anything.\n\nHere's what I need from you tonight:\n\n1. Fix Q14 with the real status. The Type I report was issued in April. The Type II audit window closes January 31, and the report is expected by March. Use that language exactly. Don't round it up to \"in progress\" or \"summer.\"\n2. Send the corrected answer to me first, not Dana. I want to read it before anything goes out.\n3. While you're in there, check the rest of the questionnaire against the trust page. If anything else is stale, flag it to me so we fix everything at once and don't get a second surprise on Thursday.\n\nThursday at 2, Marcus from our security team is setting up a call with Dana and their legal team. I need you on it. You know this account and these answers better than anyone, and Dana will respect someone who can speak to the details. Marcus also says we can offer Brazos a bridge letter from the auditor covering the gap until the Type II report comes in. I'll walk you through that before the call so we're aligned.\n\nI'll be honest with you: Brazos is my biggest deal this year. I've been working it since February, and I've already been talking about what it'll mean for us, including a Big Bend trip my wife and I have been planning. So yeah, I'm nervous. But I think we can fix this if we're straight with Dana quickly. She's strict, but from what I've seen she's fair.\n\nYou've carried this account. You stayed until 9pm in September rebuilding their demo environment when the route import broke, and that's the kind of work this deal has depended on. Let's get this one right together.\n\nPlease don't beat yourself up over this. Get Q14 to me tonight and we'll take it from there.\n\nJordan",
+  "words": 391,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "The reply does not make clear that the Big Bend trip would be funded by the deal’s commission."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4322371184825897,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2647075355052948,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.255859375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.781590461730957,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.3,
+    "effort": "medium",
+    "output_tokens": 2271,
+    "input_tokens": 2164
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "personal-20",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here is your letter. It's ready to copy into a group text or email.\n\n**Subject: Lotus Glow Nails is OK, and here is where to find us this week**\n\nHello my friends and neighbors,\n\nSo many of you are calling me, so I write one letter to answer everybody. First, I am OK, and nobody was hurt, thank God.\n\nSunday, November 8, around 2 in the morning, a lady's car drove right through the front window of Lotus Glow Nails. Nobody was inside, and the driver is OK too. The police came, and her insurance will pay. I cried a little in the morning, I won't lie, but now I am fine. God protected us because the shop was empty.\n\nThe front glass is gone and one pedicure chair is smashed. The car stopped exactly at the pedicure chair, like she wanted a spa day! My daughter says she got the first drive-thru pedicure in Houston. And the floor looks like a rainbow threw up, with polish every color everywhere. My husband looked at it and said, \"Finally, the shop is modern art.\" So you see, we are laughing at home, and you can laugh a little too. Please don't worry about me.\n\n**What you need to know:**\n\n- **This week:** Me, Trang, and Kim are working at my cousin Hoa's salon, **Pearland Nail Bar**. Call or text my cell to book: **832-555-0147**.\n- **Reopening:** The city inspector must check the wall first. The contractor says we open again **Monday, November 16**, back at Lotus Glow Nails on Bellaire Blvd.\n- **Gift cards:** Still good. Nobody loses any money.\n\nThank you for all your texts and calls. Thank you also for the food. Mrs. Dung brought me pho this morning, so now I am very full and very loved.\n\nAfter 11 years on Bellaire Blvd, I am not going anywhere. See you in Pearland this week, and back home on Monday the 16th.\n\nWith love,\nLotus Glow Nails",
+  "words": 328,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bullets"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5509514808654785,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5947206020355225,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.6875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.7919080257415771,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.0,
+    "effort": "high",
+    "output_tokens": 1841,
+    "input_tokens": 1381
+  }
+}

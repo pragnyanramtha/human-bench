@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why my pier logger runs warmer than the buoy — and how I know it isn't broken**\n\nA few of you have emailed about this, and one of you was blunt enough to say my logger might be faulty. Fair question, so here's the whole picture, numbers included.\n\n**The gap.** October means: pier logger 15.9 °C, buoy 14.1 °C — about 1.8 °C apart. In winter that shrinks to roughly 0.4 °C.\n\n**Why.** The logger hangs on a piling at 3 m depth, about 150 m from shore, in shallow nearshore water. Shallow water heats fast in the sun and doesn't have much depth to mix the heat away. The buoy sits ~25 km offshore over deep water that the coastal upwelling keeps cold. So on a sunny afternoon the nearshore surface layer is legitimately warmer. My logger is on the sheltered side of that boundary, not across it.\n\nOne reader sent me a screenshot with the buoy and my data overlaid, and it was genuinely useful: the gap tracks sunny afternoons. That's the tell. Solar heating has a daily signature; a drifted sensor doesn't. The gap narrowing to 0.4 °C in winter, when the sun is low and storms mix the water column, fits the same explanation.\n\n**The instrument.** Two-point calibration against a lab reference thermometer — ice bath and room-temperature bath. Last check September 2026: offset +0.12 °C, well inside spec. It logs every 10 minutes; I pull, download and check it every six weeks; battery changed once a year. In August I hauled it up and found a barnacle colony and a decorator crab living on the housing. Scraped both off, pulled it back in, and the readings didn't change.\n\n**Which number to use.** The buoy and the logger answer different questions. The buoy describes the open ocean. If you're diving the breakwater or working the tidepools, my pier number is the closer one to the water you'll be in.\n\nIf anyone wants to check my arithmetic — or my work — email me and I'll send the raw CSV: the 10-minute series, timestamps attached, no smoothing, no corrections applied.\n\nI'd rather you ask than guess.\n\n— [Your name], Field Station",
+  "words": 365,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4269096553325653,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.41411837935447693,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.78125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.473240852355957,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.1,
+    "effort": "provider default",
+    "output_tokens": 1256,
+    "input_tokens": 672
+  }
+}

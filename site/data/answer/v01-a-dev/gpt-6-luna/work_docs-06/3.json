@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: Urgent: stop using Brightline Pro 6% batch LX2291\n\nPlease check your Brightline Pro 6% (20 vol) Cream Developer 1L before using it. Kelvin Trade says a filling error means batch LX2291 may actually contain 12% (40 vol) developer.\n\nThe batch number is printed on the **base of the bottle, not the box**. Please check every bottle, including open ones in your trolley and stock in the back. Don’t rely on the box or assume an open bottle is a different batch. Kelvin Trade says batch LX2291 was supplied between 19 October and 5 November 2026. Stop using any bottle with that code immediately. Other batches and strengths are not affected, according to their notice.\n\nWe’ve had reports of colour lifting much faster than expected, hot foils, patchy or brassy results, and scalp soreness and redness. A stronger developer can cause excessive heat and damage to the hair and scalp. Please don’t try to use up a suspect bottle or put it back into circulation.\n\nIf you have a bottle from batch LX2291, keep it separate and return it to the Kelvin Trade rep, who is in on Tuesday, or take it to their Hillington depot for a full credit. If you or a client had a problem, keep the bottle as evidence—**don’t bin it**. Make a note of the batch code and what happened, and let the person affected know what you’ve found. Don’t make promises about the cause or outcome; the supplier is investigating the batch.\n\nIf someone reacts during a service, stop and rinse the affected area straight away with plenty of cool or lukewarm running water for about an hour. Don’t shampoo, apply creams or other chemicals, or wait to see if it gets worse. Wear gloves and carefully remove contaminated clothing if possible. Suspected chemical burns need hospital assessment: call 999 for medical help and follow the call handler’s instructions. Breathing difficulty, throat swelling or collapse are an emergency—call 999 immediately. Record the incident in the book at the desk.\n\nPlease check your stock before your next colour service and pass this on to anyone renting a chair who might have bought from the Kelvin Trade rep. The supplier’s notice is that batch LX2291 is affected; if you’re unsure about a bottle, don’t use it until you’ve checked with Kelvin Trade.",
+  "words": 377,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.38745665550231934,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.28494808077812195,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.03125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -1.7991584539413452,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.8,
+    "effort": "medium",
+    "output_tokens": 512,
+    "input_tokens": 15403
+  }
+}

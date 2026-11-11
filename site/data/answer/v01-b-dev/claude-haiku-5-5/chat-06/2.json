@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: @marco\nReplying to: none\nCc: none\nSubject: none\n\nMarco, you told me Saturday Desert Palms was done, 14 units, all good. Nobody on this end has one bitting code for that building. Yvette has a tenant in 9B who can't get into her unit, and I can't cut her keys because you never put the codes in the sheet.\n\nThis is the Kessler job all over again. I told you in September the codes go in the sheet the same day. I put it out to everybody in August, same day, before you leave the van. No exceptions. Without the codes nobody can rekey, master, or cut a spare for those people, and if somebody loses a key at 2 in the morning we're guessing.\n\nI'm not firing you. You're good with your hands and I know it. But this can't keep happening, and I'm not having this same conversation again.\n\nHere's what I need from you today:\n\n- Get back out to Desert Palms and decode 9B at least. All 14 if you can.\n- Get every code into the sheet, address, unit, and bitting code, before you leave.\n- Bring my pinning tray back. It's sitting on the counter in the leasing office and I want it in the van.\n\nText me when 9B is decoded. Don't tell me it's done until the sheet shows it.\n\nRay",
+  "words": 221,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "218 words, allowed 225-440 (band 250-400 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1992860585451126,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.04266069456934929,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.6875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -4.381137847900391,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.8,
+    "effort": "medium",
+    "output_tokens": 1392,
+    "input_tokens": 2554
+  }
+}

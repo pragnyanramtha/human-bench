@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "review-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: kitbash-market/murmur-dialogue/reviews\nReplying to: none\nCc: none\nSubject: 4 stars — a tool that helped make Lanternfolk, with an important caveat\n\nI’ve used Murmur since 2022, and the first prototype of Lanternfolk was literally the ferryman scene. I made it in one weekend with Murmur, and that weekend was when I decided to quit my job at a mobile studio and take the game seriously. I don’t think Lanternfolk would exist without this tool.\n\nOver the years, Murmur became part of how I work. Lanternfolk now has 412 dialogue nodes across nine languages, and Murmur’s CSV export has been a big part of making that manageable. I paid $19 for the original version, with a licence for unlimited commercial projects. Ines gave this tool four years of updates. I’m grateful for that, and for the work she put into something that helped me make a game I care about.\n\nI’m giving it four stars, not five, because I can’t recommend the current version without a serious warning. In 3.2.0, variables reset to their defaults when loading saves made in 3.1.x. That can mean lost dialogue state in your game. I ran into this myself: the ferryman would forget that you’d already paid him. In my project, rolling back to 3.1.4 fixed the problem and let the old saves load correctly. If you’re using Murmur, keep a copy of 3.1.4 and don’t update to 3.2.0 without testing it against your saves first. Replacing the Murmur folder in your project’s addons folder with the 3.1.4 release worked for me.\n\nThere isn’t support to rely on now, so please don’t buy it expecting someone to troubleshoot or patch problems. The listing says the source is available under MIT, which means people can fork it; I may look at doing that after my launch. But that’s a possibility, not a promise, and it doesn’t make the current bug disappear.\n\nI understand why people are frustrated, especially if the update broke their projects. I also don’t think the cruelest reviews tell the whole story. A broken release matters, and buyers deserve a clear warning. So does the history: this was a useful tool that Ines maintained and updated for four years, for $19. Both things can be true.\n\nThank you, Ines, for making Murmur and for the years of work you put into it. It helped me get Lanternfolk started, and I won’t forget that.",
+  "words": 379,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.36964520812034607,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4949192702770233,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.765625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.388263702392578,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.8,
+    "effort": "medium",
+    "output_tokens": 543,
+    "input_tokens": 15360
+  }
+}

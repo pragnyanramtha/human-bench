@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Dumper – the sums**\n\nLee,\n\nI’ve written this down because I know you’d rather see the numbers than listen to me going on in the van. We’ve been doing this 15 years, so hear me out.\n\nThis year we had the tracked dumper hired 14 days from Sittingbourne at £85 a day. That’s £1,190 before delivery, and with £30 delivery each time it came to roughly £1,600 all in. And we hand it back at the end of it.\n\nThere’s a 2019 500kg tracked one in Faversham for £1,650 ono. Says new tracks were fitted last spring. Halves is £825 each — not £825 a year, £825 once. It can live in my lean-to at the yard, covered, so no storage cost.\n\nWe’ve already got three patio digs and the Boughton drive booked for spring, so it’ll earn its keep. At this year’s use it pays for itself in about a year. At half that use, about two years, before servicing and repairs. Servicing we split 50/50, and whoever breaks it pays. That’s fair enough.\n\nRemember Hernhill in September when the hire place didn’t have one? We barrowed 6 ton of muck, took two extra days, and your back was gone for a week. And the delivery driver turning up at 11 once cost us half a morning. Owning it means it’s there when we need it.\n\nIf it doesn’t work out we sell it on — these hold their value. I don’t think we’ll need to, mind.\n\nCome and have a look at it with me Saturday before someone else has it. No pressure, just look at it and we can talk it through after.\n\nCheers,\n[Your name]",
+  "words": 279,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.41250935196876526,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5666558742523193,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.484375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.4407293796539307,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 8.5,
+    "effort": "provider default",
+    "output_tokens": 1731,
+    "input_tokens": 469
+  }
+}

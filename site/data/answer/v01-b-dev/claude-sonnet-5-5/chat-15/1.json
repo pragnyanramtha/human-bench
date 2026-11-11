@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "chat-15",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Ciarán, here's the full picture.\n\n**What the logger says**\n- Went over 8C at 22:50 Saturday night and came back under 8 at 05:00 Sunday. That's about 6 hrs 10 min out of range.\n- Peak was 11.6C at 02:15 Sunday.\n- Friday overnight minimum was 4.1C, so it was normal before this.\n\n**What happened**\nI found it at 07:55 this morning. The door wasn't fully clicked shut, and there was a box of Hartmann's bags from Saturday's delivery stacked against it. Saturday's clinic finished late with the RTA collie and the delivery got put away in a rush at closing. I had to lean on the door with my hip to get it to click, and the seal is cracked at the bottom left corner. I think it was the box and the seal together. Either one on its own might have been fine, but not both. The alarm keeps beeping until someone resets it, and the logger is the old ThermaTrak that only sounds locally, so with nobody in on Sunday nobody heard it.\n\n**What was in it**\n- 14 DHPPi\n- 9 lepto L4\n- 6 intranasal kennel cough\n- 3 rabies\n- 4 vials insulin\n- 2 cat flu/FeLV combos\n\nRoughly €1,150 at cost for the lot.\n\n**What the supplier said**\nI rang the Munster Vet Supplies tech line at 08:40 and spoke to Niamh, the pharmacist. She said to quarantine everything and not use it, and to email her the logger CSV and the batch numbers. They'll check with the manufacturers and come back to us by Wednesday.\n\nShe also checked the manufacturer's storage sheet for the insulin we stock against the logger readings and cleared those four vials for use. So the insulin is fine. The vaccines are the open question.\n\n**What's usable and what isn't**\n- Insulin: usable, cleared by Niamh.\n- Vaccines (everything else): not usable until Munster come back. They're in a sealed bag labelled DO NOT USE in the lab fridge. I checked it's sitting at 5.2C and started a new temp sheet for it.\n- I wouldn't bin anything until we hear back. I'd guess a lot of it will turn out to be fine, but that's the manufacturers' call, not mine. Worth having in your head for the 2 o'clock call that the credit question depends on what they say about each product.\n\n**Appointments**\nAoife, keep holding the boosters. If Munster clear the stock, you can rebook for Thursday/Friday. If they don't, we can borrow from the Carrigaline branch so nobody's waiting too long. Thanks for moving Bonnie as well.\n\n**What I'd change**\n1. Replace the logger with one that sends SMS alerts. There's one in the supplier catalogue for about €180. That would have woken someone up at 23:00 on Saturday instead of us finding it at 07:55.\n2. Replace the door seal. It needed doing anyway, as Marta flagged in July, and I'd rather not wait on it now.\n3. Add a lock-up check of the fridge door to the closing checklist: door fully clicked, nothing stacked against it.\n\nCan you OK the SMS logger and the new seal? I'll order both as soon as you say.\n\nI'll send Niamh the CSV and batch numbers now if I haven't already, and I'll post here the minute I hear anything back.",
+  "words": 554,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_include",
+        "kind": "required or barred words",
+        "detail": "missing: ['11.6']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3770386278629303,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.299687922000885,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 0.5552131533622742,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.5,
+    "effort": "high",
+    "output_tokens": 2023,
+    "input_tokens": 2244
+  }
+}

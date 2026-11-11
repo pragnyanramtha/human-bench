@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "blog-19",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: data-desk-blog\nReplying to: none\nCc: none\nSubject: DRAFT: Wellsford Road: what we got wrong, and what we are changing\n\nDRAFT: Wellsford Road: what we got wrong, and what we are changing\n\nOn 2 November we published an analysis of Department for Transport collision records for 2021 to 2025, ranking the Bristol roads where people are most often hurt in crashes. We put Wellsford Road in Fishponds at the top of that list, with 41 injury collisions over five years.\n\nThat figure was wrong. The correct total is 23, which places Wellsford Road sixth rather than first. We corrected the article and its table on 6 November, four days after publication, and said a fuller explanation would follow. This is that explanation.\n\nThe analysis joined the collision records to the road network. That join returned some collision–road pairs more than once, so the same accident index was counted twice, and in some cases several times, within a single road's tally. Eighteen of the entries we published for Wellsford Road were duplicates of accidents already counted, mostly at the junctions with Pell Street and Kingsmere Road.\n\nThe correction is simple to state: each accident index is now counted once per road. No collision has disappeared from the DfT record and the underlying data is unchanged; the error was in our code. It was ours as a desk, and we are not going to hand it to one person to carry alone.\n\nThe corrected table reads: Wellsford Road 23, not 41; Kingsmere Road 32, previously 34; Alder Hill 31, unchanged; Tanner's Way 28, previously 29; Crossfield Road 26, previously 27; and Hambrook Lane 24, new in fifth place. We reran the whole citywide table. No other road moves by more than two places.\n\nThe original article drew 48,200 views and 1,930 shares. The wrong number travelled further and faster than a correction could follow, and Wellsford Road was being described locally as the deadliest road in Bristol.\n\nThe Fishponds Streets Forum queried the figure early. A member of the forum worked through the published DfT data independently and could not get anywhere near 41. They were right to do it, and they were right. Parents also asked whether it was safe to walk their children to Wellsford Primary, and they deserved a clear answer rather than a line at the bottom of the page.\n\nTwenty-three injury collisions over five years, across the length of a residential road, is not a reassuring total, and we are not going to stand here and tell residents that the road is fine. Three of the 23 were serious; none was fatal. It is also worth saying what such a count cannot do: it does not tell you the risk on any particular journey, and it does not explain what caused the collisions. What it does tell you is that the road's record is materially smaller than we reported, and that 23 does not support a claim that Wellsford Road is the worst in Bristol.\n\nTwo changes to how we work. We will publish the cleaned dataset and the code behind any ranked table we run, so readers can check the working rather than take it on trust. And no ranked table will run again until a second analyst has reproduced it from scratch.\n\nWe are sorry. The mistake was published under our name, and the people who live and walk on that road had to carry the consequences of it. Had we made the same error in the other direction and understated a road's collisions, the harm would have been just as real, and we would expect to be held to the same standard.\n\nWe will attend the Fishponds Streets Forum open meeting at Fishponds Library on Tuesday 17 November at 7pm and take questions from residents in person. If you would rather put something to us in writing beforehand, we would welcome that too.",
+  "words": 629,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says the same accident index was counted 'twice, and in some cases several times', but the working notes say it appeared twice."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.05430077388882637,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026830146089196205,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.03125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.977992057800293,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 41.6,
+    "effort": "provider default",
+    "output_tokens": 6845,
+    "input_tokens": 2942
+  }
+}

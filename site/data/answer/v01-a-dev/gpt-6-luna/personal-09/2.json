@@ -1,0 +1,89 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, length, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: The building on Saint-Hubert**\n\nDenis,\n\nI’m writing because I’m too angry to have this conversation well right now, and I don’t want my anger to turn into words I can’t take back. But I need you to understand how serious this is for me.\n\nI found out that the building on rue Saint-Hubert is for sale from a stranger with a camera who walked into my bakery at six o’clock Thursday morning. I was shaping baguettes. He told me you had said I was okay with him coming in. I had not said that. Karine had to calm me down.\n\nYou didn’t call me. You didn’t tell me you were listing the building. You let an agent bring the news into my shop. I am furious—not only because you are putting the building on the market, but because of the way I found out. I’m your brother. You should have spoken to me directly.\n\nWhen Maman died in February and we were sorting out the estate, you told me, “No rush, we decide together.” Together, Denis. The estate was settled in August, and since then I’ve kept paying $2,400 a month in rent, never late once. I told you in September that the Caisse had pre-approved me for $410,000 to buy your half. You know I am trying to find a way to make this work. So seeing the listing online at $1,150,000, with no conversation between us, feels like you’ve simply decided that what we agreed to doesn’t matter.\n\nThis is not just a building to me. Papa bought it in 1979. The bakery has been downstairs for 31 years. You remember that room at the back where the flour sacks were? Papa let you sleep there when we were kids, and you loved it. I know you may see this as a business decision, and I know business matters. But it is our family’s place, and my life and livelihood are tied to it.\n\nI’m not being sentimental for the sake of it. I’m 57, and this bakery is how I make my living. I have six employees and 31 years of customers. A developer could tear the building down or turn it into condos. If that happens, I could be facing a rent twice what I pay now, and I can’t survive that. My lease ends April 30, 2027. This isn’t some distant possibility I can ignore; it affects what happens to the bakery and to the people who depend on it.\n\nI paid $38,000 for the new roof in 2019. I’m not saying that means you owe me the building, or that I get to decide everything. But I have put money, work, and a great deal of my life into this place. It’s fair to expect that to count for something when we talk about what happens next.\n\nI want you to take the building off the market this week while we speak directly and work out what happens. At the very least, I want a real first right to buy your half, with a chance to discuss the terms—not to hear about a sale from an agent after the listing is already up. I’ve already told you I have financing pre-approved. Please don’t treat that as if it was never said.\n\nI am not asking you to give me anything for free. I am asking you to deal with me as your brother and co-owner, honestly and directly. If you have a reason you need to sell, then tell me yourself. We can talk about the numbers and what’s possible. But don’t make this decision around me and expect me to accept it after the fact.\n\nI don’t want to lose you over this. I love you, and I don’t want the building to become something that breaks our family. But I need you to understand that right now I feel blindsided, disrespected, and deeply hurt. I am furious. I also still believe we can talk this through if you are willing to speak to me.\n\nPlease call me this week. I want to hear from you by phone, not through a text from your wife. I want to speak with you, my brother.\n\n—[Your name]",
+  "words": 703,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "710 words, allowed 720-2200 (band 800-2000 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4909802973270416,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9962877631187439,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.75,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.13496208190918,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.2,
+    "effort": "medium",
+    "output_tokens": 864,
+    "input_tokens": 14070
+  }
+}

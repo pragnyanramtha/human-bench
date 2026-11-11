@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-sonnet-5-5",
+  "label": "Claude Sonnet 5.5",
+  "lab": "Anthropic",
+  "card": "email-09",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject:** Tuesday reading club: new numbers, and something I need to own up to\n\nDear Niamh,\n\nThank you for your email of 30 October, and for being straight with me about the numbers and the insurance. September was slow, so I understood where it was coming from. But I'd like you to have the latest figures before the review on the 18th, because things have changed a great deal since then.\n\nWe had five children most weeks in September, nine by mid-October, and fourteen last Tuesday, the 3rd. Declan Moran at the Salthill Book Nook very kindly donated 120 books, mostly for the 6 to 9 age group and a good few as Gaeilge, and I'm certain that has helped. The children are choosing their own now instead of being handed something.\n\nThe numbers aren't really the whole story, though. Two sisters from a Ukrainian family joined in October, and the older one now reads to the younger in English at the end of each session. And one boy who wouldn't open a book in September asked me last week if he could take two home. I had to turn away for a moment. After a career in primary schools, I can tell you that doesn't happen by accident.\n\nNow for the part I'm not proud of. I met Orla Keane from the Corrib Courier at the farmers' market, and I got carried away telling her about the club and said she was welcome to come along any Tuesday. She has since asked about coming on Tuesday 24 November with a photographer. I should have checked with you before saying a word. I know that photographs of children need your sign-off and the parental consent forms, and I was wrong not to think of that first. I'd rather you heard it from me than from anyone else.\n\nNothing is fixed. I'll ring Orla and put the visit on hold until you've decided. If you're happy for it to go ahead, I'll collect the consent forms myself, and nobody will be photographed without them and your agreement. If you'd rather there were no press at all, I'll tell her that and she'll understand.\n\nI do think good coverage could help us, with more families hearing about it and perhaps a few more volunteers, but only if it's done properly, and that means your way.\n\nSo could I ask you to look at the new numbers before the 18th and reconsider the pause? It would be a terrible pity to stop just as the club has taken off. I'm very happy to talk it through by phone any time before then.\n\nThank you, Niamh, and I'm sorry for the muddle.\n\nKind regards,\n[Your name]\n\n---\n\nI left your name as a placeholder at the bottom. I also left out the boy's name and anything about his family, as you asked.",
+  "words": 478,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.35823097825050354,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.11588240414857864,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.59375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.910944938659668,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.4,
+    "effort": "high",
+    "output_tokens": 2207,
+    "input_tokens": 1659
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "email-19",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "floor",
+  "reason": "does task",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "Hiya Beth,\n\nJust you on this, I've taken the others off. I've just landed off a Lagos so forgive me if it rambles.\n\nI'm not getting into November. I wasn't keeping score at Lowri's 40th and I'm not starting now. That's between the two of you and I love you both. For what it's worth, I think she's sorry and too stubborn to say it, but that's only my guess and it's not why I'm writing.\n\nI'm writing because of Nia. She rang me last week in tears asking if you were still coming. She doesn't know you've pulled out. You're the one who sat with her in the Heath every night when her mam was bad in 2019, and she hasn't forgotten that. You're doing a reading at Margam on the 17th of April, so it's not like you're someone who won't be missed. I really think you'd regret not being there, and I'd hate that for you.\n\nSo here's my thought. Skip the Friday. Skip the cottage, the chilli and the paddleboarding, the lot. Just come for the meal on the Saturday. You only need to be in Tenby for about 6. You could get the train from Cardiff Central, it's two and a half hours or so, and I'll pick you up from the station myself. You can kip in with me Saturday night as I've got the twin room, so you wouldn't have to sort anything out with anyone. Then home Sunday morning and that's it done.\n\nSelfishly, I want you there as well. I swapped my Orlando with Kerry from work to get that weekend off and it cost me a night stop I really wanted, so I'm not spending it without you if I can help it.\n\nDon't send Lowri the money yet either way. Just hang on with that till you've had a think.\n\nNo need to answer today. Ring me tomorrow when I've slept, or whenever suits.\n\nLove you,\nSiân xx",
+  "words": 329,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": false,
+    "failed_questions": [
+      "does_task"
+    ],
+    "reasons": [
+      "It omits that both said things, that Bethan is also stubborn, and that Nia will remember Bethan’s absence."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.0632040873169899,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.021966712549328804,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.21875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.035155296325684,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.9,
+    "effort": "high",
+    "output_tokens": 2321,
+    "input_tokens": 2177
+  }
+}

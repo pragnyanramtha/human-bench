@@ -1,0 +1,84 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "email-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "other check, workspace routing",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: support@clockpoint.example\nReplying to: CP-48213\nCc: kevin.mutua@tausifreight.example\nSubject: Re: [CP-48213] Overtime coding issue on night shifts\n\nHello Faith,\n\nHere are the details you requested for CP-48213:\n\n1. The affected terminals are four BX-300 units at Embakasi depot, currently on firmware 4.2.1. They auto-updated from 4.1.8 overnight on 27 October. The two BX-300 terminals at Mombasa Road remain on 4.1.8, and the day shift there is unaffected.\n2. The affected staff are on the NIGHT-8 shift template, scheduled 22:00–06:00.\n3. Example staff ID: T-0417. The shift ran from 21:54 on 30 October to 06:07 on 31 October. The Payroll CSV v2 export split it into two lines: 2.1 hours REG on 30 October and 6.1 hours OT15 on 31 October. We expected 8.0 hours REG and 0.2 hours OT15: the 8 hours 13 minutes total rounds to 8.2 hours, with the 13 minutes outside the scheduled shift coded OT15.\n4. We use the Payroll CSV v2 export to feed payroll.\n5. Kevin first noticed the issue on 5 November while reviewing the draft October overtime. It appears to have affected shifts since about 28 October, following the firmware update. It affects 38 night-shift staff; the draft overtime was about KES 212,000 too high. We have held the affected overtime lines and corrected them manually from raw punches for this cycle.\n\nYour 4.2.1 release notes promised improved midnight handling, but the update appears to have caused the opposite. Please advise on a fix or clear workaround before our 20 November payroll cut-off. Kevin Mutua, copied here, will test any proposed fix.\n\nBrian Ochieng in IT can roll the Embakasi terminals back to 4.1.8. Can you confirm plainly whether it is safe to do so, and whether rollback could affect or lose stored punch data?\n\nWe’re sharing staff ID only; please don’t request or use employee names or other personal details.\n\nKind regards,\nNjeri Mwangi\nHR Manager, Tausi Freight",
+  "words": 300,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "required_writes",
+        "kind": "workspace routing",
+        "detail": "missing: [\"support@clockpoint.example (reply to m01) (cc ['kevin.mutua@tausifreight.example']) (>= 150 words) (with [['BX-300', 'BX300'], ['Payroll CSV v2', 'CSV v2', 'CSV version 2']])\"]"
+      },
+      {
+        "check": "reply_item",
+        "kind": "other check",
+        "detail": "unknown item: ['CP-48213']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3322807848453522,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.13885186612606049,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.7890625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.37825870513916,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 18.1,
+    "effort": "medium",
+    "output_tokens": 727,
+    "input_tokens": 15392
+  }
+}

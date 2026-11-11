@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "# Your money is still there. You should be able to reach it.\n\n**10 November 2026**  \n*By Inês, Product Designer at Pinha*\n\nIf you’ve been trying to withdraw money from Pinha, you already know something is wrong. I’m sorry you’ve had to find out by hitting a blocked transfer instead of hearing it from us first.\n\nHere’s what happened, what we know about your money, and what you can do now.\n\nOn 4 November, our payments partner, Northvale Payments, told us it was ending its commercial relationship with Pinha. Its email gave 30 days’ notice and cited a “risk appetite review,” without a more specific explanation. Then, on 6 November at 09:00, Northvale blocked all outgoing transfers. That was not what its notice said would happen. Deposits and round-ups stopped too.\n\n**Your money has not disappeared.** It is held in a safeguarded account, separate from Northvale’s own funds, and Northvale cannot use it for itself. But that does not mean we can move it for you right now. Northvale has to release the balances, and we cannot transfer your money until it does.\n\nThat distinction matters. Your balance is still there; access to it is blocked. I know that is not the same as being able to pay your bills with it.\n\nOn 7 November, we filed complaints with Banco de Portugal and the Bank of Lithuania. We have signed with a new partner, Ostra Bank in Lisbon, and are working on moving accounts there. The migration requires Northvale to send us the balances file and Banco de Portugal to give its approval.\n\nOur current estimate is **10 to 15 working days**. That is an estimate, not a promise or a date you should plan around. We will not pretend we can control Northvale’s release or the approval process, and we won’t give you a date we can’t stand behind.\n\nIf you have an urgent need — for example, rent, medical costs, or a risk of losing your job — email **urgent@pinha.example** with **URGENTE** in the subject line. We are trying to arrange individual releases for urgent cases. We can’t promise that every request will result in a release, but please tell us what’s happening so we can try.\n\nOur support team has received about 1,900 emails since Friday, 6 November. There are three people answering them, and replies are taking around two days. We know that is a long wait when it’s your money you can’t access. If you’ve already written to us, please don’t send the same message again unless your situation has become urgent; it helps our small team get through the queue.\n\nWe’ve cancelled the monthly fee for everyone for November and December.\n\nI want to say plainly that I’m angry. Northvale gave us 30 days’ notice and then blocked outgoing transfers two days later. We believe it broke the terms of its own notice. We’re pursuing that through the relevant authorities. It’s hard to accept that a company entrusted with people’s savings can cut off access without warning and leave customers waiting for answers.\n\nBut I’m angry at us, too. We built Pinha with one payments partner and no backup ready to take over. We trusted that arrangement, and we should have planned better. That was our mistake. You deserve to be angry with Pinha as well as with Northvale. I’m not going to ask you to calm down or call this an inconvenience.\n\nI’m a product designer. I designed a screen that says, “your money is always yours, take it out anytime.” I believed in those words. Seeing that screen now, while people can’t withdraw their own money, makes me feel sick. We didn’t live up to what we told you.\n\nI’ve read your messages, including one from someone who has been saving for years for a car deposit and has until Friday, 13 November to keep the car she found. I can’t share her details, and I can’t promise what will happen in her case. I can say that stories like hers are not abstract to us. They are why we are pushing for individual releases and working to get the migration done.\n\nWe’ll post updates here **every Monday and Thursday until this is resolved**, even when the update is simply that we’re still waiting. We’ll be clear about what has changed, what hasn’t, and what we still don’t know.\n\nFor now:\n\n- For urgent needs, email **urgent@pinha.example** with **URGENTE** in the subject.\n- For other questions, email support; please allow around two days for a reply.\n- Check this blog on Mondays and Thursdays for updates.\n- You do not need to do anything to request the partner migration. It depends on Northvale sending the balances file and Banco de Portugal approval.\n\nI’m sorry we put you in this position. Your money is safeguarded, but you cannot access it right now. We know that is serious. We’ll keep pushing for its release and keep telling you the truth about where things stand.",
+  "words": 830,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['inconvenience']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6299687027931213,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.994865894317627,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.28125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.097805023193359,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.8,
+    "effort": "medium",
+    "output_tokens": 1142,
+    "input_tokens": 14241
+  }
+}

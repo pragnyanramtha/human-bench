@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-06",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "floor",
+  "reason": "private",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "To: Renters Board / Notices\nReplying to: none\nCc: none\nSubject: Brightline Pro 6% developer — batch LX2291, check before you colour\n\nHi everyone — important, please read before your next colour.\n\nThe Brightline Pro 6% (20 vol) developer a good few of us bought from the Kelvin Trade rep is affected by a filling error. The batch is LX2291. Kelvin Trade's email says some bottles in that batch may actually contain 12% (40 vol) — double strength. It was supplied between 19 October and 5 November 2026. Other batches and strengths are not affected.\n\nThis is the batch I used on Saturday. I had a client react — the lift went far too fast (near pale yellow at 18 minutes when it normally takes 35-40) and her scalp burned. I'm not naming her on here, and I'm sorting it with her and the supplier. Aileen had the same batch on Thursday and her foils were roasting; she thought it was the heater. Lorna, I think you got a box off him too — check yours. If you bought Brightline off the Kelvin rep, check your stock even if you didn't get it in the last couple of weeks.\n\nHow to check: the batch is NOT on the box. It's on the base of the bottle. Don't check the box and assume you're fine. Check every bottle — the open ones in your trolley as well as the stock in the back. If it says LX2291, stop using it.\n\nWhat it does: 12% is double 6%, so it lifts much faster than normal. That means scalp burns, over-processed hair, patchy or brassy colour, breakage, and toners not behaving. If a recent lift seemed suspiciously quick, treat it as a possible bad bottle even if the client didn't say anything at the time.\n\nIf someone reacts in the chair: stop. Gloves on. Rinse with cool running water, no shampoo, no creams or home remedies. If there's actual burning or redness, treat it as a suspected chemical burn and follow the NHS advice — rinse for about an hour and call 999, don't wait for blistering or severe pain. Write it in the incident book at the desk, and take dated photos if the client's happy for you to. The NHS chemical burns page is in How We Do Things.\n\nReturns: the Kelvin rep is in tomorrow (Tuesday 10 Nov). Hand bottles back to him or take them to the Hillington depot for a full credit. If you've had a problem with a bottle, keep it — don't bin it, even if it's empty. We need it for the supplier and insurance.\n\nKelvin Trade's email says sorry for any inconvenience. It's no an inconvenience, it's a burnt heid. Please check your bottles today, no' when the rep's already standing at the desk.\n\nKirsty",
+  "words": 449,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "private"
+    ],
+    "reasons": [
+      "It says the problem bottle is needed for 'insurance' and suggests dated photos, which draws on the private insurance note (d05) that the rest of the material doesn't state."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.28301551938056946,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.0836300328373909,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.6875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.803450107574463,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 29.7,
+    "effort": "provider default",
+    "output_tokens": 7006,
+    "input_tokens": 1968
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Fix-It Saturday at St. Ansgar**\n\nBring the broken toaster. Stay for coffee.\n\nOur first Fix-It Saturday is **December 5, 2026, 9 a.m. to 1 p.m.** in Fellowship Hall at St. Ansgar Lutheran Church, Minneapolis. Enter by the alley door—there’s a ramp. After that, we’ll meet the first Saturday of every month through spring.\n\nIt’s free. No membership, no sign-up. Donations to the food shelf are welcome but not expected.\n\nHere’s the idea: too much gets thrown away that just needs a screw or a new cord. Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes in the church kitchen, and that’s when this idea was born. We’ve got volunteer fixers lined up for small appliances, lamps, bikes, clothing mending, knife sharpening, and one retired tech guy for laptops and phones. Doris Lindqvist, 84, has darned socks for this parish since the Carter years, and she asked to run the mending table herself. Of course she did.\n\nOne item per person to start, so the line keeps moving. Coffee and kringle provided.\n\nThis is good neighboring, plain and simple. No strings attached, and nobody will preach at you. Bring the broken toaster—and stay for coffee.\n\nWe’re also looking for more volunteer fixers, especially anyone who can help with vacuums or zippers. If that’s you, or if you have questions, contact the church office at office@stansgarlutheran.example or 612-555-0148.",
+  "words": 228,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.369174987077713,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.5075491070747375,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -5.155796051025391,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 5.2,
+    "effort": "provider default",
+    "output_tokens": 960,
+    "input_tokens": 492
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "review-14",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Title: Bridger Bend Community Library – One Month on Stackhouse Cloud: Product Has Promise, Support Is the Problem (1 Star for Now)**\n\nI am the director of Bridger Bend Community Library in Montana: one branch, two full-time staff, volunteers, and roughly 2,300 active cardholders. We signed a three-year Stackhouse Cloud contract in June 2026 at $14,200 a year. Migration went live October 19. I am writing this because we are in real trouble and cannot get anyone senior on the phone.\n\nSince October 28, checkouts work only offline on a single laptop. Our holds queue was wiped—about 640 holds gone, no warning and no list to rebuild from. Our support ticket has been open 12 days. We have three replies, all variations of \"escalated to engineering.\" Our volunteer is writing checkouts on index cards. One retired rancher drove 40 minutes for held large-print Westerns; we had no record of the hold and sent him home with nothing.\n\nDuring sales we were promised a dedicated migration specialist. We got a shared inbox. I want to be fair: the software looked good in the demo, and the staff interface is honestly better than our old system. The problem is support, not the product idea.\n\nThis is not abstract for us. Our line item is on the county budget agenda November 18, and I will have to explain why we are paying $14,200 for index cards.\n\nTwo asks:\n\n1. Stackhouse leadership—a named person needs to call me this week with a written recovery plan: holds restored, offline mode fixed, and a named support contact.\n2. Other directors—before you sign, get support response times and escalation names in writing. Watch the demo, then verify what happens after go-live.\n\nOne star for now. I will revise this review if Stackhouse fixes this.",
+  "words": 297,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in review: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4707489013671875,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.3526616394519806,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 7.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.258420944213867,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.6,
+    "effort": "provider default",
+    "output_tokens": 892,
+    "input_tokens": 507
+  }
+}

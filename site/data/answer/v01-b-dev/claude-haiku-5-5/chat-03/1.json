@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nMia, I'm sorry I went quiet. Work has been mental and I should've checked in properly instead of sending one text. You're not on your own in this, and I'm not going anywhere.\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nI'm off all day tomorrow because Sam's covering my shift. Just tell me what time suits and I'll come to Priya's and get your stuff out of her garage before she has to leave. Ruby also says you can crash on their couch for as long as you need. Clover will try to sleep on you, fair warning. Mum and Dad said we can borrow the trailer if we need it.\n\n---\n\nTo: @mia\nReplying to: i04\nCc: none\nSubject: none\n\nTully's sorting a benefit night at the Lantern Room on Sat the 28th, and all the door money goes to you. Hollow Pines are playing too. Jono's cousin has an old Yamaha keyboard in his shed you can have until you get something sorted. The band isn't rehearsing without you.\n\nPlease don't move back to Rocky over this, at least not like this. Your songs are the best thing we've got and you can't quit on them. Let's get you sorted first and decide the rest later. The landlord can deal with the roof. That's on him, not you.",
+  "words": 203,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "203 words, allowed 225-440 (band 250-400 ±10%)"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.42872223258018494,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10761361569166183,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.60546875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.798614501953125,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.9,
+    "effort": "medium",
+    "output_tokens": 2197,
+    "input_tokens": 2633
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "email-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Order TH-48217 – marked delivered but not received – request for replacement or refund**\n\nGood day,\n\nI’m writing about order **TH-48217**, placed on **21 October** and paid for by card. The total was **R1,640**, including **R95 delivery**.\n\nThe order was for:\n- 6 tubs of finger paint\n- 4 bags of playdough\n- 200 paper plates\n- googly eyes\n- glitter glue\n- 2 rolls of brown paper\n\nIt was delivered to **Bergview Pre-Primary in Plumstead**, and the delivery address on the order was correct. The tracking says it was delivered on **Tuesday 3 November at 11:42** and signed for by **“M. Adams.”** There is nobody at our school called Adams. Our gate guard, Uncle Faizel, keeps a book of every delivery that comes through the gate, and there is nothing recorded for the 3rd. So as far as the school is concerned, this parcel was never delivered here.\n\nI emailed on **4 November** and again on **6 November**. Both times I got the same copy-paste reply saying my query had been escalated to your courier partner. I phoned on Friday and spent **38 minutes on hold**, only to be told that nothing can be done until the courier finishes an “investigation,” which could take **10 working days**.\n\nI need to be clear about why this isn’t acceptable: my contract is with **Tiny Hands Edu Supplies**, not with the courier. I paid you, and I never chose the courier. The courier is your responsibility, and I shouldn’t be the one chasing them or waiting around while they investigate something that is clearly wrong on their side. I also shouldn’t be out of pocket **R1,640** on a teacher’s salary for supplies that are for other people’s children.\n\nI’ve ordered from you three times before with no problems, which is why this is so frustrating. I’m not trying to be difficult — I just need this sorted.\n\nPlease either **resend the full order at no charge** or give me a **full refund of R1,640, including the delivery fee**, by **Friday 13 November**. I need the items for the end-of-year concert props on **27 November**. The children already made the mask patterns last week, and I’ve been telling them the paint is “coming soon” for a week now.\n\nIf I don’t get a proper reply from an actual person by **13 November**, I will do a chargeback with my bank and leave a review. I’d much rather resolve this directly with you.\n\nPlease can someone confirm receipt of this email and give me a real answer — not another template or another “escalated your query” response.\n\nKind regards,\n\n[Your name]\n[Your phone number]\n[Your email address]",
+  "words": 444,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.5135135054588318,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9204643368721008,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.5625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 8.493270874023438,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 6.2,
+    "effort": "provider default",
+    "output_tokens": 1220,
+    "input_tokens": 584
+  }
+}

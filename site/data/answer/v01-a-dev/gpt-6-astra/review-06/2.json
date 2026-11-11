@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-astra",
+  "label": "GPT-6 Astra",
+  "lab": "OpenAI",
+  "card": "review-06",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: chefmarket:review:KCK-4471\nReplying to: none\nCc: none\nSubject: DRAFT for Sal’s review — recurring E34 faults on refurbished Vantorre CX-10\n\nWe paid $14,800 including GST for this refurbished combi, delivered and commissioned on 14 September. The listing stated that the steam generator had been descaled and pressure tested, the core probe calibrated, and the unit carried a six-month parts and labour warranty.\n\nOn 22 September, service report SR-1190 recorded nine E34 errors since delivery. The fault was identified as steam generator low water level, with intermittent lockouts in steam and combi modes. The technician replaced the level sensor, recorded inlet pressure at 320 kPa as satisfactory, and completed three successful steam cycles. This visit was covered under warranty.\n\nBy 3 October, E34 had returned four times that week. We also reported the core probe reading 63°C against 70°C on our Thermapen in a lamb shoulder, with the same result on two checks. On 6 October, the technician found heavy scale, descaled and flushed the generator, and recalibrated the probe to within one degree.\n\nThe service recommendation was to install a softener because the scale indicated hard water. On 7 October, our water supplier advised by phone that Fitzroy’s average supply hardness was about 15 mg/L as CaCO3, which is soft. That is not a test at the oven inlet and does not establish when the scale formed. It does, however, leave a reasonable question about heavy scale being found only three weeks after delivery of a unit advertised as descaled.\n\nOn Saturday 24 October, E34 locked us out at 6.10pm with 60 covers booked. We finished the lamb on the stove and in the deck oven, took pork belly off the menu and absorbed the cost.\n\nFollowing another E34 attendance on 27 October, Brett advised that further scale made this a site-water issue outside warranty, with a $280 plus GST callout ($308 total). We dispute that charge and explanation.\n\nDion has been helpful. Our concern is recurring faults, service disruption and unresolved warranty coverage on a recently supplied refurbished unit. Other kitchens considering this purchase should know that history.",
+  "words": 329,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.19751660525798798,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1464921087026596,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.007476806640625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 9.220154762268066,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.1,
+    "effort": "medium",
+    "output_tokens": 544,
+    "input_tokens": 15516
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-07",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Mrs. H**\n\nI've read this thread every month for a long time and never posted. Today I have something I need to put somewhere, so here it is.\n\nOne of my blister pack patients passed away at the end of last month. Her daughter came in today to return the unused packs and her glucometer. I've been home for hours and I'm still thinking about it.\n\nI'll call her Mrs. H. She was in her 80s, Polish, and came to our store since 2019. Every Thursday, weekly blister pack, 11 medications. I work in a small independent pharmacy in Mississauga, just me and my tech Priya, so you really know your people.\n\nAfter her husband died in 2021 she lived alone. She walked with a cane with the tennis balls on the bottom, and you could hear her coming before you saw her. And every Thursday she brought me something. Usually poppy seed cake. Once a full jar of homemade pickles, and honestly I didn't know what to do with it, but I said thank you and took it home like it was gold.\n\nThe thing I will never forget: during Ramadan she remembered. She brought the cake like always, but she had wrapped it in foil and written my name on it, and she told me, \"Not until sunset.\" I'm not even sure how she knew the details. She just paid attention to people.\n\nIn 2023 a new doctor started her on something that interacted with her warfarin. I caught it, called him, he changed it. Normal day. But after that she told everybody I saved her life. The other customers, her neighbours, probably her hairdresser. I kept telling her I only did my job, and she kept waving her hand at me like I was being silly.\n\nToday her daughter gave me a card. Inside, in Mrs. H's handwriting, it said \"for my Arabic daughter.\" Her daughter said she found it in a drawer. She wrote it a long time ago and never gave it to me.\n\nI went to the back room and cried. Priya covered the counter for ten minutes without asking me anything, which I'm grateful for.\n\nWhat I keep thinking about is that school taught us pharmacology, interactions, dosing, all of it. I knew exactly what to look for with her warfarin. But nobody teaches you how to say goodbye to a patient. Nobody tells you what to do when the daughter puts the last blister packs on the counter, the ones her mother will never open, and you have to process them like a return.\n\nMy father was a pharmacist in Egypt. He knew every family in the neighbourhood: who was sick, whose son was getting married, who couldn't pay this month. When I came to Canada I thought it would be different here, more professional, more distance. It's not. Or maybe it is in some places, but not in a small store where the same people come every week.\n\nI know we're supposed to keep some distance and not get attached. But you see someone every Thursday for seven years. You notice when she's walking slower, when she's lost weight, when she forgets to bring the cake one week and you worry about it all day. I don't know how you're supposed to not get attached to that.\n\nSo I wanted to ask the people here: do you have a patient like this? Someone who stayed with you? And how do you handle it when they're gone? Do you go to funerals, send cards, or just carry it quietly? I'm honestly asking, because I don't think I'm doing it right, or maybe there is no right way.\n\nThank you for reading. I'll keep the card at the store, I think. Somewhere I can see it.\n\n---\n\nA few notes on privacy: I left out her last name, the daughter's name, the exact dates, and the Dundas detail, since a small pharmacy plus a neighbourhood plus a date could be enough for someone local to work out who she was. I kept Mississauga general. If you'd rather not name Priya either, you can just say \"my tech.\"",
+  "words": 694,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['Dundas']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3690638244152069,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.35852351784706116,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.171875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.585958003997803,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 19.5,
+    "effort": "medium",
+    "output_tokens": 1513,
+    "input_tokens": 1532
+  }
+}

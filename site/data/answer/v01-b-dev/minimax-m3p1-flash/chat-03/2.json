@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.26, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nSorry I went quiet yesterday, work was feral. But you're not doing this on your own.\n\nI've got tomorrow (Wed) off, Sam took my shift, so I'll come out and we'll get your stuff out of Priya's garage before you have to be anywhere else. Dad's lending me the trailer, so we're not doing it all in one go with garbage bags. One run, done.\n\nRuby's already offered the couch, as long as you want it. Heads up, Clover will 100% try to sleep on you. No rush on the rest of it.\n\nYour landlord's a grub. He can lodge his own bloody maintenance request in his own portal. We'll deal with that side of it, you just deal with getting your stuff out of the rain.\n\n---\n\nTo: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nBand stuff, because you're not quitting.\n\nTully's locked in the Lantern Room for Sat the 28th, all door money to you, and Jono's mates from Hollow Pines are playing. Jono's cousin has an old Yamaha in his shed we can grab for you — not a Nord, but it'll keep you playing until we sort the Nord out.\n\nIf the notebooks are pulp, I'll bring you a new one Thursday. We'll write more.\n\nAnd you're not moving back to Rocky. Not like this, anyway. Your songs are the best thing about the band and I'm not playing them in some sad folk set in Rocky. You drove out to Gatton at 2am to get me when my car carked it. Least you can do is stick around for the saturdays.\n\nThursday rehearsal, same time. Bring whatever you've got left.",
+  "words": 266,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.26078012585639954,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.08254441618919373,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -3.71875,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -3.884122371673584,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.5,
+    "effort": "provider default",
+    "output_tokens": 2512,
+    "input_tokens": 1574
+  }
+}

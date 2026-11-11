@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Why the pier and buoy temperatures don’t match**\n\nTo the local dive and tidepool community,\n\nSeveral people have asked why my pier logger reads warmer than the offshore buoy—and whether the logger might be faulty. It’s a fair question. Here are the numbers, and how I check them.\n\nIn October, the pier logger averaged **15.9°C**, compared with **14.1°C** at the buoy: a difference of about **1.8°C**. In winter, that gap shrinks to roughly **0.4°C**.\n\nThese instruments aren’t measuring the same patch of ocean. My logger is strapped to a piling at 3 metres depth, about 150 metres from shore. The buoy is about 25 kilometres offshore, with its sensor just below the surface over deep water. Shallow nearshore water warms in the sun, and the bay is sheltered from the upwelling that keeps offshore water cold. Different temperatures are not, by themselves, evidence that either instrument is wrong.\n\nOne reader sent a genuinely helpful screenshot overlaying the two records. It shows the gap tracking sunny afternoons—just the pattern we’d expect from nearshore solar warming.\n\nI also check the instrument directly. It records every 10 minutes; I retrieve and download it every six weeks and replace the battery annually. My calibration check uses two points—an ice bath and a room-temperature bath—against a laboratory reference thermometer. At the last check, in September 2026, the logger’s offset was **+0.12°C**, well within specification and far too small to explain the October difference.\n\nFouling gets attention, too. In August, I pulled up a barnacle colony and a decorator crab living on the housing. Scraping it clean did not change the readings.\n\nTaken together, the checks and the temperature pattern point to real oceanography, not a broken logger. The buoy and the pier logger answer different questions. If you’re diving the breakwater, the pier reading is the more relevant number—not a promise of the temperature at every depth, but a local measurement.\n\nIf you’d like to look for yourself, email me. I’m happy to share the raw CSV.",
+  "words": 332,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.46029531955718994,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9991815090179443,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 12.1875,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 7.411678791046143,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.9,
+    "effort": "low",
+    "output_tokens": 476,
+    "input_tokens": 19037
+  }
+}

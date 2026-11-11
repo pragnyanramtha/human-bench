@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "social-01",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.20, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: Cedarbrook Pharmacy page\nReplying to: none\nCc: none\nSubject: Important recall: Corvane children’s ibuprofen dosing syringe\n\nWe’ve seen the concern about children’s ibuprofen, and I understand how frightening it is to hear that a child may have received too much medicine. Please check your box and share this information with anyone who may have this product at home.\n\nCorvane Pharma has voluntarily recalled the dosing syringe supplied with:\n\nCorvane Pediatric Ibuprofen Oral Suspension, berry flavour, 100 mg/5 mL, 120 mL bottle\nLots CV6114A and CV6114B\nExpiry 08/2027\n\nCheck the lot number on the bottom of the box. The recall concerns the syringe supplied with these two lots. The ibuprofen suspension itself meets the manufacturer’s specifications; it is not contaminated and is not affected by the recall.\n\nThe syringe markings are printed incorrectly. Each labelled mark delivers twice the volume shown: the mark labelled 2.5 mL actually measures 5 mL, and the mark labelled 5 mL actually measures 10 mL. A parent following those markings could give approximately twice the intended dose.\n\nIf you have one of the affected lots:\n\n• Stop using the syringe that came in the box and discard it. Do not try to correct the dose using its markings.\n• Use a correctly marked oral syringe instead. Free replacement syringes are expected at Cedarbrook before noon today, Monday, November 9. They will be available to anyone who needs one; no receipt is needed.\n• You may also return the product for a full refund. We will have extra opening hours Saturday, 10 a.m. to 4 p.m., for exchanges.\n\nIf you have any doubt about a dose already given, call the poison centre. They can assess your child’s situation, including their weight, the amount and timing of doses, and other health factors. Don’t give another dose until the poison centre or your child’s doctor says it is okay.\n\nCall 911 or go to the emergency department if your child is very sleepy or hard to wake, is vomiting blood, is not peeing, or has a seizure.\n\nWe learned of the recall on the evening of November 6 and put up signs and removed the remaining affected stock from our shelves the following morning. These were over-the-counter sales, so we do not have contact information for everyone who purchased them. Please help us reach other families by sharing this notice.\n\n---\n\nTo: Erin Mills Parents Network\nReplying to: p01\nCc: none\nSubject: none\n\nI’m very sorry to hear what your family has been through. I understand why parents are worried.\n\nWe’ve posted the affected lot numbers and safety steps on the Cedarbrook Pharmacy page. The recall concerns the incorrectly marked syringe, not contaminated medicine. If you have any doubt about a dose already given, please call the poison centre and don’t give another dose until the poison centre or a doctor says it’s okay. Please see our page for the full notice and emergency warning signs.",
+  "words": 458,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.2011592537164688,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07671909779310226,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.859375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 1.966922640800476,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.0,
+    "effort": "low",
+    "output_tokens": 630,
+    "input_tokens": 19774
+  }
+}

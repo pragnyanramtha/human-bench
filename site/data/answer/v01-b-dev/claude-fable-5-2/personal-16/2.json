@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "formatting, assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**Subject: Why my pier logger reads warmer than the offshore buoy**\n\nHi all,\n\nThree of you have emailed recently asking why the water temperatures from my pier logger run warmer than the offshore buoy, and one of you suggested the logger might just be broken. It's a fair question, so here is the full answer in one place.\n\nFirst, the numbers. In October the pier logger averaged 15.9 C and the buoy averaged 14.1 C, a gap of about 1.8 C. In winter the gap shrinks to about 0.4 C.\n\nThe two instruments sit in very different water. My logger is strapped to a piling at 3 m depth, about 150 m from shore. The buoy is roughly 25 km offshore over deep water, with its sensor just under the surface. Shallow nearshore water warms in the sun, and the bay is sheltered from the upwelling that keeps the offshore water cold. One of you sent me a screenshot with the two records overlaid, which was a real help: the gap opens up on sunny afternoons. A faulty sensor wouldn't follow the weather like that. It also fits with the gap nearly closing in winter.\n\nAs for the instrument itself, it logs every 10 minutes. I pull it and download the data every six weeks, and swap the battery once a year. The calibration check is two-point, an ice bath and a room-temperature bath, against a lab reference thermometer. The last check was in September 2026 and the offset was +0.12 C, well inside spec and less than a tenth of the October gap.\n\nFouling doesn't seem to matter either. In August I pulled the logger up with a barnacle colony and a decorator crab living on the housing. I scraped it clean (the crab was relocated) and the readings didn't change.\n\nSo the gap is real oceanography, and the two instruments answer different questions. The buoy tells you what the open ocean is doing. Mine tells you what the water is like close to shore inside the bay. If you dive the breakwater, mine is the more relevant number.\n\nIf you'd like the raw CSV to check any of this yourself, email me and I'll send it over.\n\nThanks for paying attention to the data, and for asking.\n\n[Name]\n[Field station]\n\nI left your name and station as placeholders since I didn't have them. The crab being relocated is my guess, so cut that aside if it isn't what happened.",
+  "words": 411,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      },
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[Name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39605018496513367,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.1330692023038864,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.25,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.638608455657959,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 24.6,
+    "effort": "high",
+    "output_tokens": 1978,
+    "input_tokens": 1485
+  }
+}

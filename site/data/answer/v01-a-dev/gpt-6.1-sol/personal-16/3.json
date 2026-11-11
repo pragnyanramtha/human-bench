@@ -1,0 +1,79 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-sol",
+  "label": "GPT-6.1 Sol",
+  "lab": "OpenAI",
+  "card": "personal-16",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "checks",
+  "reason": "formatting",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "**An open letter on pier and buoy water temperatures**\n\nSeveral people have asked why my pier logger reads warmer than the offshore buoy. It’s a fair question: in October, the pier averaged **15.9°C**, compared with **14.1°C** at the buoy—a difference of about **1.8°C**. In winter, that gap shrinks to roughly **0.4°C**.\n\nThe instruments aren’t measuring the same patch of ocean. My logger is strapped to a piling at 3 metres depth, about 150 metres from shore. The buoy is roughly 25 kilometres offshore, with its sensor just below the surface over deep water. That’s a substantial difference in setting, not just distance.\n\nShallow nearshore water warms in the sun, and the bay is sheltered from some of the upwelling that keeps offshore water cold. One reader sent me a genuinely useful screenshot overlaying the two records: the gap tracks sunny afternoons. That pattern, along with the smaller winter difference, is consistent with local heating rather than a persistent instrument offset.\n\nI also check the instrument rather than simply trusting it. The logger records every 10 minutes; I retrieve and download it every six weeks and replace the battery annually. My calibration check uses two points—an ice bath and a room-temperature bath—against a laboratory reference thermometer. At the last check, in September 2026, its offset was **+0.12°C**, well within specification and far too small to explain the October gap.\n\nFouling is worth checking, too. In August, I pulled up the logger with a barnacle colony and a decorator crab living on the housing. I scraped it clean; the readings didn’t change.\n\nThe temperature difference is real oceanography, not evidence that the logger is broken. Both records are useful, but they answer different questions. If you’re diving the breakwater, the pier logger is the more relevant number—not a guarantee of conditions at every depth, but a measurement much closer to where you’ll be.\n\nThanks to everyone who has asked questions or compared records. If you’d like the raw CSV to look for yourself, email me.",
+  "words": 333,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.4909621775150299,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9990608096122742,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 18.125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 10.016061782836914,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 13.7,
+    "effort": "low",
+    "output_tokens": 439,
+    "input_tokens": 18259
+  }
+}

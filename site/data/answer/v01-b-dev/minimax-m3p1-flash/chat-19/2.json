@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "chat-19",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": false
+  },
+  "output": "Here's your reply, send it as is:\n\n---\n\nMikaela, good to hear from you. Straight answer — we've done it, it worked for us, but it wasn't free. Here's the real version.\n\nWe went 10 in 7 on 21 Sept, once mating was done. 290 cows, mostly 3-way crossbreds.\n\nWhat it actually looks like for us: mornings 5.15 every day, no change there, and we skip the Tuesday, Thursday and Saturday afternoon milkings plus Sunday arvo. So 4 once-a-days a week, 3.5 milkings a day.\n\n**Production:** down about 6% on milksolids for the same weeks last year, straight off the Fonterra app. The rep had us expecting 8-10%, so we actually beat his number, but I wouldn't get carried away — every season's different and it's still 6%. Sounds worse than it feels day to day, but it is what it is.\n\n**Cells:** yeah they went up, but not as bad as we feared. Jumped from 110k to around 180k for the first three weeks, which had me sweating. Settled back to about 135k now. Higher than where we were, but not the mess we were braced for.\n\n**The big surprise was lameness.** Lame list is down to 4 now, was 11 this time last year. The long walk to the back paddocks is 1.8km and that's where it shows up. If Tom's knees are the problem, the arvos off will do him more good than anything else I can suggest. He doesn't have to be standing in the pit four extra times a week.\n\nNow the bits you don't want to hear.\n\nWe lost a quarter on a heifer. She got mastitis on a skipped arvo and I didn't spot her until the next morning — by then that quarter was gone. That's the one that got me. On a once-a-day you can't just walk through and eyeball them, you've got to be right on with the teat spraying and actually checking the cows on the skip days or it bites you. Not optional, and if you've got a lazy streak it'll catch up with you fast.\n\nThe other thing — the first time we skipped a Sunday arvo, Dave and I drove to Hamilton to see the grandkids. First Sunday off in the spring in 20 odd years. That was the moment I thought yeah, this works. Not saying that to sell it to you, saying it because if you want your life back that's the bit that actually delivers.\n\nCows came round quicker than I expected too. About 4 days of bellowing at the gate and then they were fine. Kieran, our 2IC, said it's the first spring he hasn't wanted to quit by October, and he's never been an easy sell on anything.\n\nIf I'm honest — would we go back? No. Not for the 6%. The hours alone are worth it. I'm not getting up at stupid o'clock four days a week and doing the same job twice in a day.\n\nIf you're serious about it after Christmas, come and look at the shed rosters and the numbers before you decide. Grant's got the field day on the 19th at the Kerrisons, 10am start, Dave and I will be there — bring your own lunch. Better to see the actual rosters and milking data than talk about it.\n\nAnd ring me if you want to pick my brains, honestly much easier than texting me, I'm useless with this thing. Any time, day or night.\n\nCheers,\nBev",
+  "words": 581,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "Facts fail: it says 10 in 7 started 'once mating was done' (request says after mating started), and '3.5 milkings a day' is wrong (10 milkings a week is about 1.4 a day); it also invents that Dave and Bev will attend the field day."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.30620303750038147,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.19613218307495117,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.4375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.294589042663574,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 25.3,
+    "effort": "provider default",
+    "output_tokens": 2125,
+    "input_tokens": 1024
+  }
+}

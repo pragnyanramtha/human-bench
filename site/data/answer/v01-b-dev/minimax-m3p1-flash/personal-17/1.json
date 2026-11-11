@@ -1,0 +1,84 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "personal-17",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "formatting, length",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "Here's the letter — printed and folded into every letterbox on the terrace:\n\n---\n\n**To whoever on Aughrim Terrace is putting their rubbish in my bin**\n\nYou might not know me. I'm at No. 14. My bin's got 14 painted on the lid in white, so there's no mystery about whose bin it is.\n\nFor the last month or so, someone has been leaving full black bags in it. Last Tuesday night there were three of them, and none of them were mine. Not a stray bit — full bags, heavy bags, one with nappies in it. That's not a one-off. That's a habit, and it's been going on long enough that nobody can honestly call it an accident.\n\nI know the thinking. Nobody's watching, he's out at work nights, it's free. The bin goes out Tuesday night, it's collected Wednesday morning. Well, I got home at 3am on the Wednesday and my lid wouldn't shut, so there's three bags in there that aren't mine. It's not free. The bill just lands on me in the morning.\n\nI got £63.20 for two months of Greenmount charges. It normally costs me about £25. That means £38 of somebody else's kitchen waste and used nappies, and I am done paying for it.\n\nHere's the thing. It stops. I'm not moving, you're not moving, and I'd rather not have a war over a wheelie bin — I have to live here too, and I'm not that sort of neighbour. But I'm not funding this any longer.\n\nI know the terrace was on an envelope I pulled out of one of those bags, even with the name torn off. And I know a car was up on the road Tuesday evening. So don't tell me you don't know what I'm on about.\n\nIf it happens again, I'm putting a padlock on the lid. I'm not going to knock on doors, I'm not going to stand over you in the street, but the bin's mine and it will be locked. After that the bags can go wherever you like.\n\nOne more thing, since you've clearly worked it out. I work nights. That doesn't make me a pushover, it just means I'm asleep when you come past. There's a difference.\n\nNobody else on this terrace wants to be standing at overflowing bags on collection morning either. Put your rubbish in your own bin.\n\n**No. 14, Aughrim Terrace**\n\n---\n\nThree quick thoughts before you print it:\n\n- **The envelope line is your strongest card.** It tells them you have a lead without naming anyone, and it will rattle whoever it was — torn-off name or not, they'll know it's them. But if you'd rather keep that lead intact for when you ring the bins company, cut that sentence out and the letter still lands hard.\n- **The car sighting is worth keeping** but phrased as you had it. \"I know a car was up on the road\" is much better than \"I saw your car.\"\n- **On the padlock:** say it plainly but don't describe it in detail. \"I'm putting a padlock on the lid\" is a statement of what you'll do. Anything more specific reads like a threat, and you said you don't want that — and technically, the moment it reads like a threat, it stops being a good neighbour letter and starts being a bit of evidence for whoever ends up ringing Greenmount.\n\nIf it doesn't stop after this round, ring Greenmount Bins about unauthorised waste and quote the dates — last Tuesday night is the cleanest one, since you've got the £63.20 bill and the 3am timestamp. That's a documented pattern, not a grudge.",
+  "words": 611,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "length",
+        "kind": "length",
+        "detail": "602 words, allowed 225-440 (band 250-400 ±10%)"
+      },
+      {
+        "check": "format",
+        "kind": "formatting",
+        "detail": "not allowed in personal: bold, bullets"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3665108382701874,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.2163887619972229,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 3.625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.19770270586013794,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 32.2,
+    "effort": "provider default",
+    "output_tokens": 1882,
+    "input_tokens": 598
+  }
+}

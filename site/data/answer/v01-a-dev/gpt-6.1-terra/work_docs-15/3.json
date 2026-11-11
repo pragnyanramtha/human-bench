@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6.1-terra",
+  "label": "GPT-6.1 Terra",
+  "lab": "OpenAI",
+  "card": "work_docs-15",
+  "set": "dev",
+  "sample": 3,
+  "verdict": "detector",
+  "reason": "score 0.39, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "**Lee, have a look at this with me Saturday**\n\nI’ve been thinking about that tracked dumper for sale in Faversham. It’s a 2019 500kg machine, up for £1,650 ono, and the bloke says it had new tracks fitted last spring. If we went halves at the asking price, that’s £825 each.\n\nWe hired a tracked dumper for 14 days this year at £85 a day, plus £30 delivery each time. It came to roughly £1,600 all in. So at the same sort of use, the purchase price would be about the same as a year’s hire. Even at half that use, it’s roughly two years before it pays for itself, and that’s before servicing and repairs. We’ve already got three patio digs and the Boughton drive booked in for spring, so it’s not like it’ll just sit there.\n\nThere’s the hassle with hiring as well. Remember Hernhill in September, when the hire place didn’t have one? We ended up barrowing six ton of muck, it took us another two days and your back was gone for a week. Then there was the time the delivery driver turned up at 11 and we lost half the morning. Having our own means it’s there when we need it.\n\nI can keep it covered in my lean-to at the yard, so we don’t need to pay for storage. We’d split servicing 50/50, and if one of us breaks it, that one pays to put it right. Obviously we’d need to have a proper look at its condition before buying, but if it doesn’t work out we can sell it on. They seem to hold their value.\n\nWe’ve known each other 15 years, so I’d rather we were straight about the costs from the start. Come and have a look at it with me this Saturday before someone else has it. We don’t have to buy it if it’s no good.",
+  "words": 317,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.39343515038490295,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.505297839641571,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 2.484375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.8366711139678955,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 12.5,
+    "effort": "low",
+    "output_tokens": 406,
+    "input_tokens": 18257
+  }
+}

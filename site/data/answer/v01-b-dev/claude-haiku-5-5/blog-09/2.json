@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "blog-09",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "checks",
+  "reason": "required or barred words",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": false
+  },
+  "output": "# Your money is safe, you can't move it yet, and we're angry too\n\n*Inês, Tuesday 10 November 2026*\n\nLet's start with what you already know, because you've been living it since Friday: **you cannot move your money out of Pinha right now.** Withdrawals are frozen. Deposits and round-ups have stopped too. For some of you this isn't a minor inconvenience. It's rent, a deposit, a bill you can't pay this week, or money you were counting on for something important. I know that, and I'm not going to pretend otherwise.\n\nRui, our CEO, is in calls with lawyers and with Banco de Portugal all day, so he asked me to write this. I design much of the text you see in the app, and I didn't want to hide behind a polished corporate paragraph. You deserve plain words from people who are actually working on this.\n\n## What happened\n\nOn **4 November**, our payments partner, Northvale Payments, emailed us to say they were terminating our commercial relationship with 30 days' notice. The only reason they gave was a \"risk appetite review.\" No specific problem, no details.\n\nOn **6 November at 09:00**, they blocked all outgoing transfers without warning. That contradicts their own notice, which gave us a month. Deposits and round-ups stopped with them.\n\nNorthvale is an e-money institution based in Vilnius. Since Friday, their account manager has stopped answering calls, and the phone line goes to a voicemail in Lithuanian. We have tried. They are not picking up.\n\nI'm going to be direct: they broke their own notice period, they froze everyone's access at once, and they went silent. Whatever their internal reasons, this is not \"risk management.\" It's cowardice, and I'm not going to soften that word.\n\n## Where your money is\n\nYour money is not lost and it is not gone. It is held in a **safeguarded account at Northvale, separate from Northvale's own money**. That means Northvale cannot use it for their own purposes, and it is not part of their business in the way a loan or an investment would be.\n\nWhat it does **not** mean is that you can access it today. Right now, only Northvale can release those funds, and they are not releasing them. I know \"your money is safe but you can't have it\" is a miserable sentence. It's still the accurate one.\n\nWe filed a complaint on **7 November** with Banco de Portugal and with the Lithuanian central bank. Both are now aware of what happened.\n\n## Where we're going\n\nWe have already signed a new partner: **Ostra Bank in Lisbon**. Moving everyone's balances there requires two things. Northvale has to send us the balances file, and Banco de Portugal has to give its approval.\n\nOur estimate is **10 to 15 working days** once those steps are in place. I want to be very clear: that is an estimate, not a promise. We have no control over Northvale's timing, and I'd rather tell you that honestly than give you a date we might break. If we get a firm date, you'll hear it from us first.\n\n## What you can do now\n\n**If you have an urgent situation**, such as rent due, a medical bill, or losing your job, write to **urgent@pinha.example** with the subject line **URGENTE**. Tell us what's happening and when the money is needed. We are trying to get individual releases for these cases from Northvale. I can't promise every request will work, but we are prioritising them and we will be honest with you about what we can and can't do.\n\n**If you're not urgent**, please know that we have received about **1,900 support emails since Friday**, and a team of three is answering them. Replies are currently taking around two days. Sending the same message again doesn't get you answered faster. It just adds to the pile. We are reading everything, and we are working through it as fast as three people can.\n\n**Your monthly fee is cancelled for November and December**, for everyone. You don't need to do anything.\n\n**Keep your account.** Don't close it or try to open a new one elsewhere while this is unresolved. Our migration to Ostra Bank will move your balance across, and we will tell you exactly how when we can.\n\n## About the app, and about us\n\nI designed the screen that says \"your money is always yours, take it out anytime.\" I've looked at that screen a lot this week, and it makes me feel sick. Many of you read that line and believed it. You were right to. It was what we promised, and right now it isn't true in the way it should be.\n\nWe made a mistake, and we're not going to dress it up. We depended on one payments partner and had no backup. We trusted them more than we should have, and we built the product on that trust without a plan for when it broke. That was naive, and it's our responsibility, not yours.\n\nSo yes, you have every right to be angry. Angry at Northvale, and angry at us too. I'm not going to tell you to calm down. If you want to shout at us in the replies, we'd understand. We would rather you be honest with us than polite and silent.\n\nI am angry with you on your behalf. Not in a \"we feel your pain\" way, but because this should never have happened to people who trusted us with their savings.\n\n## What happens next\n\nWe will publish an update on this blog **every Monday and every Thursday** until this is resolved, even if the update is just \"no change yet.\" If something important happens in between, we'll post it as soon as we can.\n\nThank you for reading this far. We know how frustrating it is to get a blog post when what you need is your money. We'll keep working on the money.\n\n*Inês*\n*Pinha*\n\n---\n\n**Notes for you (not part of the post):**\n\n- The publication date is set to 10 November, but today is 11 November. You may want to change the date line to today's date or the date you publish.\n- I left out the Porto user's story and her 13 November deadline on purpose, to protect her privacy. If you want to reach people in a similar position, the urgent email section already covers it.\n- Please check the \"10 to 15 working days\" line and the fee and Ostra Bank details with Rui or the lawyers before publishing, since they carry legal and regulatory weight.",
+  "words": 1098,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "must_not_include",
+        "kind": "required or barred words",
+        "detail": "present: ['inconvenience']"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.6137171387672424,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.962836742401123,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 5.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.103689670562744,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 21.4,
+    "effort": "medium",
+    "output_tokens": 3739,
+    "input_tokens": 1903
+  }
+}

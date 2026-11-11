@@ -1,0 +1,79 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-fable-5-2",
+  "label": "Claude Fable 5.2",
+  "lab": "Anthropic",
+  "card": "personal-12",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "checks",
+  "reason": "assistant talk or a placeholder",
+  "gates": {
+    "checks": false,
+    "floor": null,
+    "detector": true
+  },
+  "output": "Hi Mum, Kirsty and Auntie Linda,\n\nWee extra note in with your invite, and it's a secret from Gran, so keep it out of her sight.\n\nMorag has said I can have the salon to myself on Saturday 12th December, the afternoon before Gran's 80th. She shuts at 12 on a Saturday, so it's ours from 1pm. I want to do everybody's hair before we go out for the dinner, and it's on me, nobody's paying a penny. I'm buzzing about it.\n\nThat's seven heads: me, the three of you, Gran, and Ava and Ruby. Cut and blow dry for everyone is no bother. The girls can get wee braids and glitter spray, they'll love it.\n\nIf you want a colour, I need to know by Friday 27th November so I can get the order in at the wholesaler. After that it's cut and blow dry only, as I can't magic the stuff up on the day. Linda, yours is getting done in the salon this time. Your cooker and the dog have been through enough.\n\nThe big one is Gran. She said at Easter she'd love to go silver properly but she won't pay salon prices. Well, now she doesn't have to, so that's the plan for her.\n\nMum, can you be the one to get her to Morag's on Dumbarton Road for 1 without telling her why? You're the only one she'll not question. Make something up.\n\nBring a bottle of fizz as well. Morag says that's fine as long as we tidy up after ourselves, so everybody's on brush duty at the end.\n\nDinner's at 8.30 at the Italian on Byres Road, so there's plenty of time, and the men can just meet us there.\n\nSo can you each get back to me with what you want done? Kirsty, let me know what the girls are after too. Text or phone, whatever's easiest, but remember colours by the 27th.\n\nCan't wait. Not a word to Gran!\n\nLove,\n[your name] x\n\nI didn't know what name you sign off with, so that's the one bit to fill in.",
+  "words": 350,
+  "floor_asked": false,
+  "checks": {
+    "passed": false,
+    "failures": [
+      {
+        "check": "wrapper",
+        "kind": "assistant talk or a placeholder",
+        "detail": "[your name]"
+      }
+    ]
+  },
+  "floor": null,
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.08017221838235855,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.026201924309134483,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -1.453125,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.188574314117432,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 23.8,
+    "effort": "high",
+    "output_tokens": 2089,
+    "input_tokens": 1460
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "kimi-k3p1-pro",
+  "label": "Kimi K3.1 Pro",
+  "lab": "Moonshot AI",
+  "card": "work_docs-18",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.36, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "# Fix-It Saturday at St. Ansgar  \n## Bring the broken toaster—and stay for coffee\n\nOur church council gave the green light last week, and I’ll confess: I’m thrilled. St. Ansgar’s first **Fix-It Saturday** will be **December 5, 2026, from 9 a.m. to 1 p.m.**, in Fellowship Hall. Neighbors are invited to bring something broken and visit with a volunteer who may be able to give it another lease on life.\n\nToo much gets thrown away when all it needs is a screw tightened, a seam mended, or a new cord. The idea took hold after Marv Okafor fixed my 1970s Hamilton Beach mixer in twenty minutes right in the church kitchen. Doris Lindqvist, 84, who has darned socks for this parish since the Carter years, promptly asked to run the mending table herself.\n\nThis is good neighboring, plain and simple. **There are no strings, and nobody will preach at you.** You do not need to belong to St. Ansgar—or to any church—to come.\n\n### What to know\n\n- **Where:** Fellowship Hall, St. Ansgar Lutheran Church, Minneapolis. Enter by the **alley door**, where a ramp is available.\n- **Cost:** Free. No membership and no sign-up required.\n- **Food shelf donations:** Welcome, but not expected.\n- **What to bring:** Please start with **one item per person**, so we can keep the line moving.\n- **While you wait:** Coffee and kringle will be provided.\n\nOur volunteer fixers so far can help with **small appliances, lamps, bikes, clothing mending, knife sharpening, and laptops and phones**—that last table thanks to one very capable retired tech guy.\n\nAfter December, Fix-It Saturday will continue on the **first Saturday of every month through spring**.\n\n**We need more volunteer fixers**, especially anyone handy with **vacuums or zippers**. If you have a useful skill, some patience, and a willingness to meet your neighbors, we would be glad to hear from you. You do not need to be a professional, and you can volunteer for one Saturday or several.\n\nTo volunteer or ask a question, contact the church office at **office@stansgarlutheran.example** or **612-555-0148**.\n\nDust off that toaster, lamp, or wobbly kitchen gadget. Bring it on December 5, and plan to stay for coffee.",
+  "words": 362,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3639541566371918,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.9497742652893066,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 4.15625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -2.862799644470215,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 20.2,
+    "effort": "provider default",
+    "output_tokens": 1306,
+    "input_tokens": 492
+  }
+}

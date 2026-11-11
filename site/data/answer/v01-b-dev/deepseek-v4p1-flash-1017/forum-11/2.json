@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "deepseek-v4p1-flash-1017",
+  "label": "DeepSeek V4.1 Flash 1017",
+  "lab": "DeepSeek",
+  "card": "forum-11",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.24, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "D. Bergeron, thank you for asking straight. You’re right that a two-week vacation doesn’t need a “grande nouvelle bientôt,” and you’re right that people deserve an answer before the 4th. I’m sorry for the worry. I was trying to keep a surprise for the reopening, and I see now that was a mistake. A vague sign plus empty shelves is a bad combination. So here is everything.\n\nWe are not closing. We are not moving. We bought the building.\n\nThe building at 5 rue Fairmount was sold — to me. M. Ferland is 81, he is retiring to Sherbrooke with his daughter, and he offered to sell to me before anybody else. We signed at the notary on December 15. So Marc-Antoine’s cousin is half right: yes, the building was sold. No condos, no bank, no vape shop. The bakery stays, and I’m the one who bought it. I have been here since March 2009, and I plan to stay.\n\nThe closed sign from January 4 to 18 is for works, not for closing. We have a new deck oven coming from the Laval supplier — four decks. The old one is from 1998 and broke three times this year; I can’t go into another winter with it. We are also taking back the space at the back, the old storage of the dépanneur. We are putting six small tables there. Finally people can sit down with a coffee and a piece of bread instead of eating it standing on the sidewalk. That is the “grande nouvelle.” The sign was written by my nephew Thomas at 6 in the morning. “Grande nouvelle” was his idea. I said okay without thinking. That one is on me.\n\nWe reopen Tuesday, January 19, at 7 a.m. Same door, same address, same bread. Then on Saturday, January 23, I want to invite everyone to come by: coffee and a piece of the new bread, free. No speeches, no ribbon, just coffee and bread. I hope people will come.\n\nAbout the shelves on the 28th: we sold everything for Christmas Eve. We sold 400 bûches. When you sell 400 bûches, the shelves are empty. It had nothing to do with closing. I should have put a note on the door saying “sold out for Christmas, back to normal,” but I didn’t. I’m sorry.\n\nNow the carnets, because that’s the part that upset me, and I understand why. We sold 214 carnets in October. They are $60 for 12 loaves. Every carnet is still good. There is no expiry date. If you have 7 loaves left, you have 7 loaves left, and you can use them after we reopen. In January, every carnet holder also gets one free croissant. I am not running away with anybody’s $60. Seventeen years on this street, and I am still here. The word “scam” hurts, I won’t pretend it doesn’t. But I’m not angry at you for asking, D. Bergeron. You asked a fair question. I’m angry at myself for the vague sign. If anyone is still uncomfortable, come see me at the bakery and I will give the money back for the carnet. No questions, no argument, no hard feelings. I would rather refund a carnet than have somebody think I cheated them.\n\nTo the tenants in the three apartments upstairs: nothing changes. Same tenants, same rent. I promised each of you that in writing, and I meant it. You are not being renovicted, not by me. This building is not becoming condos.\n\nI know why people worry. Mile End has lost too many small shops, and when a sign says “closed” and the shelves look empty, people assume the worst. I understand that. I have watched other shops close too. But this time the news is good. M. Ferland has come every morning for 17 years for his baguette pas trop cuite. He cried a little at the notary. I cried a little too. He offered me the building before anybody else because he wanted the bakery to stay. I am not going to sell it to a developer after that.\n\nThank you to Priya, who defended me when she didn’t have to. Thank you to everyone who wrote a kind word. It means more than you know. And D. Bergeron, thank you for giving me the chance to answer properly. I hope you’ll come on January 23 and let me give you a coffee.\n\nHélène  \nBoulangerie Le Pétrin Doré  \n5 rue Fairmount",
+  "words": 745,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.23834677040576935,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.07186120003461838,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": -0.5390625,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 2.4001505374908447,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 26.2,
+    "effort": "provider default",
+    "output_tokens": 6022,
+    "input_tokens": 1200
+  }
+}

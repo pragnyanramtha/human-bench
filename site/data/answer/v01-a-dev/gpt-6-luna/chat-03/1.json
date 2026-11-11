@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "chat-03",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.38, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: @mia\nReplying to: [i04]\nCc: none\nSubject: none\n\nHey Mia. I’m sorry I went quiet after you told me what happened. I should’ve checked in properly. Are you somewhere safe tonight?\n\nI’m off all day tomorrow (Wed) — Sam took my shift — so I can come get your stuff out of Priya’s garage before she needs the space. Mum’s said I can borrow the trailer, and Ruby’s got a couch for you as long as you need. Clover may try to claim you, fair warning. You don’t have to sort all of that out yourself; tell me what would help first and I’ll be there.\n\nTully’s organising a benefit at the Lantern Room on Sat 28th, with Hollow Pines playing too. Jono’s cousin has a working Yamaha keyboard you can have for now. We can sort the practical stuff one thing at a time, and we’ll get the band together to help.\n\nAnd for what it’s worth, you drove all the way out to Gatton at 2am when my car died after that Toowoomba gig. You didn’t make a big thing of it; you just showed up. I’m showing up now.\n\nI know Rocky might feel like the easiest way out when everything’s gone sideways, but please don’t decide you have to leave Brisbane or give up on the band in the middle of all this. Your songs are the best thing about us. Let’s get you somewhere safe and get through tomorrow first, then you can work out what you want when things aren’t quite so cooked. I’m here.",
+  "words": 253,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.3764333426952362,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4297854006290436,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 1.140625,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 6.192754745483398,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 11.6,
+    "effort": "medium",
+    "output_tokens": 336,
+    "input_tokens": 14887
+  }
+}

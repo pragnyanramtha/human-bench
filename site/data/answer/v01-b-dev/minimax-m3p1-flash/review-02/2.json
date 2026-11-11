@@ -1,0 +1,82 @@
+{
+  "run": "v01-b-dev",
+  "model": "minimax-m3p1-flash",
+  "label": "MiniMax M3.1 Flash",
+  "lab": "MiniMax",
+  "card": "review-02",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "floor",
+  "reason": "facts",
+  "gates": {
+    "checks": true,
+    "floor": false,
+    "detector": true
+  },
+  "output": "To: board:vendor-reviews\nReplying to: none\nCc: none\nSubject: Harbor Point Steno Service (Towson) - Stenvale Aria 3 recalibration, October 2026\n\nHarbor Point Steno Service, Towson MD — Stenvale Aria 3, work order HP-4471\n\nEquipment: Stenvale Aria 3, serial ending 0388, my own machine. I paid for it myself, as I pay for all my equipment. The court reimbursed none of it and I did not ask.\n\nDropped off Monday, October 19. Picked up Tuesday, October 27. Six business days, against the ten quoted on the work order.\n\nWork done, taken from the printed one-page service sheet that came back with the machine: full keyboard recalibration, number bar depression sensor replaced, internal cleaning, firmware updated from 4.0.7 to 4.2.1, internal battery replaced. I have never had a printed sheet listing every adjustment from any vendor. Whoever trained Gloria understands that a stenographer reads a machine the way other people read a chart.\n\nQuoted $285. I paid $310, because the battery was $25 on top, and Gloria asked my approval by email before she touched it, which I appreciated more than the twenty-five dollars. Paid by card at pickup. Ninety-day warranty on the work.\n\nLoaner: yes, a Stenvale Aria 2, to be returned at pickup.\n\nHow it performed: my first full day back was expert testimony, an engineer who talks in numbers, and the number bar did not double a single stroke all day. Eight days into a civil trial since, and the machine has not given me a moment's trouble.\n\nTwo things worth knowing.\n\nFirst, the loaner's tilt arm slipped mid-afternoon during a deposition and would not hold its position. I wedged a legal pad under it and finished the day. I wrote to Gloria about it and she said they will repair it before the loaner goes out again. Not anybody's fault exactly; a thing worth fixing before it reaches somebody else.\n\nSecond, and this is the real weakness: the phone line is staffed Tuesday through Thursday, 9 to 4 only. I called Wednesday the 21st to ask about progress. The line rang out and no voicemail box is set up, so nothing could be left. Gloria emailed the next morning about the battery, and her note referred to a voicemail, so presumably the message did not reach me. The work was done in six days and done well; the difficulty was only in reaching the shop. If your docket starts on a Monday, or you need an answer between four Thursday and nine Tuesday, arrange everything by email before you drop off.\n\nThe shop is two people, off York Road, with free parking in back. Small, unhurried, and it does not pretend to be anything else.\n\nWould I go back: yes. Dana, with your Aria 3, yes. Three things I would do at the counter. Ask for the printed service sheet before you pay, so you can see what was changed and what was not. Confirm the loaner and a pickup date in writing, and check that tilt arm before you rely on it in the afternoon. And tell them plainly that a Tuesday-to-Thursday phone line does not work for a Monday docket. The number bar on mine was not adjusted into submission; the sensor was replaced outright, and the firmware moved as well. Whatever your Aria 3 is doing, you should be told what was actually changed rather than handed a bill that says \"calibration\" and leave it there.",
+  "words": 551,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": false,
+    "failed_questions": [
+      "facts"
+    ],
+    "reasons": [
+      "The piece says Gloria emailed 'the next morning', but her email was sent at 14:05 on 10/22 (afternoon); it also invents that her voicemail 'presumably' never reached the writer."
+    ]
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.1373072862625122,
+      "cutoff": 0.16412107646465302,
+      "reads_human": true,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.06874720007181168,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.83203125,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.860771179199219,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 31.5,
+    "effort": "provider default",
+    "output_tokens": 4765,
+    "input_tokens": 2353
+  }
+}

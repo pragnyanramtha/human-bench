@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-haiku-5-5",
+  "label": "Claude Haiku 5.5",
+  "lab": "Anthropic",
+  "card": "forum-16",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.44, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "I'm sorry your toe hurt, Renee. I really mean that, and I hope it's healing now.\n\nI want to tell what happened from our side, calmly. I'm not trying to fight with you. You have been my customer for two years, and I still care about you.\n\nOn Saturday, October 24, you came in for a deluxe pedicure ($45). Your technician was my niece Vy. She has been licensed for 3 years. She speaks English well enough for her work, and she was born right here in Houston. She is not someone who can't communicate with customers.\n\nEvery tool we use goes through the autoclave. The file and buffer are new for each customer and are opened from a sealed pouch in front of the customer. We put a plastic liner in the tub every time. This is our normal routine for everyone, every day.\n\nDuring the service, you asked Vy to take more off the cuticle. She told you not too much, and you said it was fine because you always do it that way. I'm not saying this to blame you. I'm saying it because it's part of what happened, and I want the whole picture to be clear.\n\nWhen you came back on November 2 with a red toe, I offered you a full refund of the $45, and I offered to pay your urgent care copay if you bring me the receipt. That offer is still open. Please bring the receipt, and we will take care of it.\n\nOur state inspection in August 2026 passed with no violations. The paper is on the wall, and anyone is welcome to come look at it.\n\nI have run this salon since 2007, after working for my aunt. In 19 years in Houston, we have never had an infection complaint until now. I know one bad experience can feel like everything, but these are the facts.\n\nWhat hurt me most in the comments is when someone says all nail salons are dirty, like we are all the same. We work very hard to keep our place clean and safe. Vy is a young woman who loves her work, and she is very upset right now. She did not deserve to read those words about herself.\n\nI still want to talk with you. Please call me at the salon at [salon phone number], or come by and we can sit down together. I would like to hear you, and I hope you will hear me.\n\nThank you, Marisol, for asking good questions and for being fair.\n\n---\n\nReplace [salon phone number] with your real number before posting.",
+  "words": 437,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.44283223152160645,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.17179732024669647,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.65234375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 4.6385321617126465,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 15.7,
+    "effort": "medium",
+    "output_tokens": 2432,
+    "input_tokens": 2137
+  }
+}

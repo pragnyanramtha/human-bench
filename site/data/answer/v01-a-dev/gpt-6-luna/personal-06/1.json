@@ -1,0 +1,78 @@
+{
+  "run": "v01-a-dev",
+  "model": "gpt-6-luna",
+  "label": "GPT-6 Luna",
+  "lab": "OpenAI",
+  "card": "personal-06",
+  "set": "dev",
+  "sample": 1,
+  "verdict": "detector",
+  "reason": "score 0.37, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "Nana,\n\nAunt Denise is going to read this to you in the kitchen on the last night in the house on Kathleen Street. I wish I could be there beside you. I’ve been on call all week and couldn’t find anyone to swap with me, and I’m sorry I can’t make it for the move. I know everyone says there’s no reason to feel guilty, and I know they’re right—but I still do. So I’m writing this now, while I can, and hoping you’ll hear all the things I’d say if I were sitting there with you.\n\nFifty-one years is a long time to make a house a home. That house has held so much of our family: all those years in the kitchen, the back steps and your early-morning tea, and the ordinary days that somehow became the ones I remember best. Grandpa Walt was part of all of it, too. I think of him when I think of that house, and I know there’ll be moments when leaving it feels like leaving a piece of him behind. But you’re not leaving what you built there. You’re taking it with you—in the stories, the people you raised, and all the ways you made that house feel like yours.\n\nSome of my favourite memories are from summers when I was a kid. You let me stay up to watch the Expos or the Jays on that little TV in the kitchen, as long as I dried the dishes. It was a very fair deal, though I’m sure I took the dishes less seriously than the baseball. Then there was cribbage. You taught me when I was about seven, and you never once let me win. Not once! I didn’t skunk you until I was fifteen, and then you made me a whole pan of butter tarts. I’m still not sure whether that was a prize or a way to keep me humble, but I remember it fondly either way.\n\nI also remember you sitting on the back steps with tea at six in the morning. I’d come out, and you wouldn’t say a word until you’d finished your cup. I loved that. You didn’t have to fill every quiet moment. I could just sit with you, and that was enough. I hope there’s a good place to have tea at Elmwood Terrace, somewhere you can watch the morning get started—though I suspect the view of the parking lot and that big maple will have to work pretty hard to compete with the Kathleen Street back steps.\n\nWhen I got the job in Toronto, you mailed me a twenty-dollar bill taped inside a card. “For pizza, you look thin on the computer,” you wrote. I don’t know how you managed to judge my weight through a screen, but you did. You were right about the pizza, too. And last Christmas, when my pager went off during dinner, you asked if the internet was broken again and if I’d fixed it. Now every call starts with, “Did anything break?” Nana, I’m proud to report that things do break, and sometimes I even fix them. I’m also glad you keep asking.\n\nI know this move is a big change. You don’t have to pretend it’s easy, and you don’t have to feel only one thing about it. You can miss the old house and still be excited about the new place. You can feel proud, nervous, relieved, and sad all at once. What I want you to know is that I’m proud of you. You chose this. Nobody made you do it. At 88, you’re still making your own decisions and finding out what comes next—and Elmwood Terrace actually looks nice. I hear there’s a crib league, which sounds suspiciously like they’ve been waiting for you to arrive and raise the standard.\n\nDenise is taking the cuckoo clock and the cedar chest, and I asked for the crib board. I’m glad those things are going to people who love them. The house may be full of memories, but no one thing can hold all of them. The clock can go with Denise, the chest can go wherever it needs to, and the crib board can come with me. You’ll still be there in every story we tell about them.\n\nI wish I could be there tomorrow night, and on moving day, to help carry things and sit with you in the kitchen. I’m sorry I can’t. But I’m thinking of you, and I’m looking forward to seeing your new room and that maple. I’ll be up the weekend of December 5, once my rotation’s done. We’ll get out the crib board and play our first game at the new place. I’ll try to be gracious when I win—but after all those years, I can’t promise anything.\n\nI love you, Nana. Thank you for the kitchen, the baseball games, the tea, the butter tarts, the twenty dollars for pizza, and every game you refused to let me win. Kathleen Street will always mean home to me because you made it home. And now you get to make Elmwood Terrace yours, too.\n\nSave me a seat at the crib table. I’ll see you December 5.",
+  "words": 870,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "claude-sonnet-5-5",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.37465572357177734,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.4139679968357086,
+      "cutoff": 0.16035056114196777,
+      "reads_human": false,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 0.3984375,
+      "cutoff": 0.55078125,
+      "reads_human": true,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": 5.206334114074707,
+      "cutoff": 3.06278395652771,
+      "reads_human": false,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 30.6,
+    "effort": "medium",
+    "output_tokens": 1058,
+    "input_tokens": 14134
+  }
+}

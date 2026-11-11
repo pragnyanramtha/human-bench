@@ -1,0 +1,78 @@
+{
+  "run": "v01-b-dev",
+  "model": "claude-opus-5-5",
+  "label": "Claude Opus 5.5",
+  "lab": "Anthropic",
+  "card": "forum-05",
+  "set": "dev",
+  "sample": 2,
+  "verdict": "detector",
+  "reason": "score 0.35, limit 0.16",
+  "gates": {
+    "checks": true,
+    "floor": true,
+    "detector": false
+  },
+  "output": "To: help/t-2291\nReplying to: p02\nCc: none\nSubject: none\n\nYes, I read the changelog before posting. The cause is a silent default change in 2.5.0, not my calibration or config. Please reopen this thread.\n\nPR #812 (\"refactor spectral frame handling\", merged Oct 22) changed the default in LineList.__init__ from wave_frame='air' to wave_frame='vacuum'. So rest wavelengths are now vacuum by default. My spectra are calibrated in air from arc lamps. The vacuum/air ratio at 6563 Å is about 1.00028, which is exactly the offset I reported: every redshift lower by ~0.00028 (~83 km/s), same direction for every object. It also explains why downgrading to 2.4.3 brings the old values back with the same input and config.\n\nIn CHANGES.md this appears only as \"Refactor LineList and spectral frame handling (#812)\". Nobody can tell from \"refactor\" that a default changed and results will shift. There is also no warning at runtime.\n\nBefore finding this, I spent two days assuming my wavelength calibration was broken. I re-reduced the arc lamps for 40 spectra for nothing. Marking the thread solved after one \"works for me\" pushed it down the board while the actual problem was still open. m_okonkwo also reported an offset in this thread, so it is not only me.\n\n\"Works for me\" doesn't tell us much here. If your spectra are already in vacuum wavelengths, or you work in radio, the new default gives the same answer as before, so you would see no difference. Anyone fitting air-calibrated optical data with default settings is affected.\n\n**Workaround** (for anyone who finds this thread):\n\n```\nLineList(..., wave_frame='air')\n```\n\nSet this explicitly if your data is air-calibrated. That brings 2.5.0 results back in line with 2.4.3.\n\n**Requests for the maintainers:**\n1. Reopen this thread. It is not solved for anyone who hasn't found the workaround.\n2. Add a clear line to the 2.5.0 section of CHANGES.md, something like: \"Default wave_frame in LineList changed from 'air' to 'vacuum'. Air-calibrated data must now set wave_frame='air'.\"\n3. Emit a warning when wave_frame isn't set explicitly, at least for a few releases. A quiet ~83 km/s shift is easy to miss and will end up in people's papers.\n\nI can open a GitHub issue for this if that's easier to track.",
+  "words": 362,
+  "floor_asked": true,
+  "checks": {
+    "passed": true,
+    "failures": []
+  },
+  "floor": {
+    "judge": "gpt-6.1-terra",
+    "passed": true,
+    "failed_questions": [],
+    "reasons": []
+  },
+  "second_judge": null,
+  "detectors": [
+    {
+      "id": "editlens-llama-3.2-3b",
+      "label": "Open Pangram large",
+      "headline": true,
+      "score": 0.34887853264808655,
+      "cutoff": 0.16412107646465302,
+      "reads_human": false,
+      "human_median": 0.011538099497556686,
+      "reference_score": null
+    },
+    {
+      "id": "editlens-roberta-large",
+      "label": "Open Pangram small",
+      "headline": false,
+      "score": 0.10116574913263321,
+      "cutoff": 0.16035056114196777,
+      "reads_human": true,
+      "human_median": 0.0177072212100029,
+      "reference_score": null
+    },
+    {
+      "id": "vanguard-modernbert-large",
+      "label": "vanguard",
+      "headline": false,
+      "score": 6.34375,
+      "cutoff": 0.55078125,
+      "reads_human": false,
+      "human_median": -4.25,
+      "reference_score": null
+    },
+    {
+      "id": "tropa-mini-deberta-large",
+      "label": "tropa-mini",
+      "headline": false,
+      "score": -0.26199769973754883,
+      "cutoff": 3.06278395652771,
+      "reads_human": true,
+      "human_median": -6.185253143310547,
+      "reference_score": null
+    }
+  ],
+  "meta": {
+    "seconds": 16.2,
+    "effort": "medium",
+    "output_tokens": 1147,
+    "input_tokens": 3040
+  }
+}
