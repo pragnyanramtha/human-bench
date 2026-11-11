@@ -6,9 +6,9 @@
 A benchmark of everyday writing. An output has to do the task and not be flagged as AI-written.</p>
 
 <p align="center">
-<a href="https://human-bench.vercel.app">Leaderboard</a> ·
-<a href="paper/humanbench.pdf">Paper</a> ·
-<a href="https://human-bench.vercel.app/#/tasks">Tasks</a> ·
+<a href="https://human-bench-iota.vercel.app">Leaderboard</a> ·
+<a href="https://human-bench-iota.vercel.app/humanbench.pdf">Paper</a> ·
+<a href="https://human-bench-iota.vercel.app/#/tasks">Tasks</a> ·
 <a href="#quickstart">Quickstart</a>
 </p>
 
@@ -129,8 +129,9 @@ Working files go under `private/`, which git ignores. The report uses the publis
 ## Citation and licence
 
 ```bibtex
-@misc{humanbench2026,
+@misc{ramtha2026humanbench,
   title  = {HumanBench: Can AI Write Like a Human?},
+  author = {Ramtha, Pragnyan},
   year   = {2026},
   note   = {v0.1, research preview},
   url    = {https://github.com/pragnyanramtha/human-bench}
