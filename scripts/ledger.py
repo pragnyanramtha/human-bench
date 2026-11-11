@@ -5,11 +5,11 @@
     uv run python scripts/ledger.py tables                                    recompute "pass all gates" from them
 
 One ledger row per model output: run, system-line track, split, task, model, sample, the hash of the scored
-text, whether it passed the scripted checks (and which checks failed, by name only), the quality-floor
-verdict, each detector's score, and for reference cards each detector's score of the real human piece.
-The calibration file holds each detector's human-text scores and cutoff. No task text, model output or
-human text is included; the private test split appears by card id only.
-Rows for cards built from real writing are written only for the cards the results report uses (memorisation screen passed
+text, whether it passed the programmatic checks (and which checks failed, by name only), the LLM-judge
+verdict, each detector's score, and for reference tasks each detector's score of the human reference.
+The calibration file holds each detector's human-text scores and threshold. No task text, model output or
+human text is included; the held-out test split appears by task id only.
+Rows for human-reference tasks are written only for the tasks the results report uses (memorisation screen passed
 for the whole launch panel, human reference scored and read as human by the headline detector) and only
 for models in that panel: one rule, `reference_cards` in the report module, serves both.
 """
@@ -124,9 +124,9 @@ def leaderboard_lines(rows: list[dict], cal: dict) -> list[str]:
 
 
 def tables() -> None:
-    """Print the bootstrapped leaderboard (HumanBench score over all cards, its public and private parts), then per-set gate rates.
+    """Print the bootstrapped leaderboard (HumanBench score over all tasks, its public and held-out parts), then per-set gate rates.
 
-    For the cards built from real writing the comparison with the real piece is printed too (the model's piece scores as
+    For the human-reference tasks the comparison with the human reference is printed too (the model's piece scores as
     more human than the real one; tie = half): it is reported beside the headline, not as the headline."""
     rows = [json.loads(x) for x in LEDGER.read_text().split("\n") if x.strip()]
     cal = json.loads(CALIB.read_text())
@@ -150,7 +150,7 @@ def tables() -> None:
                     p = v
                 groups[(r["split"], name)][(r["model"], d)][r["task"]].append(p)
     for (split, name), g in sorted(groups.items()):
-        print(f"\n{split}: scripted checks x quality floor x {name}")
+        print(f"\n{split}: programmatic checks x LLM judge x {name.replace('beats the real piece', 'beats the human reference')}")
         for (model, d), by_task in sorted(g.items()):
             vals = [x for v in by_task.values() for x in v]
             if any(x is None for x in vals):

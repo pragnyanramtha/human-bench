@@ -35,7 +35,7 @@ uv run --extra sourcing humanbench-source verify      # re-check every repo, pin
 | work_docs | `common-pile/github_archive` (single-author issue/PR threads) | questionable | judge_train |
 | personal | `euclaise/writingprompts` (stories only) | questionable | judge_train |
 
-The project’s own code and cards have the licences listed in `NOTICE.md`. Particular upstream datasets, detector weights and the two derived EditLens files carry non-commercial terms. Those terms apply to their respective materials. Keep the corpus private and never redistribute it. The `judge_train` use covers any judge use: checking the existing judge now, and training data if a judge is ever fine-tuned.
+The project’s own code and tasks have the licences listed in `NOTICE.md`. Particular upstream datasets, detector weights and the two derived EditLens files carry non-commercial terms. Those terms apply to their respective materials. Keep the corpus private and never redistribute it. The `judge_train` use covers any judge use: checking the existing judge now, and training data if a judge is ever fine-tuned.
 
 Rejected candidates and the reasons are kept in the YAML (`rejected_candidates`). Chat and social have no public source, and none is commissioned for the judge.
 
@@ -63,7 +63,7 @@ Each rejection is counted under its reason in the state file and the manifest, w
 |---|---|---|
 | extract | `source_filter`, `empty_text` | Registry filters (e.g. Enron sent folders), then source cleaners |
 | English | `not_english` | Function-word share and Latin-script share. Also drops code- and log-heavy text. Texts under 50 tokens pass here and fail on length |
-| date | `date_unknown`, `date_after_cutoff` | Dated strictly before 2022-11-30. A missing or unparseable date is rejected unless the source is pre-cutoff by construction |
+| date | `date_unknown`, `date_after_cutoff` | Dated strictly before 2022-11-30. A missing or unparseable date is rejected unless the source is known by construction to predate that date |
 | normalize | `empty_after_normalize` | `humanbench.scoring.normalize`, the same normalizer the scorer uses |
 | length | `below_min_words`, `above_max_words` | 250 to 4,000 words; band from `axes.BAND_WORDS` |
 | dedup | `exact_duplicate`, `near_duplicate` | SHA-256 of canonical words, then MinHash (128 perms, 5-word shingles, 16x8 LSH) with estimated Jaccard >= 0.7, within the source |

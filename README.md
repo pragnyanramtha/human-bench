@@ -10,9 +10,9 @@
 <p align="center">We gave 11 models everyday writing jobs and ran the answers past an AI detector.</p>
 
 <p align="center">
-  <a href="https://human-bench-iota.vercel.app"><img src="https://img.shields.io/badge/Leaderboard-2B4EE6?style=for-the-badge" alt="Leaderboard"></a>
-  <a href="https://human-bench-iota.vercel.app/humanbench.pdf"><img src="https://img.shields.io/badge/Paper-D27A22?style=for-the-badge" alt="Paper"></a>
-  <a href="https://human-bench-iota.vercel.app/#/tasks"><img src="https://img.shields.io/badge/Tasks-5E6673?style=for-the-badge" alt="Tasks"></a>
+  <a href="https://humanbench.agent7.dev"><img src="https://img.shields.io/badge/Leaderboard-2B4EE6?style=for-the-badge" alt="Leaderboard"></a>
+  <a href="https://humanbench.agent7.dev/humanbench.pdf"><img src="https://img.shields.io/badge/Paper-D27A22?style=for-the-badge" alt="Paper"></a>
+  <a href="https://humanbench.agent7.dev/#/tasks"><img src="https://img.shields.io/badge/Tasks-5E6673?style=for-the-badge" alt="Tasks"></a>
   <a href="#quickstart"><img src="https://img.shields.io/badge/Quickstart-5E6673?style=for-the-badge" alt="Quickstart"></a>
 </p>
 

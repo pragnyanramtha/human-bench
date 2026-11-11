@@ -1,7 +1,7 @@
 # Running and scoring a model
 
-Install with `uv sync --group dev`. The public cards live in `tasks/dev/` and `tasks/ref/`.
-The runner sends each card's model prompt with the fixed instructed system line, with no tools.
+Install with `uv sync --group dev`. The public tasks live in `tasks/dev/` and `tasks/ref/`.
+The runner sends each task's model prompt with the fixed instructed system line, with no tools.
 It accepts an OpenAI-compatible chat completions endpoint; the base URL should include any API version prefix.
 
 ```sh
@@ -12,12 +12,12 @@ uv run python -m humanbench.harness.run_model run \
 ```
 
 Use `--effort` to set reasoning effort explicitly and `--max-tokens` to set the output limit.
-The key is read from the environment and never written to records. Answers, invocation manifests,
+The key is read from the environment and never written to records. Outputs, invocation manifests,
 and infrastructure failures are stored under `private/trials/example/`. Repeating a command skips
-current successful answers, retries infrastructure failures, and repeats answers whose card prompt changed.
-The runner removes reasoning enclosed in `<think>` blocks and records scripted scores for each answer.
+current successful outputs, retries infrastructure failures, and repeats outputs whose task prompt changed.
+The runner removes reasoning enclosed in `<think>` blocks and records programmatic-check results for each output.
 
-For quality review, configure a judge endpoint and name the judge explicitly:
+To use an LLM judge, configure a judge endpoint and name the judge explicitly:
 
 ```sh
 export HUMANBENCH_JUDGE_BASE_URL=https://example.org/v1
@@ -26,7 +26,7 @@ uv run python -m humanbench.harness.floor_run run \
   --run-id example --judges api:judge-model
 ```
 
-Use recognised model names so that the quality floor can exclude judges from the tested model's
+Use recognised model names so that the LLM judge can exclude judges from the tested model's
 own provider. Provider mappings live in `src/humanbench/scoring/floor.py`.
 The same endpoint configuration supports `api:<model>` names in `scripts/refcards/memprobe.py`.
 

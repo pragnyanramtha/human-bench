@@ -17,7 +17,7 @@ uv run python generate.py mirrors     # 140 calls, claude-sonnet-5-5 / the runne
 uv run python generate.py pairs       # -> pairs.jsonl (drops a mirror if >15% of its 8-grams copy the source)
 uv run python fetch_models.py         # ~17 GB of HF weights into ~/.cache/huggingface
 ./run_all.sh all                      # every detector -> scores/<detector>__fold.jsonl
-uv run python probe.py <classifier>   # optional: frozen-feature + logistic-regression probe
+uv run python probe.py <detector>   # optional: frozen-feature + logistic-regression probe
 uv run python probe_transfer.py       # optional: probe held-out generator / mode / channel tests
 ./run_timing.sh                       # clean CPU timing; run only on an otherwise idle box
 uv run python ft_timing.py            # optional: CPU fine-tuning cost estimate

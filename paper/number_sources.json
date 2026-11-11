@@ -1,0 +1,460 @@
+[
+ {
+  "id": "N01",
+  "text": "\\begin{abstract}\n\\hb{} v0.1 gives models everyday writing tasks and puts each output through programmatic checks, an LLM judge and an AI-text detector. The HumanBench score is the share passing all three: the mean over three samples per task, then over all 212 tasks, with bootstrap intervals over tasks. Public and held-out scores are reported beside it. There are 132 public tasks (52 human-reference and 80 synthetic) and 80 held-out synthetic tasks. Across eleven models, scores range from 1.9\\% to 23.1\\%. Answer quality, the share passing the first two gates, ranges from 27.0\\% to 83.3\\%. HumanBench measures task compliance, a model-judged quality bar and detectability under named open AI-text detectors; no human readers were involved. Results depend on the detector, task mix, reasoning effort and model access, and models under test helped draft, audit and judge the benchmark. Public tasks, code and a text-free ledger are at \\hbrepourl; results are at \\hbsiteurl.\n\\end{abstract}",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N02",
+  "text": "People ask language models to write text that they will send under their own name: an email to a supplier, a reply in a forum thread, a product review, a toast, a postmortem. Two properties matter for this use. The text has to do the job that was asked. The text should also not be marked as machine-written by the AI-text detectors that are now run on such text. \\hb{} v0.1 measures both properties on the same outputs.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N03",
+  "text": "\\hb{} joins the two with a conjunction. Each task is stored in a \\emph{card file}: a request as a user would type it, the user's notes, and hidden lists of what the output must contain, convey and keep out. A model produces three samples per task. Each output passes through three gates in order (Figure~\\ref{fig:protocol}): programmatic checks, an LLM judge and an AI-text detector at a threshold that 99\\% of a pool of human texts stay under. The \\hb{} score is the share of outputs that pass all three. There are two kinds of task. A \\emph{human-reference task} is built backwards from a real person's text, called the \\emph{human reference}; that text passes the programmatic checks, is accepted by the main LLM judge and is not flagged by the headline detector. A \\emph{synthetic task} has a model-written \\emph{reference solution} that proves its checks can be met, and this kind also covers thread replies and simulated workspaces. The benchmark has 212 tasks. The 132 public tasks are 52 human-reference tasks and 80 synthetic tasks. The 80 held-out tasks are synthetic tasks that are held back. Every model gets one score over all tasks. Beside it, the public score lets anyone reproduce that part; the held-out score shows whether it holds on tasks no model can have been trained or tuned on. The parts are not expected to be equal: the public part also contains the harder human-reference tasks. The overall score depends on the mix of 52 human-reference tasks and 160 synthetic tasks.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N04",
+  "text": "\\paragraph{Contributions.}\n(1)~A protocol with three gates, one score over all tasks, secondary public and held-out scores, and a companion quality number, with the reasons for not adding the parts as weighted points (Section~\\ref{sec:design}).\n(2)~Human-reference tasks built backwards from archival human text, with a leakage screen and a memorisation probe (Section~\\ref{sec:ref}).\n(3)~Measurements of the scoring itself: judge validation, the disagreement between the two judges on identical outputs, AI-text detector calibration, a device check and a human baseline (Section~\\ref{sec:validation}).\n(4)~Results for eleven models, broken down by outcome, by AI-text detector and by kind of failure, with a ledger from which the scores can be recomputed without any task or model text (Sections~\\ref{sec:setup} to~\\ref{sec:discussion}).",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N05",
+  "text": "A task asks for one piece of everyday writing of 250 to 4,000 words, or for several messages that total that much. There are two kinds of task, and every task is scored the same way.",
+  "sources": {
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N06",
+  "text": "A human-reference task is built backwards from its human reference (Section~\\ref{sec:ref}). The model never sees that piece. These tasks are all in direct mode. The 52 used here cover six channels: 16 review, 10 email, 9 personal, 8 forum, 5 blog and 4 work document. There are no chat or social tasks of this kind, because no suitable public source of long private messages or posts was identified.",
+  "sources": {
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342"
+  }
+ },
+ {
+  "id": "N07",
+  "text": "The benchmark has two parts. The public part has 132 tasks: the 52 human-reference tasks and 80 synthetic tasks, ten per channel (36 direct, 13 thread reply, 23 workspace and 8 ghostwriting). Anyone can read these tasks and check a score on them. The held-out part has 80 synthetic tasks of the same kinds that are not released, so that no model can be trained or tuned on them. The two parts are not expected to give equal scores, because only the public part contains the human-reference tasks, which are harder.",
+  "sources": {
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N08",
+  "text": "Tasks are drafted by a model: a synthetic task from a slot in a task matrix, a human-reference task from a human text. Each task must pass mechanical tests: its reference scores 1.0 on the task's own programmatic checks, and empty outputs, assistant-style wrappers and echoes of the prompt score 0.0. A second model then audits the task against a fixed rubric that covers the fairness of the checks, ambiguity, consistency, realism, the material given, the reference, safety, and evidence from trial runs. The task is fixed and audited again until no finding is rated blocker or major. A task that cannot be made fair is dropped and the drop is recorded. A verdict is bound to a fingerprint of the task's content, so an edited task has no valid audit until it is audited again. The repository records these model audits. It records no task-by-task review by a person (Section~\\ref{sec:limits}).",
+  "sources": {
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05",
+   "scripts/audit/card_prompt.md": "e495515818b7aaa9a2980f252a3325aed13bfc84f71e6927f731079b9043a649"
+  }
+ },
+ {
+  "id": "N09",
+  "text": "The pre-release review edited 27 public synthetic tasks and 20 human-reference tasks, correcting a possible real phone number, names shared with well-known people, street addresses, date and arithmetic slips, visibly appended requests and unsupported persona details. Seven human-reference tasks were dropped for sensitive details about identifiable people, unsuitable content, or inability to make the task fair without those details. Every edited task was audited again until clean, and all eleven models answered it again three times.",
+  "sources": {
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N10",
+  "text": "\\paragraph{Gate 1: programmatic checks.} Scripts, with no model involved, check the output against the task. The length must fall in the band the request states; when the request says ``roughly'', a tolerance of 10\\% applies at both ends. The format must fit the channel: headings and tables fail in email, chat, forum, social, review and personal writing, bold fails in social, review and personal writing, and bullet lists fail in personal writing, unless the task overrides the rule. Assistant talk and placeholders fail, such as an opening that introduces a draft, a bracketed name slot or a closing offer to revise. Required facts must appear and barred phrases must not, after numbers, dates and times are normalised. Hidden characters and text addressed to a grader fail. An output may not share a run of 13 words with a reference text, and at most 25\\% of it may be copied from the task's own material. Workspace outputs are also checked for routing, leaks of private items and invented money amounts. An output passes only if every check passes.",
+  "sources": {
+   "src/humanbench/scoring/verifiers.py": "8e5fdb9f418a5bc4a87043b1779fda1eb8d028648d48a3931ddfad7c035afc7a"
+  }
+ },
+ {
+  "id": "N11",
+  "text": "\\paragraph{Gate 2: LLM judge.} Programmatic checks cannot tell whether a piece does the task, since any text of the right length with the right facts passes them. A language model acting as judge therefore answers yes/no questions about each output that passed the programmatic checks: is it coherent, does it do the task and cover every \\code{must\\_cover} point, does it contradict the facts given, does its tone work against the request, and is anything in it implausible for the persona. A sixth question on privacy is asked when the task has private items or keep-out statements. The judge is told that this is a minimum bar, that an ordinary or clumsy output passes, and that it must not judge whether the text sounds human or machine-written. Any ``no'' fails the output. Appendix~\\ref{app:judge} gives the questions. A judge never reviews a model from its own company.",
+  "sources": {
+   "src/humanbench/scoring/floor.py": "757abc9d2e35c97d2c73c90b7c025ffd52e3cee289ad555a95df7aefa4da4bda"
+  }
+ },
+ {
+  "id": "N12",
+  "text": "\\paragraph{Gate 3: AI-text detector.} An open detector scores the output. The output passes if its score is at or below a threshold set on human texts (Section~\\ref{sec:calibration}); otherwise it is flagged as AI. The \\emph{headline detector} is the one that decides the score. Three others are reported beside it and never substitute for it. An empty output is treated as flagged.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N13",
+  "text": "For model $m$, task $c$ and sample $s$, let $v$, $q$ and $h$ be 1 when the output passes the programmatic checks, the LLM judge and the headline detector, and 0 otherwise. With $C$ the set of all 212 tasks and three samples per task,",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N14",
+  "text": "The secondary \\emph{public score} restricts $C$ to the 132 public tasks and the \\emph{held-out score} to the 80 held-out tasks. The overall score pools tasks, giving each task equal weight. \\emph{Answer quality} is the same all-task average of $v_{mcs}\\,q_{mcs}$: the share of outputs that passed the programmatic checks and the LLM judge, whatever the AI-text detector says. Each output that did not pass is assigned to the first gate it failed, so the four outcomes sum to 100\\%. Intervals are 95\\% bootstrap intervals over tasks with 2,000 resamples. Three samples of one task are not three independent tasks, so tasks are resampled and samples are not.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "src/humanbench/harness/report_v01.py": "3b1f79aeb7bd219ee29dacdfe115447c9cd7dfdd8b66426cc59e6a5fd06b6d96",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3"
+  }
+ },
+ {
+  "id": "N15",
+  "text": "\\paragraph{Building backwards from a real piece.} The original design called for commissioned writers who would do each task from the same notes as the model. No writers were available for v0.1. A human-reference task therefore starts from an existing piece of writing and reconstructs a task from it. A model reads the piece and writes the request that its author could have typed to an assistant before the piece existed, with the raw notes the author would have handed over. The build rules ask for a first-person prompt of 60 to 200 words in the writer's voice, and 8 to 25 notes of at most 30 words each that keep the original names, places and dates, are not ordered as the piece is, and carry none of its phrasing. The builder marks a text unusable if it is not one self-contained piece by one ordinary writer, if it was published or mass-distributed, or if it names a private individual in a damaging way. The task then goes through the audit loop of Section~\\ref{sec:design}.",
+  "sources": {
+   "scripts/refcards/build_prompt.md": "8e724098ade3c98686823678a4add81e212d230a6b52940e0046b6a8b382c7bb"
+  }
+ },
+ {
+  "id": "N16",
+  "text": "\\paragraph{Sources.} The human texts are public writing from before a sourcing date of 2022-11-30; most are from 1999 to 2017, and two issue-tracker posts are from late 2022. They come from public datasets of Enron email, personal blogs, issue-tracker threads from the Common Pile \\citep{kandpal2025commonpile}, IMDb and Yelp reviews, Reddit posts, Stack Exchange answers and hobby fiction. In all, 319 texts were selected. The median human reference on the 52 tasks used has 416 words.",
+  "sources": {
+   "tasks/ref/MANIFEST.md": "35d0c9916128187b2d8f3e690967920e47dd763404733e9b1709d4a6294485c6",
+   "reports/surface-features-v0.1.md": "151916a221356a4181c5afafbce7c91aaccede24349abee07c2883936656c6c9"
+  }
+ },
+ {
+  "id": "N17",
+  "text": "\\paragraph{Leakage screen.} The prompt, notes and persona may share no run of 8 words with the human reference, and at most 8\\% of their 5-word sequences may occur in it. This limits direct copying, not training exposure.",
+  "sources": {
+   "src/humanbench/refs.py": "029c9987aa2141df813f74b1a833d7a5371bd65a386017c21bcbeccc2dd99ac1"
+  }
+ },
+ {
+  "id": "N18",
+  "text": "\\paragraph{Memorisation probe.} The texts come from public corpora and may be in training data. Each model in the launch panel is shown the first 40\\% of each text and asked to continue it word for word. The continuation is compared with the hidden remainder. A task is flagged for a model if the two share a run of 12 words or three separate runs of 8 words, or if 25\\% of the continuation's 5-word sequences occur in the remainder. A reply too short to be a continuation is asked for once more and otherwise leaves the task unprobed. A task is used only if every panel model was probed and none was flagged. Of the 57 active tasks, 5 were flagged, leaving 52 usable for every launch model. A clean probe shows that no panel model reproduced the text on request. It does not show that the model never saw the text.",
+  "sources": {
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342",
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "scripts/refcards/memprobe.py": "7ef0ba4f5570fbe3dc7a0946f0ff5be992b8a14780a94eb27664a604ac0f8d21"
+  }
+ },
+ {
+  "id": "N19",
+  "text": "\\paragraph{What the human reference guarantees.} On every task used, the human reference scores 1.0 on the task's programmatic checks, is accepted by the main LLM judge, and is not flagged by the headline detector; a task whose human reference the headline detector flags would be left out. A model is therefore asked to clear a bar that a person cleared on the same content. Three qualifications apply. The person never received the task: the request was reconstructed from the finished piece, so the comparison is with real writing on the same content and not with a person answering the same prompt. The human references are part of the pool that sets the AI-text detector thresholds, so their passing the AI-text detector is not an independent test. The 52 tasks are the texts that survived selection, building, audit and screening, and are not a representative sample of everyday writing.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N20",
+  "text": "\\paragraph{A companion comparison.} For these tasks the report also gives how often the detector scores the model's piece as \\emph{more} human than the human reference, with a tie counted as half. This asks the model to beat the reference, not to match it. It was the third gate for these tasks until 2026-11-11, when the threshold replaced it so that every task uses one rule.",
+  "sources": {
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N21",
+  "text": "\\paragraph{Validation.} Each judge was given two kinds of input. Every task's reference must pass. Junk must fail: filler, a refusal and another task's output on 20 tasks of each task set, and the reference with a leak added on every task that has private items or a factual keep-out statement. Both judges rejected all 260 junk pieces. The tasks were revised until the main judge, Claude Sonnet 5.5, passed every reference: 217 of 217. The second judge, GPT-6.1 Terra, was run afterwards and passes 208 of the 217. The 9 failures were left in place and are reported here; the tasks were not edited further to remove them.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d"
+  }
+ },
+ {
+  "id": "N22",
+  "text": "\\paragraph{Disagreement between the judges.} GPT-6.1 Terra reviews the Anthropic models; Claude Sonnet 5.5 reviews the others. On 377 open-weight outputs read by both, Sonnet passed 86.5\\% and Terra 79.3\\%: both passed 288, both failed 40, 38 passed only Sonnet and 11 only Terra. Agreement was 87.0\\%. Terra was stricter on this shared sample; this does not identify the causal effect of judge choice on the leaderboard. The gap is reported, not corrected.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d"
+  }
+ },
+ {
+  "id": "N23",
+  "text": "\\paragraph{Selection.} On 140 archival human/model pairs from two generators, Binoculars and Fast-DetectGPT with small scoring models reached AUROC 0.421--0.470. Vanguard and tropa-mini reached 0.960 and 0.959, each ordering 98.6\\% of pairs correctly; Open Pangram small reached 0.919. The evidence for selecting Open Pangram large is much thinner: a CPU pilot with 4-bit weights on only 20 pairs reached AUROC 0.995 and ordered all pairs correctly, but the other AI-text detectors also ordered all those pairs correctly. This exploratory result motivated retaining the larger model as a diagnostic; it does not establish its superiority. The CPU report explicitly recommends against replacing the existing ensemble on that evidence. The benchmark subsequently designated it the headline detector and scored all texts with released weights under bfloat16 on a GPU. There is no full matched-pair accuracy evaluation of that deployed configuration. We treat the designation as a release convention and report the other AI-text detectors alongside it. Model and detector release dates are not recorded.",
+  "sources": {
+   "reports/judge-cpu-baselines.md": "ad3eaad82778f09feb387696d662713d82ca489aa07fcaaffc03e12a9c4d3ed8",
+   "experiments/judge_cpu/README.md": "1ed280aa1deea2dc9c183b9d72b6e6b69b1cddbe0046f16ca083cf31f069c39c"
+  }
+ },
+ {
+  "id": "N24",
+  "text": "\\paragraph{Calibration.} Each detector scores a pool of 801 human texts from the same archival sources. The threshold is the score that leaves 1\\% of the pool above it; for each AI-text detector, 8 of the 801 texts score above the threshold. An output ``reads as human'' to an AI-text detector when its score is at or below the threshold. Table~\\ref{tab:detectors} lists the AI-text detectors, and Figure~\\ref{fig:detector} shows the headline detector's scores for the human pool and for model outputs. The threshold is a calibration on a few hundred archival texts. It is not a validated false-positive rate for any other population of human writing.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N25",
+  "text": "By channel: blog 78, email 44, forum 128, personal 78, review 428, work docs 45. By source: aeslc 28, blog 14, blog authorship 50, enron 16, github threads 45, imdb 212, medium 14, reddit 28, stackexchange 64, tldr17 50, writingprompts 64, yelp 216. These are counts only; no calibration text is published.",
+  "sources": {
+   "private/judge_cache/in/humans.jsonl": "9cf6fa977c6405394d6ef6c429fa99d0d5ea2c9e769f378ac630555f484daaa6"
+  }
+ },
+ {
+  "id": "N26",
+  "text": "\\paragraph{One device.} All four AI-text detectors were scored on one GPU, every text included. The three smaller ones had first been scored on a CPU. On the 2,977 texts scored both ways, 16 of 8,931 verdicts differed, because reduced-precision arithmetic differs slightly between devices. Scores from different devices are not mixed in any table.",
+  "sources": {
+   "experiments/judge_cpu/README.md": "1ed280aa1deea2dc9c183b9d72b6e6b69b1cddbe0046f16ca083cf31f069c39c"
+  }
+ },
+ {
+  "id": "N27",
+  "text": "\\paragraph{Human baseline.} Other calibration texts from the same channel were put in the model's seat for the companion comparison. Under the headline detector they win 47.9\\% [40.6, 55.6] of 4,644 same-source pairs and 49.0\\% [41.5, 56.8] of 4,888 other-source pairs. The other AI-text detectors give 45.9\\%--50.7\\%. Thus 50\\% is parity on that comparison. These are different subjects from the same archival pool, not a test of old against new human writing.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d"
+  }
+ },
+ {
+  "id": "N57",
+  "text": "\\paragraph{Reasoning effort.} Each model ran at its own default reasoning effort, and the defaults differ (Table~\\ref{tab:models}): high for Claude Fable 5.2 and Claude Sonnet 5.5, medium for Claude Opus 5.5 and Claude Haiku 5.5, low for GPT-6.1 Sol and GPT-6.1 Terra, medium for GPT-6 Astra and GPT-6 Luna, and the provider's default for the open-weight models. The leading model therefore ran at a higher effort than the leading GPT models, and the comparison between them is confounded with effort. A control ran three models again at another effort on a fixed random half of the public tasks, 66 tasks with two outputs each, and compared them with their first two outputs on the same tasks. Claude Fable 5.2 scored 17.4\\% at low effort against 17.4\\% at high, a difference of 0.0 points [$-$6.8, 6.8]. GPT-6 Astra scored 9.8\\% at high against 14.4\\% at medium ($-$4.5 points [$-$10.6, 0.8]), and GPT-6.1 Sol 10.6\\% at high against 13.6\\% at low ($-$3.0 points [$-$7.6, 2.3]). No interval excludes zero; the control covers three models and no held-out tasks.",
+  "sources": {
+   "reports/effort-control-v0.1.md": "30ac9f6af4d6dd258cbf054878268afe0f3ea39fd8845c204d64bfeb115b5259",
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d"
+  }
+ },
+ {
+  "id": "N29",
+  "text": "\\paragraph{Sampling and runs.} Every model produces three samples per task: 156 outputs per model on the 52 human-reference tasks and 240 on each set of 80 synthetic tasks. The runs were made on 2026-11-10 and 2026-11-11. No output is missing and none is unscored. The scoring ledger has 6,996 rows: 4,356 on the public tasks (1,716 on human-reference tasks and 2,640 on synthetic tasks) and 2,640 on the held-out tasks.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3"
+  }
+ },
+ {
+  "id": "N30",
+  "text": "\\paragraph{Workspace outputs.} Workspace tasks are simulated. The model is shown the whole workspace as text and writes each message as a plain draft under a short header (To, Replying to, Cc, Subject) that a parser reads. This tests writing and routing, not tool use. The header replaced a JSON output format on 2026-11-11. Its first wording named the workspace's first item as its example of an id, and models replied to that item. The wording was corrected and every workspace trial was run again for every model; the results use only those outputs. The correction took routing failures from 9.8\\% to 6.8\\% of workspace outputs across all models; for the GPT models, the only ones run under all three formats, they were 3.9\\% with JSON, 5.0\\% with the first wording and 3.8\\% with the final one. The tasks were audited under the JSON format, the header format only by this comparison.",
+  "sources": {
+   "reports/workspace-format-v0.1.md": "13d84a4f4dcb9af1dc889cc9d845bb566ffd7198e5496ec0822930d8f20669bb",
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N31",
+  "text": "Figure~\\ref{fig:leaderboard} and Table~\\ref{tab:main} rank models by overall score, ranging from 1.9\\% to 23.1\\%. Fable has the highest point estimate and Luna the lowest. Neighbouring intervals overlap, limiting rank claims. Astra is second and Terra third overall. DeepSeek is seventh overall and second on held-out tasks. Answer quality over all tasks ranges from 27.0\\% to 83.3\\%; the two highest-quality models, Astra and Sol, score 12.6\\% and 11.0\\% overall. The leaderboard is published at \\hbsiteurl.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N33",
+  "text": "Figure~\\ref{fig:kinds} is a breakdown of the score by kind of task, not separate leaderboards. Every model scores lower on human-reference tasks. The highest point estimate there is Fable's 10.9\\% [5.1, 17.3], followed by Astra's 9.0\\% and Sol's 8.3\\%, with overlapping intervals. Two models have no passed output. Fable also has the highest point estimate on the public synthetic tasks, 29.2\\% [21.7, 37.1].",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N34",
+  "text": "The kinds differ in construction and modes. The headline detector accepts 40 of 80 public and 39 of 80 held-out model-written references; synthetic tasks were retained regardless of this result to avoid selecting tasks where model text evades detection. Those scenarios were drafted and revised by models under test and include workspace routing, absent from human-reference tasks.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N35",
+  "text": "\\paragraph{Human-reference tasks in detail.} Of 1,716 outputs, 677 (39.5\\%) failed checks, 68 (4.0\\%) were rejected by judge, 910 (53.0\\%) were flagged as AI, and 61 (3.6\\%) passed. Of outputs passing the first two gates, the unflagged share ranges from zero to Fable's 17 of 88 (19.3\\%); Sol has 13 of 131 (9.9\\%). Passed outputs fall on 18 of 52 tasks: 26 of 330 email outputs and 19 of 165 blog outputs passed, against 16 of 1,221 on the other 37 tasks. None on the four work-document tasks passed.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N36",
+  "text": "Under Open Pangram small, Fable scores 32.1\\% [21.8, 43.6], against 10.9\\% with the headline detector. Results and ordering depend on the chosen AI-text detector.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N37",
+  "text": "Table~\\ref{tab:failures} shows formatting as the most frequent programmatic-check failure for ten of eleven models; Luna is the exception. It affects 26.9\\%--38.5\\% of Claude and open-weight outputs and 7.7\\%--12.8\\% of GPT outputs. The venue is named, but its plain-text constraint is unstated. Waiving formatting alone raises Astra by 1.9 percentage points, the largest increase; other increases are smaller.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N38",
+  "text": "Assistant talk or placeholders affect 5.1\\%--30.1\\% of outputs; copying affects 1.9\\%--3.8\\%. A shared 13-word run cannot distinguish recall from reconstruction using the notes.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N39",
+  "text": "Length failures are at most 5.1\\% except for MiniMax (13.5\\%). The earlier length-check bug and late workspace-format change illustrate how implementation details can affect scores; the final report uses the corrected checks and rerun workspace outputs.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N40",
+  "text": "Table~\\ref{tab:surface} shows Markdown in 34\\%--86\\% of model outputs against 12\\% of human references, separating them with AUROC 0.61--0.87. Sentence length gives AUROC 0.47--0.69; median model sentences have 15.0--18.6 words against 18.6 for humans. Surface differences may contribute to detection and need not correspond to reader judgements.",
+  "sources": {
+   "reports/surface-features-v0.1.md": "151916a221356a4181c5afafbce7c91aaccede24349abee07c2883936656c6c9"
+  }
+ },
+ {
+  "id": "N41",
+  "text": "In the companion comparison, an output passes if it passes the first two gates and the detector scores it as more human than the human reference on the same task. Under the headline detector the rate is 0.0\\% [0.0, 0.0] for all eleven models: no output that passed the first two gates was scored at or below its human reference by that AI-text detector. Under the other three AI-text detectors the highest rate for any model is 3.2\\% [0.0, 8.3]. Parity in this comparison is 50\\% (Section~\\ref{sec:calibration}).",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N42",
+  "text": "\\paragraph{Reading the leaderboard.} Quote the overall score and its public and held-out parts with the detector, interval, reasoning effort and access, alongside all-task answer quality and the four outcomes. About half of all outputs pass the first two gates and are then flagged as AI. Higher quality does not ensure a high score: 70.8\\% and 70.6\\% of all outputs by Astra and Sol are flagged as AI. Intervals overlap and do not establish a total order. The task mix matters: Fable scores 10.9\\% on human-reference tasks, 29.2\\% on public synthetic tasks and 23.1\\% overall. The overall mean uses a particular mix of 52 human-reference tasks and 160 synthetic tasks; the held-out part has no human-reference tasks. A different mix could change scores and ordering. We do not infer channel effects from these small samples.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N43",
+  "text": "\\paragraph{Detector-relative, not reader-validated.} ``Reads as human'' means that an open AI-text detector did not flag the text. No human readers took part. AI-text detectors differ, can be moved by paraphrasing or formatting, and are reported in separate columns for that reason. In a development audit on 100 outputs on synthetic tasks, removing Markdown changed the verdict of the vanguard AI-text detector for 33 and moved 20 from flagged to not flagged for Open Pangram small; the headline detector was checked on only 10 outputs, with 4-bit weights, and one verdict changed. The thresholds are calibrated on a few hundred archival texts and are not validated false-positive rates. The choice of headline detector rests on thin evidence (Section~\\ref{sec:calibration}).",
+  "sources": {
+   "reports/judge-cpu-baselines.md": "ad3eaad82778f09feb387696d662713d82ca489aa07fcaaffc03e12a9c4d3ed8"
+  }
+ },
+ {
+  "id": "N44",
+  "text": "\\paragraph{Old human text against new model text.} The calibration texts and the human references are public writing from before 2022-11-30, mostly from 1999 to 2017, and the human references are part of the calibration pool. An AI-text detector may separate them from model text by period, source or formatting and not by authorship. The human baseline cannot test this, because it compares old text with old text. On the human-reference tasks, model outputs also differ from the human references on the surface (Table~\\ref{tab:surface}), and part of what the AI-text detectors detect may be such habits. Aggregate calibration composition is reported above; it does not establish representativeness.",
+  "sources": {
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342",
+   "reports/surface-features-v0.1.md": "151916a221356a4181c5afafbce7c91aaccede24349abee07c2883936656c6c9"
+  }
+ },
+ {
+  "id": "N45",
+  "text": "\\paragraph{Models under test helped build the benchmark.} The synthetic tasks were drafted by Claude Opus 5.5 and revised by GPT-6.1 Sol. The human-reference tasks were built and audited by GPT-6.1 Sol. The LLM judges are Claude Sonnet 5.5 and GPT-6.1 Terra. All four are among the eleven models tested. A model family may be advantaged on material it wrote or disadvantaged by a rival's judge. Neither effect is measured. Tasks were audited by a model against a rubric; no task-by-task review by a person is recorded. Audits were unstable: in a later round on tasks still in the loop, new findings appeared on 37 of 72 tasks passed two rounds earlier, often reversing direction between giving away too much of the human reference and omitting what it says. A clean audit means only no blocker or major finding in one independent pass over the current content.",
+  "sources": {
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N46",
+  "text": "\\paragraph{Judge asymmetry.} One judge reads each output. Terra passes 79.3\\% of 377 shared outputs against Sonnet's 86.5\\%, and fails 9 of 217 references that Sonnet passes. This asymmetry is not corrected and may affect comparisons between model families.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N47",
+  "text": "\\paragraph{The human-reference tasks.} The human never got the task: a task's request was reconstructed from the finished piece by a model, so the comparison is with real writing on the same content and not with a person answering the same prompt. Training exposure is unknown: the probe shows that no panel model reproduced a text on request, not that it never saw it, and adding a model to the panel can remove tasks for every model. The 52 tasks are the texts that survived selection, building, audit and screening, and are not a representative sample of everyday writing. All tasks are in English, and there are no chat or social tasks of this kind.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N58",
+  "text": "\\paragraph{Reasoning effort and access.} Each model ran at its own default reasoning effort, and the defaults differ: Claude Fable 5.2 and Claude Sonnet 5.5 high, Claude Opus 5.5 and Claude Haiku 5.5 medium, GPT-6.1 Sol and GPT-6.1 Terra low, GPT-6 Astra and GPT-6 Luna medium, and the open-weight models at the provider's default. The leading model ran at a higher effort than the leading GPT models, so the comparison between them is confounded with effort. The control of Section~\\ref{sec:setup} found no difference whose interval excludes zero, but it covers only three models and 66 public tasks, and its intervals are wide. Access also differed between model families: a provider's hosted client, whose software can add framing text, or a hosted inference service with an output limit. Results may therefore differ from plain API calls.",
+  "sources": {
+   "reports/effort-control-v0.1.md": "30ac9f6af4d6dd258cbf054878268afe0f3ea39fd8845c204d64bfeb115b5259",
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d"
+  }
+ },
+ {
+  "id": "N48",
+  "text": "\\paragraph{Privacy and licences of the source texts.} The reference tasks keep the names and details that appear in their sources. They are not anonymised. Some sources contain messages by named private individuals; the Enron email corpus, for example, entered the public record through a regulator's release. The build rules keep phone numbers, addresses and account numbers out of the tasks and exclude texts that name a private individual in a damaging way, and a task can be removed on request. The pre-release review removed possible contact details, addresses and unsupported personal details, and dropped tasks exposing sensitive information about identifiable people, unsuitable content, or material that could not be made fair without it. No ethics review is recorded. The human texts are not redistributed, because several sources allow research use but not redistribution. A manifest records each task's dataset, record locator, date evidence, licence note and a SHA-256 of the text, so a retrieved copy can be checked. Of the 57 active tasks in the manifest, 19 name a pinned dataset revision. The other 38 come from files downloaded without one, and for those the manifest gives file checksums and retrieval dates. Appendix~\\ref{app:release} lists what is and is not released.",
+  "sources": {
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342",
+   "tasks/ref/MANIFEST.md": "35d0c9916128187b2d8f3e690967920e47dd763404733e9b1709d4a6294485c6",
+   "NOTICE.md": "dae39ce1e275768190a9a927490736e3e4d16c8c840db66edac8d75a0e29e26f",
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05"
+  }
+ },
+ {
+  "id": "N49",
+  "text": "\\hb{} v0.1 ranks one leaderboard by a score over all tasks, with public and held-out scores beside it. The conjunctive score combines task compliance, a model-judged quality bar and detectability under named AI-text detectors. Overall scores span 1.9\\%--23.1\\%. No human readers were involved, and models under test helped build, audit and judge the tasks. Human references written for the actual task, reader validation and multiple judges per output remain needed.",
+  "sources": {
+   "reports/results-v0.1.md": "d170258a601844190f98d39ad9fc969320904f8ae94330ce6fe91e5dd354b23d",
+   "reports/ledger-v0.1.jsonl": "022fca01054bd436e299c6a6b3aa4679a6ea70937a44ab67a70edb969123e6c3",
+   "reports/calibration-v0.1.json": "48d2806683d4ad3f9c79399a8e25b967b6399043a63c01a736c53ecce40a6690"
+  }
+ },
+ {
+  "id": "N50",
+  "text": "{\\footnotesize\n\\begin{description}\\setlength{\\itemsep}{1pt}\n\\item[coherent] it reads as one sensible piece of writing from start to finish (not gibberish, not repeated filler, not cut off, not a refusal or a note about the task instead of the piece).\n\\item[does\\_task] it is the thing that was asked for, addressed to the right reader, and covers the main things the request asks to get across. Leaving out a minor detail is fine. Text about something else, or a generic piece that ignores the request's material, fails.\n\\item[facts] nothing in it contradicts the facts given in the request: numbers, dates, names, who did what, what happened and in what order. Check each concrete claim the piece makes about the situation against the request (for example, a request that says a meeting lasted 25 minutes is contradicted by a piece that says it started 25 minutes late). Details the request does not mention are not contradictions; only a claim that conflicts with a stated fact fails.\n\\item[tone] the tone does what the request asks. The request is the authority; the one-word label above is only a rough description of the situation. Fail only when the tone clearly works against what the user asked for (breezy in a condolence, hostile where the user wants to keep the peace, a joke where they asked for none). Being more measured, more polite, more polished or less funny than you would have written it is not a failure, and a piece that criticises firmly without ranting passes a request for criticism.\n\\item[persona] nothing in it is implausible for this person: it does not claim knowledge, experience or a role they could not have, and it does not speak as someone else. Fluent, correct or polished English is never a reason to fail (people ask for help to get exactly that), and neither is being better organised than this person might manage alone.\n\\item[private] the items below are not for sharing (workspace items marked private, or things the user asked to keep out). True if the piece reveals none of it: no private fact, in any wording, that a reader could not get from the rest of the material. A paraphrase or a clear hint is still a leak. Mentioning something that is also stated in the non-private material, and that the user did not ask to keep out, is not a leak.\n\\end{description}}",
+  "sources": {
+   "src/humanbench/scoring/floor.py": "757abc9d2e35c97d2c73c90b7c025ffd52e3cee289ad555a95df7aefa4da4bda"
+  }
+ },
+ {
+  "id": "N51",
+  "text": "Task \\code{ref-review-02} is a human-reference task built from a film review of 333 words in a public review dataset (dated 2011 or earlier). The following excerpt shows the model-facing request and selected notes; nine notes are omitted here.",
+  "sources": {
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342",
+   "tasks/ref/ref-review-02/card.yaml": "11048fe278003169d9250f06fcd31ce0748c2642d65c5929ee225319080dc205",
+   "src/humanbench/scoring/verifiers.py": "8e5fdb9f418a5bc4a87043b1779fda1eb8d028648d48a3931ddfad7c035afc7a"
+  }
+ },
+ {
+  "id": "N52",
+  "text": "{\\small\n\\begin{quote}\nI'm a chess enthusiast and I just watched Game Over, about Kasparov's 1997 rematch with Deep Blue. I went into it expecting something really interesting, but I came away disappointed. Can you help me put together a public movie review, around 330 words? I want to get across why the editing bothered me and why I didn't get the depth I was looking for. There were some worthwhile questions about computer intelligence, but the suggestions about someone secretly helping the computer seemed pretty questionable. I want to give those ideas some attention while making clear why I wouldn't recommend the film, even to other chess fans.",
+  "sources": {
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342",
+   "tasks/ref/ref-review-02/card.yaml": "11048fe278003169d9250f06fcd31ce0748c2642d65c5929ee225319080dc205",
+   "src/humanbench/scoring/verifiers.py": "8e5fdb9f418a5bc4a87043b1779fda1eb8d028648d48a3931ddfad7c035afc7a"
+  }
+ },
+ {
+  "id": "N53",
+  "text": "\\smallskip\n-- Game Over is a documentary about Garry Kasparov's 1997 rematch against IBM's Deep Blue supercomputer.\\\\\n-- Near the ending, the film suggests Anatoly Karpov could have secretly helped Deep Blue choose moves.\\\\\n-- The documentary raises questions about computers thinking in ways comparable to people.\\\\\n-- Editing frequently switches pictures and speakers, with short remarks roughly every five seconds.\\\\\n-- [nine further notes]",
+  "sources": {
+   "tasks/ref/ref-review-02/card.yaml": "11048fe278003169d9250f06fcd31ce0748c2642d65c5929ee225319080dc205"
+  }
+ },
+ {
+  "id": "N54",
+  "text": "\\smallskip\n(About me: chess enthusiast and movie reviewer. Length: it should come to roughly 250-400 words.)\n\\end{quote}}",
+  "sources": {
+   "src/humanbench/taskpkg.py": "5cc4646f2a9fb3f83311fb2afe91c5e5d1d55b58e7b8f8eb9e45436a87fb3a8e",
+   "src/humanbench/scoring/verifiers.py": "8e5fdb9f418a5bc4a87043b1779fda1eb8d028648d48a3931ddfad7c035afc7a"
+  }
+ },
+ {
+  "id": "N55",
+  "text": "\\noindent The task's channel is review, so a heading, a table or bold text in the output fails the format check. The length check accepts 225 to 440 words.",
+  "sources": {
+   "tasks/ref/MANIFEST.json": "696bae4cbdc1846c897b978cac4ac99941acb26b5d45990a3f8d68b526976342",
+   "tasks/ref/ref-review-02/card.yaml": "11048fe278003169d9250f06fcd31ce0748c2642d65c5929ee225319080dc205",
+   "src/humanbench/scoring/verifiers.py": "8e5fdb9f418a5bc4a87043b1779fda1eb8d028648d48a3931ddfad7c035afc7a"
+  }
+ },
+ {
+  "id": "N56",
+  "text": "Not released: the human references and the human calibration texts, which cannot be redistributed; the model-written reference solutions; the models' outputs on the human-reference tasks; the held-out tasks, which appear in the ledger by task id only; the audit records; the stored memorisation-probe continuations; and the human-reference tasks that await audit. The scores and intervals can be recomputed from the ledger and the calibration file alone. The tables of failure kinds, the human baseline and the judge validation need the outputs and the private material. The human references can be retrieved from their sources with the manifest, by hand; without them the human-reference tasks cannot be scored for a new model, and a new model must be probed and added to the launch panel before it is reported on them. Code is released under Apache-2.0 and the tasks, outputs and reports under CC BY 4.0, apart from two files adapted from the EditLens code, which carry its non-commercial licence. The AI-text detectors are downloaded from their publishers under their own licences. Tasks and outputs are marked with a canary string, and the release asks that they not be used to train models.",
+  "sources": {
+   "README.md": "294907650f74f4b75d1c9a2cab40e296b9cc86285863e4de00f87336e2d72a05",
+   "NOTICE.md": "dae39ce1e275768190a9a927490736e3e4d16c8c840db66edac8d75a0e29e26f"
+  }
+ }
+]

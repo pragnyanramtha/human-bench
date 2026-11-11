@@ -1,36 +1,36 @@
-"""HumanBench v0.1 results: one leaderboard (one score over all cards, its public and private parts), then every gate by kind of card.
+"""HumanBench v0.1 results: one leaderboard (one score over all tasks, its public and held-out parts), then every gate by kind of task.
 
     uv run python -m humanbench.harness.report_v01 --run-id RUN [--run-id RUN2] --out reports/results-v0.1.md
 
 Nothing stored in a trial record is trusted except the raw model output:
-  scripted checks   recomputed now, against the card as it is (score_output);
-  quality floor     private/trials/<run>/floor.jsonl, used only if it was made for this exact output and
-                    this exact floor question (card, hidden lists, floor prompt version);
+  programmatic checks   recomputed now, against the task as it is (score_output);
+  LLM judge     private/trials/<run>/floor.jsonl, used only if it was made for this exact output and
+                    this exact LLM-judge question (task, hidden lists, judge prompt version);
   detectors         private/judge_cache/<detector>.jsonl, joined by the hash of the scored text.
-A record made from an older version of its card's prompt is stale and left out (and counted). A missing or
+A record made from an older version of its task's prompt is stale and left out (and counted). A missing or
 invalid score is "unscored": never a pass, never a fail, counted and shown, and a score with unscored
 outputs is printed as incomplete.
 
-Every card is scored the same way:
-  an output reads as human to a detector when its score is at or below the cutoff that leaves 1% of the
-  human calibration texts above it.   an answer counts = scripted checks x quality floor x reads as human
-The leaderboard pools card sets: the HumanBench score is taken over every card, public and private together;
-beside it are the score on the public cards (tasks/ref and tasks/dev) and on the held-back private cards
+Every task is scored the same way:
+  an output reads as human to a detector when its score is at or below the threshold that leaves 1% of the
+  human calibration texts above it.   an output counts = programmatic checks x LLM judge x reads as human
+The leaderboard pools task sets: the HumanBench score is taken over every task, public and held-out together;
+beside it are the scores on the public tasks (tasks/ref and tasks/dev) and on the held-out tasks
 (leaderboard, pooled).
-Two kinds of card:
-  invented scenario (tasks/dev and the private cards): the reference solution is model-written, so there is no
-    human-reference claim, and no card is dropped because the detector flags its reference solution (selecting
+Two kinds of task:
+  synthetic task (tasks/dev and the held-out tasks): the reference solution is model-written, so there is no
+    human-reference claim, and no task is dropped because the detector flags its reference solution (selecting
     on that would keep only the tasks where model text slips past the detector); the count is reported.
-  built from real writing (tasks/ref): the real piece reads as human to the headline detector (a card whose
-    real piece the headline detector flags is left out and listed), so the model is asked to clear a bar a
-    person cleared on the same content. A card is used only if it passed the memorisation probe for every
-    launch model (humanbench.refs). Also shown for these cards: how often the detector scores the model's
-    piece as more human than the real piece (tie = half). That asks the model to beat the real piece, not to
+  human-reference tasks (tasks/ref): the human reference reads as human to the headline detector (a task whose
+    human reference the headline detector flags is left out and listed), so the model is asked to clear a bar a
+    person cleared on the same content. A task is used only if it passed the memorisation probe for every
+    launch model (humanbench.refs). Also shown for these tasks: how often the detector scores the model's
+    piece as more human than the human reference (tie = half). That asks the model to beat the human reference, not to
     match it; another human text in the model's seat wins about half the time (the human baseline section).
 
 The headline detector is fixed (HEADLINE). Other detectors are shown beside it and never substitute for it.
-Intervals: 95% bootstrap over tasks, 2,000 resamples. Rates are means of task means, except the quality-floor
-column, which is the share of outputs passing the scripted checks that also pass the floor.
+Intervals: 95% bootstrap over tasks, 2,000 resamples. Rates are means of task means, except the LLM-judge
+column, which is the share of outputs passing the programmatic checks that also are accepted by the LLM judge.
 """
 from __future__ import annotations
 
@@ -150,7 +150,7 @@ def reference_judge_text(pkg) -> str | None:
 def human_baseline(tasks: dict, judge: Judge) -> list[str]:
     """Other real human texts in the model's seat: how often do they win the pair against the reference?
 
-    For each eligible reference card, every human calibration text from the same channel (other than the
+    For each eligible reference task, every human calibration text from the same channel (other than the
     reference itself) is paired with the reference. These are different pieces on different subjects, not
     a second person answering the same request: the control shows that human text is not penalised for
     being "not the reference", and whether one source of text is systematically favoured over another."""
@@ -196,7 +196,7 @@ WAIVABLE = ("formatting the venue does not show", "workspace routing")  # kinds 
 
 
 def failure_kinds(res: dict) -> set[str]:
-    """Which kinds of scripted check an output failed (an output can fail several)."""
+    """Which kinds of programmatic check an output failed (an output can fail several)."""
     out = set()
     for f in [*res["failures"], *res.get("task_failures", [])]:
         kind = next((name for name, pre in FAILURE_KINDS if f.startswith(pre)), "other")
@@ -205,17 +205,17 @@ def failure_kinds(res: dict) -> set[str]:
 
 
 def floor_validation(tasks: dict[str, dict]) -> list[str]:
-    """Per floor judge: how many current references it passes, and what junk it rejected.
+    """Per LLM judge: how many current references it passes, and what junk it rejected.
 
     Evidence from `floor_run validate`, kept per judge. A reference counts only if the stored verdict is for
-    the floor question as it is now (card, hidden lists, prompt and the reference itself)."""
+    the floor question as it is now (task, hidden lists, prompt and the reference itself)."""
     from humanbench.harness.floor_run import _oracle_text
 
-    lines = ["", "## Quality-floor validation", "",
-             "Each floor judge was given every card's reference (which must pass) and junk (which must fail): filler, "
-             "a refusal and another task's answer on 20 cards of each card set, and the reference with a leak added on "
-             "every card that has private items or a factual keep-out statement. A reference is counted only if the "
-             "verdict is for the card and the reference as they are now.", "",
+    lines = ["", "## LLM-judge validation", "",
+             "Each LLM judge was given every task's reference (which must pass) and junk (which must fail): filler, "
+             "a refusal and another task's output on 20 tasks of each task set, and the reference with a leak added on "
+             "every task that has private items or a factual keep-out statement. A reference is counted only if the "
+             "verdict is for the task and the reference as they are now.", "",
              "| judge | references passing, of the current ones | junk rejected | junk passed or unscored |",
              "|---|---|---|---|"]
     cards = {s: p for d in tasks.values() for s, p in d.items()}
@@ -248,7 +248,7 @@ ALL_SETS = PUBLIC_SETS + PRIVATE_SETS
 
 
 def pooled(summary: dict[str, dict], sets: tuple[str, ...], model: str) -> dict | None:
-    """One model's results over several card sets taken as one set of cards (card ids never repeat across
+    """One model's results over several task sets taken as one set of tasks (task ids never repeat across
     sets). None if the model has no outputs there; `score` is None if any of its outputs is missing or unscored."""
     parts = [summary[k][model] for k in sets if model in summary.get(k, {})]
     if not parts:
@@ -264,7 +264,7 @@ def pooled(summary: dict[str, dict], sets: tuple[str, ...], model: str) -> dict 
 
 
 def leaderboard(summary: dict[str, dict]) -> dict:
-    """The one leaderboard: every model's HumanBench score over all cards, with its public and private parts
+    """The one leaderboard: every model's HumanBench score over all tasks, with its public and held-out parts
     beside it. Used by the results report, the ledger tables and the viewer."""
     cards = {k: summary[k]["_cards"] for k in summary}
     models = sorted({m for k in summary for m in summary[k] if not m.startswith("_")})
@@ -281,7 +281,7 @@ def leaderboard(summary: dict[str, dict]) -> dict:
 
 
 def score_table(summary: dict[str, dict]) -> list[str]:
-    """The leaderboard, with what makes each score up. `summary` is filled by section() for each card set."""
+    """The leaderboard, with what makes each score up. `summary` is filled by section() for each task set."""
     def cell(x) -> str:
         return "–" if x is None else "incomplete" if x.get("score") is None else pct(*x["score"])
 
@@ -298,36 +298,36 @@ def score_table(summary: dict[str, dict]) -> list[str]:
     cards = board["cards"]
     total = board["public_cards"] + board["private_cards"]
     lines = ["## The HumanBench score", "",
-             "One benchmark, one score: **the share of a model's answers that pass as a person's own writing while "
-             "doing the job**. An answer counts only if it passes the programmatic checks, is accepted by an LLM judge, and is "
+             "One benchmark, one score: **the share of a model's outputs that pass all three gates while "
+             "doing the job**. An output counts only if it passes the programmatic checks, is accepted by an LLM judge, and is "
              "not flagged by the AI-text detector at the threshold that 99% of human-written texts stay "
-             "under. Every card is answered three times; a card's score is the share of its three answers that "
-             f"count, and a model's score is the average over all {total} cards. Scores are low because nearly every "
-             "answer is flagged.", "",
-             f"**{board['public_cards']} cards are public**: {cards.get('ref', 0)} built backwards from a real person's "
-             f"piece of writing and {cards.get('dev', 0)} invented scenarios. **{board['private_cards']} are private**: "
-             "invented scenarios of the same kinds, held back so that no model can be trained or tuned on them. The "
+             "under. Three samples are produced per task; a task's score is the share of its three outputs that "
+             f"count, and a model's score is the average over all {total} tasks. Scores are low because nearly every "
+             "output is flagged.", "",
+             f"**{board['public_cards']} tasks are public**: {cards.get('ref', 0)} built backwards from a real person's "
+             f"text (human-reference tasks) and {cards.get('dev', 0)} synthetic tasks. **{board['private_cards']} are held out**: "
+             "synthetic tasks of the same kinds, held back so that no model can be trained or tuned on them. The "
              "score on each part is shown beside the overall score: the public part can be reproduced by anyone, and "
-             "the private part shows whether it holds on cards nobody has seen. The two parts are not expected to be "
-             "equal, because the public part also contains the cards built from real writing, which are harder.", "",
-             "**Answer quality** is how good the answers are whatever they read like: the share that passed the "
-             "programmatic checks and the LLM judge, over all cards.", "",
-             "| model | HumanBench score | public cards | private cards | answer quality |",
+             "the held-out part shows whether it holds on tasks nobody has seen. The two parts are not expected to be "
+             "equal, because the public part also contains the human-reference tasks, which are harder.", "",
+             "**Answer quality** is the share of outputs that passed the "
+             "programmatic checks and the LLM judge, over all tasks.", "",
+             "| model | HumanBench score | public tasks | held-out tasks | answer quality |",
              "|---|---|---|---|---|"]
     for r in board["rows"]:
         lines.append(f"| {r['model']} | **{cell(r['all'])}** | {cell(r['public'])} | {cell(r['private'])} | "
                      f"{quality(r['all'])} |")
-    lines += ["", "Where the other answers stopped, over all cards. With the score, each row adds up to 100%.", "",
+    lines += ["", "Where the other outputs stopped, over all tasks. With the score, each row adds up to 100%.", "",
               "| model | " + " | ".join(LOSSES) + " |", "|---|" + "---|" * len(LOSSES)]
     for r in board["rows"]:
         lines.append(f"| {r['model']} | {stops(r['all'])} |")
-    kinds = [(k, label) for k, label in (("ref", "public, built from real writing"), ("dev", "public, invented scenarios"),
-                                         ("test", "private, invented scenarios")) if summary.get(k)]
+    kinds = [(k, label) for k, label in (("ref", "public, human-reference tasks"), ("dev", "public, synthetic tasks"),
+                                         ("test", "held-out, synthetic tasks")) if summary.get(k)]
     if len(kinds) > 1:
-        lines += ["", "The score by kind of card. A card built from real writing has a real person's piece behind "
-                  "it, which passes the same detector limit; an invented scenario has a model-written reference "
+        lines += ["", "The score by kind of task. A human-reference task has a real person's piece behind "
+                  "it, which passes the same detector threshold; a synthetic task has a model-written reference "
                   "solution and covers more kinds of task (replies in a thread, workspace tasks, ghostwriting).", "",
-                  "| model | " + " | ".join(f"{label} ({cards[k]} cards)" for k, label in kinds) + " |",
+                  "| model | " + " | ".join(f"{label} ({cards[k]} tasks)" for k, label in kinds) + " |",
                   "|---|" + "---|" * len(kinds)]
         for r in board["rows"]:
             m = r["model"]
@@ -338,7 +338,7 @@ def score_table(summary: dict[str, dict]) -> list[str]:
 
 
 def judge_agreement(runs: list[str]) -> list[str]:
-    """Outputs that two floor judges both read (floor.jsonl and floor-second.jsonl): how often they agree."""
+    """Outputs that two LLM judges both read (floor.jsonl and floor-second.jsonl): how often they agree."""
     pairs = []
     for run in runs:
         second = {(x["key"], x["sha"], x["prompt_id"]): x for x in rows(PRIV / "trials" / run / "floor-second.jsonl")}
@@ -348,7 +348,7 @@ def judge_agreement(runs: list[str]) -> list[str]:
                 pairs.append((x["judges"][0], y["judges"][0], x["floor"], y["floor"], x["key"].split("|")[0]))
     if not pairs:
         return []
-    lines = ["", "## The two floor judges on the same outputs", "",
+    lines = ["", "## The two LLM judges on the same outputs", "",
              "A judge never reads its own company's model, so Anthropic's models are judged by a different judge "
              "from everyone else. The open-weight models' outputs can be read by both, which shows how far the two "
              "judges differ on identical text.", "",
@@ -367,16 +367,16 @@ def judge_agreement(runs: list[str]) -> list[str]:
 
 
 def reference_cards(tasks: dict, judge: Judge) -> tuple[dict, list[str]]:
-    """The reference cards a result may use, and a note for each group left out.
+    """The reference tasks a result may use, and a note for each group left out.
 
-    One rule, used by this report and by scripts/ledger.py. A card is usable when it passed the memorisation
+    One rule, used by this report and by scripts/ledger.py. A task is usable when it passed the memorisation
     probe for every model in the launch panel, and the headline detector has scored its human reference and
-    reads it as human. A reference that is missing or not scored yet leaves the card out: the track's claim
-    is that the human piece cleared the bar, so "unknown" cannot count as cleared."""
+    reads it as human. A reference that is missing or not scored yet leaves the task out: the track's claim
+    is that the human reference cleared the bar, so "unknown" cannot count as cleared."""
     note, active = [], dict(tasks)
     out = {s: refs.eligible(s)[1] for s in active if not refs.eligible(s)[0]}
     if out:
-        note.append(f"{len(out)} cards left out by the memorisation rule (" + ", ".join(
+        note.append(f"{len(out)} tasks left out by the memorisation rule (" + ", ".join(
             f"{k} {n}" for k, n in sorted(Counter(v.split(': ')[1] for v in out.values()).items())) + ").")
     active = {s: p for s, p in active.items() if s not in out}
     verdict = {s: (judge.human(HEADLINE, t) if t else None) for s, t in
@@ -384,10 +384,10 @@ def reference_cards(tasks: dict, judge: Judge) -> tuple[dict, list[str]]:
     ai = sorted(s for s, v in verdict.items() if v is False)
     unknown = sorted(s for s, v in verdict.items() if v is None)
     if ai:
-        note.append(f"{len(ai)} cards left out because the headline detector reads their human reference as AI: "
+        note.append(f"{len(ai)} tasks left out because the headline detector reads their human reference as AI: "
                     + ", ".join(ai) + ".")
     if unknown:
-        note.append(f"{len(unknown)} cards left out because their human reference is missing or the headline detector "
+        note.append(f"{len(unknown)} tasks left out because their human reference is missing or the headline detector "
                     "has not scored it: " + ", ".join(unknown) + ".")
     return {s: p for s, p in active.items() if verdict[s] is True}, note
 
@@ -395,12 +395,12 @@ def reference_cards(tasks: dict, judge: Judge) -> tuple[dict, list[str]]:
 def section(title: str, recs: list[dict], tasks: dict, judge: Judge, track: str,
             expect: dict[tuple[str, str], dict[str, int] | int] | None = None,
             collect: dict | None = None) -> list[str]:
-    """One table for a card set, over every run given. Each record carries the run it came from (`_run`).
+    """One table for a task set, over every run given. Each record carries the run it came from (`_run`).
 
-    `expect` maps (run, model) to the samples that run was asked for, card by card (from its invocation
-    manifests, after any --max-sample cap; a bare number means that many for every usable card). A model
-    is complete only when it has that many outputs for every usable card, whether or not the run produced
-    anything for this card set; where a run has no manifest, the largest sample number seen stands in."""
+    `expect` maps (run, model) to the samples that run was asked for, task by task (from its invocation
+    manifests, after any --max-sample cap; a bare number means that many for every usable task). A model
+    is complete only when it has that many outputs for every usable task, whether or not the run produced
+    anything for this task set; where a run has no manifest, the largest sample number seen stands in."""
     ref_track = track == "ref"
     expect = expect or {}
     floor = {(run, r["key"], r["sha"]): r for run in sorted({r["_run"] for r in recs})
@@ -425,7 +425,7 @@ def section(title: str, recs: list[dict], tasks: dict, judge: Judge, track: str,
             # would keep exactly the tasks where model text slips past the detector and inflate every rate,
             # so all cards are kept and the count is only reported.
             note.append(f"The headline detector reads {len(ai_ref)} of the {len(ref_text)} model-written reference "
-                        "solutions as AI. All cards are kept: selecting on that would keep only the tasks where model "
+                        "solutions as AI. All tasks are kept: selecting on that would keep only the tasks where model "
                         "text slips past the detector.")
     stale = Counter()
     cur = []
@@ -455,10 +455,10 @@ def section(title: str, recs: list[dict], tasks: dict, judge: Judge, track: str,
         owed.setdefault(key, k * len(active))
     models = sorted({m for _, m in owed})
     in_run = sorted({r["task"] for r, _, _ in cur})
-    lines += [f"{len(in_run)} of {len(active)} usable cards have outputs; {len(cur)} outputs from "
+    lines += [f"{len(in_run)} of {len(active)} usable tasks have outputs; {len(cur)} outputs from "
               f"{len(models)} models." + (f" {sum(stale.values())} stale outputs (made from an older version of a "
-                                           "card) were left out." if stale else ""), *note, ""]
-    comp_head = ["| model | samples per card | outputs (missing) | pass programmatic checks | accepted by the LLM judge, of those | "
+                                           "task) were left out." if stale else ""), *note, ""]
+    comp_head = ["| model | samples per task | outputs (missing) | pass programmatic checks | accepted by the LLM judge, of those | "
                  + " | ".join(f"reads as human: {DETECTORS[d][0]}" for d in DETECTORS) + " |",
                  "|---|---|---|---|---|" + "---|" * len(DETECTORS)]
     comp = []
@@ -561,11 +561,11 @@ def section(title: str, recs: list[dict], tasks: dict, judge: Judge, track: str,
     kinds = [name for name, _ in FAILURE_KINDS] + ["other"]
     lines += ["", "Why outputs fail the programmatic checks (share of each model's outputs; one output can fail several). "
                   "Formatting means markdown the venue would show as typed, such as a bold title on a review; the "
-                  "prompt names the venue but does not say that it is plain text. Copied text on cards built from real writing "
-                  "means the output shares a 13-word run with the real piece, which the model never saw in the task. "
+                  "prompt names the venue but does not say that it is plain text. Copied text on human-reference tasks "
+                  "means the output shares a 13-word run with the human reference, which the model never saw in the task. "
                   "The last columns are the score if an output that failed nothing but that kind of check "
-                  "were counted as passing the checks and the floor: an upper bound on what that kind costs. Workspace "
-                  "routing is bounded this way because the answer format for workspace tasks (a short To / Replying "
+                  "were counted as passing the programmatic checks and the LLM judge: an upper bound on what that kind costs. Workspace "
+                  "routing is bounded this way because the output format for workspace tasks (a short To / Replying "
                   "to header) was introduced late and routing failures rose with it:", "",
               "| model | " + " | ".join(kinds) + " | " + " | ".join(f"score, {k} waived" for k in WAIVABLE) + " |",
               "|---|" + "---|" * (len(kinds) + len(WAIVABLE)),
@@ -574,8 +574,8 @@ def section(title: str, recs: list[dict], tasks: dict, judge: Judge, track: str,
                              f"{100 * ci(waived[(m, k)])[0]:.1f}%" if (m, k) in waived else "–" for k in WAIVABLE)
                 + " |" for m in order if m in why)]
     if ref_track:
-        lines += ["", "**Against the real piece** (programmatic checks x LLM judge x the detector scores the model's "
-                      "piece as more human than the real piece; tie = half). This asks the model to beat the "
+        lines += ["", "**Against the human reference** (programmatic checks x LLM judge x the detector scores the model's "
+                      "piece as more human than the human reference; tie = half). This asks the model to beat the "
                       "reference, not to match it: another human text in the model's seat wins about half the "
                       "time (see the human baseline), so 50% is parity.", "", head, sep,
                   *(row for _, _, row in sorted(pair, key=lambda x: order.index(x[1])))]
@@ -595,31 +595,31 @@ def main() -> None:
     lines = ["# HumanBench v0.1 research preview: results", "",
              "Generated by `python -m humanbench.harness.report_v01`. Read `README.md` for what these numbers do and "
              "do not mean: they measure task compliance, a minimum quality bar, and detectability under the named "
-             "open classifiers. They are not a measure of whether people can tell the text from human writing.", "",
+             "open AI-text detectors. They are not a measure of whether people can tell the text from human writing.", "",
              "<<SCORE>>",
-             "## Detectors and their cutoffs", "",
-             "| detector | human texts scored / in the pool | cutoff (higher = more AI) |", "|---|---|---|"]
+             "## Detectors and their thresholds", "",
+             "| detector | human texts scored / in the pool | threshold (higher = more AI) |", "|---|---|---|"]
     for d, (label, _) in DETECTORS.items():
         c = judge.cut[d]
         lines.append(f"| {label} (`{d}`){' (headline)' if d == HEADLINE else ''} | {judge.n_h[d]} / {judge.n_pool[d]} | "
                      f"{'not set yet' if c is None else f'{c:.4f}'} |")
-    lines += ["", f"A cutoff targets {FPR:.0%} of the human calibration texts flagged. It is a calibration on archival "
+    lines += ["", f"A threshold targets {FPR:.0%} of the human calibration texts flagged. It is a calibration on archival "
                   "text, not a validated false-positive rate. vanguard and tropa-mini read the whole text with "
                   "typography and whitespace normalised; Open Pangram small reads the first 512 tokens and Open Pangram "
                   "large the first 1,024, with Pangram's own preprocessing.",
-              *(["", "The human calibration texts are not in this checkout, so the cutoffs above are the published "
+              *(["", "The human calibration texts are not in this checkout, so the thresholds above are the published "
                  "v0.1 ones (`reports/calibration-v0.1.json`). They apply only to detector scores made the way the "
                  "published ones were: the same model revisions, on a GPU, in bfloat16."] if judge.published else []), "",
               "How to read the intervals: they are bootstrap intervals over tasks. An interval of [0.0, 0.0] means no "
               "win was observed in this sample, not that the true rate is zero.", "",
               "## Do the references read as human?", "",
-              "The real human pieces behind the cards built from real writing are part of the human calibration pool that sets the "
-              "cutoffs, so their row is not an independent validation of the detectors.", "",
-              "| cards | n | " + " | ".join(f"{DETECTORS[d][0]}" for d in DETECTORS) + " |",
+              "The human references behind the human-reference tasks are part of the human calibration pool that sets the "
+              "thresholds, so their row is not an independent validation of the detectors.", "",
+              "| tasks | n | " + " | ".join(f"{DETECTORS[d][0]}" for d in DETECTORS) + " |",
               "|---|---|" + "---|" * len(DETECTORS)]
-    for split, label in (("dev", "public, invented scenarios (model-written reference solutions)"),
-                         ("test", "private, invented scenarios (model-written reference solutions)"),
-                         ("ref", "public, built from real writing (the real pieces)")):
+    for split, label in (("dev", "public, synthetic tasks (model-written reference solutions)"),
+                         ("test", "held-out, synthetic tasks (model-written reference solutions)"),
+                         ("ref", "public, human-reference tasks (the human references)")):
         texts = [t for t in (reference_judge_text(p) for p in tasks[split].values()) if t]
         cells = []
         for d in DETECTORS:
@@ -627,17 +627,17 @@ def main() -> None:
             v = [x for x in v if x is not None]
             cells.append(f"{sum(v)}/{len(v)} read as human" if v else "unscored")
         lines.append(f"| {label} | {len(texts)} | " + " | ".join(cells) + " |")
-    lines += ["", "## Human baseline for the comparison with the real piece", "",
-              "For the cards built from real writing, the report also gives how often a model's piece is rated as more human than "
-              "the real piece. To show what a human scores on that scale, other real human texts are put in the model's "
+    lines += ["", "## Human baseline for the comparison with the human reference", "",
+              "For the human-reference tasks, the report also gives how often a model's piece is rated as more human than "
+              "the human reference. To show what a human scores on that scale, other real human texts are put in the model's "
               "seat: about half the time they win, so 50% is parity there. They are "
-              "different pieces, not answers to the same request, and they come from the same archival pool as the "
+              "different pieces, not outputs to the same request, and they come from the same archival pool as the "
               "references, so this does not test old text against new text.", "",
               *human_baseline(tasks["ref"], judge)]
     score_at = lines.index("<<SCORE>>")
     del lines[score_at]
     recs, tracks, system_lines = [], set(), set()
-    lines += ["", "## Runs", "", "Answers were collected through each provider's hosted client or a hosted inference service, at each model's default reasoning effort unless a run says otherwise, with tools off and the fixed system line below; the client software may add framing text of its own around a request.", ""]
+    lines += ["", "## Runs", "", "Outputs were collected through each provider's hosted client or a hosted inference service, at each model's default reasoning effort unless a run says otherwise, with tools off and the fixed system line below; the client software may add framing text of its own around a request.", ""]
     caps = [(k.partition("/")[0], k.partition("/")[2], int(v)) for k, v in (x.split("=") for x in a.max_sample)]
 
     def limit(run: str, model: str) -> int:
@@ -678,8 +678,8 @@ def main() -> None:
     lines += ["", "System line, the same for every model: " + " / ".join(f'"{x}"' for x in sorted(system_lines))]
     track = "/".join(sorted(tracks))
     summary, body = {}, []
-    for split, name in (("ref", "Public cards built from real writing"), ("dev", "Public cards, invented scenarios"),
-                        ("test", "Private cards, invented scenarios")):
+    for split, name in (("ref", "Public human-reference tasks"), ("dev", "Public tasks, synthetic tasks"),
+                        ("test", "Held-out tasks, synthetic tasks")):
         sub = [r for r in recs if r["task"] in tasks[split]]
         if sub:
             summary[split] = {}
